@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :user_authorized?, :except => ['login']
+  before_filter :user_authorized?
 
 
   #after_filter :get_or_create_pkz_user
@@ -50,7 +50,9 @@ class ApplicationController < ActionController::Base
 
   # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
-    ENV['RAILS_ENV']=="development" 
+    if ENV['RAILS_ENV']=="development"
+      render("user/access_restricted")
+    end
   end
 
 end
