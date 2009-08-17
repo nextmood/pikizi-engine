@@ -42,9 +42,7 @@ Rails::Initializer.run do |config|
   config.cache_store = :memory_store
 
   # RPX now
-  # http://groups.google.com/group/authlogic/browse_thread/thread/da0fa88c81799154?pli=1
-  config.gem "ruby-openid", :lib => "openid"
-  config.gem 'grosser-rpx_now', :lib => 'rpx_now', :source => 'http://gems.github.com'
+  config.gem "grosser-rpx_now", :lib => "rpx_now", :source => "http://gems.github.com/"
 
 
 end

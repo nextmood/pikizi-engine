@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   #after_filter :get_or_create_pkz_user
 
-  def get_or_create_pkz_user
+  def get_or_create_pkz_user(rpx_data=nil)
     unless @current_user
 
       session.inspect
@@ -34,13 +34,20 @@ class ApplicationController < ActionController::Base
     Rails.cache.each { |key, cached_object| cached_object.save }
   end
 
-
   private
 
-  # TODO a environnement/production switcher
+  # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
-    if false and ENV['RAILS_ENV']=="production"
-      render("/users/access_restricted")
+    if ENV['RAILS_ENV']=="production"
+      if rpx_data = RPXNow.user_data(params[:token])
+        if get_or_create_pkz_user(rpx_data).is_authorized?
+          true
+        else
+          render("/users/access_restricted")
+        end    
+      else
+       render("/users/login")
+      end
     end
   end
 
