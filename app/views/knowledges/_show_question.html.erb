@@ -1,0 +1,8 @@
+<small>#<%= question.key %>&nbsp;</small>
+<%= link_to(question.label, "/questions/#{question.knowledge_key}/#{question.key}") %>
+<small>
+  pre-condition:<%= question.precondition_expression || 'none' %>,&nbsp;
+  <%= pluralize question.nb_presentation.round, "presentation" %>,&nbsp;
+  separation=<%= "%d" % question.separation(products) %>
+  (<%= pluralize question.nb_recommendation, "recommendation" %>)
+</small>

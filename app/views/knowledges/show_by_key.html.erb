@@ -1,0 +1,27 @@
+<div class="pkz_menu">
+    <span>
+      <%= @knowledge.label %>
+      <small>
+        #<%= @knowledge.key %>,&nbsp;
+        <%= pluralize(@knowledge.nb_products, "product") %>,&nbsp;
+        <%= pluralize(@knowledge.nb_features, "feature") %>,&nbsp;
+        <%= link_to(pluralize(@knowledge.nb_questions, "question"), "/questions/#{@knowledge.key}") %>,&nbsp;
+        <%= pluralize(@knowledge.nb_recommendation, "recommendation") %>,&nbsp;
+        <%= pluralize(@knowledge.nb_quizzes, "quiz") %>
+      </small>
+    </span>
+    &nbsp;|&nbsp;
+	show values for product:
+    <%=   select("option", "product_key",
+             @knowledge.product_keys.collect {|pkey| [pkey, pkey] },
+             { :include_blank => true, :selected => @product ? @product.key : nil },
+             :onchange => "window.location = '/show/#{@knowledge.key}/' + document.getElementById('option_product_key').value ") %>
+    &nbsp;|&nbsp;
+    start quiz:
+    <% for quiz in @knowledge.quizzes %>
+      <%= link_to quiz.key, "/quiz/#{quiz.key}" %>
+    <% end %>
+</div>
+
+<div class="pkz_main"><%= @knowledge.to_html(@product) %></div>
+

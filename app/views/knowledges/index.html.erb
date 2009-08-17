@@ -1,0 +1,28 @@
+
+<div class="pkz_menu">
+  <small><%= link_to "update", "/update_indexes/knowledges" %></small>
+    
+	<span><%= pluralize(@knowledges.size, "knowledge base")%></span>
+</div>
+
+<div class="pkz_main">	
+	<% @knowledges.each do |knowledge| %>
+		<div class="pkz_item_list">
+			<%= link_to knowledge.label, "/show/#{knowledge.key}" %>
+			<small>
+                <%= knowledge.key %>
+				&nbsp;
+				<%= pluralize knowledge.nb_features, "feature" %>
+				,&nbsp;
+				<%= pluralize knowledge.nb_products, "product" %>
+				,&nbsp;
+                <%= pluralize knowledge.nb_questions, "question" %>
+				,&nbsp;
+                <%= pluralize knowledge.nb_quizzes, "quiz" %>
+				,&nbsp;
+				updated on <%=h knowledge.updated_at %>
+			</small>
+		</div>
+	<% end %>
+</div>
+

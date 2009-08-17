@@ -1,0 +1,29 @@
+
+<div class="pkz_menu">
+  <small><%= link_to "update", "/update_indexes/users" %></small>
+
+  <span><%= pluralize(@users.size, "user")%></span>
+
+</div>
+
+<div class="pkz_main">
+    <% @users.each do |user| %>
+      <div class="pkz_item_list">
+        <%= link_to user.key, "/profile/#{user.key}" %>
+        <small>
+            &nbsp;
+            <%= pluralize user.nb_authored_values, "value" %>
+            ,&nbsp;
+            <%= pluralize user.nb_authored_opinions, "opinion" %>
+            ,&nbsp;
+            <%= pluralize user.nb_authored_backgrounds, "background" %>
+            ,&nbsp;
+            <%= pluralize user.nb_quiz_instances, "quiz" %>
+            ,&nbsp;
+            updated on <%=h user.updated_at %>
+        </small>
+      </div>
+    <% end %>
+</div>
+
+

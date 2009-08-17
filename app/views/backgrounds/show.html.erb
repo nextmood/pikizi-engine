@@ -1,0 +1,33 @@
+<p>
+  <b>Type:</b>
+  <%=h @background.type %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%=h @background.key %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%=h @background.label %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%=h @background.data %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @background.author_id %>
+</p>
+
+<p>
+  <b>Author key:</b>
+  <%=h @background.author_key %>
+</p>
+
+
+<%= link_to 'Edit', edit_background_path(@background) %> |
+<%= link_to 'Back', backgrounds_path %>
