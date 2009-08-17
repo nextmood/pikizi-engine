@@ -22,13 +22,13 @@ class BackgroundsController < ApplicationController
   end
 
   # return a background for a given product/feature/background_key
-  # GET /product_background/:product_key/:bgk_key/:model_key/:feature_key
+  # GET /product_background
   # GET /product_background/:product_key/:bgk_key/:model_key  (i.e. :feature_key == root)
   def product_background
     params[:product_key]
     params[:bgk_key]
     params[:model_key]
-    params[:feature_key] ||
+    params[:feature_key] || params[:model_key]
   end
 
   # return a list of backgrounds for a given product/feature

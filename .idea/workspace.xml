@@ -4,7 +4,10 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="" />
+    <list default="true" readonly="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/backgrounds_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/backgrounds_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="pikizi-engine-new.iws" />
   </component>
@@ -39,10 +42,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="2" selection-start="70" selection-end="70" vertical-scroll-proportion="0.05896806">
+            <state line="2" column="2" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backgrounds_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/backgrounds_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.3022113">
               <folding />
             </state>
           </provider>
@@ -677,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/backgrounds_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="73" selection-start="601" selection-end="646" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -700,7 +705,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="70" selection-end="70" vertical-scroll-proportion="0.05896806">
+        <state line="2" column="2" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/backgrounds_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="46" selection-start="831" selection-end="831" vertical-scroll-proportion="0.3022113">
           <folding />
         </state>
       </provider>
