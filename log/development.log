@@ -5100,3 +5100,24 @@ ActionView::TemplateError (undefined local variable or method `rpx_token_session
 Rendered rescues/_trace (48.1ms)
 Rendered rescues/_request_and_response (1.7ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:36:16) [GET]
+Rendering template within layouts/application
+Rendering users/access_restricted
+Filter chain halted as [:user_authorized?] rendered_or_redirected.
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-17 21:36:20) [GET]
+Rendering template within layouts/application
+Rendering users/access_restricted
+Filter chain halted as [:user_authorized?] rendered_or_redirected.
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:36:22) [GET]
+Rendering template within layouts/application
+Rendering users/access_restricted
+Filter chain halted as [:user_authorized?] rendered_or_redirected.
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://localhost/knowledges]
