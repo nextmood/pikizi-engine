@@ -39,7 +39,7 @@ class User < Root
 
   # load an xml file... and retutn a User object
   def self.create_from_xml(user_key)
-    raise "error user_key=#{user_key.inspect}" unless user_key and user_key.size > 4
+    raise "error user_key=#{user_key.inspect}" unless user_key
     unless key_exist?(user_key)
       pkz_user = Pikizi::User.new
       pkz_user.key = user_key

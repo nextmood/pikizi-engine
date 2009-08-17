@@ -5121,3 +5121,223 @@ Rendering template within layouts/application
 Rendering users/access_restricted
 Filter chain halted as [:user_authorized?] rendered_or_redirected.
 Completed in 7ms (View: 7, DB: 0) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:37:26) [GET]
+  [4;36;1mKnowledge Load (1.7ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 98ms (View: 86, DB: 2) | 200 OK [http://localhost/knowledges]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateKnowledges (20090601103938)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "knowledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_key" varchar(255), "nb_features" integer DEFAULT 0, "nb_products" integer DEFAULT 0, "nb_questions" integer DEFAULT 0, "nb_quizzes" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601103938')[0m
+Migrating to CreateUsers (20090601104016)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "rpx_identifier" varchar(255), "rpx_name" varchar(255), "rpx_username" varchar(255), "rpx_email" varchar(255), "nb_quiz_instances" integer DEFAULT 0, "nb_authored_opinions" integer DEFAULT 0, "nb_authored_values" integer DEFAULT 0, "nb_authored_backgrounds" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104016')[0m
+Migrating to CreateProducts (20090601104146)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_id" integer, "nb_models" integer DEFAULT 0, "value_completion" float DEFAULT 0.0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104146')[0m
+Migrating to AddRpxnowToUser (20090801150050)
+  [4;36;1mSQL (23.4ms)[0m   [0;1mALTER TABLE "users" ADD "identifier" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090801150050')[0m
+Migrating to CreateBackgrounds (20090816114821)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "backgrounds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "knowledge_key" varchar(255), "feature_key" varchar(255), "product_key" varchar(255), "background_key" varchar(255), "label" varchar(255), "data" text, "author_id" integer, "author_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090816114821')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("backgrounds")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("knowledges")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 00:33:15) [GET]
+  [4;36;1mKnowledge Load (1.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+
+ActionView::TemplateError (undefined method `get_or_create_pkz_user' for #<KnowledgesController:0x22b5a50>) on line #23 of app/views/layouts/application.html.erb:
+20:    <%= link_to "Knowledge bases", "/knowledges" %>
+21:   &nbsp;|&nbsp;
+22:    <%= link_to "Users", "/users" %>
+23:   &nbsp;|&nbsp;user=<%= controller.get_or_create_pkz_user.key %>
+24: </div>
+25: 
+26: 
+
+    app/views/layouts/application.html.erb:23
+    app/controllers/knowledges_controller.rb:8:in `index'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (132.8ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 00:36:04) [GET]
+  [4;35;1mKnowledge Load (1.1ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.key) on line #23 of app/views/layouts/application.html.erb:
+20:    <%= link_to "Knowledge bases", "/knowledges" %>
+21:   &nbsp;|&nbsp;
+22:    <%= link_to "Users", "/users" %>
+23:   &nbsp;|&nbsp;user=<%= controller.get_logged_pkz_user.key %>
+24: </div>
+25: 
+26: 
+
+    app/views/layouts/application.html.erb:23
+    app/controllers/knowledges_controller.rb:8:in `index'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 00:36:14) [GET]
+  [4;36;1mKnowledge Load (1.5ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 18ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#update_indexes (for 127.0.0.1 at 2009-08-18 00:36:31) [GET]
+  [4;35;1mKnowledge Delete all (2.3ms)[0m   [0mDELETE FROM "knowledges" WHERE 1=1[0m
+  [4;36;1mKnowledge Create (0.5ms)[0m   [0;1mINSERT INTO "knowledges" ("updated_at", "author_key", "nb_questions", "nb_features", "nb_products", "nb_quizzes", "key", "label", "created_at") VALUES('2009-08-17 22:36:31', NULL, 22, 176, 40, 1, 'cell_phones', 'Cell Phones', '2009-08-17 22:36:31')[0m
+Redirected to http://localhost:3001/knowledges
+Completed in 426ms (DB: 3) | 302 Found [http://localhost/update_indexes/knowledges]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 00:36:31) [GET]
+  [4;35;1mKnowledge Load (1.3ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 120ms (View: 111, DB: 1) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-08-18 00:36:34) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 268.29ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 283ms (View: 12, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-18 00:36:36) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mKnowledge Load (0.4ms)[0m   [0mSELECT * FROM "knowledges" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 338ms (View: 50, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#update_indexes (for 127.0.0.1 at 2009-08-18 00:41:41) [GET]
+  [4;36;1mUser Delete all (183.9ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: label):
+  app/controllers/users_controller.rb:62:in `update_indexes'
+  app/controllers/users_controller.rb:60:in `each'
+  app/controllers/users_controller.rb:60:in `update_indexes'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update_indexes (for 127.0.0.1 at 2009-08-18 00:43:04) [GET]
+  [4;35;1mUser Delete all (1.9ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "key", "nb_quiz_instances", "nb_authored_backgrounds", "identifier", "created_at") VALUES(0, '2009-08-17 22:43:04', NULL, NULL, NULL, 0, NULL, '8c916e854eb0c463ddfff3ee75cdaa5b', 1, 0, NULL, '2009-08-17 22:43:04')[0m
+  [4;35;1mUser Create (1.0ms)[0m   [0mINSERT INTO "users" ("nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "key", "nb_quiz_instances", "nb_authored_backgrounds", "identifier", "created_at") VALUES(15416, '2009-08-17 22:43:12', NULL, NULL, NULL, 40, NULL, 'nextmood', 0, 109, NULL, '2009-08-17 22:43:12')[0m
+Redirected to http://localhost:3001/users
+Completed in 8746ms (DB: 3) | 302 Found [http://localhost/update_indexes/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-18 00:43:12) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mKnowledge Load (0.4ms)[0m   [0mSELECT * FROM "knowledges" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 629ms (View: 8, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 00:43:24) [GET]
+  [4;36;1mKnowledge Load (1.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-08-18 00:43:26) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-08-18 00:43:30) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_n96"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 430.98ms): Pnokia_n96
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 452ms (View: 18, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_n96]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-08-18 00:43:37) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.get_quiz_instance):
+  app/controllers/knowledges_controller.rb:40:in `quiz'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-18 00:44:16) [GET]
+
+ActionController::RoutingError (No route matches "/knowledges/backgrounds/cell_phones/cell_phones/nokia_n96" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 00:52:57) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/login]

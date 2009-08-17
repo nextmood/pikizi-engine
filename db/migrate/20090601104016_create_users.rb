@@ -2,7 +2,10 @@ class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.string :key
-      t.string :label
+      t.string :rpx_identifier
+      t.string :rpx_name
+      t.string :rpx_username
+      t.string :rpx_email
       t.integer :nb_quiz_instances, :default => 0
       t.integer :nb_authored_opinions,  :default => 0
       t.integer :nb_authored_values, :default => 0

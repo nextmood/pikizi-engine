@@ -36,7 +36,7 @@ class KnowledgesController < ApplicationController
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
 
     @quiz = @knowledge.quizzes.detect {|q| q.key == quiz_key }
-    @user = get_or_create_pkz_user
+    @user = get_logged_pkz_user
     @quiz_instance = @user.get_quiz_instance(@quiz)
 
     respond_to do |format|

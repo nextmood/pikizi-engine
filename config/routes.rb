@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '/access_restricted' , :controller => 'users', :action => 'access_restricted'
   map.connect '/login' , :controller => 'users', :action => 'login'
-
+  map.connect "/rpx_token_sessions_url", :controller => 'users', :action => 'rpx_token_sessions_url'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

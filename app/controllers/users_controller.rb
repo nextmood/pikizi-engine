@@ -20,7 +20,7 @@ class UsersController < ApplicationController
      quiz = knowledge.quizzes.detect {|q| q.key == quiz_key }
      question_key = params[:question_key]
      question = knowledge.questions.detect {|q| q.key == question_key }
-     user = get_or_create_pkz_user
+     user = get_logged_pkz_user
      user.record_answer(knowledge, quiz, question, params[:choices_keys_ok])
      user.save
      url_redirect = "/quiz/#{knowledge.key}"
@@ -61,13 +61,28 @@ class UsersController < ApplicationController
       pkz_user = Pikizi::User.create_from_xml(user_key)
       user = User.create(
               :key => user_key,
-              :label => pkz_user.label,
               :nb_quiz_instances => pkz_user.nb_quiz_instances,
               :nb_authored_opinions => pkz_user.nb_authored_opinions,
               :nb_authored_backgrounds => pkz_user.nb_authored_backgrounds,
               :nb_authored_values => pkz_user.nb_authored_values)
     end
     redirect_to("/users")
+  end
+
+    # this method is call back for rpxnow (this is triggered after login)
+  # user_data
+  # found: {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
+  # not found: nil (can happen with e.g. invalid tokens)
+  def rpx_token
+    raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
+    logged_user = User.find_by_rpx_identifier(rpx_data[:identifier])
+    logged_user ||= User.create(:rpx_identifier => rpx_data[:identifier],
+                                :rpx_name => rpx_data[:name],
+                                :rpx_username => rpx_data[:username],
+                                :rpx_email => rpx_data[:email])
+    session[:logged_user_id] = logged_user.id
+    # self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
+    redirect_to '/'
   end
 
 end
