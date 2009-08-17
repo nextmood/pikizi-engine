@@ -19,9 +19,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/update_indexes/users', :controller => 'users', :action => 'update_indexes'
   map.connect '/update_indexes/knowledges', :controller => 'knowledges', :action => 'update_indexes'
 
-  # rpx now, see http://groups.google.com/group/authlogic/browse_thread/thread/da0fa88c81799154?pli=1
-  map.rpx_token_sessions 'rpx_token_sessions', :controller => "user_sessions", :action => "rpx_create"
   map.connect '/access_restricted' , :controller => 'users', :action => 'access_restricted'
+  map.connect '/login' , :controller => 'users', :action => 'login'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

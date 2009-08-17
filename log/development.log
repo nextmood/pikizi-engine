@@ -4995,3 +4995,24 @@ Cache hit: Mcell_phones ({:force=>nil})
 Rendering template within layouts/application
 Rendering knowledges/quiz
 Completed in 836ms (View: 828, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:21:25) [GET]
+  [4;36;1mKnowledge Load (1.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 164ms (View: 155, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-08-17 21:21:33) [GET]
+  Parameters: {"id"=>"login"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:35:in `show'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (120.7ms)
+Rendered rescues/_request_and_response (22.4ms)
+Rendering rescues/layout (not_found)
