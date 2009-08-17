@@ -5016,3 +5016,87 @@ ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
 Rendered rescues/_trace (120.7ms)
 Rendered rescues/_request_and_response (22.4ms)
 Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-17 21:23:01) [GET]
+Rendering template within layouts/application
+Rendering users/login
+
+ActionView::TemplateError (undefined local variable or method `rpx_token_sessions_url' for #<ActionView::Base:0x22d96e4>) on line #1 of app/views/users/login.html.erb:
+1: <%= RPXNow.embed_code('engine.nextmood.com',rpx_token_sessions_url) %>
+
+    app/views/users/login.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#access_restricted (for 127.0.0.1 at 2009-08-17 21:23:15) [GET]
+Rendering template within layouts/application
+Rendering users/access_restricted
+Completed in 90ms (View: 88, DB: 0) | 200 OK [http://localhost/access_restricted]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-17 21:23:24) [GET]
+Rendering template within layouts/application
+Rendering users/login
+
+ActionView::TemplateError (undefined local variable or method `rpx_token_sessions_url' for #<ActionView::Base:0x24e4380>) on line #1 of app/views/users/login.html.erb:
+1: <%= RPXNow.embed_code('engine.nextmood.com',rpx_token_sessions_url) %>
+
+    app/views/users/login.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-17 21:26:59) [GET]
+Rendering template within layouts/application
+Rendering users/login
+
+ActionView::TemplateError (undefined local variable or method `rpx_token_sessions_url' for #<ActionView::Base:0x2267a94>) on line #1 of app/views/users/login.html.erb:
+1: <%= RPXNow.embed_code('engine.nextmood.com', rpx_token_sessions_url) %>
+
+    app/views/users/login.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (133.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:29:32) [GET]
+  [4;36;1mKnowledge Load (1.4ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 88ms (View: 79, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-17 21:29:34) [GET]
+  [4;35;1mKnowledge Load (1.4ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 27ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-17 21:29:40) [GET]
+Rendering template within layouts/application
+Rendering users/login
+
+ActionView::TemplateError (undefined local variable or method `rpx_token_sessions_url' for #<ActionView::Base:0x2521f50>) on line #1 of app/views/users/login.html.erb:
+1: <%= RPXNow.embed_code('engine.nextmood.com', rpx_token_sessions_url) %>
+
+    app/views/users/login.html.erb:1
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (48.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)

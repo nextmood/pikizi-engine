@@ -50,9 +50,7 @@ class ApplicationController < ActionController::Base
 
   # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
-    # render("/users/access_restricted")
-    # render("/users/login")
-    true
+    ENV['RAILS_ENV']=="development" 
   end
 
 end
