@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
   # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
     if ENV['RAILS_ENV']=="production"
-      render("user/access_restricted")
+      redirect_to '/access_restricted'
     end
   end
 
