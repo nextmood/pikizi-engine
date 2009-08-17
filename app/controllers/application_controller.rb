@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 
   # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
-    if ENV['RAILS_ENV']=="production"
+    if false and ENV['RAILS_ENV']=="production"
       if (rpx_data = RPXNow.user_data(params[:token],'2dde4557bd28343f445032c774264a0b8cd8b29a')).blank?
         if get_or_create_pkz_user(rpx_data).is_authorized?
           true
