@@ -33,9 +33,9 @@ class ApplicationController < ActionController::Base
   private
 
   def user_authorized
-    #if ENV['RAILS_ENV']=="production"
-    #  render 'users/access_restricted'
-    #end
+    if ENV['RAILS_ENV']=="production"
+      render 'users/access_restricted'
+    end
   end
 
 end
