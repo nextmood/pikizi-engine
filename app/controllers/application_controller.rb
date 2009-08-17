@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :user_authorized?
+  before_filter :user_authorized?, :except => ['login']
 
 
   #after_filter :get_or_create_pkz_user
