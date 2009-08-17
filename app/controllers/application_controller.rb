@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
 
   # TODO a environnement/production switcher
   def user_authorized?
-    if ENV['RAILS_ENV']=="production"
+    if false and ENV['RAILS_ENV']=="production"
       render("/users/access_restricted")
     end
   end
