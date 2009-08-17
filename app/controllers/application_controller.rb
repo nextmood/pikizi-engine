@@ -34,21 +34,25 @@ class ApplicationController < ActionController::Base
     Rails.cache.each { |key, cached_object| cached_object.save }
   end
 
+  # this method is call back for rpxnow (this is triggered after login)
+  # user_data
+  # found: {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
+  # not found: nil (can happen with e.g. invalid tokens)
+  def rpx_token
+    raise "hackers?" unless data = RPXNow.user_data(params[:token])
+    
+    # self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
+    redirect_to '/'
+  end
+
+
   private
 
   # rpx_data -> {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   def user_authorized?
-    if false and ENV['RAILS_ENV']=="production"
-      if (rpx_data = RPXNow.user_data(params[:token],'2dde4557bd28343f445032c774264a0b8cd8b29a')).blank?
-        if get_or_create_pkz_user(rpx_data).is_authorized?
-          true
-        else
-          render("/users/access_restricted")
-        end    
-      else
-       render("/users/login")
-      end
-    end
+    # render("/users/access_restricted")
+    # render("/users/login")
+    true
   end
 
 end
