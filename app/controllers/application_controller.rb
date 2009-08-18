@@ -23,7 +23,11 @@ class ApplicationController < ActionController::Base
   end
 
   # get the current logged user, the active record object
-  def get_logged_ar_user() @current_ar_user ||= User.find(session[:logged_user_id]) end
+  def get_logged_ar_user()
+    if session[:logged_user_id]
+      @current_ar_user ||= User.find(session[:logged_user_id])
+    end
+  end
 
   # save all objects in cache...
   def flush_caches
@@ -37,10 +41,10 @@ class ApplicationController < ActionController::Base
     #if ENV['RAILS_ENV']=="production"
     if get_logged_ar_user
       # there is an existing logged user
-      render 'users/access_restricted' unless get_logged_ar_user.is_authorized?
+      redirect_to '/access_restricted' unless get_logged_ar_user.is_authorized?
     else
       # render 'users/access_restricted'
-      render 'users/login'
+      redirect_to '/login'
     end
   end
 

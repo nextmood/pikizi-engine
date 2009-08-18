@@ -5512,3 +5512,80 @@ ActionView::TemplateError (undefined method `rpx_username' for #<Pikizi::User:0x
 Rendered rescues/_trace (54.8ms)
 Rendered rescues/_request_and_response (1.8ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:06:05) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:26:in `get_logged_ar_user'
+  app/controllers/application_controller.rb:38:in `user_authorized'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (45.6ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:07:15) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:07:28) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:07:53) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-08-18 19:08:01) [GET]
+  Parameters: {"id"=>"login"}
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/users/login]
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 19:08:34) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/rpx_token_sessions_url?token=e82d50111485575978f01acc8316889e50979c20]
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 19:08:59) [GET]
+  Parameters: {"token"=>"87330b2280ec8c06d8fb6ac7d0c0a03f99391de3"}
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/rpx_token_sessions_url?token=87330b2280ec8c06d8fb6ac7d0c0a03f99391de3]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:12:51) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:13:21) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:13:21) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
