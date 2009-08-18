@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :user_authorized, :except => ['login']
+  before_filter :user_authorized, :except => ['login', 'rpx_token_sessions_url']
 
 
   # get the current logged user, the xml object
