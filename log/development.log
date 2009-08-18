@@ -5401,3 +5401,28 @@ Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:13:47) [GET]
 Rendering template within layouts/application
 Rendering users/login
 Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:53:50) [GET]
+  [4;35;1mKnowledge Load (1.2ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:54:00) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:57:18) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:57:43) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
