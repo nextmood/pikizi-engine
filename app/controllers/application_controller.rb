@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   # get the current logged user, the xml object
   def get_logged_pkz_user()
     if session[:logged_user_id]
-      @current_pkz_user ||= Pikizi::User.create_from_xml("U#{session[:logged_user_id]}")
+      @current_pkz_user ||= Pikizi::User.create_from_xml(User.id_2_key(session[:logged_user_id]))
     end
   end
 
@@ -26,7 +26,13 @@ class ApplicationController < ActionController::Base
   def get_logged_ar_user()
     if session[:logged_user_id]
       puts "******* looking for ar user=#{session[:logged_user_id]}"
-      @current_ar_user ||= User.find(session[:logged_user_id])
+      begin
+        @current_ar_user ||= User.find(session[:logged_user_id])
+      rescue
+        logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
+        nil
+      end
+
     end
   end
 

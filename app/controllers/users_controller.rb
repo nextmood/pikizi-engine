@@ -79,10 +79,13 @@ class UsersController < ApplicationController
   def rpx_token_sessions_url
     raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
     logged_user = User.find(:first, :conditions => ["rpx_identifier=?", rpx_data[:identifier]])
-    logged_user ||= User.create(:rpx_identifier => rpx_data[:identifier],
+    unless logged_user
+      logged_user = User.create(:rpx_identifier => rpx_data[:identifier],
                                 :rpx_name => rpx_data[:name],
                                 :rpx_username => rpx_data[:username],
                                 :rpx_email => rpx_data[:email])
+      logged_user.update_attribute(:key, User.id_2_key(logged_user.id)) 
+     end
     session[:logged_user_id] = logged_user.id
 
     # self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
