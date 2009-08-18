@@ -20,7 +20,13 @@
    <%= link_to "Knowledge bases", "/knowledges" %>
   &nbsp;|&nbsp;
    <%= link_to "Users", "/users" %>
-  &nbsp;|&nbsp;user=<%= controller.get_logged_ar_user.rpx_username if controller.get_logged_ar_user %>
+  &nbsp;|&nbsp;
+  <% if controller.get_logged_ar_user %>
+   welcome <%= controller.get_logged_ar_user.rpx_username %>
+   <%= link_to "logout", "/logout" %>
+  <% else %>
+    not logged
+  <% end %>
 </div>
 
 

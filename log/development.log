@@ -5589,3 +5589,51 @@ Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:13:21) [GET]
 Rendering template within layouts/application
 Rendering users/login
 Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:41:21) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:41:21) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:41:56) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:41:56) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 19:45:51) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:45:51) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-08-18 19:45:55) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:45:55) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
