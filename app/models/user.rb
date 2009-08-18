@@ -35,5 +35,7 @@ class User < ActiveRecord::Base
     self.login = user_data['preferredUsername']
     self.country = user_data['address']['country'] unless user_data['address'].nil?
   end
-  
+
+  def is_authorized?() rpx_identifier and (true or promotion_code = "BCKPROMO") end
+
 end

@@ -5436,3 +5436,79 @@ ActionController::RoutingError (No route matches "/token_rpx" with {:method=>:ge
   -e:1
 
 Rendering rescues/layout (not_found)
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 09:03:46) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+
+ActionController::UnknownAction (No action responded to rpx_token_sessions_url. Actions: flush_caches, get_logged_pkz_user, index, process_authored, record_answer, rpx_token, show, show_by_key, and update_indexes):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 09:04:31) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+
+ActionController::UnknownAction (No action responded to rpx_token_sessions_url. Actions: flush_caches, get_logged_pkz_user, index, process_authored, record_answer, rpx_token, show, show_by_key, and update_indexes):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 09:05:13) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+
+ActionController::UnknownAction (No action responded to rpx_token_sessions_url. Actions: flush_caches, get_logged_pkz_user, index, process_authored, record_answer, rpx_token, show, show_by_key, and update_indexes):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 09:05:48) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/accounts/o8/id?id=AItOawnpmDf5QToZ19rH88JKkxvekvh3Ve9HAmA') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "key", "nb_quiz_instances", "nb_authored_backgrounds", "identifier", "created_at") VALUES(0, '2009-08-18 07:05:50', 'cpatte', 'cpatte', 'cpatte@gmail.com', 0, 'https://www.google.com/accounts/o8/id?id=AItOawnpmDf5QToZ19rH88JKkxvekvh3Ve9HAmA', NULL, 0, 0, NULL, '2009-08-18 07:05:50')[0m
+Redirected to http://localhost:3001/
+Completed in 1747ms (DB: 1) | 302 Found [http://localhost/rpx_token_sessions_url?token=e82d50111485575978f01acc8316889e50979c20]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 09:05:50) [GET]
+  [4;36;1mKnowledge Load (1.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 141ms (View: 132, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#rpx_token_sessions_url (for 127.0.0.1 at 2009-08-18 09:07:26) [GET]
+  Parameters: {"token"=>"e82d50111485575978f01acc8316889e50979c20"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/accounts/o8/id?id=AItOawnpmDf5QToZ19rH88JKkxvekvh3Ve9HAmA') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 1019ms (DB: 0) | 302 Found [http://localhost/rpx_token_sessions_url?token=e82d50111485575978f01acc8316889e50979c20]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 09:07:27) [GET]
+  [4;36;1mKnowledge Load (1.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+
+ActionView::TemplateError (undefined method `rpx_username' for #<Pikizi::User:0x245be04>) on line #23 of app/views/layouts/application.html.erb:
+20:    <%= link_to "Knowledge bases", "/knowledges" %>
+21:   &nbsp;|&nbsp;
+22:    <%= link_to "Users", "/users" %>
+23:   &nbsp;|&nbsp;user=<%= controller.get_logged_pkz_user.rpx_username if controller.get_logged_pkz_user %>
+24: </div>
+25: 
+26: 
+
+    app/views/layouts/application.html.erb:23
+    app/controllers/knowledges_controller.rb:8:in `index'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (54.8ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)

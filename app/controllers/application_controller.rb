@@ -15,12 +15,15 @@ class ApplicationController < ActionController::Base
   before_filter :user_authorized, :except => ['login']
 
 
-  # get the current logged user
+  # get the current logged user, the xml object
   def get_logged_pkz_user()
     if session[:logged_user_id]
-      @current_user ||= Pikizi::User.create_from_xml("U#{session[:logged_user_id]}")
+      @current_pkz_user ||= Pikizi::User.create_from_xml("U#{session[:logged_user_id]}")
     end
   end
+
+  # get the current logged user, the active record object
+  def get_logged_ar_user() @current_ar_user ||= User.find(session[:logged_user_id]) end
 
   # save all objects in cache...
   def flush_caches
@@ -28,12 +31,14 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
   private
 
   def user_authorized
-    if ENV['RAILS_ENV']=="production"
+    #if ENV['RAILS_ENV']=="production"
+    if get_logged_ar_user
+      # there is an existing logged user
+      render 'users/access_restricted' unless get_logged_ar_user.is_authorized?
+    else
       # render 'users/access_restricted'
       render 'users/login'
     end

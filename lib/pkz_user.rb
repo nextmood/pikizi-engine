@@ -10,7 +10,6 @@ class User < Root
   attr_accessor :key, :reputation, :quiz_instances, :authored_values, :authored_backgrounds , :authored_opinions
 
   
-  
   def initialize_from_xml(xml_node)
     super(xml_node)
     self.reputation =  Float(xml_node['reputation'] || 1.0)
@@ -18,8 +17,8 @@ class User < Root
     self.authored_values = Root.get_collection_from_xml(xml_node, 'authored/value') { |node_authored_value| Value.create_from_xml(node_authored_value) }
     self.authored_opinions = Root.get_collection_from_xml(xml_node, 'authored/opinion') { |node_authored_opinion| Opinion.create_from_xml(node_authored_opinion) }
     self.authored_backgrounds = Root.get_collection_from_xml(xml_node, 'authored/background') { |node_authored_background| Background.create_from_xml(node_authored_background) }
-
   end
+
 
   def generate_xml(top_node)
     node_user = super(top_node)
