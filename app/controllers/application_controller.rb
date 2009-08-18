@@ -39,6 +39,8 @@ class ApplicationController < ActionController::Base
   private
 
   def user_authorized
+    puts "***********user_authorized session=#{session.inspect}"
+    
     #if ENV['RAILS_ENV']=="production"
     if get_logged_ar_user
       # there is an existing logged user

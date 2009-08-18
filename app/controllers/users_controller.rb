@@ -83,7 +83,10 @@ class UsersController < ApplicationController
                                 :rpx_name => rpx_data[:name],
                                 :rpx_username => rpx_data[:username],
                                 :rpx_email => rpx_data[:email])
+    puts "*********** create the logged user key=#{logged_user.id}"
     session[:logged_user_id] = logged_user.id
+    puts "*********** session=#{session.inspect}"
+
     # self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
     redirect_to '/'
   end
