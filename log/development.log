@@ -5426,3 +5426,13 @@ Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:57:43) [GET]
 Rendering template within layouts/application
 Rendering users/login
 Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-18 09:00:41) [GET]
+  Parameters: {"token"=>"eb6f33cc67c35b5bd0dd508a3e45e0fccccf27c6"}
+
+ActionController::RoutingError (No route matches "/token_rpx" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
