@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
   # get the current logged user, the active record object
   def get_logged_ar_user()
     if session[:logged_user_id]
+      puts "******* looking for ar user=#{session[:logged_user_id]}"
       @current_ar_user ||= User.find(session[:logged_user_id])
     end
   end
