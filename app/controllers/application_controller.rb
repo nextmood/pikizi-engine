@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :user_authorized
+  before_filter :user_authorized, :except => ['login']
 
 
   # get the current logged user
@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
 
   def user_authorized
     if ENV['RAILS_ENV']=="production"
-      render 'users/access_restricted'
+      # render 'users/access_restricted'
+      render 'users/login'
     end
   end
 

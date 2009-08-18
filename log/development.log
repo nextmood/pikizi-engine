@@ -5341,3 +5341,63 @@ Processing UsersController#login (for 127.0.0.1 at 2009-08-18 00:52:57) [GET]
 Rendering template within layouts/application
 Rendering users/login
 Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 01:22:39) [GET]
+  [4;36;1mKnowledge Load (1.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 146ms (View: 136, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 01:22:48) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:08:47) [GET]
+  [4;36;1mKnowledge Load (120.2ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 204ms (View: 75, DB: 120) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:09:29) [GET]
+  [4;36;1mKnowledge Load (1.5ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 86ms (View: 75, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:09:45) [GET]
+  [4;35;1mKnowledge Load (1.4ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:11:08) [GET]
+  [4;36;1mKnowledge Load (1.4ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 81ms (View: 71, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:11:14) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-18 08:13:41) [GET]
+  [4;36;1mKnowledge Load (1.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 83ms (View: 73, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-18 08:13:47) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
