@@ -5637,3 +5637,1107 @@ Processing UsersController#login (for 127.0.0.1 at 2009-08-18 19:45:55) [GET]
 Rendering template within layouts/application
 Rendering users/login
 Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-19 10:29:42) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 73ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:29:42) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:29:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:29:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:32:53) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 92ms (View: 90, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:32:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/gene/css/global.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/gene/css/global.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:34:14) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:34:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:34:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:35:33) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:35:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:35:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:35:52) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:35:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:35:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:36:53) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:36:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:36:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:40:10) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:40:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:40:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/geene/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:40:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/geene/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:40:41) [GET]
+
+ActionController::RoutingError (No route matches "/public/stylesheets/geene/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-19 10:48:35) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:48:35) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:48:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:54:58) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:54:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:54:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:54:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:55:40) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:55:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:55:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:55:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:56:09) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:56:12) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:56:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/twitTxt.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/faceBkTxt.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/iphone3GS.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconCart.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconSrch.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconHrt.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconX.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconFace.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/iconTwit.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952edge.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/ansStripe.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/orangeCorner.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick1.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/stars.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick2.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 10:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick3.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:00:02) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 32ms (View: 30, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/orangeCorner.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952edge.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/ansStripe.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick1.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/stars.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick2.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:00:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick3.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:01:54) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:01:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/global.css" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:02:09) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952edge.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/ansStripe.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/orangeCorner.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick1.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/stars.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick2.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick3.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 26ms (View: 24, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952edge.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/ansStripe.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/orangeCorner.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick1.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/stars.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick2.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick3.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:03:48) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Top.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_search_box.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952Btm.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/box952edge.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/orangeCorner.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/ansStripe.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick1.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/stars.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick2.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/topPick3.jpg" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:06:23) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:07:32) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:08:08) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:08:23) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:09:46) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:09:59) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 36ms (View: 30, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:10:35) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 55ms (View: 49, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:12:05) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:12:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-19 11:12:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:12:33) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 83ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:14:09) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:14:54) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:15:36) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:15:58) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:16:08) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:16:16) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:16:37) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-08-19 11:17:49) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/login]

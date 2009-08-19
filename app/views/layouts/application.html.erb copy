@@ -12,7 +12,7 @@
   <%= stylesheet_link_tag "lightwindow.css" %>
   <%= stylesheet_link_tag "pkz_style" %>
   <%= stylesheet_link_tag "geene" %>
-
+  
 </head>
 
 <body>
@@ -32,7 +32,7 @@
               <% if controller.get_logged_ar_user %>
                 welcome <%= controller.get_logged_ar_user.rpx_username %><%= link_to "logout", "/logout" %>
               <% else %>
-                <%= link_to "not logged", "/login" %>
+                not logged
               <% end %>
             </li>
         </ul>
@@ -45,7 +45,7 @@
     	</div>
     </div>
 
-    <div id="main"><div class="box952"><%= yield %></div></div>
+    <div id="main"><%= yield %></div>
 
     <div id="footer">
         <ul>
