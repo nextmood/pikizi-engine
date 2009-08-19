@@ -11,23 +11,24 @@
 
   <%= stylesheet_link_tag "lightwindow.css" %>
   <%= stylesheet_link_tag "pkz_style" %>
-  <%= stylesheet_link_tag "geene" %>
+  <%= stylesheet_link_tag "gene" %>
 
 </head>
 
-<body>
+<body id="<%= compute_body_id("#{controller_name}/#{action_name}") %>">
+
 
 <p style="color: green"><%= flash[:notice] %></p>
 
 <div id="wrapper">
 	<div id="header">
-    	<a href="index.html"><img src="/images/geene/logo.png" /></a>
+    	<a href="index.html"><img src="/images/gene/logo.png" /></a>
         <ul>
-        	<li><a href="index.html">home</a></li>
+        	<li><a href="/">home</a></li>
             <li><a href="#">advisors</a></li>
-            <li><a href="products.html">products</a></li>
-            <li><a href="results.html">results</a></li>
-
+            <li><a href="/test_results">results</a></li>
+            <li><a href="/test_products">products</a></li>
+            <li><a href="/knowledges">admin</a></li>
             <li class="last">
               <% if controller.get_logged_ar_user %>
                 welcome <%= controller.get_logged_ar_user.rpx_username %><%= link_to "logout", "/logout" %>
@@ -40,12 +41,12 @@
         <div id="search_box">
         <form id="search_form" method="post" action="/">
         	<input type="text" id="s" value="search products and advisors" class="swap_value" />
-        	<input type="image" src="/images/geene/trns.gif" width="22" height="22" id="go" alt="Search" title="Search" />
+        	<input type="image" src="/images/gene/trns.gif" width="22" height="22" id="go" alt="Search" title="Search" />
         </form>
     	</div>
     </div>
 
-    <div id="main"><div class="box952"><%= yield %></div></div>
+    <%= yield %>
 
     <div id="footer">
         <ul>

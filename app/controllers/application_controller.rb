@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
       redirect_to '/access_restricted' unless get_logged_ar_user.is_authorized?
     else
       # render 'users/access_restricted'
-      redirect_to '/login'
+      redirect_to '/login' if ENV['RAILS_ENV']=="production"
     end
   end
 
