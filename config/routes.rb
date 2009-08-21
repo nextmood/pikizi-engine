@@ -14,7 +14,15 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/questions/:knowledge_key', :controller => 'knowledges', :action => 'show_questions'
 
   map.connect '/test_results', :controller => 'home', :action => 'test_results'
-  map.connect '/test_products', :controller => 'home', :action => 'test_products'
+  map.connect '/test_products_search', :controller => 'home', :action => 'test_products_search'
+  map.connect '/test_quizz', :controller => 'home', :action => 'test_quizz'
+  map.connect '/test_product_alone', :controller => 'home', :action => 'test_product_alone'
+  map.connect '/test_product_results', :controller => 'home', :action => 'test_product_results'
+  map.connect '/test_box', :controller => 'home', :action => 'test_box'
+
+
+  
+  map.connect '/test_products', :controller => 'home', :action => 'test_products_search'
 
   map.connect '/quiz/:knowledge_key/:quiz_key', :controller => 'knowledges', :action => 'quiz'
   map.connect '/quiz/:knowledge_key', :controller => 'knowledges', :action => 'quiz'

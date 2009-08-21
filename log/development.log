@@ -1231,3 +1231,290 @@ Processing HomeController#test_results (for ::1 at 2009-08-19 17:01:17) [GET]
 Rendering template within layouts/application
 Rendering home/test_results
 Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#index (for ::1 at 2009-08-21 11:25:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 62ms (View: 58, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 11:25:31) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 11:25:46) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 11:27:51) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 37ms (View: 34, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 11:28:49) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-21 11:28:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-21 11:28:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 11:29:08) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 11:40:34) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 11:40:37) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-21 11:41:10) [GET]
+
+ActionController::RoutingError (No route matches "/test_quizz" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:58:54) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#index (for ::1 at 2009-08-21 11:58:58) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:58:59) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#index (for ::1 at 2009-08-21 11:59:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:59:04) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 12:08:59) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_quizz (for ::1 at 2009-08-21 12:09:01) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 12:09:03) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 12:09:05) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 12:09:06) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 85ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 12:09:07) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#index (for ::1 at 2009-08-21 12:09:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for ::1 at 2009-08-21 12:09:17) [GET]
+  [4;36;1mKnowledge Load (47.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 200ms (View: 142, DB: 48) | 200 OK [http://localhost/knowledges]
+
+
+Processing HomeController#test_box (for ::1 at 2009-08-21 12:13:48) [GET]
+Rendering template within layouts/application
+Rendering home/test_box
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/test_box]
+
+
+Processing HomeController#test_box (for ::1 at 2009-08-21 12:14:13) [GET]
+Rendering template within layouts/application
+Rendering home/test_box
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
+
+
+Processing HomeController#test_box (for ::1 at 2009-08-21 12:14:57) [GET]
+Rendering template within layouts/application
+Rendering home/test_box
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
+
+
+Processing HomeController#test_box (for ::1 at 2009-08-21 12:15:08) [GET]
+Rendering template within layouts/application
+Rendering home/test_box
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
+
+
+Processing HomeController#test_box (for ::1 at 2009-08-21 12:26:25) [GET]
+Rendering template within layouts/application
+Rendering home/test_box
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_box]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 12:27:11) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 12:27:37) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_products (for ::1 at 2009-08-21 12:28:27) [GET]
+Rendering template within layouts/application
+Rendering home/test_products
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_results (for ::1 at 2009-08-21 12:29:06) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_quizz (for ::1 at 2009-08-21 12:29:37) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_product_alone (for ::1 at 2009-08-21 12:30:06) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_alone
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/test_product_alone]
+
+
+Processing HomeController#test_page_results (for ::1 at 2009-08-21 12:30:44) [GET]
+Rendering template within layouts/application
+Rendering home/test_page_results
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/test_page_results]
+
+
+Processing HomeController#test_product_results (for ::1 at 2009-08-21 12:31:03) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_results
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/test_product_results]
+
+
+Processing HomeController#test_product_results (for ::1 at 2009-08-21 12:35:54) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_results]
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-21 12:36:03) [GET]
+
+ActionController::RoutingError (No route matches "/test_products_results" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
