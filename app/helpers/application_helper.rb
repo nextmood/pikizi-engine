@@ -12,8 +12,7 @@ module ApplicationHelper
       when "home/test_box" then "products"   # global box   ko (inside)
       when "home/test_quizz" then "quizz"   # quiz  #number of answer wrong position
       when "home/test_product_alone" then "prodResults"  # ok   the product/show
-      when "home/test_product_results" then "home"   # one product / result
-
+      when "home/test_product_page_results" then   "prodResults"  # one product / results
 
       
       else  controller_action_name

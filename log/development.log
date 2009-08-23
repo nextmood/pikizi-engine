@@ -1991,3 +1991,235 @@ Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:30:17) [G
 Rendering template within layouts/application
 Rendering home/test_results
 Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-23 17:32:52) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 50ms (View: 48, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:32:57) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:33:45) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:01) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:16) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:18) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:22) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:30) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:31) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:34) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:35) [GET]
+Rendering template within layouts/application
+Rendering home/test_quizz
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:46) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 17:34:50) [GET]
+Rendering template within layouts/application
+Rendering home/test_products_search
+Completed in 56ms (View: 54, DB: 0) | 200 OK [http://localhost/test_products]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:35:04) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:36:06) [GET]
+Rendering template within layouts/application
+Rendering home/test_results
+Completed in 27ms (View: 24, DB: 0) | 200 OK [http://localhost/test_results]
+
+
+Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_page_results
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/test_product_page_results]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:37:42) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_page_results
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/test_product_page_results]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:37:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:37:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Sun Aug 23 17:39:32 +0200 2009
+  Status: 500 Internal Server Error
+  /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:15: syntax error, unexpected tIDENTIFIER, expecting kEND
+...lts" then   "prodResults"  one product / results
+                              ^
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:22: syntax error, unexpected kEND, expecting $end
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
+    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/application_controller.rb:7
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
+    -e:1:in `load'
+    -e:1
+
+
+Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
+Rendering template within layouts/application
+Rendering home/test_product_page_results
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_page_results]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
