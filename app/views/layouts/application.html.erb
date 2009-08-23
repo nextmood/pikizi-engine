@@ -32,7 +32,7 @@
             <li><a href="/test_quizz">advisors</a></li>
             <li><a href="/test_results">results</a></li>
             <li><a href="/test_products">products</a></li>
-            <li><a href="/knowledges">admin</a></li>
+            <!-- <li><a href="/knowledges">admin</a></li> -->
             <li class="last">
               <% if controller.get_logged_ar_user %>
                 welcome <%= controller.get_logged_ar_user.rpx_username %><%= link_to "logout", "/logout" %>
@@ -44,10 +44,10 @@
         </ul>
 
         <div id="search_box">
-        <form id="search_form" method="post" action="/test_products_search">
-        	<input type="text" id="s" value="search products and advisors" class="swap_value" />
+          <% form_tag '/test_products_search', :id => "search_form" do -%>
+              <input type="text" id="s" value="search products and advisors" class="swap_value" />
         	<input type="image" src="/images/gene/trns.gif" width="22" height="22" id="go" alt="Search" title="Search">
-        </form>
+          <% end -%>
     	</div>
     </div>
     <%= yield %>

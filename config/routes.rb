@@ -22,7 +22,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/test_product_page_results', :controller => 'home', :action => 'test_product_page_results'
 
   
-  map.connect '/test_products', :controller => 'home', :action => 'test_products_search'
 
   map.connect '/quiz/:knowledge_key/:quiz_key', :controller => 'knowledges', :action => 'quiz'
   map.connect '/quiz/:knowledge_key', :controller => 'knowledges', :action => 'quiz'
