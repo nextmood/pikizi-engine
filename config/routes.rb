@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/test_product_alone', :controller => 'home', :action => 'test_product_alone'
   map.connect '/test_product_results', :controller => 'home', :action => 'test_product_results'
   map.connect '/test_box', :controller => 'home', :action => 'test_box'
-
+  map.connect '/test_product_page_results', :controller => 'home', :action => 'test_product_page_results'
 
   
   map.connect '/test_products', :controller => 'home', :action => 'test_products_search'

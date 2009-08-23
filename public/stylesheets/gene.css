@@ -95,6 +95,8 @@ body#products .boxLwr ul.last {border-bottom:none;}
 
 
 body#products ul.star-rating{background:url(/images/gene/stars.jpg) left bottom;position:relative;width:45px;height:8px;overflow:hidden;margin:0 0 5px 0;padding:0;border-bottom:none;clear:none;float:none;}
+/*IE7*/
+*:first-child+html body#products ul.star-rating{background-position-y:8px;}
 body#products ul.star-rating li.current-rating{
 	background: url(/images/gene/stars.jpg) left top;
 	position: absolute;
@@ -159,14 +161,22 @@ body#products .adResults ul.advisors li a {display:block;width:66px;margin:0 aut
 .box952 ul li.details td.lft{text-align:left;}
 .box952 ul li.details td.blue{color:#00c0ff;}
 
-.box952 ul li div.count  {color:#ffffff; background-color:#FF8A00;padding:5px;width:auto;display:inline;font-weight:bold;font-size:24px;}
+.box952 ul li div.count  {color:#ffffff; background-color:#FF8A00;padding:0 10px;width:auto;display:inline;font-weight:bold;font-size:24px;}
 .box952 ul li.fit{margin:-10px 0 0 0;}
 .box952 ul li.fit table {margin:0;}
 .box952 ul li.fit td {text-align:left;padding:0 30px 0 0; color:#6e6e6e;}
-.box952 ul li.fit td.header {vertical-align:bottom;color:#FF8A00; font-size:16px;font-weight:bold;}
-.box952 ul li.fit td.countr {vertical-align:top;padding:8px 0;}
-.box952 ul li.fit td.bar {width:118px;height:6px;background-color:#e3e3e3;}
-.box952 ul li.fit td.grn {color:#afdb75;font-size:12px;padding:0 0 0 10px;}
+.box952 ul li.fit td.header {vertical-align:bottom;color:#FF8A00; font-size:16px;font-weight:bold;padding-top:21px;}
+.box952 ul li.fit td.countr {vertical-align:top;padding-top:8px;}
+
+td.lft ul.star-rating{background: url(/images/gene/starsBg.png) left bottom;position:relative;width:70px;height:13px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
+/*IE7*/
+*:first-child+html td.lft ul.star-rating {background-position-y:13px;}
+
+td.lft ul.star-rating li.current-rating{background: url(/images/gene/starsBg.png) left top;position: absolute;height:14px;display: block;text-indent: -1000px;z-index: 1;}
+td.bar ul.star-rating{background: url(/images/gene/greenBar.png) left top;position:relative;width:120px;height:6px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
+td.bar ul.star-rating li.current-rating{background: url(/images/gene/greenBar.png) left bottom;position: absolute;height:6px;display: block;text-indent: -1000px;z-index: 1;}
+
+.box952 ul li.fit td.grn {color:#afdb75;font-size:14px;padding:0 0 0 10px;font-weight:bold;}
 
 .box952 ul.icons {background:none;margin:20px 0 10px 0;padding:0;border-bottom:none;width:200px;}
 .box952 ul.icons li{float:left;width:auto;padding:0 10px 0 0;}
@@ -228,10 +238,12 @@ body#prodResults .box952 ul.one li.details {background:url(/images/gene/topPick1
 body#prodResults .box952 ul li.fit {margin:-20px 0 0;}
 body#prodResults .box952 ul.one li.details td.lft {padding:0 0 0 10px;}
 
-body#prodResults ul.star-rating{background: url(/images/gene/starsBg.png) left bottom;position:relative;width:70px;height:13px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
-body#prodResults ul.star-rating li.current-rating{background: url(/images/gene/starsBg.png) left top;position: absolute;height:14px;display: block;text-indent: -1000px;z-index: 1;}
+body#prodResults .box952 ul li.fit td {padding-right:10px;}
 
-body#prodResults .box952 ul.buy {float:right;border-bottom:none;background:none;width:517px;border-top:2px dotted #c4c3c3;padding:20px;margin:-60px 0 0 0;}
+body#prodResults .box952 ul.buy {float:right;border-bottom:none;background:none;width:517px;border-top:2px dotted #c4c3c3;padding:20px;margin:-75px 0 0 0;}
+/*IE7*/
+*:first-child+html body#prodResults .box952 ul.buy {margin:-55px 0 0 0;}
+
 body#prodResults .box952 ul.buy li{float:left;width:250px}
 body#prodResults .box952 ul.buy li td {color:#6E6E6E;}
 body#prodResults .box952 ul.buy li .src {padding:0 40px 0 0;}
@@ -247,9 +259,14 @@ body#prodResults .boxLwr ul.tabs li a:hover, body#prodResults .boxLwr ul.tabs li
 body#prodResults .boxLwr ul.tabs li a.overview {float:left;text-align:center;background:url(/images/gene/tabReg1.png) no-repeat left bottom;width:111px;height:19px;padding:26px 20px 20px 20px;margin:0 0 0 -8px;color:#FF8A00;font-size:17px;font-weight:bold;}
 body#prodResults .boxLwr ul.tabs li a.last {float:left;text-align:center;background:url(/images/gene/tabRegLast.png) no-repeat left bottom;width:101px;height:19px;padding:26px 20px 20px 20px;color:#FF8A00;font-size:17px;font-weight:bold;}
 
-
 body#prodResults #footer {background:transparent url(/images/gene/box952Btm.png) no-repeat scroll left top;padding:28px 0 0;}
 
+.box952 ul.gallery{background:none;border-bottom:none;width:258px;float;left;margin:0 0 0 40px;padding:0;}
+/*IE7*/
+*:first-child+html .box952 ul.gallery{margin:20px 0 0 40px;}
+.box952 ul.gallery li {float:left;width:auto;}
+.box952 ul.gallery li img{width:51px;height:38px;border:1px solid #d0d0d0;margin:0 5px;}
+.box952 ul.gallery li.gallRd img, .box952 ul.gallery li.gallFd img {width:22px;border:none;margin:0;}
 
 
 /********************** PRODUCT ALONE [same template at PRODUCT RESULTS **********************/
