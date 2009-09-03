@@ -21,19 +21,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="20" selection-start="1557" selection-end="1573" vertical-scroll-proportion="0.0">
+            <state line="54" column="20" selection-start="1557" selection-end="1573" vertical-scroll-proportion="0.64658636">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="access_restricted.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="access_restricted.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/access_restricted.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="29" selection-start="50" selection-end="50" vertical-scroll-proportion="0.050104383">
+            <state line="2" column="29" selection-start="50" selection-end="50" vertical-scroll-proportion="-1.2631578">
               <folding />
             </state>
           </provider>
@@ -60,7 +60,16 @@
       <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="20" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0">
+            <state line="86" column="33" selection-start="2811" selection-end="2811" vertical-scroll-proportion="-9.384615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="90" selection-start="1843" selection-end="1860" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -882,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="33" selection-start="1786" selection-end="1803" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_by_key.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="26" selection-start="1159" selection-end="1181" vertical-scroll-proportion="-17.052631">
@@ -910,23 +912,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/access_restricted.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="29" selection-start="50" selection-end="50" vertical-scroll-proportion="-1.2631578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="90" selection-start="1843" selection-end="1860" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0">
+        <state line="86" column="33" selection-start="2811" selection-end="2811" vertical-scroll-proportion="-9.384615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="20" selection-start="1557" selection-end="1573" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/access_restricted.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="50" selection-end="50" vertical-scroll-proportion="0.050104383">
+        <state line="54" column="20" selection-start="1557" selection-end="1573" vertical-scroll-proportion="0.64658636">
           <folding />
         </state>
       </provider>

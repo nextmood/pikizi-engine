@@ -54,6 +54,10 @@ class UsersController < ApplicationController
     redirect_to(@user)
   end
 
+  def access_restricted
+
+  end
+
   # GET /users/update_indexes
   # update the user database
   def update_indexes
@@ -78,9 +82,9 @@ class UsersController < ApplicationController
     raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
     logged_user = User.find(:first, :conditions => ["rpx_identifier=?", rpx_data[:identifier]])
     logged_user ||= User.create_from_key(rpx_data)
+    session[:logged_user_id] = logged_user.id
 
-    if logged_user.is_authorized?
-      session[:logged_user_id] = logged_user.id
+    if logged_user.is_authorized?    
       redirect_to '/'
     else
       redirect_to "/access_restricted"
