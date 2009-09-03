@@ -1,2566 +1,1150 @@
 
 
-Processing HomeController#index (for ::1 at 2009-08-19 16:17:22) [GET]
+Processing HomeController#index (for 127.0.0.1 at 2009-09-02 19:59:02) [GET]
 Rendering template within layouts/application
 Rendering home/index
-Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+Completed in 81ms (View: 17, DB: 0) | 200 OK [http://localhost/]
 
 
-Processing HomeController#index (for ::1 at 2009-08-19 16:18:54) [GET]
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-09-02 19:59:07) [GET]
+  [4;36;1mKnowledge Load (183.2ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
 Rendering template within layouts/application
-Rendering home/index
-ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:23: syntax error, unexpected kEND, expecting ')'
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-   ^
-Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
-            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n  <title>Pikizi Engine "
+Rendering knowledges/index
+Completed in 1043ms (View: 850, DB: 183) | 200 OK [http://localhost/knowledges]
 
 
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-02 19:59:15) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 294.04ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 310ms (View: 13, DB: 0) | 200 OK [http://localhost/show/cell_phones]
 
 
-
-; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n\n  "
-
-; @output_buffer.concat(( javascript_include_tag :defaults ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( javascript_include_tag "lightwindow.js" ).to_s); @output_buffer.concat "\n\n  "
-
-; @output_buffer.concat(( stylesheet_link_tag "lightwindow.css" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "pkz_style" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "gene" ).to_s); @output_buffer.concat "\n\n</head>\n\n<body id=\"home\">\n"
-
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-02 19:59:20) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_n96"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 428.02ms): Pnokia_n96
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 449ms (View: 18, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_n96]
 
 
+Processing KnowledgesController#show_questions (for 127.0.0.1 at 2009-09-02 19:59:30) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 451.24ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 490.91ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 379.14ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 486.93ms): Pnokia_e75
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 484.57ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 503.05ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 252.87ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 500.36ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 485.84ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 497.39ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 547.49ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 487.79ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 510.92ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 511.65ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 538.33ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 531.05ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 532.80ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 244.25ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 506.06ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 555.28ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 537.40ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 533.86ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 274.01ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 533.58ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 544.36ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 432.20ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 281.12ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 553.00ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 482.73ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 522.03ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 518.41ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 280.30ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 503.87ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 555.00ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 563.54ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 586.20ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 597.77ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 314.54ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 532.64ms): Psony_ericsson_w508
+Rendering template within layouts/application
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (3.8ms)
+Rendered knowledges/_show_question (1.5ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.0ms)
+Rendered knowledges/_show_question (2.2ms)
+Rendered knowledges/_show_question (3.3ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (2.2ms)
+Rendered knowledges/_show_question (2.3ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Completed in 18710ms (View: 54, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
 
-; @output_buffer.concat(( case "#{controller_name}/#{action_name}"
-    when "home/index" then "home"
-    else "#{controller_name}/#{action_name}"
-    end
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
 
-; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n\n<div id=\"wrapper\">\n\t<div id=\"header\">\n    \t<a href=\"index.html\"><img src=\"/images/gene/logo.png\" /></a>\n        <ul>\n        \t<li><a href=\"index.html\">home</a></li>\n            <li><a href=\"#\">advisors</a></li>\n            <li><a href=\"/knowledges\">knowledges</a></li>\n            <li><a href=\"/users\">users</a></li>\n\n            <li class=\"last\">\n              "
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-02 19:59:54) [GET]
+  Parameters: {"question_key"=>"q1_do_you_have_a_favorite_brand", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
 
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.label) on line #3 of app/views/knowledges/show_question.html.erb:
+1: <div class="pkz_box">
+2:     <div class="pkz_menu">
+3:       <%= @question.label %>
+4:       <small> in <%= link_to "questions", "/questions/#{@knowledge.key}"%> of knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
+5:     </div>
+6:     <div class="pkz_main">
 
-
-
-
-
-
-
-
-
-
-;  if controller.get_logged_ar_user ; @output_buffer.concat "\n                welcome "
-; @output_buffer.concat(( controller.get_logged_ar_user.rpx_username ).to_s); @output_buffer.concat(( link_to "logout", "/logout" ).to_s); @output_buffer.concat "\n              "
-;  else ; @output_buffer.concat "\n                "
-; @output_buffer.concat(( link_to "not logged", "/login" ).to_s); @output_buffer.concat "\n              "
-;  end ; @output_buffer.concat "\n            </li>\n        </ul>\n\n        <div id=\"search_box\">\n        <form id=\"search_form\" method=\"post\" action=\"/\">\n        \t<input type=\"text\" id=\"s\" value=\"search products and advisors\" class=\"swap_value\" />\n        \t<input type=\"image\" src=\"/images/gene/trns.gif\" width=\"22\" height=\"22\" id=\"go\" alt=\"Search\" title=\"Search\" />\n        </form>\n    \t</div>\n    </div>\n\n    "
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n\n    <div id=\"footer\">\n        <ul>\n\n            <li><a href=\"#\">about</a></li>\n            <li><a href=\"#\">news</a></li>\n            <li><a href=\"#\">contact</a></li>\n            <li class=\"copyRight\">&copy;2009 pikizi</li>\n        </ul>\n    </div>\n</div>\n\n\n</body>\n</html>\n"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer
-          ensure
-            self.output_buffer = old_output_buffer
-          end
-Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:72:in `compile!'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
--e:1:in `load'
--e:1
-
-ActionView::TemplateError (compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:23: syntax error, unexpected kEND, expecting ')'
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-   ^) on line #23 of app/views/layouts/application.html.erb:
-20:     when "home/index" then "home"
-21:     else "#{controller_name}/#{action_name}"
-22:     end
-23: end %>
-24: 
-25: <p style="color: green"><%= flash[:notice] %></p>
-26: 
-
-    app/views/layouts/application.html.erb:72:in `compile!'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    app/views/knowledges/show_question.html.erb:3
     -e:1:in `load'
     -e:1
 
-Rendered rescues/_trace (51.6ms)
-Rendered rescues/_request_and_response (1.7ms)
+Rendered rescues/_trace (56.1ms)
+Rendered rescues/_request_and_response (1.9ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing HomeController#index (for ::1 at 2009-08-19 16:19:22) [GET]
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-02 20:00:25) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
 Rendering template within layouts/application
-Rendering home/index
-ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:20: syntax error, unexpected kWHEN, expecting ')'
-        when "home/index" then "home"
-            ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:20: syntax error, unexpected kTHEN, expecting ')'
-        when "home/index" then "home"
-                              ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:21: syntax error, unexpected kELSE, expecting ')'
-        else "#{controller_name}/#{action_name}"
-            ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:22: syntax error, unexpected kEND, expecting ')'
-Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
-            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n  <title>Pikizi Engine "
+Rendering knowledges/show_by_key
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/show/cell_phones]
 
 
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-02 20:00:28) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
 
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.get_quiz_instance):
+  app/controllers/knowledges_controller.rb:40:in `quiz'
+  -e:1:in `load'
+  -e:1
 
-
-; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n\n  "
-
-; @output_buffer.concat(( javascript_include_tag :defaults ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( javascript_include_tag "lightwindow.js" ).to_s); @output_buffer.concat "\n\n  "
-
-; @output_buffer.concat(( stylesheet_link_tag "lightwindow.css" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "pkz_style" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "gene" ).to_s); @output_buffer.concat "\n\n</head>\n\n<body id=\"home\">\n"
-
-
-
-
-; @output_buffer.concat(( switch "#{controller_name}/#{action_name}"
-        when "home/index" then "home"
-        else "#{controller_name}/#{action_name}"
-    end
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-
-; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n\n<div id=\"wrapper\">\n\t<div id=\"header\">\n    \t<a href=\"index.html\"><img src=\"/images/gene/logo.png\" /></a>\n        <ul>\n        \t<li><a href=\"index.html\">home</a></li>\n            <li><a href=\"#\">advisors</a></li>\n            <li><a href=\"/knowledges\">knowledges</a></li>\n            <li><a href=\"/users\">users</a></li>\n\n            <li class=\"last\">\n              "
-
-
-
-
-
-
-
-
-
-
-
-;  if controller.get_logged_ar_user ; @output_buffer.concat "\n                welcome "
-; @output_buffer.concat(( controller.get_logged_ar_user.rpx_username ).to_s); @output_buffer.concat(( link_to "logout", "/logout" ).to_s); @output_buffer.concat "\n              "
-;  else ; @output_buffer.concat "\n                "
-; @output_buffer.concat(( link_to "not logged", "/login" ).to_s); @output_buffer.concat "\n              "
-;  end ; @output_buffer.concat "\n            </li>\n        </ul>\n\n        <div id=\"search_box\">\n        <form id=\"search_form\" method=\"post\" action=\"/\">\n        \t<input type=\"text\" id=\"s\" value=\"search products and advisors\" class=\"swap_value\" />\n        \t<input type=\"image\" src=\"/images/gene/trns.gif\" width=\"22\" height=\"22\" id=\"go\" alt=\"Search\" title=\"Search\" />\n        </form>\n    \t</div>\n    </div>\n\n    "
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n\n    <div id=\"footer\">\n        <ul>\n\n            <li><a href=\"#\">about</a></li>\n            <li><a href=\"#\">news</a></li>\n            <li><a href=\"#\">contact</a></li>\n            <li class=\"copyRight\">&copy;2009 pikizi</li>\n        </ul>\n    </div>\n</div>\n\n\n</body>\n</html>\n"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer
-          ensure
-            self.output_buffer = old_output_buffer
-          end
-Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:72:in `compile!'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
--e:1:in `load'
--e:1
-
-ActionView::TemplateError (compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:20: syntax error, unexpected kWHEN, expecting ')'
-        when "home/index" then "home"
-            ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:20: syntax error, unexpected kTHEN, expecting ')'
-        when "home/index" then "home"
-                              ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:21: syntax error, unexpected kELSE, expecting ')'
-        else "#{controller_name}/#{action_name}"
-            ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:22: syntax error, unexpected kEND, expecting ')') on line #20 of app/views/layouts/application.html.erb:
-17: 
-18: <body id="home">
-19: <%= switch "#{controller_name}/#{action_name}"
-20:         when "home/index" then "home"
-21:         else "#{controller_name}/#{action_name}"
-22:     end
-23: end %>
-
-    app/views/layouts/application.html.erb:72:in `compile!'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (51.2ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing HomeController#index (for ::1 at 2009-08-19 16:19:42) [GET]
-Rendering template within layouts/application
-Rendering home/index
-ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:24: syntax error, unexpected kEND, expecting ')'
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-   ^
-Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
-            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n  <title>Pikizi Engine "
-
-
-
-
-
-; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n\n  "
-
-; @output_buffer.concat(( javascript_include_tag :defaults ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( javascript_include_tag "lightwindow.js" ).to_s); @output_buffer.concat "\n\n  "
-
-; @output_buffer.concat(( stylesheet_link_tag "lightwindow.css" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "pkz_style" ).to_s); @output_buffer.concat "\n  "
-; @output_buffer.concat(( stylesheet_link_tag "gene" ).to_s); @output_buffer.concat "\n\n</head>\n\n<body id=\"home\">\n"
-
-
-
-
-; @output_buffer.concat(( case "#{controller_name}/#{action_name}"
-        when "home/index" then "home"
-    else
-        "#{controller_name}/#{action_name}"
-    end
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-
-; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n\n<div id=\"wrapper\">\n\t<div id=\"header\">\n    \t<a href=\"index.html\"><img src=\"/images/gene/logo.png\" /></a>\n        <ul>\n        \t<li><a href=\"index.html\">home</a></li>\n            <li><a href=\"#\">advisors</a></li>\n            <li><a href=\"/knowledges\">knowledges</a></li>\n            <li><a href=\"/users\">users</a></li>\n\n            <li class=\"last\">\n              "
-
-
-
-
-
-
-
-
-
-
-
-;  if controller.get_logged_ar_user ; @output_buffer.concat "\n                welcome "
-; @output_buffer.concat(( controller.get_logged_ar_user.rpx_username ).to_s); @output_buffer.concat(( link_to "logout", "/logout" ).to_s); @output_buffer.concat "\n              "
-;  else ; @output_buffer.concat "\n                "
-; @output_buffer.concat(( link_to "not logged", "/login" ).to_s); @output_buffer.concat "\n              "
-;  end ; @output_buffer.concat "\n            </li>\n        </ul>\n\n        <div id=\"search_box\">\n        <form id=\"search_form\" method=\"post\" action=\"/\">\n        \t<input type=\"text\" id=\"s\" value=\"search products and advisors\" class=\"swap_value\" />\n        \t<input type=\"image\" src=\"/images/gene/trns.gif\" width=\"22\" height=\"22\" id=\"go\" alt=\"Search\" title=\"Search\" />\n        </form>\n    \t</div>\n    </div>\n\n    "
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n\n    <div id=\"footer\">\n        <ul>\n\n            <li><a href=\"#\">about</a></li>\n            <li><a href=\"#\">news</a></li>\n            <li><a href=\"#\">contact</a></li>\n            <li class=\"copyRight\">&copy;2009 pikizi</li>\n        </ul>\n    </div>\n</div>\n\n\n</body>\n</html>\n"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; @output_buffer
-          ensure
-            self.output_buffer = old_output_buffer
-          end
-Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:73:in `compile!'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
--e:1:in `load'
--e:1
-
-ActionView::TemplateError (compile error
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/layouts/application.html.erb:24: syntax error, unexpected kEND, expecting ')'
-end ).to_s); @output_buffer.concat "\n\n<p style=\"color: green\">"
-   ^) on line #24 of app/views/layouts/application.html.erb:
-21:     else
-22:         "#{controller_name}/#{action_name}"
-23:     end
-24: end %>
-25: 
-26: <p style="color: green"><%= flash[:notice] %></p>
-27: 
-
-    app/views/layouts/application.html.erb:73:in `compile!'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (52.8ms)
+Rendered rescues/_trace (43.2ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
-/!\ FAILSAFE /!\  Wed Aug 19 16:24:03 +0200 2009
-  Status: 500 Internal Server Error
-  /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:6: syntax error, unexpected tOP_ASGN, expecting '\n' or ';'
-  def <%= case "#{controller_name}/#{action_name}"
-         ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:10: syntax error, unexpected '>'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:18: syntax error, unexpected kEND, expecting $end
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/application_controller.rb:7
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
-    -e:1:in `load'
-    -e:1
-/!\ FAILSAFE /!\  Wed Aug 19 16:24:05 +0200 2009
-  Status: 500 Internal Server Error
-  /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:6: syntax error, unexpected tOP_ASGN, expecting '\n' or ';'
-  def <%= case "#{controller_name}/#{action_name}"
-         ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:10: syntax error, unexpected '>'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:18: syntax error, unexpected kEND, expecting $end
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/application_controller.rb:7
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
-    -e:1:in `load'
-    -e:1
-/!\ FAILSAFE /!\  Wed Aug 19 16:24:17 +0200 2009
-  Status: 500 Internal Server Error
-  /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:6: syntax error, unexpected tOP_ASGN, expecting '\n' or ';'
-  def <%= case "#{controller_name}/#{action_name}"
-         ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:10: syntax error, unexpected '>'
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:18: syntax error, unexpected kEND, expecting $end
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/application_controller.rb:7
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
-    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
-    -e:1:in `load'
-    -e:1
 
 
-Processing HomeController#index (for ::1 at 2009-08-19 16:24:37) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing UsersController#login (for ::1 at 2009-08-19 16:24:47) [GET]
-Rendering template within layouts/application
-Rendering users/login
-Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
-
-
-Processing UsersController#index (for ::1 at 2009-08-19 16:24:51) [GET]
-  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" [0m
-  [4;35;1mKnowledge Load (0.4ms)[0m   [0mSELECT * FROM "knowledges" [0m
-Rendering template within layouts/application
-Rendering users/index
-Completed in 547ms (View: 106, DB: 2) | 200 OK [http://localhost/users]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:24:53) [GET]
-  [4;36;1mKnowledge Load (1.4ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#index (for ::1 at 2009-08-19 16:39:36) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:39:40) [GET]
-  [4;36;1mKnowledge Load (1.9ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 94ms (View: 82, DB: 2) | 200 OK [http://localhost/knowledges]
-
-
-Processing UsersController#index (for ::1 at 2009-08-19 16:39:42) [GET]
-  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
-  [4;36;1mKnowledge Load (0.4ms)[0m   [0;1mSELECT * FROM "knowledges" [0m
-Rendering template within layouts/application
-Rendering users/index
-Completed in 342ms (View: 15, DB: 2) | 200 OK [http://localhost/users]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:39:48) [GET]
-  [4;35;1mKnowledge Load (0.9ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:39:52) [GET]
-  [4;36;1mKnowledge Load (1.0ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:40:58) [GET]
-  [4;35;1mKnowledge Load (1.0ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 137ms (View: 12, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing UsersController#index (for ::1 at 2009-08-19 16:41:14) [GET]
-  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
-  [4;35;1mKnowledge Load (0.5ms)[0m   [0mSELECT * FROM "knowledges" [0m
-Rendering template within layouts/application
-Rendering users/index
-Completed in 325ms (View: 12, DB: 2) | 200 OK [http://localhost/users]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:41:16) [GET]
-  [4;36;1mKnowledge Load (0.9ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:41:24) [GET]
-
-ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:41:46) [GET]
-  [4;35;1mKnowledge Load (0.9ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:42:06) [GET]
-  [4;36;1mKnowledge Load (1.0ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#index (for ::1 at 2009-08-19 16:42:13) [GET]
+Processing HomeController#index (for 127.0.0.1 at 2009-09-02 20:00:40) [GET]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
 
 
-Processing HomeController#index (for ::1 at 2009-08-19 16:48:10) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:48:13) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:14) [GET]
-
-ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:14) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:14) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:48:19) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:48:21) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:21) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:21) [GET]
-
-ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:48:22) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:50:33) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:50:34) [GET]
-
-ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:50:34) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:50:34) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:50:47) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:50:47) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-19 16:50:47) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:51:35) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:52:33) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:53:22) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-19 16:53:35) [GET]
-  [4;36;1mKnowledge Load (1.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 84ms (View: 73, DB: 2) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:53:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:53:38) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 85ms (View: 81, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 16:54:05) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 16:54:07) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 17:00:59) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 47ms (View: 44, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 17:01:07) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-19 17:01:12) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-19 17:01:17) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#index (for ::1 at 2009-08-21 11:25:29) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 62ms (View: 58, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 11:25:31) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 11:25:46) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 11:27:51) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 37ms (View: 34, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 11:28:49) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-21 11:28:49) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1Prod.jpg" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-21 11:28:49) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 11:29:08) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 11:40:34) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 11:40:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-21 11:41:10) [GET]
-
-ActionController::RoutingError (No route matches "/test_quizz" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:58:54) [GET]
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-09-02 20:03:04) [GET]
 Rendering template within layouts/application
 Rendering home/test_quizz
-Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/test_quizz]
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/test_quizz]
 
 
-Processing HomeController#index (for ::1 at 2009-08-21 11:58:58) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:58:59) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#index (for ::1 at 2009-08-21 11:59:03) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for ::1 at 2009-08-21 11:59:04) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 12:08:59) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for ::1 at 2009-08-21 12:09:01) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 12:09:03) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 12:09:05) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 12:09:06) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 85ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 12:09:07) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#index (for ::1 at 2009-08-21 12:09:15) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing KnowledgesController#index (for ::1 at 2009-08-21 12:09:17) [GET]
-  [4;36;1mKnowledge Load (47.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 200ms (View: 142, DB: 48) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#test_box (for ::1 at 2009-08-21 12:13:48) [GET]
-Rendering template within layouts/application
-Rendering home/test_box
-Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/test_box]
-
-
-Processing HomeController#test_box (for ::1 at 2009-08-21 12:14:13) [GET]
-Rendering template within layouts/application
-Rendering home/test_box
-Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
-
-
-Processing HomeController#test_box (for ::1 at 2009-08-21 12:14:57) [GET]
-Rendering template within layouts/application
-Rendering home/test_box
-Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
-
-
-Processing HomeController#test_box (for ::1 at 2009-08-21 12:15:08) [GET]
-Rendering template within layouts/application
-Rendering home/test_box
-Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/test_box]
-
-
-Processing HomeController#test_box (for ::1 at 2009-08-21 12:26:25) [GET]
-Rendering template within layouts/application
-Rendering home/test_box
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_box]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 12:27:11) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 12:27:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products (for ::1 at 2009-08-21 12:28:27) [GET]
-Rendering template within layouts/application
-Rendering home/test_products
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for ::1 at 2009-08-21 12:29:06) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for ::1 at 2009-08-21 12:29:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_product_alone (for ::1 at 2009-08-21 12:30:06) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_alone
-Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/test_product_alone]
-
-
-Processing HomeController#test_page_results (for ::1 at 2009-08-21 12:30:44) [GET]
-Rendering template within layouts/application
-Rendering home/test_page_results
-Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/test_page_results]
-
-
-Processing HomeController#test_product_results (for ::1 at 2009-08-21 12:31:03) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_results
-Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/test_product_results]
-
-
-Processing HomeController#test_product_results (for ::1 at 2009-08-21 12:35:54) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_results]
-
-
-Processing ApplicationController#index (for ::1 at 2009-08-21 12:36:03) [GET]
-
-ActionController::RoutingError (No route matches "/test_products_results" with {:method=>:get}):
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:26:40) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 97ms (View: 23, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:26:51) [GET]
-
-ActionController::RoutingError (No route matches "/test_products_results" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 12:27:05) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 80ms (View: 77, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:27:05) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:27:05) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 12:35:33) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:35:34) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:35:34) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 12:35:42) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 12:35:45) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 12:35:46) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:35:49) [POST]
-  Parameters: {"x"=>"14", "y"=>"10"}
-
-ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (41.3ms)
-Rendered rescues/_request_and_response (1.8ms)
-Rendering rescues/layout (unprocessable_entity)
-
-
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 12:35:56) [GET]
-  [4;36;1mKnowledge Load (3.7ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 289ms (View: 255, DB: 4) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 12:39:53) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:39:54) [GET]
-
-ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:39:54) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 12:40:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:40:56) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:40:59) [GET]
-
-ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:43:35) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:51:54) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:53:01) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/css/global.css" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/trns.gif" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone1.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone2.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/phone3.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 12:53:37) [GET]
-
-ActionController::RoutingError (No route matches "/images/newsPhone1.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:54:23) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:54:31) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:55:45) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:56:20) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:58:18) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 12:58:23) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:00:10) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:00:25) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:00:35) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:01:54) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 13:02:00) [POST]
-  Parameters: {"x"=>"8", "y"=>"10"}
-
-ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (40.3ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (unprocessable_entity)
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 13:02:31) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products_search]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:04:03) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:04:13) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 13:04:14) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 13:05:35) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 13:05:37) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 13:05:39) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 13:05:41) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 13:05:42) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 13:06:45) [GET]
-  [4;35;1mKnowledge Load (1.3ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 13:06:47) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 13:06:50) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 78ms (View: 75, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 13:06:53) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 13:06:55) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 13:06:57) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 16:43:50) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 16:44:05) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 16:44:05) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 16:44:05) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 17:10:51) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:10:54) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:11:03) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:13:45) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 109ms (View: 106, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:13:53) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:14:24) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 64ms (View: 61, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:16:00) [GET]
+Processing HomeController#test_results (for 127.0.0.1 at 2009-09-02 20:03:06) [GET]
 Rendering template within layouts/application
 Rendering home/test_results
 Completed in 26ms (View: 23, DB: 0) | 200 OK [http://localhost/test_results]
 
 
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:30:17) [GET]
+Processing HomeController#test_quizz (for 127.0.0.1 at 2009-09-02 20:03:09) [GET]
 Rendering template within layouts/application
-Rendering home/test_results
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+Rendering home/test_quizz
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
 
 
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 17:32:52) [GET]
+Processing HomeController#index (for 127.0.0.1 at 2009-09-02 20:03:10) [GET]
 Rendering template within layouts/application
 Rendering home/index
-Completed in 50ms (View: 48, DB: 0) | 200 OK [http://localhost/]
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
 
 
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:32:57) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:33:45) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:01) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:16) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:18) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:22) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:30) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:31) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:34) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 17:34:35) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:34:46) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 17:34:50) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 56ms (View: 54, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:35:04) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 17:36:06) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 27ms (View: 24, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:36:09) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:37:42) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:37:43) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:37:43) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-/!\ FAILSAFE /!\  Sun Aug 23 17:39:32 +0200 2009
-  Status: 500 Internal Server Error
-  /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:15: syntax error, unexpected tIDENTIFIER, expecting kEND
-...lts" then   "prodResults"  one product / results
-                              ^
-/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/helpers/application_helper.rb:22: syntax error, unexpected kEND, expecting $end
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/application_controller.rb:7
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
-    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
-    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
-    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
-    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
-    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
-    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
-    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
-    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
-    /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
-    -e:1:in `load'
-    -e:1
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 17:39:41) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 17:41:39) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 18:16:18) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:16:18) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:16:18) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:16:23) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:16:26) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:16:27) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:16:52) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:16:54) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:17:36) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:17:39) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:17:48) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:18:11) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:18:12) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:18:54) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:19:12) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:19:15) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:19:20) [POST]
-  Parameters: {"x"=>"5", "y"=>"6"}
-
-ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (42.4ms)
-Rendered rescues/_request_and_response (1.8ms)
-Rendering rescues/layout (unprocessable_entity)
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:21:48) [GET]
-Rendering template within layouts/application
-Rendering home/index
-Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:21:50) [POST]
-  Parameters: {"x"=>"10", "y"=>"10", "authenticity_token"=>"2vhuOGhywkLVZXNjaGSCWeB26mjco0QJnN7rp2aQyOI="}
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products_search]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:21:55) [POST]
-  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2vhuOGhywkLVZXNjaGSCWeB26mjco0QJnN7rp2aQyOI="}
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products_search]
-
-
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:21:59) [POST]
-  Parameters: {"x"=>"17", "y"=>"15"}
-
-ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (118.4ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (unprocessable_entity)
-
-
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 18:22:13) [GET]
-  [4;36;1mKnowledge Load (24.6ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
-Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 246ms (View: 190, DB: 25) | 200 OK [http://localhost/knowledges]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:22:25) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 18:22:27) [GET]
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-09-02 20:03:12) [GET]
   [4;35;1mKnowledge Load (1.3ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
 Rendering template within layouts/application
 Rendering knowledges/index
-Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
 
 
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:22:28) [GET]
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-02 20:03:15) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
 Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
+Rendering knowledges/show_by_key
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/show/cell_phones]
 
 
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 18:22:30) [GET]
-  [4;36;1mKnowledge Load (1.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-02 20:03:26) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_7205_intrigue"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
 Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
+Rendering knowledges/show_by_key
+Completed in 209ms (View: 205, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_7205_intrigue]
 
 
-Processing KnowledgesController#index (for 127.0.0.1 at 2009-08-23 18:22:58) [GET]
-  [4;35;1mKnowledge Load (10.2ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Processing KnowledgesController#show_questions (for 127.0.0.1 at 2009-09-02 20:03:38) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
 Rendering template within layouts/application
-Rendering knowledges/index
-Completed in 61ms (View: 21, DB: 10) | 200 OK [http://localhost/knowledges]
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (2.9ms)
+Rendered knowledges/_show_question (1.5ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (1.9ms)
+Rendered knowledges/_show_question (2.0ms)
+Rendered knowledges/_show_question (3.4ms)
+Rendered knowledges/_show_question (2.3ms)
+Rendered knowledges/_show_question (2.3ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (2.3ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Completed in 52ms (View: 47, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
 
 
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:23:01) [GET]
+Processing HomeController#index (for ::1 at 2009-09-03 12:21:13) [GET]
 Rendering template within layouts/application
 Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+Completed in 75ms (View: 20, DB: 0) | 200 OK [http://localhost/]
 
 
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:23:05) [GET]
+Processing KnowledgesController#index (for ::1 at 2009-09-03 12:25:20) [GET]
+  [4;36;1mKnowledge Load (33.0ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
 Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+Rendering knowledges/index
+Completed in 211ms (View: 168, DB: 33) | 200 OK [http://localhost/knowledges]
 
 
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:23:06) [GET]
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 12:25:23) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 450.62ms): Mcell_phones
 Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+Rendering knowledges/show_by_key
+Completed in 540ms (View: 14, DB: 0) | 200 OK [http://localhost/show/cell_phones]
 
 
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:23:08) [GET]
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 12:25:27) [GET]
+  Parameters: {"product_key"=>"nokia_n96", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 467.07ms): Pnokia_n96
 Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
+Rendering knowledges/show_by_key
+Completed in 489ms (View: 19, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_n96]
 
 
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 18:23:12) [GET]
+Processing KnowledgesController#show_questions (for ::1 at 2009-09-03 12:25:32) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 551.66ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 571.82ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 453.47ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 559.29ms): Pnokia_e75
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 572.55ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 573.29ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 305.77ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 567.94ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 550.25ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 550.97ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 569.44ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 544.07ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 576.74ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 572.51ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 395.38ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 677.58ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 609.01ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 500.51ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 548.86ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 611.70ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 573.61ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 350.64ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 558.45ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 582.77ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 598.60ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 230.65ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 621.66ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 633.10ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 542.34ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 337.72ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 586.91ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 589.13ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 588.88ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 619.82ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 376.80ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 664.10ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 660.65ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 660.84ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 582.22ms): Psony_ericsson_w508
 Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_page_results]
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (14.2ms)
+Rendered knowledges/_show_question (1.6ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (2.1ms)
+Rendered knowledges/_show_question (2.2ms)
+Rendered knowledges/_show_question (3.7ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.9ms)
+Completed in 21309ms (View: 73, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:23:13) [GET]
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:26:02) [GET]
+  Parameters: {"question_key"=>"q1_do_you_have_a_favorite_brand", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
 
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.label) on line #3 of app/views/knowledges/show_question.html.erb:
+1: <div class="pkz_box">
+2:     <div class="pkz_menu">
+3:       <%= @question.label %>
+4:       <small> in <%= link_to "questions", "/questions/#{@knowledge.key}"%> of knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
+5:     </div>
+6:     <div class="pkz_main">
+
+    app/views/knowledges/show_question.html.erb:3
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (329.8ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:26:43) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.label) on line #3 of app/views/knowledges/show_question.html.erb:
+1: <div class="pkz_box">
+2:     <div class="pkz_menu">
+3:       <%= @question.label %>
+4:       <small> in <%= link_to "questions", "/questions/#{@knowledge.key}"%> of knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
+5:     </div>
+6:     <div class="pkz_main">
+
+    app/views/knowledges/show_question.html.erb:3
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:41:08) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+
+RuntimeError (error):
+  app/controllers/knowledges_controller.rb:27:in `show_question'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
   -e:1:in `load'
   -e:1
 
-Rendering rescues/layout (not_found)
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:23:13) [GET]
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:42:49) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
 
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
+RuntimeError (error {"action"=>"show_question", "controller"=>"knowledges", "question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}):
+  app/controllers/knowledges_controller.rb:27:in `show_question'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
   -e:1:in `load'
   -e:1
 
-Rendering rescues/layout (not_found)
+Rendered rescues/_trace (47.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
 
 
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:23:20) [GET]
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:43:47) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+
+RuntimeError (error Pikizi::Knowledge ):
+  app/controllers/knowledges_controller.rb:29:in `show_question'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:43:56) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+
+RuntimeError (error Pikizi::Knowledge q=):
+  app/controllers/knowledges_controller.rb:29:in `show_question'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (283.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:46:55) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
 Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_quizz]
+Rendering knowledges/show_question
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.label) on line #3 of app/views/knowledges/show_question.html.erb:
+1: <div class="pkz_box">
+2:     <div class="pkz_menu">
+3:       <%= @question.label %>
+4:       <small> in <%= link_to "questions", "/questions/#{@knowledge.key}"%> of knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
+5:     </div>
+6:     <div class="pkz_main">
+
+    app/views/knowledges/show_question.html.erb:3
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
 
 
-Processing HomeController#index (for 127.0.0.1 at 2009-08-23 18:23:21) [GET]
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:49:02) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 339.44ms): Mcell_phones
+
+RuntimeError (**lookup=q7_what_type_of_user_are_you****** questions=q1_do_you_have_a_favorite_brand?, q7_what_type_of_user_are_you?, q13_what_form_factor_are_you_looking_for?, q18_what_kind_of_keyboard_would_you_prefer?, q21_how_long_should_your_phone_last_without_recharging_it?, q22_would_you_like_a_touch_screen?, q26_what_is_the_ideal_size?, q27_what_budget_do_you_have_in_mind?, q29_what_kind_of_camera_would_you_like?, q36_what_feature(s)_are_you_ready_to_pay_a_premium_for?, q38_what_type_of_phone_are_you_looking_for?, q39_what_internet_features_are_important_to_you?, q42_please_select_your_favorite_carriers?, q44_what_kind_of_sliding_keyboards_do_you_prefer?, q52_what_feature_is_most_important_to_you?, q53_what_feature_is_most_important_to_you?, q54_what_feature_is_most_important_to_you?, q55_what_feature_is_most_important_to_you?, q56_what_feature_is_most_important_to_you?, q57_what_feature_is_most_important_to_you?, q58_what_feature_is_most_important_to_you?, q59_what_feature_is_most_important_to_you?):
+  lib/pkz_knowledge.rb:355:in `get_question_from_key'
+  app/controllers/knowledges_controller.rb:28:in `show_question'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:51:24) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 329.08ms): Mcell_phones
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 560.60ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 541.84ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 285.03ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 562.14ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 526.08ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 566.74ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 595.20ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 464.41ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 563.11ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 515.78ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 382.72ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 576.50ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 557.89ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 596.55ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 586.96ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 609.41ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 595.25ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 616.13ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 954.69ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 584.96ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 617.84ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 600.29ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 636.59ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 555.23ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 357.47ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 614.66ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 469.18ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 570.01ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 387.89ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 589.22ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 594.34ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 585.95ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 325.36ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 564.03ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 643.21ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 625.60ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 678.99ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 666.97ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 647.29ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 309.31ms): Psony_ericsson_w508
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 22659ms (View: 34, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you?]
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:53:43) [GET]
+  Parameters: {"question_key"=>"q7_what_type_of_user_are_you", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you?]
+
+
+Processing KnowledgesController#index (for ::1 at 2009-09-03 12:53:49) [GET]
+  [4;36;1mKnowledge Load (2.2ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 176ms (View: 137, DB: 2) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 12:53:51) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 228ms (View: 226, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_questions (for ::1 at 2009-09-03 12:54:40) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (19.0ms)
+Rendered knowledges/_show_question (1.8ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (3.1ms)
+Rendered knowledges/_show_question (2.2ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (3.7ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (3.4ms)
+Rendered knowledges/_show_question (3.5ms)
+Rendered knowledges/_show_question (3.8ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (1.0ms)
+Completed in 87ms (View: 82, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show_question (for ::1 at 2009-09-03 12:54:42) [GET]
+  Parameters: {"question_key"=>"q13_what_form_factor_are_you_looking_for", "knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q13_what_form_factor_are_you_looking_for?]
+
+
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 12:56:00) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#quiz (for ::1 at 2009-09-03 12:56:03) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+Cache hit: Mcell_phones ({:force=>nil})
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.get_quiz_instance):
+  app/controllers/knowledges_controller.rb:40:in `quiz'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (276.4ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for ::1 at 2009-09-03 12:56:39) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 24ms (View: 21, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 12:57:05) [GET]
 Rendering template within layouts/application
 Rendering home/index
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:23:23) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:24:06) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:24:59) [GET]
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_products]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:25:24) [GET]
-
-ActionController::RoutingError (No route matches "/test_products" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:25:29) [POST]
-  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2vhuOGhywkLVZXNjaGSCWeB26mjco0QJnN7rp2aQyOI="}
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/test_products_search]
-
-
-Processing HomeController#test_products_search (for 127.0.0.1 at 2009-08-23 18:26:52) [POST]
-  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2vhuOGhywkLVZXNjaGSCWeB26mjco0QJnN7rp2aQyOI="}
-Rendering template within layouts/application
-Rendering home/test_products_search
-Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/test_products_search]
-
-
-Processing HomeController#test_product_alone (for 127.0.0.1 at 2009-08-23 18:26:55) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_alone
-Completed in 52ms (View: 50, DB: 0) | 200 OK [http://localhost/test_product_alone]
-
-
-Processing HomeController#test_product_alone (for 127.0.0.1 at 2009-08-23 18:27:24) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_alone
-Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/test_product_alone]
-
-
-Processing HomeController#test_quizz (for 127.0.0.1 at 2009-08-23 18:27:26) [GET]
-Rendering template within layouts/application
-Rendering home/test_quizz
-Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/test_quizz]
-
-
-Processing HomeController#test_results (for 127.0.0.1 at 2009-08-23 18:27:30) [GET]
-Rendering template within layouts/application
-Rendering home/test_results
-Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/test_results]
-
-
-Processing HomeController#test_product_page_results (for 127.0.0.1 at 2009-08-23 18:27:35) [GET]
-Rendering template within layouts/application
-Rendering home/test_product_page_results
-Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/test_product_page_results]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:27:35) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwRw.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2009-08-23 18:27:35) [GET]
-
-ActionController::RoutingError (No route matches "/images/gene/galleryArwFd.png" with {:method=>:get}):
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
+Completed in 28ms (View: 25, DB: 0) | 200 OK [http://localhost/]

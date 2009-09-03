@@ -83,27 +83,34 @@ class Feature < Model
     # backgrounds for knowledege feature
     html_node = (backgrounds_knowledge_feature = get_backgrounds).size > 0 ? "<a href='/knowledges/backgrounds/#{knowledge.key}/#{self.key}'  >...</a>" : ""
 
-    if feature_parent
-      html_node << "<span class='pkz_feature_label'>#{label}</span>"
-      html_node << "<span class='pkz_feature_extra'>#{extra}</span>"
-      html_node << get_html_editor(product)
-    else
-      html_node << (product ? product.label : "product")
-    end
+    # background_icon
+    url = "/backgrounds/#{knowledge_key}"
+    url << "/#{key}" if feature_parent
+    url << "/#{product.key}"if product
+    bgk_icon = "<a href=\"#{url}\" class='pkz_background'>&nbsp;0&nbsp;</a>"
+
 
     # rating icon only when product and ratable
-    if ratable
+    rating_icon =  if ratable
       if product
         if opinion_average_expert_rating = get_opinion(product, "average_expert_rating")
-          html_node <<  "<span class='pkz_rating' title='average expert rating'>"  << ("%3d" % (opinion_average_expert_rating * 100)) << "%</span>"
+          "<span class='pkz_rating' title='average expert rating'>"  << ("%3d" % (opinion_average_expert_rating * 100)) << "%</span>"
         else
-          html_node <<  "<span class='pkz_rating' title='average expert rating'>&nbsp;?&nbsp;</span>"
+          "<span class='pkz_rating' title='average expert rating'>&nbsp;?&nbsp;</span>"
         end
       else
-       html_node << "&nbsp;<img src='/images/icons/star.png' title='average expert rating' />"  and product.nil?
+       "<span class='pkz_rating' title='average expert rating'>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
       end
     end
 
+    if feature_parent
+      html_node << "<span class='pkz_feature_label'>#{label}</span>"
+      html_node << "#{bgk_icon}#{rating_icon}<span class='pkz_feature_extra'>#{extra}</span>"
+      html_node  << "#{get_html_editor(product)}"
+    else
+      # this the the root, i.e. the knowledge object
+      html_node << "#{product ? product.label : 'product'}#{bgk_icon}#{rating_icon}"
+    end
 
     # backgrounds for knowledege feature value
     if product and (backgrounds_knowledge_feature = get_backgrounds(product)).size > 0
@@ -344,7 +351,11 @@ class Knowledge < Feature
 
   end
 
-  def get_question_from_key(q_key) questions.detect { |q| q.key == q_key } end
+  def get_question_from_key(q_key)
+    #TODO change generator in backend to cleanup key (no question mark !)
+    size_qkey = q_key.size - 1
+    questions.detect { |q| q.key[0..size_qkey] == q_key }
+  end
 
 end
 

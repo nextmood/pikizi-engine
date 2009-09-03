@@ -1,17 +1,18 @@
-<div class="pkz_menu">
-  <%= pluralize(@knowledge.nb_questions, "question") %>
-  <small>in knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
-</div>
-<div class="pkz_main">
-  <% for question in @knowledge.questions %>
-    <div class="pkz_item_list">
-        <%= render(:partial => "knowledges/show_question", :locals => { :question => question, :products => @products }) %>
-
-        <div>
-          <%= pluralize question.nb_choices, "choice" %>,&nbsp;
-          <%= question.is_choice_exclusive ? "exclusive" : "multiple" %>:
-          <%= question.choices.collect { |choice| choice.label.inspect}.join(', ') %></div>
+<div class="pkz_box">
+    <div class="pkz_menu">
+      <%= pluralize(@knowledge.nb_questions, "question") %>
+      <small>in knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
     </div>
-  <% end %>
-</div>
+    <div class="pkz_main">
+      <% for question in @knowledge.questions %>
+        <div class="pkz_item_list">
+            <%= render(:partial => "knowledges/show_question", :locals => { :question => question, :products => @products }) %>
 
+            <div>
+              <%= pluralize question.nb_choices, "choice" %>,&nbsp;
+              <%= question.is_choice_exclusive ? "exclusive" : "multiple" %>:
+              <%= question.choices.collect { |choice| choice.label.inspect}.join(', ') %></div>
+        </div>
+      <% end %>
+    </div>
+</div>

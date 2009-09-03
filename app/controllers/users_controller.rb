@@ -83,13 +83,18 @@ class UsersController < ApplicationController
       logged_user = User.create(:rpx_identifier => rpx_data[:identifier],
                                 :rpx_name => rpx_data[:name],
                                 :rpx_username => rpx_data[:username],
-                                :rpx_email => rpx_data[:email])
+                                :rpx_email => rpx_data[:email],
+                                :promotion_code => 'none')
       logged_user.update_attribute(:key, User.id_2_key(logged_user.id)) 
-     end
-    session[:logged_user_id] = logged_user.id
+    end
 
-    # self.current_user = User.find_by_identifier(data[:identifier]) || User.create!(data)
-    redirect_to '/'
+    if logged_user.promotion_code == "auth"
+      session[:logged_user_id] = logged_user.id
+      redirect_to '/'
+    else
+      redirect_to "/access_restricted"
+    end
+
   end
 
   def logout

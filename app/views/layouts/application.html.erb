@@ -13,6 +13,7 @@
 
   <%= stylesheet_link_tag "lightwindow.css" %>
   <%= stylesheet_link_tag "gene" %>
+  <%= stylesheet_link_tag "pkz_style.css" %>
 
 </head>
 
@@ -32,7 +33,7 @@
             <li><a href="/test_quizz">advisors</a></li>
             <li><a href="/test_results">results</a></li>
             <li><a href="/test_products">products</a></li>
-            <!-- <li><a href="/knowledges">admin</a></li> -->
+            <li><a href="/knowledges">admin</a></li>
             <li class="last">
               <% if controller.get_logged_ar_user %>
                 welcome <%= controller.get_logged_ar_user.rpx_username %><%= link_to "logout", "/logout" %>
