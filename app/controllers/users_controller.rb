@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   def access_restricted
-
+    get_logged_ar_user
   end
 
   # GET /users/update_indexes
