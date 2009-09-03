@@ -15,24 +15,15 @@ class ApplicationController < ActionController::Base
   before_filter :user_authorized, :except => ['login', 'rpx_token_sessions_url']
 
 
-  # get the current logged user, the xml object
-  def get_logged_pkz_user()
-    if session[:logged_user_id]
-      @current_pkz_user ||= Pikizi::User.create_from_xml(User.id_2_key(session[:logged_user_id]))
-    end
-  end
-
   # get the current logged user, the active record object
   def get_logged_ar_user()
     if session[:logged_user_id]
-      puts "******* looking for ar user=#{session[:logged_user_id]}"
       begin
         @current_ar_user ||= User.find(session[:logged_user_id])
       rescue
         logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
         nil
       end
-
     end
   end
 
@@ -45,16 +36,31 @@ class ApplicationController < ActionController::Base
   private
 
   def user_authorized
-    puts "***********user_authorized session=#{session.inspect}"
-    
     #if ENV['RAILS_ENV']=="production"
     if get_logged_ar_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_ar_user.is_authorized?
     else
-      # render 'users/access_restricted'
-      redirect_to '/login' if ENV['RAILS_ENV']=="production"
+      if ENV['RAILS_ENV'] == "development"
+        log_as_developper
+      else
+        redirect_to '/login'
+      end
     end
   end
+
+  def log_as_developper
+    developper_key = "franck_dev"
+    @current_ar_user = User.find_by_key(developper_key)
+    @current_ar_user ||= User.create_from_key({ :identifier => developper_key,
+                                                :name => developper_key,
+                                                :username => developper_key,
+                                                :email => "info@nextmood.com"},
+                                              developper_key,
+                                              "auth")
+    session[:logged_user_id] = @current_ar_user.id
+  end
+
+
 
 end

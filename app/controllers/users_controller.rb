@@ -79,16 +79,9 @@ class UsersController < ApplicationController
   def rpx_token_sessions_url
     raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
     logged_user = User.find(:first, :conditions => ["rpx_identifier=?", rpx_data[:identifier]])
-    unless logged_user
-      logged_user = User.create(:rpx_identifier => rpx_data[:identifier],
-                                :rpx_name => rpx_data[:name],
-                                :rpx_username => rpx_data[:username],
-                                :rpx_email => rpx_data[:email],
-                                :promotion_code => 'none')
-      logged_user.update_attribute(:key, User.id_2_key(logged_user.id)) 
-    end
+    logged_user ||= User.create_from_key(rpx_data)
 
-    if logged_user.promotion_code == "auth"
+    if logged_user.is_authorized?
       session[:logged_user_id] = logged_user.id
       redirect_to '/'
     else

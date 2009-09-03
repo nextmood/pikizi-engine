@@ -1148,3 +1148,580 @@ Processing HomeController#index (for ::1 at 2009-09-03 12:57:05) [GET]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 28ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mUser Load (30.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:35:03) [GET]
+
+NoMethodError (undefined method `[]' for RAILS:Module):
+  app/controllers/application_controller.rb:44:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:35:27) [GET]
+Redirected to http://localhost:3001/login
+Filter chain halted as [:user_authorized] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#login (for ::1 at 2009-09-03 15:35:27) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 31ms (View: 29, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:36:16) [GET]
+
+TypeError (exception object expected):
+  app/controllers/application_controller.rb:47:in `raise'
+  app/controllers/application_controller.rb:47:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (45.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:36:36) [GET]
+
+RuntimeError ():
+  app/controllers/application_controller.rb:47:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:36:47) [GET]
+
+RuntimeError (environnement=):
+  app/controllers/application_controller.rb:47:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (131.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:37:03) [GET]
+
+RuntimeError (environnement={"SSH_AUTH_SOCK"=>"/tmp/launch-FzG7RG/Listeners", "DISPLAY"=>"/tmp/launch-xR6Z4O/:0", "JAVA_LIBRARY_PATH"=>"/Applications/RubyMine 1.1.1.app/Contents/Resources/Java:/System/Library/PrivateFrameworks/JavaApplicationLauncher.framework/Resources", "TMPDIR"=>"/var/folders/+4/+4y6lp2cEWCzxRyvLObaYE+++TI/-Tmp-/", "__CF_USER_TEXT_ENCODING"=>"0x1F5:0:0", "USER"=>"fpatte", "SECURITYSESSIONID"=>"cb6370", "COMMAND_MODE"=>"legacy", "Apple_PubSub_Socket_Render"=>"/tmp/launch-v5Qz6T/Render", "HOME"=>"/Users/fpatte", "PATH"=>"/usr/bin:/bin:/usr/sbin:/sbin", "SHELL"=>"/bin/bash", "LOGNAME"=>"fpatte", "RAILS_ENV"=>"development"}):
+  app/controllers/application_controller.rb:47:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (42.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:38:06) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: promotion_code):
+  app/models/user.rb:15:in `create_from_key'
+  app/controllers/application_controller.rb:54:in `log_as_developper'
+  app/controllers/application_controller.rb:45:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (28.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateKnowledges (20090601103938)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "knowledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_key" varchar(255), "nb_features" integer DEFAULT 0, "nb_products" integer DEFAULT 0, "nb_questions" integer DEFAULT 0, "nb_quizzes" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601103938')[0m
+Migrating to CreateUsers (20090601104016)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "rpx_identifier" varchar(255), "rpx_name" varchar(255), "rpx_username" varchar(255), "rpx_email" varchar(255), "promotion_code" varchar(255), "status" varchar(255) DEFAULT 'waiting_4_admin_authorization', "nb_quiz_instances" integer DEFAULT 0, "nb_authored_opinions" integer DEFAULT 0, "nb_authored_values" integer DEFAULT 0, "nb_authored_backgrounds" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104016')[0m
+Migrating to CreateProducts (20090601104146)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_id" integer, "nb_models" integer DEFAULT 0, "value_completion" float DEFAULT 0.0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104146')[0m
+Migrating to CreateBackgrounds (20090816114821)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "backgrounds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "knowledge_key" varchar(255), "feature_key" varchar(255), "product_key" varchar(255), "background_key" varchar(255), "label" varchar(255), "data" text, "author_id" integer, "author_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090816114821')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("backgrounds")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("knowledges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:41:27) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+  [4;35;1mUser Create (0.8ms)[0m   [0mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 13:41:27', 'auth', 0, '2009-09-03 13:41:27', NULL, NULL, NULL, 0, NULL, 0, 'franck_dev', 'waiting_4_admin_authorization', 0)[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 63ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateKnowledges (20090601103938)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "knowledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_key" varchar(255), "nb_features" integer DEFAULT 0, "nb_products" integer DEFAULT 0, "nb_questions" integer DEFAULT 0, "nb_quizzes" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601103938')[0m
+Migrating to CreateUsers (20090601104016)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "rpx_identifier" varchar(255), "rpx_name" varchar(255), "rpx_username" varchar(255), "rpx_email" varchar(255), "promotion_code" varchar(255), "status" varchar(255) DEFAULT 'waiting_4_admin_authorization', "nb_quiz_instances" integer DEFAULT 0, "nb_authored_opinions" integer DEFAULT 0, "nb_authored_values" integer DEFAULT 0, "nb_authored_backgrounds" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104016')[0m
+Migrating to CreateProducts (20090601104146)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_id" integer, "nb_models" integer DEFAULT 0, "value_completion" float DEFAULT 0.0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104146')[0m
+Migrating to CreateBackgrounds (20090816114821)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "backgrounds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "knowledge_key" varchar(255), "feature_key" varchar(255), "product_key" varchar(255), "background_key" varchar(255), "label" varchar(255), "data" text, "author_id" integer, "author_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090816114821')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("backgrounds")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("knowledges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:50:06) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Oups I'can't find user with id=1
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 13:50:06', 'auth', 0, '2009-09-03 13:50:06', NULL, NULL, NULL, 0, NULL, 0, 'franck_dev', 'waiting_4_admin_authorization', 0)[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 64ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (12.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateKnowledges (20090601103938)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "knowledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_key" varchar(255), "nb_features" integer DEFAULT 0, "nb_products" integer DEFAULT 0, "nb_questions" integer DEFAULT 0, "nb_quizzes" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601103938')[0m
+Migrating to CreateUsers (20090601104016)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "rpx_identifier" varchar(255), "rpx_name" varchar(255), "rpx_username" varchar(255), "rpx_email" varchar(255), "promotion_code" varchar(255), "status" varchar(255) DEFAULT 'waiting_4_admin_authorization', "nb_quiz_instances" integer DEFAULT 0, "nb_authored_opinions" integer DEFAULT 0, "nb_authored_values" integer DEFAULT 0, "nb_authored_backgrounds" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104016')[0m
+Migrating to CreateProducts (20090601104146)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_id" integer, "nb_models" integer DEFAULT 0, "value_completion" float DEFAULT 0.0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104146')[0m
+Migrating to CreateBackgrounds (20090816114821)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "backgrounds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "knowledge_key" varchar(255), "feature_key" varchar(255), "product_key" varchar(255), "background_key" varchar(255), "label" varchar(255), "data" text, "author_id" integer, "author_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090816114821')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("backgrounds")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("knowledges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 15:51:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+  [4;35;1mUser Create (16.2ms)[0m   [0mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 13:51:42', 'auth', 0, '2009-09-03 13:51:42', NULL, NULL, NULL, 0, NULL, 0, 'franck_dev', 'waiting_4_admin_authorization', 0)[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1594ms (View: 18, DB: 17) | 200 OK [http://localhost/]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 16:01:09) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/application_controller.rb:42:in `is_authorized?'
+  app/controllers/application_controller.rb:42:in `user_authorized'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 16:01:37) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 43ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (9.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateKnowledges (20090601103938)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "knowledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_key" varchar(255), "nb_features" integer DEFAULT 0, "nb_products" integer DEFAULT 0, "nb_questions" integer DEFAULT 0, "nb_quizzes" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601103938')[0m
+Migrating to CreateUsers (20090601104016)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "rpx_identifier" varchar(255), "rpx_name" varchar(255), "rpx_username" varchar(255), "rpx_email" varchar(255), "promotion_code" varchar(255), "status" varchar(255) DEFAULT 'waiting_4_admin_authorization', "nb_quiz_instances" integer DEFAULT 0, "nb_authored_opinions" integer DEFAULT 0, "nb_authored_values" integer DEFAULT 0, "nb_authored_backgrounds" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104016')[0m
+Migrating to CreateProducts (20090601104146)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "label" varchar(255), "author_id" integer, "nb_models" integer DEFAULT 0, "value_completion" float DEFAULT 0.0, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601104146')[0m
+Migrating to CreateBackgrounds (20090816114821)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "backgrounds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "knowledge_key" varchar(255), "feature_key" varchar(255), "product_key" varchar(255), "background_key" varchar(255), "label" varchar(255), "data" text, "author_id" integer, "author_key" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090816114821')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("backgrounds")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("knowledges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing HomeController#index (for ::1 at 2009-09-03 16:03:41) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Oups I'can't find user with id=1
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+  [4;36;1mUser Create (0.9ms)[0m   [0;1mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 14:03:41', 'auth', 0, '2009-09-03 14:03:41', 'franck_dev', 'franck_dev', 'info@nextmood.com', 0, 'franck_dev', 0, 'franck_dev', 'waiting_4_admin_authorization', 0)[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 58ms (View: 22, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for ::1 at 2009-09-03 16:03:48) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mKnowledge Load (28.3ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 100ms (View: 37, DB: 29) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#update_indexes (for ::1 at 2009-09-03 16:03:51) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mKnowledge Delete all (1.3ms)[0m   [0;1mDELETE FROM "knowledges" WHERE 1=1[0m
+  [4;35;1mKnowledge Create (0.7ms)[0m   [0mINSERT INTO "knowledges" ("label", "created_at", "updated_at", "author_key", "nb_products", "nb_questions", "key", "nb_features", "nb_quizzes") VALUES('Cell Phones', '2009-09-03 14:03:52', '2009-09-03 14:03:52', NULL, 40, 22, 'cell_phones', 176, 1)[0m
+Redirected to http://localhost:3001/knowledges
+Completed in 497ms (DB: 2) | 302 Found [http://localhost/update_indexes/knowledges]
+
+
+Processing KnowledgesController#index (for ::1 at 2009-09-03 16:03:52) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mKnowledge Load (0.5ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 145ms (View: 127, DB: 1) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 16:03:54) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 450.77ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 480ms (View: 17, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 16:03:58) [GET]
+  Parameters: {"product_key"=>"nokia_e71", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 508.62ms): Pnokia_e71
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 544ms (View: 19, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_e71]
+
+
+Processing KnowledgesController#show_questions (for ::1 at 2009-09-03 16:04:03) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 532.27ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 554.42ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 439.46ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 623.25ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 597.61ms): Pnokia_n96
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 580.50ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 290.45ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 586.81ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 541.64ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 562.87ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 566.62ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 547.80ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 586.51ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 579.13ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 601.49ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 382.57ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 601.57ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 487.82ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 545.72ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 632.93ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 568.18ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 342.02ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 556.71ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 569.80ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 597.84ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 229.44ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 570.01ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 614.39ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 546.07ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 334.87ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 587.87ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 574.12ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 581.61ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 638.28ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 360.81ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 665.27ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 658.72ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 644.98ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 593.75ms): Psony_ericsson_w508
+Rendering template within layouts/application
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (4.0ms)
+Rendered knowledges/_show_question (1.7ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (2.1ms)
+Rendered knowledges/_show_question (2.3ms)
+Rendered knowledges/_show_question (3.8ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (3.1ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (0.8ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (0.9ms)
+Rendered knowledges/_show_question (1.0ms)
+Rendered knowledges/_show_question (1.0ms)
+Completed in 21224ms (View: 124, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for ::1 at 2009-09-03 16:04:28) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#index (for ::1 at 2009-09-03 16:04:41) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mKnowledge Load (0.5ms)[0m   [0mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/knowledges]
+
+
+Processing UsersController#index (for ::1 at 2009-09-03 16:04:44) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mKnowledge Load (0.6ms)[0m   [0;1mSELECT * FROM "knowledges" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 513ms (View: 13, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#update_indexes (for ::1 at 2009-09-03 16:04:49) [GET]
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Delete all (1.5ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 14:04:56', NULL, 15416, '2009-09-03 14:04:56', NULL, NULL, NULL, 40, NULL, 109, 'nextmood', 'waiting_4_admin_authorization', 0)[0m
+Redirected to http://localhost:3001/users
+Completed in 6707ms (DB: 3) | 302 Found [http://localhost/update_indexes/users]
+
+
+Processing UsersController#index (for ::1 at 2009-09-03 16:04:56) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Oups I'can't find user with id=1
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("created_at", "promotion_code", "nb_authored_values", "updated_at", "rpx_name", "rpx_username", "rpx_email", "nb_authored_opinions", "rpx_identifier", "nb_authored_backgrounds", "key", "status", "nb_quiz_instances") VALUES('2009-09-03 14:04:56', 'auth', 0, '2009-09-03 14:04:56', 'franck_dev', 'franck_dev', 'info@nextmood.com', 0, 'franck_dev', 0, 'franck_dev', 'waiting_4_admin_authorization', 0)[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mKnowledge Load (0.5ms)[0m   [0;1mSELECT * FROM "knowledges" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 789ms (View: 4, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show_by_key (for ::1 at 2009-09-03 16:05:12) [GET]
+  Parameters: {"user_key"=>"franck_dev"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 32ms (View: 18, DB: 1) | 200 OK [http://localhost/profile/franck_dev]
