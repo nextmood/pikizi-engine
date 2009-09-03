@@ -20,7 +20,7 @@
 <body id="<%= compute_body_id("#{controller_name}/#{action_name}") %>">
 <div id="wrapper">
 	<div id="header">
-    	<a href="index.html"><img src="/images/gene/logo.png" /></a>
+    	<a href="/"><img src="/images/gene/logo.png" /></a>
         <ul>
             <% if false %>
         	<li><a href="index.html">home</a></li>
@@ -32,7 +32,7 @@
             <li><a href="/">home</a></li>
             <li><a href="/test_quizz">advisors</a></li>
             <li><a href="/test_results">results</a></li>
-            <li><a href="/test_products">products</a></li>
+            <li><a href="/test_products_search">products</a></li>
             <li><a href="/knowledges">admin</a></li>
             <li class="last">
               <% if controller.get_logged_ar_user %>
