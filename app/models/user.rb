@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
                             :rpx_email => rpx_data[:email],
                             :promotion_code => promotion_code,
                             :key => key)
-    new_user.update_attribute(:key, User.id_2_key("U#{new_user.id}")) unless key
+    new_user.update_attribute(:key, "U#{new_user.id}") unless key
     new_user
   end
 
