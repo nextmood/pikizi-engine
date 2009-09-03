@@ -45,8 +45,6 @@ class UsersController < ApplicationController
     render(:action => 'show')
   end
 
-
-
   
   # GET /users/1/process_authored
   def process_authored
