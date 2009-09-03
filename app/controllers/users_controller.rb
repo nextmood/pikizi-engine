@@ -20,7 +20,7 @@ class UsersController < ApplicationController
      quiz = knowledge.quizzes.detect {|q| q.key == quiz_key }
      question_key = params[:question_key]
      question = knowledge.questions.detect {|q| q.key == question_key }
-     user = get_logged_pkz_user
+     user = get_logged_ar_user.pkz_user
      user.record_answer(knowledge, quiz, question, params[:choices_keys_ok])
      user.save
      url_redirect = "/quiz/#{knowledge.key}"
