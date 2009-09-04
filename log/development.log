@@ -2594,3 +2594,431 @@ Processing HomeController#test_products_search (for ::1 at 2009-09-03 16:56:57) 
 Rendering template within layouts/application
 Rendering home/test_products_search
 Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/test_products_search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-03 21:47:53) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'franck_dev') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 152ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-09-03 21:48:01) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mKnowledge Load (56.8ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 815ms (View: 656, DB: 57) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 21:48:05) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 280.23ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 304ms (View: 13, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing BackgroundsController#cell_phones (for 127.0.0.1 at 2009-09-03 21:48:09) [GET]
+  Parameters: {"id"=>"f1_brand"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionController::UnknownAction (No action responded to cell_phones. Actions: create, destroy, edit, flush_caches, get_logged_ar_user, index, knowledge_background, knowledge_backgrounds, new, product_background, product_backgrounds, show, and update):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 21:52:18) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 267.70ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 313ms (View: 24, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 21:52:23) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionController::UnknownAction (No action responded to media. Actions: backgrounds, flush_caches, get_logged_ar_user, index, quiz, show_by_key, show_question, show_questions, and update_indexes):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 21:52:30) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_e75"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 502.62ms): Pnokia_e75
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 532ms (View: 18, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_e75]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-03 21:52:36) [GET]
+
+ActionController::RoutingError (No route matches "/media/cell_phones/f3_release_date/nokia_e75" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:02:23) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "knowledge_key"=>"cell_phones", "product_key"=>"nokia_e75"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+
+NoMethodError (undefined method `get_feature_by_key' for #<Pikizi::Knowledge:0x220eef8>):
+  app/controllers/knowledges_controller.rb:60:in `media'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:02:35) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 269.68ms): Mcell_phones
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 462.37ms): Pnokia_e75
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 768ms (View: 14, DB: 0) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:02:48) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 34ms (View: 15, DB: 1) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:03:28) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:06:34) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:07:11) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 63ms (View: 17, DB: 1) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:07:24) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:11:13) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 265.64ms): Mcell_phones
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 457.75ms): Pnokia_e75
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 760ms (View: 15, DB: 0) | 200 OK [http://localhost/media/cell_phones/f3_release_date/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:11:29) [GET]
+  Parameters: {"feature_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.key) on line #2 of app/views/knowledges/media.html.erb:
+1: <h1>Display backgrounds for</h1>
+2: for model <b><%= @knowledge.key %></b> and feature <b><%= @feature.key %></b>
+3: <% if @product %>
+4:     and product:<b><%= @product.key %></b>
+5: <% end %>
+
+    app/views/knowledges/media.html.erb:2
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:12:15) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:13:19) [GET]
+  Parameters: {"feature_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.key) on line #2 of app/views/knowledges/media.html.erb:
+1: <h1>Display backgrounds for</h1>
+2: for model <b><%= @knowledge.key %></b> and feature <b><%= @feature.key %></b>
+3: <% if @product %>
+4:     and product:<b><%= @product.key %></b>
+5: <% end %>
+
+    app/views/knowledges/media.html.erb:2
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:21:06) [GET]
+  Parameters: {"product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 266.94ms): Mcell_phones
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 460.67ms): Pnokia_e75
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 780ms (View: 30, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:21:09) [GET]
+  Parameters: {"product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/media/cell_phones/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:21:22) [GET]
+  Parameters: {"feature_key"=>"f1_brand", "product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones/f1_brand/nokia_e75]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:21:27) [GET]
+  Parameters: {"product_key"=>"nokia_e75", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones/nokia_e75]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:21:38) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/show/cell_phones/]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:21:41) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/knowledge_bgk/cell_phones]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:21:47) [GET]
+  Parameters: {"feature_key"=>"f1_brand", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/knowledge_bgk/cell_phones/f1_brand]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:22:37) [GET]
+  Parameters: {"feature_key"=>"f1_brand", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/knowledge_bgk/cell_phones/f1_brand]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:23:43) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/show/cell_phones/]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:23:46) [GET]
+  Parameters: {"feature_key"=>"f1_brand", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/knowledge_bgk/cell_phones/f1_brand]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:23:57) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 457.51ms): Papple_iphone_3g
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 488ms (View: 19, DB: 0) | 200 OK [http://localhost/show/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:23:59) [GET]
+  Parameters: {"feature_key"=>"f1_brand", "product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones/f1_brand/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:24:05) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:25:04) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 139ms (View: 6, DB: 0) | 200 OK [http://localhost/media/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:25:23) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 21ms (View: 7, DB: 0) | 200 OK [http://localhost/media/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:25:38) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 35ms (View: 12, DB: 2) | 200 OK [http://localhost/media/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:26:16) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (3.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 78ms (View: 28, DB: 4) | 200 OK [http://localhost/show/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:26:18) [GET]
+  Parameters: {"product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/media/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:26:34) [GET]
+  Parameters: {"feature_key"=>"f3_release_date", "product_key"=>"apple_iphone_3g", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/media/cell_phones/f3_release_date/apple_iphone_3g]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-03 22:26:39) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 25ms (View: 12, DB: 0) | 200 OK [http://localhost/show/cell_phones/]
+
+
+Processing KnowledgesController#media (for 127.0.0.1 at 2009-09-03 22:26:42) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/media
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/knowledge_bgk/cell_phones]

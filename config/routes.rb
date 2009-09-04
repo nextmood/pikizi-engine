@@ -1,6 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :backgrounds
 
+  map.connect '/knowledge_bgk/:knowledge_key', :controller => 'knowledges', :action => 'media'
+  map.connect '/knowledge_bgk/:knowledge_key/:feature_key', :controller => 'knowledges', :action => 'media'
+
+  map.connect '/media/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'media'
+  map.connect '/media/:knowledge_key/:feature_key/:product_key', :controller => 'knowledges', :action => 'media'
+  
   map.resources :products
 
   map.resources :users, :member => { :process_authored => :get }

@@ -52,16 +52,16 @@ class KnowledgesController < ApplicationController
 
   end
 
-  # GET /backgrounds/:knowledge_key/[:feature_key || all]
-  # GET /backgrounds/:knowledge_key/[:feature_key || all]/product_key
-
-  def backgrounds
+  # GET /media/:knowledge_key/[:feature_key]/product_key
+  # GET /knowledge_bgk/:knowledge_key/[:feature_key]
+  def media
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
-
+    @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
+  # GET /media/:knowledge_key/[ture_by_key(params[:feature_key] || params[:knowledge_key])
     # retrieve the product
     @product = Pikizi::Product.get_from_cache(params[:product_key]) if params[:product_key]
-    @backgrounds = []
   end
+
 
 
   # GET /knowledges/update_indexes

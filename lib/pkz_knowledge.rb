@@ -33,8 +33,9 @@ class Model < Root
   end
 
   # return a hash background_key, background object
-  def get_backgrounds()
-    {}
+  # for the feature, or the feature/product
+  def get_backgrounds(product=nil)
+    product ? product.get_backgrounds(knowledge_key, key) : hash_key_best_background
   end
 
 end
@@ -84,7 +85,7 @@ class Feature < Model
     html_node = (backgrounds_knowledge_feature = get_backgrounds).size > 0 ? "<a href='/knowledges/backgrounds/#{knowledge.key}/#{self.key}'  >...</a>" : ""
 
     # background_icon
-    url = "/backgrounds/#{knowledge_key}"
+    url = "/#{product ? 'media' : 'knowledge_bgk'}/#{knowledge_key}"
     url << "/#{key}" if feature_parent
     url << "/#{product.key}"if product
     bgk_icon = "<a href=\"#{url}\" class='pkz_background'>&nbsp;0&nbsp;</a>"
@@ -357,6 +358,8 @@ class Knowledge < Feature
     questions.detect { |q| q.key[0..size_qkey] == q_key }
   end
 
+  def get_feature_by_key(f_key) hash_key_feature[f_key] end
+  
 end
 
 # define a group of sub features of type FeatureBinary

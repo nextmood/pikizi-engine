@@ -1,0 +1,12 @@
+<h1>Display backgrounds for <%= @product ? 'Product' : 'Knowledge base' %></h1>
+for model <b><%= @knowledge.key %></b> and feature <b><%= @feature.key %></b>
+<% if @product %>
+    and product:<b><%= @product.key %></b>
+<% end %>
+<br/>nb backgrounds=<%= @feature.get_backgrounds.size %>
+<br/><%= @feature.get_backgrounds.class %>
+<ul>
+<% for background_key, background in @feature.get_backgrounds(@product) %>
+  <li><b><%= background_key %> (<%= background.class %>)</b> ==> <%= background %></li>
+<% end %>
+</ul>
