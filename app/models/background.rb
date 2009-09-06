@@ -2,7 +2,8 @@
 
 class Background < ActiveRecord::Base
 
-  #acts_as_fleximage :image_directory => 'public/images/backgrounds'
+  acts_as_fleximage :image_directory => 'public/images/backgrounds'
+
 
   def self.get_or_create_from_auth(feature, product, user, auth_background)
     knowledge_key = feature.knowledge_key
@@ -20,7 +21,7 @@ class Background < ActiveRecord::Base
     else
       conditions.first << " AND product_key IS NULL"
     end
-    puts "condirtions=#{conditions.inspect}"
+    puts "conditions=#{conditions.inspect}"
     bgk = Background.find(:first, :conditions => conditions)
     # create a new background if no existence
     bgk ||= Background.create(:type => type,
@@ -29,41 +30,42 @@ class Background < ActiveRecord::Base
                               :product_key => product_key,
                               :background_key => bgk_key,
                               :author_key => user_key)
-    bgk.set_value(auth_background.value)
+    bgk.set_value(auth_background)
     bgk.save
+    auth_background.local_url = "/backgrounds/#{bgk.id}"
     bgk
   end
   
-  def set_value(value) self.data = value end
+  def set_value(auth_background) self.data = auth_background.value end
 
 end
 
 class BgkHtml < Background
-  def set_value(html)
-    self.data = html
-  end
+  # value is html
 end
 
 class BgkText < Background
-  def set_value(text)
-    self.data = text
-  end
+  # value is text
 end
 
 class BgkUrl < Background
-  def set_value(url)
-    self.data = url
-  end
+  # value is url
 end
 
 class BgkImage < Background
+
+  # upload the url_image
   def set_value(url_image)
-    self.data = url_image
+    # value is url_image
+    # upload the image (see fleximage)
+    self.image_file_url = url_image
+    self.data = nil
   end
+
+
+
 end
 
 class BgkVideo < Background
-  def set_value(url_video)
-    self.data = url_video
-  end
+  # value is url video  
 end

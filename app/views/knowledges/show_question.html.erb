@@ -31,6 +31,8 @@
                 ko=<%= "%d" % choice.nb_ko %> (<%= "%d" % (choice.proba_ko * 100) %>%), &nbsp;
                 <!-- discrimination=<%= "%d" % (choice.discrimination * 100) %>%,&nbsp; -->
                 separation=<%= "%d" % choice.separation(@products, nil) %>
+                
+                
               <div>
 
               recommendations:&nbsp;<%= Pikizi::Tensor.hash_to_s(choice.generate_hash_pkey_tensor(@products)) %>

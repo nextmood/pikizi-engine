@@ -16,17 +16,17 @@ class Atomic < Root
     self.knowledge_key = xml_node['knowledge_key']
     self.feature_key = xml_node['feature_key']
     self.product_key = xml_node['product_key']
-    self.timestamp =  Time.parse(xml_node['timestamp'])
+    self.timestamp =  Time.parse(xml_node['timestamp']) if xml_node['timestamp']
     node_aggregation = xml_node.find_first("aggregation")
     self.aggregation = node_aggregation ? Aggregation.create_from_xml(node_aggregation) : nil
   end
 
   def generate_xml(top_node, class_name)
     node_atomic = super(top_node, class_name)
-    node_atomic['knowledge_key'] = knowledge_key
-    node_atomic['feature_key'] = feature_key
-    node_atomic['product_key'] = product_key
-    node_atomic['timestamp'] = timestamp.strftime(Root.default_date_format)
+    node_atomic['knowledge_key'] = knowledge_key if knowledge_key
+    node_atomic['feature_key'] = feature_key if feature_key
+    node_atomic['product_key'] = product_key if product_key
+    node_atomic['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
     aggregation.generate_xml(node_atomic) if aggregation
     node_atomic
   end
@@ -68,7 +68,7 @@ class Opinion < Atomic
    Pikizi.const_get(xml_node['type'].capitalize).new
   end
 
-  def get_aggregation_instance() AggregationAverageWeighted.create_with_parameters(key) end
+  def get_aggregation_instance() AggregationAverageweighted.create_with_parameters(key) end
 
 
 
@@ -113,7 +113,7 @@ class Value < Atomic
 end
 
 
-# describe a background for a given feature  abstract class
+# describe a background for a given feature/product  abstract class
 class Background < Atomic
 
   attr_accessor :value
@@ -135,7 +135,7 @@ class Background < Atomic
     Pikizi.const_get("Background#{xml_node['type'].capitalize}").new
   end
 
-  def get_aggregation_instance() AggregationBest.create_with_parameters(key) end  
+  def get_aggregation_instance() AggregationBest.create_with_parameters(key) end
 
 end
 
@@ -185,7 +185,7 @@ class Aggregation < Root
   end
 
   def self.create_new_instance_from_xml(xml_node)
-   Pikizi.const_get("Aggregation#{xml_node['type']}").new
+   Pikizi.const_get("Aggregation#{xml_node['type'].capitalize}").new
   end
 
   def add_auth(user)
@@ -238,7 +238,7 @@ class AggregationBest < Aggregation
 
 end
 
-class AggregationAverageWeighted < Aggregation
+class AggregationAverageweighted < Aggregation
 
   attr_accessor :nb_weighted, :sum_weighted
 

@@ -16,13 +16,15 @@ class Model < Root
     super(xml_node)
     self.knowledge = knowledge
     self.key ||= "model##{knowledge.new_index}"
-    @hash_key_best_background = Root.get_hash_from_xml(xml_node, 'aggregation', 'key') { |node_aggregation|  Aggregation.create_from_xml(node_aggregation) }
-
-  end       
+    self.hash_key_best_background = Root.get_hash_from_xml(xml_node, 'background', 'key') { |node_background| Background.create_from_xml(node_background) }
+    if hash_key_best_background.size > 0
+      puts "******* background for feature=#{key}"  
+    end
+  end
 
   def generate_xml(top_node, class_name)
     node_model = super(top_node, class_name)
-    @hash_key_best_background.each { |key, aggregation_best_background| aggregation_best_background.generate_xml(node_model) }
+    hash_key_best_background.each { |key, background| background.generate_xml(node_model) }
     node_model
   end
 
@@ -37,6 +39,8 @@ class Model < Root
   def get_backgrounds(product=nil)
     product ? product.get_backgrounds(knowledge_key, key) : hash_key_best_background
   end
+
+  
 
 end
 
@@ -82,25 +86,27 @@ class Feature < Model
   def to_html(product, extra, deep_down)
 
     # backgrounds for knowledege feature
-    html_node = (backgrounds_knowledge_feature = get_backgrounds).size > 0 ? "<a href='/knowledges/backgrounds/#{knowledge.key}/#{self.key}'  >...</a>" : ""
+    html_node = ""
 
     # background_icon
-    url = "/#{product ? 'media' : 'knowledge_bgk'}/#{knowledge_key}"
+    url = "/medias/#{knowledge_key}/"
+    url << (product ? "product/#{product.key}" : "model")
     url << "/#{key}" if feature_parent
-    url << "/#{product.key}"if product
-    bgk_icon = "<a href=\"#{url}\" class='pkz_background'>&nbsp;0&nbsp;</a>"
+    backgrounds_size = get_backgrounds(product) ? get_backgrounds(product).size : 0
+    backgrounds_size = (backgrounds_size > 0 ? backgrounds_size : nil )
+    bgk_icon = "<a href=\"#{url}\" class='pkz_background' title='#{backgrounds_size || 0} backgrounds for #{label}#{(' on ' << product.label) if product}'>&nbsp;#{backgrounds_size || '&nbsp;'}&nbsp;</a>"
 
 
     # rating icon only when product and ratable
     rating_icon =  if ratable
       if product
-        if opinion_average_expert_rating = get_opinion(product, "average_expert_rating")
-          "<span class='pkz_rating' title='average expert rating'>"  << ("%3d" % (opinion_average_expert_rating * 100)) << "%</span>"
-        else
-          "<span class='pkz_rating' title='average expert rating'>&nbsp;?&nbsp;</span>"
-        end
+        url = "/opinions/#{knowledge_key}/#{product.key}"
+        url << "/#{key}" if feature_parent
+        opinions_size = get_opinions(product) ? get_opinions(product).size : 0
+        opinions_size = (opinions_size > 0 ? opinions_size : nil)
+        "<a href=\"#{url}\" class='pkz_rating' title='#{opinions_size || 0} opinions for #{label} / #{product.label}'>&nbsp;#{opinions_size || '&nbsp;&nbsp;'}&nbsp;</a>"
       else
-       "<span class='pkz_rating' title='average expert rating'>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+       "<span class='pkz_rating' title='ratable feature'>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
       end
     end
 
@@ -111,12 +117,7 @@ class Feature < Model
     else
       # this the the root, i.e. the knowledge object
       html_node << "#{product ? product.label : 'product'}#{bgk_icon}#{rating_icon}"
-    end
-
-    # backgrounds for knowledege feature value
-    if product and (backgrounds_knowledge_feature = get_backgrounds(product)).size > 0
-      html_node << "&nbsp;<a href='/knowledges/backgrounds/#{knowledge.key}/#{self.key}/#{product.key}'  >...</a>"
-    end  
+    end 
 
     s_options = (deep_down and sub_features) ? sub_features.collect { |f| "<li>#{f.to_html(product, extra, deep_down)}</li>" } : []
     s_options = (s_options.size > 0) ? "<ul>#{s_options}</ul>" : nil
@@ -190,25 +191,9 @@ class Feature < Model
     end
   end
 
-  # this will return an ActiveRecord background object
-  def get_background(product, background_key)
-    ar_background = Background.get_from_key(knowledge_key, key, background_key)
-    if product
-      product.get_background(knowledge_key, key, background_key)
-    else
-      # TODO return background for feature (no product)   
-    end
-  end
 
-  # return a hash of background_key => background objects
-  def get_backgrounds(product=nil)
-    if product
-      product.get_backgrounds(knowledge_key, key)
-    else
-      # TODO return backgrounds for feature (no product)
-      {}
-    end
-  end
+
+
 
   # ------------------------------------------------------------------------------------------
   # misc
@@ -353,9 +338,7 @@ class Knowledge < Feature
   end
 
   def get_question_from_key(q_key)
-    #TODO change generator in backend to cleanup key (no question mark !)
-    size_qkey = q_key.size - 1
-    questions.detect { |q| q.key[0..size_qkey] == q_key }
+    questions.detect { |q| q.key == q_key }
   end
 
   def get_feature_by_key(f_key) hash_key_feature[f_key] end
@@ -702,7 +685,9 @@ class Question < Model
   def get_choice_ok_from_keys(choices_keys_selected_ok)
     choices.find_all { |choice| choice if choices_keys_selected_ok.include?(choice.key) }
   end
-  
+
+  def get_choice_from_key(choice_key) choices.detect {|c| c.key == choice_key } end
+
 end
 
 

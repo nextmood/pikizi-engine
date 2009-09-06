@@ -939,7 +939,7 @@ The new Palm&#xAE; Pre&#x2122; phone is always thinking ahead to make your life 
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="palm_pre" timestamp="2009/08/17 00:24:15" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:15" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://www.palm.com/us/products/phones/pre/</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="palm_pre" timestamp="2009/08/17 00:24:15" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:15" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/25/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="palm_pre" timestamp="2009/08/17 00:24:15" min_rating="0.0" max_rating="1.0" value="0.25" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.25">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.25">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

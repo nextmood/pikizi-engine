@@ -44,14 +44,14 @@ class Product < Root
   # set/get the background for a feature
   # if already existing keep the one from the user with the best reputation (if different !)
   def set_background(auth_background, user, knowledge_key, feature_key) set_data(user, knowledge_key, feature_key, "hash_key_background", auth_background, auth_background.key) end
-  def get_background(knowledge_key, feature_key, background_key) avg_value(get_data(knowledge_key, feature_key, "hash_key_background", background_key)) end
-  def get_backgrounds(knowledge_key, feature_key) avg_value(get_data(knowledge_key, feature_key, "hash_key_background", nil)) end
+  def get_background(knowledge_key, feature_key, background_key) get_data(knowledge_key, feature_key, "hash_key_background", background_key) end
+  def get_backgrounds(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "hash_key_background", nil) end
 
   # set/get the opinion for a feature
   # if already existing average weighted...
   def set_opinion(auth_opinion, user, knowledge_key, feature_key) set_data(user, knowledge_key, feature_key, "hash_key_opinion", auth_opinion, auth_opinion.key) end
-  def get_opinion(knowledge_key, feature_key, opinion_key) avg_value(get_data(knowledge_key, feature_key, "hash_key_opinion", opinion_key)) end
-  def get_opinions(knowledge_key, feature_key) avg_value(get_data(knowledge_key, feature_key, "hash_key_opinion", nil)) end
+  def get_opinion(knowledge_key, feature_key, opinion_key) get_data(knowledge_key, feature_key, "hash_key_opinion", opinion_key) end
+  def get_opinions(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "hash_key_opinion", nil) end
 
 
        
@@ -81,7 +81,7 @@ class Product < Root
   end
 
   def avg_value(x)
-    (x.is_a?(Hash) ? x.inject({}) { |h, (k,v)| h[k] = avg_value(v); h } : x.value ) if x
+    (x.is_a?(Hash) ? x.inject({}) { |h, (k,v)| h[k] = avg_value(v); h } : x.is_a?(Pikizi::Background) ? x : x.value ) if x
   end
 
 end

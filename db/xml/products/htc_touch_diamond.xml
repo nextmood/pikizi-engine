@@ -164,7 +164,7 @@ The HTC Touch Diamond's 900mAh lithium ion battery has a rated talk time of 5.5 
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="htc_touch_diamond" timestamp="2009/08/17 00:24:26" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:26" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://www.htc.com/www/product/touchdiamond/specification.html</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="htc_touch_diamond" timestamp="2009/08/17 00:24:26" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:26" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/34/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="htc_touch_diamond" timestamp="2009/08/17 00:24:26" min_rating="0.0" max_rating="1.0" value="0.0" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.0">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.0">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

@@ -1,12 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :backgrounds
 
-  map.connect '/knowledge_bgk/:knowledge_key', :controller => 'knowledges', :action => 'media'
-  map.connect '/knowledge_bgk/:knowledge_key/:feature_key', :controller => 'knowledges', :action => 'media'
 
-  map.connect '/media/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'media'
-  map.connect '/media/:knowledge_key/:feature_key/:product_key', :controller => 'knowledges', :action => 'media'
-  
+  # GET /medias/:knowledge_key/model/[:feature_key]
+  # GET /medias/:knowledge_key/product/:product_key/[:feature_key]
+  # GET /medias/:knowledge_key/question/:question_key/[:choice_key]
+  map.connect '/medias/:knowledge_key/model', :controller => 'knowledges', :action => 'medias', :selector => :model
+  map.connect '/medias/:knowledge_key/model/:feature_key', :controller => 'knowledges', :action => 'medias', :selector => :model
+  map.connect '/medias/:knowledge_key/product/:product_key', :controller => 'knowledges', :action => 'medias', :selector => :product
+  map.connect '/medias/:knowledge_key/product/:product_key/:feature_key', :controller => 'knowledges', :action => 'medias', :selector => :product
+  map.connect '/medias/:knowledge_key/question/:question_key', :controller => 'knowledges', :action => 'medias', :selector => :question
+  map.connect '/medias/:knowledge_key/question/:question_key/:choice_key', :controller => 'knowledges', :action => 'medias', :selector => :question
+
+  # GET /opinions/:knowledge_key/:product_key/[:feature_key]
+  map.connect '/opinions/:knowledge_key/:product_key/:feature_key', :controller => 'knowledges', :action => 'opinions'
+  map.connect '/opinions/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'opinions'
+
   map.resources :products
 
   map.resources :users, :member => { :process_authored => :get }
@@ -16,6 +25,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :knowledges
   map.connect '/show/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'show_by_key'
   map.connect '/show/:knowledge_key', :controller => 'knowledges', :action => 'show_by_key'
+
+
+  map.connect '/edit/:knowledge_key', :controller => 'knowledges', :action => 'edit_by_key'
+
   map.connect '/questions/:knowledge_key/:question_key', :controller => 'knowledges', :action => 'show_question'
   map.connect '/questions/:knowledge_key', :controller => 'knowledges', :action => 'show_questions'
 

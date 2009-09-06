@@ -797,7 +797,7 @@ The i9 has a rated battery life of three hours talk time. Our tests showed a tal
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_i9_stature" timestamp="2009/08/17 00:24:59" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:59" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://reviews.cnet.com/cell-phones/motorola-stature-i9-black/4505-6454_7-33560228.html?tag=mncol;lst</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_i9_stature" timestamp="2009/08/17 00:24:59" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:59" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/49/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_i9_stature" timestamp="2009/08/17 00:24:59" min_rating="0.0" max_rating="1.0" value="0.0" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.0">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.0">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

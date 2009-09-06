@@ -1131,7 +1131,7 @@ We also purposefully missed a couple of routes along the way to test the route r
 The HTC Touch Cruise features a 1,100mAh lithium ion battery with a rated talk time of 6.6 hours (GSM)/6.25 hours (3G) and up to 13 days (GSM)/16 days (3G) of standby time. We are still conducting our battery drain tests, but we will update this section as soon as we have final results.</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="htc_touch_cruise_2009" timestamp="2009/08/17 00:25:12" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:12" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/54/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="htc_touch_cruise_2009" timestamp="2009/08/17 00:25:12" min_rating="0.0" max_rating="1.0" value="0.5" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.5">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.5">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

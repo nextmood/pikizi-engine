@@ -139,7 +139,7 @@
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="blackberry_bold_9000" timestamp="2009/08/17 00:24:12" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:12" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://www.blackberry.com/blackberrybold/specifications.shtml</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="blackberry_bold_9000" timestamp="2009/08/17 00:24:12" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:12" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/23/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="blackberry_bold_9000" timestamp="2009/08/17 00:24:12" min_rating="0.0" max_rating="1.0" value="1.0" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="1.0">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="1.0">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

@@ -2005,7 +2005,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
     </sub_features>
   </feature>
   <questions>
-    <question key="q1_do_you_have_a_favorite_brand?" is_exclusive="true">
+    <question key="q1_do_you_have_a_favorite_brand" is_exclusive="true">
       <label>Do you have a favorite brand?</label>
       <if/>
       <choice key="c1_nokia" feature_key="f1_brand">
@@ -2089,7 +2089,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q7_what_type_of_user_are_you?" is_exclusive="false">
+    <question key="q7_what_type_of_user_are_you" is_exclusive="false">
       <label>What type of user are you?</label>
       <if/>
       <choice key="c30_business_user">
@@ -2123,7 +2123,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         <recommendations/>
       </choice>
     </question>
-    <question key="q13_what_form_factor_are_you_looking_for?" is_exclusive="true">
+    <question key="q13_what_form_factor_are_you_looking_for" is_exclusive="true">
       <label>What form factor are you looking for?</label>
       <if/>
       <choice key="c36_candy_bar" feature_key="f20_form_factor">
@@ -2200,7 +2200,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q18_what_kind_of_keyboard_would_you_prefer?" is_exclusive="true">
+    <question key="q18_what_kind_of_keyboard_would_you_prefer" is_exclusive="true">
       <label>What kind of keyboard would you prefer?</label>
       <if/>
       <choice key="c51_full_qwerty" feature_key="f118_keyboard">
@@ -2281,7 +2281,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q21_how_long_should_your_phone_last_without_recharging_it?" is_exclusive="true">
+    <question key="q21_how_long_should_your_phone_last_without_recharging_it" is_exclusive="true">
       <label>How long should your phone last without recharging it?</label>
       <if/>
       <choice key="c67_a_few_hours" feature_key="f46_talk_time">
@@ -2339,7 +2339,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q22_would_you_like_a_touch_screen?" is_exclusive="true">
+    <question key="q22_would_you_like_a_touch_screen" is_exclusive="true">
       <label>Would you like a touch screen?</label>
       <if/>
       <choice key="c70_that_works_at_a_finger's_touch" feature_key="f122_touch_screen">
@@ -2404,7 +2404,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q26_what_is_the_ideal_size?" is_exclusive="true">
+    <question key="q26_what_is_the_ideal_size" is_exclusive="true">
       <label>What is the ideal size?</label>
       <if/>
       <choice key="c77_compact">
@@ -2514,7 +2514,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q27_what_budget_do_you_have_in_mind?" is_exclusive="true">
+    <question key="q27_what_budget_do_you_have_in_mind" is_exclusive="true">
       <label>What budget do you have in mind?</label>
       <if/>
       <choice key="c85_minimal">
@@ -2585,7 +2585,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q29_what_kind_of_camera_would_you_like?" is_exclusive="true">
+    <question key="q29_what_kind_of_camera_would_you_like" is_exclusive="true">
       <label>What kind of camera would you like?</label>
       <if/>
       <choice key="c94_no_camera">
@@ -2657,7 +2657,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q36_what_feature(s)_are_you_ready_to_pay_a_premium_for?" is_exclusive="true">
+    <question key="q36_what_feature(s)_are_you_ready_to_pay_a_premium_for" is_exclusive="true">
       <label>What feature(s) are you ready to pay a premium for?</label>
       <if/>
       <choice key="c112_camera">
@@ -2725,7 +2725,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q38_what_type_of_phone_are_you_looking_for?" is_exclusive="true">
+    <question key="q38_what_type_of_phone_are_you_looking_for" is_exclusive="true">
       <label>What type of phone are you looking for?</label>
       <if/>
       <choice key="c123_cell_phone" feature_key="f170_category">
@@ -2792,7 +2792,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q39_what_internet_features_are_important_to_you?" is_exclusive="true">
+    <question key="q39_what_internet_features_are_important_to_you" is_exclusive="true">
       <label>What internet features are important to you?</label>
       <if/>
       <choice key="c129_full_internet_access">
@@ -2884,7 +2884,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q42_please_select_your_favorite_carriers?" is_exclusive="true">
+    <question key="q42_please_select_your_favorite_carriers" is_exclusive="true">
       <label>Please select your favorite carriers?</label>
       <if/>
       <choice key="c145_at&amp;t" feature_key="f110_carriers">
@@ -2962,7 +2962,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q44_what_kind_of_sliding_keyboards_do_you_prefer?" is_exclusive="true">
+    <question key="q44_what_kind_of_sliding_keyboards_do_you_prefer" is_exclusive="true">
       <label>What kind of sliding keyboards do you prefer?</label>
       <if/>
       <choice key="c153_vertical" feature_key="f194_sliding_keyboard">
@@ -2990,7 +2990,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q52_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q52_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c173_largest_app_store">
@@ -3011,7 +3011,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q53_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q53_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c175_fluid_internet_navigation">
@@ -3034,7 +3034,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q54_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q54_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c177_call_quality">
@@ -3054,7 +3054,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q55_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q55_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c180_seamless_contact_management">
@@ -3074,7 +3074,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q56_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q56_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c182_killer_camera">
@@ -3098,7 +3098,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q57_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q57_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c184_better_battery_life">
@@ -3118,7 +3118,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q58_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q58_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c186_hi-fi">
@@ -3138,7 +3138,7 @@ caldav = google &amp; yahoo<aggregation key="description" type="best" best_user_
         </recommendations>
       </choice>
     </question>
-    <question key="q59_what_feature_is_most_important_to_you?" is_exclusive="false">
+    <question key="q59_what_feature_is_most_important_to_you" is_exclusive="false">
       <label>What feature is most important to you?</label>
       <if/>
       <choice key="c188_eco-friendly">

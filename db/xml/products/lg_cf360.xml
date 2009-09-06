@@ -1080,7 +1080,7 @@ The LG CF360 has a rated battery life of three hours talk time and 10 days 10 ho
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_cf360" timestamp="2009/08/17 00:25:02" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:02" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://reviews.cnet.com/cell-phones/lg-cf360-blue-at/4505-6454_7-33507716.html?tag=mncol;lst</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_cf360" timestamp="2009/08/17 00:25:02" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:02" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/50/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_cf360" timestamp="2009/08/17 00:25:02" min_rating="0.0" max_rating="1.0" value="0.5" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.5">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.5">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

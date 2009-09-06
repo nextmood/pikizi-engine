@@ -16,6 +16,14 @@ class KnowledgesController < ApplicationController
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
     # retrieve the product, if the product doesn't exist create one
     @product = Pikizi::Product.get_from_cache(params[:product_key]) if params[:product_key]
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @knowledges.generate_xml }
+    end
+  end
+
+  def edit_by_key
+    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
   end
 
   def show_questions
@@ -52,17 +60,43 @@ class KnowledgesController < ApplicationController
 
   end
 
-  # GET /media/:knowledge_key/[:feature_key]/product_key
-  # GET /knowledge_bgk/:knowledge_key/[:feature_key]
-  def media
+  # GET /medias/:knowledge_key/:selector/parameters...
+  #
+  # GET /medias/:knowledge_key/model/[:feature_key]
+  # GET /medias/:knowledge_key/product/:product_key/[:feature_key]
+  # GET /medias/:knowledge_key/question/:question_key/[:choice_key]
+  #
+  def medias
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
-    @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
-  # GET /media/:knowledge_key/[ture_by_key(params[:feature_key] || params[:knowledge_key])
-    # retrieve the product
-    @product = Pikizi::Product.get_from_cache(params[:product_key]) if params[:product_key]
+    case @selector = params[:selector]
+      when :model
+        @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
+        @medias = @feature.get_backgrounds
+      when :product
+        @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
+        @product = Pikizi::Product.get_from_cache(params[:product_key])
+        @medias = @feature.get_backgrounds(@product)
+      when :question
+        @question = @knowledge.get_question_from_key(params[:question_key])
+        if params[:choice_key]
+          @choice = @question.get_choice_from_key(params[:choice_key])
+          @medias = @choice.get_backgrounds
+        else
+          @medias = @question.get_backgrounds
+        end
+      else
+      raise "unknown selector #{params[:selector]}"
+    end
   end
 
 
+  # GET /opinions/:knowledge_key/model/:product_key/[:feature_key]
+  def opinions
+    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
+    @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
+    @product = Pikizi::Product.get_from_cache(params[:product_key])
+    @opinions = @knowledge.get_opinions(@product)
+  end
 
   # GET /knowledges/update_indexes
   # update the knowledge database

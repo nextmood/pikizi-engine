@@ -1,0 +1,19 @@
+<h1>Test medias</h1>
+ <h2>
+<%= "feature=#{@feature.key}" if [:model, :product].include?(@selector) %>
+<%= "<br/>product=#{@product.key}" if @selector == :product %>
+<%= "<br/>question=#{@question.key}" if @selector == :question %>
+<%= "<br/>choice=#{@choice.key}" if @selector == :question and @choice %>
+
+</h2>
+<table  border=1>
+  <tr><th>key</th><th>class</th><th>value</th><th>aggregation</th></tr>
+<% for k,v in @medias %>
+    <tr>
+      <td valign="top"><%= k %></td>
+      <td valign="top"><%= v.class %></td>
+      <td valign="top"><%= v.is_a?(Pikizi::Background) ? v.value : v %></td>
+      <td valign="top"><%= v.is_a?(Pikizi::Background) ? v.aggregation.class : 'none' %></td>
+    </tr>
+<% end %>
+</table>

@@ -1217,7 +1217,7 @@ The Lotus has a rated battery life of 5.6 hours talk time. Our tests reveal a ta
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_lotus" timestamp="2009/08/17 00:25:28" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:28" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://reviews.cnet.com/cell-phones/lg-lotus-black-sprint/4505-6454_7-33350843.html?tag=mncol;lst</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_lotus" timestamp="2009/08/17 00:25:28" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:28" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/59/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="lg_lotus" timestamp="2009/08/17 00:25:28" min_rating="0.0" max_rating="1.0" value="0.25" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.25">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.25">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

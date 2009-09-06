@@ -8,7 +8,8 @@
             <%= pluralize(@knowledge.nb_features, "feature") %>,&nbsp;
             <%= link_to(pluralize(@knowledge.nb_questions, "question"), "/questions/#{@knowledge.key}") %>,&nbsp;
             <%= pluralize(@knowledge.nb_recommendation, "recommendation") %>,&nbsp;
-            <%= pluralize(@knowledge.nb_quizzes, "quiz") %>
+            <%= pluralize(@knowledge.nb_quizzes, "quiz") %>,&nbsp;
+            <%= link_to "xml", "/edit/#{@knowledge.key}" %>
           </small>
         </span>
 

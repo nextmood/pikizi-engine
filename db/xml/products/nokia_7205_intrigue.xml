@@ -982,7 +982,7 @@
       <background key="main_video" knowledge_key="cell_phones" feature_key="cell_phones" product_key="nokia_7205_intrigue" timestamp="2009/08/17 00:24:21" type="video"><aggregation key="main_video" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:21" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://www.youtube.com/watch?v=GF1zQ3x8xKw</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="nokia_7205_intrigue" timestamp="2009/08/17 00:24:21" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:21" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/30/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="nokia_7205_intrigue" timestamp="2009/08/17 00:24:21" min_rating="0.0" max_rating="1.0" value="0.75" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.75">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.75">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

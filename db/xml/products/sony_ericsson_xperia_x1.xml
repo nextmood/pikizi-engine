@@ -194,7 +194,7 @@ The Xperia X1 has a rated battery talk time of 6 hours on 3G and 10 hours on GSM
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="sony_ericsson_xperia_x1" timestamp="2009/08/17 00:24:37" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:37" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://www.gsmarena.com/sony_ericsson_xperia_x1-2246.php</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="sony_ericsson_xperia_x1" timestamp="2009/08/17 00:24:37" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:37" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/40/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="sony_ericsson_xperia_x1" timestamp="2009/08/17 00:24:37" min_rating="0.0" max_rating="1.0" value="0.0" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.0">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.0">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

@@ -201,7 +201,7 @@ The Samsung Propel Pro's 1440mAh lithium ion battery has a rated talk time of 6.
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="samsung_propel_pro" timestamp="2009/08/17 00:24:44" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:44" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://reviews.cnet.com/cell-phones/samsung-propel-pro-at/4505-6454_7-33573217.html</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="samsung_propel_pro" timestamp="2009/08/17 00:24:44" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:24:44" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/43/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="samsung_propel_pro" timestamp="2009/08/17 00:24:44" min_rating="0.0" max_rating="1.0" value="0.0" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.0">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.0">
           <author key="nextmood"/>
         </aggregation>
       </opinion>

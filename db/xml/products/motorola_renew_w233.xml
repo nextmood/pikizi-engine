@@ -1010,7 +1010,7 @@ The Renew has a rated talk battery life of nine hours, which is quite high. Inde
       <background key="main_url" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_renew_w233" timestamp="2009/08/17 00:25:22" type="url"><aggregation key="main_url" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:22" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://reviews.cnet.com/4566-6454_7-0-2.html?rpp=50&amp;tag=mncol;page</background>
       <background key="main_image" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_renew_w233" timestamp="2009/08/17 00:25:22" type="image"><aggregation key="main_image" type="Best" best_user_reputation="1.0" best_timestamp="2009/08/17 00:25:22" best_user_key="nextmood"><author key="nextmood"/></aggregation>http://localhost:3000/products/57/thumbnail_150.jpg</background>
       <opinion key="average_expert_rating" knowledge_key="cell_phones" feature_key="cell_phones" product_key="motorola_renew_w233" timestamp="2009/08/17 00:25:22" min_rating="0.0" max_rating="1.0" value="0.5" type="rating" user_category="expert">
-        <aggregation key="average_expert_rating" type="AverageWeighted" nb_weighted="1.0" sum_weighted="0.5">
+        <aggregation key="average_expert_rating" type="Averageweighted" nb_weighted="1.0" sum_weighted="0.5">
           <author key="nextmood"/>
         </aggregation>
       </opinion>
