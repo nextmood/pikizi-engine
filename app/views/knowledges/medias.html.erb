@@ -1,19 +1,26 @@
-<h1>Test medias</h1>
- <h2>
-<%= "feature=#{@feature.key}" if [:model, :product].include?(@selector) %>
-<%= "<br/>product=#{@product.key}" if @selector == :product %>
-<%= "<br/>question=#{@question.key}" if @selector == :question %>
-<%= "<br/>choice=#{@choice.key}" if @selector == :question and @choice %>
+<div class="pkz_box">
 
-</h2>
-<table  border=1>
-  <tr><th>key</th><th>class</th><th>value</th><th>aggregation</th></tr>
-<% for k,v in @medias %>
-    <tr>
-      <td valign="top"><%= k %></td>
-      <td valign="top"><%= v.class %></td>
-      <td valign="top"><%= v.is_a?(Pikizi::Background) ? v.value : v %></td>
-      <td valign="top"><%= v.is_a?(Pikizi::Background) ? v.aggregation.class : 'none' %></td>
-    </tr>
-<% end %>
-</table>
+  <div class="pkz_menu">
+    Backgrounds for
+    <%= " <b>#{@feature.label_full}</b>" if [:model, :product].include?(@selector) %>
+    <%= "and product <b>#{@product.label}</b>" if @selector == :product %>
+    <%= " question <b>#{@question.label}</b>" if @selector == :question %>
+    <%= "and choice <b>#{@choice.label}</b>" if @selector == :question and @choice %>
+  </div>
+
+  <div class="pkz_main">
+    <table  border=1>
+        <tr><th>key</th><th>class</th><th>value</th></tr>
+        <% for k,v in @medias %>
+            <tr>
+              <td valign="top"><%= k %></td>
+              <td valign="top"><%= v.class %></td>
+              <td valign="top"><%= v.is_a?(Pikizi::Background) ? v.display_as_html : v %></td>
+            </tr>
+        <% end %>
+    </table>
+  </div>
+
+</div>
+
+

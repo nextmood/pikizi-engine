@@ -1,17 +1,8 @@
-<p>
-  <b>Type:</b>
-  <%=h @background.type %>
-</p>
+<%=h @background.class %>
 
-<p>
-  <b>Key:</b>
-  <%=h @background.key %>
-</p>
+<b><%=h @background.background_key %></b>
 
-<p>
-  <b>Label:</b>
-  <%=h @background.label %>
-</p>
+(bgk=<%= @background.knowledge_key %>, feature=<%= @background.feature_key %>, product=<%= @background.product_key %>)
 
 <p>
   <b>Data:</b>
@@ -28,6 +19,7 @@
   <%=h @background.author_key %>
 </p>
 
+<%= image_tag("/backgrounds/#{@background.id}/thumbnail_150") %>
 
 <%= link_to 'Edit', edit_background_path(@background) %> |
 <%= link_to 'Back', backgrounds_path %>

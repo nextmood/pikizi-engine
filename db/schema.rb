@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090816114821) do
+ActiveRecord::Schema.define(:version => 20090911135114) do
 
   create_table "backgrounds", :force => true do |t|
     t.string   "type"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20090816114821) do
     t.string   "author_key"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "question_key"
+    t.string   "choice_key"
   end
 
   create_table "knowledges", :force => true do |t|
@@ -43,6 +45,19 @@ ActiveRecord::Schema.define(:version => 20090816114821) do
     t.integer  "author_id"
     t.integer  "nb_models",        :default => 0
     t.float    "value_completion", :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "type"
+    t.string   "knowledge_key"
+    t.string   "feature_key"
+    t.string   "product_key"
+    t.string   "media_key"
+    t.string   "author_key"
+    t.integer  "author_id"
+    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

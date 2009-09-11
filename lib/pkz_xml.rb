@@ -57,13 +57,16 @@ class Root
   # to convert v.strftime(Root.default_date_format)
   def self.default_date_format() "%Y/%m/%d %H:%M:%S" end
   
-  def to_xml(key=nil)
+  def to_xml(a_key=nil, extra_param=nil)
     doc = XML::Document.new
 
-    generate_xml(doc)
-    if key
+    # horrible hack below, extra_param is used as an handle to knowledges
+    # when generating xml for products
+    extra_param ? generate_xml(doc, extra_param) : generate_xml(doc)
+
+    if a_key
       #doc.compression = 1 ;
-      doc.save self.class.filename_data(key)
+      doc.save(self.class.filename_data(a_key))
     else
       doc.to_s(:indent => true)
     end

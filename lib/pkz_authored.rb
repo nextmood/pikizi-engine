@@ -9,13 +9,14 @@ require 'xml'
 
 class Atomic < Root
 
-  attr_accessor :knowledge_key, :feature_key, :product_key, :timestamp, :aggregation
+  attr_accessor :knowledge_key, :feature_key, :product_key, :timestamp, :aggregation, :db_id
 
   def initialize_from_xml(xml_node)
     super(xml_node)
     self.knowledge_key = xml_node['knowledge_key']
     self.feature_key = xml_node['feature_key']
     self.product_key = xml_node['product_key']
+    self.db_id = xml_node['db_id']
     self.timestamp =  Time.parse(xml_node['timestamp']) if xml_node['timestamp']
     node_aggregation = xml_node.find_first("aggregation")
     self.aggregation = node_aggregation ? Aggregation.create_from_xml(node_aggregation) : nil
@@ -23,11 +24,15 @@ class Atomic < Root
 
   def generate_xml(top_node, class_name)
     node_atomic = super(top_node, class_name)
-    node_atomic['knowledge_key'] = knowledge_key if knowledge_key
-    node_atomic['feature_key'] = feature_key if feature_key
-    node_atomic['product_key'] = product_key if product_key
-    node_atomic['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
-    aggregation.generate_xml(node_atomic) if aggregation
+    # create a record in DB for this background and set up the result
+ 
+    node_atomic['db_id'] = db_id.to_s
+
+    #node_atomic['knowledge_key'] = knowledge_key if knowledge_key
+    #node_atomic['feature_key'] = feature_key if feature_key
+    #node_atomic['product_key'] = product_key if product_key
+    #node_atomic['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
+    #aggregation.generate_xml(node_atomic) if aggregation
     node_atomic
   end
 
@@ -137,6 +142,14 @@ class Background < Atomic
 
   def get_aggregation_instance() AggregationBest.create_with_parameters(key) end
 
+  def display_as_html()
+    if db_id
+      ActiveRecord::Base::Background.find(db_id).data
+    else
+      value
+    end
+  end
+  
 end
 
 class BackgroundText < Background
@@ -150,6 +163,7 @@ class BackgroundUrl < Background
 end
 
 class BackgroundImage < BackgroundUrl
+  def display_as_html() "<img src='/backgrounds/#{db_id}/thumbnail_150' />" end
 end
 
 class BackgroundVideo < BackgroundUrl

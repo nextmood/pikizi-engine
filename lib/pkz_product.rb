@@ -1,6 +1,7 @@
 require 'pkz_xml.rb'
 require 'pkz_authored.rb'
 
+
 module Pikizi
 
 class Product < Root
@@ -11,11 +12,17 @@ class Product < Root
     super(xml_node)
     self.modeldatas = Root.get_hash_from_xml(xml_node, 'modeldata', 'key') { |node_modeldata| Modeldata.create_from_xml(node_modeldata) }
   end
-  
-  def generate_xml(top_node)
+
+  # generate xml according to knowledge structure...
+  def generate_xml(top_node, knowledge_keys)
+    puts "*** generating product=#{key}"
     node_product = super(top_node)
-    modeldatas.each { |key, modeldata| modeldata.generate_xml(node_product) } if modeldatas
+    knowledge_keys.each { |knowledge_key| modeldatas[knowledge_key].generate_xml(node_product, Knowledge.get_from_cache(knowledge_key)) } if modeldatas
     node_product
+  end
+
+  def to_xml(knowledge_keys, key=nil)
+    super(key, knowledge_keys)
   end
 
   def self.get_from_cache(product_key, reload=nil)
@@ -32,18 +39,14 @@ class Product < Root
       PK_LOGGER.info "XML product #{product_key} created on filesystem"              
     end
     PK_LOGGER.info "loading XML product #{product_key} from filesystem"
-    super(XML::Document.file(filename_data(product_key)).root)
+    super(XML::Document.file(self.filename_data(product_key)).root)
   end
 
 
-  # set/get the value for a feature
-  # if already existing keep the one from the user with the best reputation (if different !)
-  def set_value(auth_value, user, knowledge_key, feature_key) set_data(user, knowledge_key, feature_key, "value", auth_value) end
-  def get_value(knowledge_key, feature_key) avg_value(get_data(knowledge_key, feature_key, "value")) end
+  # get the values for a feature
+  def get_values(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "values") end
 
   # set/get the background for a feature
-  # if already existing keep the one from the user with the best reputation (if different !)
-  def set_background(auth_background, user, knowledge_key, feature_key) set_data(user, knowledge_key, feature_key, "hash_key_background", auth_background, auth_background.key) end
   def get_background(knowledge_key, feature_key, background_key) get_data(knowledge_key, feature_key, "hash_key_background", background_key) end
   def get_backgrounds(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "hash_key_background", nil) end
 
@@ -58,17 +61,6 @@ class Product < Root
   private
 
 
-  def set_data(user, knowledge_key, feature_key, method, atom, hash_key=nil)
-    if existing_atom = get_data(knowledge_key, feature_key, method, hash_key)
-      new_atom = existing_atom.add_auth(user, atom)
-    else
-      atom.aggregation = atom.get_aggregation_instance
-      new_atom = atom.add_auth(user, atom)
-    end
-    fd = feature_data(knowledge_key, feature_key)
-    hash_key ? fd.send(method)[hash_key] = new_atom : fd.send("#{method}=", new_atom)
-  end
-
   def get_data(knowledge_key, feature_key, method, hash_key=nil)
     fd = feature_data(knowledge_key, feature_key)
     hash_key ? fd.send(method)[hash_key] : fd.send(method)
@@ -80,9 +72,6 @@ class Product < Root
     modeldata.featuredatas[feature_key] ||= Featuredata.create_with_parameters(feature_key)
   end
 
-  def avg_value(x)
-    (x.is_a?(Hash) ? x.inject({}) { |h, (k,v)| h[k] = avg_value(v); h } : x.is_a?(Pikizi::Background) ? x : x.value ) if x
-  end
 
 end
 
@@ -95,15 +84,37 @@ class Modeldata < Root
   
   def initialize_from_xml(xml_node)
     super(xml_node)
-    self.featuredatas = Root.get_hash_from_xml(xml_node, "featuredata", 'key') { |node_featuredata| Featuredata.create_from_xml(node_featuredata) }
+    self.featuredatas = Root.get_hash_from_xml(xml_node, "//featuredata", 'key') { |node_featuredata| Featuredata.create_from_xml(node_featuredata) }
+    
   end
   
-  def generate_xml(top_node)
+  def generate_xml(top_node, knowledge)
     node_modeldata = super(top_node)
-    featuredatas.each { |key, featuredata| featuredata.generate_xml(node_modeldata) }
+    generate_xml_bis(knowledge, node_modeldata)
     node_modeldata
   end
-    
+
+  def generate_xml_bis(feature, node_feature)
+
+    node_feature << XML::Node.new_comment(feature.label)
+
+    # this generate the xml, background and opinion
+
+    if featuredata = featuredatas[feature.key]
+      featuredata.generate_xml(feature, node_feature, featuredatas)
+    else
+      node_feature << (node_featuredata = XML::Node.new('featuredata'))
+      node_featuredata['feature_key'] = feature.key
+      feature.generate_xml_4_value(node_featuredata, featuredatas)
+    end
+
+    if feature.sub_features and feature.sub_features.size > 0
+      node_feature << (node_sub_features = XML::Node.new('sub_features'))
+      feature.sub_features.each { |sf| generate_xml_bis(sf, node_sub_features) }
+    end
+    node_feature
+  end
+
   def self.create_with_parameters(knowledge_key)
     modeldata = super(knowledge_key)
     modeldata.featuredatas = {}
@@ -112,30 +123,32 @@ class Modeldata < Root
 
 end
 
-# describe a set of Aggregation for a given feature in a given model
+# describe a set of Data for a given feature in a given model and a product
 class Featuredata < Root
-    
-  attr_accessor :value, :hash_key_background, :hash_key_opinion
+
+  attr_accessor :values, :hash_key_background, :hash_key_opinion
   
   def initialize_from_xml(xml_node)
     super(xml_node)
-    self.value = ((node_value = xml_node.find_first('value')) ? Value.create_from_xml(node_value) : nil)
+    #self.value = ((node_value = xml_node.find_first('value')) ? Value.create_from_xml(node_value) : nil)
+    self.values = Root.get_collection_from_xml(xml_node, "value") { |node_value| node_value.content.strip }
     self.hash_key_background = Root.get_hash_from_xml(xml_node, "background", "key") { |node_background| Background.create_from_xml(node_background) }
     self.hash_key_opinion = Root.get_hash_from_xml(xml_node, "opinion", "key") { |node_opinion| Opinion.create_from_xml(node_opinion) }
   end
 
   
-  def generate_xml(top_node)
+  def generate_xml(feature, top_node, featuredatas)
     node_featuredata = super(top_node)
-    value.generate_xml(node_featuredata) if value
+    feature.generate_xml_4_value(node_featuredata, featuredatas)
     hash_key_background.each { |background_key, background| background.generate_xml(node_featuredata) }
     hash_key_opinion.each { |opinion_key, opinion| opinion.generate_xml(node_featuredata) }
     node_featuredata
   end
 
+  
   def self.create_with_parameters(feature_key)
     featuredata = super(feature_key)
-    featuredata.value = nil
+    featuredata.values = []
     featuredata.hash_key_background = {}
     featuredata.hash_key_opinion = {}
     featuredata

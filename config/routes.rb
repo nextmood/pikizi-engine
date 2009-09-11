@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :backgrounds
+
+  map.resources :backgrounds, :member => { :thumbnail_150 => :get  }
 
 
   # GET /medias/:knowledge_key/model/[:feature_key]

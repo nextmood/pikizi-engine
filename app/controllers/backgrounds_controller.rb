@@ -113,4 +113,13 @@ class BackgroundsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # GET /backgrounds/1/thumbnail_150.jpg
+  def thumbnail_150
+    @background = Background.find(params[:id])
+    respond_to do |format|
+      format.jpg
+    end
+  end
+
 end

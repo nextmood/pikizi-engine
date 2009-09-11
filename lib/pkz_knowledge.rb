@@ -24,7 +24,7 @@ class Model < Root
 
   def generate_xml(top_node, class_name)
     node_model = super(top_node, class_name)
-    hash_key_best_background.each { |key, background| background.generate_xml(node_model) }
+    hash_key_best_background.each { |key, background| background.generate_xml(node_model) }  if hash_key_best_background
     node_model
   end
 
@@ -56,11 +56,16 @@ class Feature < Model
   def initialize_from_xml(xml_node, feature_parent) 
     super(xml_node, feature_parent ? feature_parent.knowledge : self)
     self.feature_parent = feature_parent
-    self.ratable = (xml_node['ratable'] ? true : nil)
+    self.ratable = (xml_node['ratable'] || nil)
     self.sub_features = Root.get_collection_from_xml(xml_node, "sub_features/feature") { |node| Feature.create_from_xml(node, self) }
     knowledge.hash_key_feature[key] = self
   end
 
+  def is_root?() feature_parent.nil? end
+
+  def label_full() is_root? ? label : "#{feature_parent.label_full}/#{label}" end
+
+  
   def self.create_new_instance_from_xml(xml_node) 
     Pikizi.const_get("Feature#{xml_node['type'].capitalize}").new
   end
@@ -74,13 +79,22 @@ class Feature < Model
     type = self.class.to_s.downcase; type.slice!("pikizi::feature")
     node_feature = super(top_node, "feature") 
     node_feature['type'] = type
-    node_feature['ratable'] = "true" if ratable
+    node_feature['ratable'] = ratable if ratable
     if sub_features and sub_features.size > 0      
       node_feature << (node_sub_features = XML::Node.new('sub_features'))
       sub_features.each { |sf| sf.generate_xml(node_sub_features) }
     end
     node_feature
   end
+
+  def generate_xml_4_value(node_featuredata, featuredatas)
+    if featuredata = featuredatas[key]
+      node_featuredata << (node_value = XML::Node.new('value'))
+      node_value << featuredata.value.value if featuredata.value
+    end
+    node_featuredata
+  end
+
 
   # translate to html
   def to_html(product, extra, deep_down)
@@ -106,7 +120,8 @@ class Feature < Model
         opinions_size = (opinions_size > 0 ? opinions_size : nil)
         "<a href=\"#{url}\" class='pkz_rating' title='#{opinions_size || 0} opinions for #{label} / #{product.label}'>&nbsp;#{opinions_size || '&nbsp;&nbsp;'}&nbsp;</a>"
       else
-       "<span class='pkz_rating' title='ratable feature'>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+        user_categories = ratable.split(",")
+       "<span class='pkz_rating' title='ratable by: #{user_categories.join(', ')}'>&nbsp;#{user_categories.size}&nbsp;</span>"
       end
     end
 
@@ -119,13 +134,18 @@ class Feature < Model
       html_node << "#{product ? product.label : 'product'}#{bgk_icon}#{rating_icon}"
     end 
 
-    s_options = (deep_down and sub_features) ? sub_features.collect { |f| "<li>#{f.to_html(product, extra, deep_down)}</li>" } : []
+    s_options = (deep_down and sub_features) ? sub_features.collect { |f| "<li>#{f.to_html(product, nil, deep_down)}</li>" } : []
     s_options = (s_options.size > 0) ? "<ul>#{s_options}</ul>" : nil
     "#{html_node}#{s_options}"
   end
 
   def get_html_editor(product)
-    product ? "<input type='text' value='#{value2string(get_value(product))}' />" : "N/A"
+    if product
+      values = get_values(product).collect { |v| value2string(v) }
+      "<input type='text' values='#{values.join(', ')}' />"
+    else
+      "N/A"
+    end
   end
 
   def label_hierarchical() feature_parent ? "#{feature_parent.label_hierarchical}/#{label}" : label  end
@@ -149,11 +169,11 @@ class Feature < Model
   def string2value(x) x end
   def value2string(x) x.to_s end
 
-  # return the aggregated FeatureValue(s) for a product
+  # return the  FeatureValue(s) for a product
   # return nil, if no value
-  def get_value(product)
-    v = product.get_value(knowledge_key, key)
-    string2value(v) if v
+  def get_values(product)
+    values = product.get_values(knowledge_key, key)
+    values.collect {|v| string2value(v) } if values
   end
 
   # set the feature value for a product
@@ -225,10 +245,10 @@ class Knowledge < Feature
     self.current_index = Integer(xml_node.attributes['current_index'] || 0)
     self.hash_key_feature = {}
     super(xml_node.find_first('feature'), nil)
-    self.product_keys = Root.get_collection_from_xml(xml_node, 'products/product') { |node_product| node_product.attributes["key"] }
-    self.questions = Root.get_collection_from_xml(xml_node, 'questions/question') { |node_question| Question.create_from_xml(node_question, self) }
+    self.product_keys = Root.get_collection_from_xml(xml_node, 'feature/product_keys/product') { |node_product| node_product.attributes["key"] }
+    self.questions = Root.get_collection_from_xml(xml_node, 'feature/questions/question') { |node_question| Question.create_from_xml(node_question, self) }
     if node_quizzes = xml_node.find_first('feature') and xml_node.find_first('quiz')
-      self.quizzes = Root.get_collection_from_xml(xml_node, 'quizzes/quiz') { |node_quiz| Quiz.create_from_xml(node_quiz, self) }
+      self.quizzes = Root.get_collection_from_xml(xml_node, 'feature/quizzes/quiz') { |node_quiz| Quiz.create_from_xml(node_quiz, self) }
     else
       self.quizzes = [Quiz.create_with_parameters(key, product_keys)]
     end
@@ -269,7 +289,7 @@ class Knowledge < Feature
   def to_html(product=nil)
     raise "product class wrong=#{product.inspect}" if product and !product.is_a?(Pikizi::Product)
     hidden_tail = ""
-    hierarchy = super(product, nil, true)
+    hierarchy = super(product, "", true)
     hierarchy << hidden_tail
   end
   
@@ -342,6 +362,8 @@ class Knowledge < Feature
   end
 
   def get_feature_by_key(f_key) hash_key_feature[f_key] end
+
+
   
 end
 
@@ -367,20 +389,39 @@ class FeatureTag < Feature
     feature_binaries.each { |feature_binary|  feature_binary.generate_xml(node_tags) }
     node_feature_tag
   end
-  
+
+  def generate_xml_4_value(node_featuredata, featuredatas)
+    feature_binaries.each do |sf|
+      node_featuredata << XML::Node.new_comment("#{sf.key} : #{sf.label}")
+      feature_data = featuredatas[sf.key]
+      featuredata_value = feature_data ? feature_data.value : nil
+      featuredata_value_value = featuredata_value ? featuredata_value.value : nil
+      if featuredata_value_value == "true"
+        node_featuredata << (node_value = XML::Node.new('value'))
+        node_value << feature_data.key
+      end
+
+    end
+    node_featuredata
+  end
+
   def to_html(product, extra, deep_down)
     extra = feature_binaries.collect { |sf| sf.label }.join(", ")  unless product
     super(product, extra, false)
   end
 
   def get_html_editor(product)
-    product ? feature_binaries.collect { |sf| sf.get_html_editor(product) }.join(", ") : ""  
+    if product
+      values = get_values(product)
+      feature_binaries.collect do |sf|
+        type_button = is_exclusive ? 'radio' : 'checkbox'
+        "<input type='#{type_button}' name='feature_#{sf.key}' value='#{sf.key}' #{ values.include?(sf.key) ? 'checked' : nil} />#{sf.label}"
+      end.join(", ")
+    else
+      ""
+    end
   end
 
-  # the value is the list of feature tag-keys with a value set to true
-  def get_value(product)
-    feature_binaries.inject([]) { |l, sf| v = sf.get_value(product); v == true ? l << sf.key : l }
-  end
   
   def is_valid_value?(feature_tag_keys)
     all_feature_tag_keys = feature_binaries.collect(&:key) 
@@ -423,10 +464,7 @@ class FeatureInterval < Feature
     [feature_min, feature_max].each { |feature_range| feature_range.generate_xml(node_ranges) }
     node_feature_interval
   end
-  
-  # value is an array of 2 values
-  def get_value(product) [feature_min.get_value(product), feature_max.get_value(product)] end
-  
+
   
   # value is an array of 2 values
   def is_valid_value?(value)
@@ -435,9 +473,22 @@ class FeatureInterval < Feature
     feature_min.is_valid_value?(value_min) and feature_max.is_valid_value?(value_max)
   end
 
+  def generate_xml_4_value(node_featuredata, featuredatas)
+    [feature_min, feature_max].each do |sf|
+      node_featuredata << XML::Node.new_comment("#{sf.key} : #{sf.label}")
+      feature_data = featuredatas[sf.key]
+      featuredata_value = feature_data ? feature_data.value : nil
+      featuredata_value_value = featuredata_value ? featuredata_value.value : nil
+      node_featuredata << (node_value = XML::Node.new('value'))
+      node_value << featuredata_value_value
+
+    end
+    node_featuredata
+  end
+
   def get_html_editor(product)
     if product
-      min, max = get_value(product)
+      min, max = get_values(product)
       "<input type='text' value='#{min} -- #{max}' />"
     else
       ""
@@ -468,7 +519,7 @@ class FeatureContinous < Feature
 
   def get_html_editor(product)
     if product
-      v = get_value(product)
+      v = get_values(product).first
       "<input type='text'    value='#{ v ? format_value(v) : nil}' />"
     else
       ""
@@ -488,7 +539,7 @@ class FeatureContinous < Feature
   
   # return the min max values
   def range(among_products)
-    l = among_products.collect { |p| get_value(p)  }.sort!
+    l = among_products.collect { |p| get_values(p).first  }.sort!
     (l and min = l.min < max = l.max) ? [min, max] : [value_min, value_max]
   end
 
@@ -557,7 +608,7 @@ class FeatureBinary < Feature
     if product
       raise "error" unless   feature_parent
       type_button = is_exclusive ? 'radio' : 'checkbox'
-      "<input type='#{type_button}'   name='feature_#{key}' value='#{key}' #{(get_value(product) == true) ? 'checked' : nil} />#{label}" 
+      "<input type='#{type_button}'   name='feature_#{key}' value='#{key}' #{(get_values(product) == true) ? 'checked' : nil} />#{label}" 
     else
       "N/A"
     end
@@ -1084,6 +1135,7 @@ end
 
 end
 
+
 class Array
 
   # this is call on an array of tensor
@@ -1091,5 +1143,5 @@ class Array
     raise "oups parameters" unless self.all? { |x| x.is_a?(Tensor) } and tensors.is_a?(Array) and tensors.all? { |x| x.is_a?(Tensor)}
       stf.add_tensors(tf)
   end
-  
+
 end
