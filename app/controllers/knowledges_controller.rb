@@ -1,5 +1,9 @@
 
 class KnowledgesController < ApplicationController
+
+  # layout "minimal", :only => :quiz
+
+
   # GET /knowledges
   # GET /knowledges.xml
   def index

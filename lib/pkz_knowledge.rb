@@ -835,6 +835,15 @@ class Choice < Model
     hash_pkey_tensor
   end
 
+  
+  def generate_javascript_tensors(products)
+    hash_pkey_tensor = generate_hash_pkey_tensor(products)
+    products.collect do |product|
+      arrow = hash_pkey_tensor[product.key] ? hash_pkey_tensor[product.key].weight : "&nbsp;"
+      "tr_arrow('#{product.key}','#{arrow}');"
+    end.join(' ')
+  end
+
   # return the number of recommendations handled by this question
   def nb_recommendation() recommendations.size end
 

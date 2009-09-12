@@ -1,4 +1,22 @@
 
+<script>
+  function tr_arrow(p_key, weight)
+  {
+    var textWeight = " ";
+    var textColor = "white";
+    if (weight > 0) {
+        textWeight = '+' + weight;
+        textColor = "green";
+    }
+    if (weight < 0) {
+        textWeight = weight;
+        textColor = "red" ;
+    }
+    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = textWeight  ;
+    document.getElementById('product_' + p_key).style.backgroundColor = textColor ;
+   }
+</script>
+
 <div class="pkz_box">
 
 
@@ -52,14 +70,16 @@
   <table><tr><td width="50%" valign="top">
       <ul>
       <% for affinity in @quiz_instance.sorted_affinities %>
-          <li>
+          <li id="product_<%= affinity.product_key %>">
           #<%= affinity.ranking %>&nbsp;
           <%= affinity.product_key %>&nbsp;
           <small>affinity=<%= "%3d" % (affinity.measure * 100) %>%,&nbsp;confidence=<%= "% 3d" % (affinity.confidence * 100) %>%</small>
+          &nbsp;<b id="tensor_<%= affinity.product_key %>">&nbsp;</b>
           </li>
       <% end %>
       </ul>
   </td><td width="50%" valign="top">
+    <b onclick="document.getElementById('tensor_lg_xenon').childNodes[0].nodeValue = 'top';">test</b>
       <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
           <div class="pkz_item_list"
                answered="<%= @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key) ? 'true' : 'false' %>">
@@ -73,7 +93,10 @@
                 separation=<%= question.separation(@quiz.products, @current_ar_user.pkz_user).round %>,&nbsp;
                 confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>
               <br/>
-              <%= question.choices.collect {|c| "#{c.label} (#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})" }.join(', ') %>
+              <%= question.choices.collect do |c|
+                    action_icon = "<img src='/images/icons/play.png' onclick=\"#{c.generate_javascript_tensors(@quiz.products)}\" />"
+                    "#{action_icon} #{c.label} (#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})"
+                    end.join(', ') %>
               </small>
           </div>
       <% end %>
