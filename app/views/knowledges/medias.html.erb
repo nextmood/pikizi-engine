@@ -6,6 +6,8 @@
     <%= "and product <b>#{@product.label}</b>" if @selector == :product %>
     <%= " question <b>#{@question.label}</b>" if @selector == :question %>
     <%= "and choice <b>#{@choice.label}</b>" if @selector == :question and @choice %>
+    <% back_url = "/show/#{@knowledge.key}"; back_url << "/#{@product.key}" if @selector == :product  %>
+    &nbsp;<small><%= link_to("back to #{@knowledge.label}", back_url) %></small>
   </div>
 
   <div class="pkz_main">

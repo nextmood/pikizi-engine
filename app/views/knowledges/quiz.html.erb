@@ -13,8 +13,20 @@
         textColor = "red" ;
     }
     document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = textWeight  ;
-    document.getElementById('product_' + p_key).style.backgroundColor = textColor ;
+    document.getElementById('tensor_' + p_key).style.backgroundColor = textColor ;
    }
+
+  function clean_up_arrows()
+  {
+      <%= @quiz.products.collect { |product| "clean_up_one_arrow('#{product.key}');"}.join(' ') %>
+  }
+
+
+  function clean_up_one_arrow(p_key)
+  {
+    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = " "  ;
+    document.getElementById('product_' + p_key).style.backgroundColor = "white" ;
+  }
 </script>
 
 <div class="pkz_box">
@@ -25,6 +37,8 @@
       Quiz <%= @quiz.key %>
       <small>
         <%= pluralize(@quiz_instance.nb_answers, "answer") %>
+        &nbsp;
+        <%= link_to("back to #{@knowledge.label}", "/show/#{@knowledge.key}")%>
       </small>
     </span>
 </div>
@@ -40,25 +54,21 @@
     </small>
     <!-- the form -->
     <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
-    <% form_tag "/answer" do -%>
+    <% form_tag "/answer", :style => "margin-bottom:10px;" do -%>
       <%= hidden_field_tag "user_key", @current_ar_user.key %>
       <%= hidden_field_tag "knowledge_key", @knowledge.key %>
       <%= hidden_field_tag "quiz_key", @quiz.key %>
       <%= hidden_field_tag "question_key", next_question.key %>
-      <%= next_question.label %><%= submit_tag "next" %>
-      <ul>
+      <div style="font-weight:bold; margin:5px; color:blue;"><%= next_question.label %></div>
       <% for choice in next_question.choices %>
-        <li>
           <% if next_question.is_choice_exclusive %>
             <%= radio_button_tag "choices_keys_ok[]", choice.key %>
           <% else %>
             <%= check_box_tag "choices_keys_ok[]", choice.key %>
           <% end %>
-          <%= choice.label %>
-        </li>
+          <%= choice.label %>&nbsp;&nbsp;
       <% end %>
-      </ul>
-
+      <%= submit_tag "next" %>
     <% end -%>
 
   <% else %>
@@ -71,31 +81,34 @@
       <ul>
       <% for affinity in @quiz_instance.sorted_affinities %>
           <li id="product_<%= affinity.product_key %>">
-          #<%= affinity.ranking %>&nbsp;
+
+          #<%= affinity.ranking %>
+          <span id="tensor_<%= affinity.product_key %>" style="border:1px solid white;">&nbsp;</span>
           <%= affinity.product_key %>&nbsp;
           <small>affinity=<%= "%3d" % (affinity.measure * 100) %>%,&nbsp;confidence=<%= "% 3d" % (affinity.confidence * 100) %>%</small>
-          &nbsp;<b id="tensor_<%= affinity.product_key %>">&nbsp;</b>
+          &nbsp;
           </li>
       <% end %>
       </ul>
   </td><td width="50%" valign="top">
-    <b onclick="document.getElementById('tensor_lg_xenon').childNodes[0].nodeValue = 'top';">test</b>
       <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
+          <% answered_choice_keys = @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key);
+             answered_choice_keys = answered_choice_keys.answers_ok.collect {|aok| aok.choice_key } if answered_choice_keys %>
           <div class="pkz_item_list"
-               answered="<%= @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key) ? 'true' : 'false' %>">
-              <%= question.label %>
-              <small>
-                <%= question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
-                pre-condition:<%= question.precondition_expression || 'none' %>
-                <br/>
+               answered="<%= answered_choice_keys ? 'true' : 'false' %>">
+              <%= link_to(question.label, "/questions/#{@knowledge.key}/#{question.key}") %>
+
+              <div style="font-size:80%;">
                 presentation=<%= question.nb_presentation.round %>
                 (<%= pluralize question.nb_oo.round, "no opinion" %>),&nbsp;
                 separation=<%= question.separation(@quiz.products, @current_ar_user.pkz_user).round %>,&nbsp;
                 confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>
-              <br/>
+              </div>
               <%= question.choices.collect do |c|
-                    action_icon = "<img src='/images/icons/play.png' onclick=\"#{c.generate_javascript_tensors(@quiz.products)}\" />"
-                    "#{action_icon} #{c.label} (#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})"
+                    action_icon = "<img src='/images/icons/play.png' onmouseover=\"#{c.generate_javascript_tensors(@quiz.products)}\" onmouseout=\"clean_up_arrows();\" />"
+                    choice_text = "#{action_icon} #{c.label} <small>(#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})</small>"
+                    choice_text = "<span style='background-color:grey;'>#{choice_text}</span>" if answered_choice_keys and answered_choice_keys.include?(c.key)
+                    choice_text
                     end.join(', ') %>
               </small>
           </div>

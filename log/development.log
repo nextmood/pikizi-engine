@@ -1,0 +1,1809 @@
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 09:40:19) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 355.18ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 59.05ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 175.33ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 50.67ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 161.46ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 159.93ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 62.00ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 161.45ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 52.67ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 162.87ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 170.28ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 54.85ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 164.15ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 52.28ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 172.55ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 162.68ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 58.76ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 167.16ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 57.47ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 175.45ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 171.60ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 55.05ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 175.18ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 52.62ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 180.27ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 178.44ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 60.87ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 174.46ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 57.03ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 176.51ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 178.61ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 56.01ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 181.03ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 51.88ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 184.90ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 179.18ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 56.11ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 184.76ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 182.71ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 54.17ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 184.75ms): Psony_ericsson_w508
+Completed in 6253ms (View: 5866, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 09:46:47) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 780ms (View: 749, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 09:47:26) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 433.26ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 96.48ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 255.94ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 79.67ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 296.74ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 259.68ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 88.28ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 268.49ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 85.33ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 268.88ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 253.22ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 92.62ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 285.58ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 88.18ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 278.81ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 264.24ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 92.70ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 272.79ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 91.21ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 282.49ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 286.40ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 95.99ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 307.59ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 113.87ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 323.75ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 322.82ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 101.05ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 319.74ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 93.41ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 355.50ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 308.46ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 97.26ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 325.61ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 93.94ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 310.74ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 322.60ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 108.09ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 312.42ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 100.79ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 314.76ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 309.65ms): Psony_ericsson_w508
+Completed in 10580ms (View: 10108, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 09:48:40) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 1050ms (View: 1012, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 10:55:32) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 441.66ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 98.37ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 243.39ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 71.54ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 303.59ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 282.03ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 228.28ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 333.92ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 113.89ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 269.24ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 291.07ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 93.98ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 189.68ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 106.60ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 284.32ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 189.14ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 67.97ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 182.22ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 96.56ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 242.78ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 156.81ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 84.62ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 217.15ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 54.98ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 194.23ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 258.63ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 135.93ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 416.67ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 142.36ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 299.27ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 325.92ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 187.07ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 311.73ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 161.01ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 184.75ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 241.88ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 115.63ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 233.11ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 139.19ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 182.98ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 247.56ms): Psony_ericsson_w508
+Completed in 9674ms (View: 9002, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 10:55:43) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 1146ms (View: 1129, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-13 11:04:22) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 349ms (View: 99, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2009-09-13 11:04:26) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mKnowledge Load (19.9ms)[0m   [0;1mSELECT * FROM "knowledges" ORDER BY updated_at DESC[0m
+Rendering template within layouts/application
+Rendering knowledges/index
+Completed in 139ms (View: 92, DB: 20) | 200 OK [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:04:29) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 314.39ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 473ms (View: 147, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:04:32) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"palm_pre"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 77.99ms): Ppalm_pre
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 117ms (View: 21, DB: 0) | 200 OK [http://localhost/show/cell_phones/palm_pre]
+
+
+Processing KnowledgesController#show_questions (for 127.0.0.1 at 2009-09-13 11:04:34) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 156.11ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 43.17ms): Papple_iphone_3g
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 50.23ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 49.28ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 162.02ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 46.56ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 34.47ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 153.64ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 41.26ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 36.71ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 34.80ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 184.05ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 61.95ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 36.87ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 184.60ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 41.67ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 39.90ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 37.34ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 166.33ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 37.12ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 35.92ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 159.09ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 41.22ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 36.21ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 36.27ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 168.11ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 37.42ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 35.48ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 167.22ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 38.76ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 35.81ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 36.05ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 175.65ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 37.56ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 35.71ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 167.72ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 40.88ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 37.39ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 35.59ms): Psony_ericsson_w508
+Rendering template within layouts/application
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (17.6ms)
+Rendered knowledges/_show_question (1.8ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (3.5ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (2.6ms)
+Rendered knowledges/_show_question (2.5ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (1.4ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (1.1ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (1.4ms)
+Rendered knowledges/_show_question (1.2ms)
+Completed in 3201ms (View: 225, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:04:41) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 26ms (View: 15, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:04:56) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"apple_iphone_3g"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 43ms (View: 27, DB: 0) | 200 OK [http://localhost/show/cell_phones/apple_iphone_3g]
+
+
+Processing KnowledgesController#medias (for 127.0.0.1 at 2009-09-13 11:04:58) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"apple_iphone_3g", "selector"=>:product}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/medias
+  [4;35;1mBackground Load (13.1ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 656) [0m
+  [4;36;1mBackground Load (0.7ms)[0m   [0;1mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 657) [0m
+Completed in 198ms (View: 173, DB: 14) | 200 OK [http://localhost/medias/cell_phones/product/apple_iphone_3g]
+
+
+Processing BackgroundsController#thumbnail_150 (for 127.0.0.1 at 2009-09-13 11:04:59) [GET]
+  Parameters: {"id"=>"658"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mBackground Load (0.5ms)[0m   [0;1mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 658) [0m
+Rendering backgrounds/thumbnail_150
+Completed in 434ms (View: 404, DB: 1) | 200 OK [http://localhost/backgrounds/658/thumbnail_150]
+
+
+Processing KnowledgesController#medias (for 127.0.0.1 at 2009-09-13 11:08:05) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"apple_iphone_3g", "selector"=>:product}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/medias
+  [4;36;1mBackground Load (0.6ms)[0m   [0;1mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 656) [0m
+  [4;35;1mBackground Load (10.4ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 657) [0m
+Completed in 86ms (View: 62, DB: 11) | 200 OK [http://localhost/medias/cell_phones/product/apple_iphone_3g]
+
+
+Processing BackgroundsController#thumbnail_150 (for 127.0.0.1 at 2009-09-13 11:08:06) [GET]
+  Parameters: {"id"=>"658"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mBackground Load (0.4ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 658) [0m
+Rendering backgrounds/thumbnail_150
+Completed in 319ms (View: 216, DB: 1) | 200 OK [http://localhost/backgrounds/658/thumbnail_150]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:08:58) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 33ms (View: 18, DB: 2) | 200 OK [http://localhost/show/cell_phones/]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:09:04) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_e75"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 42ms (View: 27, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_e75]
+
+
+Processing KnowledgesController#medias (for 127.0.0.1 at 2009-09-13 11:10:29) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_e75", "selector"=>:product}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/medias
+  [4;35;1mBackground Load (37.4ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 717) [0m
+  [4;36;1mBackground Load (0.4ms)[0m   [0;1mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 718) [0m
+Completed in 84ms (View: 34, DB: 38) | 200 OK [http://localhost/medias/cell_phones/product/nokia_e75]
+
+
+Processing BackgroundsController#thumbnail_150 (for 127.0.0.1 at 2009-09-13 11:10:30) [GET]
+  Parameters: {"id"=>"719"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mBackground Load (2.1ms)[0m   [0;1mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 719) [0m
+Rendering backgrounds/thumbnail_150
+Completed in 336ms (View: 208, DB: 3) | 200 OK [http://localhost/backgrounds/719/thumbnail_150]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:10:32) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#medias (for 127.0.0.1 at 2009-09-13 11:10:36) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "selector"=>:model}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/medias
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/medias/cell_phones/model]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:10:42) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_n96"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 39ms (View: 24, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_n96]
+
+
+Processing KnowledgesController#medias (for 127.0.0.1 at 2009-09-13 11:12:37) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_n96", "selector"=>:product}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/medias
+  [4;35;1mBackground Load (1.8ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 725) [0m
+Completed in 130ms (View: 117, DB: 2) | 200 OK [http://localhost/medias/cell_phones/product/nokia_n96]
+
+
+Processing BackgroundsController#thumbnail_150 (for 127.0.0.1 at 2009-09-13 11:12:37) [GET]
+  Parameters: {"id"=>"726"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mBackground Load (0.6ms)[0m   [0mSELECT * FROM "backgrounds" WHERE ("backgrounds"."id" = 726) [0m
+Rendering backgrounds/thumbnail_150
+Completed in 231ms (View: 199, DB: 1) | 200 OK [http://localhost/backgrounds/726/thumbnail_150]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 11:12:43) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones", "product_key"=>"nokia_n96"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 32ms (View: 20, DB: 0) | 200 OK [http://localhost/show/cell_phones/nokia_n96]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:13:16) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Completed in 1225ms (View: 540, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:13:45) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 538ms (View: 519, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:15:17) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 517ms (View: 493, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:15:29) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache miss: Mcell_phones ({:force=>nil})
+Cache write (will save 337.06ms): Mcell_phones
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Cache miss: Pblackberry_bold_9000 ({:force=>nil})
+Cache write (will save 43.99ms): Pblackberry_bold_9000
+Cache miss: Papple_iphone_3g ({:force=>nil})
+Cache write (will save 157.34ms): Papple_iphone_3g
+Cache miss: Ppalm_pre ({:force=>nil})
+Cache write (will save 147.05ms): Ppalm_pre
+Cache miss: Pnokia_e75 ({:force=>nil})
+Cache write (will save 44.47ms): Pnokia_e75
+Cache miss: Pnokia_n96 ({:force=>nil})
+Cache write (will save 141.99ms): Pnokia_n96
+Cache miss: Pnokia_e71 ({:force=>nil})
+Cache write (will save 41.89ms): Pnokia_e71
+Cache miss: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache write (will save 142.78ms): Pnokia_5800_xpressmusic
+Cache miss: Pnokia_7205_intrigue ({:force=>nil})
+Cache write (will save 142.64ms): Pnokia_7205_intrigue
+Cache miss: Pblackberry_curve_8900 ({:force=>nil})
+Cache write (will save 45.51ms): Pblackberry_curve_8900
+Cache miss: Pblackberry_pearl_8130 ({:force=>nil})
+Cache write (will save 138.59ms): Pblackberry_pearl_8130
+Cache miss: Pnokia_n79 ({:force=>nil})
+Cache write (will save 47.07ms): Pnokia_n79
+Cache miss: Phtc_touch_diamond ({:force=>nil})
+Cache write (will save 146.14ms): Phtc_touch_diamond
+Cache miss: Plg_versa ({:force=>nil})
+Cache write (will save 167.26ms): Plg_versa
+Cache miss: Psamsung_impression ({:force=>nil})
+Cache write (will save 47.59ms): Psamsung_impression
+Cache miss: Psamsung_memoir_t929 ({:force=>nil})
+Cache write (will save 154.73ms): Psamsung_memoir_t929
+Cache miss: Psamsung_omnia ({:force=>nil})
+Cache write (will save 48.03ms): Psamsung_omnia
+Cache miss: Pblackberry_storm ({:force=>nil})
+Cache write (will save 146.78ms): Pblackberry_storm
+Cache miss: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache write (will save 148.57ms): Psony_ericsson_xperia_x1
+Cache miss: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache write (will save 44.86ms): Psamsung_knack_sch-u310
+Cache miss: Psanyo_scp-2700 ({:force=>nil})
+Cache write (will save 149.33ms): Psanyo_scp-2700
+Cache miss: Psamsung_propel_pro ({:force=>nil})
+Cache write (will save 47.22ms): Psamsung_propel_pro
+Cache miss: Pnokia_e63 ({:force=>nil})
+Cache write (will save 148.79ms): Pnokia_e63
+Cache miss: Psamsung_instinct_s30 ({:force=>nil})
+Cache write (will save 150.82ms): Psamsung_instinct_s30
+Cache miss: Psamsung_sgh-a657 ({:force=>nil})
+Cache write (will save 50.90ms): Psamsung_sgh-a657
+Cache miss: Plg_xenon ({:force=>nil})
+Cache write (will save 479.72ms): Plg_xenon
+Cache miss: Pnokia_6500_classic ({:force=>nil})
+Cache write (will save 44.16ms): Pnokia_6500_classic
+Cache miss: Pmotorola_i9_stature ({:force=>nil})
+Cache write (will save 152.49ms): Pmotorola_i9_stature
+Cache miss: Plg_cf360 ({:force=>nil})
+Cache write (will save 152.06ms): Plg_cf360
+Cache miss: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache write (will save 46.25ms): Pblackberry_pearl_flip_8220
+Cache miss: Ppalm_eos ({:force=>nil})
+Cache write (will save 152.56ms): Ppalm_eos
+Cache miss: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache write (will save 51.00ms): Phtc_touch_cruise_2009
+Cache miss: Psamsung_trance ({:force=>nil})
+Cache write (will save 158.70ms): Psamsung_trance
+Cache miss: Plg_vx8350 ({:force=>nil})
+Cache write (will save 160.18ms): Plg_vx8350
+Cache miss: Pmotorola_renew_w233 ({:force=>nil})
+Cache write (will save 46.18ms): Pmotorola_renew_w233
+Cache miss: Pnokia_n85 ({:force=>nil})
+Cache write (will save 157.66ms): Pnokia_n85
+Cache miss: Plg_lotus ({:force=>nil})
+Cache write (will save 47.95ms): Plg_lotus
+Cache miss: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache write (will save 156.96ms): Psamsung_s8300_ultratouch
+Cache miss: Plg_arena ({:force=>nil})
+Cache write (will save 168.15ms): Plg_arena
+Cache miss: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache write (will save 50.68ms): Pnokia_5130_xpressmusic
+Cache miss: Psony_ericsson_w508 ({:force=>nil})
+Cache write (will save 166.16ms): Psony_ericsson_w508
+Completed in 5741ms (View: 5313, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:17:21) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 517ms (View: 493, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:17:48) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 605ms (View: 574, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:18:14) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 980ms (View: 950, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:19:43) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 531ms (View: 510, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:19:54) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 536ms (View: 513, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:20:27) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 520ms (View: 500, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:23:09) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 559ms (View: 535, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:23:41) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 606ms (View: 583, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:23:55) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 552ms (View: 535, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:24:09) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 531ms (View: 513, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:24:18) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 609ms (View: 593, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:24:46) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 636ms (View: 619, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:25:01) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 655ms (View: 638, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:26:06) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 606ms (View: 583, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:26:22) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 645ms (View: 629, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:26:39) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 718ms (View: 686, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:27:17) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 544ms (View: 525, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:27:28) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 723ms (View: 702, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:27:44) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 614ms (View: 597, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:27:53) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 782ms (View: 765, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 11:28:25) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 775ms (View: 747, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:00:17) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 515ms (View: 498, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:00:40) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 600ms (View: 579, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:00:51) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 718ms (View: 688, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:01:47) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+
+ActionView::TemplateError (undefined method `choice_key' for #<Pikizi::Answer:0x20205b0>) on line #96 of app/views/knowledges/quiz.html.erb:
+93:           <% answered_choice_key = @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key) %>
+94:           <div class="pkz_item_list"
+95:                answered="<%= answered_choice_key ? 'true' : 'false' %>">
+96:               <%= question.label %> a=<%= answered_choice_key.choice_key %>
+97:               <small>
+98:                 <%= question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
+99:                 pre-condition:<%= question.precondition_expression || 'none' %>
+
+    app/views/knowledges/quiz.html.erb:96
+    app/views/knowledges/quiz.html.erb:92:in `each'
+    app/views/knowledges/quiz.html.erb:92
+    app/controllers/knowledges_controller.rb:54:in `quiz'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (52.1ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:02:04) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 664ms (View: 649, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:02:28) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 603ms (View: 560, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:04:12) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.answers_ok) on line #96 of app/views/knowledges/quiz.html.erb:
+93:           <% answered_choice_key = @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key) %>
+94:           <div class="pkz_item_list"
+95:                answered="<%= answered_choice_key ? 'true' : 'false' %>">
+96:               <%= question.label %> a=<%= answered_choice_key.answers_ok.collect(&:key).join(', ') %>
+97:               <small>
+98:                 <%= question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
+99:                 pre-condition:<%= question.precondition_expression || 'none' %>
+
+    app/views/knowledges/quiz.html.erb:96
+    app/views/knowledges/quiz.html.erb:92:in `each'
+    app/views/knowledges/quiz.html.erb:92
+    app/controllers/knowledges_controller.rb:54:in `quiz'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (52.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:04:35) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 623ms (View: 565, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:05:07) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 573ms (View: 557, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:06:00) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 600ms (View: 576, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:06:15) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 667ms (View: 642, DB: 2) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:08:40) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 547ms (View: 518, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:12:07) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 543ms (View: 520, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:12:45) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 610ms (View: 587, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:13:04) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 689ms (View: 670, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:13:28) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 585ms (View: 541, DB: 1) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:13:56) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 655ms (View: 608, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:14:37) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 516ms (View: 497, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:16:36) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 626ms (View: 606, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 12:16:46) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 32ms (View: 21, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show_questions (for 127.0.0.1 at 2009-09-13 12:16:48) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_questions
+Rendered knowledges/_show_question (4.7ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (2.4ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (3.4ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (2.7ms)
+Rendered knowledges/_show_question (1.5ms)
+Rendered knowledges/_show_question (3.1ms)
+Rendered knowledges/_show_question (3.2ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (3.0ms)
+Rendered knowledges/_show_question (2.8ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.2ms)
+Rendered knowledges/_show_question (1.3ms)
+Rendered knowledges/_show_question (1.8ms)
+Completed in 924ms (View: 911, DB: 0) | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:16:51) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 166ms (View: 153, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_by_key (for 127.0.0.1 at 2009-09-13 12:17:56) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_by_key
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:17:58) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 675ms (View: 659, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-13 12:18:08) [GET]
+
+ActionController::RoutingError (No route matches "/quiz/questions/cell_phones/q26_what_is_the_ideal_size" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#quiz (for 127.0.0.1 at 2009-09-13 12:18:20) [GET]
+  Parameters: {"knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/quiz
+Completed in 598ms (View: 582, DB: 0) | 200 OK [http://localhost/quiz/cell_phones]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:18:23) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 29ms (View: 16, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:20:37) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 139ms (View: 126, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:25:40) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 47ms (View: 26, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:26:31) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 72ms (View: 53, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:26:52) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 43ms (View: 28, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:27:20) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 140ms (View: 116, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:27:44) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 72ms (View: 48, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:28:26) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 51ms (View: 28, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:28:49) [GET]
+  Parameters: {"question_key"=>"q26_what_is_the_ideal_size", "knowledge_key"=>"cell_phones"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 46ms (View: 31, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q26_what_is_the_ideal_size]
+
+
+Processing KnowledgesController#show_question (for 127.0.0.1 at 2009-09-13 12:29:15) [GET]
+  Parameters: {"question_key"=>"q56_what_feature_is_most_important_to_you", "knowledge_key"=>"cell_phones"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Cache hit: Mcell_phones ({:force=>nil})
+Cache hit: Pblackberry_bold_9000 ({:force=>nil})
+Cache hit: Papple_iphone_3g ({:force=>nil})
+Cache hit: Ppalm_pre ({:force=>nil})
+Cache hit: Pnokia_e75 ({:force=>nil})
+Cache hit: Pnokia_n96 ({:force=>nil})
+Cache hit: Pnokia_e71 ({:force=>nil})
+Cache hit: Pnokia_5800_xpressmusic ({:force=>nil})
+Cache hit: Pnokia_7205_intrigue ({:force=>nil})
+Cache hit: Pblackberry_curve_8900 ({:force=>nil})
+Cache hit: Pblackberry_pearl_8130 ({:force=>nil})
+Cache hit: Pnokia_n79 ({:force=>nil})
+Cache hit: Phtc_touch_diamond ({:force=>nil})
+Cache hit: Plg_versa ({:force=>nil})
+Cache hit: Psamsung_impression ({:force=>nil})
+Cache hit: Psamsung_memoir_t929 ({:force=>nil})
+Cache hit: Psamsung_omnia ({:force=>nil})
+Cache hit: Pblackberry_storm ({:force=>nil})
+Cache hit: Psony_ericsson_xperia_x1 ({:force=>nil})
+Cache hit: Psamsung_knack_sch-u310 ({:force=>nil})
+Cache hit: Psanyo_scp-2700 ({:force=>nil})
+Cache hit: Psamsung_propel_pro ({:force=>nil})
+Cache hit: Pnokia_e63 ({:force=>nil})
+Cache hit: Psamsung_instinct_s30 ({:force=>nil})
+Cache hit: Psamsung_sgh-a657 ({:force=>nil})
+Cache hit: Plg_xenon ({:force=>nil})
+Cache hit: Pnokia_6500_classic ({:force=>nil})
+Cache hit: Pmotorola_i9_stature ({:force=>nil})
+Cache hit: Plg_cf360 ({:force=>nil})
+Cache hit: Pblackberry_pearl_flip_8220 ({:force=>nil})
+Cache hit: Ppalm_eos ({:force=>nil})
+Cache hit: Phtc_touch_cruise_2009 ({:force=>nil})
+Cache hit: Psamsung_trance ({:force=>nil})
+Cache hit: Plg_vx8350 ({:force=>nil})
+Cache hit: Pmotorola_renew_w233 ({:force=>nil})
+Cache hit: Pnokia_n85 ({:force=>nil})
+Cache hit: Plg_lotus ({:force=>nil})
+Cache hit: Psamsung_s8300_ultratouch ({:force=>nil})
+Cache hit: Plg_arena ({:force=>nil})
+Cache hit: Pnokia_5130_xpressmusic ({:force=>nil})
+Cache hit: Psony_ericsson_w508 ({:force=>nil})
+Rendering template within layouts/application
+Rendering knowledges/show_question
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/questions/cell_phones/q56_what_feature_is_most_important_to_you]
