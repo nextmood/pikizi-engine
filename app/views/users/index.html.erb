@@ -1,6 +1,6 @@
 <div class="pkz_box"></div>
 <div class="pkz_menu">
-  <small><%= link_to "update index", "/update_indexes/users" %></small>
+  <!-- <small><%= link_to "update index", "/update_indexes/users" %></small>  -->
 
   <span><%= pluralize(@users.size, "user")%></span>
   <small><%= link_to "knowledge bases", "/knowledges" %></small>
@@ -10,6 +10,7 @@
     <% @users.each do |user| %>
       <div class="pkz_item_list">
         <%= link_to "##{user.key} #{user.rpx_username}", "/profile/#{user.key}" %>
+        promotion:<%= user.promotion_code %>
         <small>
             &nbsp;
             <%= pluralize user.nb_authored_values, "value" %>
