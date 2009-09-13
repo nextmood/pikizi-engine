@@ -23,6 +23,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/newsPhone1.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/edit_xml.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pkz_user.rb" afterPath="$PROJECT_DIR$/lib/pkz_user.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/phone3.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/iconTwit.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/stylesheets/geene.css" afterPath="" />
@@ -43,6 +44,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/bg_search_boxBg.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box346Top.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box952edge.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/iconHrt.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/topPick1.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/logo.png" afterPath="" />
@@ -73,46 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="quiz.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="quiz.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="44" selection-start="3663" selection-end="3663" vertical-scroll-proportion="-2.3111112">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show_question.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="42" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-13.789474">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="11" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="78" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.5784615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="franck_dev.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/xml/users/franck_dev.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="61" column="97" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.48160535">
               <folding />
             </state>
           </provider>
@@ -121,25 +87,25 @@
       <file leaf-file-name="pkz_user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pkz_user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="323" column="54" selection-start="12904" selection-end="12914" vertical-scroll-proportion="0.0">
+            <state line="258" column="7" selection-start="10763" selection-end="10763" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="environment.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <file leaf-file-name="show_question.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="26" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+            <state line="26" column="42" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-15.157895">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="medias.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/medias.html.erb">
+      <file leaf-file-name="_quiz_question.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="68" selection-start="563" selection-end="563" vertical-scroll-proportion="-5.6842103">
+            <state line="4" column="79" selection-start="131" selection-end="176" vertical-scroll-proportion="-2.5263157">
               <folding />
             </state>
           </provider>
@@ -195,6 +161,28 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="vendor" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="plugins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="fleximage" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -291,6 +279,24 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="config" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="config" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="initializers" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -683,10 +689,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32748538" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24916667" sideWeight="0.59356725" order="0" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35380116" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28333333" sideWeight="0.59210527" order="1" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42543858" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3993576" sideWeight="0.5" order="5" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
@@ -722,20 +728,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/pkz_authored.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="74" selection-start="4234" selection-end="4234" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backgrounds/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pkz_product.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="150" column="26" selection-start="5494" selection-end="5494" vertical-scroll-proportion="0.0">
@@ -785,37 +777,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pkz_knowledge.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="841" column="92" selection-start="30718" selection-end="30718" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/xml/users/franck_dev.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pkz_user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="323" column="54" selection-start="12904" selection-end="12914" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="44" selection-start="3663" selection-end="3663" vertical-scroll-proportion="-2.3111112">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="42" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-13.789474">
           <folding />
         </state>
       </provider>
@@ -827,9 +791,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/mime_types.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="78" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.5784615">
+        <state line="60" column="78" selection-start="2318" selection-end="2318" vertical-scroll-proportion="-9.894737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="42" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-15.157895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pkz_knowledge.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="841" column="92" selection-start="30718" selection-end="30718" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pkz_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="258" column="7" selection-start="10763" selection-end="10763" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="79" selection-start="131" selection-end="176" vertical-scroll-proportion="-2.5263157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="97" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.48160535">
           <folding />
         </state>
       </provider>

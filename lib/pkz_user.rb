@@ -250,7 +250,15 @@ class Quizinstance < Root
       type_return == :last ? answers.last : answers
     end 
   end
-  
+
+  def user_last_answer_choice_keys_ok(question_key)
+    if (a = user_last_answer(question_key))
+      a.answers_ok.collect {|aok| aok.choice_key }
+    else
+      nil
+    end 
+  end
+
   # return true or false if the user has answered "value_answered" ("ok", "ko") to question_key and choice_key
   # return false if the user has not answred
   def user_answered?(question_key, choice_key, value_answered)

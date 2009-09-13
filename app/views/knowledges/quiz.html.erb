@@ -59,7 +59,7 @@
       <%= hidden_field_tag "knowledge_key", @knowledge.key %>
       <%= hidden_field_tag "quiz_key", @quiz.key %>
       <%= hidden_field_tag "question_key", next_question.key %>
-      <div style="font-weight:bold; margin:5px; color:blue;"><%= next_question.label %></div>
+      <div style="font-weight:bold; margin:5px;"><%= link_to(next_question.label, "/questions/#{@knowledge.key}/#{next_question.key}") %></div>
       <% for choice in next_question.choices %>
           <% if next_question.is_choice_exclusive %>
             <%= radio_button_tag "choices_keys_ok[]", choice.key %>
@@ -91,28 +91,29 @@
       <% end %>
       </ul>
   </td><td width="50%" valign="top">
+    
       <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
-          <% answered_choice_keys = @current_ar_user.pkz_user.get_quiz_instance(@quiz).user_last_answer(question.key);
-             answered_choice_keys = answered_choice_keys.answers_ok.collect {|aok| aok.choice_key } if answered_choice_keys %>
-          <div class="pkz_item_list"
-               answered="<%= answered_choice_keys ? 'true' : 'false' %>">
-              <%= link_to(question.label, "/questions/#{@knowledge.key}/#{question.key}") %>
-
-              <div style="font-size:80%;">
-                presentation=<%= question.nb_presentation.round %>
-                (<%= pluralize question.nb_oo.round, "no opinion" %>),&nbsp;
-                separation=<%= question.separation(@quiz.products, @current_ar_user.pkz_user).round %>,&nbsp;
-                confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>
-              </div>
-              <%= question.choices.collect do |c|
-                    action_icon = "<img src='/images/icons/play.png' onmouseover=\"#{c.generate_javascript_tensors(@quiz.products)}\" onmouseout=\"clean_up_arrows();\" />"
-                    choice_text = "#{action_icon} #{c.label} <small>(#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})</small>"
-                    choice_text = "<span style='background-color:grey;'>#{choice_text}</span>" if answered_choice_keys and answered_choice_keys.include?(c.key)
-                    choice_text
-                    end.join(', ') %>
-              </small>
-          </div>
+          <% if answered_choice_keys = @quiz_instance.user_last_answer_choice_keys_ok(question.key) %>
+              <%= render(:partial => "knowledges/quiz_question",
+                         :locals => { :answered_choice_keys => answered_choice_keys,
+                                      :current_ar_user => @current_ar_user,
+                                      :quiz => @quiz,
+                                      :knowledge => @knowledge,
+                                      :question => question })%>
+          <% end %>
       <% end %>
+
+      <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
+          <% unless answered_choice_keys = @quiz_instance.user_last_answer_choice_keys_ok(question.key) %>
+              <%= render(:partial => "knowledges/quiz_question",
+                         :locals => { :answered_choice_keys => answered_choice_keys,
+                                      :current_ar_user => @current_ar_user,
+                                      :quiz => @quiz,
+                                      :knowledge => @knowledge,
+                                      :question => question })%>
+          <% end %>
+      <% end %>
+
   </td></tr></table>
 </div>
 
