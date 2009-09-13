@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
     Rails.cache.each { |key, cached_object| cached_object.save }
   end
 
+  def self.release_version() "v 3.0 alpha 09/13/09"  end
 
   private
 
