@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <knowledge>
-  <feature key="cell_phones" type="pikizi::knowledge" ratable="expert, citizen" current_index="553">
+  <feature key="cell_phones" type="pikizi::knowledge" current_index="553">
     <label lang="en">Cell Phones</label>
     <sub_features>
+      <feature key="main_expert_rating" type="rating" min_rating="1" max_rating="5" user_categories="expert">
+        <label lang="en">Expert rating</label>  
+      </feature>
+      <feature key="main_citizen_rating" type="rating" min_rating="1" max_rating="5" user_categories="citizen">
+        <label lang="en">Everyone rating</label>
+      </feature>
       <feature key="f1_brand" type="tag" is_exclusive="true">
         <label lang="en">Brand</label>
         <tags>
@@ -63,7 +69,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f5_tips" type="header" ratable="expert, citizen">
+      <feature key="f5_tips" type="header" >
         <label lang="en">Tips</label>
         <sub_features>
           <feature key="f108_pros" type="tag" is_exclusive="true">
@@ -76,10 +82,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f13_hardware" type="header" ratable="expert, citizen">
+      <feature key="f13_hardware" type="header" >
         <label lang="en">Hardware</label>
         <sub_features>
-          <feature key="f14_screen" type="header" ratable="expert, citizen">
+          <feature key="f14_screen" type="header" >
             <label lang="en">screen</label>
             <sub_features>
               <feature key="f17_colors" type="numeric" format="%1dc" value_min="1.0" value_max="2000000000.0">
@@ -188,7 +194,7 @@
                   </feature>
                 </tags>
               </feature>
-              <feature key="f283_screen_quality" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+              <feature key="f283_screen_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">screen quality</label>
               </feature>
             </sub_features>
@@ -488,7 +494,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f135_size" type="header" ratable="expert, citizen">
+          <feature key="f135_size" type="header" >
             <label lang="en">size</label>
             <sub_features>
               <feature key="f136_height" type="numeric" format="% .2finches" value_min="2.0" value_max="5.0">
@@ -507,10 +513,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f25_communication" type="header" ratable="expert, citizen">
+      <feature key="f25_communication" type="header" >
         <label lang="en">Communication</label>
         <sub_features>
-          <feature key="f123_email" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f123_email" type="binary" is_exclusive="false">
             <label lang="en">email</label>
             <sub_features>
               <feature key="f124_email_platform" type="tag" is_exclusive="false">
@@ -601,7 +607,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f125_call" type="header" ratable="expert, citizen">
+          <feature key="f125_call" type="header" >
             <label lang="en">call</label>
             <sub_features>
               <feature key="f176_visual_voicemail" type="binary" is_exclusive="false">
@@ -610,24 +616,24 @@
               <feature key="f187_ringtones" type="binary" is_exclusive="false">
                 <label lang="en">ringtones</label>
               </feature>
-              <feature key="f251_call_quality" type="tag" is_exclusive="true">
+              <feature key="f251_call_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">call quality</label>
                 <tags>
-                  <feature key="t969_poor" type="binary" is_exclusive="true">
+                  <tag key="t969_poor" rating="1">
                     <label lang="en">poor</label>
-                  </feature>
-                  <feature key="t970_mediocre" type="binary" is_exclusive="true">
+                  </tag>
+                  <tag key="t970_mediocre" rating="2">
                     <label lang="en">mediocre</label>
-                  </feature>
-                  <feature key="t971_acceptable" type="binary" is_exclusive="true">
+                  </tag>
+                  <tag key="t971_acceptable" rating="3">
                     <label lang="en">acceptable</label>
-                  </feature>
-                  <feature key="t972_good" type="binary" is_exclusive="true">
+                  </tag>
+                  <tag key="t972_good" rating="4">
                     <label lang="en">good</label>
-                  </feature>
-                  <feature key="t973_excellent" type="binary" is_exclusive="true">
+                  </tag>
+                  <tag key="t973_excellent" rating="5">
                     <label lang="en">excellent</label>
-                  </feature>
+                  </tag>
                 </tags>
               </feature>
               <feature key="f253_push-to-talk" type="binary" is_exclusive="false">
@@ -709,7 +715,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f197_contacts" type="header" ratable="expert, citizen">
+          <feature key="f197_contacts" type="header" >
             <label lang="en">contacts</label>
             <sub_features>
               <feature key="f198_contact_import" type="binary" is_exclusive="false">
@@ -743,10 +749,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f33_connectivity" type="header" ratable="expert, citizen">
+      <feature key="f33_connectivity" type="header" >
         <label lang="en">Connectivity</label>
         <sub_features>
-          <feature key="f38_bluetooth" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f38_bluetooth" type="binary"  is_exclusive="false">
             <label lang="en">bluetooth</label>
             <sub_features>
               <feature key="f39_type" type="tag" is_exclusive="false">
@@ -774,7 +780,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f36_wifi" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f36_wifi" type="binary"  is_exclusive="false">
             <label lang="en">wifi</label>
             <sub_features>
               <feature key="f37_type" type="tag" is_exclusive="false">
@@ -898,7 +904,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f41_memory" type="header" ratable="expert, citizen">
+      <feature key="f41_memory" type="header" >
         <label lang="en">Memory</label>
         <sub_features>
           <feature key="f42_internal_memory_size" type="numeric" format="% .1f gb" value_min="0.0" value_max="64.0">
@@ -935,7 +941,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f44_battery" type="header" ratable="expert, citizen">
+      <feature key="f44_battery" type="header" >
         <label lang="en">Battery</label>
         <sub_features>
           <feature key="f45_power" type="numeric" format="% .1f mAh" value_min="1.0" value_max="9000.0">
@@ -1109,7 +1115,7 @@
           </feature>
         </tags>
       </feature>
-      <feature key="f51_internet" type="header" ratable="expert, citizen">
+      <feature key="f51_internet" type="header" >
         <label lang="en">Internet</label>
         <sub_features>
           <feature key="f157_internet_access" type="tag" is_exclusive="false">
@@ -1211,7 +1217,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f60_camera" type="binary" ratable="expert, citizen" is_exclusive="false">
+      <feature key="f60_camera" type="binary"  is_exclusive="false">
         <label lang="en">Camera</label>
         <sub_features>
           <feature key="f61_camera_resolution" type="numeric" format="% .1f mpx" value_min="0.0" value_max="12.0">
@@ -1231,7 +1237,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f63_zoom" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f63_zoom" type="binary"  is_exclusive="false">
             <label lang="en">zoom</label>
             <sub_features>
               <feature key="f64_range" type="numeric" format="% .1f time" value_min="1.0" value_max="20.0">
@@ -1253,7 +1259,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f66_video" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f66_video" type="binary"  is_exclusive="false">
             <label lang="en">video</label>
             <sub_features>
               <feature key="f67_features" type="tag" is_exclusive="false">
@@ -1296,7 +1302,7 @@
               <feature key="f231_real_time_video_sharing" type="binary" is_exclusive="false">
                 <label lang="en">real time video sharing</label>
               </feature>
-              <feature key="f260_video_quality" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+              <feature key="f260_video_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">video quality</label>
               </feature>
             </sub_features>
@@ -1372,7 +1378,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f259_picture_quality" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+          <feature key="f259_picture_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
             <label lang="en">picture quality</label>
           </feature>
           <feature key="f284_camera_controls_sophistication" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
@@ -1380,10 +1386,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f70_media" type="header" ratable="expert, citizen">
+      <feature key="f70_media" type="header" >
         <label lang="en">Media</label>
         <sub_features>
-          <feature key="f71_video_playback" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f71_video_playback" type="binary"  is_exclusive="false">
             <label lang="en">video playback</label>
             <sub_features>
               <feature key="f72_services" type="tag" is_exclusive="false">
@@ -1465,12 +1471,12 @@
               <feature key="f230_video_streaming" type="binary" is_exclusive="false">
                 <label lang="en">video streaming</label>
               </feature>
-              <feature key="f279_video_quality" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+              <feature key="f279_video_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">video quality</label>
               </feature>
             </sub_features>
           </feature>
-          <feature key="f74_music_player" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f74_music_player" type="binary"  is_exclusive="false">
             <label lang="en">music player</label>
             <sub_features>
               <feature key="f75_formats" type="tag" is_exclusive="false">
@@ -1585,12 +1591,12 @@
                   </feature>
                 </tags>
               </feature>
-              <feature key="f281_music_quality" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+              <feature key="f281_music_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">music quality</label>
               </feature>
             </sub_features>
           </feature>
-          <feature key="f76_radio" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f76_radio" type="binary"  is_exclusive="false">
             <label lang="en">radio</label>
             <sub_features>
               <feature key="f77_radio_type" type="tag" is_exclusive="false">
@@ -1612,7 +1618,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f78_media_center" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f78_media_center" type="binary"  is_exclusive="false">
             <label lang="en">media center</label>
             <sub_features>
               <feature key="f79_features" type="tag" is_exclusive="false">
@@ -1631,7 +1637,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f81_tv-out_support" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f81_tv-out_support" type="binary"  is_exclusive="false">
             <label lang="en">tv-out support</label>
             <sub_features>
               <feature key="f82_format" type="tag" is_exclusive="false">
@@ -1647,7 +1653,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f201_gaming_platform" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f201_gaming_platform" type="binary"  is_exclusive="false">
             <label lang="en">gaming platform</label>
             <sub_features>
               <feature key="f247_gaming_platform" type="tag" is_exclusive="false">
@@ -1705,19 +1711,11 @@
       <feature key="f111_nickname" type="textarea">
         <label lang="en">Nickname</label>
       </feature>
-      <feature key="f112_expert_rating" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
-        <label lang="en">Expert rating</label>
-        <background key="description" db_id="" type="html">Aggregate rating based on online reviews</background>
-        <sub_features>
-          <feature key="f254_user_rating" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
-            <label lang="en">User rating</label>
-          </feature>
-        </sub_features>
-      </feature>
-      <feature key="f130_third-party_applications" type="header" ratable="expert, citizen">
+
+      <feature key="f130_third-party_applications" type="header" >
         <label lang="en">Third-party applications</label>
         <sub_features>
-          <feature key="f131_application_store" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f131_application_store" type="binary"  is_exclusive="false">
             <label lang="en">application store</label>
             <sub_features>
               <feature key="f236_application_store" type="tag" is_exclusive="true">
@@ -1773,7 +1771,7 @@
       <feature key="f153_geolocation" type="tag" is_exclusive="false">
         <label lang="en">Geolocation</label>
         <sub_features>
-          <feature key="f266_gps" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f266_gps" type="binary"  is_exclusive="false">
             <label lang="en">GPS</label>
             <sub_features>
               <feature key="f267_gps_type" type="tag" is_exclusive="false">
@@ -1798,7 +1796,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f268_location-based_services" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f268_location-based_services" type="binary"  is_exclusive="false">
             <label lang="en">Location-based services</label>
             <sub_features>
               <feature key="f269_maps_service" type="tag" is_exclusive="false">
@@ -1925,10 +1923,10 @@
           </feature>
         </tags>
       </feature>
-      <feature key="f204_productivity" type="header" ratable="expert, citizen">
+      <feature key="f204_productivity" type="header" >
         <label lang="en">Productivity</label>
         <sub_features>
-          <feature key="f205_calendar" type="binary" ratable="expert, citizen" is_exclusive="false">
+          <feature key="f205_calendar" type="binary"  is_exclusive="false">
             <label lang="en">Calendar</label>
             <sub_features>
               <feature key="f206_calendar_support" type="tag" is_exclusive="false">

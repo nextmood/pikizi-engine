@@ -1,15 +1,22 @@
 <?xml version="1.0"?>
 <product key="lg_arena">
   <label lang="en">Label for lg_arena</label>
-  <modeldata key="cell_phones">
+  <knowledgedata key="cell_phones">
 <!--Cell Phones-->
     <featuredata key="cell_phones">
-      <value/>
-      <background key="main_url" db_id="680" type="url"></background>
-      <background key="main_image" db_id="681" type="image"></background>
-      <opinion key="average_expert_rating" db_id="" min_rating="0.0" max_rating="1.0" value="1.0" type="rating" user_category="expert"/>
+      <background key="main_url" type="url" db_id="680"/>
+      <background key="main_image" type="image" db_id="681"/>
     </featuredata>
     <sub_features>
+<!--Expert rating-->
+      <featuredata key="main_expert_rating">
+        <value>4.0</value>
+        <value>nextmood(1.0)=4.0</value>
+      </featuredata>
+<!--Everyone rating-->
+      <featuredata key="main_citizen_rating">
+        <value/>
+      </featuredata>
 <!--Brand-->
       <featuredata key="f1_brand">
 <!--t4_nokia : nokia-->
@@ -110,7 +117,8 @@
           </featuredata>
 <!--screen quality-->
           <featuredata key="f283_screen_quality">
-            <value>3.5</value>
+            <value>3.0</value>
+            <value>ph(1.0)=3.0</value>
           </featuredata>
         </sub_features>
 <!--form factor-->
@@ -342,12 +350,8 @@
           </featuredata>
 <!--call quality-->
           <featuredata key="f251_call_quality">
-<!--t969_poor : poor-->
-<!--t970_mediocre : mediocre-->
-<!--t971_acceptable : acceptable-->
-            <value>t971_acceptable</value>
-<!--t972_good : good-->
-<!--t973_excellent : excellent-->
+            <value>3.0</value>
+            <value>ph(1.0)=3.0</value>
           </featuredata>
 <!--push-to-talk-->
           <featuredata key="f253_push-to-talk">
@@ -786,6 +790,7 @@
 <!--video quality-->
           <featuredata key="f260_video_quality">
             <value>3.0</value>
+            <value>ph(1.0)=3.0</value>
           </featuredata>
         </sub_features>
 <!--online picture and video sharing-->
@@ -821,7 +826,8 @@
         </featuredata>
 <!--picture quality-->
         <featuredata key="f259_picture_quality">
-          <value>3.5</value>
+          <value>3.0</value>
+          <value>ph(1.0)=3.0</value>
         </featuredata>
 <!--camera controls sophistication-->
         <featuredata key="f284_camera_controls_sophistication">
@@ -875,7 +881,8 @@
           </featuredata>
 <!--video quality-->
           <featuredata key="f279_video_quality">
-            <value>2.5</value>
+            <value>2.0</value>
+            <value>ph(1.0)=2.0</value>
           </featuredata>
         </sub_features>
 <!--music player-->
@@ -935,6 +942,7 @@
 <!--music quality-->
           <featuredata key="f281_music_quality">
             <value>4.0</value>
+            <value>ph(1.0)=4.0</value>
           </featuredata>
         </sub_features>
 <!--radio-->
@@ -1013,16 +1021,6 @@
       </featuredata>
 <!--Nickname-->
       <featuredata key="f111_nickname"/>
-<!--Expert rating-->
-      <featuredata key="f112_expert_rating">
-        <value>4.0</value>
-      </featuredata>
-      <sub_features>
-<!--User rating-->
-        <featuredata key="f254_user_rating">
-          <value>3.5</value>
-        </featuredata>
-      </sub_features>
 <!--Third-party applications-->
       <featuredata key="f130_third-party_applications"/>
       <sub_features>
@@ -1173,9 +1171,9 @@
 <!--Price range-->
       <featuredata key="f262_price_range">
 <!--f262_price_range-min : Price range-min-->
-        <value>449.0</value>
+        <value/>
 <!--f262_price_range-max : Price range-max-->
-        <value>449.0</value>
+        <value/>
       </featuredata>
       <sub_features>
 <!--Subsidized price-->
@@ -1192,5 +1190,5 @@
         <value>3.0</value>
       </featuredata>
     </sub_features>
-  </modeldata>
+  </knowledgedata>
 </product>

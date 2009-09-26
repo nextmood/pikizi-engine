@@ -1,0 +1,1118 @@
+<?xml version="1.0"?>
+<product key="lg_versa">
+  <label lang="en">Label for lg_versa</label>
+  <knowledgedata key="cell_phones">
+<!--Cell Phones-->
+    <featuredata key="cell_phones">
+      <background key="description" type="html" db_id="688"/>
+      <background key="main_url" type="url" db_id="689"/>
+      <background key="main_image" type="image" db_id="690"/>
+    </featuredata>
+    <sub_features>
+<!--Brand-->
+      <featuredata key="f1_brand">
+<!--t4_nokia : nokia-->
+<!--t5_motorola : motorola-->
+<!--t6_blackberry : blackberry-->
+<!--t7_sony_ericsson : sony ericsson-->
+<!--t8_samsung : samsung-->
+<!--t9_lg_electronics : lg electronics-->
+        <value>t9_lg_electronics</value>
+<!--t10_apple : apple-->
+<!--t11_sanyo : sanyo-->
+<!--t12_siemens : siemens-->
+<!--t310_htc : htc-->
+<!--t789_palm : palm-->
+      </featuredata>
+<!--Release date-->
+      <featuredata key="f3_release_date">
+        <value>Wed Feb 25 00:00:00 +0100 2009</value>
+      </featuredata>
+      <sub_features>
+<!--status-->
+        <featuredata key="f210_status">
+<!--t795_released : released-->
+<!--t796_unreleased : unreleased-->
+<!--t797_announced : announced-->
+<!--t798_leaked : leaked-->
+        </featuredata>
+      </sub_features>
+<!--Tips-->
+      <featuredata key="f5_tips"/>
+      <sub_features>
+<!--pros-->
+        <featuredata key="f108_pros"/>
+<!--cons-->
+        <featuredata key="f109_cons"/>
+      </sub_features>
+<!--Hardware-->
+      <featuredata key="f13_hardware"/>
+      <sub_features>
+<!--screen-->
+        <featuredata key="f14_screen"/>
+        <sub_features>
+<!--colors-->
+          <featuredata key="f17_colors">
+            <value>262000.0</value>
+          </featuredata>
+<!--size-->
+          <featuredata key="f114_size">
+            <value>3.0</value>
+          </featuredata>
+<!--type-->
+          <featuredata key="f117_type">
+<!--t355_lcd : lcd-->
+<!--t989_lcd_tft : lcd tft-->
+            <value>t989_lcd_tft</value>
+<!--t990_amoled : amoled-->
+<!--t991_pmoled : pmoled-->
+<!--t1147_oled : oled-->
+          </featuredata>
+<!--touch screen-->
+          <featuredata key="f122_touch_screen">
+<!--t361_capacitive : capacitive-->
+            <value>t361_capacitive</value>
+<!--t362_resistive : resistive-->
+<!--t363_none : none-->
+          </featuredata>
+          <sub_features>
+<!--haptic feedback-->
+            <featuredata key="f245_haptic_feedback">
+              <value>true</value>
+            </featuredata>
+          </sub_features>
+<!--resolution (in pixels)-->
+          <featuredata key="f144_resolution_(in_pixels)">
+<!--t1005_640_x_480_(vga) : 640 x 480 (vga)-->
+<!--t1006_640_x_360 : 640 x 360-->
+<!--t1007_480_x_320_(hvga) : 480 x 320 (hvga)-->
+            <value>t1007_480_x_320_(hvga)</value>
+<!--t1008_320_x_240_(qvga) : 320 x 240 (qvga)-->
+<!--t1070_400_x_240 : 400 x 240-->
+<!--t1114_480_x_360 : 480 x 360-->
+<!--t1117_800_x_480 : 800 x 480-->
+<!--t1124_260_x_240 : 260 x 240-->
+<!--t1126_220_x_176 : 220 x 176-->
+<!--t1132_320_x_320 : 320 x 320-->
+<!--t1137_320x_400 : 320x 400-->
+<!--t1146_128_x_128 : 128 x 128-->
+          </featuredata>
+<!--resolution-->
+          <featuredata key="f214_resolution">
+<!--t1001_vga : vga-->
+<!--t1002_nhd : nhd-->
+<!--t1003_hvga : hvga-->
+            <value>t1003_hvga</value>
+<!--t1004_qvga : qvga-->
+<!--t1127_lower : lower-->
+          </featuredata>
+<!--screen quality-->
+          <featuredata key="f283_screen_quality"/>
+        </sub_features>
+<!--form factor-->
+        <featuredata key="f20_form_factor">
+<!--t58_candy_bar : candy bar-->
+<!--t59_touch_screen : touch screen-->
+          <value>t59_touch_screen</value>
+<!--t60_clamshell : clamshell-->
+<!--t61_swivel : swivel-->
+<!--t62_slider : slider-->
+        </featuredata>
+<!--body-->
+        <featuredata key="f21_body">
+<!--t66_stylish : stylish-->
+<!--t67_sharp : sharp-->
+          <value>t67_sharp</value>
+<!--t68_robust : robust-->
+<!--t69_thick : thick-->
+<!--t935_basic : basic-->
+<!--t1010_rounded : rounded-->
+<!--t1011_square : square-->
+<!--t1077_slim : slim-->
+<!--t1078_appealing : appealing-->
+<!--t1079_handsome : handsome-->
+        </featuredata>
+        <sub_features>
+<!--materials-->
+          <featuredata key="f165_materials">
+<!--t556_brushed_metal : brushed metal-->
+            <value>t556_brushed_metal</value>
+<!--t558_metal_grip : metal grip-->
+<!--t559_ruggedized_plastic : ruggedized plastic-->
+<!--t560_matted_plastic : matted plastic-->
+<!--t975_smooth_plastic : smooth plastic-->
+<!--t978_high-end_plastic : high-end plastic-->
+<!--t979_glassy_screen : glassy screen-->
+<!--t980_leatherette : leatherette-->
+<!--t1009_soft_touch_plastic : soft touch plastic-->
+            <value>t1009_soft_touch_plastic</value>
+          </featuredata>
+<!--skin-->
+          <featuredata key="f166_skin">
+<!--t568_brands_&_fashion : brands & fashion-->
+<!--t569_leatherette : leatherette-->
+<!--t570_luxurious : luxurious-->
+<!--t981_texture : texture-->
+<!--t982_colors : colors-->
+<!--t983_plain : plain-->
+<!--t984_smooth : smooth-->
+            <value>t984_smooth</value>
+<!--t985_solid : solid-->
+<!--t986_matted : matted-->
+<!--t987_steely : steely-->
+<!--t988_metal : metal-->
+            <value>t988_metal</value>
+          </featuredata>
+<!--ruggedized body-->
+          <featuredata key="f252_ruggedized_body">
+            <value>false</value>
+          </featuredata>
+        </sub_features>
+<!--hardware buttons-->
+        <featuredata key="f23_hardware_buttons">
+<!--t75_call : call-->
+          <value>t75_call</value>
+<!--t76_hang : hang-->
+          <value>t76_hang</value>
+<!--t77_menu : menu-->
+<!--t78_home : home-->
+          <value>t78_home</value>
+<!--t79_mute : mute-->
+<!--t80_volume : volume-->
+<!--t81_lock : lock-->
+<!--t617_on/off : on/off-->
+<!--t648_ringer_on/off : ringer on/off-->
+<!--t824_email : email-->
+<!--t825_calendar : calendar-->
+<!--t933_media : media-->
+<!--t1021_navigation : navigation-->
+<!--t1067_contacts : contacts-->
+<!--t1081_shutter : shutter-->
+<!--t1082_back : back-->
+        </featuredata>
+        <sub_features>
+<!--navigation-->
+          <featuredata key="f257_navigation">
+<!--t1025_touch_pad : touch pad-->
+<!--t1026_touch_screen : touch screen-->
+            <value>t1026_touch_screen</value>
+<!--t1027_scroll_wheel : scroll wheel-->
+<!--t1130_toggle : toggle-->
+<!--t1141_navigation_array : navigation array-->
+<!--t1144_keypad : keypad-->
+          </featuredata>
+        </sub_features>
+<!--keyboard-->
+        <featuredata key="f118_keyboard">
+<!--t341_full_qwerty : full qwerty-->
+<!--t342_numeric : numeric-->
+<!--t343_suretype : suretype-->
+<!--t344_virtual : virtual-->
+          <value>t344_virtual</value>
+<!--t561_full_sliding_keyboard : full sliding keyboard-->
+<!--t1036_full_detachable_keyboard : full detachable keyboard-->
+          <value>t1036_full_detachable_keyboard</value>
+        </featuredata>
+        <sub_features>
+<!--virtual keyboard mode-->
+          <featuredata key="f119_virtual_keyboard_mode">
+<!--t348_landscape : landscape-->
+            <value>t348_landscape</value>
+<!--t349_portrait : portrait-->
+<!--t1122_none : none-->
+          </featuredata>
+<!--keyboard characteristics-->
+          <featuredata key="f160_keyboard_characteristics">
+<!--t537_springy : springy-->
+<!--t538_cramped : cramped-->
+<!--t1068_tactile : tactile-->
+          </featuredata>
+<!--sliding keyboard-->
+          <featuredata key="f194_sliding_keyboard">
+<!--t732_vertical : vertical-->
+<!--t733_horizontal : horizontal-->
+            <value>t733_horizontal</value>
+<!--t1035_none : none-->
+          </featuredata>
+<!--keyboard experience-->
+          <featuredata key="f276_keyboard_experience">
+            <value>3.5</value>
+          </featuredata>
+        </sub_features>
+<!--sensors-->
+        <featuredata key="f120_sensors">
+<!--t353_accelerometer : accelerometer-->
+          <value>t353_accelerometer</value>
+<!--t354_ambient_light : ambient light-->
+<!--t639_proximity : proximity-->
+<!--t640_none : none-->
+        </featuredata>
+<!--size-->
+        <featuredata key="f135_size"/>
+        <sub_features>
+<!--height-->
+          <featuredata key="f136_height">
+            <value>4.17</value>
+          </featuredata>
+<!--width-->
+          <featuredata key="f137_width">
+            <value>2.07</value>
+          </featuredata>
+<!--depth-->
+          <featuredata key="f138_depth">
+            <value>0.54</value>
+          </featuredata>
+        </sub_features>
+<!--weight-->
+        <featuredata key="f139_weight">
+          <value>3.81</value>
+        </featuredata>
+      </sub_features>
+<!--Communication-->
+      <featuredata key="f25_communication"/>
+      <sub_features>
+<!--email-->
+        <featuredata key="f123_email">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--email platform-->
+          <featuredata key="f124_email_platform">
+<!--t372_gmail : gmail-->
+            <value>t372_gmail</value>
+<!--t374_lotus_notes : lotus notes-->
+<!--t379_other : other-->
+<!--t380_yahoo : yahoo-->
+            <value>t380_yahoo</value>
+<!--t469_aol_mail : aol mail-->
+            <value>t469_aol_mail</value>
+<!--t470_windows_live_hotmail : windows live hotmail-->
+            <value>t470_windows_live_hotmail</value>
+<!--t482_novell_groupwise : novell groupwise-->
+<!--t701_mobileme : mobileme-->
+<!--t702_imap/pop3 : imap/pop3-->
+<!--t703_ms_exchange : ms exchange-->
+<!--t801_ms_outlook : ms outlook-->
+<!--t924_smtp : smtp-->
+<!--t1128_none : none-->
+<!--t1145_web : web-->
+          </featuredata>
+<!--view email attachments-->
+          <featuredata key="f149_view_email_attachments">
+<!--t474_jpeg : jpeg-->
+<!--t475_adobe_pdf : adobe pdf-->
+<!--t476_ms_office : ms office-->
+<!--t477_ms_word : ms word-->
+<!--t478_ms_excel : ms excel-->
+<!--t479_ms_powerpoint : ms powerpoint-->
+<!--t1028_zip_manager : zip manager-->
+<!--t1069_none : none-->
+          </featuredata>
+<!--push delivery-->
+          <featuredata key="f150_push_delivery">
+            <value>false</value>
+          </featuredata>
+<!--Multiple email accounts-->
+          <featuredata key="f151_multiple_email_accounts"/>
+<!--Email encryption-->
+          <featuredata key="f274_email_encryption"/>
+        </sub_features>
+<!--call-->
+        <featuredata key="f125_call"/>
+        <sub_features>
+<!--visual voicemail-->
+          <featuredata key="f176_visual_voicemail">
+            <value>true</value>
+          </featuredata>
+<!--ringtones-->
+          <featuredata key="f187_ringtones">
+            <value>true</value>
+          </featuredata>
+<!--call quality-->
+          <featuredata key="f251_call_quality"/>
+<!--push-to-talk-->
+          <featuredata key="f253_push-to-talk">
+            <value>false</value>
+          </featuredata>
+        </sub_features>
+<!--hearing aid rating-->
+        <featuredata key="f140_hearing_aid_rating">
+<!--t429_m3 : m3-->
+<!--t430_m4 : m4-->
+          <value>t430_m4</value>
+<!--t431_t3 : t3-->
+<!--t432_t4 : t4-->
+          <value>t432_t4</value>
+        </featuredata>
+<!--messaging-->
+        <featuredata key="f152_messaging">
+<!--t487_sms : sms-->
+          <value>t487_sms</value>
+<!--t488_mms : mms-->
+          <value>t488_mms</value>
+<!--t489_im : im-->
+          <value>t489_im</value>
+<!--t490_twitter : twitter-->
+<!--t491_facebook : facebook-->
+<!--t963_mms_w/_video_messaging : mms w/ video messaging-->
+        </featuredata>
+<!--best suited for-->
+        <featuredata key="f167_best_suited_for">
+<!--t574_calling : calling-->
+          <value>t574_calling</value>
+<!--t575_emails : emails-->
+<!--t576_texting : texting-->
+          <value>t576_texting</value>
+<!--t616_social_media : social media-->
+<!--t925_entertainment : entertainment-->
+        </featuredata>
+<!--voice recording-->
+        <featuredata key="f186_voice_recording">
+<!--t666_native : native-->
+<!--t667_third-party : third-party-->
+<!--t668_none : none-->
+        </featuredata>
+<!--contacts-->
+        <featuredata key="f197_contacts"/>
+        <sub_features>
+<!--contact import-->
+          <featuredata key="f198_contact_import"/>
+<!--contact aggregation-->
+          <featuredata key="f199_contact_aggregation"/>
+<!--send contacts-->
+          <featuredata key="f215_send_contacts"/>
+<!--company name search-->
+          <featuredata key="f238_company_name_search"/>
+<!--contact favorites-->
+          <featuredata key="f248_contact_favorites"/>
+<!--phone book entries-->
+          <featuredata key="f273_phone_book_entries"/>
+        </sub_features>
+<!--combined messaging-->
+        <featuredata key="f200_combined_messaging">
+          <value>false</value>
+        </featuredata>
+<!--real time video sharing-->
+        <featuredata key="f229_real_time_video_sharing">
+          <value>false</value>
+        </featuredata>
+<!--voip-->
+        <featuredata key="f237_voip">
+          <value>false</value>
+        </featuredata>
+      </sub_features>
+<!--Connectivity-->
+      <featuredata key="f33_connectivity"/>
+      <sub_features>
+<!--bluetooth-->
+        <featuredata key="f38_bluetooth">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--type-->
+          <featuredata key="f39_type">
+<!--t130_1.0 : 1.0-->
+<!--t131_2.0 : 2.0-->
+            <value>t131_2.0</value>
+<!--t802_2.1 : 2.1-->
+<!--t849_stereo : stereo-->
+<!--t850_edr : edr-->
+<!--t851_a2dp : a2dp-->
+          </featuredata>
+        </sub_features>
+<!--wifi-->
+        <featuredata key="f36_wifi">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--type-->
+          <featuredata key="f37_type">
+<!--t511_a : a-->
+<!--t512_b : b-->
+<!--t513_g : g-->
+<!--t514_n : n-->
+          </featuredata>
+        </sub_features>
+<!--bands-->
+        <featuredata key="f178_bands">
+<!--t624_umts : umts-->
+<!--t625_hsdpa : hsdpa-->
+<!--t841_gsm : gsm-->
+<!--t842_wcdma : wcdma-->
+<!--t843_3g : 3g-->
+<!--t959_cdma : cdma-->
+<!--t964_ev-do : ev-do-->
+          <value>t964_ev-do</value>
+<!--t1012_gprs : gprs-->
+<!--t1013_edge : edge-->
+        </featuredata>
+        <sub_features>
+<!--bands frequency-->
+          <featuredata key="f180_bands_frequency">
+<!--t635_850 : 850-->
+<!--t670_900 : 900-->
+            <value>t670_900</value>
+<!--t671_1800 : 1800-->
+<!--t672_1900 : 1900-->
+<!--t673_2100 : 2100-->
+            <value>t673_2100</value>
+<!--t960_800 : 800-->
+<!--t1088_1700 : 1700-->
+          </featuredata>
+<!--multiple bands-->
+          <featuredata key="f224_multiple_bands">
+<!--t847_tri-band : tri-band-->
+<!--t848_quad-band : quad-band-->
+<!--t1108_dual-band : dual-band-->
+          </featuredata>
+        </sub_features>
+<!--audio connector-->
+        <featuredata key="f183_audio_connector">
+<!--t653_3.5_mm : 3.5 mm-->
+<!--t654_2.5_mm : 2.5 mm-->
+          <value>t654_2.5_mm</value>
+<!--t998_custom : custom-->
+        </featuredata>
+<!--tethering-->
+        <featuredata key="f185_tethering">
+          <value>false</value>
+        </featuredata>
+<!--micro-usb-->
+        <featuredata key="f212_micro-usb">
+          <value>false</value>
+        </featuredata>
+<!--international roaming-->
+        <featuredata key="f249_international_roaming">
+          <value>false</value>
+        </featuredata>
+<!--mini-usb-->
+        <featuredata key="f280_mini-usb"/>
+      </sub_features>
+<!--Memory-->
+      <featuredata key="f41_memory"/>
+      <sub_features>
+<!--internal memory size-->
+        <featuredata key="f42_internal_memory_size">
+          <value>0.0</value>
+        </featuredata>
+<!--external memory type-->
+        <featuredata key="f43_external_memory_type">
+<!--t138_sd : sd-->
+<!--t139_micro-sd : micro-sd-->
+          <value>t139_micro-sd</value>
+<!--t140_sdhc : sdhc-->
+<!--t141_stick : stick-->
+<!--t142_stick_micro : stick micro-->
+<!--t620_none : none-->
+<!--t1150_m2 : m2-->
+        </featuredata>
+<!--maximum external memory-->
+        <featuredata key="f282_maximum_external_memory"/>
+      </sub_features>
+<!--Battery-->
+      <featuredata key="f44_battery"/>
+      <sub_features>
+<!--power-->
+        <featuredata key="f45_power">
+          <value>1100.0</value>
+        </featuredata>
+<!--talk time-->
+        <featuredata key="f46_talk_time">
+          <value>4.8</value>
+        </featuredata>
+        <sub_features>
+<!--2G talk time-->
+          <featuredata key="f173_2g_talk_time"/>
+<!--3G talk time-->
+          <featuredata key="f174_3g_talk_time"/>
+        </sub_features>
+<!--standby_time-->
+        <featuredata key="f47_standby_time"/>
+<!--video_playback_time-->
+        <featuredata key="f48_video_playback_time"/>
+<!--music_playback_time-->
+        <featuredata key="f49_music_playback_time"/>
+<!--Wifi time-->
+        <featuredata key="f175_wifi_time"/>
+      </sub_features>
+<!--Operating system-->
+      <featuredata key="f50_operating_system">
+<!--t146_apple : apple-->
+<!--t147_google_android : google android-->
+<!--t148_symbian : symbian-->
+<!--t150_motomagx : motomagx-->
+<!--t151_blackberry : blackberry-->
+<!--t790_palm_webos : palm webos-->
+<!--t1014_windows_mobile : windows mobile-->
+        <value>t1014_windows_mobile</value>
+<!--t1072_proprietary : proprietary-->
+      </featuredata>
+      <sub_features>
+<!--UI-->
+        <featuredata key="f192_ui">
+<!--t720_multi-touch : multi-touch-->
+<!--t721_single-handed : single-handed-->
+<!--t852_single_touch : single touch-->
+          <value>t852_single_touch</value>
+<!--t853_keyboard_and_buttons : keyboard and buttons-->
+          <value>t853_keyboard_and_buttons</value>
+        </featuredata>
+<!--touch hand gesture-->
+        <featuredata key="f193_touch_hand_gesture">
+<!--t725_multi-touch : multi-touch-->
+<!--t726_pinching : pinching-->
+<!--t727_sliding : sliding-->
+          <value>t727_sliding</value>
+<!--t728_multi-touch_zooming : multi-touch zooming-->
+<!--t767_double_tap : double tap-->
+        </featuredata>
+<!--multi-tasking-->
+        <featuredata key="f195_multi-tasking">
+<!--t737_none : none-->
+<!--t739_poor : poor-->
+<!--t740_decent : decent-->
+<!--t741_good : good-->
+<!--t742_seamless : seamless-->
+        </featuredata>
+<!--search phone-->
+        <featuredata key="f202_search_phone">
+          <value>false</value>
+        </featuredata>
+<!--advanced features-->
+        <featuredata key="f203_advanced_features">
+<!--t765_copy_and_paste : copy and paste-->
+<!--t766_none : none-->
+          <value>t766_none</value>
+<!--t769_copy_and_paste_pictures : copy and paste pictures-->
+<!--t1100_home_screen_personalization : home screen personalization-->
+        </featuredata>
+<!--voice commands-->
+        <featuredata key="f239_voice_commands">
+          <value>true</value>
+        </featuredata>
+<!--text-to-speech-->
+        <featuredata key="f240_text-to-speech">
+          <value>false</value>
+        </featuredata>
+<!--UI ease of use-->
+        <featuredata key="f256_ui_ease_of_use">
+          <value>2.5</value>
+        </featuredata>
+<!--Responsiveness-->
+        <featuredata key="f261_responsiveness">
+          <value>2.0</value>
+        </featuredata>
+<!--UI system-->
+        <featuredata key="f271_ui_system">
+<!--t1064_samsung_touchwiz : samsung touchwiz-->
+<!--t1065_lg_touchflo_3d : lg touchflo 3d-->
+<!--t1066_apple : apple-->
+<!--t1093_blackberry : blackberry-->
+<!--t1121_sony_ericsson_xperia : sony ericsson xperia-->
+<!--t1149_sprint_one_click : sprint one click-->
+        </featuredata>
+      </sub_features>
+<!--Internet-->
+      <featuredata key="f51_internet"/>
+      <sub_features>
+<!--Internet access-->
+        <featuredata key="f157_internet_access">
+<!--t523_full : full-->
+          <value>t523_full</value>
+<!--t524_partial : partial-->
+<!--t525_none : none-->
+        </featuredata>
+<!--page zoom-->
+        <featuredata key="f59_page_zoom">
+<!--t197_multi-touch : multi-touch-->
+<!--t198_button : button-->
+          <value>t198_button</value>
+<!--t1076_magnifying_glass : magnifying glass-->
+        </featuredata>
+<!--browser-->
+        <featuredata key="f158_browser">
+<!--t688_safari : safari-->
+<!--t854_nokia : nokia-->
+<!--t1015_opera : opera-->
+<!--t1016_internet_explorer : internet explorer-->
+<!--t1071_samsung : samsung-->
+<!--t1089_blackberry : blackberry-->
+        </featuredata>
+<!--Social media-->
+        <featuredata key="f172_social_media">
+<!--t612_facebook : facebook-->
+<!--t613_myspace : myspace-->
+<!--t614_twitter : twitter-->
+<!--t615_none : none-->
+          <value>t615_none</value>
+<!--t952_rss_feed : rss feed-->
+        </featuredata>
+<!--internet platforms-->
+        <featuredata key="f189_internet_platforms">
+<!--t693_css/html : css/html-->
+<!--t694_flash : flash-->
+          <value>t694_flash</value>
+<!--t695_java : java-->
+<!--t855_javascript : javascript-->
+          <value>t855_javascript</value>
+<!--t961_wap : wap-->
+        </featuredata>
+<!--Internet experience-->
+        <featuredata key="f255_internet_experience">
+          <value>1.5</value>
+        </featuredata>
+<!--rss reader-->
+        <featuredata key="f270_rss_reader">
+          <value>true</value>
+        </featuredata>
+      </sub_features>
+<!--Camera-->
+      <featuredata key="f60_camera">
+        <value>true</value>
+      </featuredata>
+      <sub_features>
+<!--camera resolution-->
+        <featuredata key="f61_camera_resolution">
+          <value>2.0</value>
+        </featuredata>
+<!--features-->
+        <featuredata key="f62_features">
+<!--t204_autofocus : autofocus-->
+          <value>t204_autofocus</value>
+<!--t405_zeiss_lens : zeiss lens-->
+<!--t799_image_correction : image correction-->
+          <value>t799_image_correction</value>
+        </featuredata>
+<!--zoom-->
+        <featuredata key="f63_zoom">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--range-->
+          <featuredata key="f64_range"/>
+<!--type-->
+          <featuredata key="f65_type">
+<!--t212_optical : optical-->
+<!--t404_digital : digital-->
+            <value>t404_digital</value>
+<!--t1123_none : none-->
+          </featuredata>
+        </sub_features>
+<!--video-->
+        <featuredata key="f66_video">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--features-->
+          <featuredata key="f67_features">
+<!--t219_hd : hd-->
+<!--t220_dvd : dvd-->
+<!--t221_16x9 : 16x9-->
+<!--t222_30fps : 30fps-->
+<!--t223_flash_with_continuous_lighting : flash with continuous lighting-->
+          </featuredata>
+<!--resolution-->
+          <featuredata key="f227_resolution">
+<!--t872_vga : vga-->
+            <value>t872_vga</value>
+<!--t873_qvga : qvga-->
+            <value>t873_qvga</value>
+<!--t874_qcif : qcif-->
+            <value>t874_qcif</value>
+          </featuredata>
+<!--front camera for video calls-->
+          <featuredata key="f228_front_camera_for_video_calls">
+            <value>false</value>
+          </featuredata>
+<!--real time video sharing-->
+          <featuredata key="f231_real_time_video_sharing">
+            <value>false</value>
+          </featuredata>
+<!--video quality-->
+          <featuredata key="f260_video_quality"/>
+        </sub_features>
+<!--online picture and video sharing-->
+        <featuredata key="f146_online_picture_and_video_sharing">
+<!--t445_flickr : flickr-->
+<!--t446_facebook : facebook-->
+<!--t865_ovi : ovi-->
+<!--t1080_photobucket : photobucket-->
+<!--t1084_kodak_gallery : kodak gallery-->
+<!--t1085_snapfish : snapfish-->
+<!--t1136_none : none-->
+        </featuredata>
+<!--flash-->
+        <featuredata key="f225_flash">
+<!--t861_led_flash : led flash-->
+          <value>t861_led_flash</value>
+<!--t862_xenon_flash : xenon flash-->
+<!--t863_red-eye_reduction : red-eye reduction-->
+<!--t864_none : none-->
+        </featuredata>
+<!--camera modes-->
+        <featuredata key="f234_camera_modes">
+<!--t896_scene_modes : scene modes-->
+          <value>t896_scene_modes</value>
+<!--t897_capture_modes : capture modes-->
+        </featuredata>
+<!--camera controls-->
+        <featuredata key="f235_camera_controls">
+<!--t901_white_balance : white balance-->
+          <value>t901_white_balance</value>
+<!--t902_color_tones : color tones-->
+<!--t903_exposure : exposure-->
+          <value>t903_exposure</value>
+<!--t1083_advanced : advanced-->
+        </featuredata>
+<!--picture quality-->
+        <featuredata key="f259_picture_quality"/>
+<!--camera controls sophistication-->
+        <featuredata key="f284_camera_controls_sophistication"/>
+      </sub_features>
+<!--Media-->
+      <featuredata key="f70_media"/>
+      <sub_features>
+<!--video playback-->
+        <featuredata key="f71_video_playback">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--services-->
+          <featuredata key="f72_services">
+<!--t229_youtube : youtube-->
+            <value>t229_youtube</value>
+<!--t230_itunes : itunes-->
+<!--t231_blackberrymedia_center : blackberrymedia center-->
+<!--t232_roxio_media_manager : roxio media manager-->
+<!--t233_hd : hd-->
+<!--t879_realplayer : realplayer-->
+<!--t965_vcast : vcast-->
+<!--t1017_spring_tv : spring tv-->
+<!--t1074_at&t_cellular_video : at&t cellular video-->
+          </featuredata>
+<!--formats-->
+          <featuredata key="f73_formats">
+<!--t237_flash : flash-->
+            <value>t237_flash</value>
+<!--t238_mpeg-4 : mpeg-4-->
+<!--t239_avc/h.264 : avc/h.264-->
+            <value>t239_avc/h.264</value>
+<!--t241_windows_media_(wmv9) : windows media (wmv9)-->
+<!--t242_cif_@_30_fps : cif @ 30 fps-->
+<!--t451_divx_4 : divx 4-->
+<!--t453_divx_5 : divx 5-->
+<!--t454_divx_6 : divx 6-->
+<!--t456_wmv3 : wmv3-->
+<!--t465_xvid : xvid-->
+<!--t466_h.263 : h.263-->
+<!--t880_realvideo : realvideo-->
+<!--t885_.3gp : .3gp-->
+          </featuredata>
+<!--video streaming-->
+          <featuredata key="f230_video_streaming">
+            <value>true</value>
+          </featuredata>
+<!--video quality-->
+          <featuredata key="f279_video_quality"/>
+        </sub_features>
+<!--music player-->
+        <featuredata key="f74_music_player">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--formats-->
+          <featuredata key="f75_formats">
+<!--t248_mp3 : mp3-->
+            <value>t248_mp3</value>
+<!--t249_aac : aac-->
+            <value>t249_aac</value>
+<!--t252_wav : wav-->
+            <value>t252_wav</value>
+<!--t253_aiff : aiff-->
+<!--t254_apple_lossless : apple lossless-->
+<!--t457_midi : midi-->
+<!--t459_amr-nb : amr-nb-->
+<!--t460_aac+ : aac+-->
+<!--t461_eaac+ : eaac+-->
+<!--t462_3gp : 3gp-->
+<!--t463_wma9_pro : wma9 pro-->
+<!--t464_wma_10 : wma 10-->
+          </featuredata>
+<!--media sync up-->
+          <featuredata key="f161_media_sync_up">
+<!--t542_itunes : itunes-->
+<!--t543_windows_media_player : windows media player-->
+<!--t868_nokia_music_manager : nokia music manager-->
+<!--t1115_blackberry_media_sync : blackberry media sync-->
+          </featuredata>
+<!--media player-->
+          <featuredata key="f162_media_player">
+<!--t866_itunes : itunes-->
+<!--t867_windows_media_player : windows media player-->
+<!--t923_realplayer : realplayer-->
+<!--t1059_phone-specific : phone-specific-->
+            <value>t1059_phone-specific</value>
+          </featuredata>
+<!--music store-->
+          <featuredata key="f188_music_store">
+<!--t685_thru_wifi : thru wifi-->
+            <value>t685_thru_wifi</value>
+<!--t686_thru_cell : thru cell-->
+            <value>t686_thru_cell</value>
+<!--t687_none : none-->
+<!--t1142_thru_pc_sync : thru pc sync-->
+          </featuredata>
+<!--music service-->
+          <featuredata key="f244_music_service">
+<!--t939_comes_with_music_(nokia) : comes with music (nokia)-->
+<!--t940_itunes : itunes-->
+<!--t962_vcast_with_rhapsody : vcast with rhapsody-->
+            <value>t962_vcast_with_rhapsody</value>
+<!--t1019_sprint_music : sprint music-->
+<!--t1073_at&t_mobile_music : at&t mobile music-->
+          </featuredata>
+<!--music quality-->
+          <featuredata key="f281_music_quality"/>
+        </sub_features>
+<!--radio-->
+        <featuredata key="f76_radio">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--radio type-->
+          <featuredata key="f77_radio_type">
+<!--t260_fm : fm-->
+<!--t261_rds : rds-->
+<!--t1075_internet : internet-->
+<!--t1135_none : none-->
+          </featuredata>
+        </sub_features>
+<!--media center-->
+        <featuredata key="f78_media_center">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--features-->
+          <featuredata key="f79_features">
+<!--t267_upnp_support : upnp support-->
+<!--t268_media_synchronizing : media synchronizing-->
+          </featuredata>
+<!--use device as remote control-->
+          <featuredata key="f242_use_device_as_remote_control">
+            <value>false</value>
+          </featuredata>
+        </sub_features>
+<!--tv-out support-->
+        <featuredata key="f81_tv-out_support">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--format-->
+          <featuredata key="f82_format">
+<!--t276_pal : pal-->
+<!--t277_ntsc : ntsc-->
+          </featuredata>
+        </sub_features>
+<!--gaming platform-->
+        <featuredata key="f201_gaming_platform">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--gaming platform-->
+          <featuredata key="f247_gaming_platform">
+<!--t949_n-gage : n-gage-->
+          </featuredata>
+        </sub_features>
+<!--casual games-->
+        <featuredata key="f246_casual_games">
+          <value>false</value>
+        </featuredata>
+<!--speakerphones-->
+        <featuredata key="f275_speakerphones">
+<!--t1097_stereo : stereo-->
+<!--t1098_mono : mono-->
+<!--t1099_none : none-->
+        </featuredata>
+      </sub_features>
+<!--Carriers-->
+      <featuredata key="f110_carriers">
+<!--t325_alltel : alltel-->
+<!--t326_at&t : at&t-->
+<!--t327_sprint : sprint-->
+<!--t328_t-mobile : t-mobile-->
+<!--t329_verizon : verizon-->
+        <value>t329_verizon</value>
+<!--t1018_unlocked : unlocked-->
+      </featuredata>
+<!--Nickname-->
+      <featuredata key="f111_nickname"/>
+<!--Expert rating-->
+      <featuredata key="f112_expert_rating">
+        <value>3.5</value>
+      </featuredata>
+      <sub_features>
+<!--User rating-->
+        <featuredata key="f254_user_rating">
+          <value>3.5</value>
+        </featuredata>
+      </sub_features>
+<!--Third-party applications-->
+      <featuredata key="f130_third-party_applications"/>
+      <sub_features>
+<!--application store-->
+        <featuredata key="f131_application_store">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--application store-->
+          <featuredata key="f236_application_store">
+<!--t908_iphone_app_store : iphone app store-->
+<!--t909_blackberry_store : blackberry store-->
+<!--t910_ovi_store : ovi store-->
+<!--t974_none : none-->
+            <value>t974_none</value>
+<!--t1107_verizon_appzone : verizon appzone-->
+<!--t1134_at&t : at&t-->
+          </featuredata>
+        </sub_features>
+<!--application marketplace-->
+        <featuredata key="f196_application_marketplace">
+<!--t746_none : none-->
+<!--t747_limited : limited-->
+<!--t748_satisfying : satisfying-->
+<!--t749_thriving : thriving-->
+<!--t750_large : large-->
+<!--t751_largest : largest-->
+        </featuredata>
+      </sub_features>
+<!--Geolocation-->
+      <featuredata key="f153_geolocation">
+<!--t496_gps : gps-->
+        <value>t496_gps</value>
+<!--t497_triangulation : triangulation-->
+<!--t498_none : none-->
+      </featuredata>
+      <sub_features>
+<!--GPS-->
+        <featuredata key="f266_gps">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--gps type-->
+          <featuredata key="f267_gps_type">
+<!--t1042_gps : gps-->
+<!--t1043_assisted_gps : assisted gps-->
+            <value>t1043_assisted_gps</value>
+<!--t1045_turn-by-turn_gps : turn-by-turn gps-->
+<!--t1046_voice-guided_directions : voice-guided directions-->
+<!--t1047_none : none-->
+          </featuredata>
+        </sub_features>
+<!--Location-based services-->
+        <featuredata key="f268_location-based_services">
+          <value>false</value>
+        </featuredata>
+        <sub_features>
+<!--Maps service-->
+          <featuredata key="f269_maps_service">
+<!--t1053_google_maps : google maps-->
+<!--t1054_nokia_maps : nokia maps-->
+<!--t1055_vz_navigator : vz navigator-->
+            <value>t1055_vz_navigator</value>
+<!--t1056_sprint_lbs : sprint lbs-->
+<!--t1092_blackberry_maps : blackberry maps-->
+<!--t1133_at&t_telenav_navigator : at&t telenav navigator-->
+          </featuredata>
+        </sub_features>
+<!--Geolocation features-->
+        <featuredata key="f277_geolocation_features">
+<!--t1104_geotag_pictures : geotag pictures-->
+<!--t1105_location-based_services : location-based services-->
+<!--t1106_none : none-->
+        </featuredata>
+<!--GPS experience-->
+        <featuredata key="f285_gps_experience"/>
+      </sub_features>
+<!--Usage-->
+      <featuredata key="f168_usage">
+<!--t581_make_phone_calls : make phone calls-->
+        <value>t581_make_phone_calls</value>
+<!--t582_email_&_office_productivity : email & office productivity-->
+<!--t583_internet_&_social_media : internet & social media-->
+        <value>t583_internet_&amp;_social_media</value>
+<!--t584_games_&_entertainment : games & entertainment-->
+<!--t586_gps_&_location-based_services : gps & location-based services-->
+      </featuredata>
+<!--Category-->
+      <featuredata key="f170_category">
+<!--t595_cell_phone : cell phone-->
+<!--t596_smart_phone : smart phone-->
+        <value>t596_smart_phone</value>
+<!--t597_messaging_phone : messaging phone-->
+<!--t598_camera_phone : camera phone-->
+<!--t599_media_phone : media phone-->
+<!--t600_ruggedized_phone : ruggedized phone-->
+<!--t1138_gps_phone : gps phone-->
+      </featuredata>
+<!--Cool factor-->
+      <featuredata key="f191_cool_factor">
+<!--t709_non_descript : non descript-->
+<!--t711_mainstream : mainstream-->
+<!--t712_sleek : sleek-->
+        <value>t712_sleek</value>
+<!--t713_hot : hot-->
+<!--t714_passe : passe-->
+<!--t715_professional : professional-->
+      </featuredata>
+<!--Productivity-->
+      <featuredata key="f204_productivity"/>
+      <sub_features>
+<!--Calendar-->
+        <featuredata key="f205_calendar">
+          <value>true</value>
+        </featuredata>
+        <sub_features>
+<!--Calendar support-->
+          <featuredata key="f206_calendar_support">
+<!--t775_ics : ics-->
+<!--t776_caldav : caldav-->
+          </featuredata>
+<!--Share calendar entries-->
+          <featuredata key="f216_share_calendar_entries"/>
+<!--Calendar sync-->
+          <featuredata key="f278_calendar_sync"/>
+        </sub_features>
+      </sub_features>
+<!--Segment-->
+      <featuredata key="f241_segment">
+<!--t922_business : business-->
+<!--t926_entertainment : entertainment-->
+        <value>t926_entertainment</value>
+<!--t1086_lightweight : lightweight-->
+<!--t1087_camera : camera-->
+<!--t1125_basic : basic-->
+<!--t1129_messaging : messaging-->
+<!--t1140_travel : travel-->
+      </featuredata>
+<!--Price range-->
+      <featuredata key="f262_price_range">
+<!--f262_price_range-min : Price range-min-->
+        <value/>
+<!--f262_price_range-max : Price range-max-->
+        <value/>
+      </featuredata>
+      <sub_features>
+<!--Subsidized price-->
+        <featuredata key="f263_subsidized_price">
+          <value>199.0</value>
+        </featuredata>
+<!--Unsubsidized Price-->
+        <featuredata key="f264_unsubsidized_price">
+          <value>599.0</value>
+        </featuredata>
+      </sub_features>
+<!--Overall ux-->
+      <featuredata key="f272_overall_ux"/>
+    </sub_features>
+  </knowledgedata>
+</product>

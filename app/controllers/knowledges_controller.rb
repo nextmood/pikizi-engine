@@ -94,12 +94,12 @@ class KnowledgesController < ApplicationController
   end
 
 
-  # GET /opinions/:knowledge_key/model/:product_key/[:feature_key]
-  def opinions
+  # GET /aggregations/:knowledge_key/model/:product_key/[:feature_key]
+  def aggregations
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
     @feature = @knowledge.get_feature_by_key(params[:feature_key] || params[:knowledge_key])
     @product = Pikizi::Product.get_from_cache(params[:product_key])
-    @opinions = @knowledge.get_opinions(@product)
+    @aggregations = @knowledge.get_aggregations(@product)
   end
 
   # GET /knowledges/update_indexes
@@ -107,7 +107,7 @@ class KnowledgesController < ApplicationController
   def update_indexes
     Knowledge.delete_all
     Pikizi::Knowledge.xml_keys.each do |knowledge_key|
-      pkz_knowledge = Pikizi::Knowledge.create_from_xml(knowledge_key)
+      pkz_knowledge = Pikizi::Knowledge.get_from_cache(knowledge_key)
       knowledge = Knowledge.create(
               :key => knowledge_key,
               :label => pkz_knowledge.label,

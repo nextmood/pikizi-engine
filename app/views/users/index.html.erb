@@ -13,11 +13,7 @@
         promotion:<%= user.promotion_code %>
         <small>
             &nbsp;
-            <%= pluralize user.nb_authored_values, "value" %>
-            ,&nbsp;
             <%= pluralize user.nb_authored_opinions, "opinion" %>
-            ,&nbsp;
-            <%= pluralize user.nb_authored_backgrounds, "background" %>
             ,&nbsp;
             <%= pluralize user.nb_quiz_instances, "quiz" %>
             ,&nbsp;

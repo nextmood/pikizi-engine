@@ -1,5 +1,4 @@
 require 'pkz_xml.rb'
-require 'pkz_authored.rb'
 
 module Pikizi
 
@@ -7,27 +6,25 @@ require 'xml'
   
 class User < Root
 
-  attr_accessor :key, :reputation, :quiz_instances, :authored_values, :authored_backgrounds , :authored_opinions
+  attr_accessor :key, :reputation, :category, :quiz_instances , :authored_opinions
 
-  
   def initialize_from_xml(xml_node)
     super(xml_node)
     self.reputation =  Float(xml_node['reputation'] || 1.0)
+    self.category =  xml_node['category'] || "citizen"
     self.quiz_instances = Root.get_collection_from_xml(xml_node, 'quiz_instances/quizinstance') { |node_quizinstance| Quizinstance.create_from_xml(node_quizinstance) }
-    self.authored_values = Root.get_collection_from_xml(xml_node, 'authored/value') { |node_authored_value| Value.create_from_xml(node_authored_value) }
     self.authored_opinions = Root.get_collection_from_xml(xml_node, 'authored/opinion') { |node_authored_opinion| Opinion.create_from_xml(node_authored_opinion) }
-    self.authored_backgrounds = Root.get_collection_from_xml(xml_node, 'authored/background') { |node_authored_background| Background.create_from_xml(node_authored_background) }
   end
 
 
   def generate_xml(top_node)
     node_user = super(top_node)
     node_user['reputation'] = (reputation || 1.0).to_s
+    node_user['category'] = category || "citizen"
+
     node_user << (node_quiz_instances = XML::Node.new('quiz_instances'))  
     quiz_instances.each { |qi| qi.generate_xml(node_quiz_instances) } if quiz_instances
     node_user << (node_authored = XML::Node.new('authored'))  
-    authored_values.each { |authored_value| authored_value.generate_xml(node_authored) }
-    authored_backgrounds.each { |authored_background| authored_background.generate_xml(node_authored) }
     authored_opinions.each { |authored_opinion| authored_opinion.generate_xml(node_authored) }
     node_user
   end
@@ -43,8 +40,6 @@ class User < Root
       pkz_user = Pikizi::User.new
       pkz_user.key = user_key
       pkz_user.label = "Label for #{user_key}"
-      pkz_user.authored_values = []
-      pkz_user.authored_backgrounds = []
       pkz_user.authored_opinions = []
       pkz_user.quiz_instances = []
       pkz_user.reputation = 1.0
@@ -56,8 +51,6 @@ class User < Root
   end
 
   def nb_quiz_instances() quiz_instances.size end
-  def nb_authored_values() authored_values.size end
-  def nb_authored_backgrounds() authored_backgrounds.size end
   def nb_authored_opinions() authored_opinions.size end
 
   #API public, return a quiz_instance (create a new one for a given quiz)
@@ -104,37 +97,20 @@ class User < Root
     end    
   end
 
-
-  # addd the values, opinions, rating  of this user to the products
-  def process_authored
-
-    cache_knowledges={}
-    cache_feature_products={}
-
-    authored_values.each { |auth_value| process_authored_bis(auth_value, :value, cache_knowledges, cache_feature_products) }
-    authored_opinions.each { |auth_opinion| process_authored_bis(auth_opinion, :opinion, cache_knowledges, cache_feature_products) }
-    authored_backgrounds.each { |auth_background| process_authored_bis(auth_background, :background, cache_knowledges, cache_feature_products) }
-
-    # save all products
-    cache_feature_products.each { |product_key, product| product.save }
-    true
+  def add_opinion(knowledge_key, feature_key, product_key, value)
+    new_opinion = Opinion.new
+    new_opinion.knowledge_key = knowledge_key
+    new_opinion.feature_key = feature_key
+    new_opinion.product_key = product_key
+    new_opinion.value = value
+    authored_opinions <<  new_opinion
   end
+
+
 
   private
-  
-  def process_authored_bis(auth_atom, method, cache_knowledges, cache_feature_products)
-    raise "Wrong parameters #{auth_atom.inspect}" unless auth_atom.knowledge_key and auth_atom.feature_key
-    knowledge = (cache_knowledges[auth_atom.knowledge_key] ||= Knowledge.create_from_xml(auth_atom.knowledge_key))
-    feature = knowledge.hash_key_feature[auth_atom.feature_key]
-    # product_key  parameter is not mandatory
-    product = (product_key = auth_atom.product_key) ? (cache_feature_products[product_key] ||= Product.create_from_xml(product_key)) : nil
-    case method
-      when :value then feature.set_value(product, self, auth_atom)
-      when :opinion then feature.set_opinion(product, self, auth_atom)
-      when :background then feature.set_background(product, self, auth_atom)
-    end
 
-  end
+
 
 
 
@@ -388,4 +364,44 @@ class Answerok < Root
 
 end
 
+# describe an opinion of a user for a given product/feature
+# with associated backgrounds
+# rating in between ).0 and 1.0 
+class Opinion < Root
+
+  attr_accessor :knowledge_key, :feature_key, :product_key, :timestamp, :db_id, :min_rating, :max_rating, :value, :hash_key_background
+
+
+  def initialize_from_xml(xml_node)
+    super(xml_node)
+    self.knowledge_key = xml_node['knowledge_key']
+    self.feature_key = xml_node['feature_key']
+    self.product_key = xml_node['product_key']
+    self.min_rating = xml_node['min_rating']
+    self.max_rating = xml_node['max_rating']
+    self.db_id = xml_node['db_id']
+    self.timestamp =  Time.parse(xml_node['timestamp']) if xml_node['timestamp']
+    self.value = Float(xml_node['value'])
+    self.hash_key_background = Root.get_hash_from_xml(xml_node, 'background', 'key') { |node_background| Background.create_from_xml(node_background) }
+  end
+
+  def generate_xml(top_node)
+    node_opinion = super(top_node)
+    node_opinion['value'] = value.to_s
+    hash_key_background.each { |key, background| background.generate_xml(node_opinion) }  if hash_key_background
+    node_opinion['db_id'] = db_id.to_s if db_id
+    node_opinion['knowledge_key'] = knowledge_key
+    node_opinion['feature_key'] = feature_key
+    node_opinion['min_rating'] = min_rating
+    node_opinion['max_rating'] = max_rating
+    node_opinion['product_key'] = product_key
+    node_opinion['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
+    node_opinion
+  end
+
+
+
+end
+
+  
 end

@@ -8,9 +8,7 @@
   Authored:
   <small>
     <%= pluralize @user.pkz_user.nb_authored_opinions, "opinion" %>,
-    <%= pluralize @user.pkz_user.nb_authored_values, "values" %>,
-    <%= pluralize @user.pkz_user.nb_authored_backgrounds, "background" %>
-    <%= link_to "process", "/users/#{@user.id}/process_authored" %>
+    <%= link_to "process", "/users/#{@user.id}/process_opinion" %>
 
     </small>
 </div>

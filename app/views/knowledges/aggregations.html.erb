@@ -1,0 +1,24 @@
+
+
+<div class="pkz_box">
+
+  <div class="pkz_menu">
+    Opinions for
+    <%= " <b>#{@feature.label_full}</b>" %>
+    <%= "and product=<b>#{@product.label}</b>" %>
+  </div>
+
+  <div class="pkz_main">
+    <table  border=1>
+        <tr><th>key</th><th>class</th><th>value</th></tr>
+        <% for k,v in @aggregations %>
+            <tr>
+              <td valign="top"><%= k %></td>
+              <td valign="top"><%= v.class %></td>
+              <td valign="top"><%= v.value %></td>
+            </tr>
+        <% end %>
+    </table>
+  </div>
+
+</div>

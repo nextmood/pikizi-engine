@@ -4,7 +4,7 @@ require 'pikizi'
 class User < ActiveRecord::Base
 
   def pkz_user    
-    @pkz_user ||= Pikizi::User.create_from_xml(key)
+    @pkz_user ||= Pikizi::User.get_from_cache(key)
   end
 
 

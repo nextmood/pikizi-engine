@@ -13,13 +13,13 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/medias/:knowledge_key/question/:question_key', :controller => 'knowledges', :action => 'medias', :selector => :question
   map.connect '/medias/:knowledge_key/question/:question_key/:choice_key', :controller => 'knowledges', :action => 'medias', :selector => :question
 
-  # GET /opinions/:knowledge_key/:product_key/[:feature_key]
-  map.connect '/opinions/:knowledge_key/:product_key/:feature_key', :controller => 'knowledges', :action => 'opinions'
-  map.connect '/opinions/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'opinions'
+  # GET /aggregations/:knowledge_key/:product_key/[:feature_key]
+  map.connect '/aggregations/:knowledge_key/:product_key/:feature_key', :controller => 'knowledges', :action => 'aggregations'
+  map.connect '/aggregations/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'aggregations'
 
   map.resources :products
 
-  map.resources :users, :member => { :process_authored => :get }
+  map.resources :users, :member => { :process_opinion => :get }
   map.connect '/profile/:user_key', :controller => 'users', :action => 'show_by_key'  
   map.connect '/answer', :controller => 'users', :action => 'record_answer'
 

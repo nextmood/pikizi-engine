@@ -46,10 +46,10 @@ class UsersController < ApplicationController
   end
 
   
-  # GET /users/1/process_authored
-  def process_authored
+  # GET /users/1/process_opinion
+  def process_opinion
     @user = User.find(params[:id])
-    message_processing = @user.pkz_user.process_authored
+    message_processing = @user.pkz_user.process_opinion
     flash[:notice] = "User was successfully processed. #{message_processing}"
     redirect_to(@user)
   end
@@ -58,21 +58,7 @@ class UsersController < ApplicationController
     get_logged_ar_user
   end
 
-  # GET /users/update_indexes
-  # update the user database
-  def update_indexes
-    User.delete_all
-    Pikizi::User.xml_keys.each do |user_key|
-      pkz_user = Pikizi::User.create_from_xml(user_key)
-      user = User.create(
-              :key => user_key,
-              :nb_quiz_instances => pkz_user.nb_quiz_instances,
-              :nb_authored_opinions => pkz_user.nb_authored_opinions,
-              :nb_authored_backgrounds => pkz_user.nb_authored_backgrounds,
-              :nb_authored_values => pkz_user.nb_authored_values)
-    end
-    redirect_to("/users")
-  end
+
 
     # this method is call back for rpxnow (this is triggered after login)
   # user_data

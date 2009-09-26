@@ -1,47 +1,37 @@
 require 'pkz_xml.rb'
-require 'pkz_authored.rb'
 
 
 module Pikizi
 
 class Product < Root
 
-  attr_accessor :modeldatas # hash table base on knowledge_key
+  attr_accessor :knowledgedatas # hash table base on knowledge_key
 
   def initialize_from_xml(xml_node)
     super(xml_node)
-    self.modeldatas = Root.get_hash_from_xml(xml_node, 'modeldata', 'key') { |node_modeldata| Modeldata.create_from_xml(node_modeldata) }
+    self.knowledgedatas = Root.get_hash_from_xml(xml_node, 'knowledgedata', 'key') { |node_knowledgedata| Knowledgedata.create_from_xml(node_knowledgedata) }
   end
 
-  # generate xml according to knowledge structure...
-  def generate_xml(top_node, knowledge_keys)
-    puts "*** generating product=#{key}"
+  # generate xml according to knowledges structure...
+  def generate_xml(top_node)
     node_product = super(top_node)
-    knowledge_keys.each { |knowledge_key| modeldatas[knowledge_key].generate_xml(node_product, Knowledge.get_from_cache(knowledge_key)) } if modeldatas
+    knowledgedatas.each do |knowledge_key, knowledgedata| knowledgedata.generate_xml(node_product, Knowledge.get_from_cache(knowledge_key)) end
     node_product
   end
 
-  def to_xml(knowledge_keys, key=nil)
-    super(key, knowledge_keys)
-  end
 
-  def self.get_from_cache(product_key, reload=nil)
+  def self.get_from_cache(product_key, reload=nil)  
     Rails.cache.fetch("P#{product_key}", :force => reload) { Product.create_from_xml(product_key) }  
   end
 
+
+
   # load an xml file... and retutn a Product object  
   def self.create_from_xml(product_key)
-    unless key_exist?(product_key)
-      pkz_product = Pikizi::Product.new
-      pkz_product.key = product_key
-      pkz_product.label = "Label for #{product_key}"
-      pkz_product.save
-      PK_LOGGER.info "XML product #{product_key} created on filesystem"              
-    end
+    raise "Error product doesn't exist" unless key_exist?(product_key)
     PK_LOGGER.info "loading XML product #{product_key} from filesystem"
     super(XML::Document.file(self.filename_data(product_key)).root)
   end
-
 
   # get the values for a feature
   def get_values(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "values") end
@@ -49,15 +39,14 @@ class Product < Root
   # set/get the background for a feature
   def get_background(knowledge_key, feature_key, background_key) get_data(knowledge_key, feature_key, "hash_key_background", background_key) end
   def get_backgrounds(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "hash_key_background", nil) end
+  
 
-  # set/get the opinion for a feature
-  # if already existing average weighted...
-  def set_opinion(auth_opinion, user, knowledge_key, feature_key) set_data(user, knowledge_key, feature_key, "hash_key_opinion", auth_opinion, auth_opinion.key) end
-  def get_opinion(knowledge_key, feature_key, opinion_key) get_data(knowledge_key, feature_key, "hash_key_opinion", opinion_key) end
-  def get_opinions(knowledge_key, feature_key) get_data(knowledge_key, feature_key, "hash_key_opinion", nil) end
+  def feature_data(knowledge_key, feature_key)
+    feature_key ||= model_key
+    knowledgedata = (knowledgedatas[knowledge_key] ||= Knowledgedata.create_with_parameters(knowledge_key))
+    knowledgedata.featuredatas[feature_key] ||= Featuredata.create_with_parameters(feature_key)
+  end
 
-
-       
   private
 
 
@@ -66,11 +55,7 @@ class Product < Root
     hash_key ? fd.send(method)[hash_key] : fd.send(method)
   end
 
-  def feature_data(knowledge_key, feature_key)
-    feature_key ||= model_key
-    modeldata = (modeldatas[knowledge_key] ||= Modeldata.create_with_parameters(knowledge_key))
-    modeldata.featuredatas[feature_key] ||= Featuredata.create_with_parameters(feature_key)
-  end
+
 
 
 end
@@ -78,7 +63,7 @@ end
 
 # describe a set of values for a given model
 # the key is the model key
-class Modeldata < Root
+class Knowledgedata < Root
     
   attr_accessor :featuredatas # hash by key
   
@@ -89,9 +74,9 @@ class Modeldata < Root
   end
   
   def generate_xml(top_node, knowledge)
-    node_modeldata = super(top_node)
-    generate_xml_bis(knowledge, node_modeldata)
-    node_modeldata
+    node_knowledgedata = super(top_node)
+    generate_xml_bis(knowledge, node_knowledgedata)
+    node_knowledgedata
   end
 
   def generate_xml_bis(feature, node_feature)
@@ -116,9 +101,9 @@ class Modeldata < Root
   end
 
   def self.create_with_parameters(knowledge_key)
-    modeldata = super(knowledge_key)
-    modeldata.featuredatas = {}
-    modeldata
+    knowledgedata = super(knowledge_key)
+    knowledgedata.featuredatas = {}
+    knowledgedata
   end
 
 end
@@ -126,14 +111,12 @@ end
 # describe a set of Data for a given feature in a given model and a product
 class Featuredata < Root
 
-  attr_accessor :values, :hash_key_background, :hash_key_opinion
+  attr_accessor :values, :hash_key_background
   
   def initialize_from_xml(xml_node)
     super(xml_node)
-    #self.value = ((node_value = xml_node.find_first('value')) ? Value.create_from_xml(node_value) : nil)
     self.values = Root.get_collection_from_xml(xml_node, "value") { |node_value| node_value.content.strip }
     self.hash_key_background = Root.get_hash_from_xml(xml_node, "background", "key") { |node_background| Background.create_from_xml(node_background) }
-    self.hash_key_opinion = Root.get_hash_from_xml(xml_node, "opinion", "key") { |node_opinion| Opinion.create_from_xml(node_opinion) }
   end
 
   
@@ -141,7 +124,6 @@ class Featuredata < Root
     node_featuredata = super(top_node)
     feature.generate_xml_4_value(node_featuredata, featuredatas)
     hash_key_background.each { |background_key, background| background.generate_xml(node_featuredata) }
-    hash_key_opinion.each { |opinion_key, opinion| opinion.generate_xml(node_featuredata) }
     node_featuredata
   end
 
@@ -150,11 +132,11 @@ class Featuredata < Root
     featuredata = super(feature_key)
     featuredata.values = []
     featuredata.hash_key_background = {}
-    featuredata.hash_key_opinion = {}
     featuredata
   end
 
 end
+
 
 
 

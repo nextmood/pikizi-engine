@@ -1,17 +1,31 @@
 <?xml version="1.0"?>
 <product key="blackberry_pearl_flip_8220">
-  <label lang="en">Label for blackberry_pearl_flip_8220</label>
-  <modeldata key="cell_phones">
+  <label lang="en">Blackberry Pearl Flip 8220</label>
+  <knowledgedata key="cell_phones">
 <!--Cell Phones-->
     <featuredata key="cell_phones">
-      <value/>
-      <background key="amazon_asin" db_id="668" type="text"></background>
-      <background key="description" db_id="669" type="html"></background>
-      <background key="main_url" db_id="670" type="url"></background>
-      <background key="main_image" db_id="671" type="image"></background>
-      <opinion key="average_expert_rating" db_id="" min_rating="0.0" max_rating="1.0" value="0.5" type="rating" user_category="expert"/>
+      <background key="amazon_asin" type="text" db_id="668"/>
+      <background key="description" type="html" db_id="669"/>
+      <background key="main_url" type="url" db_id="670"/>
+      <background key="main_image" type="image" db_id="671"/>
     </featuredata>
     <sub_features>
+<!--Expert rating-->
+      <featuredata key="main_expert_rating">
+        <value>2.0</value>
+        <value>nextmood(1.0)=2.0</value>
+      </featuredata>
+<!--Everyone rating-->
+      <featuredata key="main_citizen_rating">
+        <value>4.0</value>
+        <value>amazon_192(1.0)=4.0</value>
+        <value>amazon_193(1.0)=4.0</value>
+        <value>amazon_194(1.0)=5.0</value>
+        <value>amazon_195(1.0)=4.0</value>
+        <value>amazon_196(1.0)=5.0</value>
+        <value>amazon_197(1.0)=5.0</value>
+        <value>amazon_198(1.0)=1.0</value>
+      </featuredata>
 <!--Brand-->
       <featuredata key="f1_brand">
 <!--t4_nokia : nokia-->
@@ -112,6 +126,7 @@
 <!--screen quality-->
           <featuredata key="f283_screen_quality">
             <value>4.0</value>
+            <value>ph(1.0)=4.0</value>
           </featuredata>
         </sub_features>
 <!--form factor-->
@@ -358,11 +373,7 @@
           </featuredata>
 <!--call quality-->
           <featuredata key="f251_call_quality">
-<!--t969_poor : poor-->
-<!--t970_mediocre : mediocre-->
-<!--t971_acceptable : acceptable-->
-<!--t972_good : good-->
-<!--t973_excellent : excellent-->
+            <value/>
           </featuredata>
 <!--push-to-talk-->
           <featuredata key="f253_push-to-talk">
@@ -785,7 +796,8 @@
           </featuredata>
 <!--video quality-->
           <featuredata key="f260_video_quality">
-            <value>1.5</value>
+            <value>1.0</value>
+            <value>ph(1.0)=1.0</value>
           </featuredata>
         </sub_features>
 <!--online picture and video sharing-->
@@ -821,7 +833,8 @@
         </featuredata>
 <!--picture quality-->
         <featuredata key="f259_picture_quality">
-          <value>2.5</value>
+          <value>2.0</value>
+          <value>ph(1.0)=2.0</value>
         </featuredata>
 <!--camera controls sophistication-->
         <featuredata key="f284_camera_controls_sophistication">
@@ -874,7 +887,9 @@
             <value>true</value>
           </featuredata>
 <!--video quality-->
-          <featuredata key="f279_video_quality"/>
+          <featuredata key="f279_video_quality">
+            <value/>
+          </featuredata>
         </sub_features>
 <!--music player-->
         <featuredata key="f74_music_player">
@@ -937,7 +952,9 @@
 <!--t1073_at&t_mobile_music : at&t mobile music-->
           </featuredata>
 <!--music quality-->
-          <featuredata key="f281_music_quality"/>
+          <featuredata key="f281_music_quality">
+            <value/>
+          </featuredata>
         </sub_features>
 <!--radio-->
         <featuredata key="f76_radio">
@@ -1013,16 +1030,6 @@
       </featuredata>
 <!--Nickname-->
       <featuredata key="f111_nickname"/>
-<!--Expert rating-->
-      <featuredata key="f112_expert_rating">
-        <value>3.5</value>
-      </featuredata>
-      <sub_features>
-<!--User rating-->
-        <featuredata key="f254_user_rating">
-          <value>3.0</value>
-        </featuredata>
-      </sub_features>
 <!--Third-party applications-->
       <featuredata key="f130_third-party_applications"/>
       <sub_features>
@@ -1170,9 +1177,9 @@
 <!--Price range-->
       <featuredata key="f262_price_range">
 <!--f262_price_range-min : Price range-min-->
-        <value>49.0</value>
+        <value/>
 <!--f262_price_range-max : Price range-max-->
-        <value>349.0</value>
+        <value/>
       </featuredata>
       <sub_features>
 <!--Subsidized price-->
@@ -1189,5 +1196,5 @@
         <value>3.0</value>
       </featuredata>
     </sub_features>
-  </modeldata>
+  </knowledgedata>
 </product>

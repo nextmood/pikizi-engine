@@ -20,7 +20,7 @@ class Root
   
   def self.create_new_instance_from_xml(xml_node) Pikizi.const_get(xml_node.name.capitalize).new end
   
-  def self.create_with_parameters(key, label=nil) o = self.new; o.key = key; o.label = label; o end
+  def self.create_with_parameters(key, label=nil) o = self.new; o.key = key; o.label = label if label; o end
 
   # get all children in xml (according to a xpath from an xml_node) and returns the children object modl
   # of class class_name
@@ -57,12 +57,10 @@ class Root
   # to convert v.strftime(Root.default_date_format)
   def self.default_date_format() "%Y/%m/%d %H:%M:%S" end
   
-  def to_xml(a_key=nil, extra_param=nil)
+  def to_xml(a_key=nil)
     doc = XML::Document.new
 
-    # horrible hack below, extra_param is used as an handle to knowledges
-    # when generating xml for products
-    extra_param ? generate_xml(doc, extra_param) : generate_xml(doc)
+    generate_xml(doc)
 
     if a_key
       #doc.compression = 1 ;
@@ -96,7 +94,59 @@ class Root
 end
 
 
+# describe a background  abstract class
+class Background < Root
 
+  attr_accessor :value, :db_id
+
+  def initialize_from_xml(xml_node)
+    super(xml_node)
+    self.value = xml_node.content
+    self.db_id = xml_node['db_id']
+
+  end
+
+  def generate_xml(top_node)
+    node_background = super(top_node, "background")
+    type_bgk = self.class.to_s.downcase; type_bgk.slice!("pikizi::background")
+    node_background['type'] = type_bgk
+    node_background['db_id'] = db_id if db_id
+    node_background << value
+    node_background
+  end
+
+  def self.create_new_instance_from_xml(xml_node)
+    Pikizi.const_get("Background#{xml_node['type'].capitalize}").new
+  end
+
+
+  def display_as_html()
+    if db_id
+      ActiveRecord::Base::Background.find(db_id).data
+    else
+      value
+    end
+  end
+
+end
+
+class BackgroundText < Background
+end
+
+class BackgroundHtml < Background
+end
+
+# content is a Url
+class BackgroundUrl < Background
+end
+
+class BackgroundImage < BackgroundUrl
+  def display_as_html() "<img src='/backgrounds/#{db_id}/thumbnail_150' />" end
+end
+
+class BackgroundVideo < BackgroundUrl
+end
+  
   
 
 end

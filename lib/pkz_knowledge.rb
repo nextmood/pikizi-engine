@@ -1,5 +1,4 @@
 require 'pkz_xml.rb'
-require 'pkz_authored.rb'
 
 module Pikizi
 
@@ -10,21 +9,18 @@ module Pikizi
 class Model < Root
   # abstract class 
   
-  attr_accessor :knowledge, :hash_key_best_background
+  attr_accessor :knowledge, :hash_key_background
     
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node)
     self.knowledge = knowledge
     self.key ||= "model##{knowledge.new_index}"
-    self.hash_key_best_background = Root.get_hash_from_xml(xml_node, 'background', 'key') { |node_background| Background.create_from_xml(node_background) }
-    if hash_key_best_background.size > 0
-      puts "******* background for feature=#{key}"  
-    end
+    self.hash_key_background = Root.get_hash_from_xml(xml_node, 'background', 'key') { |node_background| Background.create_from_xml(node_background) }
   end
 
   def generate_xml(top_node, class_name)
     node_model = super(top_node, class_name)
-    hash_key_best_background.each { |key, background| background.generate_xml(node_model) }  if hash_key_best_background
+    hash_key_background.each { |key, background| background.generate_xml(node_model) }  if hash_key_background
     node_model
   end
 
@@ -37,10 +33,8 @@ class Model < Root
   # return a hash background_key, background object
   # for the feature, or the feature/product
   def get_backgrounds(product=nil)
-    product ? product.get_backgrounds(knowledge_key, key) : hash_key_best_background
+    product ? product.get_backgrounds(knowledge_key, key) : hash_key_background
   end
-
-  
 
 end
 
@@ -51,15 +45,20 @@ end
 class Feature < Model
   # abstract class 
   
-  attr_accessor :feature_parent, :sub_features, :ratable
+  attr_accessor :feature_parent, :sub_features, :min_rating, :max_rating, :rating_by             
 
-  def initialize_from_xml(xml_node, feature_parent) 
+  def initialize_from_xml(xml_node, feature_parent)
     super(xml_node, feature_parent ? feature_parent.knowledge : self)
     self.feature_parent = feature_parent
-    self.ratable = (xml_node['ratable'] || nil)
+    self.min_rating = (xml_node['min_rating'] || nil)
+    self.max_rating = (xml_node['max_rating'] || nil)
+    self.rating_by = (xml_node['rating_by'] || nil)
     self.sub_features = Root.get_collection_from_xml(xml_node, "sub_features/feature") { |node| Feature.create_from_xml(node, self) }
     knowledge.hash_key_feature[key] = self
   end
+
+  # a feature is ratable when...
+  def is_ratable?() rating_by and min_rating and max_rating end
 
   def is_root?() feature_parent.nil? end
 
@@ -79,7 +78,10 @@ class Feature < Model
     type = self.class.to_s.downcase; type.slice!("pikizi::feature")
     node_feature = super(top_node, "feature") 
     node_feature['type'] = type
-    node_feature['ratable'] = ratable if ratable
+    node_feature['min_rating'] = min_rating if min_rating
+    node_feature['max_rating'] = max_rating if max_rating
+    node_feature['rating_by'] = rating_by if rating_by
+
     if sub_features and sub_features.size > 0      
       node_feature << (node_sub_features = XML::Node.new('sub_features'))
       sub_features.each { |sf| sf.generate_xml(node_sub_features) }
@@ -88,9 +90,9 @@ class Feature < Model
   end
 
   def generate_xml_4_value(node_featuredata, featuredatas)
-    if featuredata = featuredatas[key]
+    if featuredata = featuredatas[key] and featuredata.values.size > 0  and featuredata.values.first  and featuredata.values.first != ""
       node_featuredata << (node_value = XML::Node.new('value'))
-      node_value << featuredata.value.value if featuredata.value
+      node_value << featuredata.values.first 
     end
     node_featuredata
   end
@@ -111,27 +113,13 @@ class Feature < Model
     bgk_icon = "<a href=\"#{url}\" class='pkz_background' title='#{backgrounds_size || 0} backgrounds for #{label}#{(' on ' << product.label) if product}'>&nbsp;#{backgrounds_size || '&nbsp;'}&nbsp;</a>"
 
 
-    # rating icon only when product and ratable
-    rating_icon =  if ratable
-      if product
-        url = "/opinions/#{knowledge_key}/#{product.key}"
-        url << "/#{key}" if feature_parent
-        opinions_size = get_opinions(product) ? get_opinions(product).size : 0
-        opinions_size = (opinions_size > 0 ? opinions_size : nil)
-        "<a href=\"#{url}\" class='pkz_rating' title='#{opinions_size || 0} opinions for #{label} / #{product.label}'>&nbsp;#{opinions_size || '&nbsp;&nbsp;'}&nbsp;</a>"
-      else
-        user_categories = ratable.split(",")
-       "<span class='pkz_rating' title='ratable by: #{user_categories.join(', ')}'>&nbsp;#{user_categories.size}&nbsp;</span>"
-      end
-    end
-
     if feature_parent
-      html_node << "<span class='pkz_feature_label'>#{label}</span>"
-      html_node << "#{bgk_icon}#{rating_icon}<span class='pkz_feature_extra'>#{extra}</span>"
+      html_node << "<span class='pkz_feature_label' title='key=#{key}'>#{label}</span>"
+      html_node << "#{bgk_icon}<span class='pkz_feature_extra'>#{extra}</span>"
       html_node  << "#{get_html_editor(product)}"
     else
       # this the the root, i.e. the knowledge object
-      html_node << "#{product ? product.label : 'product'}#{bgk_icon}#{rating_icon}"
+      html_node << "#{product ? product.label : 'product'}#{bgk_icon}"
     end 
 
     s_options = (deep_down and sub_features) ? sub_features.collect { |f| "<li>#{f.to_html(product, nil, deep_down)}</li>" } : []
@@ -173,28 +161,10 @@ class Feature < Model
   # return nil, if no value
   def get_values(product)
     values = product.get_values(knowledge_key, key)
-    values.collect {|v| string2value(v) } if values
+    puts "***** #{product.key} values for feature #{label} #{self.class} = #{values.inspect}"
+    values.collect {|v|  (v.nil? or v == "") ? nil : string2value(v) } if values
   end
 
-  # set the feature value for a product
-  # you can't set the value to nil (use empty_value instead)
-  def set_value(product, user, value_authored)
-    raise "atom #{value_authored} has no key" unless value_authored.key
-    raise "value #{value_authored.value.inspect} in not in domain of #{self.class}" unless is_valid_value?(value_authored.value)
-    product.set_value(value_authored, user, knowledge_key, key)
-  end
-
-
-  # ------------------------------------------------------------------------------------------
-  # manage the opinion for a given feature / product
-  # ------------------------------------------------------------------------------------------
-
-  def set_opinion(product, user, new_opinion) product.set_opinion(new_opinion, user, knowledge_key, key) end
-  def get_opinion(product, opinion_key) product.get_opinion(knowledge_key, key, opinion_key) if product end
-  def get_opinions(product)
-    raise "product expected" unless product
-    product.get_opinions(knowledge_key, key)
-  end
 
   # ------------------------------------------------------------------------------------------
   # manage the background for a given feature / product
@@ -210,8 +180,6 @@ class Feature < Model
       # TODO set background for feature (no product)
     end
   end
-
-
 
 
 
@@ -256,9 +224,11 @@ class Knowledge < Feature
   end
 
   def self.get_from_cache(knowledge_key, reload=nil)
-    Rails.cache.fetch("M#{knowledge_key}", :force => reload) { Knowledge.create_from_xml(knowledge_key) }
+    Rails.cache.fetch("K#{knowledge_key}", :force => reload) { Knowledge.create_from_xml(knowledge_key) }
   end
-  
+
+
+
   # load an xml file... and retutn a Knowledge object
   def self.create_from_xml(knowledge_key)
     unless key_exist?(knowledge_key)
@@ -363,8 +333,6 @@ class Knowledge < Feature
 
   def get_feature_by_key(f_key) hash_key_feature[f_key] end
 
-
-  
 end
 
 # define a group of sub features of type FeatureBinary
@@ -391,14 +359,12 @@ class FeatureTag < Feature
   end
 
   def generate_xml_4_value(node_featuredata, featuredatas)
+    values = featuredatas[key].values
     feature_binaries.each do |sf|
       node_featuredata << XML::Node.new_comment("#{sf.key} : #{sf.label}")
-      feature_data = featuredatas[sf.key]
-      featuredata_value = feature_data ? feature_data.value : nil
-      featuredata_value_value = featuredata_value ? featuredata_value.value : nil
-      if featuredata_value_value == "true"
+      if values.include?(sf.key)
         node_featuredata << (node_value = XML::Node.new('value'))
-        node_value << feature_data.key
+        node_value << sf.key
       end
 
     end
@@ -415,7 +381,7 @@ class FeatureTag < Feature
       values = get_values(product)
       feature_binaries.collect do |sf|
         type_button = is_exclusive ? 'radio' : 'checkbox'
-        "<input type='#{type_button}' name='feature_#{sf.key}' value='#{sf.key}' #{ values.include?(sf.key) ? 'checked' : nil} />#{sf.label}"
+        "<input type='#{type_button}' name='feature_#{sf.key}' title='key=#{sf.key}' value='#{sf.key}' #{ values.include?(sf.key) ? 'checked' : nil} />#{sf.label}"
       end.join(", ")
     else
       ""
@@ -441,6 +407,64 @@ class FeatureTag < Feature
   end
   
   
+end
+
+# define a rating value
+# aggregations objects are attached for each fetaureRating/Product 
+class FeatureRating < Feature
+  attr_accessor :min_rating, :max_rating, :user_categories
+
+  def initialize_from_xml(xml_node, feature_parent)
+    super(xml_node, feature_parent)
+    self.min_rating = Integer(xml_node['min_rating'])
+    self.max_rating = Integer(xml_node['max_rating'])
+    self.user_categories = xml_node['user_categories'].split(",")
+  end
+
+  def generate_xml(top_node, classname=nil)
+    node_feature_rating = super(top_node, classname)
+    node_feature_rating['min_rating'] = min_rating.to_s
+    node_feature_rating['max_rating'] = max_rating.to_s
+    node_feature_rating['user_categories'] = user_categories.join(",")
+    node_feature_rating
+  end
+
+  #   "<span class='pkz_rating' title='ratable by: #{user_categories.join(', ')}'>&nbsp;#{user_categories.size}&nbsp;</span>"
+
+  def get_html_editor(product)
+    if product
+      values = get_values(product)
+      value = values.first
+      value = Float(value) if value
+      authors = values[1, values.length - 1]
+
+      if value
+        s = "<span title='authors:#{authors.join(', ')}'>"
+        for i in 1..value.round
+          s << "<span class='pkz_rating'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>"  
+        end
+        s << "</span>"
+      else
+        "<span class='pkz_rating' title='no rating!, ratable by: #{user_categories.join(', ')}' style='margin-left:3px;'>&nbsp;?&nbsp;</span>"
+      end
+    else
+      "<span class='pkz_rating' title='ratable by: #{user_categories.join(', ')}' style='margin-left:3px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>"      
+    end
+  end
+
+  def to_html(product, extra, deep_down)
+    extra = "min=#{min_rating} max=#{max_rating}"  unless product
+    super(product, extra, false)
+  end
+
+  def generate_xml_4_value(node_featuredata, featuredatas)
+    featuredatas[key].values.each do |value|
+      node_featuredata << (node_value = XML::Node.new('value'))
+      node_value << value
+    end
+    node_featuredata
+  end
+
 end
 
 # define 2 sub features of same type (subtype of continoueus)
