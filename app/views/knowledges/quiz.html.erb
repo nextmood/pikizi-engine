@@ -31,17 +31,9 @@
 
 <div class="pkz_box">
 
+  <%= model_selector(@knowledge, :quizzes) %>
 
-<div class="pkz_menu">
-    <span>
-      Quiz <%= @quiz.key %>
-      <small>
-        <%= pluralize(@quiz_instance.nb_answers, "answer") %>
-        &nbsp;
-        <%= link_to("back to #{@knowledge.label}", "/show/#{@knowledge.key}")%>
-      </small>
-    </span>
-</div>
+
 
 <div class="pkz_main">
   <% if next_question = @current_ar_user.pkz_user.get_next_question(@knowledge, @quiz) %>
@@ -90,7 +82,7 @@
       <% end %>
       </ul>
   </td><td width="50%" valign="top">
-    
+      <%= pluralize(@quiz_instance.nb_answers, "answer") %> so far
       <% for question in @knowledge.questions_sorted(@quiz.products, @current_ar_user.pkz_user) %>
           <% if answered_choice_keys = @quiz_instance.user_last_answer_choice_keys_ok(question.key) %>
               <%= render(:partial => "knowledges/quiz_question",

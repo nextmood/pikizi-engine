@@ -1,8 +1,5 @@
 <div class="pkz_box">
-    <div class="pkz_menu">
-      <%= pluralize(@knowledge.nb_questions, "question") %>
-      <small>in knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%></small>
-    </div>
+  <%= model_selector(@knowledge, :questions) %>
     <div class="pkz_main">
       <% for question in @knowledge.questions %>
         <div class="pkz_item_list">

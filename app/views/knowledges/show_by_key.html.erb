@@ -1,31 +1,18 @@
 <div class="pkz_box">
-    <div class="pkz_menu">
-        <span>
-          <%= @knowledge.label %>
-          <small>
-            #<%= @knowledge.key %>,&nbsp;
-            <%= pluralize(@knowledge.nb_products, "product") %>,&nbsp;
-            <%= pluralize(@knowledge.nb_features, "feature") %>,&nbsp;
-            <%= link_to(pluralize(@knowledge.nb_questions, "question"), "/questions/#{@knowledge.key}") %>,&nbsp;
-            <%= pluralize(@knowledge.nb_recommendation, "recommendation") %>,&nbsp;
-            <%= pluralize(@knowledge.nb_quizzes, "quiz") %>,&nbsp;
-            <%= link_to "xml", "/edit/#{@knowledge.key}" %>
-          </small>
-        </span>
+  <%= model_selector(@knowledge, @product ? :products : :model) %>
 
-        &nbsp;|&nbsp;
-        start quiz:
-        <% for quiz in @knowledge.quizzes %>
-          <%= link_to quiz.key, "/quiz/#{quiz.key}" %>
-        <% end %>
-      <br/>
-        show values for product:
+
+
+    <div class="pkz_main">
+      <div style="border-bottom:1px dashed black; margin-bottom:5px;">
+        show value for product
         <%=   select("option", "product_key",
                  @knowledge.product_keys.collect {|pkey| [pkey, pkey] },
                  { :include_blank => true, :selected => @product ? @product.key : nil },
                  :onchange => "window.location = '/show/#{@knowledge.key}/' + document.getElementById('option_product_key').value ") %>
+        <small><%= link_to "xml", "/edit/#{@knowledge.key}" %></small>
     </div>
-
-    <div class="pkz_main"><%= @knowledge.to_html(@product) %></div>
+      <%= @knowledge.to_html(@product) %>
+    </div>
 
 </div>

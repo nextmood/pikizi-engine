@@ -30,16 +30,15 @@
 
 
 <div class="pkz_box">
-    <div class="pkz_menu">
+  <%= model_selector(@knowledge, :questions) %>
 
-      <%= @question.key %> in <%= link_to "questions", "/questions/#{@knowledge.key}"%> of knowledge base <%= link_to @knowledge.key, "/show/#{@knowledge.key}"%>
-    </div>
     <div class="pkz_main">
 
 
         <table border=1 width="100%">
           <tr>
             <td>
+              <small><%= @question.key %></small>
             <div style="font-weight:bold;"><%= @question.label %></div>
             <div style="font-size:90%;">
                 <%= pluralize @question.nb_presentation.round, "presentation" %>
@@ -58,9 +57,7 @@
           </tr>
           <tr id="xml_content" style="display:none;">
             <td colspan="2" >
-              <textarea id="inputfield" style="width:100%; height:300px; background-color:lightblue;">
-                <%= @question.to_xml %>
-              </textarea>
+              <textarea id="inputfield" style="width:100%; height:300px; background-color:lightblue;"><%= @question.to_xml %></textarea>
               <script>
                   var editor = CodeMirror.fromTextArea("inputfield", {
                   parserfile: ["tokenizejavascript.js", "parsejavascript.js"],
@@ -89,14 +86,13 @@
             </td>
             <td width="50%" valign="top" >
               <div style="-moz-column-count:2">
-                  <ul>
-                      <% for product in @products %>
-                          <li id="product_<%= product.key %>">
-                          <span id="tensor_<%= product.key %>" style="border:1px solid white;">&nbsp;&nbsp;</span>
-                          <%= product.key %>&nbsp;
-                          </li>
-                      <% end %>
-                   </ul>
+                  <% for product in @products %>
+                      <div id="product_<%= product.key %>" style="width:100%;">
+
+                          <span style="right:0px;"><%= product.key %></span>
+                        <span id="tensor_<%= product.key %>" style="border:1px solid white;">&nbsp;</span>
+                      </div>
+                  <% end %>
                </div>
             </td>
           </tr>

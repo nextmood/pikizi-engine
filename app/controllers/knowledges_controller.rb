@@ -7,12 +7,8 @@ class KnowledgesController < ApplicationController
   # GET /knowledges
   # GET /knowledges.xml
   def index
-    @knowledges = Knowledge.find(:all, :order => "updated_at DESC")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @knowledges }
-    end
+    knowledge = Knowledge.find(:all, :order => "updated_at DESC").first
+    redirect_to("/show/#{knowledge.key}")
   end
 
 

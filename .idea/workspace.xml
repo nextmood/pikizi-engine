@@ -15,6 +15,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box952Btm.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/orng512.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/nokia_e75.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/knowledges_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/knowledges_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/xml/products/nokia_7205_intrigue.xml" afterPath="$PROJECT_DIR$/db/xml/products/nokia_7205_intrigue.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb" afterPath="$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/iconSrch.png" afterPath="" />
@@ -41,6 +42,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/blackberry_pearl_flip_8220.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/samsung_propel_pro.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/phone2.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/knowledges/show_questions.html.erb" afterPath="$PROJECT_DIR$/app/views/knowledges/show_questions.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/stylesheets/geene/css/global.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/knowledges/show_question.html.erb" afterPath="$PROJECT_DIR$/app/views/knowledges/show_question.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/bg_search_boxBg.png" afterPath="" />
@@ -75,6 +77,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/samsung_s8300_ultratouch.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/sony_ericsson_xperia_x1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pkz_user.rb" afterPath="$PROJECT_DIR$/lib/pkz_user.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/knowledges/index.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/nokia_n79.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/samsung_knack_sch-u310.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/phone3.png" afterPath="" />
@@ -84,6 +87,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/phone1Prod.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/ansStripe.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box606Top.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box606Edge.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/blackberry_bold_9000.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/faceBkTxt.jpg" afterPath="" />
@@ -97,6 +101,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/box952edge.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/iconHrt.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/topPick1.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/knowledges/show_by_key.html.erb" afterPath="$PROJECT_DIR$/app/views/knowledges/show_by_key.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/samsung_memoir_t929.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/xml/products/old/lg_xenon.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/geene/topPick2.jpg" afterPath="" />
@@ -125,64 +130,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show_question.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="knowledges_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/knowledges_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="34" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quiz.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="883" selection-end="883" vertical-scroll-proportion="-6.9473686">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_by_key.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_by_key.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="22" selection-end="89" vertical-scroll-proportion="-0.6315789">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_questions.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_questions.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="47" selection-start="24" selection-end="69" vertical-scroll-proportion="-0.6315789">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_question.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="161" selection-start="1019" selection-end="1019" vertical-scroll-proportion="-8.210526">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="45" selection-start="476" selection-end="476" vertical-scroll-proportion="15.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="amazon_192.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/xml/users/amazon_192.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="0" selection-end="1386" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/images/test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pkz_knowledge.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pkz_knowledge.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1073" column="18" selection-start="38476" selection-end="38476" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pkz_xml.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pkz_xml.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="41" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0">
+            <state line="59" column="125" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.21818182">
               <folding />
             </state>
           </provider>
@@ -320,7 +307,97 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="config" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="views" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="views" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="knowledges" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="helpers" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="pikizi-engine" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="app" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="controllers" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -656,34 +733,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="68" selection-start="4824" selection-end="4824" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/xml/knowledges/cell_phones.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2011" column="27" selection-start="100108" selection-end="100122" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_show_question.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="65" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/proxy_thibault.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="4432" selection-end="4432" vertical-scroll-proportion="0.98553056">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pkz_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="347" column="24" selection-start="12807" selection-end="12807" vertical-scroll-proportion="0.0">
@@ -698,23 +747,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="6" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/knowledges/_quiz_question.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="31" selection-start="455" selection-end="1050" vertical-scroll-proportion="-4.266667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="36" selection-start="280" selection-end="280" vertical-scroll-proportion="25.263159">
           <folding />
         </state>
       </provider>
@@ -754,16 +789,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="161" selection-start="1019" selection-end="1019" vertical-scroll-proportion="-8.210526">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="73" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_questions.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="47" selection-start="24" selection-end="69" vertical-scroll-proportion="-0.6315789">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_by_key.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="22" selection-end="89" vertical-scroll-proportion="-0.6315789">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/quiz.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="883" selection-end="883" vertical-scroll-proportion="-6.9473686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/knowledges_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/show_question.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="125" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.21818182">
           <folding />
         </state>
       </provider>
