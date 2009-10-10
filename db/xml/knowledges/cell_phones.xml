@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <knowledge>
-  <feature key="cell_phones" type="pikizi::knowledge" current_index="553">
+  <feature key="cell_phones" type="pikizi::knowledge" current_index="0">
     <label lang="en">Cell Phones</label>
     <sub_features>
       <feature key="main_expert_rating" type="rating" min_rating="1" max_rating="5" user_categories="expert">
-        <label lang="en">Expert rating</label>  
+        <label lang="en">Expert rating</label>
       </feature>
       <feature key="main_citizen_rating" type="rating" min_rating="1" max_rating="5" user_categories="citizen">
         <label lang="en">Everyone rating</label>
@@ -69,7 +69,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f5_tips" type="header" >
+      <feature key="f5_tips" type="header">
         <label lang="en">Tips</label>
         <sub_features>
           <feature key="f108_pros" type="tag" is_exclusive="true">
@@ -82,10 +82,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f13_hardware" type="header" >
+      <feature key="f13_hardware" type="header">
         <label lang="en">Hardware</label>
         <sub_features>
-          <feature key="f14_screen" type="header" >
+          <feature key="f14_screen" type="header">
             <label lang="en">screen</label>
             <sub_features>
               <feature key="f17_colors" type="numeric" format="%1dc" value_min="1.0" value_max="2000000000.0">
@@ -494,7 +494,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f135_size" type="header" >
+          <feature key="f135_size" type="header">
             <label lang="en">size</label>
             <sub_features>
               <feature key="f136_height" type="numeric" format="% .2finches" value_min="2.0" value_max="5.0">
@@ -513,7 +513,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f25_communication" type="header" >
+      <feature key="f25_communication" type="header">
         <label lang="en">Communication</label>
         <sub_features>
           <feature key="f123_email" type="binary" is_exclusive="false">
@@ -600,14 +600,14 @@
               </feature>
               <feature key="f151_multiple_email_accounts" type="numeric" format="% .2f" value_min="0.0" value_max="20.0">
                 <label lang="en">Multiple email accounts</label>
-                <background key="description" db_id="" type="html"># of email accounts on the same device</background>
+                <background key="description" type="html" db_id=""># of email accounts on the same device</background>
               </feature>
               <feature key="f274_email_encryption" type="binary" is_exclusive="false">
                 <label lang="en">Email encryption</label>
               </feature>
             </sub_features>
           </feature>
-          <feature key="f125_call" type="header" >
+          <feature key="f125_call" type="header">
             <label lang="en">call</label>
             <sub_features>
               <feature key="f176_visual_voicemail" type="binary" is_exclusive="false">
@@ -618,23 +618,6 @@
               </feature>
               <feature key="f251_call_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
                 <label lang="en">call quality</label>
-                <tags>
-                  <tag key="t969_poor" rating="1">
-                    <label lang="en">poor</label>
-                  </tag>
-                  <tag key="t970_mediocre" rating="2">
-                    <label lang="en">mediocre</label>
-                  </tag>
-                  <tag key="t971_acceptable" rating="3">
-                    <label lang="en">acceptable</label>
-                  </tag>
-                  <tag key="t972_good" rating="4">
-                    <label lang="en">good</label>
-                  </tag>
-                  <tag key="t973_excellent" rating="5">
-                    <label lang="en">excellent</label>
-                  </tag>
-                </tags>
               </feature>
               <feature key="f253_push-to-talk" type="binary" is_exclusive="false">
                 <label lang="en">push-to-talk</label>
@@ -715,7 +698,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f197_contacts" type="header" >
+          <feature key="f197_contacts" type="header">
             <label lang="en">contacts</label>
             <sub_features>
               <feature key="f198_contact_import" type="binary" is_exclusive="false">
@@ -749,10 +732,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f33_connectivity" type="header" >
+      <feature key="f33_connectivity" type="header">
         <label lang="en">Connectivity</label>
         <sub_features>
-          <feature key="f38_bluetooth" type="binary"  is_exclusive="false">
+          <feature key="f38_bluetooth" type="binary" is_exclusive="false">
             <label lang="en">bluetooth</label>
             <sub_features>
               <feature key="f39_type" type="tag" is_exclusive="false">
@@ -780,7 +763,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f36_wifi" type="binary"  is_exclusive="false">
+          <feature key="f36_wifi" type="binary" is_exclusive="false">
             <label lang="en">wifi</label>
             <sub_features>
               <feature key="f37_type" type="tag" is_exclusive="false">
@@ -904,7 +887,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f41_memory" type="header" >
+      <feature key="f41_memory" type="header">
         <label lang="en">Memory</label>
         <sub_features>
           <feature key="f42_internal_memory_size" type="numeric" format="% .1f gb" value_min="0.0" value_max="64.0">
@@ -941,7 +924,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f44_battery" type="header" >
+      <feature key="f44_battery" type="header">
         <label lang="en">Battery</label>
         <sub_features>
           <feature key="f45_power" type="numeric" format="% .1f mAh" value_min="1.0" value_max="9000.0">
@@ -1115,7 +1098,7 @@
           </feature>
         </tags>
       </feature>
-      <feature key="f51_internet" type="header" >
+      <feature key="f51_internet" type="header">
         <label lang="en">Internet</label>
         <sub_features>
           <feature key="f157_internet_access" type="tag" is_exclusive="false">
@@ -1217,7 +1200,7 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f60_camera" type="binary"  is_exclusive="false">
+      <feature key="f60_camera" type="binary" is_exclusive="false">
         <label lang="en">Camera</label>
         <sub_features>
           <feature key="f61_camera_resolution" type="numeric" format="% .1f mpx" value_min="0.0" value_max="12.0">
@@ -1237,7 +1220,7 @@
               </feature>
             </tags>
           </feature>
-          <feature key="f63_zoom" type="binary"  is_exclusive="false">
+          <feature key="f63_zoom" type="binary" is_exclusive="false">
             <label lang="en">zoom</label>
             <sub_features>
               <feature key="f64_range" type="numeric" format="% .1f time" value_min="1.0" value_max="20.0">
@@ -1259,7 +1242,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f66_video" type="binary"  is_exclusive="false">
+          <feature key="f66_video" type="binary" is_exclusive="false">
             <label lang="en">video</label>
             <sub_features>
               <feature key="f67_features" type="tag" is_exclusive="false">
@@ -1386,10 +1369,10 @@
           </feature>
         </sub_features>
       </feature>
-      <feature key="f70_media" type="header" >
+      <feature key="f70_media" type="header">
         <label lang="en">Media</label>
         <sub_features>
-          <feature key="f71_video_playback" type="binary"  is_exclusive="false">
+          <feature key="f71_video_playback" type="binary" is_exclusive="false">
             <label lang="en">video playback</label>
             <sub_features>
               <feature key="f72_services" type="tag" is_exclusive="false">
@@ -1476,7 +1459,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f74_music_player" type="binary"  is_exclusive="false">
+          <feature key="f74_music_player" type="binary" is_exclusive="false">
             <label lang="en">music player</label>
             <sub_features>
               <feature key="f75_formats" type="tag" is_exclusive="false">
@@ -1596,7 +1579,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f76_radio" type="binary"  is_exclusive="false">
+          <feature key="f76_radio" type="binary" is_exclusive="false">
             <label lang="en">radio</label>
             <sub_features>
               <feature key="f77_radio_type" type="tag" is_exclusive="false">
@@ -1618,7 +1601,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f78_media_center" type="binary"  is_exclusive="false">
+          <feature key="f78_media_center" type="binary" is_exclusive="false">
             <label lang="en">media center</label>
             <sub_features>
               <feature key="f79_features" type="tag" is_exclusive="false">
@@ -1637,7 +1620,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f81_tv-out_support" type="binary"  is_exclusive="false">
+          <feature key="f81_tv-out_support" type="binary" is_exclusive="false">
             <label lang="en">tv-out support</label>
             <sub_features>
               <feature key="f82_format" type="tag" is_exclusive="false">
@@ -1653,7 +1636,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f201_gaming_platform" type="binary"  is_exclusive="false">
+          <feature key="f201_gaming_platform" type="binary" is_exclusive="false">
             <label lang="en">gaming platform</label>
             <sub_features>
               <feature key="f247_gaming_platform" type="tag" is_exclusive="false">
@@ -1711,11 +1694,10 @@
       <feature key="f111_nickname" type="textarea">
         <label lang="en">Nickname</label>
       </feature>
-
-      <feature key="f130_third-party_applications" type="header" >
+      <feature key="f130_third-party_applications" type="header">
         <label lang="en">Third-party applications</label>
         <sub_features>
-          <feature key="f131_application_store" type="binary"  is_exclusive="false">
+          <feature key="f131_application_store" type="binary" is_exclusive="false">
             <label lang="en">application store</label>
             <sub_features>
               <feature key="f236_application_store" type="tag" is_exclusive="true">
@@ -1771,7 +1753,7 @@
       <feature key="f153_geolocation" type="tag" is_exclusive="false">
         <label lang="en">Geolocation</label>
         <sub_features>
-          <feature key="f266_gps" type="binary"  is_exclusive="false">
+          <feature key="f266_gps" type="binary" is_exclusive="false">
             <label lang="en">GPS</label>
             <sub_features>
               <feature key="f267_gps_type" type="tag" is_exclusive="false">
@@ -1796,7 +1778,7 @@
               </feature>
             </sub_features>
           </feature>
-          <feature key="f268_location-based_services" type="binary"  is_exclusive="false">
+          <feature key="f268_location-based_services" type="binary" is_exclusive="false">
             <label lang="en">Location-based services</label>
             <sub_features>
               <feature key="f269_maps_service" type="tag" is_exclusive="false">
@@ -1923,15 +1905,15 @@
           </feature>
         </tags>
       </feature>
-      <feature key="f204_productivity" type="header" >
+      <feature key="f204_productivity" type="header">
         <label lang="en">Productivity</label>
         <sub_features>
-          <feature key="f205_calendar" type="binary"  is_exclusive="false">
+          <feature key="f205_calendar" type="binary" is_exclusive="false">
             <label lang="en">Calendar</label>
             <sub_features>
               <feature key="f206_calendar_support" type="tag" is_exclusive="false">
                 <label lang="en">Calendar support</label>
-                <background key="description" db_id="" type="html">ics = iCal&#xD;
+                <background key="description" type="html" db_id="">ics = iCal&#xD;
 caldav = google &amp; yahoo</background>
                 <tags>
                   <feature key="t775_ics" type="binary" is_exclusive="false">
@@ -2002,1157 +1984,543 @@ caldav = google &amp; yahoo</background>
       </feature>
     </sub_features>
     <questions>
-      <question key="q1_do_you_have_a_favorite_brand" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+
+
+      <question key="q1_do_you_have_a_favorite_brand" is_exclusive="true" nb_presentation="1" nb_oo="1">
         <label lang="en">Do you have a favorite brand?</label>
         <if/>
-        <choice key="c1_nokia" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c1_nokia" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">nokia</label>
-          <background key="main_image" db_id="912" type="image"></background>
-          <background key="description" db_id="913" type="html"></background>
-          <recommendations>
-            <recommendation key="model#1" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#2" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#3" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#4" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#5" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#6" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#7" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#8" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="913"/>
+          <background key="main_image" type="image" db_id="912"/>
+          <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t4_nokia" mode="preference" reverse="true" />
         </choice>
-        <choice key="c3_blackberry" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c3_blackberry" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">blackberry</label>
-          <background key="main_image" db_id="914" type="image"></background>
-          <background key="description" db_id="915" type="html"></background>
-          <recommendations>
-            <recommendation key="model#9" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#10" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#11" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#12" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#13" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="915"/>
+          <background key="main_image" type="image" db_id="914"/>
+          <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t6_blackberry" mode="preference" reverse="true" />
         </choice>
-        <choice key="c4_samsung" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c4_samsung" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">samsung</label>
-          <background key="main_image" db_id="916" type="image"></background>
-          <background key="description" db_id="917" type="html"></background>
-          <recommendations>
-            <recommendation key="model#14" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#15" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#16" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#17" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#18" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#19" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#20" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#21" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#22" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="917"/>
+          <background key="main_image" type="image" db_id="916"/>
+          <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t8_samsung" mode="preference" reverse="true" />
         </choice>
-        <choice key="c7_apple" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c7_apple" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">apple</label>
-          <background key="main_image" db_id="918" type="image"></background>
-          <background key="description" db_id="919" type="html"></background>
-          <recommendations>
-            <recommendation key="model#23" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="919"/>
+          <background key="main_image" type="image" db_id="918"/>
+          <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t10_apple" mode="preference" reverse="true" />
         </choice>
-        <choice key="c8_other" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c8_other" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">other</label>
-          <background key="main_image" db_id="920" type="image"></background>
-          <background key="description" db_id="921" type="html"></background>
-          <recommendations>
-            <recommendation key="model#24" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#25" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#26" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#27" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#28" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#29" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#30" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#31" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#32" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#33" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#34" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#35" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#36" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#37" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#38" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#39" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#40" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#41" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#42" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#43" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#44" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#45" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="921"/>
+          <background key="main_image" type="image" db_id="920"/>
+          <recommendation type="predicate" weight="-1.0" predicate="[ @t4_nokia , @t10_apple , @t8_samsung , @t6_blackberry , @t10_apple ].include?( $f1_brand )" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q7_what_type_of_user_are_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+
+
+      <question key="q7_what_type_of_user_are_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What type of user are you?</label>
         <if/>
-        <choice key="c30_business_user" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c30_business_user" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">business user</label>
-          <background key="main_image" db_id="922" type="image"></background>
-          <background key="main_video" db_id="923" type="video"></background>
-          <recommendations/>
+          <background key="main_video" type="video" db_id="923"/>
+          <background key="main_image" type="image" db_id="922"/>
+        <recommendations/>
         </choice>
-        <choice key="c32_hockey_mom" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c32_hockey_mom" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">hockey mom</label>
-          <background key="main_image" db_id="924" type="image"></background>
-          <background key="description" db_id="925" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="925"/>
+          <background key="main_image" type="image" db_id="924"/>
+        <recommendations/>
         </choice>
-        <choice key="c33_teenager" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c33_teenager" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">teenager</label>
-          <background key="main_image" db_id="926" type="image"></background>
-          <background key="description" db_id="927" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="927"/>
+          <background key="main_image" type="image" db_id="926"/>
+        <recommendations/>
         </choice>
-        <choice key="c46_fashionista" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c46_fashionista" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">fashionista</label>
-          <background key="main_image" db_id="928" type="image"></background>
-          <background key="description" db_id="929" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="929"/>
+          <background key="main_image" type="image" db_id="928"/>
+        <recommendations/>
         </choice>
-        <choice key="c89_early_adopter" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c89_early_adopter" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">early adopter</label>
-          <background key="main_image" db_id="930" type="image"></background>
-          <background key="description" db_id="931" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="931"/>
+          <background key="main_image" type="image" db_id="930"/>
+        <recommendations/>
         </choice>
       </question>
-      <question key="q13_what_form_factor_are_you_looking_for" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+
+
+      <question key="q13_what_form_factor_are_you_looking_for" is_exclusive="true" nb_presentation="0" nb_oo="0">
         <label lang="en">What form factor are you looking for?</label>
         <if/>
-        <choice key="c36_candy_bar" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c36_candy_bar" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">candy bar</label>
-          <background key="main_image" db_id="932" type="image"></background>
-          <background key="description" db_id="933" type="html"></background>
-          <recommendations>
-            <recommendation key="model#46" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#47" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#48" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#49" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#50" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#51" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#52" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#53" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#54" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#55" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#56" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#57" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="933"/>
+          <background key="main_image" type="image" db_id="932"/>
+          <recommendation type="product" weight="1.0" product_key="nokia_e63 nokia_n79 nokia_e71 blackberry_bold_9000 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 , palm_eos , sanyo_scp-2700 , blackberry_curve_8900 , nokia_6500_classic , blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c37_touch_screen" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c37_touch_screen" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">touch screen</label>
-          <background key="main_image" db_id="934" type="image"></background>
-          <background key="description" db_id="935" type="html"></background>
-          <recommendations>
-            <recommendation key="model#58" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#59" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#60" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#61" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#62" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#63" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#64" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#65" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#66" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="935"/>
+          <background key="main_image" type="image" db_id="934"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_omnia lg_arena blackberry_storm samsung_instinct_s30 htc_touch_diamond lg_versa apple_iphone_3g samsung_memoir_t929 htc_touch_cruise_2009" mode="preference" reverse="true" />
         </choice>
-        <choice key="c38_clamshell" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c38_clamshell" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">clamshell</label>
-          <background key="main_image" db_id="936" type="image"></background>
-          <background key="description" db_id="937" type="html"></background>
-          <recommendations>
-            <recommendation key="model#67" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#68" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#69" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#70" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#71" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#72" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#73" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="937"/>
+          <background key="main_image" type="image" db_id="936"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_i9_stature lg_vx8350 sony_ericsson_w508 blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_7205_intrigue lg_lotus" mode="preference" reverse="true" />
         </choice>
-        <choice key="c39_swivel" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c39_swivel" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">swivel</label>
-          <background key="main_image" db_id="938" type="image"></background>
-          <background key="description" db_id="939" type="html"></background>
-          <recommendations>
-            <recommendation key="model#74" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#75" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#76" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="939"/>
+          <background key="main_image" type="image" db_id="938"/>
+	  <recommendation type="product" weight="1.0" product_key="sony_ericsson_xperia_x1 lg_xenon samsung_impression" mode="preference" reverse="true" />
         </choice>
-        <choice key="c40_slider" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c40_slider" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">slider</label>
-          <background key="main_image" db_id="940" type="image"></background>
-          <background key="description" db_id="941" type="html"></background>
-          <recommendations>
-            <recommendation key="model#77" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#78" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#79" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#80" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#81" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#82" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#83" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="941"/>
+          <background key="main_image" type="image" db_id="940"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_n96 samsung_trance lg_cf360 nokia_n85 palm_pre nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q18_what_kind_of_keyboard_would_you_prefer" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q18_what_kind_of_keyboard_would_you_prefer" is_exclusive="true" nb_presentation="0" nb_oo="0">
         <label lang="en">What kind of keyboard would you prefer?</label>
         <if/>
-        <choice key="c51_full_qwerty" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c51_full_qwerty" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">full qwerty</label>
-          <background key="main_image" db_id="942" type="image"></background>
-          <background key="description" db_id="943" type="html"></background>
-          <recommendations>
-            <recommendation key="model#84" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#85" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#86" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#87" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#88" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#89" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#90" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#91" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="943"/>
+          <background key="main_image" type="image" db_id="942"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch nokia_e63 nokia_e71 blackberry_bold_9000 palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus" mode="preference" reverse="true" />
         </choice>
-        <choice key="c52_numeric" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c52_numeric" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">numeric</label>
-          <background key="main_image" db_id="944" type="image"></background>
-          <background key="description" db_id="945" type="html"></background>
-          <recommendations>
-            <recommendation key="model#92" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#93" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#94" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#95" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#96" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#97" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#98" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#99" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#100" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#101" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#102" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#103" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#104" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#105" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="945"/>
+          <background key="main_image" type="image" db_id="944"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch motorola_i9_stature nokia_n96 samsung_trance nokia_n79 lg_cf360 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 sony_ericsson_w508 samsung_knack_sch-u310 nokia_7205_intrigue nokia_n85 nokia_6500_classic" mode="preference" reverse="true" />
         </choice>
-        <choice key="c53_suretype" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c53_suretype" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">suretype</label>
-          <background key="main_image" db_id="946" type="image"></background>
-          <background key="description" db_id="947" type="html"></background>
-          <recommendations>
-            <recommendation key="model#106" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#107" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#108" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="947"/>
+          <background key="main_image" type="image" db_id="946"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch blackberry_pearl_flip_8220 blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c54_virtual" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c54_virtual" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">virtual</label>
-          <background key="main_image" db_id="948" type="image"></background>
-          <background key="description" db_id="949" type="html"></background>
-          <recommendations>
-            <recommendation key="model#109" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#110" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#111" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#112" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#113" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#114" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#115" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#116" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#117" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#118" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="949"/>
+          <background key="main_image" type="image" db_id="948"/>
+	    <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia lg_arena blackberry_storm samsung_instinct_s30 htc_touch_diamond nokia_5800_xpressmusic apple_iphone_3g samsung_memoir_t929 htc_touch_cruise_2009" mode="preference" reverse="true" />
         </choice>
-        <choice key="c55_full_sliding_keyboard" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c55_full_sliding_keyboard" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">full sliding keyboard</label>
-          <background key="main_image" db_id="950" type="image"></background>
-          <background key="description" db_id="951" type="html"></background>
-          <recommendations>
-            <recommendation key="model#119" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#120" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#121" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#122" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#123" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#124" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#125" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="951"/>
+          <background key="main_image" type="image" db_id="950"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch sony_ericsson_xperia_x1 lg_xenon samsung_impression palm_pre nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q21_how_long_should_your_phone_last_without_recharging_it" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q21_how_long_should_your_phone_last_without_recharging_it" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">How long should your phone last without recharging it?</label>
         <if/>
-        <choice key="c67_a_few_hours" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c67_a_few_hours" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">a few hours</label>
-          <background key="main_image" db_id="952" type="image"></background>
-          <recommendations>
-            <recommendation key="model#126" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#127" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-          </recommendations>
+          <background key="main_image" type="image" db_id="952"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_impression nokia_6500_classic" mode="preference" reverse="true" />
         </choice>
-        <choice key="c68_half_a_day" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c68_half_a_day" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">half a day</label>
-          <background key="main_image" db_id="953" type="image"></background>
-          <recommendations>
-            <recommendation key="model#128" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#129" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#130" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#131" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#132" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#133" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#134" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#135" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#136" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#137" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#138" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#139" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#140" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#141" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#142" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#143" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#144" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#145" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#146" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#147" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#148" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#149" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#150" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-          </recommendations>
+          <background key="main_image" type="image" db_id="953"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia nokia_n96 samsung_trance nokia_n79 lg_arena blackberry_storm lg_vx8350 samsung_instinct_s30 blackberry_bold_9000 nokia_5130_xpressmusic samsung_sgh-a657 lg_versa blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_7205_intrigue lg_xenon palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus samsung_memoir_t929 nokia_e75" mode="preference" reverse="true" />
         </choice>
-        <choice key="c69_a_full_day" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c69_a_full_day" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">a full day</label>
-          <background key="main_image" db_id="954" type="image"></background>
-          <recommendations>
-            <recommendation key="model#151" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#152" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#153" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#154" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#155" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#156" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#157" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#158" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#159" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#160" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#161" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="main_image" type="image" db_id="954"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_e63 nokia_e71 htc_touch_diamond sony_ericsson_xperia_x1 nokia_5800_xpressmusic motorola_renew_w233 apple_iphone_3g sony_ericsson_w508 nokia_n85 htc_touch_cruise_2009 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q22_would_you_like_a_touch_screen" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q22_would_you_like_a_touch_screen" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">Would you like a touch screen?</label>
         <if/>
-        <choice key="c70_that_works_at_a_finger's_touch" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c70_that_works_at_a_finger's_touch" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">that works at a finger's touch</label>
-          <background key="main_image" db_id="955" type="image"></background>
-          <background key="description" db_id="956" type="html"></background>
-          <recommendations>
-            <recommendation key="model#162" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#163" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#164" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#165" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#166" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#167" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#168" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#169" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#170" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#171" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#172" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#173" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#174" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="956"/>
+          <background key="main_image" type="image" db_id="955"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia lg_arena blackberry_storm samsung_instinct_s30 lg_versa apple_iphone_3g lg_xenon samsung_impression palm_pre palm_eos samsung_memoir_t929 htc_touch_cruise_2009" mode="preference" reverse="true" />
         </choice>
-        <choice key="c71_that_works_with_a_stylus" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c71_that_works_with_a_stylus" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">that works with a stylus</label>
-          <background key="main_image" db_id="957" type="image"></background>
-          <background key="description" db_id="958" type="html"></background>
-          <recommendations>
-            <recommendation key="model#175" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#176" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#177" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="958"/>
+          <background key="main_image" type="image" db_id="957"/>
+	  <recommendation type="product" weight="1.0" product_key="htc_touch_diamond sony_ericsson_xperia_x1 nokia_5800_xpressmusic" mode="preference" reverse="true" />
         </choice>
-        <choice key="c72_i_don't_want_a_touch_screen" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c72_i_don't_want_a_touch_screen" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">I don't want a touch screen</label>
-          <background key="main_image" db_id="959" type="image"></background>
-          <background key="description" db_id="960" type="html"></background>
-          <recommendations>
-            <recommendation key="model#178" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#179" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#180" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#181" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#182" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#183" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#184" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#185" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#186" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#187" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#188" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#189" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#190" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#191" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#192" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#193" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#194" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#195" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#196" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#197" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#198" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#199" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#200" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#201" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="960"/>
+          <background key="main_image" type="image" db_id="959"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_i9_stature nokia_n96 samsung_trance nokia_e63 nokia_n79 lg_cf360 nokia_e71 lg_vx8350 blackberry_bold_9000 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 sony_ericsson_w508 blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_7205_intrigue nokia_n85 sanyo_scp-2700 blackberry_curve_8900 lg_lotus nokia_6500_classic nokia_e75 samsung_propel_pro blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q26_what_is_the_ideal_size" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q26_what_is_the_ideal_size" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What is the ideal size?</label>
         <if/>
-        <choice key="c77_compact" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c77_compact" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">compact</label>
-          <background key="main_image" db_id="961" type="image"></background>
-          <background key="description" db_id="962" type="html"></background>
-          <recommendations>
-            <recommendation key="model#202" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#203" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#204" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#205" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#206" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#207" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#208" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#209" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#210" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#211" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#212" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#213" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="962"/>
+          <background key="main_image" type="image" db_id="961"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_n79 lg_cf360 lg_vx8350 nokia_5130_xpressmusic motorola_renew_w233 sony_ericsson_w508 nokia_7205_intrigue palm_eos sanyo_scp-2700 lg_lotus nokia_6500_classic blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c82_average" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c82_average" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">average</label>
-          <background key="main_image" db_id="963" type="image"></background>
-          <background key="description" db_id="964" type="html"></background>
-          <recommendations>
-            <recommendation key="model#214" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#215" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#216" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#217" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#218" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#219" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#220" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#221" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#222" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#223" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#224" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#225" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#226" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#227" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#228" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#229" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#230" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#231" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#232" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#233" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#234" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#235" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#236" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#237" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#238" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#239" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#240" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#241" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#242" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#243" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#244" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#245" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#246" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#247" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#248" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#249" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#250" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#251" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#252" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#253" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#254" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#255" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#256" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#257" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="964"/>
+          <background key="main_image" type="image" db_id="963"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch motorola_i9_stature motorola_i9_stature samsung_omnia nokia_n96 nokia_n96 samsung_trance nokia_e63 lg_arena lg_arena lg_cf360 blackberry_storm nokia_e71 samsung_instinct_s30 htc_touch_diamond htc_touch_diamond blackberry_bold_9000 nokia_5130_xpressmusic sony_ericsson_xperia_x1 nokia_5800_xpressmusic samsung_sgh-a657 lg_versa lg_versa apple_iphone_3g blackberry_pearl_flip_8220 blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_n85 nokia_n85 lg_xenon lg_xenon samsung_impression palm_pre palm_pre blackberry_curve_8900 lg_lotus samsung_memoir_t929 samsung_memoir_t929 nokia_e75 htc_touch_cruise_2009 htc_touch_cruise_2009 samsung_propel_pro samsung_propel_pro blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c83_comfortable" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c83_comfortable" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">comfortable</label>
-          <background key="main_image" db_id="965" type="image"></background>
-          <background key="description" db_id="966" type="html"></background>
-          <recommendations>
-            <recommendation key="model#258" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#259" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#260" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#261" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#262" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#263" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#264" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#265" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#266" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#267" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#268" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#269" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#270" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#271" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#272" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#273" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#274" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#275" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#276" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#277" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#278" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#279" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#280" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#281" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#282" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#283" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#284" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#285" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#286" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
-        </choice>
+          <background key="description" type="html" db_id="966"/>
+          <background key="main_image" type="image" db_id="965"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_s8300_ultratouch samsung_omnia nokia_n96 nokia_e63 lg_arena blackberry_storm nokia_e71 samsung_instinct_s30 htc_touch_diamond blackberry_bold_9000 sony_ericsson_xperia_x1 sony_ericsson_xperia_x1 nokia_5800_xpressmusic lg_versa apple_iphone_3g lg_xenon lg_xenon samsung_impression samsung_impression palm_pre palm_pre palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus nokia_e75 htc_touch_cruise_2009 samsung_propel_pro           " mode="preference" reverse="true" />
+      </choice>
       </question>
-      <question key="q27_what_budget_do_you_have_in_mind" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q27_what_budget_do_you_have_in_mind" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What budget do you have in mind?</label>
         <if/>
-        <choice key="c85_minimal" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c85_minimal" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">Minimal</label>
-          <background key="main_image" db_id="967" type="image"></background>
-          <background key="description" db_id="968" type="html"></background>
-          <recommendations>
-            <recommendation key="model#287" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#288" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#289" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#290" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#291" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#292" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#293" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#294" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#295" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#296" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#297" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="968"/>
+          <background key="main_image" type="image" db_id="967"/>
+	      <recommendation type="product" weight="1.0" product_key="samsung_t ance lg_cf360 nokia_e71 lg_vx8350 motorola_renew_w233 blackberry_pearl_flip_8220 samsung_knack_sch-u310 lg_xenon sanyo_scp-2700 lg_lotus blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c86_mid-range" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c86_mid-range" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">Mid-range</label>
-          <background key="main_image" db_id="969" type="image"></background>
-          <background key="description" db_id="970" type="html"></background>
-          <recommendations>
-            <recommendation key="model#298" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#299" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#300" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#301" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#302" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#303" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#304" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#305" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#306" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#307" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#308" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#309" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#310" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#311" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="970"/>
+          <background key="main_image" type="image" db_id="969"/>
+	      <recommendation type="product" weight="1.0" product_key="motorola_i9_stature samsung_omnia blackberry_storm samsung_instinct_s30 htc_touch_diamond nokia_5130_xpressmusic samsung_sgh-a657 lg_versa sony_ericsson_w508 nokia_7205_intrigue samsung_impression blackberry_curve_8900 nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c87_high-end" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c87_high-end" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">High-end</label>
-          <background key="main_image" db_id="971" type="image"></background>
-          <background key="description" db_id="972" type="html"></background>
-          <recommendations>
-            <recommendation key="model#312" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#313" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#314" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#315" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#316" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#317" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#318" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#319" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#320" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#321" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#322" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-          </recommendations>
-        </choice>
-        <choice key="c88_unlimited" is_choice_exclusive="false" nb_ok="0.0">
+          <background key="description" type="html" db_id="972"/>
+          <background key="main_image" type="image" db_id="971"/>
+	      <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch nokia_e63 nokia_n79 lg_arena blackberry_bold_9000 nokia_5800_xpressmusic apple_iphone_3g nokia_n85 palm_eos nokia_6500_classic htc_touch_cruise_2009" mode="preference" reverse="true" />
+       </choice>
+        <choice key="c88_unlimited" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">Unlimited</label>
-          <background key="main_image" db_id="973" type="image"></background>
-          <background key="description" db_id="974" type="html"></background>
-          <recommendations>
-            <recommendation key="model#323" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#324" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#325" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="974"/>
+          <background key="main_image" type="image" db_id="973"/>
+	      <recommendation type="product" weight="1.0" product_key="nokia_n96 sony_ericsson_xperia_x1 samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q29_what_kind_of_camera_would_you_like" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q29_what_kind_of_camera_would_you_like" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What kind of camera would you like?</label>
         <if/>
-        <choice key="c94_no_camera" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c94_no_camera" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">no camera</label>
-          <background key="main_image" db_id="975" type="image"></background>
-          <background key="description" db_id="976" type="html"></background>
-          <recommendations>
-            <recommendation key="model#326" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#327" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#328" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="976"/>
+          <background key="main_image" type="image" db_id="975"/>
+	      <recommendation type="product" weight="1.0" product_key="motorola_renew_w233 samsung_sgh-a657 samsung_knack_sch-u310" mode="preference" reverse="true" />
         </choice>
-        <choice key="c95_basic" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c95_basic" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">basic</label>
-          <background key="main_image" db_id="977" type="image"></background>
-          <background key="description" db_id="978" type="html"></background>
-          <recommendations>
-            <recommendation key="model#329" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#330" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#331" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#332" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#333" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#334" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#335" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#336" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#337" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#338" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#339" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#340" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#341" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#342" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#343" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-            <recommendation key="model#344" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#345" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="978"/>
+          <background key="main_image" type="image" db_id="977"/>
+	      <recommendation type="product" weight="1.0" product_key="samsung_trance nokia_e63 lg_cf360 lg_vx8350 samsung_instinct_s30 blackberry_bold_9000 nokia_5130_xpressmusic lg_versa apple_iphone_3g blackberry_pearl_flip_8220 nokia_7205_intrigue lg_xenon palm_eos sanyo_scp-2700 lg_lotus nokia_6500_classic blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c96_average" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c96_average" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">average</label>
-          <background key="main_image" db_id="979" type="image"></background>
-          <background key="description" db_id="980" type="html"></background>
-          <recommendations>
-            <recommendation key="model#346" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#347" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#348" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#349" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#350" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#351" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#352" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#353" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#354" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#355" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#356" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#357" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#358" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="980"/>
+          <background key="main_image" type="image" db_id="979"/>
+	      <recommendation type="product" weight="1.0" product_key="motorola_i9_stature blackberry_storm nokia_e71 htc_touch_diamond sony_ericsson_xperia_x1 nokia_5800_xpressmusic sony_ericsson_w508 samsung_impression palm_pre blackberry_curve_8900 nokia_e75 htc_touch_cruise_2009 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c97_high-end" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c97_high-end" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">high-end</label>
-          <background key="main_image" db_id="981" type="image"></background>
-          <background key="description" db_id="982" type="html"></background>
-          <recommendations>
-            <recommendation key="model#359" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#360" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#361" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#362" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#363" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#364" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#365" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="982"/>
+          <background key="main_image" type="image" db_id="981"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia nokia_n96 nokia_n79 lg_arena nokia_n85 samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q36_what_feature(s)_are_you_ready_to_pay_a_premium_for" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q36_what_feature(s)_are_you_ready_to_pay_a_premium_for" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What feature(s) are you ready to pay a premium for?</label>
         <if/>
-        <choice key="c112_camera" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c112_camera" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">camera</label>
-          <background key="main_image" db_id="983" type="image"></background>
-          <background key="description" db_id="984" type="html"></background>
-          <recommendations>
-            <recommendation key="model#366" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#367" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#368" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#369" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#370" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#371" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#372" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="984"/>
+          <background key="main_image" type="image" db_id="983"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia nokia_n96 nokia_n79 lg_arena nokia_n85 samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
-        <choice key="c113_email" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c113_email" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">email</label>
-          <background key="main_image" db_id="985" type="image"></background>
-          <background key="description" db_id="986" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="986"/>
+          <background key="main_image" type="image" db_id="985"/>
+        <recommendations/>
         </choice>
-        <choice key="c114_gps_&amp;_location-based_services" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c114_gps_&amp;_location-based_services" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">gps &amp; location-based services</label>
-          <background key="main_image" db_id="987" type="image"></background>
-          <background key="description" db_id="988" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="988"/>
+          <background key="main_image" type="image" db_id="987"/>
+        <recommendations/>
         </choice>
-        <choice key="c115_media" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c115_media" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">media</label>
-          <background key="main_image" db_id="989" type="image"></background>
-          <background key="description" db_id="990" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="990"/>
+          <background key="main_image" type="image" db_id="989"/>
+        <recommendations/>
         </choice>
-        <choice key="c116_internet_on_the_go" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c116_internet_on_the_go" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">internet on the go</label>
-          <background key="main_image" db_id="991" type="image"></background>
-          <background key="description" db_id="992" type="html"></background>
-          <recommendations>
-            <recommendation key="model#373" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#374" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#375" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#376" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#377" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#378" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#379" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#380" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#381" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#382" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#383" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#384" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#385" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#386" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#387" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#388" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#389" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#390" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#391" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#392" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#393" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#394" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#395" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#396" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#397" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="992"/>
+          <background key="main_image" type="image" db_id="991"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_i9_stature samsung_omnia nokia_n96 nokia_e63 nokia_n79 lg_arena lg_cf360 nokia_e71 samsung_instinct_s30 htc_touch_diamond blackberry_bold_9000 sony_ericsson_xperia_x1 sony_ericsson_xperia_x1 nokia_5800_xpressmusic lg_versa apple_iphone_3g apple_iphone_3g blackberry_pearl_flip_8220 nokia_n85 palm_pre palm_eos blackberry_curve_8900 nokia_e75 samsung_propel_pro samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q38_what_type_of_phone_are_you_looking_for" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q38_what_type_of_phone_are_you_looking_for" is_exclusive="true" nb_presentation="0" nb_oo="0">
         <label lang="en">What type of phone are you looking for?</label>
         <if/>
-        <choice key="c123_cell_phone" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c123_cell_phone" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">cell phone</label>
-          <background key="main_image" db_id="993" type="image"></background>
-          <background key="description" db_id="994" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="994"/>
+          <background key="main_image" type="image" db_id="993"/>
         </choice>
-        <choice key="c124_smart_phone" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c124_smart_phone" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">smart phone</label>
-          <background key="main_image" db_id="995" type="image"></background>
-          <background key="description" db_id="996" type="html"></background>
-          <recommendations>
-            <recommendation key="model#398" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#399" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#400" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#401" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#402" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#403" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#404" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#405" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#406" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#407" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#408" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#409" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#410" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#411" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#412" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="996"/>
+          <background key="main_image" type="image" db_id="995"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_e63 blackberry_storm nokia_e71 htc_touch_diamond blackberry_bold_9000 sony_ericsson_xperia_x1 lg_versa apple_iphone_3g blackberry_pearl_flip_8220 samsung_impression palm_pre palm_eos blackberry_curve_8900 samsung_propel_pro blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c125_messaging_phone" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c125_messaging_phone" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">messaging phone</label>
-          <background key="main_image" db_id="997" type="image"></background>
-          <background key="description" db_id="998" type="html"></background>
-          <recommendations>
-            <recommendation key="model#413" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#414" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#415" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="998"/>
+          <background key="main_image" type="image" db_id="997"/>
+	  <recommendation type="product" weight="1.0" product_key="lg_xenon sanyo_scp-2700 lg_lotus" mode="preference" reverse="true" />
         </choice>
-        <choice key="c126_camera_phone" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c126_camera_phone" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">camera phone</label>
-          <background key="main_image" db_id="999" type="image"></background>
-          <background key="description" db_id="1000" type="html"></background>
-          <recommendations>
-            <recommendation key="model#416" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#417" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1000"/>
+          <background key="main_image" type="image" db_id="999"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
-        <choice key="c127_media_phone" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c127_media_phone" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">media phone</label>
-          <background key="main_image" db_id="1001" type="image"></background>
-          <background key="description" db_id="1002" type="html"></background>
-          <recommendations>
-            <recommendation key="model#418" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#419" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#420" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#421" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#422" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#423" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#424" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#425" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#426" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1002"/>
+          <background key="main_image" type="image" db_id="1001"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_omnia nokia_n96 samsung_trance lg_arena samsung_instinct_s30 nokia_5130_xpressmusic nokia_5800_xpressmusic nokia_n85 nokia_e75" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q39_what_internet_features_are_important_to_you" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q39_what_internet_features_are_important_to_you" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What internet features are important to you?</label>
         <if/>
-        <choice key="c129_full_internet_access" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c129_full_internet_access" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">full internet access</label>
-          <background key="main_image" db_id="1003" type="image"></background>
-          <background key="description" db_id="1004" type="html"></background>
-          <recommendations>
-            <recommendation key="model#427" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#428" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#429" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#430" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#431" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#432" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#433" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#434" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#435" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#436" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#437" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#438" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#439" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#440" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#441" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#442" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#443" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#444" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#445" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#446" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#447" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#448" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#449" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-            <recommendation key="model#450" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#451" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-            <recommendation key="model#452" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-            <recommendation key="model#453" type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1004"/>
+          <background key="main_image" type="image" db_id="1003"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch samsung_omnia nokia_e63 nokia_n79 lg_arena blackberry_storm nokia_e71 samsung_instinct_s30 htc_touch_diamond blackberry_bold_9000 nokia_5130_xpressmusic sony_ericsson_xperia_x1 nokia_5800_xpressmusic lg_versa apple_iphone_3g blackberry_pearl_flip_8220 nokia_n85 lg_xenon samsung_impression palm_pre palm_eos blackberry_curve_8900 samsung_memoir_t929 nokia_e75 htc_touch_cruise_2009 samsung_propel_pro blackberry_pearl_8130" mode="preference" reverse="true" />
         </choice>
-        <choice key="c130_nice_browsing_experience" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c130_nice_browsing_experience" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">nice browsing experience</label>
-          <background key="main_image" db_id="1005" type="image"></background>
-          <background key="description" db_id="1006" type="html"></background>
-          <recommendations/>
+          <background key="description" type="html" db_id="1006"/>
+          <background key="main_image" type="image" db_id="1005"/>
         </choice>
-        <choice key="c131_wifi" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c131_wifi" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">wifi</label>
-          <background key="main_image" db_id="1007" type="image"></background>
-          <background key="description" db_id="1008" type="html"></background>
-          <recommendations>
-            <recommendation key="model#454" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#455" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#456" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#457" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#458" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#459" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#460" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#461" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#462" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#463" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#464" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#465" type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
-            <recommendation key="model#466" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#467" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#468" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#469" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#470" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#471" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1008"/>
+          <background key="main_image" type="image" db_id="1007"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_omnia nokia_n96 nokia_e63 nokia_n79 lg_arena nokia_e71 htc_touch_diamond blackberry_bold_9000 sony_ericsson_xperia_x1 nokia_5800_xpressmusic apple_iphone_3g blackberry_pearl_flip_8220 nokia_n85 palm_pre palm_eos blackberry_curve_8900 nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c132_high_speed_data_network" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c132_high_speed_data_network" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">high speed data network</label>
-          <background key="main_image" db_id="1009" type="image"></background>
-          <background key="description" db_id="1010" type="html"></background>
-          <recommendations>
-            <recommendation key="model#472" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#473" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#474" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#475" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1010"/>
+          <background key="main_image" type="image" db_id="1009"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_i9_stature lg_versa apple_iphone_3g samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c133_tethering" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c133_tethering" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">tethering</label>
-          <background key="main_image" db_id="1011" type="image"></background>
-          <background key="description" db_id="1012" type="html"></background>
-          <recommendations>
-            <recommendation key="model#476" type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
-            <recommendation key="model#477" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#478" type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
-            <recommendation key="model#479" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#480" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1012"/>
+          <background key="main_image" type="image" db_id="1011"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_omnia samsung_instinct_s30 htc_touch_diamond nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q42_please_select_your_favorite_carriers" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q42_please_select_your_favorite_carriers" is_exclusive="true" nb_presentation="0" nb_oo="0">
         <label lang="en">Please select your favorite carriers?</label>
         <if/>
-        <choice key="c145_at&amp;t" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c145_at&amp;t" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">at&amp;t</label>
-          <background key="main_image" db_id="1013" type="image"></background>
-          <background key="description" db_id="1014" type="html"></background>
-          <recommendations>
-            <recommendation key="model#481" type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
-            <recommendation key="model#482" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#483" type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
-            <recommendation key="model#484" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#485" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#486" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#487" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#488" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-            <recommendation key="model#489" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1014"/>
+          <background key="main_image" type="image" db_id="1013"/>
+	  <recommendation type="product" weight="1.0" product_key="lg_cf360 blackberry_bold_9000 samsung_sgh-a657 apple_iphone_3g lg_xenon samsung_impression palm_eos nokia_e75 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c146_sprint" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c146_sprint" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">sprint</label>
-          <background key="main_image" db_id="1015" type="image"></background>
-          <background key="description" db_id="1016" type="html"></background>
-          <recommendations>
-            <recommendation key="model#490" type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
-            <recommendation key="model#491" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#492" type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
-            <recommendation key="model#493" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#494" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#495" type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
-            <recommendation key="model#496" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1016"/>
+          <background key="main_image" type="image" db_id="1015"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_i9_stature nokia_e71 samsung_instinct_s30 palm_pre palm_eos sanyo_scp-2700 lg_lotus" mode="preference" reverse="true" />
         </choice>
-        <choice key="c147_t-mobile" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c147_t-mobile" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">t-mobile</label>
-          <background key="main_image" db_id="1017" type="image"></background>
-          <background key="description" db_id="1018" type="html"></background>
-          <recommendations>
-            <recommendation key="model#497" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-            <recommendation key="model#498" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#499" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-            <recommendation key="model#500" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1018"/>
+          <background key="main_image" type="image" db_id="1017"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_renew_w233 palm_eos blackberry_curve_8900 samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
-        <choice key="c148_verizon" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c148_verizon" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">verizon</label>
-          <background key="main_image" db_id="1019" type="image"></background>
-          <background key="description" db_id="1020" type="html"></background>
-          <recommendations>
-            <recommendation key="model#501" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#502" type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
-            <recommendation key="model#503" type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
-            <recommendation key="model#504" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#505" type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
-            <recommendation key="model#506" type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
-            <recommendation key="model#507" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1020"/>
+          <background key="main_image" type="image" db_id="1019"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_trance blackberry_storm lg_vx8350 lg_versa samsung_knack_sch-u310 nokia_7205_intrigue palm_eos" mode="preference" reverse="true" />
         </choice>
-        <choice key="c149_unlocked" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c149_unlocked" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">unlocked</label>
-          <background key="main_image" db_id="1021" type="image"></background>
-          <background key="description" db_id="1022" type="html"></background>
-          <recommendations>
-            <recommendation key="model#508" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#509" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#510" type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
-            <recommendation key="model#511" type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
-            <recommendation key="model#512" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#513" type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
-            <recommendation key="model#514" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#515" type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
-            <recommendation key="model#516" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-            <recommendation key="model#517" type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
-            <recommendation key="model#518" type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
-            <recommendation key="model#519" type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
-          </recommendations>
-        </choice>
+          <background key="description" type="html" db_id="1022"/>
+          <background key="main_image" type="image" db_id="1021"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch nokia_n96 nokia_e63 nokia_n79 lg_arena nokia_5130_xpressmusic sony_ericsson_xperia_x1 nokia_5800_xpressmusic sony_ericsson_w508 palm_eos nokia_6500_classic htc_touch_cruise_2009" mode="preference" reverse="true" />
+	</choice>       
       </question>
-      <question key="q44_what_kind_of_sliding_keyboards_do_you_prefer" is_exclusive="true" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q44_what_kind_of_sliding_keyboards_do_you_prefer" is_exclusive="true" nb_presentation="1" nb_oo="0">
         <label lang="en">What kind of sliding keyboards do you prefer?</label>
         <if/>
-        <choice key="c153_vertical" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c153_vertical" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">vertical</label>
-          <background key="main_image" db_id="1023" type="image"></background>
-          <background key="description" db_id="1024" type="html"></background>
-          <recommendations>
-            <recommendation key="model#520" type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
-            <recommendation key="model#521" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#522" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-            <recommendation key="model#523" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-            <recommendation key="model#524" type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1024"/>
+          <background key="main_image" type="image" db_id="1023"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch nokia_n96 samsung_trance nokia_n85 samsung_propel_pro" mode="preference" reverse="true" />
         </choice>
-        <choice key="c154_horizontal" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c154_horizontal" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">horizontal</label>
-          <background key="main_image" db_id="1025" type="image"></background>
-          <background key="description" db_id="1026" type="html"></background>
-          <recommendations>
-            <recommendation key="model#525" type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
-            <recommendation key="model#526" type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
-            <recommendation key="model#527" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-            <recommendation key="model#528" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#529" type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1026"/>
+          <background key="main_image" type="image" db_id="1025"/>
+	  <recommendation type="product" weight="1.0" product_key="sony_ericsson_xperia_x1 lg_versa lg_xenon samsung_impression nokia_e75" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q52_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q52_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c173_largest_app_store" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c173_largest_app_store" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">largest app store</label>
-          <background key="main_image" db_id="1027" type="image"></background>
-          <background key="description" db_id="1028" type="html"></background>
-          <recommendations>
-            <recommendation key="model#530" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1028"/>
+          <background key="main_image" type="image" db_id="1027"/>
+	  <recommendation type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference" reverse="true" />
         </choice>
-        <choice key="c174_best_corporate_email" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c174_best_corporate_email" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">best corporate email</label>
-          <background key="main_image" db_id="1029" type="image"></background>
-          <background key="description" db_id="1030" type="html"></background>
-          <recommendations>
-            <recommendation key="model#531" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#532" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1030"/>
+          <background key="main_image" type="image" db_id="1029"/>
+	  <recommendation type="product" weight="1.0" product_key="blackberry_bold_9000 blackberry_curve_8900" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q53_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q53_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="1" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c175_fluid_internet_navigation" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c175_fluid_internet_navigation" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">fluid internet navigation</label>
-          <background key="main_image" db_id="1031" type="image"></background>
-          <background key="description" db_id="1032" type="html"></background>
-          <recommendations>
-            <recommendation key="model#533" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1032"/>
+          <background key="main_image" type="image" db_id="1031"/>
+	  <recommendation type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference" reverse="true" />
         </choice>
-        <choice key="c176_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c176_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">full qwerty keyboard</label>
-          <background key="main_image" db_id="1033" type="image"></background>
-          <background key="description" db_id="1034" type="html"></background>
-          <recommendations>
-            <recommendation key="model#534" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-            <recommendation key="model#535" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-            <recommendation key="model#536" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-            <recommendation key="model#537" type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1034"/>
+          <background key="main_image" type="image" db_id="1033"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_e71 blackberry_bold_9000 palm_pre blackberry_curve_8900" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q54_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q54_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c177_call_quality" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c177_call_quality" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">call quality</label>
-          <background key="main_image" db_id="1035" type="image"></background>
-          <background key="description" db_id="1036" type="html"></background>
-          <recommendations>
-            <recommendation key="model#538" type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1036"/>
+          <background key="main_image" type="image" db_id="1035"/>
+	  <recommendation type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference" reverse="true" />
         </choice>
-        <choice key="c178_lighweight_metal_build" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c178_lighweight_metal_build" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">lighweight metal build</label>
-          <background key="main_image" db_id="1037" type="image"></background>
-          <background key="description" db_id="1038" type="html"></background>
-          <recommendations>
-            <recommendation key="model#539" type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1038"/>
+          <background key="main_image" type="image" db_id="1037"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_e71" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q55_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q55_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c180_seamless_contact_management" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c180_seamless_contact_management" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">seamless contact management</label>
-          <background key="main_image" db_id="1039" type="image"></background>
-          <background key="description" db_id="1040" type="html"></background>
-          <recommendations>
-            <recommendation key="model#540" type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1040"/>
+          <background key="main_image" type="image" db_id="1039"/>
+	  <recommendation type="product" weight="1.0" product_key="palm_pre" mode="preference" reverse="true" />
         </choice>
-        <choice key="c181_largest_app_store" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c181_largest_app_store" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">largest app store</label>
-          <background key="main_image" db_id="1041" type="image"></background>
-          <background key="description" db_id="1042" type="html"></background>
-          <recommendations>
-            <recommendation key="model#541" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1042"/>
+          <background key="main_image" type="image" db_id="1041"/>
+	  <recommendation type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q56_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q56_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="1" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c182_killer_camera" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c182_killer_camera" is_choice_exclusive="false" nb_ok="1">
           <label lang="en">killer camera</label>
-          <background key="main_image" db_id="1043" type="image"></background>
-          <background key="description" db_id="1044" type="html"></background>
-          <recommendations>
-            <recommendation key="model#542" type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
-            <recommendation key="model#543" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-            <recommendation key="model#544" type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1044"/>
+          <background key="main_image" type="image" db_id="1043"/>
+	  <recommendation type="product" weight="1.0" product_key="nokia_n96 samsung_impression samsung_memoir_t929" mode="preference" reverse="true" />
         </choice>
-        <choice key="c183_killer_music_player" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c183_killer_music_player" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">killer music player</label>
-          <background key="main_image" db_id="1045" type="image"></background>
-          <background key="description" db_id="1046" type="html"></background>
-          <recommendations>
-            <recommendation key="model#545" type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
-            <recommendation key="model#546" type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
-            <recommendation key="model#547" type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1046"/>
+          <background key="main_image" type="image" db_id="1045"/>
+	  <recommendation type="product" weight="1.0" product_key="lg_arena apple_iphone_3g nokia_n85" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q57_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q57_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c184_better_battery_life" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c184_better_battery_life" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">better battery life</label>
-          <background key="main_image" db_id="1047" type="image"></background>
-          <background key="description" db_id="1048" type="html"></background>
-          <recommendations>
-            <recommendation key="model#548" type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1048"/>
+          <background key="main_image" type="image" db_id="1047"/>
+	  <recommendation type="product" weight="1.0" product_key="lg_xenon" mode="preference" reverse="true" />
         </choice>
-        <choice key="c185_better_resolution" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c185_better_resolution" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">better resolution</label>
-          <background key="main_image" db_id="1049" type="image"></background>
-          <background key="description" db_id="1050" type="html"></background>
-          <recommendations>
-            <recommendation key="model#549" type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1050"/>
+          <background key="main_image" type="image" db_id="1049"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_impression" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q58_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q58_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c186_hi-fi" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c186_hi-fi" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">hi-fi</label>
-          <background key="main_image" db_id="1051" type="image"></background>
-          <background key="description" db_id="1052" type="html"></background>
-          <recommendations>
-            <recommendation key="model#550" type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1052"/>
+          <background key="main_image" type="image" db_id="1051"/>
+	  <recommendation type="product" weight="1.0" product_key="samsung_trance" mode="preference" reverse="true" />
         </choice>
-        <choice key="c187_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c187_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">full qwerty keyboard</label>
-          <background key="main_image" db_id="1053" type="image"></background>
-          <background key="description" db_id="1054" type="html"></background>
-          <recommendations>
-            <recommendation key="model#551" type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1054"/>
+          <background key="main_image" type="image" db_id="1053"/>
+	  <recommendation type="product" weight="1.0" product_key="lg_lotus" mode="preference" reverse="true" />
         </choice>
       </question>
-      <question key="q59_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0.0" nb_oo="0.0">
+      <question key="q59_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
         <label lang="en">What feature is most important to you?</label>
         <if/>
-        <choice key="c188_eco-friendly" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c188_eco-friendly" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">eco-friendly</label>
-          <background key="main_image" db_id="1055" type="image"></background>
-          <background key="description" db_id="1056" type="html"></background>
-          <recommendations>
-            <recommendation key="model#552" type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1056"/>
+          <background key="main_image" type="image" db_id="1055"/>
+	  <recommendation type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference" reverse="true" />
         </choice>
-        <choice key="c189_fashionable" is_choice_exclusive="false" nb_ok="0.0">
+        <choice key="c189_fashionable" is_choice_exclusive="false" nb_ok="0">
           <label lang="en">fashionable</label>
-          <background key="main_image" db_id="1057" type="image"></background>
-          <background key="description" db_id="1058" type="html"></background>
-          <recommendations>
-            <recommendation key="model#553" type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
-          </recommendations>
+          <background key="description" type="html" db_id="1058"/>
+          <background key="main_image" type="image" db_id="1057"/>
+	  <recommendation type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference" reverse="true" />
         </choice>
       </question>
     </questions>

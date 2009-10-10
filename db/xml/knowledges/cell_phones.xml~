@@ -1,0 +1,3188 @@
+<?xml version="1.0"?>
+<knowledge>
+  <feature key="cell_phones" type="pikizi::knowledge" current_index="0">
+    <label lang="en">Cell Phones</label>
+    <sub_features>
+      <feature key="main_expert_rating" type="rating" min_rating="1" max_rating="5" user_categories="expert">
+        <label lang="en">Expert rating</label>
+      </feature>
+      <feature key="main_citizen_rating" type="rating" min_rating="1" max_rating="5" user_categories="citizen">
+        <label lang="en">Everyone rating</label>
+      </feature>
+      <feature key="f1_brand" type="tag" is_exclusive="true">
+        <label lang="en">Brand</label>
+        <tags>
+          <feature key="t4_nokia" type="binary" is_exclusive="true">
+            <label lang="en">nokia</label>
+          </feature>
+          <feature key="t5_motorola" type="binary" is_exclusive="true">
+            <label lang="en">motorola</label>
+          </feature>
+          <feature key="t6_blackberry" type="binary" is_exclusive="true">
+            <label lang="en">blackberry</label>
+          </feature>
+          <feature key="t7_sony_ericsson" type="binary" is_exclusive="true">
+            <label lang="en">sony ericsson</label>
+          </feature>
+          <feature key="t8_samsung" type="binary" is_exclusive="true">
+            <label lang="en">samsung</label>
+          </feature>
+          <feature key="t9_lg_electronics" type="binary" is_exclusive="true">
+            <label lang="en">lg electronics</label>
+          </feature>
+          <feature key="t10_apple" type="binary" is_exclusive="true">
+            <label lang="en">apple</label>
+          </feature>
+          <feature key="t11_sanyo" type="binary" is_exclusive="true">
+            <label lang="en">sanyo</label>
+          </feature>
+          <feature key="t12_siemens" type="binary" is_exclusive="true">
+            <label lang="en">siemens</label>
+          </feature>
+          <feature key="t310_htc" type="binary" is_exclusive="true">
+            <label lang="en">htc</label>
+          </feature>
+          <feature key="t789_palm" type="binary" is_exclusive="true">
+            <label lang="en">palm</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f3_release_date" type="date" format="%Y/%m/%d %H:%M:%S" value_min="2000/01/01 00:00:00" value_max="2020/01/01 00:00:00">
+        <label lang="en">Release date</label>
+        <sub_features>
+          <feature key="f210_status" type="tag" is_exclusive="true">
+            <label lang="en">status</label>
+            <tags>
+              <feature key="t795_released" type="binary" is_exclusive="true">
+                <label lang="en">released</label>
+              </feature>
+              <feature key="t796_unreleased" type="binary" is_exclusive="true">
+                <label lang="en">unreleased</label>
+              </feature>
+              <feature key="t797_announced" type="binary" is_exclusive="true">
+                <label lang="en">announced</label>
+              </feature>
+              <feature key="t798_leaked" type="binary" is_exclusive="true">
+                <label lang="en">leaked</label>
+              </feature>
+            </tags>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f5_tips" type="header">
+        <label lang="en">Tips</label>
+        <sub_features>
+          <feature key="f108_pros" type="tag" is_exclusive="true">
+            <label lang="en">pros</label>
+            <tags/>
+          </feature>
+          <feature key="f109_cons" type="tag" is_exclusive="true">
+            <label lang="en">cons</label>
+            <tags/>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f13_hardware" type="header">
+        <label lang="en">Hardware</label>
+        <sub_features>
+          <feature key="f14_screen" type="header">
+            <label lang="en">screen</label>
+            <sub_features>
+              <feature key="f17_colors" type="numeric" format="%1dc" value_min="1.0" value_max="2000000000.0">
+                <label lang="en">colors</label>
+              </feature>
+              <feature key="f114_size" type="numeric" format="% .2finch" value_min="0.0" value_max="10.0">
+                <label lang="en">size</label>
+              </feature>
+              <feature key="f117_type" type="tag" is_exclusive="false">
+                <label lang="en">type</label>
+                <tags>
+                  <feature key="t355_lcd" type="binary" is_exclusive="false">
+                    <label lang="en">lcd</label>
+                  </feature>
+                  <feature key="t989_lcd_tft" type="binary" is_exclusive="false">
+                    <label lang="en">lcd tft</label>
+                  </feature>
+                  <feature key="t990_amoled" type="binary" is_exclusive="false">
+                    <label lang="en">amoled</label>
+                  </feature>
+                  <feature key="t991_pmoled" type="binary" is_exclusive="false">
+                    <label lang="en">pmoled</label>
+                  </feature>
+                  <feature key="t1147_oled" type="binary" is_exclusive="false">
+                    <label lang="en">oled</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f122_touch_screen" type="tag" is_exclusive="false">
+                <label lang="en">touch screen</label>
+                <sub_features>
+                  <feature key="f245_haptic_feedback" type="binary" is_exclusive="false">
+                    <label lang="en">haptic feedback</label>
+                  </feature>
+                </sub_features>
+                <tags>
+                  <feature key="t361_capacitive" type="binary" is_exclusive="false">
+                    <label lang="en">capacitive</label>
+                  </feature>
+                  <feature key="t362_resistive" type="binary" is_exclusive="false">
+                    <label lang="en">resistive</label>
+                  </feature>
+                  <feature key="t363_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f144_resolution_(in_pixels)" type="tag" is_exclusive="true">
+                <label lang="en">resolution (in pixels)</label>
+                <tags>
+                  <feature key="t1005_640_x_480_(vga)" type="binary" is_exclusive="true">
+                    <label lang="en">640 x 480 (vga)</label>
+                  </feature>
+                  <feature key="t1006_640_x_360" type="binary" is_exclusive="true">
+                    <label lang="en">640 x 360</label>
+                  </feature>
+                  <feature key="t1007_480_x_320_(hvga)" type="binary" is_exclusive="true">
+                    <label lang="en">480 x 320 (hvga)</label>
+                  </feature>
+                  <feature key="t1008_320_x_240_(qvga)" type="binary" is_exclusive="true">
+                    <label lang="en">320 x 240 (qvga)</label>
+                  </feature>
+                  <feature key="t1070_400_x_240" type="binary" is_exclusive="true">
+                    <label lang="en">400 x 240</label>
+                  </feature>
+                  <feature key="t1114_480_x_360" type="binary" is_exclusive="true">
+                    <label lang="en">480 x 360</label>
+                  </feature>
+                  <feature key="t1117_800_x_480" type="binary" is_exclusive="true">
+                    <label lang="en">800 x 480</label>
+                  </feature>
+                  <feature key="t1124_260_x_240" type="binary" is_exclusive="true">
+                    <label lang="en">260 x 240</label>
+                  </feature>
+                  <feature key="t1126_220_x_176" type="binary" is_exclusive="true">
+                    <label lang="en">220 x 176</label>
+                  </feature>
+                  <feature key="t1132_320_x_320" type="binary" is_exclusive="true">
+                    <label lang="en">320 x 320</label>
+                  </feature>
+                  <feature key="t1137_320x_400" type="binary" is_exclusive="true">
+                    <label lang="en">320x 400</label>
+                  </feature>
+                  <feature key="t1146_128_x_128" type="binary" is_exclusive="true">
+                    <label lang="en">128 x 128</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f214_resolution" type="tag" is_exclusive="false">
+                <label lang="en">resolution</label>
+                <tags>
+                  <feature key="t1001_vga" type="binary" is_exclusive="false">
+                    <label lang="en">vga</label>
+                  </feature>
+                  <feature key="t1002_nhd" type="binary" is_exclusive="false">
+                    <label lang="en">nhd</label>
+                  </feature>
+                  <feature key="t1003_hvga" type="binary" is_exclusive="false">
+                    <label lang="en">hvga</label>
+                  </feature>
+                  <feature key="t1004_qvga" type="binary" is_exclusive="false">
+                    <label lang="en">qvga</label>
+                  </feature>
+                  <feature key="t1127_lower" type="binary" is_exclusive="false">
+                    <label lang="en">lower</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f283_screen_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+                <label lang="en">screen quality</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f20_form_factor" type="tag" is_exclusive="false">
+            <label lang="en">form factor</label>
+            <tags>
+              <feature key="t58_candy_bar" type="binary" is_exclusive="false">
+                <label lang="en">candy bar</label>
+              </feature>
+              <feature key="t59_touch_screen" type="binary" is_exclusive="false">
+                <label lang="en">touch screen</label>
+              </feature>
+              <feature key="t60_clamshell" type="binary" is_exclusive="false">
+                <label lang="en">clamshell</label>
+              </feature>
+              <feature key="t61_swivel" type="binary" is_exclusive="false">
+                <label lang="en">swivel</label>
+              </feature>
+              <feature key="t62_slider" type="binary" is_exclusive="false">
+                <label lang="en">slider</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f21_body" type="tag" is_exclusive="false">
+            <label lang="en">body</label>
+            <sub_features>
+              <feature key="f165_materials" type="tag" is_exclusive="false">
+                <label lang="en">materials</label>
+                <tags>
+                  <feature key="t556_brushed_metal" type="binary" is_exclusive="false">
+                    <label lang="en">brushed metal</label>
+                  </feature>
+                  <feature key="t558_metal_grip" type="binary" is_exclusive="false">
+                    <label lang="en">metal grip</label>
+                  </feature>
+                  <feature key="t559_ruggedized_plastic" type="binary" is_exclusive="false">
+                    <label lang="en">ruggedized plastic</label>
+                  </feature>
+                  <feature key="t560_matted_plastic" type="binary" is_exclusive="false">
+                    <label lang="en">matted plastic</label>
+                  </feature>
+                  <feature key="t975_smooth_plastic" type="binary" is_exclusive="false">
+                    <label lang="en">smooth plastic</label>
+                  </feature>
+                  <feature key="t978_high-end_plastic" type="binary" is_exclusive="false">
+                    <label lang="en">high-end plastic</label>
+                  </feature>
+                  <feature key="t979_glassy_screen" type="binary" is_exclusive="false">
+                    <label lang="en">glassy screen</label>
+                  </feature>
+                  <feature key="t980_leatherette" type="binary" is_exclusive="false">
+                    <label lang="en">leatherette</label>
+                  </feature>
+                  <feature key="t1009_soft_touch_plastic" type="binary" is_exclusive="false">
+                    <label lang="en">soft touch plastic</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f166_skin" type="tag" is_exclusive="false">
+                <label lang="en">skin</label>
+                <tags>
+                  <feature key="t568_brands_&amp;_fashion" type="binary" is_exclusive="false">
+                    <label lang="en">brands &amp; fashion</label>
+                  </feature>
+                  <feature key="t569_leatherette" type="binary" is_exclusive="false">
+                    <label lang="en">leatherette</label>
+                  </feature>
+                  <feature key="t570_luxurious" type="binary" is_exclusive="false">
+                    <label lang="en">luxurious</label>
+                  </feature>
+                  <feature key="t981_texture" type="binary" is_exclusive="false">
+                    <label lang="en">texture</label>
+                  </feature>
+                  <feature key="t982_colors" type="binary" is_exclusive="false">
+                    <label lang="en">colors</label>
+                  </feature>
+                  <feature key="t983_plain" type="binary" is_exclusive="false">
+                    <label lang="en">plain</label>
+                  </feature>
+                  <feature key="t984_smooth" type="binary" is_exclusive="false">
+                    <label lang="en">smooth</label>
+                  </feature>
+                  <feature key="t985_solid" type="binary" is_exclusive="false">
+                    <label lang="en">solid</label>
+                  </feature>
+                  <feature key="t986_matted" type="binary" is_exclusive="false">
+                    <label lang="en">matted</label>
+                  </feature>
+                  <feature key="t987_steely" type="binary" is_exclusive="false">
+                    <label lang="en">steely</label>
+                  </feature>
+                  <feature key="t988_metal" type="binary" is_exclusive="false">
+                    <label lang="en">metal</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f252_ruggedized_body" type="binary" is_exclusive="false">
+                <label lang="en">ruggedized body</label>
+              </feature>
+            </sub_features>
+            <tags>
+              <feature key="t66_stylish" type="binary" is_exclusive="false">
+                <label lang="en">stylish</label>
+              </feature>
+              <feature key="t67_sharp" type="binary" is_exclusive="false">
+                <label lang="en">sharp</label>
+              </feature>
+              <feature key="t68_robust" type="binary" is_exclusive="false">
+                <label lang="en">robust</label>
+              </feature>
+              <feature key="t69_thick" type="binary" is_exclusive="false">
+                <label lang="en">thick</label>
+              </feature>
+              <feature key="t935_basic" type="binary" is_exclusive="false">
+                <label lang="en">basic</label>
+              </feature>
+              <feature key="t1010_rounded" type="binary" is_exclusive="false">
+                <label lang="en">rounded</label>
+              </feature>
+              <feature key="t1011_square" type="binary" is_exclusive="false">
+                <label lang="en">square</label>
+              </feature>
+              <feature key="t1077_slim" type="binary" is_exclusive="false">
+                <label lang="en">slim</label>
+              </feature>
+              <feature key="t1078_appealing" type="binary" is_exclusive="false">
+                <label lang="en">appealing</label>
+              </feature>
+              <feature key="t1079_handsome" type="binary" is_exclusive="false">
+                <label lang="en">handsome</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f23_hardware_buttons" type="tag" is_exclusive="false">
+            <label lang="en">hardware buttons</label>
+            <sub_features>
+              <feature key="f257_navigation" type="tag" is_exclusive="false">
+                <label lang="en">navigation</label>
+                <tags>
+                  <feature key="t1025_touch_pad" type="binary" is_exclusive="false">
+                    <label lang="en">touch pad</label>
+                  </feature>
+                  <feature key="t1026_touch_screen" type="binary" is_exclusive="false">
+                    <label lang="en">touch screen</label>
+                  </feature>
+                  <feature key="t1027_scroll_wheel" type="binary" is_exclusive="false">
+                    <label lang="en">scroll wheel</label>
+                  </feature>
+                  <feature key="t1130_toggle" type="binary" is_exclusive="false">
+                    <label lang="en">toggle</label>
+                  </feature>
+                  <feature key="t1141_navigation_array" type="binary" is_exclusive="false">
+                    <label lang="en">navigation array</label>
+                  </feature>
+                  <feature key="t1144_keypad" type="binary" is_exclusive="false">
+                    <label lang="en">keypad</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+            <tags>
+              <feature key="t75_call" type="binary" is_exclusive="false">
+                <label lang="en">call</label>
+              </feature>
+              <feature key="t76_hang" type="binary" is_exclusive="false">
+                <label lang="en">hang</label>
+              </feature>
+              <feature key="t77_menu" type="binary" is_exclusive="false">
+                <label lang="en">menu</label>
+              </feature>
+              <feature key="t78_home" type="binary" is_exclusive="false">
+                <label lang="en">home</label>
+              </feature>
+              <feature key="t79_mute" type="binary" is_exclusive="false">
+                <label lang="en">mute</label>
+              </feature>
+              <feature key="t80_volume" type="binary" is_exclusive="false">
+                <label lang="en">volume</label>
+              </feature>
+              <feature key="t81_lock" type="binary" is_exclusive="false">
+                <label lang="en">lock</label>
+              </feature>
+              <feature key="t617_on/off" type="binary" is_exclusive="false">
+                <label lang="en">on/off</label>
+              </feature>
+              <feature key="t648_ringer_on/off" type="binary" is_exclusive="false">
+                <label lang="en">ringer on/off</label>
+              </feature>
+              <feature key="t824_email" type="binary" is_exclusive="false">
+                <label lang="en">email</label>
+              </feature>
+              <feature key="t825_calendar" type="binary" is_exclusive="false">
+                <label lang="en">calendar</label>
+              </feature>
+              <feature key="t933_media" type="binary" is_exclusive="false">
+                <label lang="en">media</label>
+              </feature>
+              <feature key="t1021_navigation" type="binary" is_exclusive="false">
+                <label lang="en">navigation</label>
+              </feature>
+              <feature key="t1067_contacts" type="binary" is_exclusive="false">
+                <label lang="en">contacts</label>
+              </feature>
+              <feature key="t1081_shutter" type="binary" is_exclusive="false">
+                <label lang="en">shutter</label>
+              </feature>
+              <feature key="t1082_back" type="binary" is_exclusive="false">
+                <label lang="en">back</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f118_keyboard" type="tag" is_exclusive="false">
+            <label lang="en">keyboard</label>
+            <sub_features>
+              <feature key="f119_virtual_keyboard_mode" type="tag" is_exclusive="false">
+                <label lang="en">virtual keyboard mode</label>
+                <tags>
+                  <feature key="t348_landscape" type="binary" is_exclusive="false">
+                    <label lang="en">landscape</label>
+                  </feature>
+                  <feature key="t349_portrait" type="binary" is_exclusive="false">
+                    <label lang="en">portrait</label>
+                  </feature>
+                  <feature key="t1122_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f160_keyboard_characteristics" type="tag" is_exclusive="false">
+                <label lang="en">keyboard characteristics</label>
+                <tags>
+                  <feature key="t537_springy" type="binary" is_exclusive="false">
+                    <label lang="en">springy</label>
+                  </feature>
+                  <feature key="t538_cramped" type="binary" is_exclusive="false">
+                    <label lang="en">cramped</label>
+                  </feature>
+                  <feature key="t1068_tactile" type="binary" is_exclusive="false">
+                    <label lang="en">tactile</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f194_sliding_keyboard" type="tag" is_exclusive="true">
+                <label lang="en">sliding keyboard</label>
+                <tags>
+                  <feature key="t732_vertical" type="binary" is_exclusive="true">
+                    <label lang="en">vertical</label>
+                  </feature>
+                  <feature key="t733_horizontal" type="binary" is_exclusive="true">
+                    <label lang="en">horizontal</label>
+                  </feature>
+                  <feature key="t1035_none" type="binary" is_exclusive="true">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f276_keyboard_experience" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+                <label lang="en">keyboard experience</label>
+              </feature>
+            </sub_features>
+            <tags>
+              <feature key="t341_full_qwerty" type="binary" is_exclusive="false">
+                <label lang="en">full qwerty</label>
+              </feature>
+              <feature key="t342_numeric" type="binary" is_exclusive="false">
+                <label lang="en">numeric</label>
+              </feature>
+              <feature key="t343_suretype" type="binary" is_exclusive="false">
+                <label lang="en">suretype</label>
+              </feature>
+              <feature key="t344_virtual" type="binary" is_exclusive="false">
+                <label lang="en">virtual</label>
+              </feature>
+              <feature key="t561_full_sliding_keyboard" type="binary" is_exclusive="false">
+                <label lang="en">full sliding keyboard</label>
+              </feature>
+              <feature key="t1036_full_detachable_keyboard" type="binary" is_exclusive="false">
+                <label lang="en">full detachable keyboard</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f120_sensors" type="tag" is_exclusive="false">
+            <label lang="en">sensors</label>
+            <tags>
+              <feature key="t353_accelerometer" type="binary" is_exclusive="false">
+                <label lang="en">accelerometer</label>
+              </feature>
+              <feature key="t354_ambient_light" type="binary" is_exclusive="false">
+                <label lang="en">ambient light</label>
+              </feature>
+              <feature key="t639_proximity" type="binary" is_exclusive="false">
+                <label lang="en">proximity</label>
+              </feature>
+              <feature key="t640_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f135_size" type="header">
+            <label lang="en">size</label>
+            <sub_features>
+              <feature key="f136_height" type="numeric" format="% .2finches" value_min="2.0" value_max="5.0">
+                <label lang="en">height</label>
+              </feature>
+              <feature key="f137_width" type="numeric" format="% .2finches" value_min="1.0" value_max="3.5">
+                <label lang="en">width</label>
+              </feature>
+              <feature key="f138_depth" type="numeric" format="% .2finches" value_min="0.0" value_max="1.5">
+                <label lang="en">depth</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f139_weight" type="numeric" format="% .2foz" value_min="2.0" value_max="7.0">
+            <label lang="en">weight</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f25_communication" type="header">
+        <label lang="en">Communication</label>
+        <sub_features>
+          <feature key="f123_email" type="binary" is_exclusive="false">
+            <label lang="en">email</label>
+            <sub_features>
+              <feature key="f124_email_platform" type="tag" is_exclusive="false">
+                <label lang="en">email platform</label>
+                <tags>
+                  <feature key="t372_gmail" type="binary" is_exclusive="false">
+                    <label lang="en">gmail</label>
+                  </feature>
+                  <feature key="t374_lotus_notes" type="binary" is_exclusive="false">
+                    <label lang="en">lotus notes</label>
+                  </feature>
+                  <feature key="t379_other" type="binary" is_exclusive="false">
+                    <label lang="en">other</label>
+                  </feature>
+                  <feature key="t380_yahoo" type="binary" is_exclusive="false">
+                    <label lang="en">yahoo</label>
+                  </feature>
+                  <feature key="t469_aol_mail" type="binary" is_exclusive="false">
+                    <label lang="en">aol mail</label>
+                  </feature>
+                  <feature key="t470_windows_live_hotmail" type="binary" is_exclusive="false">
+                    <label lang="en">windows live hotmail</label>
+                  </feature>
+                  <feature key="t482_novell_groupwise" type="binary" is_exclusive="false">
+                    <label lang="en">novell groupwise</label>
+                  </feature>
+                  <feature key="t701_mobileme" type="binary" is_exclusive="false">
+                    <label lang="en">mobileme</label>
+                  </feature>
+                  <feature key="t702_imap/pop3" type="binary" is_exclusive="false">
+                    <label lang="en">imap/pop3</label>
+                  </feature>
+                  <feature key="t703_ms_exchange" type="binary" is_exclusive="false">
+                    <label lang="en">ms exchange</label>
+                  </feature>
+                  <feature key="t801_ms_outlook" type="binary" is_exclusive="false">
+                    <label lang="en">ms outlook</label>
+                  </feature>
+                  <feature key="t924_smtp" type="binary" is_exclusive="false">
+                    <label lang="en">smtp</label>
+                  </feature>
+                  <feature key="t1128_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                  <feature key="t1145_web" type="binary" is_exclusive="false">
+                    <label lang="en">web</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f149_view_email_attachments" type="tag" is_exclusive="false">
+                <label lang="en">view email attachments</label>
+                <tags>
+                  <feature key="t474_jpeg" type="binary" is_exclusive="false">
+                    <label lang="en">jpeg</label>
+                  </feature>
+                  <feature key="t475_adobe_pdf" type="binary" is_exclusive="false">
+                    <label lang="en">adobe pdf</label>
+                  </feature>
+                  <feature key="t476_ms_office" type="binary" is_exclusive="false">
+                    <label lang="en">ms office</label>
+                  </feature>
+                  <feature key="t477_ms_word" type="binary" is_exclusive="false">
+                    <label lang="en">ms word</label>
+                  </feature>
+                  <feature key="t478_ms_excel" type="binary" is_exclusive="false">
+                    <label lang="en">ms excel</label>
+                  </feature>
+                  <feature key="t479_ms_powerpoint" type="binary" is_exclusive="false">
+                    <label lang="en">ms powerpoint</label>
+                  </feature>
+                  <feature key="t1028_zip_manager" type="binary" is_exclusive="false">
+                    <label lang="en">zip manager</label>
+                  </feature>
+                  <feature key="t1069_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f150_push_delivery" type="binary" is_exclusive="false">
+                <label lang="en">push delivery</label>
+              </feature>
+              <feature key="f151_multiple_email_accounts" type="numeric" format="% .2f" value_min="0.0" value_max="20.0">
+                <label lang="en">Multiple email accounts</label>
+                <background key="description" type="html" db_id=""># of email accounts on the same device</background>
+              </feature>
+              <feature key="f274_email_encryption" type="binary" is_exclusive="false">
+                <label lang="en">Email encryption</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f125_call" type="header">
+            <label lang="en">call</label>
+            <sub_features>
+              <feature key="f176_visual_voicemail" type="binary" is_exclusive="false">
+                <label lang="en">visual voicemail</label>
+              </feature>
+              <feature key="f187_ringtones" type="binary" is_exclusive="false">
+                <label lang="en">ringtones</label>
+              </feature>
+              <feature key="f251_call_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+                <label lang="en">call quality</label>
+              </feature>
+              <feature key="f253_push-to-talk" type="binary" is_exclusive="false">
+                <label lang="en">push-to-talk</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f140_hearing_aid_rating" type="tag" is_exclusive="false">
+            <label lang="en">hearing aid rating</label>
+            <tags>
+              <feature key="t429_m3" type="binary" is_exclusive="false">
+                <label lang="en">m3</label>
+              </feature>
+              <feature key="t430_m4" type="binary" is_exclusive="false">
+                <label lang="en">m4</label>
+              </feature>
+              <feature key="t431_t3" type="binary" is_exclusive="false">
+                <label lang="en">t3</label>
+              </feature>
+              <feature key="t432_t4" type="binary" is_exclusive="false">
+                <label lang="en">t4</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f152_messaging" type="tag" is_exclusive="false">
+            <label lang="en">messaging</label>
+            <tags>
+              <feature key="t487_sms" type="binary" is_exclusive="false">
+                <label lang="en">sms</label>
+              </feature>
+              <feature key="t488_mms" type="binary" is_exclusive="false">
+                <label lang="en">mms</label>
+              </feature>
+              <feature key="t489_im" type="binary" is_exclusive="false">
+                <label lang="en">im</label>
+              </feature>
+              <feature key="t490_twitter" type="binary" is_exclusive="false">
+                <label lang="en">twitter</label>
+              </feature>
+              <feature key="t491_facebook" type="binary" is_exclusive="false">
+                <label lang="en">facebook</label>
+              </feature>
+              <feature key="t963_mms_w/_video_messaging" type="binary" is_exclusive="false">
+                <label lang="en">mms w/ video messaging</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f167_best_suited_for" type="tag" is_exclusive="false">
+            <label lang="en">best suited for</label>
+            <tags>
+              <feature key="t574_calling" type="binary" is_exclusive="false">
+                <label lang="en">calling</label>
+              </feature>
+              <feature key="t575_emails" type="binary" is_exclusive="false">
+                <label lang="en">emails</label>
+              </feature>
+              <feature key="t576_texting" type="binary" is_exclusive="false">
+                <label lang="en">texting</label>
+              </feature>
+              <feature key="t616_social_media" type="binary" is_exclusive="false">
+                <label lang="en">social media</label>
+              </feature>
+              <feature key="t925_entertainment" type="binary" is_exclusive="false">
+                <label lang="en">entertainment</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f186_voice_recording" type="tag" is_exclusive="true">
+            <label lang="en">voice recording</label>
+            <tags>
+              <feature key="t666_native" type="binary" is_exclusive="true">
+                <label lang="en">native</label>
+              </feature>
+              <feature key="t667_third-party" type="binary" is_exclusive="true">
+                <label lang="en">third-party</label>
+              </feature>
+              <feature key="t668_none" type="binary" is_exclusive="true">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f197_contacts" type="header">
+            <label lang="en">contacts</label>
+            <sub_features>
+              <feature key="f198_contact_import" type="binary" is_exclusive="false">
+                <label lang="en">contact import</label>
+              </feature>
+              <feature key="f199_contact_aggregation" type="binary" is_exclusive="false">
+                <label lang="en">contact aggregation</label>
+              </feature>
+              <feature key="f215_send_contacts" type="binary" is_exclusive="false">
+                <label lang="en">send contacts</label>
+              </feature>
+              <feature key="f238_company_name_search" type="binary" is_exclusive="false">
+                <label lang="en">company name search</label>
+              </feature>
+              <feature key="f248_contact_favorites" type="binary" is_exclusive="false">
+                <label lang="en">contact favorites</label>
+              </feature>
+              <feature key="f273_phone_book_entries" type="numeric" format="% .2fentries" value_min="0.0" value_max="10000.0">
+                <label lang="en">phone book entries</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f200_combined_messaging" type="binary" is_exclusive="false">
+            <label lang="en">combined messaging</label>
+          </feature>
+          <feature key="f229_real_time_video_sharing" type="binary" is_exclusive="false">
+            <label lang="en">real time video sharing</label>
+          </feature>
+          <feature key="f237_voip" type="binary" is_exclusive="false">
+            <label lang="en">voip</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f33_connectivity" type="header">
+        <label lang="en">Connectivity</label>
+        <sub_features>
+          <feature key="f38_bluetooth" type="binary" is_exclusive="false">
+            <label lang="en">bluetooth</label>
+            <sub_features>
+              <feature key="f39_type" type="tag" is_exclusive="false">
+                <label lang="en">type</label>
+                <tags>
+                  <feature key="t130_1.0" type="binary" is_exclusive="false">
+                    <label lang="en">1.0</label>
+                  </feature>
+                  <feature key="t131_2.0" type="binary" is_exclusive="false">
+                    <label lang="en">2.0</label>
+                  </feature>
+                  <feature key="t802_2.1" type="binary" is_exclusive="false">
+                    <label lang="en">2.1</label>
+                  </feature>
+                  <feature key="t849_stereo" type="binary" is_exclusive="false">
+                    <label lang="en">stereo</label>
+                  </feature>
+                  <feature key="t850_edr" type="binary" is_exclusive="false">
+                    <label lang="en">edr</label>
+                  </feature>
+                  <feature key="t851_a2dp" type="binary" is_exclusive="false">
+                    <label lang="en">a2dp</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f36_wifi" type="binary" is_exclusive="false">
+            <label lang="en">wifi</label>
+            <sub_features>
+              <feature key="f37_type" type="tag" is_exclusive="false">
+                <label lang="en">type</label>
+                <tags>
+                  <feature key="t511_a" type="binary" is_exclusive="false">
+                    <label lang="en">a</label>
+                  </feature>
+                  <feature key="t512_b" type="binary" is_exclusive="false">
+                    <label lang="en">b</label>
+                  </feature>
+                  <feature key="t513_g" type="binary" is_exclusive="false">
+                    <label lang="en">g</label>
+                  </feature>
+                  <feature key="t514_n" type="binary" is_exclusive="false">
+                    <label lang="en">n</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f178_bands" type="tag" is_exclusive="false">
+            <label lang="en">bands</label>
+            <sub_features>
+              <feature key="f180_bands_frequency" type="tag" is_exclusive="false">
+                <label lang="en">bands frequency</label>
+                <tags>
+                  <feature key="t635_850" type="binary" is_exclusive="false">
+                    <label lang="en">850</label>
+                  </feature>
+                  <feature key="t670_900" type="binary" is_exclusive="false">
+                    <label lang="en">900</label>
+                  </feature>
+                  <feature key="t671_1800" type="binary" is_exclusive="false">
+                    <label lang="en">1800</label>
+                  </feature>
+                  <feature key="t672_1900" type="binary" is_exclusive="false">
+                    <label lang="en">1900</label>
+                  </feature>
+                  <feature key="t673_2100" type="binary" is_exclusive="false">
+                    <label lang="en">2100</label>
+                  </feature>
+                  <feature key="t960_800" type="binary" is_exclusive="false">
+                    <label lang="en">800</label>
+                  </feature>
+                  <feature key="t1088_1700" type="binary" is_exclusive="false">
+                    <label lang="en">1700</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f224_multiple_bands" type="tag" is_exclusive="false">
+                <label lang="en">multiple bands</label>
+                <tags>
+                  <feature key="t847_tri-band" type="binary" is_exclusive="false">
+                    <label lang="en">tri-band</label>
+                  </feature>
+                  <feature key="t848_quad-band" type="binary" is_exclusive="false">
+                    <label lang="en">quad-band</label>
+                  </feature>
+                  <feature key="t1108_dual-band" type="binary" is_exclusive="false">
+                    <label lang="en">dual-band</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+            <tags>
+              <feature key="t624_umts" type="binary" is_exclusive="false">
+                <label lang="en">umts</label>
+              </feature>
+              <feature key="t625_hsdpa" type="binary" is_exclusive="false">
+                <label lang="en">hsdpa</label>
+              </feature>
+              <feature key="t841_gsm" type="binary" is_exclusive="false">
+                <label lang="en">gsm</label>
+              </feature>
+              <feature key="t842_wcdma" type="binary" is_exclusive="false">
+                <label lang="en">wcdma</label>
+              </feature>
+              <feature key="t843_3g" type="binary" is_exclusive="false">
+                <label lang="en">3g</label>
+              </feature>
+              <feature key="t959_cdma" type="binary" is_exclusive="false">
+                <label lang="en">cdma</label>
+              </feature>
+              <feature key="t964_ev-do" type="binary" is_exclusive="false">
+                <label lang="en">ev-do</label>
+              </feature>
+              <feature key="t1012_gprs" type="binary" is_exclusive="false">
+                <label lang="en">gprs</label>
+              </feature>
+              <feature key="t1013_edge" type="binary" is_exclusive="false">
+                <label lang="en">edge</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f183_audio_connector" type="tag" is_exclusive="true">
+            <label lang="en">audio connector</label>
+            <tags>
+              <feature key="t653_3.5_mm" type="binary" is_exclusive="true">
+                <label lang="en">3.5 mm</label>
+              </feature>
+              <feature key="t654_2.5_mm" type="binary" is_exclusive="true">
+                <label lang="en">2.5 mm</label>
+              </feature>
+              <feature key="t998_custom" type="binary" is_exclusive="true">
+                <label lang="en">custom</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f185_tethering" type="binary" is_exclusive="false">
+            <label lang="en">tethering</label>
+          </feature>
+          <feature key="f212_micro-usb" type="binary" is_exclusive="false">
+            <label lang="en">micro-usb</label>
+          </feature>
+          <feature key="f249_international_roaming" type="binary" is_exclusive="false">
+            <label lang="en">international roaming</label>
+          </feature>
+          <feature key="f280_mini-usb" type="binary" is_exclusive="false">
+            <label lang="en">mini-usb</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f41_memory" type="header">
+        <label lang="en">Memory</label>
+        <sub_features>
+          <feature key="f42_internal_memory_size" type="numeric" format="% .1f gb" value_min="0.0" value_max="64.0">
+            <label lang="en">internal memory size</label>
+          </feature>
+          <feature key="f43_external_memory_type" type="tag" is_exclusive="false">
+            <label lang="en">external memory type</label>
+            <tags>
+              <feature key="t138_sd" type="binary" is_exclusive="false">
+                <label lang="en">sd</label>
+              </feature>
+              <feature key="t139_micro-sd" type="binary" is_exclusive="false">
+                <label lang="en">micro-sd</label>
+              </feature>
+              <feature key="t140_sdhc" type="binary" is_exclusive="false">
+                <label lang="en">sdhc</label>
+              </feature>
+              <feature key="t141_stick" type="binary" is_exclusive="false">
+                <label lang="en">stick</label>
+              </feature>
+              <feature key="t142_stick_micro" type="binary" is_exclusive="false">
+                <label lang="en">stick micro</label>
+              </feature>
+              <feature key="t620_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+              <feature key="t1150_m2" type="binary" is_exclusive="false">
+                <label lang="en">m2</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f282_maximum_external_memory" type="numeric" format="% .2fgb" value_min="0.0" value_max="64.0">
+            <label lang="en">maximum external memory</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f44_battery" type="header">
+        <label lang="en">Battery</label>
+        <sub_features>
+          <feature key="f45_power" type="numeric" format="% .1f mAh" value_min="1.0" value_max="9000.0">
+            <label lang="en">power</label>
+          </feature>
+          <feature key="f46_talk_time" type="numeric" format="% .1f Hours" value_min="1.0" value_max="24.0">
+            <label lang="en">talk time</label>
+            <sub_features>
+              <feature key="f173_2g_talk_time" type="numeric" format="% .2fHours" value_min="0.0" value_max="1000.0">
+                <label lang="en">2G talk time</label>
+              </feature>
+              <feature key="f174_3g_talk_time" type="numeric" format="% .2fHours" value_min="0.0" value_max="1000.0">
+                <label lang="en">3G talk time</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f47_standby_time" type="numeric" format="% .1f Hours" value_min="1.0" value_max="500.0">
+            <label lang="en">standby_time</label>
+          </feature>
+          <feature key="f48_video_playback_time" type="numeric" format="% .1f Hours" value_min="1.0" value_max="24.0">
+            <label lang="en">video_playback_time</label>
+          </feature>
+          <feature key="f49_music_playback_time" type="numeric" format="% .1f Hours" value_min="1.0" value_max="48.0">
+            <label lang="en">music_playback_time</label>
+          </feature>
+          <feature key="f175_wifi_time" type="numeric" format="% .2fHours" value_min="0.0" value_max="24.0">
+            <label lang="en">Wifi time</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f50_operating_system" type="tag" is_exclusive="false">
+        <label lang="en">Operating system</label>
+        <sub_features>
+          <feature key="f192_ui" type="tag" is_exclusive="false">
+            <label lang="en">UI</label>
+            <tags>
+              <feature key="t720_multi-touch" type="binary" is_exclusive="false">
+                <label lang="en">multi-touch</label>
+              </feature>
+              <feature key="t721_single-handed" type="binary" is_exclusive="false">
+                <label lang="en">single-handed</label>
+              </feature>
+              <feature key="t852_single_touch" type="binary" is_exclusive="false">
+                <label lang="en">single touch</label>
+              </feature>
+              <feature key="t853_keyboard_and_buttons" type="binary" is_exclusive="false">
+                <label lang="en">keyboard and buttons</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f193_touch_hand_gesture" type="tag" is_exclusive="false">
+            <label lang="en">touch hand gesture</label>
+            <tags>
+              <feature key="t725_multi-touch" type="binary" is_exclusive="false">
+                <label lang="en">multi-touch</label>
+              </feature>
+              <feature key="t726_pinching" type="binary" is_exclusive="false">
+                <label lang="en">pinching</label>
+              </feature>
+              <feature key="t727_sliding" type="binary" is_exclusive="false">
+                <label lang="en">sliding</label>
+              </feature>
+              <feature key="t728_multi-touch_zooming" type="binary" is_exclusive="false">
+                <label lang="en">multi-touch zooming</label>
+              </feature>
+              <feature key="t767_double_tap" type="binary" is_exclusive="false">
+                <label lang="en">double tap</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f195_multi-tasking" type="tag" is_exclusive="true">
+            <label lang="en">multi-tasking</label>
+            <tags>
+              <feature key="t737_none" type="binary" is_exclusive="true">
+                <label lang="en">none</label>
+              </feature>
+              <feature key="t739_poor" type="binary" is_exclusive="true">
+                <label lang="en">poor</label>
+              </feature>
+              <feature key="t740_decent" type="binary" is_exclusive="true">
+                <label lang="en">decent</label>
+              </feature>
+              <feature key="t741_good" type="binary" is_exclusive="true">
+                <label lang="en">good</label>
+              </feature>
+              <feature key="t742_seamless" type="binary" is_exclusive="true">
+                <label lang="en">seamless</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f202_search_phone" type="binary" is_exclusive="false">
+            <label lang="en">search phone</label>
+          </feature>
+          <feature key="f203_advanced_features" type="tag" is_exclusive="false">
+            <label lang="en">advanced features</label>
+            <tags>
+              <feature key="t765_copy_and_paste" type="binary" is_exclusive="false">
+                <label lang="en">copy and paste</label>
+              </feature>
+              <feature key="t766_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+              <feature key="t769_copy_and_paste_pictures" type="binary" is_exclusive="false">
+                <label lang="en">copy and paste pictures</label>
+              </feature>
+              <feature key="t1100_home_screen_personalization" type="binary" is_exclusive="false">
+                <label lang="en">home screen personalization</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f239_voice_commands" type="binary" is_exclusive="false">
+            <label lang="en">voice commands</label>
+          </feature>
+          <feature key="f240_text-to-speech" type="binary" is_exclusive="false">
+            <label lang="en">text-to-speech</label>
+          </feature>
+          <feature key="f256_ui_ease_of_use" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+            <label lang="en">UI ease of use</label>
+          </feature>
+          <feature key="f261_responsiveness" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+            <label lang="en">Responsiveness</label>
+          </feature>
+          <feature key="f271_ui_system" type="tag" is_exclusive="false">
+            <label lang="en">UI system</label>
+            <tags>
+              <feature key="t1064_samsung_touchwiz" type="binary" is_exclusive="false">
+                <label lang="en">samsung touchwiz</label>
+              </feature>
+              <feature key="t1065_lg_touchflo_3d" type="binary" is_exclusive="false">
+                <label lang="en">lg touchflo 3d</label>
+              </feature>
+              <feature key="t1066_apple" type="binary" is_exclusive="false">
+                <label lang="en">apple</label>
+              </feature>
+              <feature key="t1093_blackberry" type="binary" is_exclusive="false">
+                <label lang="en">blackberry</label>
+              </feature>
+              <feature key="t1121_sony_ericsson_xperia" type="binary" is_exclusive="false">
+                <label lang="en">sony ericsson xperia</label>
+              </feature>
+              <feature key="t1149_sprint_one_click" type="binary" is_exclusive="false">
+                <label lang="en">sprint one click</label>
+              </feature>
+            </tags>
+          </feature>
+        </sub_features>
+        <tags>
+          <feature key="t146_apple" type="binary" is_exclusive="false">
+            <label lang="en">apple</label>
+          </feature>
+          <feature key="t147_google_android" type="binary" is_exclusive="false">
+            <label lang="en">google android</label>
+          </feature>
+          <feature key="t148_symbian" type="binary" is_exclusive="false">
+            <label lang="en">symbian</label>
+          </feature>
+          <feature key="t150_motomagx" type="binary" is_exclusive="false">
+            <label lang="en">motomagx</label>
+          </feature>
+          <feature key="t151_blackberry" type="binary" is_exclusive="false">
+            <label lang="en">blackberry</label>
+          </feature>
+          <feature key="t790_palm_webos" type="binary" is_exclusive="false">
+            <label lang="en">palm webos</label>
+          </feature>
+          <feature key="t1014_windows_mobile" type="binary" is_exclusive="false">
+            <label lang="en">windows mobile</label>
+          </feature>
+          <feature key="t1072_proprietary" type="binary" is_exclusive="false">
+            <label lang="en">proprietary</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f51_internet" type="header">
+        <label lang="en">Internet</label>
+        <sub_features>
+          <feature key="f157_internet_access" type="tag" is_exclusive="false">
+            <label lang="en">Internet access</label>
+            <tags>
+              <feature key="t523_full" type="binary" is_exclusive="false">
+                <label lang="en">full</label>
+              </feature>
+              <feature key="t524_partial" type="binary" is_exclusive="false">
+                <label lang="en">partial</label>
+              </feature>
+              <feature key="t525_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f59_page_zoom" type="tag" is_exclusive="false">
+            <label lang="en">page zoom</label>
+            <tags>
+              <feature key="t197_multi-touch" type="binary" is_exclusive="false">
+                <label lang="en">multi-touch</label>
+              </feature>
+              <feature key="t198_button" type="binary" is_exclusive="false">
+                <label lang="en">button</label>
+              </feature>
+              <feature key="t1076_magnifying_glass" type="binary" is_exclusive="false">
+                <label lang="en">magnifying glass</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f158_browser" type="tag" is_exclusive="false">
+            <label lang="en">browser</label>
+            <tags>
+              <feature key="t688_safari" type="binary" is_exclusive="false">
+                <label lang="en">safari</label>
+              </feature>
+              <feature key="t854_nokia" type="binary" is_exclusive="false">
+                <label lang="en">nokia</label>
+              </feature>
+              <feature key="t1015_opera" type="binary" is_exclusive="false">
+                <label lang="en">opera</label>
+              </feature>
+              <feature key="t1016_internet_explorer" type="binary" is_exclusive="false">
+                <label lang="en">internet explorer</label>
+              </feature>
+              <feature key="t1071_samsung" type="binary" is_exclusive="false">
+                <label lang="en">samsung</label>
+              </feature>
+              <feature key="t1089_blackberry" type="binary" is_exclusive="false">
+                <label lang="en">blackberry</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f172_social_media" type="tag" is_exclusive="false">
+            <label lang="en">Social media</label>
+            <tags>
+              <feature key="t612_facebook" type="binary" is_exclusive="false">
+                <label lang="en">facebook</label>
+              </feature>
+              <feature key="t613_myspace" type="binary" is_exclusive="false">
+                <label lang="en">myspace</label>
+              </feature>
+              <feature key="t614_twitter" type="binary" is_exclusive="false">
+                <label lang="en">twitter</label>
+              </feature>
+              <feature key="t615_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+              <feature key="t952_rss_feed" type="binary" is_exclusive="false">
+                <label lang="en">rss feed</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f189_internet_platforms" type="tag" is_exclusive="false">
+            <label lang="en">internet platforms</label>
+            <tags>
+              <feature key="t693_css/html" type="binary" is_exclusive="false">
+                <label lang="en">css/html</label>
+              </feature>
+              <feature key="t694_flash" type="binary" is_exclusive="false">
+                <label lang="en">flash</label>
+              </feature>
+              <feature key="t695_java" type="binary" is_exclusive="false">
+                <label lang="en">java</label>
+              </feature>
+              <feature key="t855_javascript" type="binary" is_exclusive="false">
+                <label lang="en">javascript</label>
+              </feature>
+              <feature key="t961_wap" type="binary" is_exclusive="false">
+                <label lang="en">wap</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f255_internet_experience" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+            <label lang="en">Internet experience</label>
+          </feature>
+          <feature key="f270_rss_reader" type="binary" is_exclusive="false">
+            <label lang="en">rss reader</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f60_camera" type="binary" is_exclusive="false">
+        <label lang="en">Camera</label>
+        <sub_features>
+          <feature key="f61_camera_resolution" type="numeric" format="% .1f mpx" value_min="0.0" value_max="12.0">
+            <label lang="en">camera resolution</label>
+          </feature>
+          <feature key="f62_features" type="tag" is_exclusive="false">
+            <label lang="en">features</label>
+            <tags>
+              <feature key="t204_autofocus" type="binary" is_exclusive="false">
+                <label lang="en">autofocus</label>
+              </feature>
+              <feature key="t405_zeiss_lens" type="binary" is_exclusive="false">
+                <label lang="en">zeiss lens</label>
+              </feature>
+              <feature key="t799_image_correction" type="binary" is_exclusive="false">
+                <label lang="en">image correction</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f63_zoom" type="binary" is_exclusive="false">
+            <label lang="en">zoom</label>
+            <sub_features>
+              <feature key="f64_range" type="numeric" format="% .1f time" value_min="1.0" value_max="20.0">
+                <label lang="en">range</label>
+              </feature>
+              <feature key="f65_type" type="tag" is_exclusive="true">
+                <label lang="en">type</label>
+                <tags>
+                  <feature key="t212_optical" type="binary" is_exclusive="true">
+                    <label lang="en">optical</label>
+                  </feature>
+                  <feature key="t404_digital" type="binary" is_exclusive="true">
+                    <label lang="en">digital</label>
+                  </feature>
+                  <feature key="t1123_none" type="binary" is_exclusive="true">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f66_video" type="binary" is_exclusive="false">
+            <label lang="en">video</label>
+            <sub_features>
+              <feature key="f67_features" type="tag" is_exclusive="false">
+                <label lang="en">features</label>
+                <tags>
+                  <feature key="t219_hd" type="binary" is_exclusive="false">
+                    <label lang="en">hd</label>
+                  </feature>
+                  <feature key="t220_dvd" type="binary" is_exclusive="false">
+                    <label lang="en">dvd</label>
+                  </feature>
+                  <feature key="t221_16x9" type="binary" is_exclusive="false">
+                    <label lang="en">16x9</label>
+                  </feature>
+                  <feature key="t222_30fps" type="binary" is_exclusive="false">
+                    <label lang="en">30fps</label>
+                  </feature>
+                  <feature key="t223_flash_with_continuous_lighting" type="binary" is_exclusive="false">
+                    <label lang="en">flash with continuous lighting</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f227_resolution" type="tag" is_exclusive="false">
+                <label lang="en">resolution</label>
+                <tags>
+                  <feature key="t872_vga" type="binary" is_exclusive="false">
+                    <label lang="en">vga</label>
+                  </feature>
+                  <feature key="t873_qvga" type="binary" is_exclusive="false">
+                    <label lang="en">qvga</label>
+                  </feature>
+                  <feature key="t874_qcif" type="binary" is_exclusive="false">
+                    <label lang="en">qcif</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f228_front_camera_for_video_calls" type="binary" is_exclusive="false">
+                <label lang="en">front camera for video calls</label>
+              </feature>
+              <feature key="f231_real_time_video_sharing" type="binary" is_exclusive="false">
+                <label lang="en">real time video sharing</label>
+              </feature>
+              <feature key="f260_video_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+                <label lang="en">video quality</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f146_online_picture_and_video_sharing" type="tag" is_exclusive="false">
+            <label lang="en">online picture and video sharing</label>
+            <tags>
+              <feature key="t445_flickr" type="binary" is_exclusive="false">
+                <label lang="en">flickr</label>
+              </feature>
+              <feature key="t446_facebook" type="binary" is_exclusive="false">
+                <label lang="en">facebook</label>
+              </feature>
+              <feature key="t865_ovi" type="binary" is_exclusive="false">
+                <label lang="en">ovi</label>
+              </feature>
+              <feature key="t1080_photobucket" type="binary" is_exclusive="false">
+                <label lang="en">photobucket</label>
+              </feature>
+              <feature key="t1084_kodak_gallery" type="binary" is_exclusive="false">
+                <label lang="en">kodak gallery</label>
+              </feature>
+              <feature key="t1085_snapfish" type="binary" is_exclusive="false">
+                <label lang="en">snapfish</label>
+              </feature>
+              <feature key="t1136_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f225_flash" type="tag" is_exclusive="false">
+            <label lang="en">flash</label>
+            <tags>
+              <feature key="t861_led_flash" type="binary" is_exclusive="false">
+                <label lang="en">led flash</label>
+              </feature>
+              <feature key="t862_xenon_flash" type="binary" is_exclusive="false">
+                <label lang="en">xenon flash</label>
+              </feature>
+              <feature key="t863_red-eye_reduction" type="binary" is_exclusive="false">
+                <label lang="en">red-eye reduction</label>
+              </feature>
+              <feature key="t864_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f234_camera_modes" type="tag" is_exclusive="false">
+            <label lang="en">camera modes</label>
+            <tags>
+              <feature key="t896_scene_modes" type="binary" is_exclusive="false">
+                <label lang="en">scene modes</label>
+              </feature>
+              <feature key="t897_capture_modes" type="binary" is_exclusive="false">
+                <label lang="en">capture modes</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f235_camera_controls" type="tag" is_exclusive="false">
+            <label lang="en">camera controls</label>
+            <tags>
+              <feature key="t901_white_balance" type="binary" is_exclusive="false">
+                <label lang="en">white balance</label>
+              </feature>
+              <feature key="t902_color_tones" type="binary" is_exclusive="false">
+                <label lang="en">color tones</label>
+              </feature>
+              <feature key="t903_exposure" type="binary" is_exclusive="false">
+                <label lang="en">exposure</label>
+              </feature>
+              <feature key="t1083_advanced" type="binary" is_exclusive="false">
+                <label lang="en">advanced</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f259_picture_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+            <label lang="en">picture quality</label>
+          </feature>
+          <feature key="f284_camera_controls_sophistication" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+            <label lang="en">camera controls sophistication</label>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f70_media" type="header">
+        <label lang="en">Media</label>
+        <sub_features>
+          <feature key="f71_video_playback" type="binary" is_exclusive="false">
+            <label lang="en">video playback</label>
+            <sub_features>
+              <feature key="f72_services" type="tag" is_exclusive="false">
+                <label lang="en">services</label>
+                <tags>
+                  <feature key="t229_youtube" type="binary" is_exclusive="false">
+                    <label lang="en">youtube</label>
+                  </feature>
+                  <feature key="t230_itunes" type="binary" is_exclusive="false">
+                    <label lang="en">itunes</label>
+                  </feature>
+                  <feature key="t231_blackberrymedia_center" type="binary" is_exclusive="false">
+                    <label lang="en">blackberrymedia center</label>
+                  </feature>
+                  <feature key="t232_roxio_media_manager" type="binary" is_exclusive="false">
+                    <label lang="en">roxio media manager</label>
+                  </feature>
+                  <feature key="t233_hd" type="binary" is_exclusive="false">
+                    <label lang="en">hd</label>
+                  </feature>
+                  <feature key="t879_realplayer" type="binary" is_exclusive="false">
+                    <label lang="en">realplayer</label>
+                  </feature>
+                  <feature key="t965_vcast" type="binary" is_exclusive="false">
+                    <label lang="en">vcast</label>
+                  </feature>
+                  <feature key="t1017_spring_tv" type="binary" is_exclusive="false">
+                    <label lang="en">spring tv</label>
+                  </feature>
+                  <feature key="t1074_at&amp;t_cellular_video" type="binary" is_exclusive="false">
+                    <label lang="en">at&amp;t cellular video</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f73_formats" type="tag" is_exclusive="false">
+                <label lang="en">formats</label>
+                <tags>
+                  <feature key="t237_flash" type="binary" is_exclusive="false">
+                    <label lang="en">flash</label>
+                  </feature>
+                  <feature key="t238_mpeg-4" type="binary" is_exclusive="false">
+                    <label lang="en">mpeg-4</label>
+                  </feature>
+                  <feature key="t239_avc/h.264" type="binary" is_exclusive="false">
+                    <label lang="en">avc/h.264</label>
+                  </feature>
+                  <feature key="t241_windows_media_(wmv9)" type="binary" is_exclusive="false">
+                    <label lang="en">windows media (wmv9)</label>
+                  </feature>
+                  <feature key="t242_cif_@_30_fps" type="binary" is_exclusive="false">
+                    <label lang="en">cif @ 30 fps</label>
+                  </feature>
+                  <feature key="t451_divx_4" type="binary" is_exclusive="false">
+                    <label lang="en">divx 4</label>
+                  </feature>
+                  <feature key="t453_divx_5" type="binary" is_exclusive="false">
+                    <label lang="en">divx 5</label>
+                  </feature>
+                  <feature key="t454_divx_6" type="binary" is_exclusive="false">
+                    <label lang="en">divx 6</label>
+                  </feature>
+                  <feature key="t456_wmv3" type="binary" is_exclusive="false">
+                    <label lang="en">wmv3</label>
+                  </feature>
+                  <feature key="t465_xvid" type="binary" is_exclusive="false">
+                    <label lang="en">xvid</label>
+                  </feature>
+                  <feature key="t466_h.263" type="binary" is_exclusive="false">
+                    <label lang="en">h.263</label>
+                  </feature>
+                  <feature key="t880_realvideo" type="binary" is_exclusive="false">
+                    <label lang="en">realvideo</label>
+                  </feature>
+                  <feature key="t885_.3gp" type="binary" is_exclusive="false">
+                    <label lang="en">.3gp</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f230_video_streaming" type="binary" is_exclusive="false">
+                <label lang="en">video streaming</label>
+              </feature>
+              <feature key="f279_video_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+                <label lang="en">video quality</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f74_music_player" type="binary" is_exclusive="false">
+            <label lang="en">music player</label>
+            <sub_features>
+              <feature key="f75_formats" type="tag" is_exclusive="false">
+                <label lang="en">formats</label>
+                <tags>
+                  <feature key="t248_mp3" type="binary" is_exclusive="false">
+                    <label lang="en">mp3</label>
+                  </feature>
+                  <feature key="t249_aac" type="binary" is_exclusive="false">
+                    <label lang="en">aac</label>
+                  </feature>
+                  <feature key="t252_wav" type="binary" is_exclusive="false">
+                    <label lang="en">wav</label>
+                  </feature>
+                  <feature key="t253_aiff" type="binary" is_exclusive="false">
+                    <label lang="en">aiff</label>
+                  </feature>
+                  <feature key="t254_apple_lossless" type="binary" is_exclusive="false">
+                    <label lang="en">apple lossless</label>
+                  </feature>
+                  <feature key="t457_midi" type="binary" is_exclusive="false">
+                    <label lang="en">midi</label>
+                  </feature>
+                  <feature key="t459_amr-nb" type="binary" is_exclusive="false">
+                    <label lang="en">amr-nb</label>
+                  </feature>
+                  <feature key="t460_aac+" type="binary" is_exclusive="false">
+                    <label lang="en">aac+</label>
+                  </feature>
+                  <feature key="t461_eaac+" type="binary" is_exclusive="false">
+                    <label lang="en">eaac+</label>
+                  </feature>
+                  <feature key="t462_3gp" type="binary" is_exclusive="false">
+                    <label lang="en">3gp</label>
+                  </feature>
+                  <feature key="t463_wma9_pro" type="binary" is_exclusive="false">
+                    <label lang="en">wma9 pro</label>
+                  </feature>
+                  <feature key="t464_wma_10" type="binary" is_exclusive="false">
+                    <label lang="en">wma 10</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f161_media_sync_up" type="tag" is_exclusive="false">
+                <label lang="en">media sync up</label>
+                <tags>
+                  <feature key="t542_itunes" type="binary" is_exclusive="false">
+                    <label lang="en">itunes</label>
+                  </feature>
+                  <feature key="t543_windows_media_player" type="binary" is_exclusive="false">
+                    <label lang="en">windows media player</label>
+                  </feature>
+                  <feature key="t868_nokia_music_manager" type="binary" is_exclusive="false">
+                    <label lang="en">nokia music manager</label>
+                  </feature>
+                  <feature key="t1115_blackberry_media_sync" type="binary" is_exclusive="false">
+                    <label lang="en">blackberry media sync</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f162_media_player" type="tag" is_exclusive="false">
+                <label lang="en">media player</label>
+                <tags>
+                  <feature key="t866_itunes" type="binary" is_exclusive="false">
+                    <label lang="en">itunes</label>
+                  </feature>
+                  <feature key="t867_windows_media_player" type="binary" is_exclusive="false">
+                    <label lang="en">windows media player</label>
+                  </feature>
+                  <feature key="t923_realplayer" type="binary" is_exclusive="false">
+                    <label lang="en">realplayer</label>
+                  </feature>
+                  <feature key="t1059_phone-specific" type="binary" is_exclusive="false">
+                    <label lang="en">phone-specific</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f188_music_store" type="tag" is_exclusive="false">
+                <label lang="en">music store</label>
+                <tags>
+                  <feature key="t685_thru_wifi" type="binary" is_exclusive="false">
+                    <label lang="en">thru wifi</label>
+                  </feature>
+                  <feature key="t686_thru_cell" type="binary" is_exclusive="false">
+                    <label lang="en">thru cell</label>
+                  </feature>
+                  <feature key="t687_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                  <feature key="t1142_thru_pc_sync" type="binary" is_exclusive="false">
+                    <label lang="en">thru pc sync</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f244_music_service" type="tag" is_exclusive="false">
+                <label lang="en">music service</label>
+                <tags>
+                  <feature key="t939_comes_with_music_(nokia)" type="binary" is_exclusive="false">
+                    <label lang="en">comes with music (nokia)</label>
+                  </feature>
+                  <feature key="t940_itunes" type="binary" is_exclusive="false">
+                    <label lang="en">itunes</label>
+                  </feature>
+                  <feature key="t962_vcast_with_rhapsody" type="binary" is_exclusive="false">
+                    <label lang="en">vcast with rhapsody</label>
+                  </feature>
+                  <feature key="t1019_sprint_music" type="binary" is_exclusive="false">
+                    <label lang="en">sprint music</label>
+                  </feature>
+                  <feature key="t1073_at&amp;t_mobile_music" type="binary" is_exclusive="false">
+                    <label lang="en">at&amp;t mobile music</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f281_music_quality" type="rating" min_rating="1" max_rating="5" user_categories="citizen, expert">
+                <label lang="en">music quality</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f76_radio" type="binary" is_exclusive="false">
+            <label lang="en">radio</label>
+            <sub_features>
+              <feature key="f77_radio_type" type="tag" is_exclusive="false">
+                <label lang="en">radio type</label>
+                <tags>
+                  <feature key="t260_fm" type="binary" is_exclusive="false">
+                    <label lang="en">fm</label>
+                  </feature>
+                  <feature key="t261_rds" type="binary" is_exclusive="false">
+                    <label lang="en">rds</label>
+                  </feature>
+                  <feature key="t1075_internet" type="binary" is_exclusive="false">
+                    <label lang="en">internet</label>
+                  </feature>
+                  <feature key="t1135_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f78_media_center" type="binary" is_exclusive="false">
+            <label lang="en">media center</label>
+            <sub_features>
+              <feature key="f79_features" type="tag" is_exclusive="false">
+                <label lang="en">features</label>
+                <tags>
+                  <feature key="t267_upnp_support" type="binary" is_exclusive="false">
+                    <label lang="en">upnp support</label>
+                  </feature>
+                  <feature key="t268_media_synchronizing" type="binary" is_exclusive="false">
+                    <label lang="en">media synchronizing</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f242_use_device_as_remote_control" type="binary" is_exclusive="false">
+                <label lang="en">use device as remote control</label>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f81_tv-out_support" type="binary" is_exclusive="false">
+            <label lang="en">tv-out support</label>
+            <sub_features>
+              <feature key="f82_format" type="tag" is_exclusive="false">
+                <label lang="en">format</label>
+                <tags>
+                  <feature key="t276_pal" type="binary" is_exclusive="false">
+                    <label lang="en">pal</label>
+                  </feature>
+                  <feature key="t277_ntsc" type="binary" is_exclusive="false">
+                    <label lang="en">ntsc</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f201_gaming_platform" type="binary" is_exclusive="false">
+            <label lang="en">gaming platform</label>
+            <sub_features>
+              <feature key="f247_gaming_platform" type="tag" is_exclusive="false">
+                <label lang="en">gaming platform</label>
+                <tags>
+                  <feature key="t949_n-gage" type="binary" is_exclusive="false">
+                    <label lang="en">n-gage</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f246_casual_games" type="binary" is_exclusive="false">
+            <label lang="en">casual games</label>
+          </feature>
+          <feature key="f275_speakerphones" type="tag" is_exclusive="false">
+            <label lang="en">speakerphones</label>
+            <tags>
+              <feature key="t1097_stereo" type="binary" is_exclusive="false">
+                <label lang="en">stereo</label>
+              </feature>
+              <feature key="t1098_mono" type="binary" is_exclusive="false">
+                <label lang="en">mono</label>
+              </feature>
+              <feature key="t1099_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f110_carriers" type="tag" is_exclusive="false">
+        <label lang="en">Carriers</label>
+        <tags>
+          <feature key="t325_alltel" type="binary" is_exclusive="false">
+            <label lang="en">alltel</label>
+          </feature>
+          <feature key="t326_at&amp;t" type="binary" is_exclusive="false">
+            <label lang="en">at&amp;t</label>
+          </feature>
+          <feature key="t327_sprint" type="binary" is_exclusive="false">
+            <label lang="en">sprint</label>
+          </feature>
+          <feature key="t328_t-mobile" type="binary" is_exclusive="false">
+            <label lang="en">t-mobile</label>
+          </feature>
+          <feature key="t329_verizon" type="binary" is_exclusive="false">
+            <label lang="en">verizon</label>
+          </feature>
+          <feature key="t1018_unlocked" type="binary" is_exclusive="false">
+            <label lang="en">unlocked</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f111_nickname" type="textarea">
+        <label lang="en">Nickname</label>
+      </feature>
+      <feature key="f130_third-party_applications" type="header">
+        <label lang="en">Third-party applications</label>
+        <sub_features>
+          <feature key="f131_application_store" type="binary" is_exclusive="false">
+            <label lang="en">application store</label>
+            <sub_features>
+              <feature key="f236_application_store" type="tag" is_exclusive="true">
+                <label lang="en">application store</label>
+                <tags>
+                  <feature key="t908_iphone_app_store" type="binary" is_exclusive="true">
+                    <label lang="en">iphone app store</label>
+                  </feature>
+                  <feature key="t909_blackberry_store" type="binary" is_exclusive="true">
+                    <label lang="en">blackberry store</label>
+                  </feature>
+                  <feature key="t910_ovi_store" type="binary" is_exclusive="true">
+                    <label lang="en">ovi store</label>
+                  </feature>
+                  <feature key="t974_none" type="binary" is_exclusive="true">
+                    <label lang="en">none</label>
+                  </feature>
+                  <feature key="t1107_verizon_appzone" type="binary" is_exclusive="true">
+                    <label lang="en">verizon appzone</label>
+                  </feature>
+                  <feature key="t1134_at&amp;t" type="binary" is_exclusive="true">
+                    <label lang="en">at&amp;t</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f196_application_marketplace" type="tag" is_exclusive="true">
+            <label lang="en">application marketplace</label>
+            <tags>
+              <feature key="t746_none" type="binary" is_exclusive="true">
+                <label lang="en">none</label>
+              </feature>
+              <feature key="t747_limited" type="binary" is_exclusive="true">
+                <label lang="en">limited</label>
+              </feature>
+              <feature key="t748_satisfying" type="binary" is_exclusive="true">
+                <label lang="en">satisfying</label>
+              </feature>
+              <feature key="t749_thriving" type="binary" is_exclusive="true">
+                <label lang="en">thriving</label>
+              </feature>
+              <feature key="t750_large" type="binary" is_exclusive="true">
+                <label lang="en">large</label>
+              </feature>
+              <feature key="t751_largest" type="binary" is_exclusive="true">
+                <label lang="en">largest</label>
+              </feature>
+            </tags>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f153_geolocation" type="tag" is_exclusive="false">
+        <label lang="en">Geolocation</label>
+        <sub_features>
+          <feature key="f266_gps" type="binary" is_exclusive="false">
+            <label lang="en">GPS</label>
+            <sub_features>
+              <feature key="f267_gps_type" type="tag" is_exclusive="false">
+                <label lang="en">gps type</label>
+                <tags>
+                  <feature key="t1042_gps" type="binary" is_exclusive="false">
+                    <label lang="en">gps</label>
+                  </feature>
+                  <feature key="t1043_assisted_gps" type="binary" is_exclusive="false">
+                    <label lang="en">assisted gps</label>
+                  </feature>
+                  <feature key="t1045_turn-by-turn_gps" type="binary" is_exclusive="false">
+                    <label lang="en">turn-by-turn gps</label>
+                  </feature>
+                  <feature key="t1046_voice-guided_directions" type="binary" is_exclusive="false">
+                    <label lang="en">voice-guided directions</label>
+                  </feature>
+                  <feature key="t1047_none" type="binary" is_exclusive="false">
+                    <label lang="en">none</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f268_location-based_services" type="binary" is_exclusive="false">
+            <label lang="en">Location-based services</label>
+            <sub_features>
+              <feature key="f269_maps_service" type="tag" is_exclusive="false">
+                <label lang="en">Maps service</label>
+                <tags>
+                  <feature key="t1053_google_maps" type="binary" is_exclusive="false">
+                    <label lang="en">google maps</label>
+                  </feature>
+                  <feature key="t1054_nokia_maps" type="binary" is_exclusive="false">
+                    <label lang="en">nokia maps</label>
+                  </feature>
+                  <feature key="t1055_vz_navigator" type="binary" is_exclusive="false">
+                    <label lang="en">vz navigator</label>
+                  </feature>
+                  <feature key="t1056_sprint_lbs" type="binary" is_exclusive="false">
+                    <label lang="en">sprint lbs</label>
+                  </feature>
+                  <feature key="t1092_blackberry_maps" type="binary" is_exclusive="false">
+                    <label lang="en">blackberry maps</label>
+                  </feature>
+                  <feature key="t1133_at&amp;t_telenav_navigator" type="binary" is_exclusive="false">
+                    <label lang="en">at&amp;t telenav navigator</label>
+                  </feature>
+                </tags>
+              </feature>
+            </sub_features>
+          </feature>
+          <feature key="f277_geolocation_features" type="tag" is_exclusive="false">
+            <label lang="en">Geolocation features</label>
+            <tags>
+              <feature key="t1104_geotag_pictures" type="binary" is_exclusive="false">
+                <label lang="en">geotag pictures</label>
+              </feature>
+              <feature key="t1105_location-based_services" type="binary" is_exclusive="false">
+                <label lang="en">location-based services</label>
+              </feature>
+              <feature key="t1106_none" type="binary" is_exclusive="false">
+                <label lang="en">none</label>
+              </feature>
+            </tags>
+          </feature>
+          <feature key="f285_gps_experience" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+            <label lang="en">GPS experience</label>
+          </feature>
+        </sub_features>
+        <tags>
+          <feature key="t496_gps" type="binary" is_exclusive="false">
+            <label lang="en">gps</label>
+          </feature>
+          <feature key="t497_triangulation" type="binary" is_exclusive="false">
+            <label lang="en">triangulation</label>
+          </feature>
+          <feature key="t498_none" type="binary" is_exclusive="false">
+            <label lang="en">none</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f168_usage" type="tag" is_exclusive="false">
+        <label lang="en">Usage</label>
+        <tags>
+          <feature key="t581_make_phone_calls" type="binary" is_exclusive="false">
+            <label lang="en">make phone calls</label>
+          </feature>
+          <feature key="t582_email_&amp;_office_productivity" type="binary" is_exclusive="false">
+            <label lang="en">email &amp; office productivity</label>
+          </feature>
+          <feature key="t583_internet_&amp;_social_media" type="binary" is_exclusive="false">
+            <label lang="en">internet &amp; social media</label>
+          </feature>
+          <feature key="t584_games_&amp;_entertainment" type="binary" is_exclusive="false">
+            <label lang="en">games &amp; entertainment</label>
+          </feature>
+          <feature key="t586_gps_&amp;_location-based_services" type="binary" is_exclusive="false">
+            <label lang="en">gps &amp; location-based services</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f170_category" type="tag" is_exclusive="true">
+        <label lang="en">Category</label>
+        <tags>
+          <feature key="t595_cell_phone" type="binary" is_exclusive="true">
+            <label lang="en">cell phone</label>
+          </feature>
+          <feature key="t596_smart_phone" type="binary" is_exclusive="true">
+            <label lang="en">smart phone</label>
+          </feature>
+          <feature key="t597_messaging_phone" type="binary" is_exclusive="true">
+            <label lang="en">messaging phone</label>
+          </feature>
+          <feature key="t598_camera_phone" type="binary" is_exclusive="true">
+            <label lang="en">camera phone</label>
+          </feature>
+          <feature key="t599_media_phone" type="binary" is_exclusive="true">
+            <label lang="en">media phone</label>
+          </feature>
+          <feature key="t600_ruggedized_phone" type="binary" is_exclusive="true">
+            <label lang="en">ruggedized phone</label>
+          </feature>
+          <feature key="t1138_gps_phone" type="binary" is_exclusive="true">
+            <label lang="en">gps phone</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f191_cool_factor" type="tag" is_exclusive="true">
+        <label lang="en">Cool factor</label>
+        <tags>
+          <feature key="t709_non_descript" type="binary" is_exclusive="true">
+            <label lang="en">non descript</label>
+          </feature>
+          <feature key="t711_mainstream" type="binary" is_exclusive="true">
+            <label lang="en">mainstream</label>
+          </feature>
+          <feature key="t712_sleek" type="binary" is_exclusive="true">
+            <label lang="en">sleek</label>
+          </feature>
+          <feature key="t713_hot" type="binary" is_exclusive="true">
+            <label lang="en">hot</label>
+          </feature>
+          <feature key="t714_passe" type="binary" is_exclusive="true">
+            <label lang="en">passe</label>
+          </feature>
+          <feature key="t715_professional" type="binary" is_exclusive="true">
+            <label lang="en">professional</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f204_productivity" type="header">
+        <label lang="en">Productivity</label>
+        <sub_features>
+          <feature key="f205_calendar" type="binary" is_exclusive="false">
+            <label lang="en">Calendar</label>
+            <sub_features>
+              <feature key="f206_calendar_support" type="tag" is_exclusive="false">
+                <label lang="en">Calendar support</label>
+                <background key="description" type="html" db_id="">ics = iCal&#xD;
+caldav = google &amp; yahoo</background>
+                <tags>
+                  <feature key="t775_ics" type="binary" is_exclusive="false">
+                    <label lang="en">ics</label>
+                  </feature>
+                  <feature key="t776_caldav" type="binary" is_exclusive="false">
+                    <label lang="en">caldav</label>
+                  </feature>
+                </tags>
+              </feature>
+              <feature key="f216_share_calendar_entries" type="binary" is_exclusive="false">
+                <label lang="en">Share calendar entries</label>
+              </feature>
+              <feature key="f278_calendar_sync" type="binary" is_exclusive="false">
+                <label lang="en">Calendar sync</label>
+              </feature>
+            </sub_features>
+          </feature>
+        </sub_features>
+      </feature>
+      <feature key="f241_segment" type="tag" is_exclusive="false">
+        <label lang="en">Segment</label>
+        <tags>
+          <feature key="t922_business" type="binary" is_exclusive="false">
+            <label lang="en">business</label>
+          </feature>
+          <feature key="t926_entertainment" type="binary" is_exclusive="false">
+            <label lang="en">entertainment</label>
+          </feature>
+          <feature key="t1086_lightweight" type="binary" is_exclusive="false">
+            <label lang="en">lightweight</label>
+          </feature>
+          <feature key="t1087_camera" type="binary" is_exclusive="false">
+            <label lang="en">camera</label>
+          </feature>
+          <feature key="t1125_basic" type="binary" is_exclusive="false">
+            <label lang="en">basic</label>
+          </feature>
+          <feature key="t1129_messaging" type="binary" is_exclusive="false">
+            <label lang="en">messaging</label>
+          </feature>
+          <feature key="t1140_travel" type="binary" is_exclusive="false">
+            <label lang="en">travel</label>
+          </feature>
+        </tags>
+      </feature>
+      <feature key="f262_price_range" type="interval" class_name="numeric">
+        <label lang="en">Price range</label>
+        <sub_features>
+          <feature key="f263_subsidized_price" type="numeric" format="% .2f$" value_min="0.0" value_max="1000.0">
+            <label lang="en">Subsidized price</label>
+          </feature>
+          <feature key="f264_unsubsidized_price" type="numeric" format="% .2f$" value_min="0.0" value_max="1000.0">
+            <label lang="en">Unsubsidized Price</label>
+          </feature>
+        </sub_features>
+        <ranges>
+          <feature key="f262_price_range-min" type="numeric" format="% .2f$" value_min="0.0" value_max="1000.0">
+            <label lang="en">Price range-min</label>
+          </feature>
+          <feature key="f262_price_range-max" type="numeric" format="% .2f$" value_min="0.0" value_max="1000.0">
+            <label lang="en">Price range-max</label>
+          </feature>
+        </ranges>
+      </feature>
+      <feature key="f272_overall_ux" type="numeric" format="% .2f" value_min="0.0" value_max="5.0">
+        <label lang="en">Overall ux</label>
+      </feature>
+    </sub_features>
+    <questions>
+
+
+      <question key="q1_do_you_have_a_favorite_brand" is_exclusive="true" nb_presentation="1" nb_oo="1">
+        <label lang="en">Do you have a favorite brand?</label>
+        <if/>
+        <choice key="c1_nokia" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">nokia</label>
+          <background key="description" type="html" db_id="913"/>
+          <background key="main_image" type="image" db_id="912"/>
+          <recommendations>
+            <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t4_nokia" mode="preference"/>
+            <recommendation type="predicate" weight="-1.0" predicate="$f1_brand != @t4_nokia" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c3_blackberry" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">blackberry</label>
+          <background key="description" type="html" db_id="915"/>
+          <background key="main_image" type="image" db_id="914"/>
+          <recommendations>
+            <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t6_blackberry" mode="preference"/>
+            <recommendation type="predicate" weight="-1.0" predicate="$f1_brand != @t6_blackberry" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c4_samsung" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">samsung</label>
+          <background key="description" type="html" db_id="917"/>
+          <background key="main_image" type="image" db_id="916"/>
+          <recommendations>
+            <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t8_samsung" mode="preference"/>
+            <recommendation type="predicate" weight="-1.0" predicate="$f1_brand != @t8_samsung" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c7_apple" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">apple</label>
+          <background key="description" type="html" db_id="919"/>
+          <background key="main_image" type="image" db_id="918"/>
+          <recommendations>
+            <recommendation type="predicate" weight="1.0" predicate="$f1_brand == @t10_apple" mode="preference"/>
+            <recommendation type="predicate" weight="-1.0" predicate="$f1_brand != @t10_apple" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c8_other" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">other</label>
+          <background key="description" type="html" db_id="921"/>
+          <background key="main_image" type="image" db_id="920"/>
+          <recommendations>
+            <recommendation type="predicate" weight="-1.0" predicate="[ @t4_nokia , @t10_apple , @t8_samsung , @t6_blackberry , @t10_apple ].include?( $f1_brand )" mode="preference"/>
+            <recommendation type="predicate" weight="+1.0" predicate="!([ @t4_nokia , @t10_apple , @t8_samsung , @t6_blackberry , @t10_apple ].include?( $f1_brand ))" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+
+
+      <question key="q7_what_type_of_user_are_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What type of user are you?</label>
+        <if/>
+        <choice key="c30_business_user" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">business user</label>
+          <background key="main_video" type="video" db_id="923"/>
+          <background key="main_image" type="image" db_id="922"/>
+          <recommendations/>
+        </choice>
+        <choice key="c32_hockey_mom" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">hockey mom</label>
+          <background key="description" type="html" db_id="925"/>
+          <background key="main_image" type="image" db_id="924"/>
+          <recommendations/>
+        </choice>
+        <choice key="c33_teenager" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">teenager</label>
+          <background key="description" type="html" db_id="927"/>
+          <background key="main_image" type="image" db_id="926"/>
+          <recommendations/>
+        </choice>
+        <choice key="c46_fashionista" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">fashionista</label>
+          <background key="description" type="html" db_id="929"/>
+          <background key="main_image" type="image" db_id="928"/>
+          <recommendations/>
+        </choice>
+        <choice key="c89_early_adopter" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">early adopter</label>
+          <background key="description" type="html" db_id="931"/>
+          <background key="main_image" type="image" db_id="930"/>
+          <recommendations/>
+        </choice>
+      </question>
+
+
+      <question key="q13_what_form_factor_are_you_looking_for" is_exclusive="true" nb_presentation="0" nb_oo="0">
+        <label lang="en">What form factor are you looking for?</label>
+        <if/>
+        <choice key="c36_candy_bar" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">candy bar</label>
+          <background key="description" type="html" db_id="933"/>
+          <background key="main_image" type="image" db_id="932"/>
+          <recommendations>
+            <recommendation type="product" weight="-1.0" product_key="nokia_e63 @nokia_n79 @nokia_e71 @blackberry_bold_9000 nokia_5130_xpressmusic motorola_renew_w233 @samsung_sgh-a657 , @palm_eos , @sanyo_scp-2700 , @blackberry_curve_8900 , @nokia_6500_classic , @blackberry_pearl_8130 ].include?($key))" mode="preference"/>
+            <recommendation type="predicate" weight="+1.0" predicate="[ @nokia_e63 , @nokia_n79 , @nokia_e71 , @blackberry_bold_9000 , @nokia_5130_xpressmusic , @motorola_renew_w233 , @samsung_sgh-a657 , @palm_eos , @sanyo_scp-2700 , @blackberry_curve_8900 , @nokia_6500_classic , @blackberry_pearl_8130 ].include?($key)" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c37_touch_screen" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">touch screen</label>
+          <background key="description" type="html" db_id="935"/>
+          <background key="main_image" type="image" db_id="934"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c38_clamshell" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">clamshell</label>
+          <background key="description" type="html" db_id="937"/>
+          <background key="main_image" type="image" db_id="936"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c39_swivel" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">swivel</label>
+          <background key="description" type="html" db_id="939"/>
+          <background key="main_image" type="image" db_id="938"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c40_slider" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">slider</label>
+          <background key="description" type="html" db_id="941"/>
+          <background key="main_image" type="image" db_id="940"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q18_what_kind_of_keyboard_would_you_prefer" is_exclusive="true" nb_presentation="0" nb_oo="0">
+        <label lang="en">What kind of keyboard would you prefer?</label>
+        <if/>
+        <choice key="c51_full_qwerty" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">full qwerty</label>
+          <background key="description" type="html" db_id="943"/>
+          <background key="main_image" type="image" db_id="942"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c52_numeric" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">numeric</label>
+          <background key="description" type="html" db_id="945"/>
+          <background key="main_image" type="image" db_id="944"/>
+          <recommendations>
+            <recommendation type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c53_suretype" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">suretype</label>
+          <background key="description" type="html" db_id="947"/>
+          <background key="main_image" type="image" db_id="946"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c54_virtual" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">virtual</label>
+          <background key="description" type="html" db_id="949"/>
+          <background key="main_image" type="image" db_id="948"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c55_full_sliding_keyboard" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">full sliding keyboard</label>
+          <background key="description" type="html" db_id="951"/>
+          <background key="main_image" type="image" db_id="950"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q21_how_long_should_your_phone_last_without_recharging_it" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">How long should your phone last without recharging it?</label>
+        <if/>
+        <choice key="c67_a_few_hours" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">a few hours</label>
+          <background key="main_image" type="image" db_id="952"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c68_half_a_day" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">half a day</label>
+          <background key="main_image" type="image" db_id="953"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c69_a_full_day" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">a full day</label>
+          <background key="main_image" type="image" db_id="954"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q22_would_you_like_a_touch_screen" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">Would you like a touch screen?</label>
+        <if/>
+        <choice key="c70_that_works_at_a_finger's_touch" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">that works at a finger's touch</label>
+          <background key="description" type="html" db_id="956"/>
+          <background key="main_image" type="image" db_id="955"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c71_that_works_with_a_stylus" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">that works with a stylus</label>
+          <background key="description" type="html" db_id="958"/>
+          <background key="main_image" type="image" db_id="957"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c72_i_don't_want_a_touch_screen" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">I don't want a touch screen</label>
+          <background key="description" type="html" db_id="960"/>
+          <background key="main_image" type="image" db_id="959"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q26_what_is_the_ideal_size" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What is the ideal size?</label>
+        <if/>
+        <choice key="c77_compact" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">compact</label>
+          <background key="description" type="html" db_id="962"/>
+          <background key="main_image" type="image" db_id="961"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c82_average" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">average</label>
+          <background key="description" type="html" db_id="964"/>
+          <background key="main_image" type="image" db_id="963"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c83_comfortable" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">comfortable</label>
+          <background key="description" type="html" db_id="966"/>
+          <background key="main_image" type="image" db_id="965"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+      </choice>
+      </question>
+      <question key="q27_what_budget_do_you_have_in_mind" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What budget do you have in mind?</label>
+        <if/>
+        <choice key="c85_minimal" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">Minimal</label>
+          <background key="description" type="html" db_id="968"/>
+          <background key="main_image" type="image" db_id="967"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c86_mid-range" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">Mid-range</label>
+          <background key="description" type="html" db_id="970"/>
+          <background key="main_image" type="image" db_id="969"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation ype="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c87_high-end" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">High-end</label>
+          <background key="description" type="html" db_id="972"/>
+          <background key="main_image" type="image" db_id="971"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+          </recommendations      </choice>
+        <choice key="c88_unlimited" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">Unlimited</label>
+          <background key="description" type="html" db_id="974"/>
+          <background key="main_image" type="image" db_id="973"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q29_what_kind_of_camera_would_you_like" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What kind of camera would you like?</label>
+        <if/>
+        <choice key="c94_no_camera" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">no camera</label>
+          <background key="description" type="html" db_id="976"/>
+          <background key="main_image" type="image" db_id="975"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c95_basic" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">basic</label>
+          <background key="description" type="html" db_id="978"/>
+          <background key="main_image" type="image" db_id="977"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c96_average" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">average</label>
+          <background key="description" type="html" db_id="980"/>
+          <background key="main_image" type="image" db_id="979"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c97_high-end" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">high-end</label>
+          <background key="description" type="html" db_id="982"/>
+          <background key="main_image" type="image" db_id="981"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q36_what_feature(s)_are_you_ready_to_pay_a_premium_for" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What feature(s) are you ready to pay a premium for?</label>
+        <if/>
+        <choice key="c112_camera" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">camera</label>
+          <background key="description" type="html" db_id="984"/>
+          <background key="main_image" type="image" db_id="983"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c113_email" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">email</label>
+          <background key="description" type="html" db_id="986"/>
+          <background key="main_image" type="image" db_id="985"/>
+          <recommendations/>
+        </choice>
+        <choice key="c114_gps_&amp;_location-based_services" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">gps &amp; location-based services</label>
+          <background key="description" type="html" db_id="988"/>
+          <background key="main_image" type="image" db_id="987"/>
+          <recommendations/>
+        </choice>
+        <choice key="c115_media" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">media</label>
+          <background key="description" type="html" db_id="990"/>
+          <background key="main_image" type="image" db_id="989"/>
+          <recommendations/>
+        </choice>
+        <choice key="c116_internet_on_the_go" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">internet on the go</label>
+          <background key="description" type="html" db_id="992"/>
+          <background key="main_image" type="image" db_id="991"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q38_what_type_of_phone_are_you_looking_for" is_exclusive="true" nb_presentation="0" nb_oo="0">
+        <label lang="en">What type of phone are you looking for?</label>
+        <if/>
+        <choice key="c123_cell_phone" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">cell phone</label>
+          <background key="description" type="html" db_id="994"/>
+          <background key="main_image" type="image" db_id="993"/>
+          <recommendations/>
+        </choice>
+        <choice key="c124_smart_phone" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">smart phone</label>
+          <background key="description" type="html" db_id="996"/>
+          <background key="main_image" type="image" db_id="995"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c125_messaging_phone" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">messaging phone</label>
+          <background key="description" type="html" db_id="998"/>
+          <background key="main_image" type="image" db_id="997"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c126_camera_phone" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">camera phone</label>
+          <background key="description" type="html" db_id="1000"/>
+          <background key="main_image" type="image" db_id="999"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c127_media_phone" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">media phone</label>
+          <background key="description" type="html" db_id="1002"/>
+          <background key="main_image" type="image" db_id="1001"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q39_what_internet_features_are_important_to_you" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What internet features are important to you?</label>
+        <if/>
+        <choice key="c129_full_internet_access" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">full internet access</label>
+          <background key="description" type="html" db_id="1004"/>
+          <background key="main_image" type="image" db_id="1003"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_8130" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c130_nice_browsing_experience" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">nice browsing experience</label>
+          <background key="description" type="html" db_id="1006"/>
+          <background key="main_image" type="image" db_id="1005"/>
+          <recommendations/>
+        </choice>
+        <choice key="c131_wifi" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">wifi</label>
+          <background key="description" type="html" db_id="1008"/>
+          <background key="main_image" type="image" db_id="1007"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_pearl_flip_8220" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c132_high_speed_data_network" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">high speed data network</label>
+          <background key="description" type="html" db_id="1010"/>
+          <background key="main_image" type="image" db_id="1009"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c133_tethering" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">tethering</label>
+          <background key="description" type="html" db_id="1012"/>
+          <background key="main_image" type="image" db_id="1011"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_omnia" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_diamond" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q42_please_select_your_favorite_carriers" is_exclusive="true" nb_presentation="0" nb_oo="0">
+        <label lang="en">Please select your favorite carriers?</label>
+        <if/>
+        <choice key="c145_at&amp;t" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">at&amp;t</label>
+          <background key="description" type="html" db_id="1014"/>
+          <background key="main_image" type="image" db_id="1013"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="lg_cf360" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_sgh-a657" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c146_sprint" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">sprint</label>
+          <background key="description" type="html" db_id="1016"/>
+          <background key="main_image" type="image" db_id="1015"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_i9_stature" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_instinct_s30" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sanyo_scp-2700" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c147_t-mobile" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">t-mobile</label>
+          <background key="description" type="html" db_id="1018"/>
+          <background key="main_image" type="image" db_id="1017"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c148_verizon" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">verizon</label>
+          <background key="description" type="html" db_id="1020"/>
+          <background key="main_image" type="image" db_id="1019"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_storm" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_vx8350" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_knack_sch-u310" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_7205_intrigue" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c149_unlocked" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">unlocked</label>
+          <background key="description" type="html" db_id="1022"/>
+          <background key="main_image" type="image" db_id="1021"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e63" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n79" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5130_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_5800_xpressmusic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_eos" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_6500_classic" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="htc_touch_cruise_2009" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q44_what_kind_of_sliding_keyboards_do_you_prefer" is_exclusive="true" nb_presentation="1" nb_oo="0">
+        <label lang="en">What kind of sliding keyboards do you prefer?</label>
+        <if/>
+        <choice key="c153_vertical" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">vertical</label>
+          <background key="description" type="html" db_id="1024"/>
+          <background key="main_image" type="image" db_id="1023"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_s8300_ultratouch" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_propel_pro" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c154_horizontal" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">horizontal</label>
+          <background key="description" type="html" db_id="1026"/>
+          <background key="main_image" type="image" db_id="1025"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_xperia_x1" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_versa" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e75" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q52_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c173_largest_app_store" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">largest app store</label>
+          <background key="description" type="html" db_id="1028"/>
+          <background key="main_image" type="image" db_id="1027"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c174_best_corporate_email" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">best corporate email</label>
+          <background key="description" type="html" db_id="1030"/>
+          <background key="main_image" type="image" db_id="1029"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q53_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="1" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c175_fluid_internet_navigation" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">fluid internet navigation</label>
+          <background key="description" type="html" db_id="1032"/>
+          <background key="main_image" type="image" db_id="1031"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c176_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">full qwerty keyboard</label>
+          <background key="description" type="html" db_id="1034"/>
+          <background key="main_image" type="image" db_id="1033"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_curve_8900" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q54_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c177_call_quality" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">call quality</label>
+          <background key="description" type="html" db_id="1036"/>
+          <background key="main_image" type="image" db_id="1035"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="blackberry_bold_9000" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c178_lighweight_metal_build" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">lighweight metal build</label>
+          <background key="description" type="html" db_id="1038"/>
+          <background key="main_image" type="image" db_id="1037"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_e71" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q55_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c180_seamless_contact_management" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">seamless contact management</label>
+          <background key="description" type="html" db_id="1040"/>
+          <background key="main_image" type="image" db_id="1039"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="palm_pre" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c181_largest_app_store" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">largest app store</label>
+          <background key="description" type="html" db_id="1042"/>
+          <background key="main_image" type="image" db_id="1041"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q56_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="1" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c182_killer_camera" is_choice_exclusive="false" nb_ok="1">
+          <label lang="en">killer camera</label>
+          <background key="description" type="html" db_id="1044"/>
+          <background key="main_image" type="image" db_id="1043"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n96" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="samsung_memoir_t929" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c183_killer_music_player" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">killer music player</label>
+          <background key="description" type="html" db_id="1046"/>
+          <background key="main_image" type="image" db_id="1045"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="lg_arena" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="apple_iphone_3g" mode="preference"/>
+            <recommendation  type="product" weight="1.0" product_key="nokia_n85" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q57_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c184_better_battery_life" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">better battery life</label>
+          <background key="description" type="html" db_id="1048"/>
+          <background key="main_image" type="image" db_id="1047"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="lg_xenon" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c185_better_resolution" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">better resolution</label>
+          <background key="description" type="html" db_id="1050"/>
+          <background key="main_image" type="image" db_id="1049"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_impression" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q58_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c186_hi-fi" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">hi-fi</label>
+          <background key="description" type="html" db_id="1052"/>
+          <background key="main_image" type="image" db_id="1051"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="samsung_trance" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c187_full_qwerty_keyboard" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">full qwerty keyboard</label>
+          <background key="description" type="html" db_id="1054"/>
+          <background key="main_image" type="image" db_id="1053"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="lg_lotus" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+      <question key="q59_what_feature_is_most_important_to_you" is_exclusive="false" nb_presentation="0" nb_oo="0">
+        <label lang="en">What feature is most important to you?</label>
+        <if/>
+        <choice key="c188_eco-friendly" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">eco-friendly</label>
+          <background key="description" type="html" db_id="1056"/>
+          <background key="main_image" type="image" db_id="1055"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="motorola_renew_w233" mode="preference"/>
+          </recommendations>
+        </choice>
+        <choice key="c189_fashionable" is_choice_exclusive="false" nb_ok="0">
+          <label lang="en">fashionable</label>
+          <background key="description" type="html" db_id="1058"/>
+          <background key="main_image" type="image" db_id="1057"/>
+          <recommendations>
+            <recommendation  type="product" weight="1.0" product_key="sony_ericsson_w508" mode="preference"/>
+          </recommendations>
+        </choice>
+      </question>
+    </questions>
+    <product_keys>
+      <product key="blackberry_bold_9000"/>
+      <product key="apple_iphone_3g"/>
+      <product key="palm_pre"/>
+      <product key="nokia_e75"/>
+      <product key="nokia_n96"/>
+      <product key="nokia_e71"/>
+      <product key="nokia_5800_xpressmusic"/>
+      <product key="nokia_7205_intrigue"/>
+      <product key="blackberry_curve_8900"/>
+      <product key="blackberry_pearl_8130"/>
+      <product key="nokia_n79"/>
+      <product key="htc_touch_diamond"/>
+      <product key="lg_versa"/>
+      <product key="samsung_impression"/>
+      <product key="samsung_memoir_t929"/>
+      <product key="samsung_omnia"/>
+      <product key="blackberry_storm"/>
+      <product key="sony_ericsson_xperia_x1"/>
+      <product key="samsung_knack_sch-u310"/>
+      <product key="sanyo_scp-2700"/>
+      <product key="samsung_propel_pro"/>
+      <product key="nokia_e63"/>
+      <product key="samsung_instinct_s30"/>
+      <product key="samsung_sgh-a657"/>
+      <product key="lg_xenon"/>
+      <product key="nokia_6500_classic"/>
+      <product key="motorola_i9_stature"/>
+      <product key="lg_cf360"/>
+      <product key="blackberry_pearl_flip_8220"/>
+      <product key="palm_eos"/>
+      <product key="htc_touch_cruise_2009"/>
+      <product key="samsung_trance"/>
+      <product key="lg_vx8350"/>
+      <product key="motorola_renew_w233"/>
+      <product key="nokia_n85"/>
+      <product key="lg_lotus"/>
+      <product key="samsung_s8300_ultratouch"/>
+      <product key="lg_arena"/>
+      <product key="nokia_5130_xpressmusic"/>
+      <product key="sony_ericsson_w508"/>
+    </product_keys>
+    <quizzes>
+      <quiz key="cell_phones">
+        <product key="blackberry_bold_9000"/>
+        <product key="apple_iphone_3g"/>
+        <product key="palm_pre"/>
+        <product key="nokia_e75"/>
+        <product key="nokia_n96"/>
+        <product key="nokia_e71"/>
+        <product key="nokia_5800_xpressmusic"/>
+        <product key="nokia_7205_intrigue"/>
+        <product key="blackberry_curve_8900"/>
+        <product key="blackberry_pearl_8130"/>
+        <product key="nokia_n79"/>
+        <product key="htc_touch_diamond"/>
+        <product key="lg_versa"/>
+        <product key="samsung_impression"/>
+        <product key="samsung_memoir_t929"/>
+        <product key="samsung_omnia"/>
+        <product key="blackberry_storm"/>
+        <product key="sony_ericsson_xperia_x1"/>
+        <product key="samsung_knack_sch-u310"/>
+        <product key="sanyo_scp-2700"/>
+        <product key="samsung_propel_pro"/>
+        <product key="nokia_e63"/>
+        <product key="samsung_instinct_s30"/>
+        <product key="samsung_sgh-a657"/>
+        <product key="lg_xenon"/>
+        <product key="nokia_6500_classic"/>
+        <product key="motorola_i9_stature"/>
+        <product key="lg_cf360"/>
+        <product key="blackberry_pearl_flip_8220"/>
+        <product key="palm_eos"/>
+        <product key="htc_touch_cruise_2009"/>
+        <product key="samsung_trance"/>
+        <product key="lg_vx8350"/>
+        <product key="motorola_renew_w233"/>
+        <product key="nokia_n85"/>
+        <product key="lg_lotus"/>
+        <product key="samsung_s8300_ultratouch"/>
+        <product key="lg_arena"/>
+        <product key="nokia_5130_xpressmusic"/>
+        <product key="sony_ericsson_w508"/>
+      </quiz>
+    </quizzes>
+  </feature>
+</knowledge>

@@ -78,8 +78,8 @@ class Feature < Model
     type = self.class.to_s.downcase; type.slice!("pikizi::feature")
     node_feature = super(top_node, "feature") 
     node_feature['type'] = type
-    node_feature['min_rating'] = min_rating if min_rating
-    node_feature['max_rating'] = max_rating if max_rating
+    node_feature['min_rating'] = min_rating.to_s if min_rating
+    node_feature['max_rating'] = max_rating.to_s if max_rating
     node_feature['rating_by'] = rating_by if rating_by
 
     if sub_features and sub_features.size > 0      
@@ -228,7 +228,6 @@ class Knowledge < Feature
   end
 
 
-
   # load an xml file... and retutn a Knowledge object
   def self.create_from_xml(knowledge_key)
     unless key_exist?(knowledge_key)
@@ -249,7 +248,7 @@ class Knowledge < Feature
     node_knowledge << (node_questions = XML::Node.new('questions'))
     questions.each { |question| question.generate_xml(node_questions) }
     node_knowledge << (node_product_keys = XML::Node.new('product_keys'))
-    products.each { |product|  node_product_keys << (node_product_key = XML::Node.new('product')); node_product_key["key"] = product.key }
+    product_keys.each { |product_key|  node_product_keys << (node_product_key = XML::Node.new('product')); node_product_key["key"] = product_key }
     node_knowledge << (node_quizzes = XML::Node.new('quizzes'))
     quizzes.each { |quiz| quiz.generate_xml(node_quizzes) }
     node_knowledge
@@ -280,9 +279,52 @@ class Knowledge < Feature
   # return the number of questions handled by this model
   def nb_questions() questions.size end
 
-  # sort the questions by separation desc
+  # sort the questions by criterions
+  def questions_sorted(products, user)
+    questions_with_discrimination = questions.collect { |q| [q, q.discrimination(user)] }
+    question_with_discrimination_sorted = questions_with_discrimination.sort! { |q1, q2| q2.last <=> q1.last }
+    question_with_discrimination_sorted.collect(&:first)
+  end
 
-  def questions_sorted_by_separation(products, user) questions.sort! { |q1, q2| q2.separation(products, user) <=> q1.separation(products, user) } end
+  # launched by a rake task
+  # compute all separators for this knowledge for each tupple p1/p2 (commutatif)
+  # store a list of product_1_key x product_2_key and an ordered list of question_keys as a result
+  def compute_separators
+    hash_result = {}
+    list_products = products
+    questions.each do |question|
+      question.compute_separators(list_products).each do |pkey1, h2|
+        h2.each do |pkey2, delta|
+          if delta > 0
+            (hash_result[pkey1] ||= {})[pkey2] ||= []
+            hash_result[pkey1][pkey2] << [question.key, delta]
+          end
+        end
+      end
+    end
+
+    # generate the final separator [p1_key][p2_key] = orderlist of discriminate questions
+    # and store in cache
+    hash_result.each do |pkey1, h2|
+      h2.each do |pkey2, list|
+        raise "Error symetry cache key / separator #{pkey1} #{pkey2}" unless pkey1 > pkey2
+        Rails.cache.write(Knowledge.key_separator(pkey1, pkey2), list.sort { |e1, e2| e2.last <=> e1.last }.collect(&:first))
+      end
+    end
+
+  end
+
+  # key separator for cache
+  # knowledge_key@product_1_key@product_2_key (with pkey1 > pkey2)
+  def key_separator(pkey1, pkey2)
+    raise "Error pkey1=#{pkey1} can't be equal to pkey2" if pkey1 == pkey2
+    pkey1, pkey2 = pkey2, pkey1 if pkey1 < pkey2
+    "#{key}@#{pkey1}@#{pkey2}"
+  end
+
+  def get_questions_splitting(pkey1, pkey2)
+    Rails.cache.fetch(Knowledge.key_separator(pkey1, pkey2))    
+  end
 
   # return the number of questions handled by this model
   def nb_quizzes() quizzes.size end
@@ -312,7 +354,7 @@ class Knowledge < Feature
   def trigger_tips(quiz_instance, question, products, choices_ok, simulation)
 
     choice_keys_ok = choices_ok.collect(&:key)
-    answer = quiz_instance.record_answer(question.key, choice_keys_ok)
+    answer = quiz_instance.record_answer(self.key, question.key, choice_keys_ok)
 
     hash_pkey_affinity = quiz_instance.hash_productkey_affinity
     hash_pkey_affinity = hash_pkey_affinity.inject({}) { |h, (pkey, a)| h[pkey] = a.clone } if simulation
@@ -327,11 +369,31 @@ class Knowledge < Feature
 
   end
 
-  def get_question_from_key(q_key)
-    questions.detect { |q| q.key == q_key }
-  end
+  def get_question_from_key(q_key) questions.detect { |q| q.key == q_key } end
 
   def get_feature_by_key(f_key) hash_key_feature[f_key] end
+
+  # cache management for:
+  # number of time a question was presented
+  # number of time a question was answered
+  # number of time a given choice was selected
+  def self.counter_question_presentation(knowledge_key, question_key, options={}) cache_action("#{knowledge_key}@#{question_key}@presentation", options) end
+  def self.counter_question_oo(knowledge_key, question_key, options={}) cache_action("#{knowledge_key}@#{question_key}@oo", options) end
+  def self.counter_choice_ok(knowledge_key, question_key, choice_key, options={}) cache_action("#{knowledge_key}@#{question_key}@#{choice_key}@ok", options) end
+  def self.cache_action(key, options)
+    if options.size == 0 # no options
+      Rails.cache.fetch(key)
+    elsif initial_value = options[:initialize]
+      puts "writing initial value=#{initial_value}"
+      Rails.cache.write(key, initial_value)
+    elsif options[:increment] > 0
+      Rails.cache.increment(key)
+    elsif options[:increment] < 0
+      Rails.cache.decrement(key)
+    else
+      raise "error unknown options=#{options.inspect}"
+    end
+  end
 
 end
 
@@ -671,13 +733,18 @@ end
 # Question/Answer can be set-up, from already existing customer profile data
 class Question < Model
 
-  attr_accessor :is_choice_exclusive, :choices, :precondition_expression, :nb_presentation, :nb_oo
-  
+  attr_accessor :is_choice_exclusive, :choices, :precondition_expression
+  attr_accessor :nb_presentation_static, :nb_oo_static
+
+  def nb_presentation() @nb_presentation ||= (Knowledge.counter_question_presentation(knowledge_key, key) || nb_presentation_static) end
+  def nb_oo() @nb_oo ||= (Knowledge.counter_question_oo(knowledge_key, key) || nb_oo_static) end
+  def nb_presentation_valid() @nb_presentation_valid ||= (nb_presentation - nb_oo) end
+
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node, knowledge)
     self.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
-    self.nb_presentation = Float(xml_node['nb_presentation'] || 0.0)
-    self.nb_oo = Float(xml_node['nb_oo'] || 0.0)
+    self.nb_presentation_static = Float(xml_node['nb_presentation'] || 0.0)
+    self.nb_oo_static = Float(xml_node['nb_oo'] || 0.0)
     self.choices = Root.get_collection_from_xml(xml_node, "choice") { |node_choice| Choice.create_from_xml(node_choice, knowledge, self) }
     node_expression = xml_node.find_first('if/expression')
     self.precondition_expression = (Expression.create_from_xml(node_expression) if node_expression)
@@ -708,16 +775,18 @@ class Question < Model
   # step #2.1 record_answer (called by user.record_answer)
   def record_answer(user, choices_ok, reverse_mode)
    increment = reverse_mode ? -1.0 : +1.0
-   self.nb_presentation += increment
+
+   Knowledge.counter_question_presentation(knowledge_key, key, {:increment => increment})
+
     if choices_ok.size == 0
       # this is a no opinion
-      self.nb_oo += increment
+      Knowledge.counter_question_oo(knowledge_key, key, {:increment => increment})
     else
       choices_ok.each { |choice| choice.record_answer(user, reverse_mode) }
     end
   end
 
-  def nb_presentation_valid() nb_presentation - nb_oo end
+
   
   # compute how this question is discriminating for this user's clsuter
   # return a 0.0 .. 1.0
@@ -725,8 +794,7 @@ class Question < Model
   def discrimination(user=nil)
     if is_choice_exclusive
       # to write for exclusive choices
-      #choices.collect { |choice| choice.discrimination(user) }
-      -9.99
+      choices.collect { |choice| choice.discrimination(user) }.max
     else
       # non exclusive choices
       choices_discriminations_sorted_ascending = choices.collect { |choice| choice.discrimination(user) }.sort!
@@ -740,17 +808,22 @@ class Question < Model
     end
   end
 
-  # compute the separation factor of each question
-  def separation(products, user=nil)
-    if is_choice_exclusive
-      # separation is the max of each separation
-      choices.collect { |choice| choice.separation(products, user) }.max
-    else
-      # sepration is the sum of each separation
-      choices.inject(0.0) { |sum, choice| sum += choice.separation(products, user) }
+  # compute the separation between pair of products for a given question
+  # returns a hash[product_1_key][product_2_key] = sum delta (between 0 and ...)
+  def compute_separators(products)
+    hash_result = {}
+    choices.each do |choice|
+      choice.compute_separators(products).each do |pkey1, h2|
+        proba_user_ok_for_choice = choice.proba_ok
+        h2.each do |pkey2, delta|
+          (hash_result[pkey1] ||= {})[pkey2] ||= 0.0
+          hash_result[pkey1][pkey2] += delta * proba_user_ok_for_choice
+        end
+      end
     end
+    hash_result
   end
-  
+
   # define the proba of no opinion 0.0 .. 1.0
   def proba_oo(user=nil) @nb_presentation == 0.0 ? 0.0 : (@nb_oo /  @nb_presentation) end     
   def proba_valid(user=nil) 1.0 - proba_oo(user) end
@@ -773,13 +846,17 @@ end
 # model a binary variable. true, false
 class Choice < Model
 
-  attr_accessor :nb_ok, :is_choice_exclusive, :recommendations, :question
-  
+  attr_accessor :is_choice_exclusive, :recommendations, :question
+  attr_accessor :nb_ok_static
+
+  def nb_ok() @nb_ok ||= (Knowledge.counter_choice_ok(knowledge_key, question.key, key) || nb_ok_static) end
+  def nb_ko() @nb_ko ||= (question.nb_presentation_valid - nb_ok) end
+
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node, knowledge)
     self.is_choice_exclusive = (xml_node['is_choice_exclusive'] == 'true' ? true : false)
-    self.recommendations = Root.get_collection_from_xml(xml_node, 'recommendations/recommendation') { |node_recommendation| Recommendation.create_from_xml(node_recommendation, knowledge) }
-    self.nb_ok = Float(xml_node['nb_ok'] || 0.0)
+    self.recommendations = Root.get_collection_from_xml(xml_node, 'recommendation') { |node_recommendation| Recommendation.create_from_xml(node_recommendation, knowledge) }
+    self.nb_ok_static = Float(xml_node['nb_ok'] || 0.0)
 
   end
 
@@ -793,12 +870,10 @@ class Choice < Model
     node_choice = super(top_node, classname) 
     node_choice['is_choice_exclusive'] = is_choice_exclusive.to_s
     node_choice['nb_ok'] = nb_ok.to_s
-    node_choice << (node_recommendations = XML::Node.new('recommendations'))
-    recommendations.each { |recommendation| recommendation.generate_xml(node_recommendations) }
+    recommendations.each { |recommendation| recommendation.generate_xml(node_choice) }
     node_choice
   end
 
-  def nb_ko() question.nb_presentation_valid - nb_ok end
 
   NB_ANSWERS_4_MAX_CONFIDENCE = 5.0
   # confidence on proba
@@ -817,31 +892,29 @@ class Choice < Model
   # if user is nil returns the discrimantion global
   def discrimination(user=nil) 1.0 - ((proba_ok(user) - 0.5).abs * 2.0) end
 
-  # describe a separation factor (between 0 and 1)
-  # 1 means that if a user answer ok to this choice, this will separate highly separate/discriminate the considered products
-  # 0 means that if a user answer ok tthere is no change in ranking these products
-  def separation(products, user=nil)
-    # right now, this is global (the user variable is for later)
-    hash_pkey_tensor = generate_hash_pkey_tensor(products, true) # generate with fake tensor
-    hash_weight_tensors = hash_pkey_tensor.group_by { |pkey, tensor| tensor.weight }
-    if hash_weight_tensors.size >= 2
-      # build each asymetric pair or values
-      separation_sum = 0.0
-      hash_weight_tensors.each_with_index do |(value1, tensors1), i|
-        hash_weight_tensors.each_with_index do |(value2, tensors2), j|
-          separation_sum += tensors1.size * tensors2.size * (value1 - value2).abs if j > i
+
+  # compute the separation between pair of products
+  # returns a hash[product_1_key][product_2_key] = delta max (between 0 and 1)
+  def compute_separators(products)
+    hash_result = {}
+    hash_pkey_tensor = generate_hash_pkey_tensor(products, true)
+    # looping on products
+    hash_pkey_tensor.each_with_index do |(pkey1, tensors1), i|
+      weight_1 = Tensor.sum_weight(tensors1)
+      hash_pkey_tensor.each_with_index do |(pkey2, tensors2), j|
+        weight_2 = Tensor.sum_weight(tensors2)
+        if pkey1 > pkey2 and weight_1 != weight_2
+          (hash_result[pkey1] ||= {})[pkey2] = ((weight_1 - weight_2).abs / 2.0)
         end
       end
-      separation_sum * proba_ok(user)
-    else
-      0.0
     end
+    hash_result
   end
 
 
   # record a choice by a user
   def record_answer(user, reverse_mode)
-    self.nb_ok += (reverse_mode ? -1.0 : +1.0)
+    Knowledge.counter_choice_ok(knowledge_key, question.key, key, {:increment => (reverse_mode ? -1.0 : +1.0)})
   end
 
 
@@ -994,11 +1067,12 @@ end
 # generate_hash_pkey_tensor is a hash of product_key with an associated recommendation tensor (-1.00 .. +1.00)
 class Recommendation < Model
   # abstract class 
-  attr_accessor :weight
+  attr_accessor :weight, :is_reverse
     
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node, knowledge)
     self.weight = Float(xml_node['weight'])
+    self.is_reverse = xml_node['reverse'] == "true"
   end
 
   def self.create_new_instance_from_xml(xml_node) 
@@ -1014,6 +1088,7 @@ class Recommendation < Model
     type = self.class.to_s.downcase; type.slice!("pikizi::recommendation")
     node_recommendation['type'] = type
     node_recommendation['weight'] = weight.to_s
+    node_recommendation['reverse'] = "true" if is_reverse
     node_recommendation
   end
     
@@ -1023,29 +1098,94 @@ class Recommendation < Model
 
 end
 
-# generate_hash_pkey_tensor for a given product
+# generate_hash_pkey_tensor according to a predicate
+class RecommendationPredicate < Recommendation
+
+    attr_accessor :predicate, :mode # preference or filter
+
+    def initialize_from_xml(xml_node, knowledge)
+      super(xml_node, knowledge)
+      self.predicate = xml_node['predicate']
+      self.mode = xml_node['mode']
+    end
+
+    def generate_xml(top_node, classname=nil)
+      node_recommendation_predicate = super(top_node, classname)
+      node_recommendation_predicate['predicate'] = predicate
+      node_recommendation_predicate['mode'] = mode
+      node_recommendation_predicate
+    end
+
+    def generate_hash_pkey_tensor(products)
+      # interpreting predicate
+      # prefix $ means feature key
+      # prefix @ means a value for a feature
+      evaluable_predicate = RecommendationPredicate.to_ruby_eval(predicate, knowledge_key)
+
+      # select all product that return true for the predicate
+      products.inject({}) do |hash_result, product|
+        begin
+          if eval(evaluable_predicate)
+            hash_result[product.key] = Pikizi.const_get("Tensor#{mode.capitalize}").new(product, weight)
+          elsif is_reverse
+            hash_result[product.key] = Pikizi.const_get("Tensor#{mode.capitalize}").new(product, -weight)
+          end
+        rescue
+          puts "I can't evaluate #{evaluable_predicate}"
+        end
+        hash_result
+      end
+    end
+
+    # convert a xml predicate to a string evalable by ruby
+    def self.to_ruby_eval(xml_predicate, knowledge_key)
+      xml_predicate.split(' ').collect do |t|
+        prefix = t[0..0]
+        tail = t[1..t.size-1]
+        case prefix
+          when "$" then tail == "key" ? "product.key" : "product.get_values('#{knowledge_key}', '#{tail}').first"
+          when "@" then "'#{tail}'"
+          else t
+        end
+      end.join(' ')
+    end
+
+    def to_s() "#{mode[0..0]}@#{predicate}=#{weight}" end
+
+end
+
+
+# generate_hash_pkey_tensor for a given product (or list of products)
 class RecommendationProduct < Recommendation
-  attr_accessor :product_key, :mode # preference or filter
+  attr_accessor :product_keys, :mode # preference or filter
   
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node, knowledge)
-    self.product_key = xml_node['product_key'] 
+    raise "eror no produt key for recommendation" unless xml_node['product_key']
+    self.product_keys = xml_node['product_key'].split(' ')
     self.mode = xml_node['mode']  
   end
   
   def generate_xml(top_node, classname=nil)
     node_recommendation_product = super(top_node, classname)
-    node_recommendation_product['product_key'] = product_key
+    node_recommendation_product['product_key'] = product_keys.join(' ')
     node_recommendation_product['mode'] = mode
     node_recommendation_product
   end
   
   def generate_hash_pkey_tensor(products)
-    product = products.detect { |p| p.key == product_key }
-    product ? { product.key => Pikizi.const_get("Tensor#{mode.capitalize}").new(product, weight) } : {}
+    products_scope = products.select { |p| product_keys.include?(p.key) }
+    products.inject({}) do |h, product|
+      if product_keys.include?(product.key)
+        h[product.key] = Pikizi.const_get("Tensor#{mode.capitalize}").new(product, weight)
+      elsif is_reverse
+        h[product.key] = Pikizi.const_get("Tensor#{mode.capitalize}").new(product, -weight)
+      end
+      h
+    end
   end
 
-  def to_s() "#{mode[0..0]}@#{product_key}=#{weight}" end
+  def to_s() "#{mode[0..0]}@#{product_keys}=#{weight}" end
 
 end
 
@@ -1121,6 +1261,9 @@ class Tensor
     self.weight += other_tensor.weight
     self
   end
+
+  # sum the weight of a list of tensors
+  def self.sum_weight(tensors) tensors.inject(0.0) { |s, t| s += t.weight } end
 
   
 end

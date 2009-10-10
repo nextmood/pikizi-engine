@@ -7,11 +7,16 @@ require 'xml'
 class User < Root
 
   attr_accessor :key, :reputation, :category, :quiz_instances , :authored_opinions
+  attr_accessor :rpx_identifier, :rpx_name, :rpx_username, :rpx_email
 
   def initialize_from_xml(xml_node)
     super(xml_node)
     self.reputation =  Float(xml_node['reputation'] || 1.0)
     self.category =  xml_node['category'] || "citizen"
+    self.rpx_identifier = xml_node['rpx_identifier']
+    self.rpx_name = xml_node['rpx_name']
+    self.rpx_username = xml_node['rpx_username']
+    self.rpx_email = xml_node['rpx_email']
     self.quiz_instances = Root.get_collection_from_xml(xml_node, 'quiz_instances/quizinstance') { |node_quizinstance| Quizinstance.create_from_xml(node_quizinstance) }
     self.authored_opinions = Root.get_collection_from_xml(xml_node, 'authored/opinion') { |node_authored_opinion| Opinion.create_from_xml(node_authored_opinion) }
   end
@@ -21,7 +26,10 @@ class User < Root
     node_user = super(top_node)
     node_user['reputation'] = (reputation || 1.0).to_s
     node_user['category'] = category || "citizen"
-
+    node_user['rpx_identifier'] = rpx_identifier if rpx_identifier
+    node_user['rpx_name'] = rpx_name if rpx_name
+    node_user['rpx_username'] = rpx_username if rpx_username
+    node_user['rpx_email'] = rpx_email if rpx_email
     node_user << (node_quiz_instances = XML::Node.new('quiz_instances'))  
     quiz_instances.each { |qi| qi.generate_xml(node_quiz_instances) } if quiz_instances
     node_user << (node_authored = XML::Node.new('authored'))  
@@ -33,19 +41,29 @@ class User < Root
     Rails.cache.fetch("U#{user_key}", :force => reload) { User.create_from_xml(user_key) }
   end
 
+  def self.create_new_user(key, rpx_data)
+    raise "key #{} already exists" if key_exist?(user_key)
+    pkz_user = Pikizi::User.new
+    pkz_user.key = user_key
+    pkz_user.rpx_identifier = rpx_data[:identifier]
+    pkz_user.rpx_name = rpx_data[:name]
+    pkz_user.rpx_username = rpx_data[:username]
+    pkz_user.rpx_email = rpx_data[:email]
+    pkz_user.label = pkz_user.rpx_username
+
+    pkz_user.authored_opinions = []
+    pkz_user.quiz_instances = []
+    pkz_user.reputation = 1.0
+    pkz_user.save # save in a file
+    PK_LOGGER.info "creating New user #{user_key}"
+    pkz_user
+  end
+
   # load an xml file... and retutn a User object
   def self.create_from_xml(user_key)
     raise "error user_key=#{user_key.inspect}" unless user_key
-    unless key_exist?(user_key)
-      pkz_user = Pikizi::User.new
-      pkz_user.key = user_key
-      pkz_user.label = "Label for #{user_key}"
-      pkz_user.authored_opinions = []
-      pkz_user.quiz_instances = []
-      pkz_user.reputation = 1.0
-      pkz_user.save # save in a file
-      PK_LOGGER.info "creating XML user #{user_key}"
-    end
+    raise "key #{key} doesn't exist" unless key_exist?(user_key)
+
     PK_LOGGER.info "loading XML user #{user_key} from filesystem"
     super(XML::Document.file(filename_data(user_key)).root)
   end
@@ -86,15 +104,23 @@ class User < Root
   # return nil if there is no question available
   def get_next_question(knowledge, quiz)
     quiz_instance = get_quiz_instance(quiz)
-    unanswered_questions = knowledge.questions.find_all { |question| !quiz_instance.user_last_answer(question.key) }
+    candidate_questions = get_candidate_questions(knowledge, quiz_instance)
     quiz_products = quiz.products
-    if unanswered_questions.size > 0
-      # get the question with the best separartion factor
-      unanswered_questions.max { |q1, q2| q1.separation(quiz_products, self) <=> q2.separation(quiz_products, self) }
+    if candidate_questions.size > 0
+      # get the question with the best separaration factor
+      # take the 2 closest products...
+      candidate_questions.first
     else
       # the user has answered all questions
       nil
     end    
+  end
+
+  # return the questions that can be ask to this user
+  # i.e. the unanswered question and precondition ok
+  def get_candidate_questions(knowledge, quiz_instance)
+    # TO DO include the pre-condition
+    knowledge.questions.find_all { |question| !quiz_instance.user_last_answer(question.key) }
   end
 
   def add_opinion(knowledge_key, feature_key, product_key, value)
@@ -206,8 +232,8 @@ class Quizinstance < Root
   end
 
   # record a user's answer  for this quizinstance
-  def record_answer(question_key, choice_keys_ok)
-    (hash_answered_question_answers[question_key] ||= []) << (answer = Answer.create_with_parameters(question_key, choice_keys_ok))
+  def record_answer(knowledge_key, question_key, choice_keys_ok)
+    (hash_answered_question_answers[question_key] ||= []) << (answer = Answer.create_with_parameters(knowledge_key, question_key, choice_keys_ok))
     answer
   end
 
@@ -305,10 +331,11 @@ end
 # has answer ok assiociated
 class Answer < Root
 
-  attr_accessor :question_key, :timestamp, :answers_ok
+  attr_accessor :knowledge_key, :question_key, :timestamp, :answers_ok
 
   def initialize_from_xml(xml_node)
     super(xml_node)
+    self.knowledge_key = xml_node['knowledge_key']
     self.question_key = xml_node['question_key']
     self.timestamp =  Time.parse(xml_node['timestamp'])
     self.answers_ok = Root.get_collection_from_xml(xml_node, 'answerok') { |node_answerok| Answerok.create_from_xml(node_answerok) }
@@ -318,6 +345,7 @@ class Answer < Root
 
   def generate_xml(top_node)
     node_answer = super(top_node)
+    node_answer['knowledge_key'] = knowledge_key
     node_answer['question_key'] = question_key
     node_answer['timestamp'] = timestamp.strftime(Root.default_date_format)  
     answers_ok.each { |answer_binary| answer_binary.generate_xml(node_answer)}
@@ -325,8 +353,9 @@ class Answer < Root
   end
 
   # create a new answer object (with subobjects)
-  def self.create_with_parameters(question_key, choice_keys_ok)
+  def self.create_with_parameters(knowledge_key, question_key, choice_keys_ok)
     answer = Answer.new
+    answer.knowledge_key = knowledge_key
     answer.question_key = question_key
     answer.timestamp = Time.now
     answer.answers_ok = choice_keys_ok.collect {|choice_key_ok| Answerok.create_with_parameters(choice_key_ok) }

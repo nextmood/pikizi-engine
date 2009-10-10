@@ -20,7 +20,7 @@ class Product < Root
   end
 
 
-  def self.get_from_cache(product_key, reload=nil)  
+  def self.get_from_cache(product_key, reload=nil)
     Rails.cache.fetch("P#{product_key}", :force => reload) { Product.create_from_xml(product_key) }  
   end
 

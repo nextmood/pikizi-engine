@@ -9,8 +9,7 @@
             <div style="font-size:90%;">
                 <%= pluralize @question.nb_presentation.round, "presentation" %>
                 [valid=<%= "%d" % @question.nb_presentation_valid %> (<%= "%d" % (@question.proba_valid * 100) %>%),&nbsp;
-                no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)],&nbsp;
-                separation=<%= "%d" % @question.separation(@products) %>
+                no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)]&nbsp;
                 (<%= pluralize @question.nb_recommendation, "recommendation" %>)
                 <br/>
                 pre-condition:<%= @question.precondition_expression || 'none' %>,&nbsp;
@@ -27,10 +26,9 @@
               <div  style="font-size:90%;">
                 statistic:
                 ok=<%= "%d" % choice.nb_ok %> (<%= "%d" % (choice.proba_ok * 100) %>%),&nbsp;
-                ko=<%= "%d" % choice.nb_ko %> (<%= "%d" % (choice.proba_ko * 100) %>%), &nbsp;
+                ko=<%= "%d" % choice.nb_ko %> (<%= "%d" % (choice.proba_ko * 100) %>%)&nbsp;
                 <!-- discrimination=<%= "%d" % (choice.discrimination * 100) %>%,&nbsp; -->
-                separation=<%= "%d" % choice.separation(@products, nil) %>
-                
+
                 
               <div>
 

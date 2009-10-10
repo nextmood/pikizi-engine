@@ -4,7 +4,7 @@ require 'pikizi'
 class User < ActiveRecord::Base
 
   def pkz_user    
-    @pkz_user ||= Pikizi::User.get_from_cache(key)
+    @pkz_user ||= Pikizi::User.create_from_xml(key)
   end
 
 
@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
                             :rpx_email => rpx_data[:email],
                             :promotion_code => promotion_code,
                             :key => key)
+    # create xml file
+    Pikizi::User.create_new_user(key, rpx_data)
     new_user.update_attribute(:key, "U#{new_user.id}") unless key
     new_user
   end

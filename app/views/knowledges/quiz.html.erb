@@ -49,8 +49,7 @@
       <%= next_question.key %>,&nbsp;
       <%= pluralize next_question.nb_choices, "choice" %>,&nbsp;
       <%= next_question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
-      pre-condition:<%= next_question.precondition_expression || 'none' %>,&nbsp;
-      separation=<%= next_question.separation(@quiz.products, nil) %>
+      pre-condition:<%= next_question.precondition_expression || 'none' %>
     </small>
     <!-- the form -->
     <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
@@ -92,7 +91,7 @@
       </ul>
   </td><td width="50%" valign="top">
     
-      <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
+      <% for question in @knowledge.questions_sorted(@quiz.products, @current_ar_user.pkz_user) %>
           <% if answered_choice_keys = @quiz_instance.user_last_answer_choice_keys_ok(question.key) %>
               <%= render(:partial => "knowledges/quiz_question",
                          :locals => { :answered_choice_keys => answered_choice_keys,
@@ -103,7 +102,7 @@
           <% end %>
       <% end %>
 
-      <% for question in @knowledge.questions_sorted_by_separation(@quiz.products, @current_ar_user.pkz_user) %>
+      <% for question in @knowledge.questions_sorted(@quiz.products, @current_ar_user.pkz_user) %>
           <% unless answered_choice_keys = @quiz_instance.user_last_answer_choice_keys_ok(question.key) %>
               <%= render(:partial => "knowledges/quiz_question",
                          :locals => { :answered_choice_keys => answered_choice_keys,

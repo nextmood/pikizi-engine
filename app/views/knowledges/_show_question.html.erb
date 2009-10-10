@@ -2,7 +2,6 @@
 <small>
   &nbsp;#<%= question.key %>,&nbsp;
   pre-condition:<%= question.precondition_expression || 'none' %>,&nbsp;
-  <%= pluralize question.nb_presentation.round, "presentation" %>,&nbsp;
-  separation=<%= "%d" % question.separation(products) %>
+  <%= pluralize question.nb_presentation.round, "presentation" %>&nbsp;
   (<%= pluralize question.nb_recommendation, "recommendation" %>)
 </small>

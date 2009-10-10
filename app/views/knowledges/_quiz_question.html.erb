@@ -7,7 +7,6 @@
       <div style="font-size:80%;">
         presentation=<%= question.nb_presentation.round %>
         (<%= pluralize question.nb_oo.round, "no opinion" %>),&nbsp;
-        separation=<%= question.separation(quiz.products, current_ar_user.pkz_user).round %>,&nbsp;
         confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>
       </div>
       <%= question.choices.collect do |c|
