@@ -62,7 +62,7 @@ class User < Root
   # load an xml file... and retutn a User object
   def self.create_from_xml(user_key)
     raise "error user_key=#{user_key.inspect}" unless user_key
-    raise "key #{key} doesn't exist" unless key_exist?(user_key)
+    raise "key #{user_key} doesn't exist" unless key_exist?(user_key)
 
     PK_LOGGER.info "loading XML user #{user_key} from filesystem"
     super(XML::Document.file(filename_data(user_key)).root)
