@@ -1071,6 +1071,7 @@ class Recommendation < Model
     
   def initialize_from_xml(xml_node, knowledge)
     super(xml_node, knowledge)
+    self.key = nil
     self.weight = Float(xml_node['weight'])
     self.is_reverse = xml_node['reverse'] == "true"
   end
