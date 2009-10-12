@@ -22,6 +22,18 @@ class KnowledgesController < ApplicationController
     end
   end
 
+  def distance
+    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
+    @feature = params[:feature_key] ? @knowledge.get_feature_by_key(params[:feature_key]) : @knowledge
+    @products = @knowledge.products.sort! { |p1, p2| p1.key <=> p2.key }
+  end
+
+  def matrix
+    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
+    @products = @knowledge.products
+    @features = @knowledge.each_feature_collect(true) { |feature| feature }.flatten
+  end
+
   def edit_by_key
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
   end

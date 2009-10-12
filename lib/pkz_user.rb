@@ -42,7 +42,7 @@ class User < Root
   end
 
   def self.create_new_user(key, rpx_data)
-    raise "key #{} already exists" if key_exist?(user_key)
+    raise "key #{key} already exists" if key_exist?(key)
     pkz_user = Pikizi::User.new
     pkz_user.key = user_key
     pkz_user.rpx_identifier = rpx_data[:identifier]

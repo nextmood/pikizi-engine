@@ -5,7 +5,8 @@ module KnowledgesHelper
     quizz_text = pluralize(knowledge.nb_quizzes, "quiz")
     quizz_text = link_to(quizz_text, "/quiz/#{first_quiz.key}") if first_quiz
     [ [ :model , link_to(pluralize(knowledge.nb_features, "feature"), "/show/#{knowledge.key}") ],
-      [ :products , pluralize(knowledge.nb_products, "product") ],
+      [ :matrix , link_to("Matrix", "/matrix/#{knowledge.key}") ],
+      [ :distance , link_to("Distance", "/distance/#{knowledge.key}") ],
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.key}") ],
       [ :quizzes , quizz_text   ]  ]
   end
@@ -23,5 +24,14 @@ module KnowledgesHelper
     s << "</div>"
     "<div class=\"pkz_menu\">#{s}</div>"
   end
+
+  def feature_selector(knowledge, feature_selected_key)
+    features_list = knowledge.each_feature_collect(false) { |feature| feature }.flatten
+    select("option", "feature_key", features_list.collect { |f| [f.label_hierarchical, f.key]}, { :selected => feature_selected_key },
+      :onchange => "window.location = '/distance/#{@knowledge.key}/' + document.getElementById('option_feature_key').value ")
+  end
+
+
+
 
 end

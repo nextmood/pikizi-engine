@@ -45,7 +45,7 @@ end
 class Feature < Model
   # abstract class 
   
-  attr_accessor :feature_parent, :sub_features, :min_rating, :max_rating, :rating_by             
+  attr_accessor :feature_parent, :sub_features, :min_rating, :max_rating, :rating_by, :weight_in_product_distance
 
   def initialize_from_xml(xml_node, feature_parent)
     super(xml_node, feature_parent ? feature_parent.knowledge : self)
@@ -53,6 +53,7 @@ class Feature < Model
     self.min_rating = (xml_node['min_rating'] || nil)
     self.max_rating = (xml_node['max_rating'] || nil)
     self.rating_by = (xml_node['rating_by'] || nil)
+    self.weight_in_product_distance = Float((xml_node['distance'] || 0.0))
     self.sub_features = Root.get_collection_from_xml(xml_node, "sub_features/feature") { |node| Feature.create_from_xml(node, self) }
     knowledge.hash_key_feature[key] = self
   end
@@ -81,6 +82,7 @@ class Feature < Model
     node_feature['min_rating'] = min_rating.to_s if min_rating
     node_feature['max_rating'] = max_rating.to_s if max_rating
     node_feature['rating_by'] = rating_by if rating_by
+    node_feature['distance'] = weight_in_product_distance.to_s if weight_in_product_distance != 0.0
 
     if sub_features and sub_features.size > 0      
       node_feature << (node_sub_features = XML::Node.new('sub_features'))
@@ -136,8 +138,19 @@ class Feature < Model
     end
   end
 
-  def label_hierarchical() feature_parent ? "#{feature_parent.label_hierarchical}/#{label}" : label  end
+  def label_hierarchical(first=true) feature_parent ? "#{feature_parent.label_hierarchical(nil)}#{label}#{'/' unless first}" : "" end
 
+  # use to explore thefeature hierarchicly
+  # a block should return somethinf for a feature
+  # return a hierarchical list
+  def each_feature_collect(except_first, &block)
+    l = []
+    l << [block.call(self)] unless except_first
+    l << semantic_sub_features.collect { |sub_feature| sub_feature.each_feature_collect(false, &block) } if semantic_sub_features.size > 0
+    l
+  end
+
+  def semantic_sub_features() sub_features end
 
   # ------------------------------------------------------------------------------------------
   # manage the value for a given feature / product
@@ -157,14 +170,19 @@ class Feature < Model
   def string2value(x) x end
   def value2string(x) x.to_s end
 
+  # define the distance between  2 products for this feature
+  def distance(product1, product2) "Undef #{get_value(product1).inspect}" end
+
+
   # return the  FeatureValue(s) for a product
   # return nil, if no value
   def get_values(product)
     values = product.get_values(knowledge_key, key)
-    puts "***** #{product.key} values for feature #{label} #{self.class} = #{values.inspect}"
+    # puts "***** #{product.key} values for feature #{label} #{self.class} = #{values.inspect}"
     values.collect {|v|  (v.nil? or v == "") ? nil : string2value(v) } if values
   end
 
+  def get_value(product) get_values(product).first end
 
   # ------------------------------------------------------------------------------------------
   # manage the background for a given feature / product
@@ -438,6 +456,8 @@ class FeatureTag < Feature
     super(product, extra, false)
   end
 
+  def semantic_sub_features() [] end
+  
   def get_html_editor(product)
     if product
       values = get_values(product)
@@ -491,6 +511,18 @@ class FeatureRating < Feature
     node_feature_rating
   end
 
+  
+  # define the distance between  2 products for this feature
+  def distance(product1, product2) (get_value(product1) - get_value(product2)).abs end
+
+  def get_value(product)
+    begin
+      Float(super(product))
+    rescue
+      nil  
+    end
+  end
+  
   #   "<span class='pkz_rating' title='ratable by: #{user_categories.join(', ')}'>&nbsp;#{user_categories.size}&nbsp;</span>"
 
   def get_html_editor(product)
@@ -581,6 +613,7 @@ class FeatureInterval < Feature
     end
   end
 
+
 end
 
 
@@ -605,7 +638,7 @@ class FeatureContinous < Feature
 
   def get_html_editor(product)
     if product
-      v = get_values(product).first
+      v = get_value(product)
       "<input type='text'    value='#{ v ? format_value(v) : nil}' />"
     else
       ""
@@ -625,7 +658,7 @@ class FeatureContinous < Feature
   
   # return the min max values
   def range(among_products)
-    l = among_products.collect { |p| get_values(p).first  }.sort!
+    l = among_products.collect { |p| get_value(p)  }.sort!
     (l and min = l.min < max = l.max) ? [min, max] : [value_min, value_max]
   end
 
@@ -644,6 +677,14 @@ class FeatureNumeric < FeatureContinous
   def format_value(x) format % x end
   def string2value(x) Float(x) end
 
+  def distance(product1, product2)
+    begin
+      Float(get_value(product1) - get_value(product2)).abs
+    rescue
+      "ERR"
+    end
+  end
+  
 end
 
 class FeatureDate < FeatureContinous

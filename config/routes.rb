@@ -26,7 +26,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :knowledges
   map.connect '/show/:knowledge_key/:product_key', :controller => 'knowledges', :action => 'show_by_key'
   map.connect '/show/:knowledge_key', :controller => 'knowledges', :action => 'show_by_key'
-
+  map.connect '/distance/:knowledge_key/:feature_key', :controller => 'knowledges', :action => 'distance'
+  map.connect '/distance/:knowledge_key', :controller => 'knowledges', :action => 'distance'
+  map.connect '/matrix/:knowledge_key', :controller => 'knowledges', :action => 'matrix'
 
   map.connect '/edit/:knowledge_key', :controller => 'knowledges', :action => 'edit_by_key'
 

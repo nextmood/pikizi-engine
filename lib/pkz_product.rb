@@ -47,6 +47,7 @@ class Product < Root
     knowledgedata.featuredatas[feature_key] ||= Featuredata.create_with_parameters(feature_key)
   end
 
+
   private
 
 
