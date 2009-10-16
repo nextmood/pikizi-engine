@@ -90,7 +90,17 @@ class Root
 
   def self.filename_data(key) "#{directory_data}/#{key}.xml" end
 
+  def self.compute_time
+    start = Time.now
+    x = yield
+    delta = Time.now - start
+    puts "-----------------------------------------"
+    puts "t=#{delta}, i.e. #{1. / delta}/s"
+    puts "-----------------------------------------"
+    x
+  end
 
+  def self.as_percentage(proba) "(#{'%3d' % (proba * 100).round}%)" end
 end
 
 

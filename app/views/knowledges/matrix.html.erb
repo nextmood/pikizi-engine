@@ -1,5 +1,6 @@
 
 
+
 <div class="pkz_box">
 
   <%= model_selector(@knowledge, :matrix) %>
@@ -8,26 +9,22 @@
     <%= link_to_function("filter products...", "document.getElementById('select_products').toggle();") %>
   <div>
 
-  <div id="select_products" style="display:none; border: 1px dashed black; margin:5px;">
-     <% for product in @products %>
-          <%=  check_box_tag("cb_#{product.key}", value = "1", checked = true)  %><%= product.key %>&nbsp;
-       <%= product.key %>
-     <% end %>
-  </div>
+  <%= render(:partial => "/knowledges/products_selection",
+        :locals => { :page_url => "/matrix/#{@knowledge.key}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
 
-  <div class="pkz_main" style="max-width:100%; max-height:400px; overflow:scroll;" >
 
-    <table border=1 >
+  <div class="pkz_main"  >
+    <table border=1 style="background-color:white;">
       <tr>
         <th></th>
-        <% for product in @products %>
+        <% for product in @products_selected %>
           <th ><%= product.key %></th>
         <% end %>
       </tr>
       <% for feature in @features %>
           <tr>
             <td><div style="width:200px; font-weight:bold;"><%= feature.label_hierarchical %></div></td>
-            <%= @products.collect { |p| "<td align='center'>#{feature.get_html_editor(p) }</td>" }.join('') %>
+            <%= @products_selected.collect { |p| "<td align='center'>#{feature.get_html_editor(p) }</td>" }.join('') %>
           </tr>
         <% end %>
     </table>

@@ -10,26 +10,23 @@
     <%= link_to_function("filter products...", "document.getElementById('select_products').toggle();") %>
   <div>
 
-  <div id="select_products" style="display:none; border: 1px dashed black; margin:5px;">
-     <% for product in @products %>
-          <%=  check_box_tag("cb_#{product.key}", value = "1", checked = true)  %><%= product.key %>&nbsp;
-       <%= product.key %>
-     <% end %>
-  </div>
+  <%= render(:partial => "/knowledges/products_selection",
+        :locals => { :page_url => "/distance/#{@knowledge.key}/#{@feature.key}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
 
-  <div class="pkz_main" style="max-width:100%; max-height:400px; overflow:scroll;" >
-    <% products_column = @products.last(@products.size - 1) %>
-    <table border=1 >
+  
+
+  <div class="pkz_main"  >
+    <table border=1 style="background-color:white;">
       <tr>
-        <th></th>
-        <% for product in products_column %>
-          <th ><div style="width:100px; overflow:hidden;"><%= product.key %><small><br/><%= @feature.get_value(product) %></small></div></th>
+        <td></td>
+        <% for product in @products_selected %>
+          <td ><div style="width:140px; overflow:hidden; text-align:center; "><%= product.key %><small><br/><%= @feature.get_value(product) %></small></div></td>
         <% end %>
       </tr>
-      <% for product in @products %>
+      <% for product in @products_selected %>
           <tr>
-            <th><%= product.key %><small><br/><%= @feature.get_value(product) %></small></th>
-            <%= products_column.collect { |p| "<td align='center'>#{@feature.distance(product, p) }</td>" }.join('') %>
+            <td><%= product.key %><small><br/><%= @feature.get_value(product) %></small></td>
+            <%= @products_selected.collect { |p| "<td align='center' style=\"background-color:#{ product == p ? 'pink' : 'lightgray'};\">#{@feature.distance(product, p) }</td>" }.join('') %>
           </tr>
         <% end %>
     </table>

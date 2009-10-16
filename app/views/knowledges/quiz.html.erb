@@ -12,8 +12,8 @@
         textWeight = weight;
         textColor = "red" ;
     }
-    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = textWeight  ;
-    document.getElementById('tensor_' + p_key).style.backgroundColor = textColor ;
+    document.getElementById('weight_' + p_key).childNodes[0].nodeValue = textWeight  ;
+    document.getElementById('weight_' + p_key).style.backgroundColor = textColor ;
    }
 
   function clean_up_arrows()
@@ -24,8 +24,8 @@
 
   function clean_up_one_arrow(p_key)
   {
-    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = " "  ;
-    document.getElementById('product_' + p_key).style.backgroundColor = "white" ;
+    document.getElementById('weight_' + p_key).childNodes[0].nodeValue = " "  ;
+    document.getElementById('weight_' + p_key).style.backgroundColor = "white" ;
   }
 </script>
 
@@ -74,7 +74,7 @@
           <li id="product_<%= affinity.product_key %>">
 
           #<%= affinity.ranking %>
-          <span id="tensor_<%= affinity.product_key %>" style="border:1px solid white;">&nbsp;</span>
+          <span id="weight_<%= affinity.product_key %>" style="border:1px solid white;">&nbsp;</span>
           <%= affinity.product_key %>&nbsp;
           <small>affinity=<%= "%3d" % (affinity.measure * 100) %>%,&nbsp;confidence=<%= "% 3d" % (affinity.confidence * 100) %>%</small>
           &nbsp;

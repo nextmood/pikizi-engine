@@ -23,15 +23,23 @@ class KnowledgesController < ApplicationController
   end
 
   def distance
-    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
+    @knowledge, @products, @products_selected = get_products_selected(params)
     @feature = params[:feature_key] ? @knowledge.get_feature_by_key(params[:feature_key]) : @knowledge
-    @products = @knowledge.products.sort! { |p1, p2| p1.key <=> p2.key }
   end
 
   def matrix
-    @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
-    @products = @knowledge.products
+    @knowledge, @products, @products_selected = get_products_selected(params)
     @features = @knowledge.each_feature_collect(true) { |feature| feature }.flatten
+  end
+
+  def get_products_selected(params)
+    knowledge =  Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
+    products = knowledge.products.sort! { |p1, p2| p1.key <=> p2.key }
+    pkeys_selected = params[:select_product_keys]
+    pkeys_selected ||= session[:pkeys_selected]
+    pkeys_selected ||= products.collect(&:key)
+    session[:pkeys_selected] = pkeys_selected
+    [knowledge, products, products.select { |p| pkeys_selected.include?(p.key) }]
   end
 
   def edit_by_key
@@ -46,6 +54,7 @@ class KnowledgesController < ApplicationController
   def show_question
     @knowledge = Pikizi::Knowledge.get_from_cache(params[:knowledge_key])
     @question = @knowledge.get_question_from_key(params[:question_key])
+    @hash_product_proba = @question.enumerator
     @products = @knowledge.products
   end
 

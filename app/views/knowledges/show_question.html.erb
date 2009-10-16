@@ -11,8 +11,8 @@
         textWeight = weight;
         textColor = "red" ;
     }
-    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = textWeight  ;
-    document.getElementById('tensor_' + p_key).style.backgroundColor = textColor ;
+    document.getElementById('weight_' + p_key).childNodes[0].nodeValue = textWeight  ;
+    document.getElementById('weight_' + p_key).style.backgroundColor = textColor ;
    }
 
   function clean_up_arrows()
@@ -23,8 +23,8 @@
 
   function clean_up_one_arrow(p_key)
   {
-    document.getElementById('tensor_' + p_key).childNodes[0].nodeValue = " "  ;
-    document.getElementById('product_' + p_key).style.backgroundColor = "white" ;
+    document.getElementById('weight_' + p_key).childNodes[0].nodeValue = " "  ;
+    document.getElementById('weight_' + p_key).style.backgroundColor = "white" ;
   }
 </script>
 
@@ -38,20 +38,20 @@
         <table border=1 width="100%">
           <tr>
             <td>
-              <small><%= @question.key %></small>
-            <div style="font-weight:bold;"><%= @question.label %></div>
-            <div style="font-size:90%;">
-                <%= pluralize @question.nb_presentation.round, "presentation" %>
-                valid=<%= "%d" % @question.nb_presentation_valid %> (<%= "%d" % (@question.proba_valid * 100) %>%),&nbsp;
-                no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)&nbsp;
-                <br/>
-                pre-condition:<%= @question.precondition_expression || 'none' %>,&nbsp;
-                <%= pluralize @question.nb_choices, "choice" %>,&nbsp;
-                <%= @question.is_choice_exclusive ? "exclusive" : "multiple" %>
-                <!-- discrimination=<%= "%d" % (@question.discrimination * 100) %>% -->
-                <br/>
-                <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
-            </div>
+                <div style="font-weight:bold;"><%= @question.label %></div>
+                <div style="font-size:90%;">
+                    <%= @question.key %>
+
+                    <br/>
+                    pre-condition:<%= @question.precondition_expression || 'none' %>,&nbsp;
+                    <%= pluralize @question.nb_choices, "choice" %>,&nbsp;
+                    <%= @question.is_choice_exclusive ? "exclusive" : "multiple" %>
+                    <%= link_to("&nbsp;#{@question.get_backgrounds.size > 0 ? @question.get_backgrounds.size : '&nbsp;&nbsp;'}&nbsp;",
+                                  "/medias/#{@knowledge.key}/question/#{@question.key}",
+                                  :class => "pkz_background") %>
+                    <br/>
+                    <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
+                </div>
             </td>
             <th align="center">Products/Weights</th>
           </tr>
@@ -67,30 +67,44 @@
             </td>
           </tr>
           <tr>
-            <td width="50%" valign="top" >
+            <td width="40%" valign="top" >
+              <%= pluralize @question.nb_presentation.round, "presentation" %>,&nbsp;
+              no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%),&nbsp;
+              <span style="background-color:<%= @question.confidence < 1 ? 'orange' : 'green' %>;">confidence=<%= "%d" % (@question.confidence * 100) %>%</span>
               <ol>
                   <% for choice in @question.choices %>
                     <li style="margin-bottom:10px;">
-                      <img src='/images/icons/play.png' onmouseover="<%= choice.generate_javascript_tensors(@products) %>" onmouseout="clean_up_arrows();" />
-                      
-                      <span style="font-weight:bold;"><%= choice.label.inspect %></span>
+                      <img src='/images/icons/play.png' onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();" />
+
+                      <span style="font-weight:bold;"><%= choice.label %></span>
+
+                      <%= link_to("&nbsp;#{choice.get_backgrounds.size > 0 ? choice.get_backgrounds.size : '&nbsp;&nbsp;'}&nbsp;",
+                                  "/medias/#{@knowledge.key}/question/#{@question.key}/#{choice.key}",
+                                  :class => "pkz_background") %>
+
                       <div  style="font-size:90%;">
-                        statistic:
-                        ok=<%= "%d" % choice.nb_ok %> (<%= "%d" % (choice.proba_ok * 100) %>%),&nbsp;
-                        ko=<%= "%d" % choice.nb_ko %> (<%= "%d" % (choice.proba_ko * 100) %>%)&nbsp;
-                        <!-- discrimination=<%= "%d" % (choice.discrimination * 100) %>%,&nbsp; -->
+                        ok=<%= "%d" % choice.nb_ok %> (<%= "%d" % (choice.proba_ok * 100) %>%)
                       <div>
                     </li>
                   <% end %>
                 </ol>
             </td>
-            <td width="50%" valign="top" >
+
+
+
+
+            <td width="60%" valign="top" >
               <div style="-moz-column-count:2">
                   <% for product in @products %>
                       <div id="product_<%= product.key %>" style="width:100%;">
+                        <% product_probas = (@hash_product_proba[product.key] || []) %>
+                        <div style="display:inline-block;  text-align:right; width:30px;" title="<%= product_probas.join(', ')  %>">
+                            <%= "%+5.1f" % Pikizi::Distribution.weighted_average(product_probas) %>
+                        </div>
+                        <div id="weight_<%= product.key %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>
+                        <span>&nbsp;<%= product.key %></span>
 
-                          <span style="right:0px;"><%= product.key %></span>
-                        <span id="tensor_<%= product.key %>" style="border:1px solid white;">&nbsp;</span>
+                     
                       </div>
                   <% end %>
                </div>

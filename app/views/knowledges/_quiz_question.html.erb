@@ -10,7 +10,7 @@
         confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>
       </div>
       <%= question.choices.collect do |c|
-            action_icon = "<img src='/images/icons/play.png' onmouseover=\"#{c.generate_javascript_tensors(quiz.products)}\" onmouseout=\"clean_up_arrows();\" />"
+            action_icon = "<img src='/images/icons/play.png' onmouseover=\"#{c.generate_javascript_weights(quiz.products)}\" onmouseout=\"clean_up_arrows();\" />"
             choice_text = "#{action_icon} #{c.label} <small>(#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})</small>"
             choice_text = "<span style='background-color:grey;'>#{choice_text}</span>" if answered_choice_keys and answered_choice_keys.include?(c.key)
             choice_text
