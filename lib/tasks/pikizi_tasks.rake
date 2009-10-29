@@ -1,5 +1,13 @@
 namespace :pikizi do
 
+  desc "Load a domain"
+  task :load_domain => :environment do
+    unless ENV.include?("name")
+      raise "usage: rake pikizi::load_domain name= a directory name in public/domains"
+    end
+    Knowledge.initialize_from_xml(ENV['name'])
+  end
+
 
   desc "Recompute all aggregations based on opinions of all users on all products for all models"
   task :recompute_ratings => :environment do

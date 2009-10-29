@@ -11,6 +11,10 @@ class Quizze < Root
 
   key :question_idurls, Array
 
+  timestamps!
+  
+  def self.is_main_document() true end
+
   def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge)  end
 
   key :product_idurls, Array

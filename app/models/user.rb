@@ -13,15 +13,17 @@ class User < Root
   key :status, String, :default => "citizen"
   key :reputation,  :default => 1
 
-  #many :authored_opinions, Array
-  #many :quiz_instances, Array
+  many :reviews, Array  # external
+  many :quiz_instances # embedded documents
 
-  key :updated_at, Time
+  timestamps!
+
+  def self.is_main_document() true end
 
   def is_authorized?() promotion_code == "auth" end
 
   def nb_quiz_instances() 0 end
-  def nb_authored_opinions() 0 end
+  def nb_opinions() 0 end
 
   #API public, return a quiz_instance (create a new one for a given quiz)
   def get_quiz_instance(quiz) Quizinstance.get_or_create_latest_for_quiz(quiz, self) end
@@ -81,7 +83,7 @@ class User < Root
     new_opinion.feature_idurl = feature_idurl
     new_opinion.product_idurl = product_idurl
     new_opinion.value = value
-    authored_opinions <<  new_opinion
+    opinions <<  new_opinion
   end
 
 end
@@ -92,7 +94,13 @@ end
 # this is the origin of any kind of record method
 class Quizinstance < Root
 
-  attr_accessor :quiz_idurl, :hash_productidurl_affinity, :hash_answered_question_answers, :nb_products_to_discriminate, :products_idurls_filtered
+  include MongoMapper::EmbeddedDocument
+  
+  key :quiz_idurl
+  key :hash_productidurl_affinity
+  key :hash_answered_question_answers,
+  key :nb_products_to_discriminate,
+  key :products_idurls_filtered
 
 
   def initialize_from_xml(xml_node)
@@ -230,6 +238,8 @@ class Affinity < Root
 
   attr_accessor :product_idurl, :nb_weight, :sum_weight, :ranking
 
+  include MongoMapper::EmbeddedDocument
+  
   def initialize_from_xml(xml_node)
     super(xml_node)
     self.product_idurl = xml_node['product_idurl']
@@ -263,6 +273,51 @@ class Affinity < Root
   def confidence() [NB_INPUT_4_MAX_CONFIDENCE, nb_weight].min / NB_INPUT_4_MAX_CONFIDENCE end
 
 end
+
+require 'xml'
+require 'mongo_mapper'
+
+class Answer < Root
+
+  include MongoMapper::Document
+
+  key :user_id, String # author
+  key :question_id, String # question
+
+  key :label, String # unique url
+  many :backgrounds, :polymorphic => true
+
+  key :question_idurls, Array
+
+  def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge)  end
+
+  key :product_idurls, Array
+  def products() @products ||= Product.get_from_idurl(product_idurls, knowledge) end
+
+  attr_accessor :knowledge
+
+  def link_back(knowledge)
+    self.knowledge = knowledge
+  end
+
+  def self.initialize_from_xml(knowledge, xml_node)
+    quizze = super(xml_node)
+    quizze.product_idurls = read_xml_list_idurl(xml_node, "product_idurls")
+    quizze.question_idurls = read_xml_list_idurl(xml_node, "question_idurls")
+    quizze.save
+    quizze
+  end
+
+  def generate_xml(top_node)
+    node_quizze = super(top_node)
+    Root.write_xml_list_idurl(node_quizze, product_idurls, "product_idurls")
+    Root.write_xml_list_idurl(node_quizze, question_idurls, "question_idurls")
+    node_quizze
+  end
+
+end
+
+
 
 # describe an answer to a Question by a User during a Quiz Instance
 # has answer ok assiociated
@@ -330,41 +385,3 @@ class Answerok < Root
 
 end
 
-# describe an opinion of a user for a given product/feature
-# with associated backgrounds
-# rating in between ).0 and 1.0
-class Opinion < Root
-
-  attr_accessor :knowledge_idurl, :feature_idurl, :product_idurl, :timestamp, :db_id, :min_rating, :max_rating, :value, :hash_idurl_background
-
-
-  def initialize_from_xml(xml_node)
-    super(xml_node)
-    self.knowledge_idurl = xml_node['knowledge_idurl']
-    self.feature_idurl = xml_node['feature_idurl']
-    self.product_idurl = xml_node['product_idurl']
-    self.min_rating = xml_node['min_rating']
-    self.max_rating = xml_node['max_rating']
-    self.db_id = xml_node['db_id']
-    self.timestamp =  Time.parse(xml_node['timestamp']) if xml_node['timestamp']
-    self.value = Float(xml_node['value'])
-    self.hash_idurl_background = Root.get_hash_from_xml(xml_node, 'background', 'idurl') { |node_background| Background.create_from_xml(node_background) }
-  end
-
-  def generate_xml(top_node)
-    node_opinion = super(top_node)
-    node_opinion['value'] = value.to_s
-    hash_idurl_background.each { |idurl, background| background.generate_xml(node_opinion) }  if hash_idurl_background
-    node_opinion['db_id'] = db_id.to_s if db_id
-    node_opinion['knowledge_idurl'] = knowledge_idurl
-    node_opinion['feature_idurl'] = feature_idurl
-    node_opinion['min_rating'] = min_rating
-    node_opinion['max_rating'] = max_rating
-    node_opinion['product_idurl'] = product_idurl
-    node_opinion['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
-    node_opinion
-  end
-
-
-
-end
