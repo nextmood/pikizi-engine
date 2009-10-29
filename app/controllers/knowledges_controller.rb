@@ -9,7 +9,7 @@ class KnowledgesController < ApplicationController
   # return the most recent knowledge
   def index
     knowledge = Knowledge.find(:all, :order => "updated_at DESC").first
-    puts "size=#{ Knowledge.find(:all).size}  knowledge=#{knowledge.inspect} "
+    raise "no knowledge, in database idurls=#{ Knowledge.find(:all).collect(&:idurl).join(', ')} (#{ Knowledge.find(:all).size})" unless knowledge and knowledge.idurl
     redirect_to("/matrix/#{knowledge.idurl}")
   end
 
