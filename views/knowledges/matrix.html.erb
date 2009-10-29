@@ -1,0 +1,25 @@
+
+
+
+<div class="pkz_box">
+
+  <%= model_selector(@knowledge, :matrix) %>
+
+  <div>
+    <%= link_to_function("Expand all", "treetable_expandAll('thematrix');") %>
+    &nbsp;|&nbsp;
+    <%= link_to_function("Collapse all", "treetable_collapseAll('thematrix');") %>
+    &nbsp;|&nbsp;
+    <%= link_to_function("add/remove products", "document.getElementById('select_products').toggle();") %>
+  <div>
+
+  <%= render(:partial => "/knowledges/products_selection",
+        :locals => { :page_url => "/matrix/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+
+
+    <%= render(:partial => "/knowledges/matrix",
+            :locals => {:selected_products => @products_selected, :knowledge => @knowledge }) %>
+
+</div>
+
+

@@ -1,0 +1,19 @@
+
+<div class="pkz_menu">
+	<span>Products</span>
+</div>
+
+<div class="pkz_main">	
+	<% @products.each do |product| %>
+		<div class="pkz_item_list">
+			<%= link_to product.label, product %>
+			<small>
+				&nbsp;
+				<%= pluralize product.nb_models, "knowledge database" %>
+				,&nbsp;
+				updated on <%=h product.updated_at %>
+			</small>
+		</div>
+	<% end %>
+</div>
+

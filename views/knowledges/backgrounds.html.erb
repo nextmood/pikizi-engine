@@ -1,0 +1,11 @@
+<div class="pkz_box">
+
+<!-- display a list of backgrounds -->
+<% for background in backgrounds %>
+    <div>
+      <h1>Background idurl=<%= background.idurl %> type=<%= background.type %></h1>
+      <%= background.value %>
+    <div>
+<% end %>
+
+</div>

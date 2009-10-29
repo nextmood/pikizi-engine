@@ -1,0 +1,28 @@
+<div class="pkz_box">
+
+  <div class="pkz_menu">
+    Backgrounds for
+    <%= " <b>#{@feature.label_full}</b>" if [:model, :product].include?(@selector) %>
+    <%= "and product <b>#{@product.label}</b>" if @selector == :product %>
+    <%= " question <b>#{@question.label}</b>" if @selector == :question %>
+    <%= "and choice <b>#{@choice.label}</b>" if @selector == :question and @choice %>
+    <% back_url = "/show/#{@knowledge.idurl}"; back_url << "/#{@product.idurl}" if @selector == :product  %>
+    &nbsp;<small><%= link_to("back to #{@knowledge.label}", back_url) %></small>
+  </div>
+
+  <div class="pkz_main">
+    <table  border=1>
+        <tr><th>idurl</th><th>class</th><th>value</th></tr>
+        <% for k,v in @medias %>
+            <tr>
+              <td valign="top"><%= k %></td>
+              <td valign="top"><%= v.class %></td>
+              <td valign="top"><%= #v.is_a?(Background) ? v.display_as_html : v %></td>
+            </tr>
+        <% end %>
+    </table>
+  </div>
+
+</div>
+
+
