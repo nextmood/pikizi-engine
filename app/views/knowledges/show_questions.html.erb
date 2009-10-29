@@ -1,0 +1,14 @@
+<div class="pkz_box">
+  <%= model_selector(@knowledge, :questions) %>
+    <div class="pkz_main">
+      <% for question in @knowledge.questions %>
+        <div class="pkz_item_list">
+
+            <%= link_to(question.label, "/questions/#{@knowledge.idurl}/#{question.idurl}") %>
+            <%= question.is_choice_exclusive ? "{" : "[" %>
+            <%= question.choices.collect(&:label).join(', ') %>
+            <%= question.is_choice_exclusive ? "}" : "]" %>
+        </div>
+      <% end %>
+    </div>
+</div>

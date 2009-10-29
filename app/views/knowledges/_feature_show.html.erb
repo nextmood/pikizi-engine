@@ -1,0 +1,11 @@
+<div  id="cell_<%= feature.idurl %>"
+      style="margin-left:<%= feature.level * 10 %>px;" >
+    <% if feature.has_sub_features %>
+       <%= link_to_function(image_tag("/images/open_close.gif", :border => 0),
+                            "treetable_toggleRow('#{feature.dom_id}');") %>
+    <% end %>
+    <span style="margin-left:<%= 5 + (feature.has_sub_features ? 0 : 36) %>px;"
+          onclick="<%= remote_function(:url => { :action => "feature_edit", :knowledge_idurl => knowledge.idurl, :feature_idurl => feature.idurl  }) %>" >
+      <%= feature.get_feature_html %>
+    <span>
+</div>
