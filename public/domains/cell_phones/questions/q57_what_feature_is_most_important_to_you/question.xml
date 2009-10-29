@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?">
+    
+    <Choice idurl="c184_better_battery_life" label="better battery life">
+      <BackgroundHtml idurl="description" local_url="files/c184_better_battery_life@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c184_better_battery_life@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="lg_xenon"/>
+    </Choice>
+    <Choice idurl="c185_better_resolution" label="better resolution">
+      <BackgroundHtml idurl="description" local_url="files/c185_better_resolution@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c185_better_resolution@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_impression"/>
+    </Choice>
+  </Question>

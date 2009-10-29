@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Quizze label="All Cell Phone Advisor">
+	<BackgroundHtml idurl="description" local_url="files/description.txt"/>
+	<BackgroundImage idurl="main_image" local_url="images/main_image.png"/>
+	
+	<!-- if no product_idurls, then all products will be considered -->
+    <product_idurls>
+	      blackberry_bold_9000, apple_iphone_3g, palm_pre, nokia_e75, nokia_n96, nokia_e71,
+      	nokia_5800_xpressmusic, nokia_7205_intrigue, blackberry_curve_8900, blackberry_pearl_8130,
+      	nokia_n79, htc_touch_diamond, lg_versa, samsung_impression, samsung_memoir_t929,
+      	samsung_omnia, blackberry_storm, sony_ericsson_xperia_x1, samsung_knack_sch-u310,
+      	sanyo_scp-2700, samsung_propel_pro, nokia_e63, samsung_instinct_s30, samsung_sgh-a657,
+      	lg_xenon, nokia_6500_classic, motorola_i9_stature, lg_cf360, blackberry_pearl_flip_8220,
+      	palm_eos, htc_touch_cruise_2009, samsung_trance, lg_vx8350, motorola_renew_w233, nokia_n85,
+      	lg_lotus, samsung_s8300_ultratouch, lg_arena, nokia_5130_xpressmusic, sony_ericsson_w508
+    </product_idurls>
+
+	<!-- if no question_idurls, then all questions will be considered -->
+
+
+</Quizze >

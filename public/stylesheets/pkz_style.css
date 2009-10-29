@@ -1,0 +1,79 @@
+.pkz_box {
+}
+
+.pkz_menu {
+	background-color: #ccccff;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.pkz_menu a {
+	color: #660066;
+}
+
+.pkz_menu span {
+	font-weight: bold;
+	margin-right:20px;
+}
+
+.pkz_main {
+	border: 1px solid black;
+	width:100%;
+}
+
+.pkz_rating {
+	background:url(/images/icons/star.png) no-repeat center center;
+    margin-left:-15px;
+    margin-right:20px;
+    font-size:90%;
+    color:blue;
+}
+
+.pkz_background {
+    background:url(/images/icons/doc16x16.png) no-repeat center center;
+    margin-left:2px;
+    margin-right:20px;
+    font-size:90%;
+    color:blue;
+}
+
+.pkz_main img {
+    border:0px;
+}
+.pkz_item_list {
+	padding:5px;
+	margin:5px 0px 0px 0px;
+}
+
+.pkz_item_list[answered="true"] {
+    background-color:lightgray;
+}
+
+.pkz_main input {
+	background-color: #ffffff;
+    margin-left:5px;
+    color:blue;
+}
+
+
+
+.pkz_feature_label {
+    font-weight: bold;
+}
+
+.pkz_feature_extra {
+    font-size:80%;
+    margin-left:5px;
+}
+
+.pkz_feature_editor_value {
+    color:green;
+    margin-left:5px;
+
+}
+
+.pkz_feature_editor_empty  {
+    color:red;
+    margin-left:5px;
+
+}

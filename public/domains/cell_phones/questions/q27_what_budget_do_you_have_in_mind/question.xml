@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="What budget do you have in mind?">
+    
+    <Choice idurl="c85_minimal" label="Minimal">
+      <BackgroundHtml idurl="description" local_url="files/c85_minimal@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c85_minimal@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_t ance lg_cf360 nokia_e71 lg_vx8350 motorola_renew_w233 blackberry_pearl_flip_8220 samsung_knack_sch-u310 lg_xenon sanyo_scp-2700 lg_lotus blackberry_pearl_8130"/>
+    </Choice>
+    <Choice idurl="c86_mid-range" label="Mid-range">
+      <BackgroundHtml idurl="description" local_url="files/c86_mid-range@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c86_mid-range@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="motorola_i9_stature samsung_omnia blackberry_storm samsung_instinct_s30 htc_touch_diamond nokia_5130_xpressmusic samsung_sgh-a657 lg_versa sony_ericsson_w508 nokia_7205_intrigue samsung_impression blackberry_curve_8900 nokia_e75 samsung_propel_pro"/>
+    </Choice>
+    <Choice idurl="c87_high-end" label="High-end">
+      <BackgroundHtml idurl="description" local_url="files/c87_high-end@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c87_high-end@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_s8300_ultratouch nokia_e63 nokia_n79 lg_arena blackberry_bold_9000 nokia_5800_xpressmusic apple_iphone_3g nokia_n85 palm_eos nokia_6500_classic htc_touch_cruise_2009"/>
+    </Choice>
+    <Choice idurl="c88_unlimited" label="Unlimited">
+      <BackgroundHtml idurl="description" local_url="files/c88_unlimited@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c88_unlimited@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="nokia_n96 sony_ericsson_xperia_x1 samsung_memoir_t929"/>
+    </Choice>
+  </Question>
