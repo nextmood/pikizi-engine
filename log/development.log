@@ -16083,3 +16083,15 @@ Processing UsersController#index (for 127.0.0.1 at 2009-10-29 22:46:30) [GET]
 Rendering template within layouts/application
 Rendering users/index
 Completed in 99ms (View: 14 | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-10-29 22:53:01) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 422ms (View: 117 | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-10-29 22:53:29) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 78ms (View: 18 | 200 OK [http://localhost/users]
