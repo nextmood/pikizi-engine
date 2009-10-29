@@ -9,6 +9,7 @@ class KnowledgesController < ApplicationController
   # return the most recent knowledge
   def index
     knowledge = Knowledge.find(:all, :order => "updated_at DESC").first
+    puts "size=#{ Knowledge.find(:all).size}  knowledge=#{knowledge.inspect} "
     redirect_to("/matrix/#{knowledge.idurl}")
   end
 
