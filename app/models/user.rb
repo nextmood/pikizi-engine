@@ -23,7 +23,7 @@ class User < Root
   def is_authorized?() promotion_code == "auth" end
 
   def nb_quiz_instances() 0 end
-  def nb_opinions() 0 end
+  def nb_reviews() 0 end
 
   #API public, return a quiz_instance (create a new one for a given quiz)
   def get_quiz_instance(quiz) Quizinstance.get_or_create_latest_for_quiz(quiz, self) end
