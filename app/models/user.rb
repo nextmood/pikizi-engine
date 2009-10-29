@@ -13,7 +13,7 @@ class User < Root
   key :status, String, :default => "citizen"
   key :reputation,  :default => 1
 
-  many :reviews, Array  # external
+  many :reviews  # external
   many :quiz_instances # embedded documents
 
   timestamps!
@@ -92,14 +92,14 @@ end
 # handles the dialog with the user
 # this is the interactive stuff
 # this is the origin of any kind of record method
-class Quizinstance < Root
+class QuizInstance < Root
 
   include MongoMapper::EmbeddedDocument
   
   key :quiz_idurl
   key :hash_productidurl_affinity
-  key :hash_answered_question_answers,
-  key :nb_products_to_discriminate,
+  key :hash_answered_question_answers
+  key :nb_products_to_discriminate
   key :products_idurls_filtered
 
 
