@@ -1,1 +1,0 @@
-RPXNow.api_key = "2dde4557bd28343f445032c774264a0b8cd8b29a"

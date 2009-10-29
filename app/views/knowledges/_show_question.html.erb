@@ -1,7 +1,0 @@
-<%= link_to(question.label, "/questions/#{question.knowledge_idurl}/#{question.idurl}") %>
-<small>
-  &nbsp;#<%= question.idurl %>,&nbsp;
-  pre-condition:<%= question.precondition_expression || 'none' %>,&nbsp;
-  <%= pluralize question.nb_presentation.round, "presentation" %>&nbsp;
-  (<%= pluralize question.nb_recommendation, "recommendation" %>)
-</small>
