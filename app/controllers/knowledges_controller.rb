@@ -6,11 +6,11 @@ class KnowledgesController < ApplicationController
 
   # GET /knowledges
   # GET /knowledges.xml
+  # return the most recent knowledge
   def index
     knowledge = Knowledge.find(:all, :order => "updated_at DESC").first
     redirect_to("/matrix/#{knowledge.idurl}")
   end
-
 
   def distance
     @knowledge, @products, @products_selected = get_products_selected(params)
