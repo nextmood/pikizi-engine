@@ -1,0 +1,18 @@
+
+
+
+<div class="pkz_menu">
+	user:<span><%= @user.rpx_username %> <small>&nbsp;#<%= @user.idurl %></small></span>
+    <small><%= pluralize @user.pkz_user.nb_quiz_instances, "quiz" %> taken</small>
+    &nbsp;&nbsp;
+  Authored:
+  <small>
+    <%= pluralize @user.pkz_user.nb_authored_opinions, "opinion" %>,
+    <%= link_to "process", "/users/#{@user.id}/process_opinion" %>
+
+    </small>
+</div>
+
+<div class="pkz_main">
+    <%= text_area_tag :pikizi_generate_xml, @user.pkz_user.to_xml, :style => "width:100%; height:#{height_xml_editor}; background-color:lightblue;", :readonly => true  %>
+</div>

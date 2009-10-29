@@ -1,0 +1,25 @@
+<%=h @background.class %>
+
+<b><%=h @background.background_idurl %></b>
+
+(bgk=<%= @background.knowledge_idurl %>, feature=<%= @background.feature_idurl %>, product=<%= @background.product_idurl %>)
+
+<p>
+  <b>Data:</b>
+  <%=h @background.data %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @background.author_id %>
+</p>
+
+<p>
+  <b>Author idurl:</b>
+  <%=h @background.author_idurl %>
+</p>
+
+<%= image_tag("/backgrounds/#{@background.id}/thumbnail_150") %>
+
+<%= link_to 'Edit', edit_background_path(@background) %> |
+<%= link_to 'Back', backgrounds_path %>

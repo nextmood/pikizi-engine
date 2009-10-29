@@ -1,0 +1,44 @@
+<h1>New background</h1>
+
+<% form_for(@background, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.label :idurl %><br />
+    <%= f.text_field :idurl %>
+  </p>
+  <p>
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </p>
+  <p>
+    <%= f.label :data %><br />
+    <%= f.text_area :data %>
+  </p>
+  <p>
+    <%= f.label :author_id %><br />
+    <%= f.text_field :author_id %>
+  </p>
+  <p>
+    <%= f.label :author_idurl %><br />
+    <%= f.text_field :author_idurl %>
+  </p>
+
+  <p>
+    <b>Upload Image</b><br />
+    <%= f.file_field :image_file %><br />
+    or URL: <%= f.text_field :image_file_url %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', backgrounds_path %>
+
+

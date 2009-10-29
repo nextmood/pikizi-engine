@@ -1,0 +1,122 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+.pkz_menu {
+	background-color: #ccccff;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.pkz_menu a {
+	color: #660066;
+}
+
+.pkz_menu span {
+	font-weight: bold;
+	margin-right:20px;
+}
+
+.pkz_main {
+	border: 1px solid black;
+	width:100%;
+}
+
+.pkz_rating {
+	background:url(star.png) no-repeat center center;
+    margin-left:10px;
+    font-size:90%;
+    color:blue;
+}
+
+.pkz_main img {
+    border:0px;
+}
+.pkz_item_list {
+	padding:5px;
+	margin:5px 0px 0px 0px;
+}
+
+.pkz_item_list[answered="true"] {
+    background-color:lightgray;
+}
+
+.pkz_main input {
+	background-color: #ffffff;
+    margin-left:5px;
+    color:blue;
+}
+
+
+
+.pkz_feature_label {
+    font-weight: bold;
+}
+
+.pkz_feature_extra {
+    font-size:80%;
+    margin-left:5px;
+}
+
+.pkz_feature_editor_value {
+    color:green;
+    margin-left:5px;
+
+}
+
+.pkz_feature_editor_empty  {
+    color:red;
+    margin-left:5px;
+
+}

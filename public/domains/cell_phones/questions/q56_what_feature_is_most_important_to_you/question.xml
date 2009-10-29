@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?">
+    
+    <Choice idurl="c182_killer_camera" label="killer camera">
+      <BackgroundHtml idurl="description" local_url="files/c182_killer_camera@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c182_killer_camera@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="nokia_n96 samsung_impression samsung_memoir_t929"/>
+    </Choice>
+    <Choice idurl="c183_killer_music_player" label="killer music player">
+      <BackgroundHtml idurl="description" local_url="files/c183_killer_music_player@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c183_killer_music_player@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="lg_arena apple_iphone_3g nokia_n85"/>
+    </Choice>
+  </Question>

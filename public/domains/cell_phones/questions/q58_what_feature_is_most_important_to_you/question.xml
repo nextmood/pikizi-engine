@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?">
+    
+    <Choice idurl="c186_hi-fi" label="hi-fi">
+      <BackgroundHtml idurl="description" local_url="files/c186_hi-fi@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c186_hi-fi@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_trance"/>
+    </Choice>
+    <Choice idurl="c187_full_qwerty_keyboard" label="full qwerty keyboard">
+      <BackgroundHtml idurl="description" local_url="files/c187_full_qwerty_keyboard@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c187_full_qwerty_keyboard@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="lg_lotus"/>
+    </Choice>
+  </Question>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?">
+    
+    <Choice idurl="c175_fluid_internet_navigation" label="fluid internet navigation">
+      <BackgroundHtml idurl="description" local_url="files/c175_fluid_internet_navigation@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c175_fluid_internet_navigation@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="apple_iphone_3g"/>
+    </Choice>
+    <Choice idurl="c176_full_qwerty_keyboard" label="full qwerty keyboard">
+      <BackgroundHtml idurl="description" local_url="files/c176_full_qwerty_keyboard@description.txt"/>
+      <BackgroundImage idurl="main_image" local_url="images/c176_full_qwerty_keyboard@main_image.jpg"/>
+      <RecommendationProduct weight="1.0" reverse="true" product_idurl="nokia_e71 blackberry_bold_9000 palm_pre blackberry_curve_8900"/>
+    </Choice>
+  </Question>
