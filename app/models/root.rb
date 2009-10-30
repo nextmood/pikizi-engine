@@ -12,7 +12,7 @@ class Root
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
-    User.find(:all).each(&:destroy)
+    #User.find(:all).each(&:destroy)
     "empty database"
   end
   def self.is_main_document() false end
@@ -29,11 +29,16 @@ class Root
 
   def generate_xml(top_node)
     tag_name = self.class.to_s
-    top_node << (xml_node = XML::Node.new(tag_name))
-    class_keys = self.keys.collect(&:first).concat(self.associations.collect(&:first))
+    if top_node.is_a?(XML::Document)
+      top_node.root = (xml_node = XML::Node.new(tag_name))
+    else
+      top_node << (xml_node = XML::Node.new(tag_name))
+    end
+
+    class_keys = self.class.keys.collect(&:first).concat(self.class.associations.collect(&:first))
     xml_node['idurl'] = idurl if class_keys.include?("idurl")
     xml_node['label'] = label if class_keys.include?("label")
-    backgrounds.each { |b| generate_xml(xml_node) } if class_keys.include?("backgrounds")
+    backgrounds.each { |b| b.generate_xml(xml_node) } if class_keys.include?("backgrounds")
     xml_node
   end
 
@@ -125,6 +130,16 @@ class Root
   end
 
   def self.as_percentage(proba) "(#{'%3d' % (proba * 100).round}%)" end
+
+  def get_backgrounds(product=nil) [] end
+
+  # convert an object to an xml string
+  def to_xml(a_idurl=nil)
+    doc = XML::Document.new
+    generate_xml(doc)
+    doc.to_s(:indent => true)
+  end
+
 end
 
 
@@ -144,7 +159,7 @@ class Background < Root
   end
 
   def generate_xml(top_node)
-    node_background = super(top_node, {})
+    node_background = super(top_node)
     node_background['local_url'] = local_url if local_url
     node_background << content
     node_background

@@ -41,7 +41,7 @@
       <%= next_question.idurl %>,&nbsp;
       <%= pluralize next_question.nb_choices, "choice" %>,&nbsp;
       <%= next_question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
-      pre-condition:<%= next_question.precondition_expression || 'none' %>
+      pre-condition:<%= next_question.precondition || 'none' %>
     </small>
     <!-- the form -->
     <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>

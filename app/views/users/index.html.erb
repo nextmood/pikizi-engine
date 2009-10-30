@@ -9,7 +9,7 @@
     <% @users.each do |user| %>
       <div class="pkz_item_list">
         <%= link_to user.rpx_username, "/profile/#{user.rpx_identifier}", :title => "rpx_identifier=#{user.rpx_identifier}"  %>
-        &nbsp;<i><%= user.promotion_code %></i>
+        <i>&nbsp;<%= user.promotion_code %>, &nbsp;<%= user.status %></i>
         <small>
             &nbsp;
             <%= pluralize user.nb_reviews, "opinion" %>

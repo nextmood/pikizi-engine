@@ -3,26 +3,26 @@
     <Choice idurl="c1_nokia" label="nokia">
       <BackgroundHtml idurl="description" local_url="files/c1_nokia@description.txt"/>
       <BackgroundImage idurl="main_image" local_url="images/c1_nokia@main_image.jpg"/>
-      <RecommendationPredicate weight="1.0" reverse="true" predicate="$f1_brand == @t4_nokia"/>
+      <RecommendationPredicate weight="1.0" reverse="true" predicate="is(f1_brand, t4_nokia)"/>
     </Choice>
     <Choice idurl="c3_blackberry" label="blackberry">
       <BackgroundHtml idurl="description" local_url="files/c3_blackberry@description.txt"/>
       <BackgroundImage idurl="main_image" local_url="images/c3_blackberry@main_image.jpg"/>
-      <RecommendationPredicate weight="1.0" reverse="true" predicate="$f1_brand == @t6_blackberry"/>
+      <RecommendationPredicate weight="1.0" reverse="true" predicate="is(f1_brand, t6_blackberry"/>
     </Choice>
     <Choice idurl="c4_samsung" label="samsung">
       <BackgroundHtml idurl="description" local_url="files/c4_samsung@description.txt"/>
       <BackgroundImage idurl="main_image" local_url="images/c4_samsung@main_image.jpg"/>
-      <RecommendationPredicate weight="1.0" reverse="true" predicate="$f1_brand == @t8_samsung"/>
+      <RecommendationPredicate weight="1.0" reverse="true" predicate="is(f1_brand, t8_samsung"/>
     </Choice>
     <Choice idurl="c7_apple" label="apple">
       <BackgroundHtml idurl="description" local_url="files/c7_apple@description.txt"/>
       <BackgroundImage idurl="main_image" local_url="images/c7_apple@main_image.jpg"/>
-      <RecommendationPredicate weight="1.0" reverse="true" predicate="$f1_brand == @t10_apple"/>
+      <RecommendationPredicate weight="1.0" reverse="true" predicate="is(f1_brand, t10_apple"/>
     </Choice>
     <Choice idurl="c8_other" label="other">
       <BackgroundHtml idurl="description" local_url="files/c8_other@description.txt"/>
       <BackgroundImage idurl="main_image" local_url="images/c8_other@main_image.jpg"/>
-      <RecommendationPredicate weight="-1.0" reverse="true" predicate="[ @t4_nokia , @t10_apple , @t8_samsung , @t6_blackberry , @t10_apple ].include?( $f1_brand )"/>
+      <RecommendationPredicate weight="-1.0" reverse="true" predicate="is(f1_brand, t4_nokia , t10_apple , t8_samsung , t6_blackberry , t10_apple)"/>
     </Choice>
   </Question>

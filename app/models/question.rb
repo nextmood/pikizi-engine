@@ -49,7 +49,7 @@ class Question < Root
   end
 
 
-  def generate_xml(knowledge, top_node)
+  def generate_xml(top_node)
     node_question = super(top_node)
     node_question['is_exclusive'] = is_choice_exclusive.to_s
     node_question['nb_presentation'] = nb_presentation.to_s
@@ -159,6 +159,8 @@ class Choice < Root
     recommendations.each { |recommendation| recommendation.link_back(self) }
   end
 
+  def knowledge() question.knowledge end
+  
   def nb_ko() @nb_ko ||= (question.nb_presentation - question.nb_oo - nb_ok) end
   def proba_ok() @proba_ok ||= (question.nb_presentation == 0 ? question.default_choice_proba_ok : nb_ok / question.nb_presentation) end
   def proba_ko() @proba_ko ||= (1.0 - proba_ok - question.proba_oo) end
@@ -169,15 +171,12 @@ class Choice < Root
 
   def self.initialize_from_xml(xml_node)
     choice = super(xml_node)
-    choice.idurl = xml_node['idurl']
-    choice.label = (node_label = xml_node.find_first('label') and node_label.content) ? node_label.content.strip : nil
     choice.read_xml_list(xml_node, "Recommendation")
     choice
   end
 
   def generate_xml(top_node)
-    super(xml_node)
-    node_choice = super(top_node, classname)
+    node_choice = super(top_node)
     node_choice['nb_ok'] = nb_ok.to_s
     Root.write_xml_list(node_choice, recommendations)        
     node_choice
@@ -238,6 +237,8 @@ class Recommendation < Root
     self.choice = choice
   end
 
+  def knowledge() choice.knowledge end
+  
   def self.initialize_from_xml(xml_node)
     recommendation = super(xml_node)
     recommendation.weight = Float(xml_node['weight'])
@@ -280,35 +281,47 @@ class RecommendationPredicate < Recommendation
       # interpreting predicate
       # prefix $ means feature idurl
       # prefix @ means a value for a feature
-      evaluable_predicate = RecommendationPredicate.to_ruby_eval(predicate, knowledge_idurl)
+      #begin
+        tokens = predicate.strip.split(' ')
+        if tokens[1] == "has_value"
+          feature_idurl = tokens.shift
+          tokens.shift # skip has_value
 
-      # select all product that return true for the predicate
-      products.inject({}) do |h, product|
-        begin
-          if eval(evaluable_predicate)
-            h[product.idurl] = weight
-          elsif is_reverse
-            h[product.idurl] = -weight
+          feature = knowledge.get_feature_by_idurl(feature_idurl)
+          raise "wrong feature #{feature_idurl} in predicate #{predicate}" unless feature
+          raise "feature #{feature_idurl} should be a FeatureTags in predicate #{predicate}" unless feature.is_a?(FeatureTags)
+          # check tag idurls
+          raise "you need at least one tag in predicate #{predicate}" unless tokens.size > 0
+          authorized_tag_idurls = feature.tags.collect(&:idurl)
+          tokens.each do |tag_idurl|
+            raise "tag #{tag_idurl} doesn't exist for feature #{feature.idurl} in predicate #{predicate}" unless authorized_tag_idurls.include?(tag_idurl)
           end
-        rescue
-          puts "I can't evaluate #{evaluable_predicate}"
+
+          products.inject({}) do |h, product|
+            if values = feature.get_value(product)
+              # true if product hast at least one of the tokens values
+              puts "h=#{h.inspect} product.idurl=#{product.idurl}"
+              if tokens.any? { | tag_idurl | values.include?(tag_idurl) }
+                h[product.idurl] = weight
+              else
+                h[product.idurl] = -1.0 * weight
+              end
+            end
+            h
+          end
+        elsif tokens[1] == "my_other_predicate"
+          # write an other predicate here
+          # always return a hash product_idurl => weight
+        else
+          raise "predicate unrecognized #{predicate}"
         end
-        h
-      end
+
+      #rescue Exception => e
+        #puts "*** #{e.message}"
+        #nil
+      #end
     end
 
-    # convert a xml predicate to a string evalable by ruby
-    def self.to_ruby_eval(xml_predicate, knowledge_idurl)
-      xml_predicate.split(' ').collect do |t|
-        prefix = t[0..0]
-        tail = t[1..t.size-1]
-        case prefix
-          when "$" then tail == "idurl" ? "product.idurl" : "product.get_values('#{knowledge_idurl}', '#{tail}').first"
-          when "@" then "'#{tail}'"
-          else t
-        end
-      end.join(' ')
-    end
 
     def to_s() "R @#{predicate}=#{weight}" end
 
@@ -329,7 +342,7 @@ class RecommendationProduct < Recommendation
 
   def generate_xml(top_node)
     node_recommendation_product = super(top_node)
-    node_recommendation_product['product_idurl'] = product_idurls.join(' ')
+    node_recommendation_product['product_idurl'] = product_idurls
     node_recommendation_product
   end
 

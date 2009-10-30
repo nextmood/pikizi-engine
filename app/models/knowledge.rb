@@ -24,10 +24,7 @@ class Knowledge < Root
 
   def self.is_main_document() true end
 
-  def each_feature(&block)
-    block.call(self)
-    features.each { |sub_feature| sub_feature.each_feature(&block) }
-  end
+  def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end  
   def each_feature_collect(&block) l = []; each_feature { |feature| l << block.call(feature) }; l end
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
@@ -215,6 +212,7 @@ class Feature < Root
   
   key :idurl, String # unique url
   key :label, String # text
+  key :mandatory, Boolean, :default => true
   many :backgrounds
 
   many :features, :polymorphic => true # sub features
@@ -240,7 +238,7 @@ class Feature < Root
 
   def is_valid_value?(value) false end
 
-  def is_root?() feature_parent.is_a?(Knowledge) end
+  def is_root?() feature_parent.nil? end
 
   def has_sub_features() features.size > 0 end
 
@@ -248,12 +246,14 @@ class Feature < Root
 
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
+    feature.mandatory = !xml_node['is_optional']
     feature.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
     feature
   end
 
   def generate_xml(top_node)
     node_feature = super(top_node)
+    node_feature['is_optional'] = "true" unless mandatory
     Root.write_xml_list(node_feature, features, 'sub_features')
     node_feature
   end
@@ -269,14 +269,14 @@ class Feature < Root
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>" end
+  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label} #{'*' if mandatory}</span>" end
 
   # this is included in a form
   def get_feature_edit_html()
     "<div class=\"field\" title=\"edit feature #{self.class}\">
-          idurl=#{idurl}, #{self.class}<br/>
-        <span>label<span>
-        <input type='text' value='#{label}' />
+        <div style='font-weight:normal; font-size:90%;'>#{self.class} : #{idurl}</div>
+        <div>mandatory<input type='checkbox' #{'checked' if mandatory}/></div>
+        <div><span>label<span><input type='text' value='#{label}' /></div>
      <div>"
   end 
 
@@ -284,8 +284,25 @@ class Feature < Root
   def xml2value(content_string) content_string end
   def value2xml(value) value.to_s end
 
-  def color_from_status(product) get_value(product) ? "lightblue" : "blue" end
-  def is_irrelevant_inherited(product) false end
+  def color_from_status(product)
+    if is_relevant(product) == false
+      "gray"
+    elsif get_value(product)
+      "lightblue"
+    else
+      mandatory ? "red" : "white"
+    end
+  end
+
+
+  def is_relevant(product)
+    if is_a?(FeatureCondition)
+      (value = get_value(product)).nil? or value
+    else
+      feature_parent ? feature_parent.is_relevant(product) : true
+    end
+  end
+
   def level() feature_parent ? 1 + feature_parent.level() : 1 end
 
   # ---------------------------------------------------------------------
@@ -296,7 +313,11 @@ class Feature < Root
 
   def each_feature(&block)
     block.call(self)
-    features.each { |sub_feature| sub_feature.each_feature(&block) }
+    features.each do |sub_feature|
+      raise "feature= #{self.inspect}" if sub_feature.is_a?(Knowledge)
+      sub_feature.each_feature(&block)
+    end
+    nil
   end
   
   # define the distance between  2 products for this feature
@@ -346,7 +367,7 @@ class FeatureTags < Feature
     feature_tags
   end
 
-  def generate_xml(top_node, classname=nil)
+  def generate_xml(top_node)
     node_feature_tag = super(top_node)
     node_feature_tag['is_exclusive'] = is_exclusive.to_s
     Root.write_xml_list(node_feature_tag, tags, 'tags')
@@ -373,7 +394,7 @@ class FeatureTags < Feature
     end
   end
 
-  def get_feature_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>" end
+  def get_feature_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label} #{'*' if mandatory}</span>" end
 
   # this is included in a form
   def get_feature_edit_html()
@@ -443,7 +464,7 @@ class FeatureRating < Feature
   def get_value_html(product)
     if rating = get_value(product)
       nb_stars = ((max_rating - min_rating).to_f * rating).round
-      s = ""; nb_stars.times { s << "<span class='pkz_rating'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>" }
+      s = ""; nb_stars.times { s << FeatureRating.icon_star.clone }
       s
     end
   end
@@ -456,15 +477,20 @@ class FeatureRating < Feature
     </div>"  
   end
 
-  def get_feature_html() "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label}</span>" end
+  def get_feature_html()
+    suffix = "#{FeatureRating.icon_star} #{'*' if mandatory}"
+    "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label} #{suffix} </span>"
+  end
 
   # this is included in a form
   def get_feature_edit_html()
     super() << "<div class=\"field\">
-                   min=<input name=\"min\" type='text' value=\"#{min}\" />
-                   max=<input name=\"max\" type='text' value=\"#{max}\" /> 
+                   min=<input name=\"min_rating\" type='text' value=\"#{min_rating}\" size=\"2\" />
+                   max=<input name=\"max_rating\" type='text' value=\"#{max_rating}\" size=\"2\" /> 
                 </div>"
   end
+
+  def self.icon_star() "<img src=\"/images/icons/star.png\" />" end
 
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) Float(content_string) end
@@ -677,7 +703,6 @@ class FeatureCondition < Feature
 
   def generate_xml(top_node)
     node_feature_condition = super(top_node)
-    node_feature_condition
   end
 
 
@@ -686,8 +711,8 @@ class FeatureCondition < Feature
   # value is an array of tag.idurl
 
   def get_value_html(product)
-    unless value_condition = get_value(product).nil?
-      value_condition ? "true" : "false"
+    unless (value = get_value(product)).nil?
+      "<img src=\"/images/icons/opinion_#{value ? 'ok' : 'ko' }.jpg\" />"
     end
   end
 

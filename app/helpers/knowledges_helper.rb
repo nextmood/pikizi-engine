@@ -26,8 +26,7 @@ module KnowledgesHelper
   end
 
   def feature_selector(knowledge, feature_selected_idurl)
-    features_list = knowledge.each_feature_collect(false) { |feature| feature }.flatten
-    select("option", "feature_idurl", features_list.collect { |f| [f.label_full, f.idurl]}, { :selected => feature_selected_idurl },
+    select("option", "feature_idurl", knowledge.features_all.collect { |f| [f.label_full, f.idurl]}, { :selected => feature_selected_idurl },
       :onchange => "window.location = '/distance/#{@knowledge.idurl}/' + document.getElementById('option_feature_idurl').value ")
   end
 

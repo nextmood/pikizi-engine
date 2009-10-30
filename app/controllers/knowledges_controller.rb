@@ -15,7 +15,7 @@ class KnowledgesController < ApplicationController
 
   def distance
     @knowledge, @products, @products_selected = get_products_selected(params)
-    @feature = params[:feature_idurl] ? @knowledge.get_feature_by_idurl(params[:feature_idurl]) : @knowledge
+    @feature = params[:feature_idurl] ? @knowledge.get_feature_by_idurl(params[:feature_idurl]) : @knowledge.features.first
   end
 
   def matrix
@@ -111,7 +111,7 @@ class KnowledgesController < ApplicationController
     case @selector = params[:selector]
       when :model
         @feature = @knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
-        @medias = @feature.get_backgrounds
+        @medias = @feature.backgrounds
       when :product
         @feature = @knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
         @product = Product.get_from_idurl(params[:product_idurl])
