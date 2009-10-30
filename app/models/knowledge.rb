@@ -269,8 +269,10 @@ class Feature < Root
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label} #{'*' if mandatory}</span>" end
-
+  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{feature_html_suffix}" end
+  def feature_html_suffix()
+    "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" if mandatory
+  end
   # this is included in a form
   def get_feature_edit_html()
     "<div class=\"field\" title=\"edit feature #{self.class}\">
@@ -394,7 +396,7 @@ class FeatureTags < Feature
     end
   end
 
-  def get_feature_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label} #{'*' if mandatory}</span>" end
+  def get_feature_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>#{feature_html_suffix}" end
 
   # this is included in a form
   def get_feature_edit_html()
@@ -478,7 +480,7 @@ class FeatureRating < Feature
   end
 
   def get_feature_html()
-    suffix = "#{FeatureRating.icon_star} #{'*' if mandatory}"
+    suffix = "#{FeatureRating.icon_star}#{feature_html_suffix}"
     "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label} #{suffix} </span>"
   end
 
@@ -591,7 +593,7 @@ class FeatureContinous < Feature
 
   def get_value_html(product)
     if get_value(product)
-      "#{format_value(get_value(product))}"
+      "#{format_value(get_value(product))}#{feature_html_suffix}"
     end
   end
 
@@ -604,7 +606,7 @@ class FeatureContinous < Feature
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class}\">#{label}</span>" end
+  def get_feature_html() "<span title=\"feature #{self.class}\">#{label}</span>#{feature_html_suffix}" end
 
   # this is included in a form
   def get_feature_edit_html()
