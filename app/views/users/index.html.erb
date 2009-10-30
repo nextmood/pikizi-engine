@@ -9,13 +9,15 @@
     <% @users.each do |user| %>
       <div class="pkz_item_list">
         <%= link_to user.rpx_username, "/profile/#{user.rpx_identifier}", :title => "rpx_identifier=#{user.rpx_identifier}"  %>
-        <i>&nbsp;<%= user.promotion_code %>
+        (<%= user.rpx_name %>
+        <%= user.rpx_email %>)
+        <i>&nbsp;status=<%= user.status %>
           ,&nbsp;
-          <span id="user_status_<%= user.rpx_email %>"><%= user.status %></span>
+          <span id="user_promotion_code_<%= user.rpx_email %>"><%= user.promotion_code %></span>
         </i>
         &nbsp;
         <small><%= link_to_remote("toggle status",
-            :url => { :controller => "users", :action => "toggle_status",
+            :url => { :controller => "users", :action => "toggle_promotion_code",
                       :user_rpx_email => user.rpx_email }) %>
         </small>
         <small>

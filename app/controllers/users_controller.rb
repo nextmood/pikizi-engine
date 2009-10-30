@@ -34,17 +34,17 @@ class UsersController < ApplicationController
     render(:action => 'show')
   end
 
-  def toggle_status
+  def toggle_promotion_code
     user_rpx_email = params[:user_rpx_email]
     user =  User.find_by_rpx_email(user_rpx_email)
     raise " no user with email #{user_rpx_email}" unless user
-    case user.status
-      when "none" then user.status = "auth"
-      else user.status = "none"
+    case user.promotion_code
+      when "none" then user.promotion_code = "auth"
+      else user.promotion_code = "none"
     end
     user.save
     render :update do |page|
-      page.replace_html("user_status_#{user_rpx_email}", user.status)
+      page.replace_html("user_promotion_code_#{user_rpx_email}", user.promotion_code)
     end
   end
 
