@@ -188,9 +188,8 @@ class QuizzeInstance < Root
     node_quizze_instance['products_idurls_filtered'] = products_idurls_filtered.join(',')
 
     node_quizze_instance << (node_answered = XML::Node.new('answered'))
-    hash_answered_question_answers.each do  |question_idurl, answers|
-      answers.each { |answer| answer.generate_xml(node_answered) }
-    end
+    puts "answers=#{answers.inspect}"
+    answers.each do  |answer| answer.generate_xml(node_answered) end
 
     node_quizze_instance
   end
@@ -239,6 +238,7 @@ class QuizzeInstance < Root
                         :choice_idurls_ok => choice_idurls_ok,
                         :time_stamp => Time.now)
     (hash_answered_question_answers[question_idurl] ||= []) << answer
+    answers << answer
     answer
   end
 
@@ -260,7 +260,7 @@ class QuizzeInstance < Root
 
   def user_last_answer_choice_idurls_ok(question_idurl)
     if (a = user_last_answer(question_idurl))
-      a.answers_ok.collect {|aok| aok.choice_idurl }
+      a.choice_idurls_ok
     else
       nil
     end
@@ -343,7 +343,7 @@ class Answer < Root
 
   key :knowledge_idurl, String
   key :question_idurl, String # question
-  key :choice_idurls_ok, String
+  key :choice_idurls_ok, Array
   key :time_stamp, Date
 
   attr_accessor :quiz_instance

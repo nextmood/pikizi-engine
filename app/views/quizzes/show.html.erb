@@ -37,12 +37,7 @@
 
 <div class="pkz_main">
   <% if next_question = @current_user.get_next_question(@knowledge, @quizze) %>
-    <small>
-      <%= next_question.idurl %>,&nbsp;
-      <%= pluralize next_question.nb_choices, "choice" %>,&nbsp;
-      <%= next_question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
-      pre-condition:<%= next_question.precondition || 'none' %>
-    </small>
+
     <!-- the form -->
     <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
     <% form_tag "/answer", :style => "margin-bottom:10px;" do -%>

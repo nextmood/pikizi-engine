@@ -13,8 +13,10 @@ class Root
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
     User.find(:all).each(&:destroy)
-    "empty database"
+    Knowledge.initialize_from_xml("cell_phones")
+    "database reseted"
   end
+  
   def self.is_main_document() false end
 
   def self.initialize_from_xml(xml_node)

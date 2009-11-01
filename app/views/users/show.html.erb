@@ -6,11 +6,7 @@
     <small><%= pluralize @user.nb_quizze_instances, "quizze" %> taken</small>
     &nbsp;&nbsp;
   Authored:
-  <small>
-    <%= pluralize @user.nb_reviews, "review" %>,
-    <%= link_to "process", "/users/#{@user.id}/process_review" %>
-
-    </small>
+  <small><%= pluralize @user.nb_reviews, "review" %></small>
 </div>
 
 <div class="pkz_main">

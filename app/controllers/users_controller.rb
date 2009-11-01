@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   def record_answer
      knowledge_idurl = params[:knowledge_idurl]
      knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-     quizze_idurl = params[:quizze_idurl] || knowledge_idurl
-     quizze = knowledge.quizzes.detect {|q| q.idurl == quizze_idurl }
+     quizze_idurl = params[:quizze_idurl]
+     quizze = Quizze.get_from_idurl(quizze_idurl)
      question_idurl = params[:question_idurl]
-     question = knowledge.questions.detect {|q| q.idurl == question_idurl }
+     question = Question.get_from_idurl(question_idurl)
      user = get_logged_user
      user.record_answer(knowledge, quizze, question, params[:choices_idurls_ok])
      user.save

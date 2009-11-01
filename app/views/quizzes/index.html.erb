@@ -1,12 +1,18 @@
+ <div id="main">
+    <div class="box952">
 
-<div class="pkz_box">
-  <% raise "eroor " unless @knowledge.idurl  %>
-  <%= model_selector(@knowledge, :quizzes) %>
-    <div class="pkz_main">
-      <% for quizze in @knowledge.quizzes %>
-        <div class="pkz_item_list">
-            <%= link_to(quizze.label, "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
-        </div>
-      <% end %>
+        <h1>Let's find your next phone</h1>
+        <ul class="advisors">
+          <% for quizze in @knowledge.quizzes %>
+             <li>
+               <%= image_tag("/domains/#{@knowledge.idurl}/quizzes/#{quizze.idurl}/images/main_image.png") %>
+               <%= quizze.label %>
+               <%= link_to("<p></p>", "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
+             </li>
+          <% end %>
+          <div class="spcr"></div>
+        </ul>
+
+        stay tuned more to come
     </div>
 </div>
