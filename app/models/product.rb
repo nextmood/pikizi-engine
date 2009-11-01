@@ -5,7 +5,8 @@ class Product < Root
 
   include MongoMapper::Document
 
-  key :idurl, String # unique url
+  key :idurl, String, :index => true # unique url
+
   key :label, String # unique url
 
   # no backgrounds (handled by feature...)
@@ -14,6 +15,9 @@ class Product < Root
 
   timestamps!
 
+  def self.is_main_document() true end
+
+  
   attr_accessor :knowledge
 
   def link_back(knowledge)

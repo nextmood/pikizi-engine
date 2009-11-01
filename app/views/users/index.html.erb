@@ -1,6 +1,4 @@
-<div class="pkz_box"></div>
 <div class="pkz_menu">
-
   <span><%= pluralize(@users.size, "user")%></span>
   <small><%= link_to "knowledge bases", "/knowledges" %></small>
 </div>
@@ -8,28 +6,27 @@
 <div class="pkz_main">
     <% @users.each do |user| %>
       <div class="pkz_item_list">
-        <%= link_to user.rpx_username, "/profile/#{user.rpx_identifier}", :title => "rpx_identifier=#{user.rpx_identifier}"  %>
-        (<%= user.rpx_name %>
-        <%= user.rpx_email %>)
-        <i>&nbsp;status=<%= user.status %>
-          ,&nbsp;
-          <span id="user_promotion_code_<%= user.rpx_email %>"><%= user.promotion_code %></span>
-        </i>
+        <%= link_to user.rpx_username, "/profile/#{user.idurl}", :title => "idurl=#{user.idurl}"  %>
+        (<%= user.category %> <%= user.rpx_name %> <%= user.rpx_email %>)
+
         &nbsp;
-        <small><%= link_to_remote("toggle status",
-            :url => { :controller => "users", :action => "toggle_promotion_code",
-                      :user_rpx_email => user.rpx_email }) %>
-        </small>
+        [<span id="user_role_<%= user.idurl %>"><%= user.role %></span>
+        <% unless user.is_admin %>
+            <small><%= link_to_remote(user.is_tester ? "block" : "tester",
+                            :url => { :controller => "users", :action => "toggle_role",
+                                      :user_idurl => user.idurl }) %>
+            </small>
+        <% end %>
+        ]
         <small>
             &nbsp;
-            <%= pluralize user.nb_reviews, "opinion" %>
+            <%= pluralize user.nb_reviews, "review" %>
             ,&nbsp;
-            <%= pluralize user.nb_quiz_instances, "quiz" %>
+            <%= pluralize user.nb_quizze_instances, "quizze" %>
             ,&nbsp;
             updated on <%=h user.updated_at %>
         </small>
       </div>
     <% end %>
-</div>
 </div>
 

@@ -3,35 +3,21 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :backgrounds, :member => { :thumbnail_150 => :get  }
 
 
-  # GET /medias/:knowledge_idurl/model/[:feature_idurl]
-  # GET /medias/:knowledge_idurl/product/:product_idurl/[:feature_idurl]
-  # GET /medias/:knowledge_idurl/question/:question_idurl/[:choice_idurl]
-  map.connect '/medias/:knowledge_idurl/model', :controller => 'knowledges', :action => 'medias', :selector => :model
-  map.connect '/medias/:knowledge_idurl/model/:feature_idurl', :controller => 'knowledges', :action => 'medias', :selector => :model
-  map.connect '/medias/:knowledge_idurl/product/:product_idurl', :controller => 'knowledges', :action => 'medias', :selector => :product
-  map.connect '/medias/:knowledge_idurl/product/:product_idurl/:feature_idurl', :controller => 'knowledges', :action => 'medias', :selector => :product
-  map.connect '/medias/:knowledge_idurl/question/:question_idurl', :controller => 'knowledges', :action => 'medias', :selector => :question
-  map.connect '/medias/:knowledge_idurl/question/:question_idurl/:choice_idurl', :controller => 'knowledges', :action => 'medias', :selector => :question
+  # GET /quizzes/:knowledge_idurl/:product_idurl/[:feature_idurl]
+  map.connect '/quizzes/:knowledge_idurl/:quizze_idurl', :controller => 'quizzes', :action => 'show'
+  map.connect '/quizzes/:knowledge_idurl', :controller => 'quizzes', :action => 'index'
 
-  # GET /aggregations/:knowledge_idurl/:product_idurl/[:feature_idurl]
-  map.connect '/aggregations/:knowledge_idurl/:product_idurl/:feature_idurl', :controller => 'knowledges', :action => 'aggregations'
-  map.connect '/aggregations/:knowledge_idurl/:product_idurl', :controller => 'knowledges', :action => 'aggregations'
-
-  map.resources :products
-
-  map.resources :users, :member => { :process_opinion => :get }
+  map.resources :users, :member => { :process_review => :get }
   map.connect '/profile/:user_idurl', :controller => 'users', :action => 'show_by_idurl'  
   map.connect '/answer', :controller => 'users', :action => 'record_answer'
 
   map.resources :knowledges
   map.connect '/distance/:knowledge_idurl/:feature_idurl', :controller => 'knowledges', :action => 'distance'
   map.connect '/distance/:knowledge_idurl', :controller => 'knowledges', :action => 'distance'
-  map.connect '/matrix/:knowledge_idurl', :controller => 'knowledges', :action => 'matrix'
+  map.connect '/show/:knowledge_idurl', :controller => 'knowledges', :action => 'show'
 
-  map.connect '/edit/:knowledge_idurl', :controller => 'knowledges', :action => 'edit_by_idurl'
-
-  map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'knowledges', :action => 'show_question'
-  map.connect '/questions/:knowledge_idurl', :controller => 'knowledges', :action => 'show_questions'
+  map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'questions', :action => 'show'
+  map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
 
   map.connect '/test_results', :controller => 'home', :action => 'test_results'
   map.connect '/test_products_search', :controller => 'home', :action => 'test_products_search'
@@ -39,12 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/test_product_alone', :controller => 'home', :action => 'test_product_alone'
   map.connect '/test_product_results', :controller => 'home', :action => 'test_product_results'
   map.connect '/test_box', :controller => 'home', :action => 'test_box'
-  map.connect '/test_product_page_results', :controller => 'home', :action => 'test_product_page_results'
-
-  
-
-  map.connect '/quiz/:knowledge_idurl/:quiz_idurl', :controller => 'knowledges', :action => 'quiz'
-  map.connect '/quiz/:knowledge_idurl', :controller => 'knowledges', :action => 'quiz'
+  map.connect '/test_product_page_results', :controller => 'home', :action => 'test_product_page_results' 
 
 
   map.connect '/access_restricted' , :controller => 'users', :action => 'access_restricted'

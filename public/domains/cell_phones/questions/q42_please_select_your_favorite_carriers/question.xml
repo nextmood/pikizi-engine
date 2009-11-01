@@ -1,29 +1,19 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="true" label="Please select your favorite carriers?">
     
-    <Choice idurl="c145_at&amp;t" label="at&amp;t">
-      <BackgroundHtml idurl="description" local_url="files/c145_at&amp;t@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c145_at&amp;t@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="lg_cf360 blackberry_bold_9000 samsung_sgh-a657 apple_iphone_3g lg_xenon samsung_impression palm_eos nokia_e75 samsung_propel_pro"/>
+    <Choice idurl="c145_at&amp;t" label="at&amp;t" url_description="files/c145_at&amp;t@description.txt" url_image="images/c145_at&amp;t@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: lg_cf360 blackberry_bold_9000 samsung_sgh-a657 apple_iphone_3g lg_xenon samsung_impression palm_eos nokia_e75 samsung_propel_pro"/>
     </Choice>
-    <Choice idurl="c146_sprint" label="sprint">
-      <BackgroundHtml idurl="description" local_url="files/c146_sprint@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c146_sprint@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="motorola_i9_stature nokia_e71 samsung_instinct_s30 palm_pre palm_eos sanyo_scp-2700 lg_lotus"/>
+    <Choice idurl="c146_sprint" label="sprint" url_description="files/c146_sprint@description.txt" url_image="images/c146_sprint@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: motorola_i9_stature nokia_e71 samsung_instinct_s30 palm_pre palm_eos sanyo_scp-2700 lg_lotus"/>
     </Choice>
-    <Choice idurl="c147_t-mobile" label="t-mobile">
-      <BackgroundHtml idurl="description" local_url="files/c147_t-mobile@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c147_t-mobile@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="motorola_renew_w233 palm_eos blackberry_curve_8900 samsung_memoir_t929"/>
+    <Choice idurl="c147_t-mobile" label="t-mobile" url_description="files/c147_t-mobile@description.txt" url_image="images/c147_t-mobile@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: motorola_renew_w233 palm_eos blackberry_curve_8900 samsung_memoir_t929"/>
     </Choice>
-    <Choice idurl="c148_verizon" label="verizon">
-      <BackgroundHtml idurl="description" local_url="files/c148_verizon@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c148_verizon@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_trance blackberry_storm lg_vx8350 lg_versa samsung_knack_sch-u310 nokia_7205_intrigue palm_eos"/>
+    <Choice idurl="c148_verizon" label="verizon" url_description="files/c148_verizon@description.txt" url_image="images/c148_verizon@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_trance blackberry_storm lg_vx8350 lg_versa samsung_knack_sch-u310 nokia_7205_intrigue palm_eos"/>
     </Choice>
-    <Choice idurl="c149_unlocked" label="unlocked">
-      <BackgroundHtml idurl="description" local_url="files/c149_unlocked@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c149_unlocked@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_s8300_ultratouch nokia_n96 nokia_e63 nokia_n79 lg_arena nokia_5130_xpressmusic sony_ericsson_xperia_x1 nokia_5800_xpressmusic sony_ericsson_w508 palm_eos nokia_6500_classic htc_touch_cruise_2009"/>
+    <Choice idurl="c149_unlocked" label="unlocked" url_description="files/c149_unlocked@description.txt" url_image="images/c149_unlocked@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch nokia_n96 nokia_e63 nokia_n79 lg_arena nokia_5130_xpressmusic sony_ericsson_xperia_x1 nokia_5800_xpressmusic sony_ericsson_w508 palm_eos nokia_6500_classic htc_touch_cruise_2009"/>
     </Choice>
   </Question>

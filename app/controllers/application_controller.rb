@@ -1,8 +1,7 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
-
-
+require 'digest/md5'
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
@@ -12,31 +11,31 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :user_authorized, :except => ['login', 'rpx_token_sessions_url', 'access_restricted']
+  before_filter :check_user_authorization, :except => ['login', 'rpx_token_sessions_url', 'access_restricted']
 
 
   # get the current logged user, the active record object
-  def get_logged_ar_user()
-    if session[:logged_user_rpx_identifier]
+  def get_logged_user()
+    if session[:logged_user_idurl]
       begin
-        @current_ar_user ||= User.find_by_rpx_identifier(session[:logged_user_rpx_identifier])
+        @current_user ||= User.get_from_idurl(session[:logged_user_idurl])
       rescue
-        logger.error "Oups I'can't find user with id=#{session[:logged_user_rpx_identifier].inspect}"
+        logger.error "Oups I'can't find user with id=#{session[:logged_user_idurl].inspect}"
         nil
       end
     end
   end
 
 
-  def self.release_version() "v 3.0 alpha 09/13/09"  end
+  def self.release_version() "v 3.0 alpha 11/1/09"  end
 
   private
 
-  def user_authorized
+  def check_user_authorization
     #if ENV['RAILS_ENV']=="production"
-    if get_logged_ar_user
+    if get_logged_user
       # there is an existing logged user
-      redirect_to '/access_restricted' unless get_logged_ar_user.is_authorized?
+      redirect_to '/access_restricted' unless get_logged_user.is_authorized
     else
       if ENV['RAILS_ENV'] == "development"
         log_as_developper
@@ -48,12 +47,19 @@ class ApplicationController < ActionController::Base
 
   def log_as_developper
     developper_rpx_identifier = "#001"
-    @current_ar_user = User.find_by_rpx_identifier(developper_rpx_identifier)
-    @current_ar_user ||= User.create({ :rpx_identifier => developper_rpx_identifier,
-                                       :rpx_name => "Franck Patte",
-                                       :rpx_username => "fpatte",
-                                       :rpx_email => "info@nextmood.com"})
-    session[:logged_user_rpx_identifier] = @current_ar_user.id
+    developper_rpx_email = "info@nextmood.com"
+    developper_idurl = Digest::MD5.hexdigest(developper_rpx_email)
+    unless @current_user = User.get_from_idurl(developper_idurl)
+      # create a new user
+      @current_user = User.create({:idurl => developper_idurl,
+                                   :rpx_identifier => developper_rpx_identifier,
+                                   :rpx_name => "Franck Patte",
+                                   :rpx_username => "fpatte",
+                                   :role => "admin",
+                                   :rpx_email => developper_rpx_email})
+      @current_user.link_back(nil)
+    end
+    session[:logged_user_idurl] = @current_user.id
   end
 
 

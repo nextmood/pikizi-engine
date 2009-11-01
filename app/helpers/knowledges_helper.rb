@@ -1,13 +1,10 @@
 module KnowledgesHelper
 
   def admin_menu(knowledge)
-    first_quiz = knowledge.quizzes.first
-    quizz_text = pluralize(knowledge.nb_quizzes, "quiz")
-    quizz_text = link_to(quizz_text, "/quiz/#{first_quiz.idurl}") if first_quiz
-    [ [ :matrix , link_to(pluralize(knowledge.nb_features, "feature"), "/matrix/#{knowledge.idurl}") ],
+    [ [ :matrix , link_to(pluralize(knowledge.nb_features, "feature"), "/show/#{knowledge.idurl}") ],
       [ :distance , link_to("Distance", "/distance/#{knowledge.idurl}") ],
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.idurl}") ],
-      [ :quizzes , quizz_text   ] ,
+      [ :quizzes , link_to(pluralize(knowledge.nb_quizzes, "quizze"), "/quizzes/#{knowledge.idurl}")   ] ,
       [ :users , link_to("users", "/users")   ] ]
   end
 

@@ -272,9 +272,7 @@
                 <Tag idurl="f274_email_encryption" label="Email encryption"/>
               </FeatureTags>
 
-              <FeatureNumeric idurl="f151_multiple_email_accounts" label="Multiple email accounts" format="% .2f" value_min="0.0" value_max="20.0">
-                <background idurl="description" type="html" db_id=""># of email accounts on the same device</background>
-              </FeatureNumeric>
+              <FeatureNumeric idurl="f151_multiple_email_accounts" label="Multiple email accounts" format="% .2f" value_min="0.0" value_max="20.0" help="# of email accounts on the same device" />
 
             </sub_features>
           </FeatureCondition>
@@ -906,9 +904,8 @@
         <sub_features>
           <FeatureCondition idurl="f205_calendar" label="Calendar">
             <sub_features>
-              <FeatureTags idurl="f206_calendar_support" label="Calendar support" is_exclusive="false">
-                <background idurl="description" type="html" db_id="">ics = iCal&#xD;
-caldav = google &amp; yahoo</background>
+              <FeatureTags idurl="f206_calendar_support" label="Calendar support" is_exclusive="false" help="ics = iCal&#xD;
+caldav = google &amp; yahoo">
                 <tags>
                   <Tag idurl="t775_ics" label="ics"/>
                   <Tag idurl="t776_caldav" label="caldav"/>

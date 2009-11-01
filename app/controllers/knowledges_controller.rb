@@ -1,7 +1,7 @@
 
 class KnowledgesController < ApplicationController
 
-  # layout "minimal", :only => :quiz
+  # layout "minimal", :only => :quizze
 
 
   # GET /knowledges
@@ -10,7 +10,7 @@ class KnowledgesController < ApplicationController
   def index
     knowledge = Knowledge.find(:all, :order => "updated_at DESC").first
     raise "no knowledge, in database idurls=#{ Knowledge.find(:all).collect(&:idurl).join(', ')} (#{ Knowledge.find(:all).size})" unless knowledge and knowledge.idurl
-    redirect_to("/matrix/#{knowledge.idurl}")
+    redirect_to("/show/#{knowledge.idurl}")
   end
 
   def distance
@@ -18,7 +18,7 @@ class KnowledgesController < ApplicationController
     @feature = params[:feature_idurl] ? @knowledge.get_feature_by_idurl(params[:feature_idurl]) : @knowledge.features.first
   end
 
-  def matrix
+  def show
     @knowledge, @products, @products_selected = get_products_selected(params)
     @features = @knowledge.each_feature_collect { |feature| feature }.flatten
   end
@@ -33,44 +33,6 @@ class KnowledgesController < ApplicationController
     [knowledge, products, products.select { |p| pidurls_selected.include?(p.idurl) }]
   end
 
-  def edit_by_idurl
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-  end
-
-  def show_questions
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-    @products = @knowledge.products
-  end
-
-  def show_question
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-    @question = @knowledge.get_question_by_idurl(params[:question_idurl])
-    @hash_product_proba = @question.enumerator
-    @products = @knowledge.products
-  end
-
-  # GET /quiz/knowledge_idurl/[quiz_idurl]
-  def quiz
-    knowledge_idurl = params[:knowledge_idurl]
-    quiz_idurl = (params[:quiz_idurl] || knowledge_idurl)
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-
-    @quiz = @knowledge.quizzes.detect {|q| q.idurl == quiz_idurl }
-    @user = get_logged_ar_user.pkz_user
-    @quiz_instance = @user.get_quiz_instance(@quiz)
-
-    respond_to do |format|
-      if @quiz
-        format.html # quiz.html.erb
-        format.xml  { head :ok }
-      else
-        flash[:error] = 'Unknown quiz.'
-        format.html { render :action => "matrix" }
-        format.xml  { render :xml => @knowledge.errors, :status => :unprocessable_entity }
-      end
-    end
-
-  end
 
   # thsi is rjs
   def feature_value_edit
@@ -100,34 +62,7 @@ class KnowledgesController < ApplicationController
     end
   end
 
-  # GET /medias/:knowledge_idurl/:selector/parameters...
-  #
-  # GET /medias/:knowledge_idurl/model/[:feature_idurl]
-  # GET /medias/:knowledge_idurl/product/:product_idurl/[:feature_idurl]
-  # GET /medias/:knowledge_idurl/question/:question_idurl/[:choice_idurl]
-  #
-  def medias
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
-    case @selector = params[:selector]
-      when :model
-        @feature = @knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
-        @medias = @feature.backgrounds
-      when :product
-        @feature = @knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
-        @product = Product.get_from_idurl(params[:product_idurl])
-        @medias = @feature.get_backgrounds(@product)
-      when :question
-        @question = @knowledge.get_question_by_idurl(params[:question_idurl])
-        if params[:choice_idurl]
-          @choice = @question.get_choice_from_idurl(params[:choice_idurl])
-          @medias = @choice.get_backgrounds
-        else
-          @medias = @question.get_backgrounds
-        end
-      else
-      raise "unknown selector #{params[:selector]}"
-    end
-  end
+
 
 
   # GET /aggregations/:knowledge_idurl/model/:product_idurl/[:feature_idurl]

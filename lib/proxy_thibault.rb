@@ -20,9 +20,9 @@
 #- algorithm run in background ..
 #- update weight in database?
 #
-# QuizEngineProxy is a proxy to the quiz_engine (this is not documented yet, but use in select2008.com)
-# On an asynchronous basis , the quiz_engine requests for a list of data to update
-# On an asynchronous basis , the quiz_engine acknoledge the list of updatesof data updated on its side
+# QuizEngineProxy is a proxy to the quizze_engine (this is not documented yet, but use in select2008.com)
+# On an asynchronous basis , the quizze_engine requests for a list of data to update
+# On an asynchronous basis , the quizze_engine acknoledge the list of updatesof data updated on its side
 #
 
 class QuizEngineProxy
@@ -48,9 +48,9 @@ class QuizEngineProxy
 
 
   # ENGINE API
-  # - notify the engine that the user have change it's product selection (start_quiz, zoom-in, zoom out)
+  # - notify the engine that the user have change it's product selection (start_quizze, zoom-in, zoom out)
   # - so the list of interresting question is updated
-  # the list of questions is different (start_quiz, zoom-in, zoom out)
+  # the list of questions is different (start_quizze, zoom-in, zoom out)
   def start_quiz(user_id, valid_question_ids)
   end
 

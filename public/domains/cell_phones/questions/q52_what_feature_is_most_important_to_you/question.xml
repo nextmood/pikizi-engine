@@ -1,14 +1,10 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="false" label="What feature is most important to you?">
     
-    <Choice idurl="c173_largest_app_store" label="largest app store">
-      <BackgroundHtml idurl="description" local_url="files/c173_largest_app_store@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c173_largest_app_store@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="apple_iphone_3g"/>
+    <Choice idurl="c173_largest_app_store" label="largest app store" url_description="files/c173_largest_app_store@description.txt" url_image="images/c173_largest_app_store@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: apple_iphone_3g"/>
     </Choice>
-    <Choice idurl="c174_best_corporate_email" label="best corporate email">
-      <BackgroundHtml idurl="description" local_url="files/c174_best_corporate_email@description.txt"/>
-      <BackgroundImage idurl="main_image" local_url="images/c174_best_corporate_email@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="blackberry_bold_9000 blackberry_curve_8900"/>
+    <Choice idurl="c174_best_corporate_email" label="best corporate email" url_description="files/c174_best_corporate_email@description.txt" url_image="images/c174_best_corporate_email@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: blackberry_bold_9000 blackberry_curve_8900"/>
     </Choice>
   </Question>

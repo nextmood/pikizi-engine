@@ -38,8 +38,8 @@
             <li><a href="/test_products_search">products</a></li>
             <li><a href="/knowledges">admin</a></li>
             <li class="last">
-              <% if controller.get_logged_ar_user %>
-                welcome <%= controller.get_logged_ar_user.rpx_username %><%= link_to "logout", "/logout" %>
+              <% if controller.get_logged_user %>
+                welcome <%= controller.get_logged_user.rpx_username %><%= link_to "logout", "/logout" %>
               <% else %>
                 <%= link_to "not logged", "/login" %>
               <% end %>

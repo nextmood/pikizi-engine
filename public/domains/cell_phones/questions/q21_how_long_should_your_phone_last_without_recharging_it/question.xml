@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="true" label="How long should your phone last without recharging it?">
     
-    <Choice idurl="c67_a_few_hours" label="a few hours">
-      <BackgroundImage idurl="main_image" local_url="images/c67_a_few_hours@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_impression nokia_6500_classic"/>
+    <Choice idurl="c67_a_few_hours" label="a few hours" url_image="images/c67_a_few_hours@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_impression nokia_6500_classic"/>
     </Choice>
-    <Choice idurl="c68_half_a_day" label="half a day">
-      <BackgroundImage idurl="main_image" local_url="images/c68_half_a_day@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="samsung_s8300_ultratouch samsung_omnia nokia_n96 samsung_trance nokia_n79 lg_arena blackberry_storm lg_vx8350 samsung_instinct_s30 blackberry_bold_9000 nokia_5130_xpressmusic samsung_sgh-a657 lg_versa blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_7205_intrigue lg_xenon palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus samsung_memoir_t929 nokia_e75"/>
+    <Choice idurl="c68_half_a_day" label="half a day" url_image="images/c68_half_a_day@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch samsung_omnia nokia_n96 samsung_trance nokia_n79 lg_arena blackberry_storm lg_vx8350 samsung_instinct_s30 blackberry_bold_9000 nokia_5130_xpressmusic samsung_sgh-a657 lg_versa blackberry_pearl_flip_8220 samsung_knack_sch-u310 nokia_7205_intrigue lg_xenon palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus samsung_memoir_t929 nokia_e75"/>
     </Choice>
-    <Choice idurl="c69_a_full_day" label="a full day">
-      <BackgroundImage idurl="main_image" local_url="images/c69_a_full_day@main_image.jpg"/>
-      <RecommendationProduct weight="1.0" reverse="true" product_idurl="nokia_e63 nokia_e71 htc_touch_diamond sony_ericsson_xperia_x1 nokia_5800_xpressmusic motorola_renew_w233 apple_iphone_3g sony_ericsson_w508 nokia_n85 htc_touch_cruise_2009 samsung_propel_pro"/>
+    <Choice idurl="c69_a_full_day" label="a full day" url_image="images/c69_a_full_day@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: nokia_e63 nokia_e71 htc_touch_diamond sony_ericsson_xperia_x1 nokia_5800_xpressmusic motorola_renew_w233 apple_iphone_3g sony_ericsson_w508 nokia_n85 htc_touch_cruise_2009 samsung_propel_pro"/>
     </Choice>
   </Question>

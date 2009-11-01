@@ -1,0 +1,12 @@
+
+<div class="pkz_box">
+  <% raise "eroor " unless @knowledge.idurl  %>
+  <%= model_selector(@knowledge, :quizzes) %>
+    <div class="pkz_main">
+      <% for quizze in @knowledge.quizzes %>
+        <div class="pkz_item_list">
+            <%= link_to(quizze.label, "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
+        </div>
+      <% end %>
+    </div>
+</div>

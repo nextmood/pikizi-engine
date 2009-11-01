@@ -1,65 +1,112 @@
 require 'mongo_mapper'
+require 'digest/md5'
 
 
 class User < Root
 
   include MongoMapper::Document
 
+  key :idurl, String # the md5 of the email
   key :rpx_identifier, String
   key :rpx_name, String
   key :rpx_username, String
   key :rpx_email, String
-  key :promotion_code, String, :default => "none"
-  key :status, String, :default => "citizen"
-  key :reputation,  :default => 1
+  key :role, String, :default => "unauthorised"
+  key :category, String, :default => "citizen"
+  key :reputation,  :default => 1.0
 
-  many :reviews  # external
-  many :quiz_instances # embedded documents
+  many :reviews  # external, list of reviews
+  many :quizze_instances # embedded documents
 
   timestamps!
 
   def self.is_main_document() true end
 
-  def is_authorized?() promotion_code == "auth" end
+  def is_authorized() !is_unauthorized end
+  def is_admin() role == "admin" end
+  def is_tester() role == "tester" end
+  def is_unauthorized() role == "unauthorised" end
 
-  def nb_quiz_instances() 0 end
-  def nb_reviews() 0 end
+  def nb_quizze_instances() quizze_instances.size end
+  def nb_reviews() reviews.size end
 
-  #API public, return a quiz_instance (create a new one for a given quiz)
-  def get_quiz_instance(quiz) Quizinstance.get_or_create_latest_for_quiz(quiz, self) end
+  def self.initialize_from_xml(xml_node)
+    user = super(xml_node)
+    user.rpx_identifier = xml_node['rpx_identifier']
+    user.rpx_name = xml_node['rpx_name']
+    user.rpx_username = xml_node['rpx_username']
+    user.rpx_email = xml_node['rpx_email']
+    user.idurl = Digest::MD5.hexdigest(user.rpx_email)
+    user.role = xml_node['role']
+    user.category = xml_node['category']
+    user.reputation = Float(xml_node['reputation'])
+    xml_node.find("quizze_instances/QuizzeInstance").each do |node_quizze_instance|
+      user.quizze_instances << QuizInstance.initialize.from_xml(node_quizze_instance)
+    end
+    user.save
+    user.link_back
+    user
+  end
+
+  def link_back(parent_object) 
+    quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) }
+  end
+
+  #todo to remove later....
+  def self.ensure_idurls()
+    User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_email); user.save }
+  end
+
+  def generate_xml(top_node)
+    node_user = super(top_node)
+    node_user['rpx_identifier'] = rpx_identifier
+    node_user['rpx_name'] = rpx_name
+    node_user['rpx_username'] = rpx_username
+    node_user['rpx_email'] =  rpx_email
+    node_user['role'] = role
+    node_user['category'] = category
+    node_user['reputation'] = reputation.to_s
+    node_user << (node_quizze_instances = XML::Node.new('quizze_instances'))
+    quizze_instances.each { |quizze_instance| quizze_instance.generate_xml(node_quizze_instances) }
+    node_user
+  end
+
+  
+  #API public, return a quizze_instance (create a new one for a given quizze)
+  def get_quizze_instance(quizze) QuizzeInstance.get_or_create_latest_for_quiz(quizze, self) end
 
   # step #1 user.record_answer
-  # step #2 quiz_instance.record_answer
+  # step #2 quizze_instance.record_answer
   # step #2 question.record_answer
   # step #2.1 choice.record_answer
   # step #3 trigger valide recommendations
   # recording an answer to a question from a user
   # dispatch the record_answer methods
-  def record_answer(knowledge, quiz, question, choices_idurls_selected_ok, timestamp=Time.now)
+  def record_answer(knowledge, quizze, question, choices_idurls_selected_ok)
     choices_idurls_selected_ok ||= []
-    quiz_instance = get_quiz_instance(quiz)
+    quizze_instance = get_quizze_instance(quizze)
     choices_ok = question.get_choice_ok_from_idurls(choices_idurls_selected_ok)
-    knowledge.trigger_recommendations(quiz_instance, question, quiz.products, choices_ok, false)
+    knowledge.trigger_recommendations(quizze_instance, question, quizze.products, choices_ok, false)
     question.record_answer(self, choices_ok, false)
   end
 
 
-  def cancel_answer(knowledge, quiz, question, timestamp=Time.now)
-    quiz_instance = get_quiz_instance(quiz)
-    last_answer = quiz_instance.user_last_answer(question.idurl)
+  def cancel_answer(knowledge, quizze, question)
+    quizze_instance = get_quizze_instance(quizze)
+    last_answer = quizze_instance.user_last_answer(question.idurl)
     raise "no answer to cancel " unless last_answer
-    knowledge.cancel_recommendations(question, last_answer, quiz_instance, quiz.products)
-    quiz_instance.cancel_answer(last_answer)
+    knowledge.cancel_recommendations(question, last_answer, quizze_instance, quizze.products)
+    quizze_instance.cancel_answer(last_answer)
     question.record_answer(self, last_answer.choices_ok(question), true)
   end
 
 
   # return the next question to be asked
   # return nil if there is no question available
-  def get_next_question(knowledge, quiz)
-    quiz_instance = get_quiz_instance(quiz)
-    candidate_questions = get_candidate_questions(knowledge, quiz_instance)
-    quiz_products = quiz.products
+  def get_next_question(knowledge, quizze)
+    quizze_instance = get_quizze_instance(quizze)
+    candidate_questions = get_candidate_questions(knowledge, quizze_instance)
+    quizze_products = quizze.products
     if candidate_questions.size > 0
       # get the question with the best separaration factor
       # take the 2 closest products...
@@ -72,18 +119,18 @@ class User < Root
 
   # return the questions that can be ask to this user
   # i.e. the unanswered question and precondition ok
-  def get_candidate_questions(knowledge, quiz_instance)
+  def get_candidate_questions(knowledge, quizze_instance)
     # TO DO include the pre-condition
-    knowledge.questions.find_all { |question| !quiz_instance.user_last_answer(question.idurl) }
+    knowledge.questions.find_all { |question| !quizze_instance.user_last_answer(question.idurl) }
   end
 
-  def add_opinion(knowledge_idurl, feature_idurl, product_idurl, value)
-    new_opinion = Opinion.new
-    new_opinion.knowledge_idurl = knowledge_idurl
-    new_opinion.feature_idurl = feature_idurl
-    new_opinion.product_idurl = product_idurl
-    new_opinion.value = value
-    opinions <<  new_opinion
+  def add_review(knowledge_idurl, feature_idurl, product_idurl, value)
+    new_review = Review.new
+    new_review.knowledge_idurl = knowledge_idurl
+    new_review.feature_idurl = feature_idurl
+    new_review.product_idurl = product_idurl
+    new_review.value = value
+    reviews <<  new_review
   end
 
 end
@@ -92,38 +139,63 @@ end
 # handles the dialog with the user
 # this is the interactive stuff
 # this is the origin of any kind of record method
-class QuizInstance < Root
+class QuizzeInstance < Root
 
   include MongoMapper::EmbeddedDocument
   
-  key :quiz_idurl
-  key :hash_productidurl_affinity
-  key :hash_answered_question_answers
-  key :nb_products_to_discriminate
-  key :products_idurls_filtered
+  key :quizze_idurl, String
+  key :products_idurls_filtered, Array
 
+  many :answers
+  many :affinities
 
-  def initialize_from_xml(xml_node)
-    super(xml_node)
-    self.quiz_idurl = xml_node['quiz_idurl']
-    self.hash_productidurl_affinity = Root.get_hash_from_xml(xml_node, 'affinities/affinity', 'product_idurl') { |node_affinity| Affinity.create_from_xml(node_affinity) }
-    self.products_idurls_filtered = Root.get_collection_from_xml(xml_node, 'products_filtered/product') { |node_product_filtered| node_product_filtered['idurl'] }
-    self.hash_answered_question_answers = {}
-    Root.get_collection_from_xml(xml_node, 'answered/answer') do |node_answer|
-      answer = Answer.create_from_xml(node_answer)
-      (self.hash_answered_question_answers[answer.question_idurl] ||= []) << answer
+  attr_accessor :user, :hash_answered_question_answers, :hash_productidurl_affinity
+
+  def link_back(user)
+    self.user = user
+    self.hash_answered_question_answers  = answers.inject({}) do |h, answer|
+      answer.link_back(self)
+      (h[answer.question_idurl] ||= []) << answer
+      h
     end
-    self.nb_products_to_discriminate = 2 # TODO this is an important parameter
+    self.hash_productidurl_affinity  = affinities.inject({}) do |h, affinity|
+      affinity.link_back(self)
+      h[affinity.product_idurl] = affinity
+      h
+    end
   end
 
-  # return a list of product that we need to differentiate
-  # at the beginning all products of the quiz
-  # and this should end to a short list, 2 or 3 products
-  def products
-    hash_productidurl_affinity.collect {  |product_idurl, affinity| Product.get_from_cache(product_idurl) }
+  def self.initialize_from_xml(xml_node)
+    quizze_instance = super(xml_node)
+    quizze_instance.quizze_idurl = xml_node['quizze_idurl']
+    xml_node.find("affinities/Affinity").each do |node_affinity|
+      quizze_instance.affinities << Affinity.initialize.from_xml(node_affinity)
+    end
+    quizze_instance.products_idurls_filtered = xml_node['products_idurls_filtered'].split(',').collect(&:trim)
+    xml_node.find("answered/Answer").each do |node_answer|
+      quizze_instance.answers << Answer.initialize_from_xml(node_answer)
+    end
+    quizze_instance
   end
 
+  def generate_xml(top_node)
+    node_quizze_instance = super(top_node)
+    node_quizze_instance['quizze_idurl'] = quizze_idurl
 
+    node_quizze_instance << (node_affinities = XML::Node.new('affinities'))
+    hash_productidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) }
+
+    node_quizze_instance['products_idurls_filtered'] = products_idurls_filtered.join(',')
+
+    node_quizze_instance << (node_answered = XML::Node.new('answered'))
+    hash_answered_question_answers.each do  |question_idurl, answers|
+      answers.each { |answer| answer.generate_xml(node_answered) }
+    end
+
+    node_quizze_instance
+  end
+
+  # sort the affinities by ranking
   def sorted_affinities
     unless @sorted_affinities
       @sorted_affinities = hash_productidurl_affinity.collect { |product_idurl, affinity| affinity }
@@ -140,53 +212,33 @@ class QuizInstance < Root
     @sorted_affinities
   end
 
-  def generate_xml(top_node)
-    node_quiz_instance = super(top_node)
-    node_quiz_instance['quiz_idurl'] = quiz_idurl
-
-    node_quiz_instance << (node_affinities = XML::Node.new('affinities'))
-    hash_productidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) } if hash_productidurl_affinity
-
-    node_quiz_instance << (node_products_filtered = XML::Node.new('products_filtered'))
-    (products_idurls_filtered || []).each do |product_idurl_filtered|
-      node_products_filtered << (node_product_triggered = XML::Node.new('product'))
-      node_product_triggered['idurl'] = product_idurl_filtered
-    end
-
-
-
-    node_quiz_instance << (node_answered = XML::Node.new('answered'))
-    hash_answered_question_answers.each do  |question_idurl, answers|
-      answers.each { |answer| answer.generate_xml(node_answered) }
-    end
-
-    node_quiz_instance
-  end
-
-  # look up for the last quiz instance for a given quiz
+  # look up for the last quizze instance for a given quizze
   # if it doesn't exist create one...'
-  def self.get_or_create_latest_for_quiz(quiz, pkz_user)
-    quiz_instances = pkz_user.quiz_instances.find_all { |qi| qi.quiz_idurl == quiz.idurl }
-    quiz_instance = quiz_instances.last # latest one... if any
-    unless quiz_instance
-      pkz_user.quiz_instances << (quiz_instance = self.new)
-      quiz_instance.idurl = "#{quiz.idurl}_1"
-      quiz_instance.quiz_idurl = quiz.idurl
-      quiz_instance.hash_productidurl_affinity = quiz.product_idurls.inject({}) { |h, product_idurl| h[product_idurl] = Affinity.create_with_parameters(product_idurl); h }
-      quiz_instance.hash_answered_question_answers = {}
-      quiz_instance.nb_products_to_discriminate = 2
-      pkz_user.save
+  def self.get_or_create_latest_for_quiz(quizze, user)
+    quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl }
+    quizze_instance = quizze_instances.last # latest one... if any
+    unless quizze_instance
+      quizze_instance = QuizzeInstance.new(
+        :quizze_idurl => quizze.idurl,
+        :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
+      user.quizze_instances << quizze_instance
+      user.save
+      quizze_instance.link_back(user)      
     end
-    quiz_instance
+    quizze_instance
   end
 
-  def nb_answers
+  def nb_answers()
     hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
   end
 
-  # record a user's answer  for this quizinstance
+  # record a user's answer  for this quizze_instance
   def record_answer(knowledge_idurl, question_idurl, choice_idurls_ok)
-    (hash_answered_question_answers[question_idurl] ||= []) << (answer = Answer.create_with_parameters(knowledge_idurl, question_idurl, choice_idurls_ok))
+    answer = Answer.new(:knowledge_idurl => knowledge_idurl,
+                        :question_idurl => question_idurl,
+                        :choice_idurls_ok => choice_idurls_ok,
+                        :time_stamp => Time.now)
+    (hash_answered_question_answers[question_idurl] ||= []) << answer
     answer
   end
 
@@ -223,29 +275,43 @@ class QuizInstance < Root
   end
 
 
-
-
-  private
-
-
 end
 
 
-# describe an affinity measure of a user toward a product during a quiz instance
+# describe an affinity measure of a user toward a product during a quizze instance
 # between (-1.00 hated product and +1.00:prefered product)
 # 0.0 means the product has not been classified yet
 class Affinity < Root
 
-  attr_accessor :product_idurl, :nb_weight, :sum_weight, :ranking
-
   include MongoMapper::EmbeddedDocument
+
+  key :product_idurl, String
+  key :nb_weight, Float, :default => 0.0
+  key :sum_weight, Float, :default => 0.0
+  key :ranking, Integer, :default => 1
+
+  attr_accessor :quiz_instance
+
+  def link_back(quiz_instance) self.quiz_instance = quiz_instance end
+
+  def add(weight, question_weight)
+    self.nb_weight += question_weight
+    self.sum_weight += question_weight * weight
+  end
   
-  def initialize_from_xml(xml_node)
-    super(xml_node)
-    self.product_idurl = xml_node['product_idurl']
-    self.nb_weight = Float(xml_node['nb_weight'])
-    self.sum_weight = Float(xml_node['sum_weight'])
-    self.ranking = Integer(xml_node['ranking'] || 0)
+  def self.initialize_from_xml(xml_node)
+    affinity = super(xml_node)
+    affinity.product_idurl = xml_node['product_idurl']
+    affinity.nb_weight = Float(xml_node['nb_weight'])
+    affinity.sum_weight = Float(xml_node['sum_weight'])
+    affinity.ranking = Integer(xml_node['ranking'] || 0)
+    affinity
+  end
+
+  def self.create_product_idurl(product_idurl)
+    new_affinity = Affinity.new
+    new_affinity.product_idurl = product_idurl
+    new_affinity
   end
 
   def generate_xml(top_node)
@@ -257,13 +323,6 @@ class Affinity < Root
     node_affinity
   end
 
-  def self.create_with_parameters(product_idurl)
-    affinity = super(nil)
-    affinity.product_idurl = product_idurl
-    affinity.nb_weight = 0.0
-    affinity.sum_weight = 0.0
-    affinity
-  end
 
   # between (-1.00 hated product and +1.00:prefered product)
   def measure() (nb_weight == 0.0 ? 0.0 : sum_weight / nb_weight) end
@@ -274,114 +333,50 @@ class Affinity < Root
 
 end
 
-require 'xml'
-require 'mongo_mapper'
-
-class Answer < Root
-
-  include MongoMapper::Document
-
-  key :user_id, String # author
-  key :question_id, String # question
-
-  key :label, String # unique url
-  many :backgrounds, :polymorphic => true
-
-  key :question_idurls, Array
-
-  def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge)  end
-
-  key :product_idurls, Array
-  def products() @products ||= Product.get_from_idurl(product_idurls, knowledge) end
-
-  attr_accessor :knowledge
-
-  def link_back(knowledge)
-    self.knowledge = knowledge
-  end
-
-  def self.initialize_from_xml(knowledge, xml_node)
-    quizze = super(xml_node)
-    quizze.product_idurls = read_xml_list_idurl(xml_node, "product_idurls")
-    quizze.question_idurls = read_xml_list_idurl(xml_node, "question_idurls")
-    quizze.save
-    quizze
-  end
-
-  def generate_xml(top_node)
-    node_quizze = super(top_node)
-    Root.write_xml_list_idurl(node_quizze, product_idurls, "product_idurls")
-    Root.write_xml_list_idurl(node_quizze, question_idurls, "question_idurls")
-    node_quizze
-  end
-
-end
 
 
-
-# describe an answer to a Question by a User during a Quiz Instance
+# describe an answer to a Question by a User during a Quizze Instance
 # has answer ok assiociated
 class Answer < Root
 
-  attr_accessor :knowledge_idurl, :question_idurl, :timestamp, :answers_ok
+  include MongoMapper::EmbeddedDocument
 
-  def initialize_from_xml(xml_node)
-    super(xml_node)
-    self.knowledge_idurl = xml_node['knowledge_idurl']
-    self.question_idurl = xml_node['question_idurl']
-    self.timestamp =  Time.parse(xml_node['timestamp'])
-    self.answers_ok = Root.get_collection_from_xml(xml_node, 'answerok') { |node_answerok| Answerok.create_from_xml(node_answerok) }
+  key :knowledge_idurl, String
+  key :question_idurl, String # question
+  key :choice_idurls_ok, String
+  key :time_stamp, Date
+
+  attr_accessor :quiz_instance
+
+  def link_back(quiz_instance) self.quiz_instance = quiz_instance end
+
+  def self.initialize_from_xml(xml_node)
+    answer = super(xml_node)
+    answer.knowledge_idurl = xml_node["knowledge_idurl"]
+    answer.question_idurl = xml_node["question_idurl"]
+    answer.choice_idurls_ok = xml_node["choice_idurls_ok"].split(',')
+    answer.time_stamp = Time.parse(xml_node["time_stamp"])
+    answer
   end
-
-  def has_opinion?() answers_ok.size > 0 end
 
   def generate_xml(top_node)
     node_answer = super(top_node)
     node_answer['knowledge_idurl'] = knowledge_idurl
     node_answer['question_idurl'] = question_idurl
-    node_answer['timestamp'] = timestamp.strftime(Root.default_date_format)
-    answers_ok.each { |answer_binary| answer_binary.generate_xml(node_answer)}
+    node_answer['choice_idurls_ok'] = choice_idurls_ok.join(',')
+    node_answer['time_stamp'] = time_stamp.strftime(Root.default_date_format)
     node_answer
   end
 
-  # create a new answer object (with subobjects)
-  def self.create_with_parameters(knowledge_idurl, question_idurl, choice_idurls_ok)
-    answer = Answer.new
-    answer.knowledge_idurl = knowledge_idurl
-    answer.question_idurl = question_idurl
-    answer.timestamp = Time.now
-    answer.answers_ok = choice_idurls_ok.collect {|choice_idurl_ok| Answerok.create_with_parameters(choice_idurl_ok) }
-    answer
-  end
-
-  def choice_idurls_ok() answers_ok.collect(&:choice_idurl) end
-
+  def has_opinion?() answers_ok.size > 0 end
+  
   # return a list of choice object matching the answer of this user to the question
   def choices_ok(question) question.get_choice_ok_from_idurls(choice_idurls_ok) end
 
 end
 
-# describe an OK answer to a Question's choice by a User during a Quiz Instance
-class Answerok < Root
 
-  attr_accessor :choice_idurl
 
-  def initialize_from_xml(xml_node)
-    super(xml_node)
-    self.choice_idurl = xml_node['choice_idurl']
-  end
 
-  def generate_xml(top_node)
-    node_answer_binary = super(top_node)
-    node_answer_binary['choice_idurl'] = choice_idurl
-    node_answer_binary
-  end
 
-  def self.create_with_parameters(choice_idurl)
-    answer_binary = super(nil)
-    answer_binary.choice_idurl = choice_idurl
-    answer_binary
-  end
-
-end
 

@@ -9,7 +9,7 @@ namespace :pikizi do
   end
 
 
-  desc "Recompute all aggregations based on opinions of all users on all products for all models"
+  desc "Recompute all aggregations based on reviews of all users on all products for all models"
   task :recompute_ratings => :environment do
 
     # compute
@@ -34,11 +34,11 @@ namespace :pikizi do
     puts "processing users..."
     User.xml_idurls.each do |user_idurl|
       user = User.create_from_xml(user_idurl)
-      user.authored_opinions.each do |auth_opinion|
-        k_idurl = auth_opinion.knowledge_idurl
-        f_idurl = auth_opinion.feature_idurl
-        p_idurl = auth_opinion.product_idurl
-        raise "Wrong parameters #{auth_opinion.inspect}" unless k_idurl and f_idurl and p_idurl
+      user.authored_reviews.each do |auth_review|
+        k_idurl = auth_review.knowledge_idurl
+        f_idurl = auth_review.feature_idurl
+        p_idurl = auth_review.product_idurl
+        raise "Wrong parameters #{auth_review.inspect}" unless k_idurl and f_idurl and p_idurl
 
         hash_f_p_aggregation = hash_k_f_p_aggregation[k_idurl]
         raise "knowledge idurl unknown #{k_idurl} #{hash_k_f_p_aggregation.inspect}" unless hash_f_p_aggregation
@@ -51,8 +51,8 @@ namespace :pikizi do
 
         nb_weighted, sum_weighted, authors = aggregation
         nb_weighted += user.reputation
-        sum_weighted += (user.reputation * auth_opinion.value)
-        authors << [user.idurl, user.reputation, auth_opinion.value]
+        sum_weighted += (user.reputation * auth_review.value)
+        authors << [user.idurl, user.reputation, auth_review.value]
         hash_k_f_p_aggregation[k_idurl][f_idurl][p_idurl] = [nb_weighted, sum_weighted, authors]
       end
     end
@@ -108,8 +108,8 @@ namespace :pikizi do
     # process each user
     User.xml_idurls.each do |user_idurl|
       user = User.create_from_xml(user_idurl)
-      user.quiz_instances.each do |quiz_instance|
-        quiz_instance.hash_answered_question_answers.each do |question_idurl, answers|
+      user.quizze_instances.each do |quizze_instance|
+        quizze_instance.hash_answered_question_answers.each do |question_idurl, answers|
           answer = answers.last
           knowledge_idurl = answer.knowledge_idurl
           puts "knowledge_idurl=#{knowledge_idurl}, question_idurl=#{question_idurl}"

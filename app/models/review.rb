@@ -1,6 +1,6 @@
 require 'mongo_mapper'
 
-# describe an opinion of a user for a given product/feature
+# describe an review of a user for a given product/feature
 # with associated backgrounds
 # rating in between ).0 and 1.0
 class Review < Root
@@ -39,17 +39,17 @@ class Review < Root
   end
 
   def generate_xml(top_node)
-    node_opinion = super(top_node)
-    node_opinion['value'] = value.to_s
-    hash_idurl_background.each { |idurl, background| background.generate_xml(node_opinion) }  if hash_idurl_background
-    node_opinion['db_id'] = db_id.to_s if db_id
-    node_opinion['knowledge_idurl'] = knowledge_idurl
-    node_opinion['feature_idurl'] = feature_idurl
-    node_opinion['min_rating'] = min_rating
-    node_opinion['max_rating'] = max_rating
-    node_opinion['product_idurl'] = product_idurl
-    node_opinion['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
-    node_opinion
+    node_review = super(top_node)
+    node_review['value'] = value.to_s
+    hash_idurl_background.each { |idurl, background| background.generate_xml(node_review) }  if hash_idurl_background
+    node_review['db_id'] = db_id.to_s if db_id
+    node_review['knowledge_idurl'] = knowledge_idurl
+    node_review['feature_idurl'] = feature_idurl
+    node_review['min_rating'] = min_rating
+    node_review['max_rating'] = max_rating
+    node_review['product_idurl'] = product_idurl
+    node_review['timestamp'] = timestamp.strftime(Root.default_date_format) if timestamp
+    node_review
   end
   
 end

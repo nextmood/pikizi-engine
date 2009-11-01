@@ -5,11 +5,12 @@ class Quizze < Root
 
   include MongoMapper::Document
   
-  key :idurl, String # unique url
+  key :idurl, String, :index => true # unique url
+
   key :label, String # unique url
-  many :backgrounds, :polymorphic => true
 
   key :question_idurls, Array
+  key :product_idurls, Array
 
   timestamps!
   

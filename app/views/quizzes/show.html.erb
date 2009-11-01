@@ -18,7 +18,7 @@
 
   function clean_up_arrows()
   {
-      <%= @quiz.products.collect { |product| "clean_up_one_arrow('#{product.idurl}');"}.join(' ') %>
+      <%= @quizze.products.collect { |product| "clean_up_one_arrow('#{product.idurl}');"}.join(' ') %>
   }
 
 
@@ -36,7 +36,7 @@
 
 
 <div class="pkz_main">
-  <% if next_question = @current_ar_user.pkz_user.get_next_question(@knowledge, @quiz) %>
+  <% if next_question = @current_user.get_next_question(@knowledge, @quizze) %>
     <small>
       <%= next_question.idurl %>,&nbsp;
       <%= pluralize next_question.nb_choices, "choice" %>,&nbsp;
@@ -46,9 +46,9 @@
     <!-- the form -->
     <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
     <% form_tag "/answer", :style => "margin-bottom:10px;" do -%>
-      <%= hidden_field_tag "user_idurl", @current_ar_user.idurl %>
+      <%= hidden_field_tag "user_idurl", @current_user.idurl %>
       <%= hidden_field_tag "knowledge_idurl", @knowledge.idurl %>
-      <%= hidden_field_tag "quiz_idurl", @quiz.idurl %>
+      <%= hidden_field_tag "quizze_idurl", @quizze.idurl %>
       <%= hidden_field_tag "question_idurl", next_question.idurl %>
       <div style="font-weight:bold; margin:5px;"><%= link_to(next_question.label, "/questions/#{@knowledge.idurl}/#{next_question.idurl}") %></div>
       <% for choice in next_question.choices %>
@@ -70,7 +70,7 @@
 <div class="pkz_main">
   <table><tr><td width="50%" valign="top">
       <ul>
-      <% for affinity in @quiz_instance.sorted_affinities %>
+      <% for affinity in @quizze_instance.sorted_affinities %>
           <li id="product_<%= affinity.product_idurl %>">
 
           #<%= affinity.ranking %>
@@ -82,24 +82,24 @@
       <% end %>
       </ul>
   </td><td width="50%" valign="top">
-      <%= pluralize(@quiz_instance.nb_answers, "answer") %> so far
-      <% for question in @knowledge.questions_sorted(@quiz.products, @current_ar_user.pkz_user) %>
-          <% if answered_choice_idurls = @quiz_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
-              <%= render(:partial => "knowledges/quiz_question",
+      <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
+      <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
+          <% if answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
+              <%= render(:partial => "quizzes/question",
                          :locals => { :answered_choice_idurls => answered_choice_idurls,
-                                      :current_ar_user => @current_ar_user,
-                                      :quiz => @quiz,
+                                      :current_ar_user => @current_user,
+                                      :quizze => @quizze,
                                       :knowledge => @knowledge,
                                       :question => question })%>
           <% end %>
       <% end %>
 
-      <% for question in @knowledge.questions_sorted(@quiz.products, @current_ar_user.pkz_user) %>
-          <% unless answered_choice_idurls = @quiz_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
-              <%= render(:partial => "knowledges/quiz_question",
+      <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
+          <% unless answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
+              <%= render(:partial => "quizzes/question",
                          :locals => { :answered_choice_idurls => answered_choice_idurls,
-                                      :current_ar_user => @current_ar_user,
-                                      :quiz => @quiz,
+                                      :current_ar_user => @current_user,
+                                      :quizze => @quizze,
                                       :knowledge => @knowledge,
                                       :question => question })%>
           <% end %>

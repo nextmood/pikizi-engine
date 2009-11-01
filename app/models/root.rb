@@ -12,7 +12,7 @@ class Root
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
-    #User.find(:all).each(&:destroy)
+    User.find(:all).each(&:destroy)
     "empty database"
   end
   def self.is_main_document() false end
@@ -23,7 +23,8 @@ class Root
     class_keys = self.keys.collect(&:first).concat(self.associations.collect(&:first))
     o.idurl = xml_node['idurl'] if class_keys.include?("idurl")
     o.label = xml_node['label'] if class_keys.include?("label")
-    o.read_xml_list(xml_node, "Background")  if class_keys.include?("backgrounds")
+    o.url_description = xml_node['url_description'] if class_keys.include?("url_description")
+    o.url_image = xml_node['url_image'] if class_keys.include?("url_image")
     o
   end
 
@@ -38,7 +39,9 @@ class Root
     class_keys = self.class.keys.collect(&:first).concat(self.class.associations.collect(&:first))
     xml_node['idurl'] = idurl if class_keys.include?("idurl")
     xml_node['label'] = label if class_keys.include?("label")
-    backgrounds.each { |b| b.generate_xml(xml_node) } if class_keys.include?("backgrounds")
+
+    xml_node['url_description'] = url_description if class_keys.include?("url_description") and url_description
+    xml_node['url_image'] = url_image if class_keys.include?("url_image")  and url_image    
     xml_node
   end
 
@@ -131,8 +134,6 @@ class Root
 
   def self.as_percentage(proba) "(#{'%3d' % (proba * 100).round}%)" end
 
-  def get_backgrounds(product=nil) [] end
-
   # convert an object to an xml string
   def to_xml(a_idurl=nil)
     doc = XML::Document.new
@@ -143,49 +144,6 @@ class Root
 end
 
 
-# describe a background  abstract class
-class Background < Root
-
-  include MongoMapper::EmbeddedDocument
-
-  key :local_url, String # unique url
-  key :content, String # text
-   
-
-  def initialize_from_xml(xml_node)
-    super(xml_node, {})
-    self.local_url = xml_node['local_url']
-    self.content = xml_node.content
-  end
-
-  def generate_xml(top_node)
-    node_background = super(top_node)
-    node_background['local_url'] = local_url if local_url
-    node_background << content
-    node_background
-  end
-
-
-  def display_as_html() "value=#{value} local_url=#{local_url}" end
-
-end
-
-class BackgroundText < Background
-end
-
-class BackgroundHtml < Background
-end
-
-# content is a Url
-class BackgroundUrl < Background
-end
-
-class BackgroundImage < BackgroundUrl
-  def display_as_html() "<img src='/backgrounds/#{local_url}/thumbnail_150' />" end
-end
-
-class BackgroundVideo < BackgroundUrl
-end
 
 
 class String

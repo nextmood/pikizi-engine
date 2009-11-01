@@ -14,22 +14,28 @@ class Question < Root
 
   include MongoMapper::Document
 
-  key :idurl, String, :required => true  # unique url
+  key :idurl, String, :index => true # unique url
+
   key :label, String, :required => true  # text
-  many :backgrounds
+  
 
   key :is_choice_exclusive, Boolean
   key :is_filter, Boolean
 
+  key :url_image, String
+  key :url_description, String
+
   key :precondition, String
   key :nb_presentation, Integer, :default => 0
   key :nb_oo, Integer, :default => 0
-
+  key :weight, Float, :default => 1.0
+  
   many :choices, :polymorphic => true
 
   timestamps!
 
   attr_accessor :knowledge
+
 
   def link_back(knowledge)
     self.knowledge = knowledge
@@ -66,7 +72,7 @@ class Question < Root
   def nb_recommendation() choices.inject(0) { |s, c| s += c.nb_recommendation } end
 
   # based on precondition expression
-  def is_askable?(quiz_instance) precondition ? precondition.evaluate(quiz_instance) : true end
+  def is_askable?(quizze_instance) precondition ? precondition.evaluate(quizze_instance) : true end
 
 
   # define the proba of no opinion 0.0 .. 1.0
@@ -92,6 +98,7 @@ class Question < Root
     else
       choices_ok.each { |choice| choice.record_answer(user, reverse_mode) }
     end
+    save
   end
 
 
@@ -133,6 +140,7 @@ class Question < Root
   end
 
 
+  def discrimination(user) 1.0 end
 end
 
 
@@ -145,10 +153,13 @@ class Choice < Root
 
   include MongoMapper::EmbeddedDocument
 
-  key :idurl, String # unique url
-  key :label, String # text
-  many :backgrounds
+  key :idurl, String, :index => true # unique url
 
+  key :label, String # text
+
+  key :url_image, String
+  key :url_description, String
+  
   key :nb_ok, Integer, :default => 0
   many :recommendations, :polymorphic => true
 
@@ -230,6 +241,7 @@ class Recommendation < Root
 
   key :weight, Float
   key :is_reverse, Boolean
+  key :predicate , String
 
   attr_accessor :choice
 
@@ -243,6 +255,7 @@ class Recommendation < Root
     recommendation = super(xml_node)
     recommendation.weight = Float(xml_node['weight'])
     recommendation.is_reverse = (xml_node['reverse'] == "true")
+    recommendation.predicate = xml_node['predicate']
     recommendation
   end
 
@@ -251,41 +264,25 @@ class Recommendation < Root
     node_recommendation = super(top_node)
     node_recommendation['weight'] = weight.to_s
     node_recommendation['reverse'] = "true" if is_reverse
+    node_recommendation['predicate'] = predicate
     node_recommendation
   end
 
   # generate the weights for the considered products
   # return a hash idurl product_idurl -> weight
-  def generate_hash_pidurl_weight(products) raise "should not be call" end
-
-end
-
-# generate_hash_pidurl_weight according to a predicate
-class RecommendationPredicate < Recommendation
-
-    key :predicate , String
-
-    def self.initialize_from_xml(xml_node)
-      recommendation_predicate = super(xml_node)
-      recommendation_predicate.predicate = xml_node['predicate']
-      recommendation_predicate
-    end
-
-    def generate_xml(top_node)
-      node_recommendation_predicate = super(top_node)
-      node_recommendation_predicate['predicate'] = predicate
-      node_recommendation_predicate
-    end
-
     def generate_hash_pidurl_weight(products)
       # interpreting predicate
       # prefix $ means feature idurl
       # prefix @ means a value for a feature
       #begin
-        tokens = predicate.strip.split(' ')
-        if tokens[1] == "has_value"
+        tokens = predicate.strip.split(' ').collect(&:strip)
+
+        # -------------------------------------------------------------------------
+        # FeatureTag.idurl is Tag.idurl, ... Tag.idurl
+        # -------------------------------------------------------------------------
+        if tokens[1] == "is:"  and tokens[0] != "product"
           feature_idurl = tokens.shift
-          tokens.shift # skip has_value
+          tokens.shift # skip "is:"
 
           feature = knowledge.get_feature_by_idurl(feature_idurl)
           raise "wrong feature #{feature_idurl} in predicate #{predicate}" unless feature
@@ -300,18 +297,36 @@ class RecommendationPredicate < Recommendation
           products.inject({}) do |h, product|
             if values = feature.get_value(product)
               # true if product hast at least one of the tokens values
-              puts "h=#{h.inspect} product.idurl=#{product.idurl}"
+              # puts "h=#{h.inspect} product.idurl=#{product.idurl}"
               if tokens.any? { | tag_idurl | values.include?(tag_idurl) }
                 h[product.idurl] = weight
-              else
+              elsif is_reverse
                 h[product.idurl] = -1.0 * weight
               end
             end
             h
           end
-        elsif tokens[1] == "my_other_predicate"
+
+        # -------------------------------------------------------------------------
+        # product is Product.idurl, ... Product.idurl
+        # -------------------------------------------------------------------------
+        elsif tokens[0] == "product" and tokens[1] == "is:"
+          tokens.shift # skip "product"
+          tokens.shift # skip "is:"
+          products.inject({}) do |h, product|
+            if tokens.include?(product.idurl)
+              h[product.idurl] = weight
+            elsif is_reverse
+              h[product.idurl] = -1.0 * weight
+            end
+            h
+          end
           # write an other predicate here
           # always return a hash product_idurl => weight
+
+        # -------------------------------------------------------------------------
+        # other predicate
+        # -------------------------------------------------------------------------
         else
           raise "predicate unrecognized #{predicate}"
         end
@@ -328,65 +343,7 @@ class RecommendationPredicate < Recommendation
 end
 
 
-# generate_hash_pidurl_weight for a given product (or list of products)
-class RecommendationProduct < Recommendation
 
-  key :product_idurls, String
-
-  def self.initialize_from_xml(xml_node)
-    recommendation_product = super(xml_node)
-    raise "eror no produt idurl for recommendation" unless xml_node['product_idurl']
-    recommendation_product.product_idurls = xml_node['product_idurl'].split(' ')
-    recommendation_product
-  end
-
-  def generate_xml(top_node)
-    node_recommendation_product = super(top_node)
-    node_recommendation_product['product_idurl'] = product_idurls
-    node_recommendation_product
-  end
-
-  def generate_hash_pidurl_weight(products)
-    products_scope = products.select { |p| product_idurls.include?(p.idurl) }
-    products.inject({}) do |h, product|
-      if product_idurls.include?(product.idurl)
-        h[product.idurl] = weight
-      elsif is_reverse
-        h[product.idurl] = -weight
-      end
-      h
-    end
-  end
-
-  def to_s() "@#{product_idurls}=#{weight}" end
-
-end
-
-# generate_hash_pidurl_weight based on a feature
-# select product according to +/- important for a given feature
-class RecommendationFeature < Recommendation
-  key :feature_idurl, String
-
-  def self.initialize_from_xml(xml_node)
-    recommendation_feature = super(xml_node)
-    recommendation_feature.feature_idurl = xml_node['feature_idurl']
-    recommendation_feature
-  end
-
-  def generate_xml(top_node)
-    node_recommendation_fpreference = super(top_node)
-    node_recommendation_fpreference['feature_idurl'] = feature_idurl
-    node_recommendation_fpreference
-  end
-
-  def generate_hash_pidurl_weight(products)
-    feature = Knowledge.get_model.get_feature_by_idurl(feature_idurl)
-    products.inject({}) { |h, product| h[product.idurl] = feature.aggregated_rating(product) * weight; h }
-  end
-
-  def to_s() "pref on feature #{feature_idurl}" end
-
-end
 
 
 class Distribution
