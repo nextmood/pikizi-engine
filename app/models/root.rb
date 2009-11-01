@@ -1,6 +1,7 @@
 
 
 require 'xml'
+require 'digest/md5'
 
 
 # The root of all XML/objects of Pikizi (Feature, Question, Choice, User, Product, etc...)
@@ -12,7 +13,8 @@ class Root
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
-    User.find(:all).each(&:destroy)
+    #User.find(:all).each(&:destroy)
+    User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_email); user.save }
     Knowledge.initialize_from_xml("cell_phones")
     "database reseted"
   end

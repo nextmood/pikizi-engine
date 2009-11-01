@@ -52,10 +52,7 @@ class User < Root
     quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) }
   end
 
-  #todo to remove later....
-  def self.ensure_idurls()
-    User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_email); user.save }
-  end
+
 
   def generate_xml(top_node)
     node_user = super(top_node)

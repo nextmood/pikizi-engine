@@ -461,7 +461,26 @@
     <favorites_list name="pikizi-engine" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="root.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/root.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.07317073">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="23" selection-end="44" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -1149,13 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="30" selection-start="11684" selection-end="11684" vertical-scroll-proportion="-9.038462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="23" selection-start="504" selection-end="517" vertical-scroll-proportion="0.0">
@@ -1170,16 +1182,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="2" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0">
+        <state line="169" column="28" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="28" selection-start="6585" selection-end="6585" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="23" selection-end="44" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.07317073">
           <folding />
         </state>
       </provider>
