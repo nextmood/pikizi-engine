@@ -32,16 +32,13 @@ class ApplicationController < ActionController::Base
   private
 
   def check_user_authorization
-    #if ENV['RAILS_ENV']=="production"
     if get_logged_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_user.is_authorized
-    else
-      if ENV['RAILS_ENV'] == "development"
+    elsif ENV['RAILS_ENV'] == "development"
         log_as_developper
-      else
+    else
         redirect_to '/login'
-      end
     end
   end
 
@@ -59,7 +56,7 @@ class ApplicationController < ActionController::Base
                                    :rpx_email => developper_rpx_email})
       @current_user.link_back(nil)
     end
-    session[:logged_user_idurl] = @current_user.id
+    session[:logged_user_idurl] = @current_user.idurl
   end
 
 
