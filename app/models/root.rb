@@ -14,7 +14,7 @@ class Root
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
     #User.find(:all).each(&:destroy)
-    User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_email); user.save }
+    #User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_email); user.save }
     Knowledge.initialize_from_xml("cell_phones")
     "database reseted"
   end
