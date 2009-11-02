@@ -35,18 +35,13 @@
     <div class="pkz_main">
 
       <!-- question header -->
-      <div style="width:100%; height:100px; background-color:yellow; margin-bottom:10px;">
-        <div style="float: left; width: 100px;" >
-            <img src='/domains/cell_phones/questions/q1_do_you_have_a_favorite_brand/images/c1_nokia@main_image_912.jpg' width="100" height=100 />
-        </div>
-        <div style="float: left; width: 800px; margin:10px;" >
-          <div>
+      <div style="width:100%; height:60px; margin-bottom:10px; padding:5px;">
+          <div >
             <%= pluralize @question.nb_presentation.round, "presentation" %>,&nbsp;
             no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%),&nbsp;
             <span style="background-color:<%= @question.confidence < 1 ? 'orange' : 'green' %>;">confidence=<%= "%d" % (@question.confidence * 100) %>%</span>
           </div>
-          <div style="font-weight:bold;" title="<%= @question.idurl %>"><%= @question.label %></div>
-        </div>
+          <div style="font-weight:bold; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
       </div>
 
       <!-- xml description -->
@@ -62,7 +57,7 @@
 
       <!-- choices -->
       <% width_choice = 190 %>
-      <div style="width:<%= width_choice * @question.nb_choices %>px; height:80px; clear:left; margin-bottom:10px;">
+      <div style="width:<%= width_choice * @question.nb_choices %>px; height:130px; width:100%; clear:left; margin-bottom:5px; border-bottom:1px solid black; border-top:1px solid black;">
           <div>
             <%= pluralize @question.nb_choices, "choice" %>,&nbsp;
             <%= @question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
@@ -75,7 +70,8 @@
                   <%= choice.label %>
                 </div>
                 <div style="float: left; width: 80px; " >
-                  <img src="<%= "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_image}" %>" width="80" height=80 />
+                  <!-- <img src="<%= "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_image}" %>" width="80" height=80 /> -->
+                  <img src="<%= "/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/images/c36_candy_bar@main_image.jpg" %>" width="80" height=80 />
                 </div>
                 <div style="float: left; width: 100px;  margin-left:2px; ">
 
