@@ -62,7 +62,7 @@ class UsersController < ApplicationController
     # new user creation
     unless logged_user
       initial_attributes = {:idurl => user_idurl,
-                            :rpx_identifier => rpx_identifier,
+                            :rpx_identifier => rpx_data[:rpx_identifier],
                             :rpx_name => rpx_data[:name],
                             :rpx_username => rpx_data[:username],
                             :rpx_email => rpx_email }
