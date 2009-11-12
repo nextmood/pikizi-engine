@@ -1,0 +1,18 @@
+
+# see http://www.viget.com/extend/getting-started-with-mongodb-mongomapper/
+
+development:
+  adapter: mongodb
+  host: localhost
+  database: pikizi_mongo_db
+
+test: &TEST
+  adapter: mongodb
+  host: localhost
+  database: pikizi_mongo_db_test
+
+production:
+  adapter: mongodb
+  host: localhost
+  database: pikizi_mongo_db
+

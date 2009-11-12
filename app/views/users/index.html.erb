@@ -1,0 +1,32 @@
+<div class="pkz_menu">
+  <span><%= pluralize(@users.size, "user")%></span>
+  <small><%= link_to "knowledge bases", "/knowledges" %></small>
+</div>
+
+<div class="pkz_main">
+    <% @users.each do |user| %>
+      <div class="pkz_item_list">
+        <%= link_to user.rpx_username, "/profile/#{user.idurl}", :title => "idurl=#{user.idurl}"  %>
+        (<%= user.category %> <%= user.rpx_name %> <%= user.rpx_email %>)
+
+        &nbsp;
+        [<span id="user_role_<%= user.idurl %>"><%= user.role %></span>
+        <% unless user.is_admin %>
+            <small><%= link_to_remote(user.is_tester ? "block" : "tester",
+                            :url => { :controller => "users", :action => "toggle_role",
+                                      :user_idurl => user.idurl }) %>
+            </small>
+        <% end %>
+        ]
+        <small>
+            &nbsp;
+            <%= pluralize user.nb_reviews, "review" %>
+            ,&nbsp;
+            <%= pluralize user.nb_quizze_instances, "quizze" %>
+            ,&nbsp;
+            updated on <%=h user.updated_at %>
+        </small>
+      </div>
+    <% end %>
+</div>
+

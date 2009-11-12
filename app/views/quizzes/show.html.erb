@@ -1,0 +1,43 @@
+
+<div class="pkz_box">
+
+    <%= model_selector(@knowledge, :quizzes) %>
+    <div class="pkz_main">
+        <% form_tag "/quizzes/#{@knowledge.idurl}/#{@quizze.idurl}/edit", :id => "select_products" do -%>
+            <table border=1 width="100%">
+              <tr>
+                <th><%= @quizze.label %><br/><%= link_to(image_tag("icons/play.png"), "/myquizze/#{@knowledge.idurl}/#{@quizze.idurl}") %></th>
+                <th>Products<br/><%= render(:partial => "/knowledges/select_all", :locals => {:name => "select_product_idurls"}) %></th>
+                <th>Questions<br/><%= render(:partial => "/knowledges/select_all", :locals => {:name => "select_question_idurls"}) %></th>
+              </tr>
+              <tr><td colspan="3" align="center"><%= submit_tag 'Update...' %></td></tr>
+              <tr>
+                <td valign="top" align="center">
+                    <%= image_tag("/domains/#{@knowledge.idurl}/quizzes/#{@quizze.idurl}/images/main_image.png") %>
+                </td>
+                <td valign="top">
+
+                    <ul>
+                        <% for product in @knowledge.products %>
+                            <li><%= check_box_tag("select_product_idurls[]", product.idurl, @quizze.product_idurls.include?(product.idurl))  %><%= product.label %></li>
+                        <% end %>
+                    </ul>
+                </td>
+                <td valign="top">
+
+                    <ul>
+                        <% for question in @knowledge.questions %>
+                            <li><%= check_box_tag("select_question_idurls[]", question.idurl, @quizze.question_idurls.include?(question.idurl))  %><%= question.label %></li>                          
+                        <% end %>
+                    </ul>
+                </td>
+              </tr>
+
+            </table>
+          <% end -%>
+    </div>
+    
+</div>
+
+
+

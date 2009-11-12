@@ -1,0 +1,19 @@
+<div class="box952" style="height:300px;">
+  <div class="spcr">
+      <h1>Pikizi is currently in Private Beta</h1>
+
+
+  </div>
+  <div class="spcr" style="text-align:left; margin-left:15px; margin-top:15px;">
+        <br/>
+        <% if @current_user %>
+            <h2>Thanks for registering <%= @current_user.rpx_name %></h2>
+            <h2>You will be notified <small>(@ <%= @current_user.rpx_email %>)</small> as soon as Pikizi enters a Public Beta</h2>
+        <% else %>
+            <p>The access to this page is restricted</p>
+        <% end %>
+  </div>
+</div>
+
+
+

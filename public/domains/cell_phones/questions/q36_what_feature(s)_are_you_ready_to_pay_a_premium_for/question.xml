@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="What feature(s) are you ready to pay a premium for?">
+    
+    <Choice idurl="c112_camera" label="camera" url_description="files/c112_camera@description.txt" url_image="images/c112_camera@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch samsung_omnia nokia_n96 nokia_n79 lg_arena nokia_n85 samsung_memoir_t929"/>
+    </Choice>
+    <Choice idurl="c113_email" label="email" url_description="files/c113_email@description.txt" url_image="images/c113_email@main_image.jpg" >
+    </Choice>
+    <Choice idurl="c114_gps_&amp;_location-based_services" label="gps &amp; location-based services" url_description="files/c114_gps_&amp;_location-based_services@description.txt" url_image="images/c114_gps_&amp;_location-based_services@main_image.jpg" >
+    </Choice>
+    <Choice idurl="c115_media" label="media" url_description="files/c115_media@description.txt" url_image="images/c115_media@main_image.jpg" >
+    </Choice>
+    <Choice idurl="c116_internet_on_the_go" label="internet on the go" url_description="files/c116_internet_on_the_go@description.txt" url_image="images/c116_internet_on_the_go@main_image.jpg" >
+      <Recommendation weight="1.0" reverse="true" predicate="product is: motorola_i9_stature samsung_omnia nokia_n96 nokia_e63 nokia_n79 lg_arena lg_cf360 nokia_e71 samsung_instinct_s30 htc_touch_diamond blackberry_bold_9000 sony_ericsson_xperia_x1 sony_ericsson_xperia_x1 nokia_5800_xpressmusic lg_versa apple_iphone_3g apple_iphone_3g blackberry_pearl_flip_8220 nokia_n85 palm_pre palm_eos blackberry_curve_8900 nokia_e75 samsung_propel_pro samsung_propel_pro"/>
+    </Choice>
+  </Question>

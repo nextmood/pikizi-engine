@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background-color:#efefef; font-family:Arial, Helvetica, sans-serif;font-size:14px;margin:0;}
+ul{list-style:none;}
+.spcr{clear:both;}
+a {text-decoration:none;}
+#wrapper{width:952px; margin:0 auto;position:relative;padding:14px 0 0 0;}
+#header{background-color:#efefef;height:117px;padding:0 0 6px 0; background:url(/images/gene/box952Top.png) no-repeat left bottom;}
+#header img{float:left;margin:0 0 0 21px;border:none;}
+#header ul {float:right;margin:10px 0 10px 0;}
+#header ul li{float:left;margin:0 18px 0 0;}
+#header ul li.last{margin:0 8px 0 0;}
+#header ul li a{color:#00c0ff;padding:3px;font-weight:bold;}
+#header ul li a:hover{color:#ffffff;background-color:#B4B4B4;}
+/*IE7*/
+*:first-child+html #header{height:100px;}
+
+#search_box {width: 276px;height:47px;background: url(/images/gene/bg_search_box.png);position:absolute;top:45px;left:676px;margin:10px 0 0 0;}
+#search_box #s {float: left;padding: 0;margin: 15px 0 0 14px;border: 0;width:220px;background: none;color:#989898;font-size:13px;}
+#search_box #go {float: right;margin: 12px 16px 0 0;}
+/*IE7*/
+*:first-child+html #search_box{clear:both;}
+
+#main {background:url(/images/gene/box952Btm.png) no-repeat left bottom;padding:0 0 8px 0;margin:-14px 0 0;}
+/*IE7*/
+*:first-child+html #main {margin:0;}
+
+#footer{clear:both;background-color:#efefef;height:76px;padding:20px 0 0 0;}
+#footer ul li{float:left; color:#8d8d8c;margin:0 18px 0 0;}
+#footer ul li a{color:#8d8d8c;padding:3px;}
+#footer ul li a:hover{color:#ffffff;background-color:#B4B4B4;}
+#footer ul li.copyRight{float:right;}
+
+.box952 {background:url(/images/gene/box952edge.png) repeat-y;padding:0;padding:0 30px 25px 0; text-align:right; color:#a8a8a8;}
+.box952 h1 {background-color:#ff8a00; padding:10px;font-size:24px;font-weight:bold;color:#ffffff;margin:0 0 0 8px;float:left;auto;text-align:left;}
+.box952 ul.advisors {padding:105px 0 0 0;margin:0 0 20px 30px;width:937px;float:none;background-image:none;border-bottom:none;}
+.box952 ul.advisors li {float:left; text-align:center; color:#6e6e6e; width:270px; margin:0;padding:0 10px 0 10px;font-size:18px;}
+.box952 ul.advisors li.last {margin:0;}
+.box952 ul.advisors li img {display:block;margin:0 auto;padding:0 0 5px 0;border:none;float:none;}
+.box952 ul.advisors li p {background:url(/images/gene/startBtn.png) no-repeat center center;height:14px;}
+.box952 ul.advisors li a {display:block;width:66px;margin:0 auto;}
+/*IE7*/
+*:first-child+html .box952 ul.advisors {padding:65px 0 0 0;}
+*:first-child+html .box952 ul.advisors li a {margin:15px 0 0 0; cursor:pointer;}
+
+.boxLwr {margin:4px 0 0 0;}
+.boxLwr h1 {float:left;color:#ffffff;background-color:#b4b4b4;font-size:24px;font-weight:bold;;padding:10px;margin:0 0 21px 8px;}
+
+/********************** HOME **********************/
+
+body#home ul#news {float:left;list-style:none;width:606px;padding:0 0 8px 0;margin:0;background:url(/images/gene/box606Btm.png) no-repeat left bottom;}
+
+body#home ul#news li {padding:6px 0 0 0;background:url(/images/gene/box606Top.png) no-repeat left top;}
+body#home ul#news li ul {background:url(/images/gene/box606Edge.png) repeat-y;;padding:0 0 30px 0;width:606px;}
+body#home ul#news li ul li a.more {color:#00c0ff;display:inline-block;margin:0 0 10px 420px;}
+body#home ul#news li ul li {background:none;clear:both;width:536px;margin:0 0 10px 30px;padding:18px 0 0 0;color:#6e6e6e;border-bottom:1px solid #ffc571;}
+body#home ul#news li ul li img {float:left;margin:0 20px 47px 0;}
+body#home ul#news li ul li h2 {font-size:16px;color:#00c0ff;margin:0;width:450px;display:inline-block;float:left;}
+body#home ul#news li ul li h2 a {color:#00c0ff;text-align:left;margin:0;}
+body#home ul#news li ul li p {margin:20px 0 20px 0; display:inline-block;width:450px;}
+body#home ul#news li ul li.first {background:url(/images/gene/orangeCorner.png) no-repeat left top;}
+
+body#home ul#welcome {float:left;list-style:none;width:346px;padding:0 0 8px 0;margin:0;background:url(/images/gene/box346Btm.png) no-repeat left bottom;}
+
+body#home ul#welcome li {padding:6px 0 0 0;background:url(/images/gene/box346Top.png) no-repeat left top;;}
+body#home ul#welcome li ul {background:url(/images/gene/box346Edge.png) repeat-y;padding:0;width:346px;padding:0 0 85px 0;}
+/*IE7*/
+*:first-child+html body#home ul#welcome li ul{padding-bottom:84px;}
+
+body#home ul#welcome li ul li a {color:#00c0ff;text-align:right;}
+body#home ul#welcome li ul li {background:none;clear:both;width:280px;margin:0 0 0 30px;padding:18px 0 0 0;color:#6e6e6e;}
+body#home ul#welcome li ul li img {float:left;margin:0 20px 47px 0;}
+body#home ul#welcome li ul li h2 {font-size:16px;color:#00c0ff;margin:0;width:450px;display:inline-block;}
+body#home ul#welcome li ul li h2 a {text-align:left;margin:0;}
+body#home ul#welcome li ul li p {margin:0 0 20px 0; display:inline-block;width:285px;}
+
+
+/********************** PRODUCTS **********************/
+
+body#products h2 {margin:60px 0 0 24px;float:left;clear:left;color:#FF8A00;}
+body#products #search_boxBg {width: 399px;height:61px;background:url(/images/gene/bg_search_boxBg.png) no-repeat;float:left;clear:left;margin:10px 0 20px 16px;}
+body#products #search_boxBg #S {float: left;padding: 0;margin: 20px 0 0 14px;border: 0;width:320px;background: none;color:#989898;font-size:16px;}
+body#products #search_boxBg #Go {float: right;margin: 15px 20px 0 0;}
+body#products .boxLwr {padding:0; background:url(/images/gene/box952Top.png) no-repeat left top;}
+body#products .boxLwr ul {float:left;background:url(/images/gene/orangeCorner.png) no-repeat left top;border-bottom:1px solid #ffc571;margin:20px 0 0 28px;padding:11px 0 20px 16px;}
+
+body#products .boxLwr ul h3{text-align:left;margin:0 0 10px 0;}
+body#products .boxLwr ul li{float:left; width:270px;padding:0 20px 0 0;text-align:left;}
+body#products .boxLwr ul li img{float:left; margin:0 0 20px 0;}
+body#products .boxLwr ul li p {}
+body#products .boxLwr ul li h4 a{color:#00c0ff;font-size:16px;}
+body#products .boxLwr ul.last {border-bottom:none;}
+
+
+
+body#products ul.star-rating{background:url(/images/gene/stars.jpg) left bottom;position:relative;width:45px;height:8px;overflow:hidden;margin:0 0 5px 0;padding:0;border-bottom:none;clear:none;float:none;}
+/*IE7*/
+*:first-child+html body#products ul.star-rating{background-position-y:8px;}
+body#products ul.star-rating li.current-rating{
+	background: url(/images/gene/stars.jpg) left top;
+	position: absolute;
+	height: 8px;
+	display: block;
+	text-indent: -1000px;
+	z-index: 1;
+	padding:0;
+	float:none;
+	}
+
+body#products #footer {background:url(/images/gene/box952Btm.png) no-repeat left top;padding:28px 0 0 0;}
+
+
+/********************** PRODUCTS RESULTS **********************/
+
+body#products .adResults{width:337px; position:relative;top:-113px;float:right;margin:0 40px 0 0;height:91px;}
+
+body#products .adResults h1{font-size:22px;color:#FF8A00;background-color:#ffffff; background:url(/images/gene/orangeCorner.png) left top no-repeat;width:320px;}
+body#products .adResults ul.advisors {padding:0;margin:0;width:357px;}
+body#products .adResults ul.advisors li {float:left; text-align:center; color:#6e6e6e; width:97px; margin:0;padding:0 10px 0 10px;font-size:14px;}
+body#products .adResults ul.advisors li.last {margin:0;}
+body#products .adResults ul.advisors li img {display:block;margin:0 auto;padding:0 31px 5px 31px;border:none; height:74px;}
+body#products .adResults ul.advisors li p {background:url(/images/gene/startBtn.png) no-repeat center center;margin:10px 0 0;}
+body#products .adResults ul.advisors li a {display:block;width:66px;margin:0 auto;}
+/*IE7*/
+*:first-child+html body#products .adResults {top:20px;}
+*:first-child+html body#products .adResults ul.advisors li a {margin:15px 0 0 0; cursor:pointer;}
+
+
+/********************** RESULTS **********************/
+
+.box952 ul.bugRt {float:right;background-image:none;margin:0 -30px 0 0;padding:0;width:auto;border-bottom:none;}
+/*IE7*/
+*:first-child+html .box952 ul.bugRt {margin:0 -30px 0 0}
+
+.box952 ul.bugRt li{width:auto;height:64px;font-size:23px;padding:20px 8px 0 0;}
+.box952 ul.bugRt li.answers{background:url(/images/gene/ansStripe.png) no-repeat;height:64px;width:101px;margin:0 0 0 -51px;padding:0 0 0 8px;text-align:center;font-size:40px;color:#717171;font-weight:bold;}
+.box952 ul.bugRt li.backAd{background-color:#0ac8f9;padding:0 20px 20px 0;;margin:0 0 0 240px;height:44px;}
+.box952 ul.bugRt li.backAd a{background-color:#0ac8f9;color:#ffffff;padding:20px 38px 20px 20px;font-size:20px; display:block;}
+*:first-child+html .box952 ul.bugRt li.backAd a{padding:20px 38px 21px 20px;}
+.box952 ul.bugRt li.backAd a:hover{color:#ffffff;background-color:#B4B4B4;}
+.box952 ul.bugRt li.iconBtn{padding:28px 0 0 10px;}
+
+.box952 ul {float:left;background:url(/images/gene/orangeCorner.png) no-repeat left top;border-bottom:1px solid #ffc571;margin:0 0 40px 28px;;padding:11px 0 0 16px;width:874px;color:#A8A8A8;}
+.box952 ul h3{text-align:left;margin:0 0 10px 0;}
+.box952 ul li{float:left; width:270px;padding:0;text-align:left;}
+.box952 ul li img{float:left; margin:0 0 20px 0; border:none;}
+.box952 ul li p {}
+.box952 ul li h4 a{color:#00c0ff;font-size:16px;}
+.box952 ul.last {border-bottom:none;}
+
+.box952 ul a{color:#00c0ff;}
+.box952 ul li.img{width:220px;}
+.box952 ul.one li.details{background:url(/images/gene/topPick1.jpg) no-repeat left top;margin:0;padding:10px 0 0 92px;width:220px;}
+.box952 ul.two li.details{background:url(/images/gene/topPick2.jpg) no-repeat left top;margin:0 0 0 -12px;padding:10px 0 0 104px;width:220px;}
+.box952 ul.three li.details{background:url(/images/gene/topPick3.jpg) no-repeat left top;margin:0 0 0 -12px;padding:10px 0 0 104px;width:220px;}
+.box952 ul li.details table {margin:3px 0 0 -6px;;padding:0;}
+/*IE7*/
+*:first-child+html .box952 ul.one li.details table {margin:12px 0 0 -6px;;padding:0;}
+
+.box952 ul li.details td.lft{text-align:left;}
+.box952 ul li.details td.blue{color:#00c0ff;}
+
+.box952 ul li div.count  {color:#ffffff; background-color:#FF8A00;padding:0 10px;width:auto;display:inline;font-weight:bold;font-size:24px;}
+.box952 ul li.fit{margin:-10px 0 0 0;}
+.box952 ul li.fit table {margin:0;}
+.box952 ul li.fit td {text-align:left;padding:0 30px 0 0; color:#6e6e6e;}
+.box952 ul li.fit td.header {vertical-align:bottom;color:#FF8A00; font-size:16px;font-weight:bold;padding-top:21px;}
+.box952 ul li.fit td.countr {vertical-align:top;padding-top:8px;}
+
+td.lft ul.star-rating{background: url(/images/gene/starsBg.png) left bottom;position:relative;width:70px;height:13px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
+/*IE7*/
+*:first-child+html td.lft ul.star-rating {background-position-y:13px;}
+
+td.lft ul.star-rating li.current-rating{background: url(/images/gene/starsBg.png) left top;position: absolute;height:14px;display: block;text-indent: -1000px;z-index: 1;}
+td.bar ul.star-rating{background: url(/images/gene/greenBar.png) left top;position:relative;width:120px;height:6px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
+td.bar ul.star-rating li.current-rating{background: url(/images/gene/greenBar.png) left bottom;position: absolute;height:6px;display: block;text-indent: -1000px;z-index: 1;}
+
+.box952 ul li.fit td.grn {color:#afdb75;font-size:14px;padding:0 0 0 10px;font-weight:bold;}
+
+.box952 ul.icons {background:none;margin:20px 0 10px 0;padding:0;border-bottom:none;width:200px;}
+.box952 ul.icons li{float:left;width:auto;padding:0 10px 0 0;}
+.box952 ul.icons li img {margin:0;}
+
+ul.star-rating li{display: inline;}
+ul.star-rating{background: url(/images/gene/stars.jpg) left bottom;position:relative;width:45px;height:8px;overflow:hidden;margin:0;padding:0;border-bottom:none;clear:none;}
+ul.star-rating li.current-rating{background: url(/images/gene/stars.jpg) left top;position: absolute;height: 8px;display: block;text-indent: -1000px;z-index: 1;}
+
+/********************** QUIZZ **********************/
+
+body#quizz .box952 {}
+body#quizz .box952 ul.bugRt li.backAd {background-color:#0AC8F9;height:34px;margin:0 0 0 100px;padding:0 20px 20px 0;}
+/*IE7*/
+*:first-child+html body#quizz .box952 ul.bugRt li.backAd{padding:0 20px 44px 0;}
+
+body#quizz .box952 h1{font-weight:normal;}
+#quizzBox{clear:both;padding:20px 0 50px 0;}
+#quizzBox h2{color:#FF8A00;font-size:27px;float:left;margin:0 0 0 40px;font-weight:normal;}
+
+body#quizz .box952 ul.advisors {margin:70px 0 10px 25px;padding:0;}
+body#quizz .box952 ul.advisors li img {height:150px;}
+body#quizz .box952 ul.advisors li {width:160px;}
+body#quizz .box952 ul.advisors li p {background-image:none;}
+body#quizz .box952 ul.advisors li a {width:11px;display:inline-block;margin:0 0 0 10px;}
+body#quizz .box952 ul.advisors li a img {height:16px;margin:0;padding:0;}
+
+body#quizz .box952 ul.nav {margin:30px 35px 20px 0;}
+body#quizz .box952 ul.nav li{width:86px;height:30px;font-size:15px;padding:0;float:left;margin:0 0 0 20px;}
+body#quizz .box952 ul.nav li a{color:#ffffff;display:block;height:24px;font-size:15px;}
+body#quizz .box952 ul.nav li.dir{float:left;margin:0 360px 0 0;width:auto;font-size:12px;}
+
+body#quizz .box952 ul.nav li.backAdBk a{background:url(/images/gene/btnFaceBk.png) no-repeat left top;padding:6px 0 0 30px;}
+body#quizz .box952 ul.nav li.backAdNxt a{background:url(/images/gene/btnFaceNxt.png) no-repeat left top;padding:6px 0 0 20px;}
+body#quizz .box952 ul.nav li a:hover{color:#ffffff;background-position: 0 -30px;}
+
+body#quizz #footer {background:url(/images/gene/box952Btm.png) no-repeat left top;padding:28px 0 0 0;}
+
+body#quizz .boxLwr .box952 ul.bugRt {float:left;background:none;margin:25px 0 0 40px;;padding:0 30px 0 0;width:auto;border-bottom:none;font-size:16px;color:#ffffff;}
+
+body#quizz .boxLwr .box952 ul.bugRt li{width:auto;height:32px;font-size:16px;padding:0;font-weight:bold;}
+body#quizz .boxLwr .box952 ul.bugRt li a{width:64px;background-color:#e7e7e7;color:#717171;font-weight:bold;font-size:16px;text-align:center;display:block;padding:6px;}
+body#quizz .boxLwr .box952 ul.bugRt li a:hover{background-color:#c3c3c3;color:#ffffff;}
+body#quizz .boxLwr .box952 ul.bugRt li.answers {background:none;height:27px;padding:0 0 0 50px;}
+body#quizz .boxLwr .box952 ul.bugRt li.answers a {background:url(/images/gene/quizzSubNavMask.png) no-repeat;height:26px;width:46px;margin:0 0 0 -9px;;padding:6px 7px 0 16px;}
+body#quizz .boxLwr .box952 ul.bugRt li.answers a:hover{background-position:0 -32px;color:#ffffff;}
+body#quizz .boxLwr .box952 ul.bugRt li.backAd{background-color:#0ac8f9;padding:7px 20px 14px 15px;margin:0;height:11px;text-align:center;}
+/*IE7*/
+*:first-child+html body#quizz .boxLwr .box952 ul.bugRt li.backAd {padding:7px 20px 14px 15px;}
+
+body#quizz .boxLwr .box952 ul.bugRt li.backAd a{background-color:#0ac8f9;color:#ffffff;padding:6px 38px 7px 20px;;font-size:16px; display:block;}
+body#quizz .boxLwr .box952 ul.bugRt li.backAd a:hover{color:#ffffff;background-color:#B4B4B4;}
+
+
+/********************** PRODUCT RESULTS **********************/
+body#prodResults .box952 h1 {color:#FF8A00;background:none;font-size:40px;margin:20px 0 0 40px;}
+body#prodResults .box952 ul.one {border-bottom:none;margin:20px 0 0 28px;background:none;}
+body#prodResults .box952 ul.one li.details {background:url(/images/gene/topPick191.jpg) no-repeat left top;no-repeat;margin:0 0 0 60px;padding:5px 0 11px 92px;;width:220px;}
+body#prodResults .box952 ul li.fit {margin:-20px 0 0;}
+body#prodResults .box952 ul.one li.details td.lft {padding:0 0 0 10px;}
+
+body#prodResults .box952 ul li.fit td {padding-right:10px;}
+
+body#prodResults .box952 ul.buy {float:right;border-bottom:none;background:none;width:517px;border-top:2px dotted #c4c3c3;padding:20px;margin:-75px 0 0 0;}
+/*IE7*/
+*:first-child+html body#prodResults .box952 ul.buy {margin:-55px 0 0 0;}
+
+body#prodResults .box952 ul.buy li{float:left;width:250px}
+body#prodResults .box952 ul.buy li td {color:#6E6E6E;}
+body#prodResults .box952 ul.buy li .src {padding:0 40px 0 0;}
+body#prodResults .box952 ul.buy li p{margin:0;}
+
+body#prodResults .boxLwr {background:transparent url(/images/gene/box952Top.png) no-repeat scroll left 90px;margin:70px 0 0 0;}
+body#prodResults .boxLwr .box952 {height:200px;}
+body#prodResults .boxLwr ul.tabs{float:left; background:url(/images/gene/orgTail.png) no-repeat right bottom;padding:0 229px 0 0;margin:-63px 0 0 7px;}
+body#prodResults .boxLwr ul.tabs li{float:left;}
+body#prodResults .boxLwr ul.tabs li a {float:left;text-align:center;background:url(/images/gene/tabReg.png) no-repeat left bottom;width:102px;height:19px;padding:26px 20px 20px 20px;color:#FF8A00;font-size:17px;font-weight:bold;}
+body#prodResults .boxLwr ul.tabs li a:hover, body#prodResults .boxLwr ul.tabs li a.overview:hover, body#prodResults .boxLwr ul.tabs li a.last:hover{background-position:left top;}
+
+body#prodResults .boxLwr ul.tabs li a.overview {float:left;text-align:center;background:url(/images/gene/tabReg1.png) no-repeat left bottom;width:111px;height:19px;padding:26px 20px 20px 20px;margin:0 0 0 -8px;color:#FF8A00;font-size:17px;font-weight:bold;}
+body#prodResults .boxLwr ul.tabs li a.last {float:left;text-align:center;background:url(/images/gene/tabRegLast.png) no-repeat left bottom;width:101px;height:19px;padding:26px 20px 20px 20px;color:#FF8A00;font-size:17px;font-weight:bold;}
+
+body#prodResults #footer {background:transparent url(/images/gene/box952Btm.png) no-repeat scroll left top;padding:28px 0 0;}
+
+.box952 ul.gallery{background:none;border-bottom:none;width:258px;float;left;margin:0 0 0 40px;padding:0;}
+/*IE7*/
+*:first-child+html .box952 ul.gallery{margin:20px 0 0 40px;}
+.box952 ul.gallery li {float:left;width:auto;}
+.box952 ul.gallery li img{width:51px;height:38px;border:1px solid #d0d0d0;margin:0 5px;}
+.box952 ul.gallery li.gallRd img, .box952 ul.gallery li.gallFd img {width:22px;border:none;margin:0;}
+
+
+/********************** PRODUCT ALONE [same template at PRODUCT RESULTS **********************/
+body#prodResults .box952 ul.one li.blank {background:url(/images/gene/bracket91.png) no-repeat left top;no-repeat;margin:0 0 0 102px;padding:0 0 11px 25px;;width:220px;}
+body#prodResults .box952 ul li.advisor {background-color:#FF8A00; width:190px;height:62px;margin:0 0 0 20px; color:#ffffff;font-size:21px;font-weight:bold;text-align:center;padding:10px 5px 0 0;}
+body#prodResults .box952 ul li.advisor p {margin:0;}
+body#prodResults .box952 ul li.advisor img {margin:40px 0 0 45px;}
