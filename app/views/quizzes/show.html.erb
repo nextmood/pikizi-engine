@@ -27,7 +27,10 @@
 
                     <ul>
                         <% for question in @knowledge.questions %>
-                            <li><%= check_box_tag("select_question_idurls[]", question.idurl, @quizze.question_idurls.include?(question.idurl))  %><%= question.label %></li>                          
+                            <li>
+                              <%= check_box_tag("select_question_idurls[]", question.idurl, @quizze.question_idurls.include?(question.idurl))  %>
+                              <%= render(:partial => "questions/short", :locals => {:knowledge => @knowledge, :question => question }) %>
+                             </li>
                         <% end %>
                     </ul>
                 </td>

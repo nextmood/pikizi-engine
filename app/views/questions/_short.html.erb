@@ -1,0 +1,4 @@
+<%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %>
+<%= question.is_choice_exclusive ? "{" : "[" %>
+<%= question.choices.collect(&:label).join(', ') %>
+<%= question.is_choice_exclusive ? "}" : "]" %>
