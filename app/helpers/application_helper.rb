@@ -19,4 +19,8 @@ module ApplicationHelper
     end
   end
 
+  def colored_confidence(question)
+    "<span style=\"background-color:#{question.confidence < 1 ? 'orange' : 'green'};\">confidence=#{'%d' % (question.confidence * 100)}%</span>"
+  end
+
 end

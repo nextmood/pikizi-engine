@@ -6,6 +6,7 @@
             <%= render(:partial => "questions/short", :locals => {:knowledge => @knowledge, :question => question }) %>
             <br/>
             <small>
+                <%= colored_confidence(question) %>
                 weight=<%= question.weight %>,&nbsp;
                 nb_presentation=<%= question.nb_presentation %>,&nbsp;
                 discrimination=

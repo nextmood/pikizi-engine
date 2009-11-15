@@ -40,7 +40,7 @@
 
             <span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= pluralize @question.nb_presentation.round, "presentation" %></span>,&nbsp;
             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
-            <span style="background-color:<%= @question.confidence < 1 ? 'orange' : 'green' %>;">confidence=<%= "%d" % (@question.confidence * 100) %>%</span>
+            <%= colored_confidence(@question) %>
             ,&nbsp;weight=<%= @question.weight %>
           </div>
           <div style="font-weight:bold; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>

@@ -3393,3 +3393,121 @@ Rendered questions/_discrimination (0.1ms)
 Rendered questions/_short (0.8ms)
 Rendered questions/_discrimination (0.1ms)
 Completed in 1942ms (View: 824 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:56:49) [GET]
+  Parameters: {"question_idurl"=>"q29_what_kind_of_camera_would_you_like", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.2ms)
+Completed in 1609ms (View: 184 | 200 OK [http://localhost/questions/cell_phones/q29_what_kind_of_camera_would_you_like]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:57:34) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (2.9ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.9ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.9ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.5ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.3ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Completed in 3319ms (View: 1562 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:58:06) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 3332ms (View: 1055 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:58:14) [GET]
+  Parameters: {"question_idurl"=>"q55_what_feature_is_most_important_to_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.3ms)
+Completed in 2090ms (View: 568 | 200 OK [http://localhost/questions/cell_phones/q55_what_feature_is_most_important_to_you]

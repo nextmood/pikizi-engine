@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/_discrimination.html.erb" afterPath="$PROJECT_DIR$/app/views/questions/_discrimination.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/show.html.erb" afterPath="$PROJECT_DIR$/app/views/questions/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/_short.html.erb" afterPath="$PROJECT_DIR$/app/views/questions/_short.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/questions/index.html.erb" afterPath="$PROJECT_DIR$/app/views/questions/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/root.rb" afterPath="$PROJECT_DIR$/app/models/root.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
@@ -44,16 +44,16 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="107" selection-start="5068" selection-end="5068" vertical-scroll-proportion="-21.368422">
+            <state line="42" column="49" selection-start="1448" selection-end="1484" vertical-scroll-proportion="-5.133333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_short.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/questions/_short.html.erb">
+      <file leaf-file-name="application_helper.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="106" selection-start="236" selection-end="236" vertical-scroll-proportion="0.06648199">
+            <state line="22" column="136" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.72328764">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/questions/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="70" selection-start="463" selection-end="463" vertical-scroll-proportion="-5.6842103">
+            <state line="8" column="39" selection-start="379" selection-end="379" vertical-scroll-proportion="-5.0526314">
               <folding />
             </state>
           </provider>
@@ -92,11 +92,12 @@
         <option value="$PROJECT_DIR$/app/views/quizzes/_question.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
-        <option value="$PROJECT_DIR$/app/views/questions/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/questions/_discrimination.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/questions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/root.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/_short.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/questions/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/questions/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
       </list>
     </option>
   </component>
@@ -351,6 +352,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -622,11 +641,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/quizzes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="579" selection-end="587" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/quizzes/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="57" selection-start="310" selection-end="310" vertical-scroll-proportion="-5.0526314" />
@@ -686,20 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="70" selection-start="463" selection-end="463" vertical-scroll-proportion="-5.6842103">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="107" selection-start="5068" selection-end="5068" vertical-scroll-proportion="-21.368422">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="38" selection-start="4650" selection-end="4650" vertical-scroll-proportion="0.9322034">
@@ -710,6 +710,27 @@
     <entry file="file://$PROJECT_DIR$/app/views/questions/_short.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="106" selection-start="236" selection-end="236" vertical-scroll-proportion="0.06648199">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="49" selection-start="1448" selection-end="1484" vertical-scroll-proportion="-5.133333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="39" selection-start="379" selection-end="379" vertical-scroll-proportion="-5.0526314">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="136" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.72328764">
           <folding />
         </state>
       </provider>
