@@ -6,7 +6,9 @@
             <%= render(:partial => "questions/short", :locals => {:knowledge => @knowledge, :question => question }) %>
             <br/>
             <small>
-                weight=<%= question.weight %>
+                weight=<%= question.weight %>,&nbsp;
+                nb_presentation=<%= question.nb_presentation %>,&nbsp;
+                discrimination=
                 <%= render(:partial => "/questions/discrimination",
                       :locals => {:discrimination => question.discrimination(nil, @products_idurls)}) %>
             </small>

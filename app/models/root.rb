@@ -136,7 +136,7 @@ class Root
     x
   end
 
-  def self.as_percentage(proba) "(#{'%3d' % (proba * 100).round}%)" end
+  def self.as_percentage(proba) "(#{'%d' % (proba * 100).round}%)" end
 
   # convert an object to an xml string
   def to_xml(a_idurl=nil)

@@ -2767,3 +2767,629 @@ Rendering template within layouts/application
 Rendering questions/show
 Rendered questions/_discrimination (1.0ms)
 Completed in 1577ms (View: 226 | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:45:01) [GET]
+  Parameters: {"question_idurl"=>"q7_what_type_of_user_are_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (1.0ms)
+Completed in 1567ms (View: 225 | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:45:14) [GET]
+  Parameters: {"question_idurl"=>"q7_what_type_of_user_are_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (1.0ms)
+Completed in 1240ms (View: 129 | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:45:35) [GET]
+  Parameters: {"question_idurl"=>"q7_what_type_of_user_are_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (1.0ms)
+Completed in 1308ms (View: 129 | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:45:50) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.5ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1577ms (View: 707 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:47:24) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1885ms (View: 832 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:47:41) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1913ms (View: 716 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:47:52) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1796ms (View: 734 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:49:15) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+ERROR: compiling _run_erb_app47views47questions47_short46html46erb_locals_knowledge_object_question_short RAISED compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/_short.html.erb:3: syntax error, unexpected '(', expecting ')'
+...s_percentage(c.proba_ok)})" }(&:label).join(', ') ).to_s); @...
+                              ^
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/_short.html.erb:3: syntax error, unexpected ')', expecting kEND
+... }(&:label).join(', ') ).to_s); @output_buffer.concat "\n"
+                              ^
+Function body:           def _run_erb_app47views47questions47_short46html46erb_locals_knowledge_object_question_short(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];short = local_assigns[:short];question = local_assigns[:question];knowledge = local_assigns[:knowledge];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat(( question.is_choice_exclusive ? "{" : "[" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat(( question.choices.collect {|c| "#{c.label} (#{Root.as_percentage(c.proba_ok)})" }(&:label).join(', ') ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat(( question.is_choice_exclusive ? "}" : "]" ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/_short.html.erb:7:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:262:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/index.html.erb:6:in `_run_erb_app47views47questions47index46html46erb'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/index.html.erb:4:in `each'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/index.html.erb:4:in `_run_erb_app47views47questions47index46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:301:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/cache/strategy/local_cache.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/_short.html.erb:3: syntax error, unexpected '(', expecting ')'
+...s_percentage(c.proba_ok)})" }(&:label).join(', ') ).to_s); @...
+                              ^
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/questions/_short.html.erb:3: syntax error, unexpected ')', expecting kEND
+... }(&:label).join(', ') ).to_s); @output_buffer.concat "\n"
+                              ^) on line #3 of app/views/questions/_short.html.erb:
+1: <%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %>
+2: <%= question.is_choice_exclusive ? "{" : "[" %>
+3: <%= question.choices.collect {|c| "#{c.label} (#{Root.as_percentage(c.proba_ok)})" }(&:label).join(', ') %>
+4: <%= question.is_choice_exclusive ? "}" : "]" %>
+
+    app/views/questions/_short.html.erb:7:in `compile!'
+    app/views/questions/index.html.erb:6
+    app/views/questions/index.html.erb:4:in `each'
+    app/views/questions/index.html.erb:4
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (59.7ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:49:44) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (5.8ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.8ms)
+Rendered questions/_discrimination (0.2ms)
+Completed in 2208ms (View: 1137 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:49:58) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1983ms (View: 775 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:50:21) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (2.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.5ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (1.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.5ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.5ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.7ms)
+Rendered questions/_discrimination (0.3ms)
+Completed in 3680ms (View: 1203 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:50:55) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (5.5ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (3.3ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (13.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (8.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.4ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.2ms)
+Completed in 3192ms (View: 1625 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:51:24) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1942ms (View: 824 | 200 OK [http://localhost/questions/cell_phones]
