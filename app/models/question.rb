@@ -159,7 +159,7 @@ class Choice < Root
   def knowledge() question.knowledge end
   
   def nb_ko() @nb_ko ||= (question.nb_presentation - question.nb_oo - nb_ok) end
-  def proba_ok() @proba_ok ||= (question.nb_presentation == 0 ? question.default_choice_proba_ok : (nb_ok / question.nb_presentation)) end
+  def proba_ok() @proba_ok ||= (question.nb_presentation == 0 ? question.default_choice_proba_ok : (nb_ok.to_f / question.nb_presentation.to_f)) end
   def proba_ko() @proba_ko ||= (1.0 - proba_ok - question.proba_oo) end
   
   NB_ANSWERS_4_MAX_CONFIDENCE = 5.0
