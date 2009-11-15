@@ -2671,3 +2671,99 @@ Rendering template within layouts/application
 Rendering questions/show
 Rendered questions/_discrimination (0.1ms)
 Completed in 2357ms (View: 557 | 200 OK [http://localhost/questions/cell_phones/q27_what_budget_do_you_have_in_mind]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-11-15 20:39:33) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.6ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.7ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 2045ms (View: 957 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:39:49) [GET]
+  Parameters: {"question_idurl"=>"q7_what_type_of_user_are_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.1ms)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weighted_average) on line #109 of app/views/questions/show.html.erb:
+106:               <div id="product_<%= product.idurl %>" style="width:100%;">
+107:                 <% distribution_proba_weight =  @products_distribution.get_distribution4product_idurl(product.idurl) %>
+108:                 <div style="display:inline-block;  text-align:right; width:30px;" title="<%= distribution_proba_weight.to_s  %>">
+109:                     <%= "%+5.1f" % distribution_proba_weight.weighted_average %>
+110:                 </div>
+111:                 <div id="weight_<%= product.idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>
+112:                 <span>&nbsp;<%= product.idurl %></span>
+
+    app/views/questions/show.html.erb:109
+    app/views/questions/show.html.erb:105:in `each'
+    app/views/questions/show.html.erb:105
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-11-15 20:41:21) [GET]
+  Parameters: {"question_idurl"=>"q7_what_type_of_user_are_you", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (1.0ms)
+Completed in 1577ms (View: 226 | 200 OK [http://localhost/questions/cell_phones/q7_what_type_of_user_are_you]

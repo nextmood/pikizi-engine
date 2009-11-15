@@ -106,7 +106,7 @@
               <div id="product_<%= product.idurl %>" style="width:100%;">
                 <% distribution_proba_weight =  @products_distribution.get_distribution4product_idurl(product.idurl) %>
                 <div style="display:inline-block;  text-align:right; width:30px;" title="<%= distribution_proba_weight.to_s  %>">
-                    <%= "%+5.1f" % distribution_proba_weight.weighted_average %>
+                    <%= "%+5.1f" % distribution_proba_weight.weighted_average if distribution_proba_weight %>
                 </div>
                 <div id="weight_<%= product.idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>
                 <span>&nbsp;<%= product.idurl %></span>
