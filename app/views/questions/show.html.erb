@@ -86,12 +86,8 @@
                       nb selection=<%= choice.nb_ok %>
                       <br/>
                       <span onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();">
-                        see weights...  
+                        reveal tensors...  
                       </span>
-                      <br/>
-                      <%= choice.question.nb_presentation %>
-                      , <%= choice.nb_ok %>
-                      , <%= choice.proba_ok %>
                     </div>
                   </td>
                 </tr></table>
