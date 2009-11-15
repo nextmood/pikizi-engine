@@ -101,46 +101,14 @@ class Question < Root
     save
   end
 
-  # return for this question, a hash (product_idurl => distribution proba-weight)
-  # for example: p1 -> [Distribution(20%,-1.0), Distribution(50%,0.5), Distribution(30%,0.2)]
+  # this is a collection of the weight distribution for each product (merging choices according to proba)
+  # for a given question
+  # return for this question, a hash (product_idurl => Distribution)
+  # for example: p1 -> [DistributionAtom(20%,-1.0), DistributionAtom(50%,0.5), DistributionAtom(30%,0.2)]
   # meaning is: if this question is asked, there is a probability of
   # 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
-  def build_distributions(debug = nil)
-    e = is_choice_exclusive ? build_distributions_exclusive(debug) : build_distributions_inclusive(debug)
-    PK_LOGGER.debug "---------------------------"  if debug
-    result = e.inject({}) do |h, (pidurl, distributions)|
-      h[pidurl] = Distribution.merge_by_weight(distributions)
-      PK_LOGGER.info "#{pidurl} =>  #{h[pidurl].join(', ')}"  if debug
-      h
-    end
-    PK_LOGGER.info "---------------------------"  if debug
-    result
-  end
+  def products_distribution() @products_distribution ||= ProductsDistribution.new(self) end
 
-
-
-  def build_distributions_inclusive(debug, n=nil, result=[], current_proba=1.0, cumulator={})
-    n ||= choices.size
-    if n == 0
-      cumulator = Distribution.each_propa_choices(current_proba, result, cumulator, debug)
-    else
-      n -= 1
-      choice = choices[n]; proba_ok = choice.proba_ok
-      build_distributions_inclusive(debug, n, result, current_proba * (1.0 - proba_ok), cumulator)
-      build_distributions_inclusive(debug, n, result.clone << choice, current_proba * proba_ok, cumulator)
-      cumulator
-    end
-  end
-
-  def build_distributions_exclusive(debug)
-    null_proba = 1.0 - choices.inject(0.0) {|s,c| s += c.proba_ok}
-    cumulator = Distribution.each_propa_choices(null_proba, [], {}, debug)
-    for i in 0..choices.size-1
-      choice = choices[i]
-      Distribution.each_propa_choices(choice.proba_ok, [choice], cumulator, debug)
-    end
-    cumulator
-  end
 
   # sort the questions by criterions
   def self.sort_by_discrimination(questions, product_idurls, user)
@@ -156,33 +124,9 @@ class Question < Root
   # a set of products
   # the measure is a 3-upple made of [standard deviation, nb product, average weight]
   def discrimination(user, product_idurls)
-    weights = build_distributions.inject([]) do |l, (pidurl, distributions)|
-      l << Distribution.weighted_average(distributions) if product_idurls.include?(pidurl)
-      l
-    end
-#    raise "what the fuck #{weights.inspect}, #{product_idurls.inspect}" if weights.size > 0
-    if (size = weights.size) == 0
-        [0.0, 0 , 0.0]
-    elsif size == 1
-        [0.0, 1, weights.first]
-    else
-        [weights.stat_standard_deviation, weights.size, weights.stat_mean]      
-    end
+    products_distribution.discrimination(user, product_idurls)
   end
 
-
-
-end
-
-# extented array with basic statistical functions
-class Array
-
-  def stat_sum() inject(0.0) { |s, x| s += x } end
-  def stat_mean() stat_sum / size.to_f end
-  def stat_standard_deviation()
-    m = stat_mean
-    Math.sqrt((inject(0.0) { |s, x| s += (x - m)**2 } / size.to_f))
-  end
 
 end
 
@@ -238,29 +182,21 @@ class Choice < Root
   # record a choice by a user
   def record_answer(user, reverse_mode) self.nb_ok += (reverse_mode ? -1.0 : +1.0) end
 
-  # return a hash product_idurl -> weight
-  # options
-  # - :add_null, add a null weight for all products per default
-  def generate_hash_pidurl_weight(products=nil, options={})
-    if (is_cached = !(products or options[:add_null])) and @hash_pidurl_weight
-      @hash_pidurl_weight
-    else
-      products ||= knowledge.products
-      hash_pidurl_weight = recommendations.inject({}) do |h, recommendation|
-        recommendation.generate_hash_pidurl_weight(products).each do |pidurl, weight|
-          h[pidurl] = (h[pidurl] || 0.0) + weight
-        end
-        h
-      end
-      products.each { |product| hash_pidurl_weight[product.idurl] ||= 0.0 } if options[:add_null]
-      @hash_pidurl_weight = hash_pidurl_weight if is_cached
-      hash_pidurl_weight
+  # return a hash product_idurl -> weight, this is the sum of all recommendations for this choice
+  # - options :add_null, add a null weight for all products per default
+  # return a HashProductIdurl2Weight object
+  def generate_hash_pidurl_weight(products, options={})
+    hash_pidurl_weight = recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
+      h += recommendation.generate_hash_pidurl_weight(products); h
     end
+    hash_pidurl_weight.complete_with_zero!(products) if options[:add_null]
+    hash_pidurl_weight
   end
 
+  def hash_pidurl_weight() @hash_pidurl_weight ||= generate_hash_pidurl_weight(knowledge.products) end
 
   def generate_javascript_weights(products)
-    hash_pidurl_weight = generate_hash_pidurl_weight(products, :add_null => true).collect do |pidurl, weight|
+    generate_hash_pidurl_weight(products, :add_null => true).collect do |pidurl, weight|
       "tr_arrow('#{pidurl}','" << (weight != 0.0 ? weight.to_s : "&nbsp;") << "');"
     end.join(' ')
   end
@@ -310,126 +246,244 @@ class Recommendation < Root
     node_recommendation
   end
 
+  # this is where theXML predicate is interpreted
   # generate the weights for the considered products
-  # return a hash idurl product_idurl -> weight
-    def generate_hash_pidurl_weight(products)
-      # interpreting predicate
-      # prefix $ means feature idurl
-      # prefix @ means a value for a feature
-      #begin
-        tokens = predicate.strip.split(' ').collect(&:strip)
+  # return a HashProductIdurl2Weight object
+  def generate_hash_pidurl_weight(products)
+    # interpreting predicate
+    #begin
+      tokens = predicate.strip.split(' ').collect(&:strip)
 
-        # -------------------------------------------------------------------------
-        # FeatureTag.idurl is Tag.idurl, ... Tag.idurl
-        # -------------------------------------------------------------------------
-        if tokens[1] == "is:"  and tokens[0] != "product"
-          feature_idurl = tokens.shift
-          tokens.shift # skip "is:"
+      # -------------------------------------------------------------------------
+      # FeatureTag.idurl is Tag.idurl, ... Tag.idurl
+      # -------------------------------------------------------------------------
+      if tokens[1] == "is:"  and tokens[0] != "product"
+        feature_idurl = tokens.shift
+        tokens.shift # skip "is:"
 
-          feature = knowledge.get_feature_by_idurl(feature_idurl)
-          raise "wrong feature #{feature_idurl} in predicate #{predicate}" unless feature
-          raise "feature #{feature_idurl} should be a FeatureTags in predicate #{predicate}" unless feature.is_a?(FeatureTags)
-          # check tag idurls
-          raise "you need at least one tag in predicate #{predicate}" unless tokens.size > 0
-          authorized_tag_idurls = feature.tags.collect(&:idurl)
-          tokens.each do |tag_idurl|
-            raise "tag #{tag_idurl} doesn't exist for feature #{feature.idurl} in predicate #{predicate}" unless authorized_tag_idurls.include?(tag_idurl)
-          end
-
-          products.inject({}) do |h, product|
-            if values = feature.get_value(product)
-              # true if product hast at least one of the tokens values
-              # puts "h=#{h.inspect} product.idurl=#{product.idurl}"
-              if tokens.any? { | tag_idurl | values.include?(tag_idurl) }
-                h[product.idurl] = weight
-              elsif is_reverse
-                h[product.idurl] = -1.0 * weight
-              end
-            end
-            h
-          end
-
-        # -------------------------------------------------------------------------
-        # product is Product.idurl, ... Product.idurl
-        # -------------------------------------------------------------------------
-        elsif tokens[0] == "product" and tokens[1] == "is:"
-          tokens.shift # skip "product"
-          tokens.shift # skip "is:"
-          products.inject({}) do |h, product|
-            if tokens.include?(product.idurl)
-              h[product.idurl] = weight
-            elsif is_reverse
-              h[product.idurl] = -1.0 * weight
-            end
-            h
-          end
-          # write an other predicate here
-          # always return a hash product_idurl => weight
-
-        # -------------------------------------------------------------------------
-        # other predicate
-        # -------------------------------------------------------------------------
-        else
-          raise "predicate unrecognized #{predicate}"
+        feature = knowledge.get_feature_by_idurl(feature_idurl)
+        raise "wrong feature #{feature_idurl} in predicate #{predicate}" unless feature
+        raise "feature #{feature_idurl} should be a FeatureTags in predicate #{predicate}" unless feature.is_a?(FeatureTags)
+        # check tag idurls
+        raise "you need at least one tag in predicate #{predicate}" unless tokens.size > 0
+        authorized_tag_idurls = feature.tags.collect(&:idurl)
+        tokens.each do |tag_idurl|
+          raise "tag #{tag_idurl} doesn't exist for feature #{feature.idurl} in predicate #{predicate}" unless authorized_tag_idurls.include?(tag_idurl)
         end
 
-      #rescue Exception => e
-        #puts "*** #{e.message}"
-        #nil
-      #end
+        products.inject(HashProductIdurl2Weight.new) do |h, product|
+          if values = feature.get_value(product)
+            # true if product hast at least one of the tokens values
+            # puts "h=#{h.inspect} product.idurl=#{product.idurl}"
+            if tokens.any? { | tag_idurl | values.include?(tag_idurl) }
+              h.add(product.idurl, weight)
+            elsif is_reverse
+              h.add(product.idurl, -1.0 * weight)
+            end
+          end
+          h
+        end
+
+      # -------------------------------------------------------------------------
+      # product is Product.idurl, ... Product.idurl
+      # -------------------------------------------------------------------------
+      elsif tokens[0] == "product" and tokens[1] == "is:"
+        tokens.shift # skip "product"
+        tokens.shift # skip "is:"
+        products.inject(HashProductIdurl2Weight.new) do |h, product|
+          if tokens.include?(product.idurl)
+            h.add(product.idurl, weight)
+          elsif is_reverse
+            h.add(product.idurl, -1.0 * weight)
+          end
+          h
+        end
+        # write an other predicate here
+        # always return a hash product_idurl => weight
+
+      # -------------------------------------------------------------------------
+      # other predicate
+      # -------------------------------------------------------------------------
+      else
+        raise "predicate unrecognized #{predicate}"
+      end
+
+    #rescue Exception => e
+      #puts "*** #{e.message}"
+      #nil
+    #end
+  end
+
+
+  def to_s() "R @#{predicate}=#{weight}" end
+
+end
+
+# this is a collection of the weight distribution for each product (merging choices according to proba)
+# for a given question
+# return for this question, a hash (product_idurl => Distribution)
+# for example: p1 -> [DistributionAtom(20%,-1.0), DistributionAtom(50%,0.5), DistributionAtom(30%,0.2)]
+# meaning is: if this question is asked, there is a probability of
+# 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
+class ProductsDistribution
+
+  attr_accessor :hash_pidurl_distribution
+
+  def initialize(question)
+    @hash_pidurl_distribution = {}
+    question.is_choice_exclusive ? initialize_exclusive(question) : initialize_inclusive(question)
+  end
+
+  def collect(&block) @hash_pidurl_distribution.collect(&block) end
+
+  # this function  returns a measure of how the answer to a question will discrimate
+  # a set of products
+  # the measure is a 3-upple made of [standard deviation, nb product, average weight]
+  def discrimination(user, product_idurls)
+    weights = @hash_pidurl_distribution.inject([]) do |l, (pidurl, distribution)|
+      l << distribution.weighted_average if product_idurls.include?(pidurl)
+      l
     end
+#    raise "what the fuck #{weights.inspect}, #{product_idurls.inspect}" if weights.size > 0
+    if (size = weights.size) == 0
+        [0.0, 0 , 0.0]
+    elsif size == 1
+        [0.0, 1, weights.first]
+    else
+        [weights.stat_standard_deviation, weights.size, weights.stat_mean]
+    end
+  end
+
+  def get_distribution4product_idurl(product_idurl) @hash_pidurl_distribution[product_idurl] end
+  # private below
 
 
-    def to_s() "R @#{predicate}=#{weight}" end
+  def initialize_inclusive(question)
+    ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_pidurl_weight, choice_probability|
+      hash_pidurl_weight.each do |pidurl, weight|
+        distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
+        distribution.add(weight, choice_probability)
+      end
+    end
+  end
+
+  def initialize_exclusive(question)
+    question.choices.each do |choice|
+      choice_probability = choice.proba_ok
+      choice.hash_pidurl_weight.each do |pidurl, weight|
+        distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
+        distribution.add(weight, choice_probability)
+      end
+    end
+  end
+
+
+  def self.combinatorial_weight(choices, &block)
+    hash_combinationkey2hash_pidurl_weight = {}
+
+    ProductsDistribution.combinatorial(choices, false) do |combination_choices|
+      # combination is a list of choices
+      choice_probability = choices.inject(1.0) { |x, c| x *= (combination_choices.include?(c) ? c.proba_ok : c.proba_ko) }
+
+      combination_choices_new = combination_choices.clone
+      combination_key = ProductsDistribution.compute_combination_key(combination_choices_new)
+      first_choice = combination_choices_new.shift
+      hash_pidurl_weight = first_choice.hash_pidurl_weight
+      hash_pidurl_weight += hash_combinationkey2hash_pidurl_weight[ProductsDistribution.compute_combination_key(combination_choices_new)] if combination_choices_new.size > 0
+      hash_combinationkey2hash_pidurl_weight[combination_key] = hash_pidurl_weight
+      block.call(combination_choices, hash_pidurl_weight, choice_probability)
+    end
+  end
+
+  def self.compute_combination_key(combination_choices) combination_choices.collect(&:idurl).join end
+  
+  # yield all all possible combinations in an array
+  # and return the number of combination (empty set count for one)
+  def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
+  def self.combinatorial_bis(tail, empty_count, elt_set, x, &block)
+    if tail.size == 0
+      if elt_set.size > 0 or empty_count
+        block.call(elt_set)
+        x += 1
+      else
+        x
+      end
+    else
+      new_tail = tail.clone
+      first_elt = new_tail.shift
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set, x, &block)
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set.clone << first_elt, x, &block)
+    end
+    x
+  end
+
+
+end
+
+# Distribution is a collection of weight/proba for a given product/question
+class Distribution
+  attr_accessor :hash_weight_probability
+
+  def initialize() self.hash_weight_probability = {} end
+
+  def add(weight, probability)
+    @hash_weight_probability[weight] ||= 0.0
+    @hash_weight_probability[weight] += probability
+  end
+
+  def weighted_average
+    @hash_weight_probability.inject(0.0) { |wa, (weight, probability)| wa += (probability * weight) }
+  end
+
+  def to_s()
+    "Distribution=[" << @hash_weight_probability.collect {|weight, probability| "#{weight} => #{Root.as_percentage(probability)}"}.join(", ") << "]"
+  end
+
+
+end
+
+# this a hash between Product Idurl and weight
+class HashProductIdurl2Weight 
+  attr_accessor :hash_pidurl_weight
+
+  def initialize() @hash_pidurl_weight = {} end
+  def add(product_idurl, weight) @hash_pidurl_weight[product_idurl] = weight end
+
+  def +(other_hash)
+    other_hash.hash_pidurl_weight.each do |pidurl, weight|
+      @hash_pidurl_weight[pidurl] ||= 0.0
+      @hash_pidurl_weight[pidurl] += weight
+    end
+    self
+  end
+
+  def complete_with_zero!(products)
+    products.each { |product| @hash_pidurl_weight[product.idurl] ||= 0.0 } 
+    self
+  end
+
+  def to_s
+    "HashProductIdurl2Weight[" << @hash_pidurl_weight.collect { |pidurl, weight| "#{pidurl}:#{'%3.1f' % weight}" }.join(', ') << "]"
+  end
+
+  def collect(&block) @hash_pidurl_weight.collect(&block) end
+  
+  # proxy
+  def each(&block) @hash_pidurl_weight.each(&block) end
+
 
 end
 
 
 
+# extented array with basic statistical functions
+class Array
 
-
-class Distribution
-  attr_accessor :weight, :proba_ok
-
-  def initialize(weight, proba_ok)
-    self.weight = weight
-    self.proba_ok = proba_ok
-  end
-
-  def to_s() "w=#{weight}#{Root.as_percentage(proba_ok)}" end
-
-  def self.merge_by_weight(distributions)
-    distributions.group_by(&:weight).collect do |weight, distributions_bis|
-      Distribution.merge_by_weight_bis(distributions_bis)
-    end
-  end
-
-  def self.merge_by_weight_bis(l, merged=nil)
-    if l.size == 0
-      merged
-    else
-      d = l.shift
-      if merged
-        merged.proba_ok += d.proba_ok
-      else
-        merged = d
-      end
-      Distribution.merge_by_weight_bis(l, merged)
-    end
-  end
-
-  # return the new cumulator
-  def self.each_propa_choices(proba_ok, choices, cumul, debug)
-    summed_weights = choices.inject({}) do |h, choice|
-      choice.generate_hash_pidurl_weight.each {|p,w| h[p] ||= 0; h[p] += w } ; h
-    end
-    PK_LOGGER.info "proba_ok=#{Root.as_percentage(proba_ok)} [#{choices.collect(&:idurl).join(', ')}] #{summed_weights.inspect}" if debug
-    summed_weights.each { |p, w| (cumul[p] ||= []) << Distribution.new(w, proba_ok) }
-    cumul
-  end
-
-  def self.weighted_average(distributions)
-    distributions.inject(0.0)  { |v, d| v += (d.proba_ok * d.weight) }
+  def stat_sum() inject(0.0) { |s, x| s += x } end
+  def stat_mean() stat_sum / size.to_f end
+  def stat_standard_deviation()
+    m = stat_mean
+    Math.sqrt((inject(0.0) { |s, x| s += (x - m)**2 } / size.to_f))
   end
 
 end

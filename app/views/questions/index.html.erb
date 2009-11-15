@@ -7,11 +7,8 @@
             <br/>
             <small>
                 weight=<%= question.weight %>
-                <% standard_deviation, nb, mean = question.discrimination(nil, @products_idurls) %>
-                ,&nbsp;discrimination=[
-                standard_deviation=<%=  "%5.2f" % standard_deviation %>
-                ,&nbsp;nb=<%=  "%5d" % nb %>
-                ,&nbsp;mean=<%= "%5.2f" % mean %>]
+                <%= render(:partial => "/questions/discrimination",
+                      :locals => {:discrimination => question.discrimination(nil, @products_idurls)}) %>
             </small>
         </div>
       <% end %>

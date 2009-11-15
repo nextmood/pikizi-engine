@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   def show
     @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
     @question = @knowledge.get_question_by_idurl(params[:question_idurl])
-    @hash_pidurl_distribution = @question.build_distributions
+    @products_distribution = @question.products_distribution
     @products = @knowledge.products
     @products_idurls = @products.collect(&:idurl)
   end

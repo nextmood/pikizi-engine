@@ -38,15 +38,10 @@
       <div style="width:100%; height:60px; margin-bottom:10px; padding:5px;">
           <div >
 
-            <%= pluralize @question.nb_presentation.round, "presentation" %>,&nbsp;
-            no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%),&nbsp;
+            <span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= pluralize @question.nb_presentation.round, "presentation" %></span>,&nbsp;
+            <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
             <span style="background-color:<%= @question.confidence < 1 ? 'orange' : 'green' %>;">confidence=<%= "%d" % (@question.confidence * 100) %>%</span>
             ,&nbsp;weight=<%= @question.weight %>
-            <% standard_deviation, nb, mean = @question.discrimination(nil, @products_idurls) %>
-            ,&nbsp;discrimination=[
-            standard_deviation=<%= standard_deviation %>
-            ,&nbsp;nb=<%= nb %>
-            ,&nbsp;mean=<%= mean %>]
           </div>
           <div style="font-weight:bold; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
       </div>
@@ -63,44 +58,55 @@
       </div>
 
       <!-- choices -->
-      <% width_choice = 190 %>
-      <div style="width:<%= width_choice * @question.nb_choices %>px; height:130px; width:100%; clear:left; margin-bottom:5px; border-bottom:1px solid black; border-top:1px solid black;">
+      <div style="width:100%; margin-bottom:5px; border-bottom:1px solid black; border-top:1px solid black;">
           <div>
             <%= pluralize @question.nb_choices, "choice" %>,&nbsp;
             <%= @question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
             pre-condition:<%= @question.precondition || 'none' %>,&nbsp;
             <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
           </div>
+          <table border=1 width=100%><tr>
           <% for choice in @question.choices %>
-            <div style="float: left; width: <%= width_choice - 6 %>px; background-color:lightblue; margin:2px; border:1px solid black;">
+            <td style="background-color:lightblue;" valign="top" >
                 <div style="width:100%; text-align:center; font-weight:bold; border-bottom:1px solid black;" title="<%= choice.idurl %>">
-                  <%= choice.label %>
+                    <% if choice.url_description %>
+                        <%= link_to(choice.label, "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_description}") %>
+                    <% else %>
+                        <%= choice.label %>
+                    <% end %>
                 </div>
-                <div style="float: left; width: 80px; " >
-                  <!-- <img src="<%= "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_image}" %>" width="80" height=80 /> -->
-                  <img src="<%= "/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/images/c36_candy_bar@main_image.jpg" %>" width="80" height=80 />
-                </div>
-                <div style="float: left; width: 100px;  margin-left:2px; ">
-
-                  <div>
-                    <%= link_to("...", "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_description}") if choice.url_description %>
-                  </div>
-                  <div  style="font-size:90%;">
-                    ok=<%= "%d" % choice.nb_ok %> (<%= "%d" % (choice.proba_ok * 100) %>%)
-                    <img src='/images/icons/play.png' onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();" />
-                  </div>
-                </div>
-            </div>
+                <table><tr>
+                  <td>
+                    <img src="<%= "/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/images/c36_candy_bar@main_image.jpg" %>" width="80" height=80 />
+                  </td>
+                  <td valign="top">
+                    <div  style="font-size:90%;">
+                      probability=<%= (choice.proba_ok * 100).round %>%
+                      <br/>
+                      nb selection=<%= choice.nb_ok %>
+                      <br/>
+                      <span onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();">
+                        see weights...  
+                      </span>
+                    </div>
+                  </td>
+                </tr></table>
+            </td>
           <% end %>
+          </tr></table>
 
       </div>
-
+      <div style="border-bottom:1px solid black;">
+        discrimination=
+        <%= render(:partial => "/questions/discrimination",
+               :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
+      </div>
       <div style="-moz-column-count:3; clear:left;">
           <% for product in @products %>
               <div id="product_<%= product.idurl %>" style="width:100%;">
-                <% distribution_proba_weight = (@hash_pidurl_distribution[product.idurl] || []) %>
-                <div style="display:inline-block;  text-align:right; width:30px;" title="<%= distribution_proba_weight.join(', ')  %>">
-                    <%= "%+5.1f" % Distribution.weighted_average(distribution_proba_weight) %>
+                <% distribution_proba_weight =  @products_distribution.get_distribution4product_idurl(product.idurl) %>
+                <div style="display:inline-block;  text-align:right; width:30px;" title="<%= distribution_proba_weight.to_s  %>">
+                    <%= "%+5.1f" % distribution_proba_weight.weighted_average %>
                 </div>
                 <div id="weight_<%= product.idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>
                 <span>&nbsp;<%= product.idurl %></span>

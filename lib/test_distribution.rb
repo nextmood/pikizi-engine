@@ -29,7 +29,7 @@ def build_distributions(choice_list, mode, debug=nil)
   end
   (debug << "---------------------------") if debug
   e.each do |p, distributions|
-    distributions_merged = Distribution.merge_by_weight(distributions)
+    distributions_merged = DistributionAtom.merge_by_weight(distributions)
     (debug << "#{t} =>  #{distributions_merged.join(', ')}") if debug
   end
   (debug << "---------------------------") if debug
