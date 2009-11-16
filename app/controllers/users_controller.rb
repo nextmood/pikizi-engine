@@ -47,6 +47,7 @@ class UsersController < ApplicationController
   def rpx_token_sessions_url
     raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
 
+    raise rpx_data.inspect
     rpx_email = rpx_data[:email]
     user_idurl = Digest::MD5.hexdigest(rpx_email)
     
