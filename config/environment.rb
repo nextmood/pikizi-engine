@@ -7,6 +7,9 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  # see http://github.com/grosser/rpx_now
+  config.gem "rpx_now"
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -41,6 +44,12 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 
   config.cache_store = :mem_cache_store
+
+  config.after_initialize do
+    RPXNow.api_key = "2dde4557bd28343f445032c774264a0b8cd8b29a"
+    RPXNow.api_version = 2
+  end
+  
 end
 
 
