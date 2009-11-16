@@ -188,18 +188,24 @@ class QuizzeInstance < Root
     node_quizze_instance
   end
 
-  # sort the affinities by ranking
+  # sort the affinities by ranking, and normalized the affinities measures (from 0 to 100)
   def sorted_affinities
     unless @sorted_affinities
       @sorted_affinities = hash_productidurl_affinity.collect { |product_idurl, affinity| affinity }
       @sorted_affinities.sort! { |a1, a2| a2.measure <=> a1.measure }
+      # normalization...
+      measure_max, measure_min = @sorted_affinities.first.measure, @sorted_affinities.last.measure
+      if should_normalized = (measure_min != measure_max)
+        a = 100.0 / (measure_max - measure_min); b = -a * measure_min
+      end
       current_ranking = 0; previous_measure = nil
-      @sorted_affinities.each do |a|
-        if a.measure != previous_measure
+      @sorted_affinities.each do |affinity|
+        affinity.normalized(should_normalized, a, b)
+        if affinity.measure != previous_measure
           current_ranking += 1
-          previous_measure = a.measure
+          previous_measure = affinity.measure
         end
-        a.ranking = current_ranking
+        affinity.ranking = current_ranking
       end
     end
     @sorted_affinities
@@ -285,6 +291,7 @@ class Affinity < Root
   key :ranking, Integer, :default => 1
 
   attr_accessor :quiz_instance
+  attr_accessor :measure_normalized # return the normalized value, between 0 and 100
 
   def link_back(quiz_instance) self.quiz_instance = quiz_instance end
 
@@ -319,11 +326,14 @@ class Affinity < Root
 
 
   # between (-1.00 hated product and +1.00:prefered product)
-  def measure() (nb_weight == 0.0 ? 0.0 : sum_weight / nb_weight) end
+  def measure() @measure ||= (nb_weight == 0.0 ? 0.0 : sum_weight / nb_weight) end
 
+  def normalized(should_normalized, a, b)
+    @measure_normalized = (should_normalized ? (a * measure + b).round : 0)
+  end
 
   NB_INPUT_4_MAX_CONFIDENCE = 5.0
-  def confidence() [NB_INPUT_4_MAX_CONFIDENCE, nb_weight].min / NB_INPUT_4_MAX_CONFIDENCE end
+  def confidence() @confidence ||= ([NB_INPUT_4_MAX_CONFIDENCE, nb_weight].min / NB_INPUT_4_MAX_CONFIDENCE) end
 
 end
 

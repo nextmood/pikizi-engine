@@ -41,7 +41,7 @@
                       #<%= affinity.ranking %>
                       <span id="weight_<%= affinity.product_idurl %>" style="border:1px solid white;">&nbsp;</span>
                       <%= affinity.product_idurl %>&nbsp;
-                      <small>affinity=<%= "%3d" % (affinity.measure * 100) %>%,&nbsp;confidence=<%= "% 3d" % (affinity.confidence * 100) %>%</small>
+                      <small title="measure=<%= affinity.measure %>">affinity=<%= affinity.measure_normalized %>%,&nbsp;confidence=<%= "%3d" % (affinity.confidence * 100) %>%</small>
                       &nbsp;
                       </li>
                   <% end %>

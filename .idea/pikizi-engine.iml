@@ -12,12 +12,6 @@
   <component name="GemRequirementsHolder" version="2">
     <requirement>
       <requirement>
-        <dependency name="grosser-rpx_now" version="0" bound="GREATER_OR_EQUAL" url="&quot;http://gems.github.com/&quot;" />
-      </requirement>
-      <source from="config/environment.rb" />
-    </requirement>
-    <requirement>
-      <requirement>
         <dependency name="rails" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source from="config/boot.rb" />
@@ -35,10 +29,10 @@
     <orderEntry type="library" name="[gem] activeresource (v2.3.4, /Library/Ruby/Gems/1.8/gems/activeresource-2.3.4)" level="application" />
     <orderEntry type="library" name="[gem] rails (v2.3.4, /Library/Ruby/Gems/1.8/gems/rails-2.3.4)" level="application" />
     <orderEntry type="library" name="[gem] activerecord (v2.3.4, /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4)" level="application" />
-    <orderEntry type="library" name="[gem] rack (v1.0.1, /Library/Ruby/Gems/1.8/gems/rack-1.0.1)" level="application" />
     <orderEntry type="library" name="[gem] actionmailer (v2.3.4, /Library/Ruby/Gems/1.8/gems/actionmailer-2.3.4)" level="application" />
     <orderEntry type="library" name="[gem] activesupport (v2.3.4, /Library/Ruby/Gems/1.8/gems/activesupport-2.3.4)" level="application" />
-    <orderEntry type="library" name="[gem] grosser-rpx_now (v0.5.10, /Users/fpatte/.gem/ruby/1.8/gems/grosser-rpx_now-0.5.10)" level="application" />
+    <orderEntry type="library" name="[gem] rpx_now (v0.6.10, /Users/fpatte/.gem/ruby/1.8/gems/rpx_now-0.6.10)" level="application" />
+    <orderEntry type="library" name="[gem] json_pure (v1.1.9, /Library/Ruby/Gems/1.8/gems/json_pure-1.1.9)" level="application" />
   </component>
 </module>
 
