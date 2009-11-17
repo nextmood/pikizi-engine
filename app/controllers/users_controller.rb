@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 
   def access_restricted
     get_logged_user
+    session.delete(:logged_user_idurl)
   end
 
   # this method is call back for rpxnow (this is triggered after login)
@@ -75,7 +76,6 @@ class UsersController < ApplicationController
 
   def logout
     session.delete(:logged_user_idurl)
-    @test = session
   end
   
 end
