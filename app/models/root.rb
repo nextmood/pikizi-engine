@@ -25,6 +25,7 @@ class Root
         user.save
       else
         puts user.inspect
+        user.destroy
       end
     end
   end
