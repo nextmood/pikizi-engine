@@ -75,6 +75,7 @@ class UsersController < ApplicationController
 
   def logout
     session.delete(:logged_user_idurl)
+    @test = session
   end
   
 end
