@@ -7,7 +7,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Pikizi Engine <%= controller.action_name %></title>
-
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "lightwindow.js" %>
   <%= javascript_include_tag "/codemirror/js/codemirror.js" %>
@@ -17,7 +18,6 @@
   <%= stylesheet_link_tag "gene" %>
   <%= stylesheet_link_tag "pkz_style.css" %>
   <%= stylesheet_link_tag "tree_table" %>
-
 </head>
 
 <body id="<%= compute_body_id("#{controller_name}/#{action_name}") %>">
