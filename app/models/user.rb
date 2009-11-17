@@ -35,7 +35,7 @@ class User < Root
     user.rpx_name = xml_node['rpx_name']
     user.rpx_username = xml_node['rpx_username']
     user.rpx_email = xml_node['rpx_email']
-    user.idurl = Digest::MD5.hexdigest(user.rpx_email)
+    user.idurl = Digest::MD5.hexdigest(user.rpx_identifier)
     user.role = xml_node['role']
     user.category = xml_node['category']
     user.reputation = Float(xml_node['reputation'])

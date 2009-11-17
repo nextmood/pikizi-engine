@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   def log_as_developper
     developper_rpx_identifier = "#001"
     developper_rpx_email = "info@nextmood.com"
-    developper_idurl = Digest::MD5.hexdigest(developper_rpx_email)
+    developper_idurl = Digest::MD5.hexdigest(developper_rpx_identifier)
     unless @current_user = User.get_from_idurl(developper_idurl)
       # create a new user
       @current_user = User.create({:idurl => developper_idurl,

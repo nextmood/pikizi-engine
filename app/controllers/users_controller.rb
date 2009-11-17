@@ -49,14 +49,15 @@ class UsersController < ApplicationController
     raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
 
     rpx_email = rpx_data[:email]
-    user_idurl = Digest::MD5.hexdigest(rpx_email || rpx_data[:identifier])
+    rpx_identifier = rpx_data[:identifier]
+    user_idurl = Digest::MD5.hexdigest(rpx_identifier)
     
     logged_user = User.get_from_idurl(user_idurl)
 
     # new user creation
     unless logged_user
       initial_attributes = {:idurl => user_idurl,
-                            :rpx_identifier => rpx_data[:rpx_identifier],
+                            :rpx_identifier => rpx_identifier,
                             :rpx_name => rpx_data[:name],
                             :rpx_username => rpx_data[:username],
                             :rpx_email => rpx_email }
