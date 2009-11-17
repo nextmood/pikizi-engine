@@ -19,7 +19,14 @@ class Root
   end
 
   def self.update_users_idurl()
-    User.find(:all).each { |user| user.idurl = Digest::MD5.hexdigest(user.rpx_identifier); user.save }
+    User.find(:all).each do |user|
+      if user.rpx_identifier
+        user.idurl = Digest::MD5.hexdigest(user.rpx_identifier)
+        user.save
+      else
+        puts user.inspect
+      end
+    end
   end
   
   def self.is_main_document() false end

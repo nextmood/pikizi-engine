@@ -3,7 +3,6 @@
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/logout.html.erb" afterPath="$PROJECT_DIR$/app/views/users/logout.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/root.rb" afterPath="$PROJECT_DIR$/app/models/root.rb" />
@@ -40,19 +39,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="root.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="root.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/root.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="2" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+            <state line="26" column="25" selection-start="669" selection-end="669" vertical-scroll-proportion="0.40996784">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="58" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.20578778">
+            <state line="45" column="92" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,8 +99,8 @@
         <option value="$PROJECT_DIR$/app/views/users/logout.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/root.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/models/root.rb" />
       </list>
     </option>
   </component>
@@ -783,16 +782,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="2" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+        <state line="45" column="92" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="58" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.20578778">
+        <state line="26" column="25" selection-start="669" selection-end="669" vertical-scroll-proportion="0.40996784">
           <folding />
         </state>
       </provider>
