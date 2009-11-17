@@ -22,8 +22,10 @@ class Root
     User.find(:all).each do |user|
       if user.rpx_identifier
         user.idurl = Digest::MD5.hexdigest(user.rpx_identifier)
+        puts "updating user=#{user.inspect}"
         user.save
       else
+        puts "destroying user=#{user.inspect}"
         puts user.inspect
         user.destroy
       end

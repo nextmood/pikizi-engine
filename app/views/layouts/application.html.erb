@@ -32,7 +32,7 @@
             <li><a href="results.html">results</a></li>
             <li class="last"><a href="#">log in / sign up</a></li>
             <% else %>
-            <li><a href="/">home</a></li>
+            <li><a href="/home">home</a></li>
             <li><a href="/test_quizz">advisors</a></li>
             <li><a href="/test_results">results</a></li>
             <li><a href="/test_products_search">products</a></li>
@@ -41,7 +41,7 @@
               <% if logged_user = controller.get_logged_user and !logged_user.is_unauthorized %>
                 welcome <%= logged_user.rpx_username %><%= link_to "logout", "/logout" %>
               <% else %>
-                <%= link_to "not logged", "/login" %>
+                <%= link_to "login", "/login" %>
               <% end %>
             </li>
             <% end %>

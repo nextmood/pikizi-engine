@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # This will run before the action. Redirecting aborts the action.
-  before_filter :check_user_authorization, :except => ['login', 'rpx_token_sessions_url', 'access_restricted']
+  before_filter :check_user_authorization
 
 
   # get the current logged user, the active record object
@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
   private
 
   def check_user_authorization
+    puts "*********************checking user authorisation session=#{session[:logged_user_idurl]}"
     if get_logged_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_user.is_authorized

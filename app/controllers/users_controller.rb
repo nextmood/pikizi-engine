@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+   skip_before_filter :check_user_authorization, :only => ['rpx_token_sessions_url', 'access_restricted', 'login']
+
   # GET /users
   def index
     @users = User.all
@@ -65,7 +68,7 @@ class UsersController < ApplicationController
       logged_user = User.create(initial_attributes)
       logged_user.link_back(nil)
     end
-    session[:logged_user_idurl] = user_idurl  unless session[:logged_user_idurl] == user_idurl
+    session[:logged_user_idurl] |= user_idurl
 
     if logged_user.is_authorized
       redirect_to '/'
@@ -78,5 +81,8 @@ class UsersController < ApplicationController
   def logout
     session.delete(:logged_user_idurl)
   end
-  
+
+  def login
+
+  end
 end
