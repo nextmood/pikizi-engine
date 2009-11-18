@@ -4948,3 +4948,154 @@ Processing LandingController#index (for 127.0.0.1 at 2009-11-17 22:22:56) [GET]
 Rendering template within layouts/landing
 Rendering landing/index
 Completed in 7ms (View: 5 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:18:16) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 8ms (View: 6 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:18:57) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 12ms (View: 11 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:19:43) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 16ms (View: 13 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:20:03) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:20:31) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:23:29) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:24:14) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 16ms (View: 14 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:24:52) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 22ms (View: 19 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:25:16) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 120ms (View: 118 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:25:50) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:26:07) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 11ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:26:21) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 18ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:27:24) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-18 08:27:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/gene/h_logo.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:27:32) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 16ms (View: 14 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:28:08) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 16ms (View: 14 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:28:33) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 11ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:29:09) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 14ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:29:49) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 20ms (View: 18 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:30:12) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 22ms (View: 19 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:30:19) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 25ms (View: 24 | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-11-18 08:30:27) [GET]
+Rendering template within layouts/application
+Rendering users/login
+Completed in 83ms (View: 81 | 200 OK [http://localhost/login]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:31:13) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 21ms (View: 18 | 200 OK [http://localhost/]
