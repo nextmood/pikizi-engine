@@ -68,10 +68,10 @@ class UsersController < ApplicationController
       logged_user = User.create(initial_attributes)
       logged_user.link_back(nil)
     end
-    session[:logged_user_idurl] |= user_idurl
+    session[:logged_user_idurl] ||= user_idurl
 
     if logged_user.is_authorized
-      redirect_to '/'
+      redirect_to '/home'
     else
       redirect_to "/access_restricted"
     end
