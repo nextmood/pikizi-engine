@@ -5099,3 +5099,14 @@ Processing LandingController#index (for 127.0.0.1 at 2009-11-18 08:31:13) [GET]
 Rendering template within layouts/landing
 Rendering landing/index
 Completed in 21ms (View: 18 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 22:56:38) [GET]
+Rendering template within layouts/application
+Rendering landing/index
+Completed in 227ms (View: 225 | 200 OK [http://localhost/]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2009-11-18 22:58:11) [GET]
+Rendering landing/index
+Completed in 9ms (View: 7 | 200 OK [http://localhost/]

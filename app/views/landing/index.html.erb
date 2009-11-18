@@ -1,13 +1,52 @@
 
 
-<div class="box952" style="height:300px; margin-top:100px;">
-  <div style="text-align:center; padding-top:50px;">
-      <img src="/images/h_logo.png" width="474"/></a>
-      <div style="font-size:150%;">
-        Please <%= link_to "register", "/login" %>, we'll let you know as soon as Pikizi becomes available
-      </div>
-  </div>
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Pikizi Engine <%= controller.action_name %></title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "lightwindow.js" %>
+  <%= javascript_include_tag "/codemirror/js/codemirror.js" %>
+  <%= javascript_include_tag "treetable.js" %>
+
+  <%= stylesheet_link_tag "lightwindow.css" %>
+  <%= stylesheet_link_tag "gene" %>
+  <%= stylesheet_link_tag "pkz_style.css" %>
+  <%= stylesheet_link_tag "tree_table" %>
+</head>
+
+<body id="<%= compute_body_id("#{controller_name}/#{action_name}") %>">
+    <div id="wrapper">
+
+        <div class="box952" style="height:300px; margin-top:100px;">
+          <div style="text-align:center; padding-top:50px;">
+              <img src="/images/h_logo.png" width="474"/></a>
+              <div style="font-size:150%;">
+                Please <%= link_to "register", "/login" %>, we'll let you know as soon as Pikizi becomes available
+              </div>
+          </div>
+        </div>
+
+        <div id="footer">
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">news</a></li>
+                <li><a href="#">contact</a></li>
+                <li class="copyRight">&copy;2009 pikizi <%= ApplicationController.release_version %></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+
 
 
 
