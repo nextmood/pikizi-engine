@@ -23,12 +23,15 @@
 <body id="<%= compute_body_id("#{controller_name}/#{action_name}") %>">
     <div id="wrapper">
 
-        <div class="box952" style="height:300px; margin-top:100px;">
-          <div style="text-align:center; padding-top:50px;">
-              <img src="/images/h_logo.png" width="474"/></a>
-              <div style="font-size:150%;">
-                Please <%= link_to "register", "/login" %>, we'll let you know as soon as Pikizi becomes available
-              </div>
+        <div class="box952" style="height:400px; margin-top:50px; text-align:center;">
+          <div style="width:100%; margin-top:20px;">
+            <img src="/images/h_logo.png" />
+          </div>
+          <div style="width:100%; margin-top:20px; font-size:130%;">
+            Please register, we'll let you know as soon as Pikizi becomes available
+          </div>
+          <div style="width:100%; margin-left:50px; margin-top:20px;">
+            <%= RPXNow.embed_code('pikizi',"http://engine.nextmood.com/rpx_token_sessions_url") %>
           </div>
         </div>
 
