@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   # found: {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   # not found: nil (can happen with e.g. invalid tokens)
   def rpx_token_sessions_url
-    if params[:token]
+    begin
       raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
 
       rpx_email = rpx_data[:email]
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
       else
         redirect_to "/thanks/#{user_idurl}/#{is_new_user}"
       end
-    else
+    rescue
       redirect_to '/'  
     end
 
