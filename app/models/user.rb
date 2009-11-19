@@ -128,6 +128,25 @@ class User < Root
     reviews <<  new_review
   end
 
+  # return the sign-in provider of this user
+  def registering_source
+    if rpx_indentifier.include?("google")
+      "Google"
+    elsif rpx_indentifier.include?("google")
+      "FaceBook"
+    elsif rpx_indentifier.include?("facebook")
+      "FaceBook"
+    elsif rpx_indentifier.include?("twitter")
+      "FaceBook"
+    elsif rpx_indentifier.include?("yahoo")
+      "FaceBook"
+    elsif rpx_indentifier.include?("aol")
+      "Aol"
+    else
+      "Unknown"
+    end
+  end
+  
 end
 
 

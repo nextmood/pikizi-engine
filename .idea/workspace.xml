@@ -63,10 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thanks.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="thanks.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/landing/thanks.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="139" selection-start="894" selection-end="894" vertical-scroll-proportion="0.27057496">
+            <state line="7" column="92" selection-start="205" selection-end="223" vertical-scroll-proportion="-4.4210525">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="144" column="0" selection-start="5205" selection-end="5205" vertical-scroll-proportion="0.7560706">
               <folding />
             </state>
           </provider>
@@ -94,13 +103,13 @@
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/login.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/landing/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/landing.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/landing_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/landing/thanks.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
       </list>
     </option>
   </component>
@@ -855,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="386" selection-end="405" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/access_restricted.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="52" selection-start="441" selection-end="478" vertical-scroll-proportion="-7.5789475">
@@ -920,7 +922,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/landing/thanks.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="139" selection-start="894" selection-end="894" vertical-scroll-proportion="0.27057496">
+        <state line="7" column="92" selection-start="205" selection-end="223" vertical-scroll-proportion="-4.4210525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="0" selection-start="5205" selection-end="5205" vertical-scroll-proportion="0.7560706">
           <folding />
         </state>
       </provider>
