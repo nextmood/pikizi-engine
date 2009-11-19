@@ -130,17 +130,15 @@ class User < Root
 
   # return the sign-in provider of this user
   def registering_source
-    if rpx_indentifier.include?("google")
+    if rpx_identifier.include?("google")
       "Google"
-    elsif rpx_indentifier.include?("google")
+    elsif rpx_identifier.include?("facebook")
       "FaceBook"
-    elsif rpx_indentifier.include?("facebook")
-      "FaceBook"
-    elsif rpx_indentifier.include?("twitter")
-      "FaceBook"
-    elsif rpx_indentifier.include?("yahoo")
-      "FaceBook"
-    elsif rpx_indentifier.include?("aol")
+    elsif rpx_identifier.include?("twitter")
+      "Twitter"
+    elsif rpx_identifier.include?("yahoo")
+      "Yahoo"
+    elsif rpx_identifier.include?("aol")
       "Aol"
     else
       "Unknown"

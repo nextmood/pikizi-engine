@@ -7,7 +7,7 @@
     <% @users.each do |user| %>
       <div class="pkz_item_list">
         <%= link_to user.rpx_username, "/profile/#{user.idurl}", :title => "idurl=#{user.idurl}"  %>
-        (<%= user.category %> <%= user.rpx_name %> <%= user.rpx_email %>)
+        (<%= user.category %> <%= user.rpx_name %> <%= user.rpx_email %> via <%= user.registering_source %>)
 
         &nbsp;
         [<span id="user_role_<%= user.idurl %>"><%= user.role %></span>
