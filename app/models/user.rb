@@ -13,6 +13,7 @@ class User < Root
   key :role, String, :default => "unauthorised"
   key :category, String, :default => "citizen"
   key :reputation,  :default => 1.0
+  key :wannabe_beta_tester, Boolean, :default => false
 
   many :reviews  # external, list of reviews
   many :quizze_instances # embedded documents

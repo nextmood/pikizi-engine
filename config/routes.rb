@@ -64,9 +64,9 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "landing"
+  map.connect "/beta_test/:user_idurl/:is_new_user", :controller => 'landing', :action => 'toggle_beta_test'
+  map.connect "/thanks/:user_idurl/:is_new_user", :controller => 'landing', :action => 'thanks'
+  map.root :controller => "landing"  # default
 
   # See how all your routes lay out with "rake routes"
 

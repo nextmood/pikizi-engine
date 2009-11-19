@@ -1,0 +1,34 @@
+
+
+
+
+<% if @user %>
+    <div style="width:100%; margin-top:20px; font-size:130%;">
+        <% if @is_new_user %>
+          Thanks for registering <%= @user.rpx_username %>  
+        <% else %>
+          <%= @user.rpx_username %> is already registered within Pikizi
+        <% end %>
+    </div>
+
+    <div style="width:100%; margin-left:50px; margin-top:20px;">
+        <% if @user.wannabe_beta_tester %>
+          <%= link_to("follow this link if you want to unregister from our private beta-test program", "/beta_test/#{@user.idurl}") %>
+        <% else %>
+          You are now registered as willing to participate to our beta-program.
+          <br/>
+          <%= link_to("follow this link if you want to signup for our private beta-test program", "/beta_test/#{@user.idurl}") %>
+        <% end %>          
+    </div>
+<% else %>
+    <div style="width:100%; margin-top:20px; font-size:130%;">
+        The access to this page is restricted
+    </div>
+<% end %>
+
+
+
+
+
+
+

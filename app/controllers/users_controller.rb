@@ -58,7 +58,9 @@ class UsersController < ApplicationController
     logged_user = User.get_from_idurl(user_idurl)
 
     # new user creation
+    is_new_user = false
     unless logged_user
+      is_new_user = true
       initial_attributes = {:idurl => user_idurl,
                             :rpx_identifier => rpx_identifier,
                             :rpx_name => rpx_data[:name],
@@ -68,12 +70,12 @@ class UsersController < ApplicationController
       logged_user = User.create(initial_attributes)
       logged_user.link_back(nil)
     end
-    session[:logged_user_idurl] ||= user_idurl
 
     if logged_user.is_authorized
+      session[:logged_user_idurl] ||= user_idurl
       redirect_to '/home'
     else
-      redirect_to "/access_restricted"
+      redirect_to "/thanks/#{user_idurl}/#{is_new_user}"
     end
 
   end
@@ -85,4 +87,5 @@ class UsersController < ApplicationController
   def login
 
   end
+  
 end
