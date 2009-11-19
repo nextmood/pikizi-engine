@@ -3,7 +3,7 @@
 
 
 <% if @user %>
-    <div style="width:100%; margin-top:20px; font-size:130%;">
+    <div style="width:100%; margin-top:20px; font-size:130%; text-align:center;">
         <% if @is_new_user %>
           Thanks for registering <%= @user.rpx_username %>  
         <% else %>
@@ -11,17 +11,18 @@
         <% end %>
     </div>
 
-    <div style="width:100%; margin-left:50px; margin-top:20px;">
+    <div style="width:100%; margin-left:50px; margin-top:20px; text-align:center;">
+        <%= @user.wannabe_beta_tester.inspect %>
         <% if @user.wannabe_beta_tester %>
-          <%= link_to("follow this link if you want to unregister from our private beta-test program", "/beta_test/#{@user.idurl}") %>
+          <%= link_to("follow this link if you want to unregister from our private beta-test program", "/beta_test/#{@user.idurl}/#{@is_new_user}") %>
         <% else %>
           You are now registered as willing to participate to our beta-program.
           <br/>
-          <%= link_to("follow this link if you want to signup for our private beta-test program", "/beta_test/#{@user.idurl}") %>
+          <%= link_to("follow this link if you want to signup for our private beta-test program", "/beta_test/#{@user.idurl}/#{@is_new_user}") %>
         <% end %>          
     </div>
 <% else %>
-    <div style="width:100%; margin-top:20px; font-size:130%;">
+    <div style="width:100%; margin-top:20px; font-size:130%; text-align:center;">
         The access to this page is restricted
     </div>
 <% end %>
