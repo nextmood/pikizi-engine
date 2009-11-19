@@ -8,12 +8,12 @@ class LandingController < ApplicationController
   end
 
   def thanks
-    @user = User.find_by_idurl(params['user_id_url'])
+    @user = User.get_from_idurl(params['user_id_url'])
     @is_new_user = params[:is_new_user]
   end
 
   def toggle_beta_test
-    @user = User.find_by_idurl(params['user_id_url'])
+    @user = User.get_from_idurl(params['user_id_url'])
     @user.wannabe_beta_tester = !@user.wannabe_beta_tester
     @user.save
     @is_new_user = params[:is_new_user]
