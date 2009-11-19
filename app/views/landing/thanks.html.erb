@@ -14,6 +14,7 @@
     <div style="width:100%; margin-top:20px; text-align:center;">
         <% if @user.wannabe_beta_tester == true %>
           You are now registered as willing to participate to our beta-program.
+          <br/>
           <%= link_to("follow this link if you want to unregister from our private beta-test program", "/beta_test/#{@user.idurl}/#{@is_new_user}") %>
         <% else %>
           <%= link_to("follow this link if you want to signup for our private beta-test program", "/beta_test/#{@user.idurl}/#{@is_new_user}") %>
