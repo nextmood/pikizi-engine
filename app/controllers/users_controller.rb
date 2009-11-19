@@ -49,33 +49,37 @@ class UsersController < ApplicationController
   # found: {:name=>'John Doe', :username => 'john', :email=>'john@doe.com', :identifier=>'blug.google.com/openid/dsdfsdfs3f3'}
   # not found: nil (can happen with e.g. invalid tokens)
   def rpx_token_sessions_url
-    raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
+    if params[:token]
+      raise "hackers?" unless rpx_data = RPXNow.user_data(params[:token])
 
-    rpx_email = rpx_data[:email]
-    rpx_identifier = rpx_data[:identifier]
-    user_idurl = Digest::MD5.hexdigest(rpx_identifier)
-    
-    logged_user = User.get_from_idurl(user_idurl)
+      rpx_email = rpx_data[:email]
+      rpx_identifier = rpx_data[:identifier]
+      user_idurl = Digest::MD5.hexdigest(rpx_identifier)
 
-    # new user creation
-    is_new_user = false
-    unless logged_user
-      is_new_user = true
-      initial_attributes = {:idurl => user_idurl,
-                            :rpx_identifier => rpx_identifier,
-                            :rpx_name => rpx_data[:name],
-                            :rpx_username => rpx_data[:username],
-                            :rpx_email => rpx_email }
-      initial_attributes[:role] = "admin" if rpx_email == "cpatte@gmail.com"
-      logged_user = User.create(initial_attributes)
-      logged_user.link_back(nil)
-    end
+      logged_user = User.get_from_idurl(user_idurl)
 
-    if logged_user.is_authorized
-      session[:logged_user_idurl] ||= user_idurl
-      redirect_to '/home'
+      # new user creation
+      is_new_user = false
+      unless logged_user
+        is_new_user = true
+        initial_attributes = {:idurl => user_idurl,
+                              :rpx_identifier => rpx_identifier,
+                              :rpx_name => rpx_data[:name],
+                              :rpx_username => rpx_data[:username],
+                              :rpx_email => rpx_email }
+        initial_attributes[:role] = "admin" if rpx_email == "cpatte@gmail.com"
+        logged_user = User.create(initial_attributes)
+        logged_user.link_back(nil)
+      end
+
+      if logged_user.is_authorized
+        session[:logged_user_idurl] ||= user_idurl
+        redirect_to '/home'
+      else
+        redirect_to "/thanks/#{user_idurl}/#{is_new_user}"
+      end
     else
-      redirect_to "/thanks/#{user_idurl}/#{is_new_user}"
+      redirect_to '/'  
     end
 
   end
