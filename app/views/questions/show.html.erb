@@ -1,31 +1,9 @@
 <script>
-  function tr_arrow(p_idurl, weight)
-  {
-    var textWeight = " ";
-    var textColor = "white";
-    if (weight > 0) {
-        textWeight = '+' + weight;
-        textColor = "green";
+    function clean_up_arrows()
+    {
+        <%= @products.collect { |product| "clean_up_one_arrow('#{product.idurl}');"}.join(' ') %>
     }
-    if (weight < 0) {
-        textWeight = weight;
-        textColor = "red" ;
-    }
-    document.getElementById('weight_' + p_idurl).childNodes[0].nodeValue = textWeight  ;
-    document.getElementById('weight_' + p_idurl).style.backgroundColor = textColor ;
-   }
 
-  function clean_up_arrows()
-  {
-      <%= @products.collect { |product| "clean_up_one_arrow('#{product.idurl}');"}.join(' ') %>
-  }
-
-
-  function clean_up_one_arrow(p_idurl)
-  {
-    document.getElementById('weight_' + p_idurl).childNodes[0].nodeValue = " "  ;
-    document.getElementById('weight_' + p_idurl).style.backgroundColor = "white" ;
-  }
 </script>
 
 

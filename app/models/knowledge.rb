@@ -150,7 +150,7 @@ class Knowledge < Root
   # update hash_pidurl_affinity ( a hash table between a product-idurl and and a user affinity)
   def propagate_recommendations(question, choices_ok, hash_pidurl_affinity, products, reverse_mode)
     choices_ok.each do |choice_ok|
-      choice_ok.generate_hash_pidurl_weight(products).each do |pidurl, weight|
+      choice_ok.hash_product_idurl_2_weight.each do |pidurl, weight|
         if question.is_filter
           raise "filtering not implemented yet"
         else

@@ -8,13 +8,17 @@ require 'digest/md5'
 class Root
   # abstract class
 
-  def self.erase_db()
+  # ---------------------------------------------------
+  # utilities
+
+  def self.reset_db()
     Question.find(:all).each(&:destroy)
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
     #User.find(:all).each(&:destroy)
-    Knowledge.initialize_from_xml("cell_phones")
+    k = Knowledge.initialize_from_xml("cell_phones")
+    k.questions.each { |q| q.generate_choices_hash_product_idurl_2_weight }
     "database reset"
   end
 
@@ -31,7 +35,8 @@ class Root
       end
     end
   end
-  
+  # ---------------------------------------------------
+
   def self.is_main_document() false end
 
   def self.initialize_from_xml(xml_node)

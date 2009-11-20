@@ -34,7 +34,7 @@ class KnowledgesController < ApplicationController
   end
 
 
-  # thsi is rjs
+  # this is rjs
   def feature_value_edit
     knowledge =  Knowledge.get_from_idurl(params[:knowledge_idurl])
     feature = knowledge.get_feature_by_idurl(params[:feature_idurl])

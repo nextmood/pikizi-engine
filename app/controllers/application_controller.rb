@@ -32,7 +32,6 @@ class ApplicationController < ActionController::Base
   private
 
   def check_user_authorization
-    puts "*********************checking user authorisation session=#{session[:logged_user_idurl]}"
     if get_logged_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_user.is_authorized

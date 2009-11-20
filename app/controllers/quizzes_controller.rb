@@ -33,5 +33,16 @@ class QuizzesController < ApplicationController
     quizze.save
     redirect_to("/quizzes/#{knowledge_idurl}/#{quizze_idurl}")
   end
+
+  # this is rjs for the feedback
+  def toggle_feedback
+    product_idurl params[:product_idurl]
+    next_feedback_code = Integer(params[:next_feedback_code])
+    dom_id = "feedback_#{product_idurl}"
+    render :update do |page|
+      page.replace_html(dom_id, :partial => "/quizzes/feedback",
+        :locals => {:product_idurl => product_idurl, :feedback_code => next_feedback_code})
+    end
+  end
   
 end

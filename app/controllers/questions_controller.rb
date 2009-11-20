@@ -19,8 +19,6 @@ class QuestionsController < ApplicationController
   end
 
 
+
+
 end
-
-
-
-

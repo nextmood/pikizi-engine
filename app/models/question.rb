@@ -1,6 +1,7 @@
 require 'xml'
 require 'mongo_mapper'
 
+
 # =======================================================================================
 # Questions
 # =======================================================================================
@@ -54,6 +55,12 @@ class Question < Root
       question.save
   end
 
+  # compute and store HashProductIdurl2Weight for each choice of this question
+  def generate_choices_hash_product_idurl_2_weight
+    products = knowledge.products
+    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products) }
+    save
+  end
 
   def generate_xml(top_node)
     node_question = super(top_node)
@@ -149,6 +156,8 @@ class Choice < Root
   key :nb_ok, Integer, :default => 0
   many :recommendations, :polymorphic => true
 
+  key :hash_product_idurl_2_weight_cache, String
+
   attr_accessor :question
 
   def link_back(question)
@@ -182,25 +191,33 @@ class Choice < Root
   # record a choice by a user
   def record_answer(user, reverse_mode) self.nb_ok += (reverse_mode ? -1.0 : +1.0) end
 
-  # return a hash product_idurl -> weight, this is the sum of all recommendations for this choice
-  # - options :add_null, add a null weight for all products per default
-  # return a HashProductIdurl2Weight object
-  def generate_hash_pidurl_weight(products, options={})
-    hash_pidurl_weight = recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
-      h += recommendation.generate_hash_pidurl_weight(products); h
-    end
-    hash_pidurl_weight.complete_with_zero!(products) if options[:add_null]
-    hash_pidurl_weight
+  # initialize the hash_product_idurl_2_weight_cache for this choice
+  # this is call from question
+  def generate_hash_product_idurl_2_weight(products)
+    self.hash_product_idurl_2_weight_cache = Marshal.dump(
+    recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
+        h += recommendation.generate_hash_product_idurl_2_weight(products); h
+    end)
   end
 
-  def hash_pidurl_weight() @hash_pidurl_weight ||= generate_hash_pidurl_weight(knowledge.products) end
-
+  def hash_product_idurl_2_weight
+    @hash_product_idurl_2_weight ||= Marshal.load(hash_product_idurl_2_weight_cache)
+  end
+  
   def generate_javascript_weights(products)
-    generate_hash_pidurl_weight(products, :add_null => true).collect do |pidurl, weight|
-      "tr_arrow('#{pidurl}','" << (weight != 0.0 ? weight.to_s : "&nbsp;") << "');"
-    end.join(' ')
+    js_string = ""
+    pidurl_with_weights = hash_product_idurl_2_weight.collect do |pidurl, weight|
+      js_string << generate_javascript_weights_bis(pidurl, weight)
+      pidurl
+    end
+    products.each do |product|
+      pidurl = product.idurl
+      js_string << generate_javascript_weights_bis(pidurl) unless pidurl_with_weights.include?(pidurl)
+    end
+    js_string
   end
-
+  def generate_javascript_weights_bis(pidurl, weight=nil) "tr_arrow('#{pidurl}','" << (weight ? weight.to_s : "&nbsp;") << "');" end
+  
   # return the number of recommendations handled by this question
   def nb_recommendation() recommendations.size end
 
@@ -212,7 +229,7 @@ end
 # Recommendation
 # ----------------------------------------------------------------------------------------
 
-# generate_hash_pidurl_weight is a hash of product_idurl with an associated recommendation weight (-1.00 .. +1.00)
+# generate_hash_product_idurl_2_weight is a hash of product_idurl with an associated recommendation weight (-1.00 .. +1.00)
 class Recommendation < Root
 
   include MongoMapper::EmbeddedDocument
@@ -249,7 +266,7 @@ class Recommendation < Root
   # this is where theXML predicate is interpreted
   # generate the weights for the considered products
   # return a HashProductIdurl2Weight object
-  def generate_hash_pidurl_weight(products)
+  def generate_hash_product_idurl_2_weight(products)
     # interpreting predicate
     #begin
       tokens = predicate.strip.split(' ').collect(&:strip)
@@ -359,8 +376,8 @@ class ProductsDistribution
 
 
   def initialize_inclusive(question)
-    ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_pidurl_weight, choice_probability|
-      hash_pidurl_weight.each do |pidurl, weight|
+    ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_product_idurl_2_weight, choice_probability|
+      hash_product_idurl_2_weight.each do |pidurl, weight|
         distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
         distribution.add(weight, choice_probability)
       end
@@ -370,7 +387,7 @@ class ProductsDistribution
   def initialize_exclusive(question)
     question.choices.each do |choice|
       choice_probability = choice.proba_ok
-      choice.hash_pidurl_weight.each do |pidurl, weight|
+      choice.hash_product_idurl_2_weight.each do |pidurl, weight|
         distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
         distribution.add(weight, choice_probability)
       end
@@ -379,7 +396,7 @@ class ProductsDistribution
 
 
   def self.combinatorial_weight(choices, &block)
-    hash_combinationkey2hash_pidurl_weight = {}
+    hash_combinationkey2hash_product_idurl_2_weight = {}
 
     ProductsDistribution.combinatorial(choices, false) do |combination_choices|
       # combination is a list of choices
@@ -388,10 +405,10 @@ class ProductsDistribution
       combination_choices_new = combination_choices.clone
       combination_key = ProductsDistribution.compute_combination_key(combination_choices_new)
       first_choice = combination_choices_new.shift
-      hash_pidurl_weight = first_choice.hash_pidurl_weight
-      hash_pidurl_weight += hash_combinationkey2hash_pidurl_weight[ProductsDistribution.compute_combination_key(combination_choices_new)] if combination_choices_new.size > 0
-      hash_combinationkey2hash_pidurl_weight[combination_key] = hash_pidurl_weight
-      block.call(combination_choices, hash_pidurl_weight, choice_probability)
+      hash_product_idurl_2_weight = first_choice.hash_product_idurl_2_weight
+      hash_product_idurl_2_weight += hash_combinationkey2hash_product_idurl_2_weight[ProductsDistribution.compute_combination_key(combination_choices_new)] if combination_choices_new.size > 0
+      hash_combinationkey2hash_product_idurl_2_weight[combination_key] = hash_product_idurl_2_weight
+      block.call(combination_choices, hash_product_idurl_2_weight, choice_probability)
     end
   end
 
@@ -442,11 +459,13 @@ class Distribution
 
 end
 
+
 # this a hash between Product Idurl and weight
-class HashProductIdurl2Weight 
+class HashProductIdurl2Weight
   attr_accessor :hash_pidurl_weight
 
-  def initialize() @hash_pidurl_weight = {} end
+  def initialize(hash_pidurl_weight_initial={}) @hash_pidurl_weight = hash_pidurl_weight_initial end
+
   def add(product_idurl, weight) @hash_pidurl_weight[product_idurl] = weight end
 
   def +(other_hash)
@@ -457,17 +476,12 @@ class HashProductIdurl2Weight
     self
   end
 
-  def complete_with_zero!(products)
-    products.each { |product| @hash_pidurl_weight[product.idurl] ||= 0.0 } 
-    self
-  end
-
   def to_s
     "HashProductIdurl2Weight[" << @hash_pidurl_weight.collect { |pidurl, weight| "#{pidurl}:#{'%3.1f' % weight}" }.join(', ') << "]"
   end
 
   def collect(&block) @hash_pidurl_weight.collect(&block) end
-  
+
   # proxy
   def each(&block) @hash_pidurl_weight.each(&block) end
 

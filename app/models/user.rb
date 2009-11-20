@@ -97,15 +97,19 @@ class User < Root
   # return nil if there is no question available
   def get_next_question(knowledge, quizze)
     quizze_instance = get_quizze_instance(quizze)
+    product_idurls_ranked_123 = quizze_instance.affinities.inject([]) do |l,a|
+      l << a.product_idurl if a.ranking <= 3
+      l
+    end
+
+
+
     candidate_questions = get_candidate_questions(knowledge, quizze_instance)
+
     if candidate_questions.size > 0
       # get the question with the best separaration factor
       # for products with ranking 1 to 3
-      product_idurls = quizze_instance.affinities.inject([]) do |l,a|
-        l << a.product_idurl if a.ranking <= 3
-        l
-      end
-      Question.sort_by_discrimination(candidate_questions, product_idurls, self).first
+      Question.sort_by_discrimination(candidate_questions, product_idurls_ranked_123, self).first
     else
       # the user has answered all questions
       nil
