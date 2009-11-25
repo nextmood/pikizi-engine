@@ -16,8 +16,20 @@ class Quizze < Root
   
   def self.is_main_document() true end
 
-  def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge)  end
+  def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge) end
 
+  # return all questions within a given dimension
+  def questions_4_dimension(dimension) questions.select { |question| question.dimension == dimension } end
+
+  # returns all dimensions of this quizze
+  def dimensions()
+    @dimensions ||= questions.inject([]) do |l, question|
+      question_dimension = question.dimension
+      l << question_dimension unless l.include?(question_dimension)
+      l
+    end
+  end
+  
   def products() @products ||= Product.get_from_idurl(product_idurls, knowledge) end
 
   attr_accessor :knowledge

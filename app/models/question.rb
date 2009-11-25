@@ -18,7 +18,7 @@ class Question < Root
   key :idurl, String, :index => true # unique url
 
   key :label, String, :required => true  # text
-  
+
 
   key :is_choice_exclusive, Boolean
   key :is_filter, Boolean
@@ -31,7 +31,7 @@ class Question < Root
   key :nb_presentation, Integer, :default => 0
   key :nb_oo, Integer, :default => 0
   key :weight, Float, :default => 1.0
-  
+
   many :choices, :polymorphic => true
 
   timestamps!
@@ -91,6 +91,14 @@ class Question < Root
     end
   end
 
+  # this is called to compute the results per dimension
+  # return a number between 0.0 and 1.0
+  def proportional_weight(product_idurl, choice_idurls_ok)
+    choices_ok = question.get_choice_ok_from_idurls(choice_idurls_ok)
+    weight = choices_ok.inject(0.0) { |s, choice_ok| s += choice_ok.hash_product_idurl_2_weight[product_idurl] }
+    products_distribution.get_distribution4product_idurl[product_idurl].proportional_weight(weight)
+  end
+
   # define the proba of no opinion 0.0 .. 1.0
   def proba_oo(user=nil) nb_presentation == 0.0 ? 0.0 : (nb_oo /  nb_presentation) end
   def confidence() choices.collect(&:confidence).min end
@@ -101,7 +109,6 @@ class Question < Root
   end
 
   def get_choice_from_idurl(choice_idurl) choices.detect {|c| c.idurl == choice_idurl } end
-
 
   # step #2.1 record_answer (called by user.record_answer)
   def record_answer(user, choices_ok, reverse_mode)
@@ -124,7 +131,6 @@ class Question < Root
   # meaning is: if this question is asked, there is a probability of
   # 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
   def products_distribution() @products_distribution ||= ProductsDistribution.new(self) end
-
 
   # sort the questions by criterions
   def self.sort_by_discrimination(questions, product_idurls, user)
@@ -161,7 +167,7 @@ class Choice < Root
 
   key :url_image, String
   key :url_description, String
-  
+
   key :nb_ok, Integer, :default => 0
   many :recommendations, :polymorphic => true
 
@@ -175,11 +181,11 @@ class Choice < Root
   end
 
   def knowledge() question.knowledge end
-  
+
   def nb_ko() @nb_ko ||= (question.nb_presentation - question.nb_oo - nb_ok) end
   def proba_ok() @proba_ok ||= (question.nb_presentation == 0 ? question.default_choice_proba_ok : (nb_ok.to_f / question.nb_presentation.to_f)) end
   def proba_ko() @proba_ko ||= (1.0 - proba_ok - question.proba_oo) end
-  
+
   NB_ANSWERS_4_MAX_CONFIDENCE = 5.0
   # confidence on proba
   def confidence() [NB_ANSWERS_4_MAX_CONFIDENCE, nb_ok + nb_ko].min / NB_ANSWERS_4_MAX_CONFIDENCE end
@@ -193,7 +199,7 @@ class Choice < Root
   def generate_xml(top_node)
     node_choice = super(top_node)
     node_choice['nb_ok'] = nb_ok.to_s
-    Root.write_xml_list(node_choice, recommendations)        
+    Root.write_xml_list(node_choice, recommendations)
     node_choice
   end
 
@@ -211,7 +217,7 @@ class Choice < Root
   def hash_product_idurl_2_weight
     @hash_product_idurl_2_weight ||= HashProductIdurl2Weight.new(hash_product_idurl_2_weight_cache)
   end
-  
+
   def generate_javascript_weights(products)
     js_string = ""
     pidurl_with_weights = hash_product_idurl_2_weight.collect do |pidurl, weight|
@@ -225,7 +231,7 @@ class Choice < Root
     js_string
   end
   def generate_javascript_weights_bis(pidurl, weight=nil) "tr_arrow('#{pidurl}','" << (weight ? weight.to_s : "&nbsp;") << "');" end
-  
+
   # return the number of recommendations handled by this question
   def nb_recommendation() recommendations.size end
 
@@ -253,7 +259,7 @@ class Recommendation < Root
   end
 
   def knowledge() choice.knowledge end
-  
+
   def self.initialize_from_xml(xml_node)
     recommendation = super(xml_node)
     recommendation.weight = Float(xml_node['weight'])
@@ -350,6 +356,7 @@ end
 # for example: p1 -> [DistributionAtom(20%,-1.0), DistributionAtom(50%,0.5), DistributionAtom(30%,0.2)]
 # meaning is: if this question is asked, there is a probability of
 # 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
+# compute also the minimum/maximum weight that this product can get
 class ProductsDistribution
 
   attr_accessor :hash_pidurl_distribution
@@ -369,7 +376,7 @@ class ProductsDistribution
       l << distribution.weighted_average if product_idurls.include?(pidurl)
       l
     end
-#    raise "what the fuck #{weights.inspect}, #{product_idurls.inspect}" if weights.size > 0
+
     if (size = weights.size) == 0
         [0.0, 0 , 0.0]
     elsif size == 1
@@ -421,7 +428,7 @@ class ProductsDistribution
   end
 
   def self.compute_combination_key(combination_choices) combination_choices.collect(&:idurl).join end
-  
+
   # yield all all possible combinations in an array
   # and return the number of combination (empty set count for one)
   def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
@@ -449,15 +456,28 @@ end
 class Distribution
   attr_accessor :hash_weight_probability
 
-  def initialize() self.hash_weight_probability = {} end
+  def initialize()
+    @hash_weight_probability = {}
+    @weight_min = nil
+    @weight_max = nil
+  end
 
   def add(weight, probability)
     @hash_weight_probability[weight] ||= 0.0
     @hash_weight_probability[weight] += probability
+    @weight_min = (@weight_min ? [@weight_min, weight].min : weight)
+    @weight_max = (@weight_max ? [@weight_max, weight].max : weight)
   end
 
   def weighted_average
     @hash_weight_probability.inject(0.0) { |wa, (weight, probability)| wa += (probability * weight) }
+  end
+
+  # return a percentange between 0..1
+  def proportional_weight(weight)
+    @a_factor ||= 1.0 / (@weight_max - @weight_min)
+    @b_factor ||= @weight_min * - @a_factor
+    @a_factor * weight +  @b_factor
   end
 
   def to_s()

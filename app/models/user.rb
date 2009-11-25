@@ -48,7 +48,7 @@ class User < Root
     user
   end
 
-  def link_back(parent_object) 
+  def link_back(parent_object)
     quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) }
   end
 
@@ -148,7 +148,7 @@ class User < Root
       "Unknown"
     end
   end
-  
+
 end
 
 
@@ -158,7 +158,7 @@ end
 class QuizzeInstance < Root
 
   include MongoMapper::EmbeddedDocument
-  
+
   key :quizze_idurl, String
   key :created_at, Date  # when the QuizInstqnce was created
   key :closed_at, Date, :default => nil   # when the suer or system (time out) has closed this QuizzeInstance
@@ -248,7 +248,7 @@ class QuizzeInstance < Root
         :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
       user.quizze_instances << quizze_instance
       user.save
-      quizze_instance.link_back(user)      
+      quizze_instance.link_back(user)
     end
     quizze_instance
   end
@@ -322,6 +322,19 @@ class QuizzeInstance < Root
     recorded_answer.get_answer_code_for(choice_idurl) == value_answered  if recorded_answer
   end
 
+  # return details results for a list of products
+  # product_idurl => [list_of_questions involved, ]
+  # [ [Qi, choice_idurls_ok, [Pw1%, Pw2%,...]], ...,  [Qj, answers, [Pw1%, Pw2%,...]]  ]
+  # where Pw1% = [weight, proportional_weight]
+  def details_results
+    product_idurls = affinities.collect(&:product_idurl)
+    answers.collect do |anwser|
+      [ question = knowledge.get_question_from_idurl(question_idurl = answer.question_idurl),
+        choice_idurls_ok = answer.choice_idurls_ok,
+        product_idurls.collect { |product_idurl| question.proportional_weight(product_idurl, choice_idurls_ok) } ]
+    end
+  end
+
 
 end
 
@@ -349,7 +362,7 @@ class Affinity < Root
     self.nb_weight += question_weight
     self.sum_weight += question_weight * weight
   end
-  
+
   def self.initialize_from_xml(xml_node)
     affinity = super(xml_node)
     affinity.product_idurl = xml_node['product_idurl']
@@ -374,7 +387,7 @@ class Affinity < Root
     node_affinity['sum_weight'] = sum_weight.to_s
     node_affinity['ranking'] = ranking.to_s if ranking
     node_affinity['is_filtered_out'] = "true" if is_filtered_out
-    node_affinity['feedback'] = feedback.to_s if feedback    
+    node_affinity['feedback'] = feedback.to_s if feedback
     node_affinity
   end
 
@@ -427,7 +440,7 @@ class Answer < Root
   end
 
   def has_opinion?() answers_ok.size > 0 end
-  
+
   # return a list of choice object matching the answer of this user to the question
   def choices_ok(question) question.get_choice_ok_from_idurls(choice_idurls_ok) end
 
