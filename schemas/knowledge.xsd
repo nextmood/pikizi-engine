@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- simple types -->
+  <xs:simpleType name="type_label">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="type_idurl">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="type_url">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="type_user_categories">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="citizen" />
+      <xs:enumeration value="expert" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of attributes -->
+  <xs:attribute name="idurl" type="type_idurl"/>
+  <xs:attribute name="label" type="type_label"/>
+
+  <!-- complex type -->
+  <xs:element name="FeatureRating">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+      <xs:attribute name="min_rating" type="xs:integer" use="required"/>
+      <xs:attribute name="max_rating" type="xs:integer" use="required"/>
+      <xs:attribute name="user_categories" type="type_user_categories" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureImage">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tags" />
+      </xs:sequence>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+      <xs:attribute name="is_exclusive" type="xs:boolean" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="tags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Tag" minOccurs="2" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Tag">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureDate">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+      <xs:attribute name="format" type="xs:string" use="required"/>
+      <xs:attribute name="value_min" type="xs:date" use="required"/>
+      <xs:attribute name="value_max" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureUrl">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureTextarea">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureNumeric">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+      <xs:attribute name="format" type="xs:string" use="required"/>
+      <xs:attribute name="value_min" type="xs:float" use="required"/>
+      <xs:attribute name="value_max" type="xs:float" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureHeader">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureCondition">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FeatureInterval">
+    <xs:complexType>
+      <xs:attribute ref="idurl" use="required"/>
+      <xs:attribute ref="label" use="required"/>
+      <xs:attribute name="class_name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sub_features">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="FeatureRating" />
+        <xs:element ref="FeatureImage" />
+        <xs:element ref="FeatureTags" />
+        <xs:element ref="FeatureNumeric" />
+        <xs:element ref="FeatureHeader" />
+        <xs:element ref="FeatureDate" />
+        <xs:element ref="FeatureCondition" />
+        <xs:element ref="FeatureInterval" />
+        <xs:element ref="FeatureUrl" />
+        <xs:element ref="FeatureTextarea" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="Knowledge">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sub_features" />
+      </xs:sequence>
+      <xs:attribute ref="label" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+

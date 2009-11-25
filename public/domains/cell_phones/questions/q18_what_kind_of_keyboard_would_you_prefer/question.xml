@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What kind of keyboard would you prefer?">
+<Question  is_exclusive="true" label="What kind of keyboard would you prefer?" dimension="Hardware">
     
     <Choice idurl="c51_full_qwerty" label="full qwerty" url_description="files/c51_full_qwerty@description.txt" url_image="images/c51_full_qwerty@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch nokia_e63 nokia_e71 blackberry_bold_9000 palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus"/>

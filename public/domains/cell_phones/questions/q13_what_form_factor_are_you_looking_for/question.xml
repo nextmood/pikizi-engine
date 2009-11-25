@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What form factor are you looking for?">
+<Question  is_exclusive="true" label="What form factor are you looking for?" dimension="Lifestyle">
     
     <Choice idurl="c36_candy_bar" label="candy bar" url_description="files/c36_candy_bar@description.txt" url_image="images/c36_candy_bar@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: nokia_e63 nokia_n79 nokia_e71 blackberry_bold_9000 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 , palm_eos , sanyo_scp-2700 , blackberry_curve_8900 , nokia_6500_classic , blackberry_pearl_8130"/>

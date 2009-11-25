@@ -20,6 +20,21 @@ class UsersController < ApplicationController
      redirect_to(url_redirect)
   end
 
+  def end_quizze
+    quizze = Quizze.get_from_idurl(params[:quizze_idurl])
+    user = get_logged_user
+    quizze_instance = QuizzeInstance.get_latest_for_quiz(quizze, user)
+    raise "no quizze for feedack" unless quizze_instance
+    if feedback_product_idurls_ok = params[:feedback_product_idurls_ok]
+      quizze_instance.affinities.each do |affinity|
+        affinity.feedback = 1 if feedback_product_idurls_ok.include?(affinity.product_idurl)
+      end
+      user.save
+    end
+    knowledge_idurl = params[:knowledge_idurl]
+    redirect_to("/quizzes/#{params[:knowledge_idurl]}")
+  end
+
   def show_by_idurl
     @user = User.get_from_idurl(params[:user_idurl])
     render(:action => 'show')

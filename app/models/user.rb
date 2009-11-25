@@ -160,7 +160,8 @@ class QuizzeInstance < Root
   include MongoMapper::EmbeddedDocument
   
   key :quizze_idurl, String
-  key :products_idurls_filtered, Array
+  key :created_at, Date  # when the QuizInstqnce was created
+  key :closed_at, Date, :default => nil   # when the suer or system (time out) has closed this QuizzeInstance
 
   many :answers
   many :affinities
@@ -187,7 +188,10 @@ class QuizzeInstance < Root
     xml_node.find("affinities/Affinity").each do |node_affinity|
       quizze_instance.affinities << Affinity.initialize.from_xml(node_affinity)
     end
-    quizze_instance.products_idurls_filtered = xml_node['products_idurls_filtered'].split(',').collect(&:trim)
+
+    quizze_instance.created_at = Time.parse(xml_node["created_at"])
+    quizze_instance.closed_at = (xml_node["closed_at"] ? Time.parse(xml_node["closed_at"])  : nil)
+
     xml_node.find("answered/Answer").each do |node_answer|
       quizze_instance.answers << Answer.initialize_from_xml(node_answer)
     end
@@ -201,7 +205,8 @@ class QuizzeInstance < Root
     node_quizze_instance << (node_affinities = XML::Node.new('affinities'))
     hash_productidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) }
 
-    node_quizze_instance['products_idurls_filtered'] = products_idurls_filtered.join(',')
+    node_quizze_instance['created_at'] = created_at.strftime(Root.default_date_format)
+    node_quizze_instance['closed_at'] = closed_at.strftime(Root.default_date_format) if closed_at
 
     node_quizze_instance << (node_answered = XML::Node.new('answered'))
     puts "answers=#{answers.inspect}"
@@ -236,11 +241,10 @@ class QuizzeInstance < Root
   # look up for the last quizze instance for a given quizze
   # if it doesn't exist create one...'
   def self.get_or_create_latest_for_quiz(quizze, user)
-    quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl }
-    quizze_instance = quizze_instances.last # latest one... if any
-    unless quizze_instance
+    unless quizze_instance = QuizzeInstance.get_latest_for_quiz(quizze, user)
       quizze_instance = QuizzeInstance.new(
         :quizze_idurl => quizze.idurl,
+        :created_at => Time.now,
         :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
       user.quizze_instances << quizze_instance
       user.save
@@ -248,6 +252,28 @@ class QuizzeInstance < Root
     end
     quizze_instance
   end
+
+  # look up for the last quizze instance for a given quizze
+  # if the last answer of this quiz instance is older than TIME_OUT_QUIZZE_INSTANCE returns nil
+  TIME_OUT_QUIZZE_INSTANCE = 3600.0
+  def self.get_latest_for_quiz(quizze, user)
+    quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl and qi.closed_at.nil? }
+    raise "we should not have more than one quiz instance open" if quizze_instances.size > 1
+    if quizze_instance = quizze_instances.first
+      current_time = Time.now
+      if (current_time - quizze_instance.last_update) < TIME_OUT_QUIZZE_INSTANCE
+        quizze_instance
+      else
+        # close this old quizze
+        quizze_instance.closed_at = current_time
+        user.save
+        nil
+      end
+    end
+  end
+
+  # return the last time this quizze instance was updated
+  def last_update() (last_answer = answers.last) ? last_answer.time_stamp : created_at end
 
   def nb_answers()
     hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
@@ -311,6 +337,8 @@ class Affinity < Root
   key :nb_weight, Float, :default => 0.0
   key :sum_weight, Float, :default => 0.0
   key :ranking, Integer, :default => 1
+  key :is_filtered_out, Boolean, :default => false
+  key :feedback, Integer, :default => 0
 
   attr_accessor :quiz_instance
   attr_accessor :measure_normalized # return the normalized value, between 0 and 100
@@ -328,6 +356,8 @@ class Affinity < Root
     affinity.nb_weight = Float(xml_node['nb_weight'])
     affinity.sum_weight = Float(xml_node['sum_weight'])
     affinity.ranking = Integer(xml_node['ranking'] || 0)
+    affinity.is_filtered_out = (xml_node['is_filtered_out'] == "true")
+    affinity.feedback = Integer(xml_node['feedback'] || 0)
     affinity
   end
 
@@ -343,6 +373,8 @@ class Affinity < Root
     node_affinity['nb_weight'] = nb_weight.to_s
     node_affinity['sum_weight'] = sum_weight.to_s
     node_affinity['ranking'] = ranking.to_s if ranking
+    node_affinity['is_filtered_out'] = "true" if is_filtered_out
+    node_affinity['feedback'] = feedback.to_s if feedback    
     node_affinity
   end
 

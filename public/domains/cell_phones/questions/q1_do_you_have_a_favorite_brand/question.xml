@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="Do you have a favorite brand?">
+<Question  is_exclusive="true" label="Do you have a favorite brand?" dimension="Lifestyle">
     <Choice idurl="c1_nokia" label="nokia" url_description="files/c1_nokia@description.txt" url_image="images/c1_nokia@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="f1_brand is: t4_nokia"/>
     </Choice>

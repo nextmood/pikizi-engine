@@ -1,9 +1,0 @@
-<% image, next_feedback_code = case feedback_code
-                        when 1 then ["opinion_ok.jpg", -1]
-                        when -1 then ["opinion_ko.jpg", 0]
-                        else ["opinion_oo.jpg", 1]
-                      end %>
-
-<%= link_to_remote(
-    image_tag("icons/#{image}"),
-    :url => { :controller => "quizzes", :action => "toggle_feedback", :product_idurl => product_idurl, :next_feedback_code => next_feedback_code }) %>

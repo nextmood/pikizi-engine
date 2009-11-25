@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What kind of camera would you like?">
+<Question  is_exclusive="true" label="What kind of camera would you like?" dimension="Hardware">
     
     <Choice idurl="c94_no_camera" label="no camera" url_description="files/c94_no_camera@description.txt" url_image="images/c94_no_camera@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: motorola_renew_w233 samsung_sgh-a657 samsung_knack_sch-u310"/>

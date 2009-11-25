@@ -1,5 +1,6 @@
 namespace :pikizi do
 
+  
   desc "Load a domain"
   task :load_domain => :environment do
     unless ENV.include?("name")
@@ -7,6 +8,20 @@ namespace :pikizi do
     end
     Knowledge.initialize_from_xml(ENV['name'])
   end
+
+
+  desc "Check consistency of a domain"
+  task :domain_quality_check => :environment do
+    unless ENV.include?("name")
+      raise "usage: rake pikizi::domain_quality_check name= a directory name in public/domains"
+    end
+    doc = XML::Document.file("#{ENV['name']}/knowledge/knowledge.xml")
+    schema = XML::Schema.new("/schemas/knowledge.xsd")
+    doc.validate_schema(schema) do |message, flag|
+      puts "#{flag} #{message}"
+    end
+  end
+
 
 
   desc "Recompute all aggregations based on reviews of all users on all products for all models"
@@ -145,6 +160,7 @@ namespace :pikizi do
     end
 
   end
+
 
 
 end

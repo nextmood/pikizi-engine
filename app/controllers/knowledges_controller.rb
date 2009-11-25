@@ -16,7 +16,11 @@ class KnowledgesController < ApplicationController
   def distance
     @knowledge, @products, @products_selected = get_products_selected(params)
     @feature = params[:feature_idurl] ? @knowledge.get_feature_by_idurl(params[:feature_idurl]) : @knowledge.features.first
+    # compute graph
+    @feature.distance_graph(@products_selected)
+    
   end
+
 
   def show
     @knowledge, @products, @products_selected = get_products_selected(params)

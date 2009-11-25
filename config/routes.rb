@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :process_review => :get }
   map.connect '/profile/:user_idurl', :controller => 'users', :action => 'show_by_idurl'  
   map.connect '/answer', :controller => 'users', :action => 'record_answer'
+  map.connect '/end_quizze', :controller => 'users', :action => 'end_quizze'
 
   map.resources :knowledges
   map.connect '/distance/:knowledge_idurl/:feature_idurl', :controller => 'knowledges', :action => 'distance'

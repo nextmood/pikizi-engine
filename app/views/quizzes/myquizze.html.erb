@@ -6,6 +6,8 @@
 
 </script>
 
+
+
 <div class="pkz_box">
 
     <%= model_selector(@knowledge, :quizzes) %>
@@ -41,13 +43,20 @@
       <table>
         <tr>
           <td width="50%" valign="top">
+            <% form_tag "/end_quizze", :id => "form_feedback" do -%>
+              <%= hidden_field_tag("knowledge_idurl", @knowledge.idurl)%>
+              <%= hidden_field_tag("quizze_idurl", @quizze.idurl)%>
               <ul style="margin-left:-35px;">
+                  <li style="font-size:80%">
+                    <span>feedback</span>
+                    <span style="margin-left:5px;">ranking</span>
+                    <span style="margin-left:35px;">products</span>
+                    <%= submit_tag("end and record feedback...", :style => "margin-left:35px;") %>
+                  </li>
                   <% for affinity in @quizze_instance.sorted_affinities %>
                       <li id="product_<%= affinity.product_idurl %>">
-                          <div id="feedback_<%= affinity.product_idurl %>" style="display:inline-block;">
-                            <%= render(:partial => "/quizzes/feedback", :locals => {:product_idurl => affinity.product_idurl, :feedback_code => 0}) %>
-                          </div>
-                          #<%= affinity.ranking %>
+                          <%= check_box_tag "feedback_product_idurls_ok[]", affinity.product_idurl %>
+                          <span style="margin-left:30px;">#<%= affinity.ranking %></span>
                           <div id="weight_<%= affinity.product_idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>    
                           <%= affinity.product_idurl %>&nbsp;
                           <small title="measure=<%= affinity.measure %>">affinity=<%= affinity.measure_normalized %>%,&nbsp;confidence=<%= "%3d" % (affinity.confidence * 100) %>%</small>
@@ -55,11 +64,11 @@
                       </li>
                   <% end %>
               </ul>
+            <% end -%>
           </td>
 
           <td width="50%" valign="top">
               <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
-              <%= link_to("reset and record fedback...", "", :style => "margin-left:20px;") %>
               <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
                   <% if answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
                       <%= render(:partial => "quizzes/question",

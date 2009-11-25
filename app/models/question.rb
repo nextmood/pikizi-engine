@@ -6,9 +6,9 @@ require 'mongo_mapper'
 # Questions
 # =======================================================================================
 
-# a question has binary choices... (can be exclusive choices)
-# a precondition to be askable (per default true)
-# Answers to Question define user cluster
+# a question has binary choices... (can be exclusive vs multiple choices)
+# a precondition to be askable like has answered x to question y (per default true)
+# answers to Question define user clusters
 # Question/Answer can be set-up, from already existing customer profile data
 
 class Question < Root
@@ -22,6 +22,7 @@ class Question < Root
 
   key :is_choice_exclusive, Boolean
   key :is_filter, Boolean
+  key :dimensions, Array, :default => []
 
   key :url_image, String
   key :url_description, String
@@ -50,6 +51,7 @@ class Question < Root
       question = super(xml_node)
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
       question.is_filter = xml_node['is_filter']
+      question.dimensions = xml_node['dimensions'].strip.split(',').collect(&:strip)
       question.precondition = xml_node['precondition']
       question.read_xml_list(xml_node, "Choice")
       question.save
@@ -66,8 +68,9 @@ class Question < Root
     node_question = super(top_node)
     node_question['is_exclusive'] = is_choice_exclusive.to_s
     node_question['nb_presentation'] = nb_presentation.to_s
-    node_question['precondition'] = "true" if precondition
+    node_question['precondition'] = precondition
     node_question['is_filter'] = "true" if is_filter
+    node_question['dimensions'] = dimensions.join(',') if dimensions.size > 0
     Root.write_xml_list(node_question, choices)
     node_question
   end
@@ -79,8 +82,14 @@ class Question < Root
   def nb_recommendation() choices.inject(0) { |s, c| s += c.nb_recommendation } end
 
   # based on precondition expression
-  def is_askable?(quizze_instance) precondition ? precondition.evaluate(quizze_instance) : true end
-
+  # todo precondition
+  def is_askable?(quizze_instance)
+    if precondition
+      # to be completed
+    else
+      true
+    end
+  end
 
   # define the proba of no opinion 0.0 .. 1.0
   def proba_oo(user=nil) nb_presentation == 0.0 ? 0.0 : (nb_oo /  nb_presentation) end
@@ -156,7 +165,7 @@ class Choice < Root
   key :nb_ok, Integer, :default => 0
   many :recommendations, :polymorphic => true
 
-  key :hash_product_idurl_2_weight_cache, String
+  key :hash_product_idurl_2_weight_cache, Hash
 
   attr_accessor :question
 
@@ -194,14 +203,13 @@ class Choice < Root
   # initialize the hash_product_idurl_2_weight_cache for this choice
   # this is call from question
   def generate_hash_product_idurl_2_weight(products)
-    self.hash_product_idurl_2_weight_cache = Marshal.dump(
-    recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
+    self.hash_product_idurl_2_weight_cache = recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
         h += recommendation.generate_hash_product_idurl_2_weight(products); h
-    end)
+    end.hash_pidurl_weight
   end
 
   def hash_product_idurl_2_weight
-    @hash_product_idurl_2_weight ||= Marshal.load(hash_product_idurl_2_weight_cache)
+    @hash_product_idurl_2_weight ||= HashProductIdurl2Weight.new(hash_product_idurl_2_weight_cache)
   end
   
   def generate_javascript_weights(products)
@@ -501,3 +509,4 @@ class Array
   end
 
 end
+
