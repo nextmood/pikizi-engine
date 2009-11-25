@@ -160,8 +160,8 @@ class QuizzeInstance < Root
   include MongoMapper::EmbeddedDocument
 
   key :quizze_idurl, String
-  key :created_at, Date  # when the QuizInstqnce was created
-  key :closed_at, Date, :default => nil   # when the suer or system (time out) has closed this QuizzeInstance
+  key :created_at, Time  # when the QuizInstqnce was created
+  key :closed_at, Time, :default => nil   # when the suer or system (time out) has closed this QuizzeInstance
 
   many :answers
   many :affinities
@@ -415,7 +415,7 @@ class Answer < Root
   key :knowledge_idurl, String
   key :question_idurl, String # question
   key :choice_idurls_ok, Array
-  key :time_stamp, Date
+  key :time_stamp, Time
 
   attr_accessor :quiz_instance
 

@@ -25,12 +25,13 @@ class UsersController < ApplicationController
     user = get_logged_user
     quizze_instance = QuizzeInstance.get_latest_for_quiz(quizze, user)
     raise "no quizze for feedack" unless quizze_instance
-    if feedback_product_idurls_ok = params[:feedback_product_idurls_ok]
+    if feedback_product_idurls_ok = params[:feedback_product_idurls_ok]      
       quizze_instance.affinities.each do |affinity|
         affinity.feedback = 1 if feedback_product_idurls_ok.include?(affinity.product_idurl)
       end
-      user.save
     end
+    quizze_instance.closed_at = Time.now
+    user.save
     knowledge_idurl = params[:knowledge_idurl]
     redirect_to("/quizzes/#{params[:knowledge_idurl]}")
   end

@@ -22,7 +22,7 @@ class Question < Root
 
   key :is_choice_exclusive, Boolean
   key :is_filter, Boolean
-  key :dimensions, Array, :default => []
+  key :dimension, String
 
   key :url_image, String
   key :url_description, String
@@ -51,7 +51,7 @@ class Question < Root
       question = super(xml_node)
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
       question.is_filter = xml_node['is_filter']
-      question.dimensions = xml_node['dimensions'].strip.split(',').collect(&:strip)
+      question.dimension = xml_node['dimension'] || "unknown"
       question.precondition = xml_node['precondition']
       question.read_xml_list(xml_node, "Choice")
       question.save
@@ -70,7 +70,7 @@ class Question < Root
     node_question['nb_presentation'] = nb_presentation.to_s
     node_question['precondition'] = precondition
     node_question['is_filter'] = "true" if is_filter
-    node_question['dimensions'] = dimensions.join(',') if dimensions.size > 0
+    node_question['dimension'] = dimension
     Root.write_xml_list(node_question, choices)
     node_question
   end
