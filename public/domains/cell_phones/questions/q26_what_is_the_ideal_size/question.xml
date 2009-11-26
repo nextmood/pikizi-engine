@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What is the ideal size?">
+<Question  is_exclusive="true" label="What is the ideal size?" dimension="Lifestyle">
     
     <Choice idurl="c77_compact" label="compact" url_description="files/c77_compact@description.txt" url_image="images/c77_compact@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: nokia_n79 lg_cf360 lg_vx8350 nokia_5130_xpressmusic motorola_renew_w233 sony_ericsson_w508 nokia_7205_intrigue palm_eos sanyo_scp-2700 lg_lotus nokia_6500_classic blackberry_pearl_8130"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">
+<Question  is_exclusive="false" label="What feature is most important to you?"   dimension="Price">
     
     <Choice idurl="c184_better_battery_life" label="better battery life" url_description="files/c184_better_battery_life@description.txt" url_image="images/c184_better_battery_life@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: lg_xenon"/>

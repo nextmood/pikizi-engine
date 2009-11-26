@@ -23,4 +23,15 @@ module ApplicationHelper
     "<span style=\"background-color:#{question.confidence < 1 ? 'orange' : 'green'};\">confidence=#{'%d' % (question.confidence * 100)}%</span>"
   end
 
+  def colored_weight(weight)
+    color_weight =  if weight > 0.0
+                      "green"
+                    elsif weight < 0.0
+                      "red"
+                    else
+                      "lightgray"
+                    end
+    "<div style='width:50px; background-color:#{color_weight}'>#{'%4.2f' % weight}</div>"
+  end
+
 end

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="How long should your phone last without recharging it?">
+<Question  is_exclusive="true" label="How long should your phone last without recharging it?" dimension="Lifestyle">
     
     <Choice idurl="c67_a_few_hours" label="a few hours" url_image="images/c67_a_few_hours@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_impression nokia_6500_classic"/>

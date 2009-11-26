@@ -16,7 +16,11 @@ class Root
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
-    #User.find(:all).each(&:destroy)
+    User.find(:all).each do |user|
+      user.quizze_instances = []
+      user.reviews = []
+      user.save
+    end
     k = Knowledge.initialize_from_xml("cell_phones")
     k.questions.each { |q| q.generate_choices_hash_product_idurl_2_weight }
     "database reset"

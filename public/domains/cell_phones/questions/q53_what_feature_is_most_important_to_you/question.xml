@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">
+<Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware">
     
     <Choice idurl="c175_fluid_internet_navigation" label="fluid internet navigation" url_description="files/c175_fluid_internet_navigation@description.txt" url_image="images/c175_fluid_internet_navigation@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: apple_iphone_3g"/>

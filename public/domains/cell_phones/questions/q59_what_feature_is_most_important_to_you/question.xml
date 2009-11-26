@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">
+<Question  is_exclusive="false" label="What feature is most important to you?"   dimension="Lifestyle">
     
     <Choice idurl="c188_eco-friendly" label="eco-friendly" url_description="files/c188_eco-friendly@description.txt" url_image="images/c188_eco-friendly@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: motorola_renew_w233"/>

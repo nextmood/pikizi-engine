@@ -30,7 +30,7 @@ class Question < Root
   key :precondition, String
   key :nb_presentation, Integer, :default => 0
   key :nb_oo, Integer, :default => 0
-  key :weight, Float, :default => 1.0
+  key :weight, Float
 
   many :choices, :polymorphic => true
 
@@ -52,6 +52,7 @@ class Question < Root
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
       question.is_filter = xml_node['is_filter']
       question.dimension = xml_node['dimension'] || "unknown"
+      question.weight = Float(xml_node['weight'] || 1.0)
       question.precondition = xml_node['precondition']
       question.read_xml_list(xml_node, "Choice")
       question.save
@@ -68,9 +69,11 @@ class Question < Root
     node_question = super(top_node)
     node_question['is_exclusive'] = is_choice_exclusive.to_s
     node_question['nb_presentation'] = nb_presentation.to_s
-    node_question['precondition'] = precondition
+    node_question['precondition'] = precondition if precondition
     node_question['is_filter'] = "true" if is_filter
     node_question['dimension'] = dimension
+    node_question['weight'] = weight.to_s
+
     Root.write_xml_list(node_question, choices)
     node_question
   end
@@ -92,11 +95,13 @@ class Question < Root
   end
 
   # this is called to compute the results per dimension
-  # return a number between 0.0 and 1.0
+  # return a vector [[weights], delta_weight, proportional_weight]
   def proportional_weight(product_idurl, choice_idurls_ok)
-    choices_ok = question.get_choice_ok_from_idurls(choice_idurls_ok)
-    weight = choices_ok.inject(0.0) { |s, choice_ok| s += choice_ok.hash_product_idurl_2_weight[product_idurl] }
-    products_distribution.get_distribution4product_idurl[product_idurl].proportional_weight(weight)
+    choices_ok = get_choice_ok_from_idurls(choice_idurls_ok)
+    weights = choices_ok.collect { |choice_ok| choice_ok.hash_product_idurl_2_weight[product_idurl] }.compact
+    sum_weights = weights.inject(0.0) { |s, weight| s += weight }
+    proportional_weight = products_distribution.get_distribution4product_idurl(product_idurl).proportional_weight(sum_weights)
+    [weights, sum_weights, proportional_weight]
   end
 
   # define the proba of no opinion 0.0 .. 1.0
@@ -504,6 +509,9 @@ class HashProductIdurl2Weight
     self
   end
 
+  # return the weight for a given product_idurl
+  def [](product_idurl) @hash_pidurl_weight[product_idurl] end
+  
   def to_s
     "HashProductIdurl2Weight[" << @hash_pidurl_weight.collect { |pidurl, weight| "#{pidurl}:#{'%3.1f' % weight}" }.join(', ') << "]"
   end

@@ -172,6 +172,11 @@ class Knowledge < Root
     hash_pidurl_affinity
   end
 
+  def get_product_by_idurl(idurl)
+    @hash_idurl_product ||= products.inject({}) { |h, p| ensure_unique(h, p) }
+    @hash_idurl_product[idurl]
+  end
+
   def get_question_by_idurl(idurl)
     @hash_idurl_question ||= questions.inject({}) { |h, q| ensure_unique(h, q) }
     @hash_idurl_question[idurl]

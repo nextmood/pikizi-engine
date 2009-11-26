@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="Would you like a touch screen?" dimension="Hardware">
+<Question  is_exclusive="true" label="Would you like a touch screen?" dimension="Hardware" weight="2">
     
     <Choice idurl="c70_that_works_at_a_finger's_touch" label="that works at a finger's touch" url_description="files/c70_that_works_at_a_finger's_touch@description.txt" url_image="images/c70_that_works_at_a_finger's_touch@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch samsung_omnia lg_arena blackberry_storm samsung_instinct_s30 lg_versa apple_iphone_3g lg_xenon samsung_impression palm_pre palm_eos samsung_memoir_t929 htc_touch_cruise_2009"/>

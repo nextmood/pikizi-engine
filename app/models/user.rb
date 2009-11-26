@@ -101,11 +101,7 @@ class User < Root
       l << a.product_idurl if a.ranking <= 3
       l
     end
-
-
-
     candidate_questions = get_candidate_questions(knowledge, quizze_instance)
-
     if candidate_questions.size > 0
       # get the question with the best separaration factor
       # for products with ranking 1 to 3
@@ -241,7 +237,7 @@ class QuizzeInstance < Root
   # look up for the last quizze instance for a given quizze
   # if it doesn't exist create one...'
   def self.get_or_create_latest_for_quiz(quizze, user)
-    unless quizze_instance = QuizzeInstance.get_latest_for_quiz(quizze, user)
+    unless quizze_instance = QuizzeInstance.get_latest_for_quizze(quizze, user)
       quizze_instance = QuizzeInstance.new(
         :quizze_idurl => quizze.idurl,
         :created_at => Time.now,
@@ -256,7 +252,7 @@ class QuizzeInstance < Root
   # look up for the last quizze instance for a given quizze
   # if the last answer of this quiz instance is older than TIME_OUT_QUIZZE_INSTANCE returns nil
   TIME_OUT_QUIZZE_INSTANCE = 3600.0
-  def self.get_latest_for_quiz(quizze, user)
+  def self.get_latest_for_quizze(quizze, user)
     quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl and qi.closed_at.nil? }
     raise "we should not have more than one quiz instance open" if quizze_instances.size > 1
     if quizze_instance = quizze_instances.first
@@ -326,10 +322,10 @@ class QuizzeInstance < Root
   # product_idurl => [list_of_questions involved, ]
   # [ [Qi, choice_idurls_ok, [Pw1%, Pw2%,...]], ...,  [Qj, answers, [Pw1%, Pw2%,...]]  ]
   # where Pw1% = [weight, proportional_weight]
-  def details_results
+  def results_details(knowledge)
     product_idurls = affinities.collect(&:product_idurl)
-    answers.collect do |anwser|
-      [ question = knowledge.get_question_from_idurl(question_idurl = answer.question_idurl),
+    answers.collect do |answer|
+      [ question = knowledge.get_question_by_idurl(answer.question_idurl),
         choice_idurls_ok = answer.choice_idurls_ok,
         product_idurls.collect { |product_idurl| question.proportional_weight(product_idurl, choice_idurls_ok) } ]
     end
@@ -443,6 +439,21 @@ class Answer < Root
 
   # return a list of choice object matching the answer of this user to the question
   def choices_ok(question) question.get_choice_ok_from_idurls(choice_idurls_ok) end
+
+  # for debugging
+  def get_explanations(knowledge)
+    question = knowledge.get_question_by_idurl(question_idurl)
+    choices_ok = question.get_choice_ok_from_idurls(choice_idurls_ok)
+    hash_pidurl2explanation = knowledge.product_idurls.inject({}) do |h, product_idurl|
+      weight = question.weight * choices_ok.inject(0.0) { |s, choice_ok| s += (choice_ok.hash_product_idurl_2_weight[product_idurl] || 0.0) }
+      weights_explanation = choices_ok.collect { |choice_ok| "#{choice_ok.label} => #{choice_ok.hash_product_idurl_2_weight[product_idurl] || 'none'}" }.join(' + ')
+      weights_explanation = "#{question.weight} * (#{weights_explanation})"
+      h[product_idurl] = [weight, weights_explanation]
+      h
+    end
+    [question, choices_ok, hash_pidurl2explanation]
+
+  end
 
 end
 

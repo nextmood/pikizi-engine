@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="Please select your favorite carriers?">
+<Question  is_exclusive="true" label="Please select your favorite carriers?" dimension="Lifestyle" weight="1.5">
     
     <Choice idurl="c145_at&amp;t" label="at&amp;t" url_description="files/c145_at&amp;t@description.txt" url_image="images/c145_at&amp;t@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: lg_cf360 blackberry_bold_9000 samsung_sgh-a657 apple_iphone_3g lg_xenon samsung_impression palm_eos nokia_e75 samsung_propel_pro"/>

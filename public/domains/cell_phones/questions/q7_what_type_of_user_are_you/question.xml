@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What type of user are you?">
+<Question  is_exclusive="false" label="What type of user are you?"  dimension="Lifestyle" weight="1.5">
     
     <Choice idurl="c30_business_user" label="business user" url_image="images/c30_business_user@main_image.jpg" >
       <BackgroundVideo selector="main_video" idurl="923"/>

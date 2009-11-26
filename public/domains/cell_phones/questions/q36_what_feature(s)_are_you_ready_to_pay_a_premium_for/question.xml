@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What feature(s) are you ready to pay a premium for?">
+<Question  is_exclusive="true" label="What feature(s) are you ready to pay a premium for?" dimension="Price">
     
     <Choice idurl="c112_camera" label="camera" url_description="files/c112_camera@description.txt" url_image="images/c112_camera@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch samsung_omnia nokia_n96 nokia_n79 lg_arena nokia_n85 samsung_memoir_t929"/>

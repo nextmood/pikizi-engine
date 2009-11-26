@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def end_quizze
     quizze = Quizze.get_from_idurl(params[:quizze_idurl])
     user = get_logged_user
-    quizze_instance = QuizzeInstance.get_latest_for_quiz(quizze, user)
+    quizze_instance = QuizzeInstance.get_latest_for_quizze(quizze, user)
     raise "no quizze for feedack" unless quizze_instance
     if feedback_product_idurls_ok = params[:feedback_product_idurls_ok]      
       quizze_instance.affinities.each do |affinity|

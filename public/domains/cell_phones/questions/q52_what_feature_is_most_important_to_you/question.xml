@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">    
+<Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware">    
     <Choice idurl="c173_largest_app_store" label="largest app store" url_description="files/c173_largest_app_store@description.txt" url_image="images/c173_largest_app_store@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: apple_iphone_3g"/>
     </Choice>

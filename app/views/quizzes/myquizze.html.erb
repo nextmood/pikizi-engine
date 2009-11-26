@@ -13,33 +13,49 @@
     <%= model_selector(@knowledge, :quizzes) %>
 
     <div class="pkz_main">
+
       <% if next_question = @current_user.get_next_question(@knowledge, @quizze) %>
 
         <!-- the form -->
         <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
-        <% form_tag "/answer", :style => "margin-bottom:10px;" do -%>
+        <% form_tag "/answer", :style => "margin-bottom:10px;", :style => "text-align:center;" do -%>
           <%= hidden_field_tag "user_idurl", @current_user.idurl %>
           <%= hidden_field_tag "knowledge_idurl", @knowledge.idurl %>
           <%= hidden_field_tag "quizze_idurl", @quizze.idurl %>
           <%= hidden_field_tag "question_idurl", next_question.idurl %>
-          <div style="font-weight:bold; margin:5px;"><%= link_to(next_question.label, "/questions/#{@knowledge.idurl}/#{next_question.idurl}") %></div>
-          <% for choice in next_question.choices %>
-              <% if next_question.is_choice_exclusive %>
-                <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
-              <% else %>
-                <%= check_box_tag "choices_idurls_ok[]", choice.idurl %>
+
+          <div style="font-size:120%; margin:5px;">
+            <%= link_to(next_question.label, "/questions/#{@knowledge.idurl}/#{next_question.idurl}") %>
+          </div>
+
+          <div style="margin-bottom:10px;">
+              <% for choice in next_question.choices %>
+                  <% if next_question.is_choice_exclusive %>
+                    <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
+                  <% else %>
+                    <%= check_box_tag "choices_idurls_ok[]", choice.idurl %>
+                  <% end %>
+                  <%= choice.label %>&nbsp;&nbsp;
               <% end %>
-              <%= choice.label %>&nbsp;&nbsp;
-          <% end %>
-          <%= submit_tag "next" %>
+          </div>
+
+          <div style="margin-bottom:10px;"><%= submit_tag "next" %></div>
+
         <% end -%>
 
       <% else %>
         no more question for this quiz/user
       <% end %>
+
+      <div style="border-top:1px dashed black; padding-left:5px; margin-top:10px; font-size:80%;">
+        <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
+        <%= link_to("details results...", "/myquizze_results/#{@knowledge.idurl}/#{@quizze.idurl}", :style => "margin-left:30px;") %>
+        <%= link_to_function("end quizze & record feedback...", "document.getElementById('form_feedback').submit();", :style => "margin-left:30px;") %>
+      </div>
+      
     </div>
 
-    <div class="pkz_main">
+    <div class="pkz_main" style="margin-top:5px;">
       <table>
         <tr>
           <td width="50%" valign="top">
@@ -51,7 +67,6 @@
                     <span>feedback</span>
                     <span style="margin-left:5px;">ranking</span>
                     <span style="margin-left:35px;">products</span>
-                    <%= submit_tag("end and record feedback...", :style => "margin-left:35px;") %>
                   </li>
                   <% for affinity in @quizze_instance.sorted_affinities %>
                       <li id="product_<%= affinity.product_idurl %>">
@@ -68,7 +83,6 @@
           </td>
 
           <td width="50%" valign="top">
-              <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
               <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
                   <% if answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
                       <%= render(:partial => "quizzes/question",

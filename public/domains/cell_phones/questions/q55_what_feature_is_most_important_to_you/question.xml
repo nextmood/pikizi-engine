@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">
+<Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware" weight="0.5">
     
     <Choice idurl="c180_seamless_contact_management" label="seamless contact management" url_description="files/c180_seamless_contact_management@description.txt" url_image="images/c180_seamless_contact_management@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: palm_pre"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What feature is most important to you?">
+<Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Price">
     
     <Choice idurl="c182_killer_camera" label="killer camera" url_description="files/c182_killer_camera@description.txt" url_image="images/c182_killer_camera@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: nokia_n96 samsung_impression samsung_memoir_t929"/>

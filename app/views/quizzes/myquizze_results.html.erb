@@ -1,0 +1,49 @@
+
+
+
+      <table border=1>
+          <tr>
+            <th>Question/ansers</th>
+            <% for affinity in @sorted_affinities %>
+                <th valign="top">
+                  <div style="width:80px; overflow:hidden;">
+                  #<%= affinity.ranking %>
+                  <div style="font-size:80%">
+                    <%= @knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
+                  </div>
+                </th>
+            <% end %>
+          </tr>
+
+          <tr>
+            <th >Sum</th>
+            <% for affinity in @sorted_affinities %>
+                <th align="center"><%= colored_weight(affinity.sum_weight) %></th>
+            <% end %>
+          </tr>
+
+          <% for dimension, answers in @hash_dimension2answers %>
+              <tr style="background-color:yellow;"><td colspan="<%= @sorted_affinities.size + 1%>"><%= dimension %></td></tr>
+              <% for answer in answers %>
+
+                <% question, choices_ok, hash_pidurl2explanation = answer.get_explanations(@knowledge) %>
+                <tr>
+                    <td>
+                        <div style="width:200px;">
+                            <%= question.label %><small>w=<%= question.weight %>, dimension=<%= question.dimension %></small>
+                            <div style="font-size:80%">
+                                <%= choices_ok.collect(&:label).join('<br/>') %>
+                            </div>
+                        </div>
+                    </td>
+                    <% for affinity in @sorted_affinities %>
+                        <td align="center">
+                            <% sum_weights, explanation = hash_pidurl2explanation[affinity.product_idurl] %>
+                            <span title="<%= explanation %>"><%= colored_weight(sum_weights) %></span>
+                        </td>
+                    <% end %>
+                </tr>
+              <% end %>
+          <% end %>
+      </table>
+

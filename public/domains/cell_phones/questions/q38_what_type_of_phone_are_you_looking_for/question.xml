@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What type of phone are you looking for?">
+<Question  is_exclusive="true" label="What type of phone are you looking for?" dimension="Lifestyle" weight="1.2">
     
     <Choice idurl="c123_cell_phone" label="cell phone" url_description="files/c123_cell_phone@description.txt" url_image="images/c123_cell_phone@main_image.jpg" >
     </Choice>
