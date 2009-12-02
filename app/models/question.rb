@@ -21,7 +21,7 @@ class Question < Root
 
 
   key :is_choice_exclusive, Boolean
-  key :is_filter, Boolean
+  key :extra, String
   key :dimension, String
 
   key :url_image, String
@@ -50,13 +50,17 @@ class Question < Root
   def self.initialize_from_xml(knowledge, xml_node)
       question = super(xml_node)
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
-      question.is_filter = xml_node['is_filter']
+      question.extra = xml_node['extra']
       question.dimension = xml_node['dimension'] || "unknown"
       question.weight = Float(xml_node['weight'] || 1.0)
       question.precondition = xml_node['precondition']
       question.read_xml_list(xml_node, "Choice")
       question.save
   end
+
+  def is_filter() extra == "filter" end
+  def is_polling() extra == "polling" end
+
 
   # compute and store HashProductIdurl2Weight for each choice of this question
   def generate_choices_hash_product_idurl_2_weight
@@ -70,7 +74,7 @@ class Question < Root
     node_question['is_exclusive'] = is_choice_exclusive.to_s
     node_question['nb_presentation'] = nb_presentation.to_s
     node_question['precondition'] = precondition if precondition
-    node_question['is_filter'] = "true" if is_filter
+    node_question['extra'] = extra if extra
     node_question['dimension'] = dimension
     node_question['weight'] = weight.to_s
 
