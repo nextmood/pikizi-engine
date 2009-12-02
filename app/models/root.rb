@@ -41,6 +41,16 @@ class Root
       end
     end
   end
+
+
+  # always return a value between 0.0 and 1.0 for a given x ranging from min to max
+  def self.rule3(x, min, max) Root.rule3_cache(x, Root.rule3_ab(min, max)) end
+  def self.rule3_cache(x, ab) ab.first * x + ab.last end
+  def self.rule3_ab(min, max)
+    a = 1.0 / (max - min)
+    [ a , - a * min ]
+  end
+
   # ---------------------------------------------------
 
   def self.is_main_document() false end

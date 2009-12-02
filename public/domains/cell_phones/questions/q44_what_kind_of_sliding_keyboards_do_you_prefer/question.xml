@@ -2,9 +2,9 @@
 <Question  is_exclusive="true" label="What kind of sliding keyboards do you prefer?" dimension="Hardware" weight="0.5">
     
     <Choice idurl="c153_vertical" label="vertical" url_description="files/c153_vertical@description.txt" url_image="images/c153_vertical@main_image.jpg"
-      predicate="productIs(:any => %w[samsung_s8300_ultratouch nokia_n96 samsung_trance nokia_n85 samsung_propel_pro])" />
+      preference="productIs(:any => %w[samsung_s8300_ultratouch nokia_n96 samsung_trance nokia_n85 samsung_propel_pro])" />
 
     <Choice idurl="c154_horizontal" label="horizontal" url_description="files/c154_horizontal@description.txt" url_image="images/c154_horizontal@main_image.jpg"
-      predicate="productIs(:any => %w[sony_ericsson_xperia_x1 lg_versa lg_xenon samsung_impression nokia_e75])" />
+      preference="productIs(:any => %w[sony_ericsson_xperia_x1 lg_versa lg_xenon samsung_impression nokia_e75])" />
 
   </Question>

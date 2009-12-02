@@ -2,9 +2,9 @@
 <Question  is_exclusive="false" label="What feature is most important to you?"   dimension="Price">
     
     <Choice idurl="c184_better_battery_life" label="better battery life" url_description="files/c184_better_battery_life@description.txt" url_image="images/c184_better_battery_life@main_image.jpg"
-      predicate="productIs(:lg_xenon)"/>
+      preference="productIs(:lg_xenon)"/>
 
     <Choice idurl="c185_better_resolution" label="better resolution" url_description="files/c185_better_resolution@description.txt" url_image="images/c185_better_resolution@main_image.jpg"
-      predicate="productIs(:samsung_impression)"/>
+      preference="productIs(:samsung_impression)"/>
 
   </Question>

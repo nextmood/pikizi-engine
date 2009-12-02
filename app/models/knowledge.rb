@@ -316,10 +316,6 @@ class Feature < Root
 
   # ---------------------------------------------------------------------
 
-
-  # return the  FeatureValue(s) for a product, nil if no value (==empty)
-  def get_value(product) product.get_value(idurl) end
-
   def each_feature(&block)
     block.call(self)
     features.each do |sub_feature|
@@ -329,7 +325,12 @@ class Feature < Root
     nil
   end
 
-  # define the distance between  2 products for this feature
+
+  # return the  FeatureValue(s) for a product, nil if no value (==empty)
+  def get_value(product) product.get_value(idurl) end
+  def get_value_01(product) raise "error" end
+
+ # define the distance between  2 products for this feature
   def distance(product1, product2)
     begin
       distance_metric(product1, product2)
@@ -405,6 +406,13 @@ class FeatureTags < Feature
   # to display the matrix
   # value is an array of tag.idurl
 
+  # value 0 for 0 tags selected
+  # value 1 for all tags selected
+  # the order is also taken into acount
+  def get_value_01(product)
+    Root.rule3(get_value(product).size.to_f, 0.0, tags.size.to_f)
+  end
+
   def get_value_html(product)
     if idurls_ok = get_value(product)
       tags.select { |t| idurls_ok.include?(t.idurl) }.collect {|t| "\"#{t.label}\"" }.join(', ')
@@ -457,17 +465,18 @@ end
 
 # define a rating value
 # aggregations objects are attached for each featureRating/Product
+# value is an Integer
 class FeatureRating < Feature
 
   key :min_rating, Integer, :default => 1
   key :max_rating, Integer, :default => 5
-  key :user_categories, Array, :default => ['citizen']
+  key :user_category, Array, :default => ['citizen']
 
   def self.initialize_from_xml(xml_node)
     feature_rating = super(xml_node)
     feature_rating.min_rating = Integer(xml_node['min_rating'])
     feature_rating.max_rating = Integer(xml_node['max_rating'])
-    feature_rating.user_categories = xml_node['user_categories'].split(",")
+    feature_rating.user_category = xml_node['user_category']
     feature_rating
   end
 
@@ -475,7 +484,7 @@ class FeatureRating < Feature
     node_feature_rating = super(top_node)
     node_feature_rating['min_rating'] = min_rating.to_s
     node_feature_rating['max_rating'] = max_rating.to_s
-    node_feature_rating['user_categories'] = user_categories.join(",")
+    node_feature_rating['user_category'] = user_category
     node_feature_rating
   end
 
@@ -483,6 +492,9 @@ class FeatureRating < Feature
   # define the distance between  2 products for this feature
   def distance_metric(product1, product2) (get_value(product1) - get_value(product2)).abs end
 
+  def get_value_01(product)
+    Root.rule3(get_value(product).to_f, min_rating.to_f, max_rating.to_f)
+  end
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -551,6 +563,11 @@ class FeatureInterval < Feature
     node_feature_interval['class_name'] = class_name
     Root.write_xml_list(xml_node, interval, 'ranges')
     node_feature_interval
+  end
+
+  def get_value_01(product)
+    # todo
+    0.0
   end
 
   # ---------------------------------------------------------------------
@@ -677,6 +694,7 @@ class FeatureNumeric < FeatureContinous
 
   def format_value(numeric_value) value_format % numeric_value end
 
+  def get_value_01(product) Root.rule3(get_value(product), value_min, value_max) end
 
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) Float(content_string) end
@@ -710,6 +728,7 @@ class FeatureDate < FeatureContinous
   # see http://ruby-doc.org/core-1.9/classes/Time.html#M000314
   def format_value(date) date.strftime(value_format) end
 
+  def get_value_01(product) Root.rule3(get_value(product), value_min, value_max) end
 
 
   # convert value to string (and reverse for dumping data product's feature value)
@@ -733,6 +752,7 @@ class FeatureCondition < Feature
     node_feature_condition = super(top_node)
   end
 
+  def get_value_01(product) get_value(product) ? 1.0 : 0.0 end
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -780,6 +800,7 @@ class FeatureComputed < Feature
     node_feature_computed
   end
 
+  def get_value_01(product) 0.0 end
 
   # ---------------------------------------------------------------------
   def get_value_html(product) get_value(product).to_s end

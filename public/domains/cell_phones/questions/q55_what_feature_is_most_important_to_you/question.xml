@@ -2,9 +2,9 @@
 <Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware" weight="0.5">
     
     <Choice idurl="c180_seamless_contact_management" label="seamless contact management" url_description="files/c180_seamless_contact_management@description.txt" url_image="images/c180_seamless_contact_management@main_image.jpg"
-      predicate="productIs(:palm_pre)"/>
+      preference="productIs(:palm_pre)"/>
 
     <Choice idurl="c181_largest_app_store" label="largest app store" url_description="files/c181_largest_app_store@description.txt" url_image="images/c181_largest_app_store@main_image.jpg"
-      predicate="productIs(:apple_iphone_3g)"/>
+      preference="productIs(:apple_iphone_3g)"/>
 
   </Question>

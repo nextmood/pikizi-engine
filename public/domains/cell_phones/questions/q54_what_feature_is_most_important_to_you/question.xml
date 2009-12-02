@@ -2,9 +2,9 @@
 <Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware">
     
     <Choice idurl="c177_call_quality" label="call quality" url_description="files/c177_call_quality@description.txt" url_image="images/c177_call_quality@main_image.jpg"
-      predicate="productIs(:blackberry_bold_9000)" />
+      preference="productIs(:blackberry_bold_9000)" />
 
     <Choice idurl="c178_lighweight_metal_build" label="lighweight metal build" url_description="files/c178_lighweight_metal_build@description.txt" url_image="images/c178_lighweight_metal_build@main_image.jpg"
-      predicate="productIs(:nokia_e71)" />
+      preference="productIs(:nokia_e71)" />
 
   </Question>

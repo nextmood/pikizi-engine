@@ -201,9 +201,8 @@ class Choice < Root
 
   key :url_image, String
   key :url_description, String
-
+  key :preference, String
   key :nb_ok, Integer, :default => 0
-  many :recommendations, :polymorphic => true
 
   key :hash_product_idurl_2_weight_cache, Hash
 
@@ -226,14 +225,14 @@ class Choice < Root
 
   def self.initialize_from_xml(xml_node)
     choice = super(xml_node)
-    choice.read_xml_list(xml_node, "Recommendation")
+    choice.preference = xml_node['preference']
     choice
   end
 
   def generate_xml(top_node)
     node_choice = super(top_node)
     node_choice['nb_ok'] = nb_ok.to_s
-    Root.write_xml_list(node_choice, recommendations)
+    node_choice['preference'] = preference
     node_choice
   end
 
@@ -286,7 +285,7 @@ class Choice < Root
 
     # ---------------------------------------------------------------------------------------
     # Predicate -> return a logical value (true, false)
-    # could be combined with logical operators (and, or, not) and parenthesis
+    # could be combined with logical operator and
     # ---------------------------------------------------------------------------------------
 
     # productIs(:iphone_3g)
@@ -294,9 +293,10 @@ class Choice < Root
     def productIs(options)
       if options.is_a?(Hash)
         key, values = check_hash(options, [:any])
-        raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1 and values.all {|value| value.is_a?(Symbol)}
-        values.to_strings.include?(selected_product.idurl) ? true : false
-      elsif options.is_a?(Symbol)
+        raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1
+        values = check_list_symbol_or_string(values)
+        values.include?(selected_product.idurl) ? high : low
+      elsif options.is_a?(Symbol) or options.is_a?(String) 
         productIs(:any => [options])
       else
         raise "wrong syntax"
@@ -324,33 +324,39 @@ class Choice < Root
         case key
           when :all
             raise "error" unless feature.is_a?(FeatureTags)
-            feature_value.all? { |fv| values.include?(fv) }
+            values = check_list_symbol_or_string(values)
+            feature_value.all? { |fv| values.include?(fv) } ? very_high : very_low
           when :any
             raise "error" unless feature.is_a?(FeatureTags)
-            feature_value.any? { |fv| values.include?(fv) }
+            values = check_list_symbol_or_string(values)
+            feature_value.any? { |fv| values.include?(fv) } ? very_high : very_low
           when :moreThan
             raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            feature_value > convert(feature, values.first)
+            raise "error" unless values.size == 1
+            feature_value > convert(feature, values.first)  ? very_high : very_low
           when :lessThan
             raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            feature_value < convert(feature, values.first)
+            raise "error" unless values.size == 1
+            feature_value < convert(feature, values.first) ? very_high : very_low
           when :in
             raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
             raise "error" unless values.size == 2
             min, max = convert(feature, values.first), convert(feature, values.last)
-            feature_value >= min and feature_value <= max
+            (feature_value >= min and feature_value <= max) ? very_high : very_low
           when :is
             raise "error" unless values.size == 1
-            feature_value == values.first
+            feature_value == values.first ? very_high : very_low
           when :atLeast
             raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            feature_value >= convert(feature, values.first)
+            raise "error" unless values.size == 1
+            feature_value >= convert(feature, values.first) ? very_high : very_low
           when :atMost
             raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            feature_value <= convert(feature, values.first)
+            raise "error" unless values.size == 1
+            feature_value <= convert(feature, values.first) ? very_high : very_low
         end
-      elsif options.is_a?(Symbol)
-        # TODO
+      elsif options.is_a?(Symbol) or options.is_a?(String)
+        featureIs(idurl_feature, :any => [options])
       else
         raise "wrong syntax"
       end
@@ -365,30 +371,37 @@ class Choice < Root
     # maximizeFeature(feature_idurl)
     # maximizeFeature(feature_idurl, :intensity) where intensity is either :very_low, :low, :medium, :high, :very_high
 
-    def maximize(idurl_feature, intensity = :very_high)
-      intensity = w(intensity)
+    def maximize(idurl_feature, intensity = nil)
+      intensity ||= very_high
+      feature = knowledge.get_feature_by_idurl(idurl_feature)
+      feature.get_value_01(selected_product) * intensity
     end
 
     # ----------------------------------------------------------------------------------------
     # not part of the language (private)
 
-
-    def w(intensity)
-      case intensity
-        when :very_high then 1.0
-        when :high then 0.75
-        when :medium then 0.5
-        when :low then 0.25
-        when :very_low then 0.0
-      end
-    end
+    def very_high() 1.0 end
+    def high() 0.75 end
+    def medium() 0.5 end
+    def low() 0.25 end
+    def very_low() 0.0 end
 
 
     def check_hash_options(options, operators)
       raise "wrong syntax" unless options.size == 1
-      key_values = options.collect.first
-      raise "key should be #{operators>joim(', ')}" unless operators.include?(key_values.first)
-      key_values
+      key, values = options.collect.first
+      values = values.collect {|x| x.is_a?(Symbol) ? x.to_s : x }
+      raise "key should be #{operators.join(', ')}" unless operators.include?(key)
+      [key, values]
+    end
+
+    def check_list_symbol_or_string(l)
+      l.collect do |value|
+          case value.class
+            when Symbol then value.to_s
+            when String then value
+            else raise "error"
+          end
     end
 
     def convert(feature, value)
