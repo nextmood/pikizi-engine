@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?"   dimension="Price">
+    
+    <Choice idurl="c186_hi-fi" label="hi-fi" url_description="files/c186_hi-fi@description.txt" url_image="images/c186_hi-fi@main_image.jpg"
+      predicate="productIs(:samsung_trance)"/>
+
+    <Choice idurl="c187_full_qwerty_keyboard" label="full qwerty keyboard" url_description="files/c187_full_qwerty_keyboard@description.txt" url_image="images/c187_full_qwerty_keyboard@main_image.jpg"
+      predicate="productIs(:lg_lotus)"/>
+
+  </Question>

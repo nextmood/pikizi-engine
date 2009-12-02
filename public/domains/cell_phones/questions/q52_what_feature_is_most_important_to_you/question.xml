@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Hardware">    
+    <Choice idurl="c173_largest_app_store" label="largest app store" url_description="files/c173_largest_app_store@description.txt" url_image="images/c173_largest_app_store@main_image.jpg"
+      predicate="productIs(:apple_iphone_3g)" />
+
+    <Choice idurl="c174_best_corporate_email" label="best corporate email" url_description="files/c174_best_corporate_email@description.txt" url_image="images/c174_best_corporate_email@main_image.jpg"
+      predicate="productIs(:any => %w[blackberry_bold_9000 blackberry_curve_8900])" />
+
+</Question>
