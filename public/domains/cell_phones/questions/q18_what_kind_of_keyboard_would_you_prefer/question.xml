@@ -2,10 +2,10 @@
 <Question  is_exclusive="true" label="What kind of keyboard would you prefer?" dimension="Hardware" weight="0.5">
     
     <Choice idurl="c51_full_qwerty" label="full qwerty" url_description="files/c51_full_qwerty@description.txt" url_image="images/c51_full_qwerty@main_image.jpg" >
-      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch nokia_e63 nokia_e71 blackberry_bold_9000 palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus"/>
+      <Recommendation weight="1.0" reverse="false" predicate="product is: samsung_s8300_ultratouch nokia_e63 nokia_e71 blackberry_bold_9000 palm_eos sanyo_scp-2700 blackberry_curve_8900 lg_lotus"/>
     </Choice>
     <Choice idurl="c52_numeric" label="numeric" url_description="files/c52_numeric@description.txt" url_image="images/c52_numeric@main_image.jpg" >
-      <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch motorola_i9_stature nokia_n96 samsung_trance nokia_n79 lg_cf360 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 sony_ericsson_w508 samsung_knack_sch-u310 nokia_7205_intrigue nokia_n85 nokia_6500_classic"/>
+      <Recommendation weight="1.0" reverse="false" predicate="product is: samsung_s8300_ultratouch motorola_i9_stature nokia_n96 samsung_trance nokia_n79 lg_cf360 nokia_5130_xpressmusic motorola_renew_w233 samsung_sgh-a657 sony_ericsson_w508 samsung_knack_sch-u310 nokia_7205_intrigue nokia_n85 nokia_6500_classic"/>
     </Choice>
     <Choice idurl="c53_suretype" label="suretype" url_description="files/c53_suretype@description.txt" url_image="images/c53_suretype@main_image.jpg" >
       <Recommendation weight="1.0" reverse="true" predicate="product is: samsung_s8300_ultratouch blackberry_pearl_flip_8220 blackberry_pearl_8130"/>

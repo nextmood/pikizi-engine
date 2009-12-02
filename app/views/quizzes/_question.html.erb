@@ -9,6 +9,7 @@
         presentation=<%= question.nb_presentation.round %>
         (<%= pluralize question.nb_oo.round, "no opinion" %>),&nbsp;
         confidence=<%= number_to_percentage(question.confidence * 100, :precision => 0) %>,&nbsp;
+        w=<%= question.weight %>,&nbsp;
         <%= render(:partial => "/questions/discrimination", :locals => {:discrimination => question.discrimination(nil, quizze.product_idurls)}) %>
     </div>
 

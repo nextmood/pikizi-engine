@@ -1,5 +1,5 @@
 
-
+      <%= link_to("back to quiz", "/myquizze/#{@knowledge.idurl}/#{@quizze.idurl}")   %>
 
       <table border=1>
           <tr>
@@ -7,7 +7,7 @@
             <% for affinity in @sorted_affinities %>
                 <th valign="top">
                   <div style="width:80px; overflow:hidden;">
-                  #<%= affinity.ranking %>
+                  #<%= affinity.ranking %> <small><%= affinity.measure_normalized %>%</small>
                   <div style="font-size:80%">
                     <%= @knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
                   </div>
@@ -25,24 +25,26 @@
           <% for dimension, answers in @hash_dimension2answers %>
               <tr style="background-color:yellow;"><td colspan="<%= @sorted_affinities.size + 1%>"><%= dimension %></td></tr>
               <% for answer in answers %>
+                <% if answer.has_opinion? %>
+                    <% question, choices_ok, min_weight, max_weight, hash_pidurl2explanation = answer.get_explanations(@knowledge, @quizze) %>
 
-                <% question, choices_ok, hash_pidurl2explanation = answer.get_explanations(@knowledge) %>
-                <tr>
-                    <td>
-                        <div style="width:200px;">
-                            <%= question.label %><small>w=<%= question.weight %>, dimension=<%= question.dimension %></small>
-                            <div style="font-size:80%">
-                                <%= choices_ok.collect(&:label).join('<br/>') %>
+                    <tr>
+                        <td>
+                            <div style="width:200px;" title="weight: min=<%= min_weight %>, max=<%= max_weight %>">
+                                <%= question.to_html(choices_ok) %>
                             </div>
-                        </div>
-                    </td>
-                    <% for affinity in @sorted_affinities %>
-                        <td align="center">
-                            <% sum_weights, explanation = hash_pidurl2explanation[affinity.product_idurl] %>
-                            <span title="<%= explanation %>"><%= colored_weight(sum_weights) %></span>
                         </td>
-                    <% end %>
-                </tr>
+                        <% for affinity in @sorted_affinities %>
+                            <td align="center">
+                                <% sum_weights, explanation, proportional_weight = hash_pidurl2explanation[affinity.product_idurl] %>
+
+                                <span title="<%= explanation %>"><%= colored_weight(sum_weights) %></span>
+                                <br/>
+                                <%= "#{'%3d' % (proportional_weight * 100)}%" if proportional_weight %>
+                            </td>
+                        <% end %>
+                    </tr>
+                <% end %>
               <% end %>
           <% end %>
       </table>

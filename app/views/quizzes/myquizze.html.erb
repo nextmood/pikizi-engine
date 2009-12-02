@@ -44,13 +44,16 @@
         <% end -%>
 
       <% else %>
-        no more question for this quiz/user
+          <div style="font-size:120%; margin:5px; text-align:center; ">
+            no more question for this quiz/user
+          </div>
+
       <% end %>
 
       <div style="border-top:1px dashed black; padding-left:5px; margin-top:10px; font-size:80%;">
         <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
         <%= link_to("details results...", "/myquizze_results/#{@knowledge.idurl}/#{@quizze.idurl}", :style => "margin-left:30px;") %>
-        <%= link_to_function("end quizze & record feedback...", "document.getElementById('form_feedback').submit();", :style => "margin-left:30px;") %>
+        <%= link_to_function("end quizze & record feedback...", "document.getElementById('form_feedback').submit();", :style => "margin-left:580px;") %>
       </div>
       
     </div>

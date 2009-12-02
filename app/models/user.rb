@@ -435,23 +435,26 @@ class Answer < Root
     node_answer
   end
 
-  def has_opinion?() answers_ok.size > 0 end
+  def has_opinion?() choice_idurls_ok.size > 0 end
 
   # return a list of choice object matching the answer of this user to the question
   def choices_ok(question) question.get_choice_ok_from_idurls(choice_idurls_ok) end
 
-  # for debugging
-  def get_explanations(knowledge)
+  # for results/debugging
+  def get_explanations(knowledge, quizze)
     question = knowledge.get_question_by_idurl(question_idurl)
     choices_ok = question.get_choice_ok_from_idurls(choice_idurls_ok)
+    a, b, min_weight, max_weight =  quizze.hash_question_idurl_2_ab_factors[question_idurl]
+    
     hash_pidurl2explanation = knowledge.product_idurls.inject({}) do |h, product_idurl|
+      
       weight = question.weight * choices_ok.inject(0.0) { |s, choice_ok| s += (choice_ok.hash_product_idurl_2_weight[product_idurl] || 0.0) }
       weights_explanation = choices_ok.collect { |choice_ok| "#{choice_ok.label} => #{choice_ok.hash_product_idurl_2_weight[product_idurl] || 'none'}" }.join(' + ')
       weights_explanation = "#{question.weight} * (#{weights_explanation})"
-      h[product_idurl] = [weight, weights_explanation]
+      h[product_idurl] = [weight, weights_explanation, quizze.proportional_weight(question_idurl, weight)]
       h
     end
-    [question, choices_ok, hash_pidurl2explanation]
+    [question, choices_ok, min_weight, max_weight, hash_pidurl2explanation]
 
   end
 

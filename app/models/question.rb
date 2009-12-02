@@ -94,15 +94,41 @@ class Question < Root
     end
   end
 
-  # this is called to compute the results per dimension
-  # return a vector [[weights], delta_weight, proportional_weight]
-  def proportional_weight(product_idurl, choice_idurls_ok)
-    choices_ok = get_choice_ok_from_idurls(choice_idurls_ok)
-    weights = choices_ok.collect { |choice_ok| choice_ok.hash_product_idurl_2_weight[product_idurl] }.compact
-    sum_weights = weights.inject(0.0) { |s, weight| s += weight }
-    proportional_weight = products_distribution.get_distribution4product_idurl(product_idurl).proportional_weight(sum_weights)
-    [weights, sum_weights, proportional_weight]
+
+  def compute_ab_factors(quizze)
+    weight_min, weight_max = nil, nil
+    if is_choice_exclusive
+      choices.each do |choice|
+        weight_min, weight_max = compute_ab_factors_bis(quizze, [choice], weight_min, weight_max)
+      end
+    else
+      Array.combinatorial(choices.clone, false) do |selected_choices|
+        weight_min, weight_max = compute_ab_factors_bis(quizze, selected_choices, weight_min, weight_max)
+      end
+    end
+    if weight_min and weight_max and weight_max - weight_min > 0
+      a_factor = 1.0 / (weight_max - weight_min)
+      b_factor = weight_min * - a_factor
+      [a_factor, b_factor, weight_min, weight_max]
+    else
+      puts "oups -> #{to_s}, weight_min=#{weight_min}, weight_max=#{weight_max}"
+      nil
+    end
+
   end
+
+  def compute_ab_factors_bis(quizze, selected_choices, weight_min, weight_max)
+    quizze.product_idurls.each do |product_idurl|
+      product_weight = selected_choices.inject(0.0) do |s, choice|
+        a_weight = choice.hash_product_idurl_2_weight[product_idurl]
+        a_weight ? s += a_weight * weight : s
+      end
+      weight_min = product_weight if weight_min.nil? or weight_min > product_weight
+      weight_max = product_weight if weight_max.nil? or weight_max < product_weight
+    end
+    [weight_min, weight_max]
+  end
+
 
   # define the proba of no opinion 0.0 .. 1.0
   def proba_oo(user=nil) nb_presentation == 0.0 ? 0.0 : (nb_oo /  nb_presentation) end
@@ -154,7 +180,10 @@ class Question < Root
     products_distribution.discrimination(user, product_idurls)
   end
 
-
+  def to_html(choices_ok=[])
+    label << "<small style='margin-left:3px'>(#{is_choice_exclusive ? 'exclusive' : 'multiple'})" << "&nbsp;[" << choices.collect {|choice| choices_ok.include?(choice) ? "<b>#{choice.label}</b>" : "#{choice.label}"}.join(', ') << "]</small>" 
+  end
+  
 end
 
 # ----------------------------------------------------------------------------------------
@@ -240,7 +269,102 @@ class Choice < Root
   # return the number of recommendations handled by this question
   def nb_recommendation() recommendations.size end
 
+  # =======================================================================================
+  # scripting language
+  # ---------------------------------------------------------------------------------------
 
+  # ---------------------------------------------------------------------------------------
+  # Predicate -> return a logical value (true, false)
+  # could be combined with logical operators (and, or, not) and parenthesis
+  # ---------------------------------------------------------------------------------------
+
+
+  # productIs(:iphone_3g)
+  # productIs(:any => [:iphone_3g, :iphone_3gs])
+  def productIs(options)
+    if options.is_a?(Hash)
+      key, values = check_hash(options, [:any])
+      raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1 and values.all {|value| value.is_a?(Symbol)}
+      values.to_strings.include?(selected_product.idurl)
+    elsif options.is_a?(Symbol)
+      productIs(:any => [options])
+    else
+      raise "wrong syntax"
+    end
+  end
+
+
+  # featureIs(:brand, :nokia)       // FeatureTags
+  # featureIs(:surname, "droid")   // FeatureText
+  # featureIs(:has_camera, true)   // FeatureCondition
+  # featureIs(:release_date, "12/1/2") // follow format
+  # featureIs(:format_audio, :all => [:mp3, :mp4]) // FeatureTags
+  # featureIs(:brand, :any => [:nokia, :apple])  // FeatureTags
+  # featureIs(:nb_pixel_camera, :moreThan => 2)
+  # featureIs(:nb_pixel_camera, :lessThan => 4)
+  # featureIs(:nb_pixel_camera, :in => [2.1, 4.5])
+  # featureIs(:nb_pixel_camera, :is => 2)
+  # featureIs(:nb_pixel_camera, :atLeast => 2)
+  # featureIs(:nb_pixel_camera, :atMost => 4)
+  #
+  def featureIs(idurl_feature, options)
+    if options.is_a?(Hash)
+      key, values = check_hash_options(options, [:all, :any, :moreThan, :lessTham, :in, :is, :atLeast, :atMost])
+      feature = knowledge.get_feature_by_idurl(idurl_feature)
+      values = feature.get_value(selected_product)
+      case key
+        when :all then xxx
+        when :any then xxx
+        when :moreThan then xxx
+        when :lessTham then xxx
+        when :in then xxx
+        when :is then xxx
+        when :atLeast then xxx
+        when :atMost then xxx
+      end
+    elsif options.is_a?(Symbol)
+      # TODO
+    else
+      raise "wrong syntax"
+    end
+  end
+
+  # ---------------------------------------------------------------------------------------
+  # Preference -> return a  value [0..1]
+  # can be combined with arithmetic operators (+, -, *, /) and parenthesis
+  # ---------------------------------------------------------------------------------------
+  #
+
+  # maximizeFeature(feature_idurl)
+  # maximizeFeature(feature_idurl, :intensity) where intensity is either :very_low, :low, :medium, :high, :very_high
+
+  def maximize(idurl_feature, intensity = :very_high)
+    intensity = w(intensity)
+  end
+
+  # ----------------------------------------------------------------------------------------
+  # not part of the language (private)
+
+
+  def w(intensity)
+    case intensity
+      when :very_high then 1.0
+      when :high then 0.75
+      when :medium then 0.5
+      when :low then 0.25
+      when :very_low then ).0
+    end
+  end
+
+
+  def check_hash_options(options, operators)
+    raise "wrong syntax" unless options.size == 1
+    key_values = options.collect.first
+    raise "key should be #{operators>joim(', ')}" unless operators.include?(key_values.first)
+    key_values
+  end
+
+  
 end
 
 
@@ -254,7 +378,6 @@ class Recommendation < Root
   include MongoMapper::EmbeddedDocument
 
   key :weight, Float
-  key :is_reverse, Boolean
   key :predicate , String
 
   attr_accessor :choice
@@ -268,7 +391,6 @@ class Recommendation < Root
   def self.initialize_from_xml(xml_node)
     recommendation = super(xml_node)
     recommendation.weight = Float(xml_node['weight'])
-    recommendation.is_reverse = (xml_node['reverse'] == "true")
     recommendation.predicate = xml_node['predicate']
     recommendation
   end
@@ -277,7 +399,6 @@ class Recommendation < Root
   def generate_xml(top_node)
     node_recommendation = super(top_node)
     node_recommendation['weight'] = weight.to_s
-    node_recommendation['reverse'] = "true" if is_reverse
     node_recommendation['predicate'] = predicate
     node_recommendation
   end
@@ -364,11 +485,12 @@ end
 # compute also the minimum/maximum weight that this product can get
 class ProductsDistribution
 
-  attr_accessor :hash_pidurl_distribution
+  attr_accessor :hash_pidurl_distribution, :question
 
   def initialize(question)
     @hash_pidurl_distribution = {}
-    question.is_choice_exclusive ? initialize_exclusive(question) : initialize_inclusive(question)
+    @question = question
+    question.is_choice_exclusive ? initialize_exclusive : initialize_inclusive
   end
 
   def collect(&block) @hash_pidurl_distribution.collect(&block) end
@@ -378,7 +500,7 @@ class ProductsDistribution
   # the measure is a 3-upple made of [standard deviation, nb product, average weight]
   def discrimination(user, product_idurls)
     weights = @hash_pidurl_distribution.inject([]) do |l, (pidurl, distribution)|
-      l << distribution.weighted_average if product_idurls.include?(pidurl)
+      l << distribution.weighted_average * question.weight if product_idurls.include?(pidurl)
       l
     end
 
@@ -395,7 +517,7 @@ class ProductsDistribution
   # private below
 
 
-  def initialize_inclusive(question)
+  def initialize_inclusive
     ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_product_idurl_2_weight, choice_probability|
       hash_product_idurl_2_weight.each do |pidurl, weight|
         distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
@@ -404,7 +526,7 @@ class ProductsDistribution
     end
   end
 
-  def initialize_exclusive(question)
+  def initialize_exclusive
     question.choices.each do |choice|
       choice_probability = choice.proba_ok
       choice.hash_product_idurl_2_weight.each do |pidurl, weight|
@@ -418,7 +540,7 @@ class ProductsDistribution
   def self.combinatorial_weight(choices, &block)
     hash_combinationkey2hash_product_idurl_2_weight = {}
 
-    ProductsDistribution.combinatorial(choices, false) do |combination_choices|
+    Array.combinatorial(choices, false) do |combination_choices|
       # combination is a list of choices
       choice_probability = choices.inject(1.0) { |x, c| x *= (combination_choices.include?(c) ? c.proba_ok : c.proba_ko) }
 
@@ -434,25 +556,7 @@ class ProductsDistribution
 
   def self.compute_combination_key(combination_choices) combination_choices.collect(&:idurl).join end
 
-  # yield all all possible combinations in an array
-  # and return the number of combination (empty set count for one)
-  def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
-  def self.combinatorial_bis(tail, empty_count, elt_set, x, &block)
-    if tail.size == 0
-      if elt_set.size > 0 or empty_count
-        block.call(elt_set)
-        x += 1
-      else
-        x
-      end
-    else
-      new_tail = tail.clone
-      first_elt = new_tail.shift
-      x = self.combinatorial_bis(new_tail, empty_count, elt_set, x, &block)
-      x = self.combinatorial_bis(new_tail, empty_count, elt_set.clone << first_elt, x, &block)
-    end
-    x
-  end
+
 
 
 end
@@ -463,27 +567,17 @@ class Distribution
 
   def initialize()
     @hash_weight_probability = {}
-    @weight_min = nil
-    @weight_max = nil
   end
 
   def add(weight, probability)
     @hash_weight_probability[weight] ||= 0.0
     @hash_weight_probability[weight] += probability
-    @weight_min = (@weight_min ? [@weight_min, weight].min : weight)
-    @weight_max = (@weight_max ? [@weight_max, weight].max : weight)
   end
 
   def weighted_average
     @hash_weight_probability.inject(0.0) { |wa, (weight, probability)| wa += (probability * weight) }
   end
 
-  # return a percentange between 0..1
-  def proportional_weight(weight)
-    @a_factor ||= 1.0 / (@weight_max - @weight_min)
-    @b_factor ||= @weight_min * - @a_factor
-    @a_factor * weight +  @b_factor
-  end
 
   def to_s()
     "Distribution=[" << @hash_weight_probability.collect {|weight, probability| "#{weight} => #{Root.as_percentage(probability)}"}.join(", ") << "]"
@@ -534,6 +628,26 @@ class Array
   def stat_standard_deviation()
     m = stat_mean
     Math.sqrt((inject(0.0) { |s, x| s += (x - m)**2 } / size.to_f))
+  end
+
+  # yield all all possible combinations in an array
+  # and return the number of combination (empty set count for one)
+  def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
+  def self.combinatorial_bis(tail, empty_count, elt_set, x, &block)
+    if tail.size == 0
+      if elt_set.size > 0 or empty_count
+        block.call(elt_set)
+        x += 1
+      else
+        x
+      end
+    else
+      new_tail = tail.clone
+      first_elt = new_tail.shift
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set, x, &block)
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set.clone << first_elt, x, &block)
+    end
+    x
   end
 
 end

@@ -22,9 +22,11 @@ class Root
       user.save
     end
     k = Knowledge.initialize_from_xml("cell_phones")
-    k.questions.each { |q| q.generate_choices_hash_product_idurl_2_weight }
+    k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight }
+    k.quizzes.each { |quizze| quizze.generate_ab_factors }
     "database reset"
   end
+
 
   def self.update_users_idurl()
     User.find(:all).each do |user|

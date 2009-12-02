@@ -1,6 +1,10 @@
 namespace :pikizi do
 
-  
+  desc "reset the Database"
+  task :reset_db => :environment do
+    Root.reset_db
+  end
+
   desc "Load a domain"
   task :load_domain => :environment do
     unless ENV.include?("name")
