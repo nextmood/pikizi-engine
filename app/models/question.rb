@@ -181,9 +181,9 @@ class Question < Root
   end
 
   def to_html(choices_ok=[])
-    label << "<small style='margin-left:3px'>(#{is_choice_exclusive ? 'exclusive' : 'multiple'})" << "&nbsp;[" << choices.collect {|choice| choices_ok.include?(choice) ? "<b>#{choice.label}</b>" : "#{choice.label}"}.join(', ') << "]</small>" 
+    label << "<small style='margin-left:3px'>(#{is_choice_exclusive ? 'exclusive' : 'multiple'})" << "&nbsp;[" << choices.collect {|choice| choices_ok.include?(choice) ? "<b>#{choice.label}</b>" : "#{choice.label}"}.join(', ') << "]</small>"
   end
-  
+
 end
 
 # ----------------------------------------------------------------------------------------
@@ -270,101 +270,140 @@ class Choice < Root
   def nb_recommendation() recommendations.size end
 
   # =======================================================================================
-  # scripting language
+  # Begin evaluator (to interpret script language)
   # ---------------------------------------------------------------------------------------
 
-  # ---------------------------------------------------------------------------------------
-  # Predicate -> return a logical value (true, false)
-  # could be combined with logical operators (and, or, not) and parenthesis
-  # ---------------------------------------------------------------------------------------
+  class Evaluator
 
-
-  # productIs(:iphone_3g)
-  # productIs(:any => [:iphone_3g, :iphone_3gs])
-  def productIs(options)
-    if options.is_a?(Hash)
-      key, values = check_hash(options, [:any])
-      raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1 and values.all {|value| value.is_a?(Symbol)}
-      values.to_strings.include?(selected_product.idurl)
-    elsif options.is_a?(Symbol)
-      productIs(:any => [options])
-    else
-      raise "wrong syntax"
+    def initialize(product)
+      @product = product
     end
-  end
 
+    def selected_product() @product end
 
-  # featureIs(:brand, :nokia)       // FeatureTags
-  # featureIs(:surname, "droid")   // FeatureText
-  # featureIs(:has_camera, true)   // FeatureCondition
-  # featureIs(:release_date, "12/1/2") // follow format
-  # featureIs(:format_audio, :all => [:mp3, :mp4]) // FeatureTags
-  # featureIs(:brand, :any => [:nokia, :apple])  // FeatureTags
-  # featureIs(:nb_pixel_camera, :moreThan => 2)
-  # featureIs(:nb_pixel_camera, :lessThan => 4)
-  # featureIs(:nb_pixel_camera, :in => [2.1, 4.5])
-  # featureIs(:nb_pixel_camera, :is => 2)
-  # featureIs(:nb_pixel_camera, :atLeast => 2)
-  # featureIs(:nb_pixel_camera, :atMost => 4)
-  #
-  def featureIs(idurl_feature, options)
-    if options.is_a?(Hash)
-      key, values = check_hash_options(options, [:all, :any, :moreThan, :lessTham, :in, :is, :atLeast, :atMost])
-      feature = knowledge.get_feature_by_idurl(idurl_feature)
-      values = feature.get_value(selected_product)
-      case key
-        when :all then xxx
-        when :any then xxx
-        when :moreThan then xxx
-        when :lessTham then xxx
-        when :in then xxx
-        when :is then xxx
-        when :atLeast then xxx
-        when :atMost then xxx
+    # return true or false
+    def eval(predicate) self.eval_instance_eval(predicate) end
+
+    # ---------------------------------------------------------------------------------------
+    # Predicate -> return a logical value (true, false)
+    # could be combined with logical operators (and, or, not) and parenthesis
+    # ---------------------------------------------------------------------------------------
+
+    # productIs(:iphone_3g)
+    # productIs(:any => [:iphone_3g, :iphone_3gs])
+    def productIs(options)
+      if options.is_a?(Hash)
+        key, values = check_hash(options, [:any])
+        raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1 and values.all {|value| value.is_a?(Symbol)}
+        values.to_strings.include?(selected_product.idurl) ? true : false
+      elsif options.is_a?(Symbol)
+        productIs(:any => [options])
+      else
+        raise "wrong syntax"
       end
-    elsif options.is_a?(Symbol)
-      # TODO
-    else
-      raise "wrong syntax"
     end
+
+    # featureIs(:brand, :nokia)       // FeatureTags
+    # featureIs(:surname, "droid")   // FeatureText
+    # featureIs(:has_camera, true)   // FeatureCondition
+    # featureIs(:release_date, "12/1/2") // follow format
+    # featureIs(:format_audio, :all => [:mp3, :mp4]) // FeatureTags
+    # featureIs(:brand, :any => [:nokia, :apple])  // FeatureTags
+    # featureIs(:nb_pixel_camera, :moreThan => 2)
+    # featureIs(:nb_pixel_camera, :lessThan => 4)
+    # featureIs(:nb_pixel_camera, :in => [2.1, 4.5])
+    # featureIs(:nb_pixel_camera, :is => 2)
+    # featureIs(:nb_pixel_camera, :atLeast => 2)
+    # featureIs(:nb_pixel_camera, :atMost => 4)
+    #
+    def featureIs(idurl_feature, options)
+      if options.is_a?(Hash)
+        key, values = check_hash_options(options, [:all, :any, :moreThan, :lessThan, :in, :is, :atLeast, :atMost])
+        feature = knowledge.get_feature_by_idurl(idurl_feature)
+        feature_value = feature.get_value(selected_product)
+        case key
+          when :all
+            raise "error" unless feature.is_a?(FeatureTags)
+            feature_value.all? { |fv| values.include?(fv) }
+          when :any
+            raise "error" unless feature.is_a?(FeatureTags)
+            feature_value.any? { |fv| values.include?(fv) }
+          when :moreThan
+            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+            feature_value > convert(feature, values.first)
+          when :lessThan
+            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+            feature_value < convert(feature, values.first)
+          when :in
+            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+            raise "error" unless values.size == 2
+            min, max = convert(feature, values.first), convert(feature, values.last)
+            feature_value >= min and feature_value <= max
+          when :is
+            raise "error" unless values.size == 1
+            feature_value == values.first
+          when :atLeast
+            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+            feature_value >= convert(feature, values.first)
+          when :atMost
+            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+            feature_value <= convert(feature, values.first)
+        end
+      elsif options.is_a?(Symbol)
+        # TODO
+      else
+        raise "wrong syntax"
+      end
+    end
+
+    # ---------------------------------------------------------------------------------------
+    # Preference -> return a  value [0..1]
+    # can be combined with arithmetic operators (+, -, *, /) and parenthesis
+    # ---------------------------------------------------------------------------------------
+    #
+
+    # maximizeFeature(feature_idurl)
+    # maximizeFeature(feature_idurl, :intensity) where intensity is either :very_low, :low, :medium, :high, :very_high
+
+    def maximize(idurl_feature, intensity = :very_high)
+      intensity = w(intensity)
+    end
+
+    # ----------------------------------------------------------------------------------------
+    # not part of the language (private)
+
+
+    def w(intensity)
+      case intensity
+        when :very_high then 1.0
+        when :high then 0.75
+        when :medium then 0.5
+        when :low then 0.25
+        when :very_low then 0.0
+      end
+    end
+
+
+    def check_hash_options(options, operators)
+      raise "wrong syntax" unless options.size == 1
+      key_values = options.collect.first
+      raise "key should be #{operators>joim(', ')}" unless operators.include?(key_values.first)
+      key_values
+    end
+
+    def convert(feature, value)
+      feature.is_a?(FeatureDate) ? FeatureDate.xml2date(value) : Float(value)
+    end
+
   end
 
   # ---------------------------------------------------------------------------------------
-  # Preference -> return a  value [0..1]
-  # can be combined with arithmetic operators (+, -, *, /) and parenthesis
-  # ---------------------------------------------------------------------------------------
-  #
-
-  # maximizeFeature(feature_idurl)
-  # maximizeFeature(feature_idurl, :intensity) where intensity is either :very_low, :low, :medium, :high, :very_high
-
-  def maximize(idurl_feature, intensity = :very_high)
-    intensity = w(intensity)
-  end
-
-  # ----------------------------------------------------------------------------------------
-  # not part of the language (private)
+  # END evaluator
+  # =======================================================================================
 
 
-  def w(intensity)
-    case intensity
-      when :very_high then 1.0
-      when :high then 0.75
-      when :medium then 0.5
-      when :low then 0.25
-      when :very_low then ).0
-    end
-  end
 
 
-  def check_hash_options(options, operators)
-    raise "wrong syntax" unless options.size == 1
-    key_values = options.collect.first
-    raise "key should be #{operators>joim(', ')}" unless operators.include?(key_values.first)
-    key_values
-  end
-
-  
 end
 
 
@@ -605,7 +644,7 @@ class HashProductIdurl2Weight
 
   # return the weight for a given product_idurl
   def [](product_idurl) @hash_pidurl_weight[product_idurl] end
-  
+
   def to_s
     "HashProductIdurl2Weight[" << @hash_pidurl_weight.collect { |pidurl, weight| "#{pidurl}:#{'%3.1f' % weight}" }.join(', ') << "]"
   end

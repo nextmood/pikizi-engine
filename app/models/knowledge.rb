@@ -3,7 +3,7 @@ require 'mongo_mapper'
 require 'graphviz'
 
 class Knowledge < Root
-      
+
   include MongoMapper::Document
 
   key :idurl, String, :index => true # unique url
@@ -20,12 +20,12 @@ class Knowledge < Root
 
   key :quizze_idurls, Array
   def quizzes() @quizzes ||= Quizze.get_from_idurl(quizze_idurls, self) end
-  
+
   timestamps!
 
   def self.is_main_document() true end
 
-  def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end  
+  def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end
   def each_feature_collect(&block) l = []; each_feature { |feature| l << block.call(feature) }; l end
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
@@ -53,7 +53,7 @@ class Knowledge < Root
       knowledge.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
       knowledge.save
       knowledge.link_back
-      
+
       knowledge.product_idurls = read_children_xml(knowledge, domain_directory, "Product")
       knowledge.question_idurls = read_children_xml(knowledge, domain_directory, "Question")
       knowledge.quizze_idurls = read_children_xml(knowledge, domain_directory, "Quizze")
@@ -70,7 +70,7 @@ class Knowledge < Root
   # return a list of sub idurl
   def self.read_children_xml(knowledge, domain_directory, tag)
     tag_class = Kernel.const_get(tag)
-    tag_downcase = tag.downcase 
+    tag_downcase = tag.downcase
     tag_downcase_plural = "#{tag_downcase}s"
     get_entries("#{domain_directory}/#{tag_downcase_plural}").inject([]) do |l, sub_idurl|
       sub_node = open_xml(domain_directory, sub_idurl, tag)
@@ -111,7 +111,7 @@ class Knowledge < Root
 
   end
 
-  # this entry will updtate the whole xml directories/files 
+  # this entry will updtate the whole xml directories/files
   def generate_xml
     domain_directory = "public/domains/#{idurl}"
     doc = XML::Document.new
@@ -155,7 +155,7 @@ class Knowledge < Root
         if question.is_filter
           raise "filtering not implemented yet"
         else
-          hash_pidurl_affinity[pidurl].add(weight * (reverse_mode ? -1.0 : 1.0), question.weight) 
+          hash_pidurl_affinity[pidurl].add(weight * (reverse_mode ? -1.0 : 1.0), question.weight)
         end
       end
     end
@@ -216,7 +216,7 @@ class Feature < Root
   # abstract class
 
   include MongoMapper::EmbeddedDocument
-  
+
   key :idurl, String, :index => true # unique url
 
   key :label, String # text
@@ -224,7 +224,7 @@ class Feature < Root
 
   many :features, :polymorphic => true # sub features
 
-  
+
   attr_accessor :object_parent, :dom_id
 
   def compute_dom_id(dom_id)
@@ -287,7 +287,7 @@ class Feature < Root
         <div>mandatory<input type='checkbox' #{'checked' if mandatory}/></div>
         <div><span>label<span><input type='text' value='#{label}' /></div>
      <div>"
-  end 
+  end
 
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) content_string end
@@ -328,7 +328,7 @@ class Feature < Root
     end
     nil
   end
-  
+
   # define the distance between  2 products for this feature
   def distance(product1, product2)
     begin
@@ -404,7 +404,7 @@ class FeatureTags < Feature
   # ---------------------------------------------------------------------
   # to display the matrix
   # value is an array of tag.idurl
-  
+
   def get_value_html(product)
     if idurls_ok = get_value(product)
       tags.select { |t| idurls_ok.include?(t.idurl) }.collect {|t| "\"#{t.label}\"" }.join(', ')
@@ -501,7 +501,7 @@ class FeatureRating < Feature
     "<div class=\"field\">
       <span>rating (min=#{min_rating}, max=#{max_rating})</span>
       <input type='text' name='feature_#{idurl}' value='#{get_value(product)}' />
-    </div>"  
+    </div>"
   end
 
   def get_feature_html()
@@ -513,7 +513,7 @@ class FeatureRating < Feature
   def get_feature_edit_html()
     super() << "<div class=\"field\">
                    min=<input name=\"min_rating\" type='text' value=\"#{min_rating}\" size=\"2\" />
-                   max=<input name=\"max_rating\" type='text' value=\"#{max_rating}\" size=\"2\" /> 
+                   max=<input name=\"max_rating\" type='text' value=\"#{max_rating}\" size=\"2\" />
                 </div>"
   end
 
@@ -533,7 +533,7 @@ class FeatureInterval < Feature
 
   key :class_name, String
   many :interval, :class_name => "Feature", :polymorphic => true
-  
+
   def feature_min() interval.first end
   def feature_max() interval.last end
 
@@ -706,7 +706,8 @@ class FeatureDate < FeatureContinous
     node_feature_date
   end
   def self.date2xml(x) x.strftime(Root.default_date_format) end
-  
+
+  # see http://ruby-doc.org/core-1.9/classes/Time.html#M000314
   def format_value(date) date.strftime(value_format) end
 
 
@@ -714,7 +715,7 @@ class FeatureDate < FeatureContinous
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) FeatureDate.xml2date(content_string) end
   def value2xml(value) FeatureDate.date2xml(value) end
-  
+
 end
 
 # ----------------------------------------------------------------------------------------
@@ -757,15 +758,74 @@ class FeatureCondition < Feature
 
 end
 
+# ----------------------------------------------------------------------------------------
+# Computed (value comes for combination of other feature)
+# ----------------------------------------------------------------------------------------
+
+# value is the result of the formula !
+class FeatureComputed < Feature
+
+  key :formula, String
+
+  def self.initialize_from_xml(xml_node)
+    feature_computed = super(xml_node)
+    feature_computed.formula_string = xml_node['formula']
+    raise "error, no formula" unless feature_computed.formula_string
+    feature_computed
+  end
+
+  def generate_xml(top_node)
+    node_feature_computed = super(top_node)
+    node_feature_computed['formula'] = formula_string
+    node_feature_computed
+  end
+
+
+  # ---------------------------------------------------------------------
+  def get_value_html(product) get_value(product).to_s end
+
+  # this is included in a form
+  def get_value_edit_html(product) nil end
+
+  # computation
+  def get_value(product)
+    FormulaEvaluator.new(knowledge, product).eval(formula)
+  end
+
+  # ---------------------------------------------------------------------
+  # convert value to string (and reverse for dumping data product's feature value)
+  def xml2value(content_string) raise "oups" end
+  def value2xml(value) raise "oups" end
+
+  # formula evaluator
+  class Evaluator
+
+    def initialize(knowledge, product)
+      @knowledge = knowledge
+      @product = product
+    end
+
+    def eval(formula) self.eval_instance_eval(formula) end
+
+    # language itself
+    def featureIs(idurl_feature)
+      @knowledge.get_feature_by_idurl(feature_idurl).get_value(product)
+    end
+
+  end
+
+end
 
 # ----------------------------------------------------------------------------------------
 # Text (use for label, description, etc...)
 # ----------------------------------------------------------------------------------------
 
+# value is line of text
 class FeatureText < Feature
 
 end
 
+# value is a URL
 class FeatureTextarea < Feature
   def get_value_html(product)
     if url = get_value(product)
