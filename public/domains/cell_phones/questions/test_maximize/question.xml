@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="How important is the rating" dimension="Lifestyle" >
+    <Choice idurl="important" label="REALLY important" recommendation="maximize(:main_expert_rating)" intensity="very_high"/>
+
+    <Choice idurl="medium" label="Average" recommendation="maximize(:main_expert_rating)" intensity="medium" />
+
+    <Choice idurl="bof" label="Bof..." recommendation="maximize(:main_expert_rating)" intensity="very_low" />
+
+
+  </Question>

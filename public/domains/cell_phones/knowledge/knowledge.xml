@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
   <Knowledge label="Cell Phones">
     <sub_features>
-      <FeatureRating idurl="main_expert_rating" label="Expert rating" min_rating="1" max_rating="5" user_categories="expert"/>
-      <FeatureRating idurl="main_citizen_rating" label="Everyone rating" min_rating="1" max_rating="5" user_categories="citizen"/>
+      <FeatureRating idurl="main_expert_rating" label="Expert rating" min_rating="1" max_rating="5" user_category="expert"/>
+      <FeatureRating idurl="main_user_rating" label="Everyone rating" min_rating="1" max_rating="5" user_category="user"/>
       <FeatureImage  idurl="main_image" label="Picture" />
       <FeatureUrl  idurl="main_url" label="Url" />
       <FeatureTextarea idurl="description" label="Full description" />
@@ -91,7 +91,7 @@
                   <Tag idurl="t1127_lower" label="lower"/>
                 </tags>
               </FeatureTags>
-              <FeatureRating idurl="f283_screen_quality" label="screen quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+              <FeatureRating idurl="f283_screen_quality" label="screen quality" min_rating="1" max_rating="5" user_category="user, expert"/>
             </sub_features>
           </FeatureHeader>
           <FeatureTags idurl="f20_form_factor" label="form factor" is_exclusive="false">
@@ -276,7 +276,7 @@
 
             </sub_features>
           </FeatureCondition>
-          <FeatureRating idurl="f251_call_quality" label="call quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+          <FeatureRating idurl="f251_call_quality" label="call quality" min_rating="1" max_rating="5" user_category="user, expert"/>
 
           <FeatureTags idurl="f125_call" label="call" is_exclusive="false">              
               <Tag idurl="f176_visual_voicemail" label="visual voicemail"/>
@@ -603,7 +603,7 @@
                 </tags>
               </FeatureTags>
 
-              <FeatureRating idurl="f260_video_quality" label="video quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+              <FeatureRating idurl="f260_video_quality" label="video quality" min_rating="1" max_rating="5" user_category="user, expert"/>
             </sub_features>
           </FeatureCondition>
           <FeatureTags idurl="f146_online_picture_and_video_sharing" label="online picture and video sharing" is_exclusive="false">
@@ -639,7 +639,7 @@
               <Tag idurl="t1083_advanced" label="advanced"/>
             </tags>
           </FeatureTags>
-          <FeatureRating idurl="f259_picture_quality" label="picture quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+          <FeatureRating idurl="f259_picture_quality" label="picture quality" min_rating="1" max_rating="5" user_category="user, expert"/>
           <FeatureNumeric idurl="f284_camera_controls_sophistication" label="camera controls sophistication" format="% .2f" value_min="0.0" value_max="5.0"/>
         </sub_features>
       </FeatureCondition>
@@ -677,7 +677,7 @@
                   <Tag idurl="t885_.3gp" label=".3gp"/>
                 </tags>
               </FeatureTags>
-              <FeatureRating idurl="f279_video_quality" label="video quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+              <FeatureRating idurl="f279_video_quality" label="video quality" min_rating="1" max_rating="5" user_category="user, expert"/>
             </sub_features>
           </FeatureCondition>
 
@@ -732,7 +732,7 @@
                   <Tag idurl="t1073_at&amp;t_mobile_music" label="at&amp;t mobile music"/>
                 </tags>
               </FeatureTags>
-              <FeatureRating idurl="f281_music_quality" label="music quality" min_rating="1" max_rating="5" user_categories="citizen, expert"/>
+              <FeatureRating idurl="f281_music_quality" label="music quality" min_rating="1" max_rating="5" user_category="user, expert"/>
             </sub_features>
           </FeatureCondition>
           <FeatureCondition idurl="f76_radio" label="radio">

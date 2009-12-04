@@ -44,7 +44,11 @@ class Root
 
 
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
-  def self.rule3(x, min, max) Root.rule3_cache(x, Root.rule3_ab(min, max)) end
+  def self.rule3(x, min, max)
+    y = Root.rule3_cache(x, Root.rule3_ab(min, max))
+    raise "error x=#{x} y=#{y} min=#{min} max=#{max} ab=#{Root.rule3_ab(min, max).inspect}" unless y.in01? and x.in01?
+    y
+  end
   def self.rule3_cache(x, ab) ab.first * x + ab.last end
   def self.rule3_ab(min, max)
     a = 1.0 / (max - min)
@@ -121,17 +125,19 @@ class Root
   end
 
   def self.write_xml_list_idurl(xml_node, list, container_tag)
-    xml_node << (sub_node = XML::Node.new('container_tag'))
+    xml_node << (sub_node = XML::Node.new(container_tag))
     sub_node << (list || []).join(', ')
   end
 
   def self.write_xml_list(xml_node, list, container_tag=nil)
-    if container_tag
-      xml_node << (node_list = XML::Node.new('container_tag'))
-    else
-      node_list =  xml_node
+    if list.size > 0
+      if container_tag
+        xml_node << (node_list = XML::Node.new(container_tag))
+      else
+        node_list =  xml_node
+      end
+      list.each { |object| object.generate_xml(node_list) }
     end
-    list.each { |object| object.generate_xml(node_list) }
     xml_node
   end
 
@@ -192,4 +198,8 @@ class String
 
   def has_suffix(suffix) self[self.size-suffix.size..self.size-1] == suffix end
 
+end
+
+class Float
+  def in01?() self >= 0.0 and self <= 1.0 end
 end

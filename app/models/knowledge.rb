@@ -30,6 +30,8 @@ class Knowledge < Root
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
 
+
+
   def self.all_key_label(options={})
     @@all_key_label ||= Knowledge.find(:all).collect {|k| [k.idurl, k.label] }
     if options[:only] == :idurl
@@ -96,7 +98,7 @@ class Knowledge < Root
 
   # return a list of sub idurl
   def self.write_children_xml(knowledge, object_idurls, domain_directory, tag)
-    tag_class = Kernel.get_const(tag)
+    tag_class = Kernel.const_get(tag)
     tag_downcase = tag.downcase
     tag_downcase_plural = "#{tag_downcase}s"
 
@@ -119,9 +121,17 @@ class Knowledge < Root
     Root.write_xml_list(node_knowledge, features, 'sub_features')
     doc.save("#{domain_directory}/knowledge/knowledge.xml")
 
-    Knowledge.write_children(self, question_idurls, domain_directory, "Question")
-    Knowledge.write_children(self, product_idurls, domain_directory, "Product")
-    Knowledge.write_children(self, quizze_idurls, domain_directory, "Quizze")
+    Knowledge.write_children_xml(self, question_idurls, domain_directory, "Question")
+    Knowledge.write_children_xml(self, product_idurls, domain_directory, "Product")
+    Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
+  end
+
+  def generate_product_template
+    doc = XML::Document.new
+    doc.root =  (top_node = XML::Node.new("Product"))
+    top_node['label'] = "Label..."
+    features.each { |feature| feature.generate_product_template(top_node, 0)  }
+    doc.save("public/domains/#{idurl}/knowledge/product_template.xml")
   end
 
   # return the number of products handled by this model
@@ -262,6 +272,23 @@ class Feature < Root
     node_feature
   end
 
+  def generate_product_template(top_node, depth)
+    tag_name = self.class.to_s
+    unless tag_name == "FeatureHeader"
+
+      tabulation = "    " * depth
+      top_node << XML::Node.new_comment("#{tabulation}#{tag_name} #{label} ")
+      top_node << (xml_node = XML::Node.new("Value"))
+      xml_node << XML::Node.new_comment("#{tabulation}#{product_template_comment} ")
+      xml_node['idurl'] = idurl
+    end
+    if features.size > 0
+      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1) }
+    end
+    top_node
+  end
+  def product_template_comment() raise "no comment for #{self.class}  " end
+
   # ---------------------------------------------------------------------
   # to display the matrix
   def get_value_html(product) get_value(product) end
@@ -398,6 +425,7 @@ class FeatureTags < Feature
     node_feature_tag
   end
 
+  def product_template_comment() "#{is_exclusive ? 'ONE tag' : 'MANY tags'} among: #{tags.collect(&:idurl).join('  ')}" end
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -467,7 +495,7 @@ class FeatureRating < Feature
 
   key :min_rating, Integer, :default => 1
   key :max_rating, Integer, :default => 5
-  key :user_category, Array, :default => ['citizen']
+  key :user_category, String, :default => 'user'
 
   def self.initialize_from_xml(xml_node)
     feature_rating = super(xml_node)
@@ -485,12 +513,14 @@ class FeatureRating < Feature
     node_feature_rating
   end
 
+  def product_template_comment() "a number between #{min_rating} and #{max_rating}" end
 
   # define the distance between  2 products for this feature
   def distance_metric(product1, product2) (get_value(product1) - get_value(product2)).abs end
 
   def get_value_01(product)
-    Root.rule3(get_value(product).to_f, min_rating.to_f, max_rating.to_f)
+    #Root.rule3(get_value(product).to_f, min_rating.to_f, max_rating.to_f)
+    get_value(product).to_f
   end
 
   # ---------------------------------------------------------------------
@@ -566,6 +596,8 @@ class FeatureInterval < Feature
     # todo
     0.0
   end
+
+  def product_template_comment() "[#{class_name}, #{class_name}]" end
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -697,6 +729,8 @@ class FeatureNumeric < FeatureContinous
   def xml2value(content_string) Float(content_string) end
   def value2xml(value) value.to_s end
 
+  def product_template_comment() "a number between #{value_min} and #{value_max}" end
+
 end
 
 class FeatureDate < FeatureContinous
@@ -732,6 +766,8 @@ class FeatureDate < FeatureContinous
   def xml2value(content_string) FeatureDate.xml2date(content_string) end
   def value2xml(value) FeatureDate.date2xml(value) end
 
+  def product_template_comment() "a date between #{value2xml(value_min)} and #{value2xml(value_max)}" end
+
 end
 
 # ----------------------------------------------------------------------------------------
@@ -766,6 +802,7 @@ class FeatureCondition < Feature
     "<input type='checkbox' name='feature_#{idurl}' title='idurl=#{idurl}' value='#{idurl}' #{ get_value(product) ? 'checked' : nil} />#{label}"
   end
 
+  def product_template_comment() "true or false" end
 
   # ---------------------------------------------------------------------
 
@@ -840,7 +877,7 @@ end
 
 # value is line of text
 class FeatureText < Feature
-
+  def product_template_comment() "a string" end
 end
 
 # value is a URL
@@ -850,6 +887,9 @@ class FeatureTextarea < Feature
       "<a href=\"#{clean_url(url, product)}\">link</a>"
     end
   end
+
+  def product_template_comment() "an url, like files/toto.html" end
+
 end
 
 class FeatureImage < Feature
@@ -860,6 +900,7 @@ class FeatureImage < Feature
     end
   end
 
+  def product_template_comment() "an url, like images/mabelle_image.html" end
 
 
 end
@@ -870,11 +911,15 @@ class FeatureUrl < Feature
       "<a href=\"#{clean_url(url, product)}\">link</a>"
     end
   end
+
+  def product_template_comment() "an url, like http//amazon.com/iphone.html" end
+
 end
 # define a feature with no value
 class FeatureHeader < Feature
 
   def color_from_status(product) "lightblue" end
+
 
 end
 

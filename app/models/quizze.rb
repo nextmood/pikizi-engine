@@ -62,9 +62,8 @@ class Quizze < Root
 
   # return a percentange between 0..1
   def proportional_weight(question_idurl, weight)
-
-      a_factor, b_factor, min_weight, max_weight = hash_question_idurl_2_ab_factors[question_idurl]
-      a_factor * weight +  b_factor if weight and a_factor and b_factor
+    a_factor, b_factor, min_weight, max_weight = hash_question_idurl_2_ab_factors[question_idurl]
+    a_factor * weight +  b_factor if weight and a_factor and b_factor
   end
 
   def generate_xml(top_node)

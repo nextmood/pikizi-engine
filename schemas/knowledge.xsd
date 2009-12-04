@@ -14,9 +14,9 @@
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
-  <xs:simpleType name="type_user_categories">
+  <xs:simpleType name="type_user_category">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="citizen" />
+      <xs:enumeration value="user" />
       <xs:enumeration value="expert" />
     </xs:restriction>
   </xs:simpleType>
@@ -32,7 +32,7 @@
       <xs:attribute ref="label" use="required"/>
       <xs:attribute name="min_rating" type="xs:integer" use="required"/>
       <xs:attribute name="max_rating" type="xs:integer" use="required"/>
-      <xs:attribute name="user_categories" type="type_user_categories" use="required"/>
+      <xs:attribute name="user_category" type="type_user_category" use="required"/>
     </xs:complexType>
   </xs:element>
 

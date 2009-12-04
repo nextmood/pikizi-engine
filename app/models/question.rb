@@ -113,7 +113,7 @@ class Question < Root
       b_factor = weight_min * - a_factor
       [a_factor, b_factor, weight_min, weight_max]
     else
-      puts "oups -> #{to_s}, weight_min=#{weight_min}, weight_max=#{weight_max}"
+      puts "warning: NO PRODUCT SEGMENTATION FOR #{idurl} IN #{quizze.idurl}"
       nil
     end
 
@@ -227,7 +227,7 @@ class Choice < Root
 
   def self.initialize_from_xml(xml_node)
     choice = super(xml_node)
-    choice.intensity = Float(xml_node['intensity'] || Evaluator.intensity2float("very_high") )
+    choice.intensity = Evaluator.intensity2float(xml_node['intensity'] || "very_high")
     choice.recommendation = xml_node['recommendation']
     choice
   end
@@ -236,7 +236,7 @@ class Choice < Root
     node_choice = super(top_node)
     node_choice['nb_ok'] = nb_ok.to_s
     node_choice['recommendation'] = recommendation if recommendation
-    node_choice['intensity'] = intensity
+    node_choice['intensity'] = intensity.to_s
     node_choice
   end
 
@@ -249,7 +249,6 @@ class Choice < Root
   # generate the weights for the considered products
   # return a HashProductIdurl2Weight object  
   def generate_hash_product_idurl_2_weight(products)
-    puts "question=#{question.idurl}, choice=#{idurl}"
     self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, products, recommendation, intensity)
   end
 
@@ -282,20 +281,22 @@ class Choice < Root
 
     attr_accessor :selected_product, :knowledge
 
-
+    # return a hash product_idurl -> weight
     def self.eval(knowledge, products, recommendation, intensity)
-      hash_product_idurl2weight = HashProductIdurl2Weight.new
+      hash_product_idurl2weight = {}
       if recommendation
         evaluator = Evaluator.new
         evaluator.knowledge = knowledge
         products.each do |product|
           evaluator.selected_product = product
-          #puts "evaluating product=#{product.idurl} against #{recommendation}"
           unless (value = evaluator.instance_eval(recommendation)).nil?
-            value = (value == true ? Evaluator.intensity2float("very_high") : Evaluator.intensity2float("very_low")) if (value == true or value == false)
+            if value == true or value == false
+              value = (value == true ? Evaluator.intensity2float("very_high") : Evaluator.intensity2float("very_low"))
+            end
+            raise "error value=#{value} intensity=#{intensity} recommendation=#{recommendation}" unless value >= 0.0 and value <= 1.0
             value = value * intensity
-            raise "error value=#{value}" unless value >= 0.0 and value <= 1.0
-            hash_product_idurl2weight.add(product.idurl, value)
+            hash_product_idurl2weight[product.idurl] = value
+            # puts "evaluating product=#{product.idurl} against #{recommendation} --> value=#{value}"
           end
         end
       end
@@ -391,7 +392,7 @@ class Choice < Root
 
     # maximizeFeature(idurl_feature)
     def maximize(idurl_feature)
-      idurl_feature = idurl_feature.to_s if Symbol.is_a?(idurl_feature)
+      idurl_feature = idurl_feature.to_s if idurl_feature.is_a?(Symbol)
       feature = knowledge.get_feature_by_idurl(idurl_feature)
       feature.get_value_01(selected_product)
     end

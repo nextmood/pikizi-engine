@@ -11,7 +11,7 @@ class User < Root
   key :rpx_username, String
   key :rpx_email, String
   key :role, String, :default => "unauthorised"
-  key :category, String, :default => "citizen"
+  key :category, String, :default => "user"
   key :reputation,  :default => 1.0
   key :wannabe_beta_tester, Boolean, :default => false
 
