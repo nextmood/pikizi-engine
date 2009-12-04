@@ -85,8 +85,6 @@ class Question < Root
   def nb_choices() @nb_choices ||= choices.size end
   def default_choice_proba_ok() is_choice_exclusive ? 1.0 / nb_choices.to_f : 0.5 end
 
-  # return the number of recommendations handled by this question
-  def nb_recommendation() choices.inject(0) { |s, c| s += c.nb_recommendation } end
 
   # based on precondition expression
   # todo precondition
@@ -205,7 +203,8 @@ class Choice < Root
 
   key :url_image, String
   key :url_description, String
-  key :preference, String
+  key :recommendation, String, :default => nil
+  key :intensity, Float
   key :nb_ok, Integer, :default => 0
 
   key :hash_product_idurl_2_weight_cache, Hash
@@ -214,7 +213,6 @@ class Choice < Root
 
   def link_back(question)
     self.question = question
-    recommendations.each { |recommendation| recommendation.link_back(self) }
   end
 
   def knowledge() question.knowledge end
@@ -229,14 +227,16 @@ class Choice < Root
 
   def self.initialize_from_xml(xml_node)
     choice = super(xml_node)
-    choice.preference = xml_node['preference']
+    choice.intensity = Float(xml_node['intensity'] || Evaluator.intensity2float("very_high") )
+    choice.recommendation = xml_node['recommendation']
     choice
   end
 
   def generate_xml(top_node)
     node_choice = super(top_node)
     node_choice['nb_ok'] = nb_ok.to_s
-    node_choice['preference'] = preference
+    node_choice['recommendation'] = recommendation if recommendation
+    node_choice['intensity'] = intensity
     node_choice
   end
 
@@ -245,10 +245,12 @@ class Choice < Root
 
   # initialize the hash_product_idurl_2_weight_cache for this choice
   # this is call from question
+  # it's interpret the preference string
+  # generate the weights for the considered products
+  # return a HashProductIdurl2Weight object  
   def generate_hash_product_idurl_2_weight(products)
-    self.hash_product_idurl_2_weight_cache = recommendations.inject(HashProductIdurl2Weight.new) do |h, recommendation|
-        h += recommendation.generate_hash_product_idurl_2_weight(products); h
-    end.hash_pidurl_weight
+    puts "question=#{question.idurl}, choice=#{idurl}"
+    self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, products, recommendation, intensity)
   end
 
   def hash_product_idurl_2_weight
@@ -269,23 +271,36 @@ class Choice < Root
   end
   def generate_javascript_weights_bis(pidurl, weight=nil) "tr_arrow('#{pidurl}','" << (weight ? weight.to_s : "&nbsp;") << "');" end
 
-  # return the number of recommendations handled by this question
-  def nb_recommendation() recommendations.size end
 
   # =======================================================================================
   # Begin evaluator (to interpret script language)
   # ---------------------------------------------------------------------------------------
 
+
+
   class Evaluator
 
-    def initialize(product)
-      @product = product
+    attr_accessor :selected_product, :knowledge
+
+
+    def self.eval(knowledge, products, recommendation, intensity)
+      hash_product_idurl2weight = HashProductIdurl2Weight.new
+      if recommendation
+        evaluator = Evaluator.new
+        evaluator.knowledge = knowledge
+        products.each do |product|
+          evaluator.selected_product = product
+          #puts "evaluating product=#{product.idurl} against #{recommendation}"
+          unless (value = evaluator.instance_eval(recommendation)).nil?
+            value = (value == true ? Evaluator.intensity2float("very_high") : Evaluator.intensity2float("very_low")) if (value == true or value == false)
+            value = value * intensity
+            raise "error value=#{value}" unless value >= 0.0 and value <= 1.0
+            hash_product_idurl2weight.add(product.idurl, value)
+          end
+        end
+      end
+      hash_product_idurl2weight
     end
-
-    def selected_product() @product end
-
-    # return true or false
-    def eval(predicate) self.eval_instance_eval(predicate) end
 
     # ---------------------------------------------------------------------------------------
     # Predicate -> return a logical value (true, false)
@@ -296,12 +311,12 @@ class Choice < Root
     # productIs(:any => [:iphone_3g, :iphone_3gs])
     def productIs(options)
       if options.is_a?(Hash)
-        key, values = check_hash(options, [:any])
-        raise "#{values.inspect} => should be an array of symbols with at least 2 values" unless values.is_a?(Array) and values.size > 1
-        values = check_list_symbol_or_string(values)
-        values.include?(selected_product.idurl) ? high : low
-      elsif options.is_a?(Symbol) or options.is_a?(String) 
-        productIs(:any => [options])
+        key, values = check_hash_options(options, [:any])
+        raise "#{values.inspect} => should be an array with at least 1 values" unless values.is_a?(Array) and values.size > 0
+        values = check_list_string(values)
+        ensure_boolean(values.include?(selected_product.idurl))
+      elsif options.is_a?(String) or options.is_a?(Symbol)
+        productIs(:any => [options.to_s])
       else
         raise "wrong syntax"
       end
@@ -320,47 +335,49 @@ class Choice < Root
     # featureIs(:nb_pixel_camera, :atLeast => 2)
     # featureIs(:nb_pixel_camera, :atMost => 4)
     #
+    # expect selected_product in context
     def featureIs(idurl_feature, options)
       if options.is_a?(Hash)
         key, values = check_hash_options(options, [:all, :any, :moreThan, :lessThan, :in, :is, :atLeast, :atMost])
         feature = knowledge.get_feature_by_idurl(idurl_feature)
-        feature_value = feature.get_value(selected_product)
-        case key
-          when :all
-            raise "error" unless feature.is_a?(FeatureTags)
-            values = check_list_symbol_or_string(values)
-            feature_value.all? { |fv| values.include?(fv) } ? very_high : very_low
-          when :any
-            raise "error" unless feature.is_a?(FeatureTags)
-            values = check_list_symbol_or_string(values)
-            feature_value.any? { |fv| values.include?(fv) } ? very_high : very_low
-          when :moreThan
-            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            raise "error" unless values.size == 1
-            feature_value > convert(feature, values.first)  ? very_high : very_low
-          when :lessThan
-            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            raise "error" unless values.size == 1
-            feature_value < convert(feature, values.first) ? very_high : very_low
-          when :in
-            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            raise "error" unless values.size == 2
-            min, max = convert(feature, values.first), convert(feature, values.last)
-            (feature_value >= min and feature_value <= max) ? very_high : very_low
-          when :is
-            raise "error" unless values.size == 1
-            feature_value == values.first ? very_high : very_low
-          when :atLeast
-            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            raise "error" unless values.size == 1
-            feature_value >= convert(feature, values.first) ? very_high : very_low
-          when :atMost
-            raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
-            raise "error" unless values.size == 1
-            feature_value <= convert(feature, values.first) ? very_high : very_low
+        if feature_value = feature.get_value(selected_product)
+          case key
+            when :all
+              raise "error" unless feature.is_a?(FeatureTags)
+              values = check_list_string(values)
+              ensure_boolean(feature_value.all? { |fv| values.include?(fv) })
+            when :any
+              raise "error" unless feature.is_a?(FeatureTags)
+              values = check_list_string(values)
+              ensure_boolean(feature_value.any? { |fv| values.include?(fv) })
+            when :moreThan
+              raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+              raise "error" unless values.size == 1
+              ensure_boolean(feature_value > convert(feature, values.first))
+            when :lessThan
+              raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+              raise "error" unless values.size == 1
+              ensure_boolean(feature_value < convert(feature, values.first))
+            when :in
+              raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+              raise "error" unless values.size == 2
+              min, max = convert(feature, values.first), convert(feature, values.last)
+              ensure_boolean((feature_value >= min and feature_value <= max))
+            when :is
+              raise "error" unless values.size == 1
+              ensure_boolean(feature_value == values.first)
+            when :atLeast
+              raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+              raise "error" unless values.size == 1
+              ensure_boolean(feature_value >= convert(feature, values.first))
+            when :atMost
+              raise "error" unless feature.is_a?(FeatureNumeric) or feature.is_a?(FeatureDate)  or feature.is_a?(FeatureRating)
+              raise "error" unless values.size == 1
+              ensure_boolean(feature_value <= convert(feature, values.first))
+          end
         end
-      elsif options.is_a?(Symbol) or options.is_a?(String)
-        featureIs(idurl_feature, :any => [options])
+      elsif options.is_a?(String) or options.is_a?(Symbol)
+        featureIs(idurl_feature, :any => [options.to_s])
       else
         raise "wrong syntax"
       end
@@ -372,24 +389,35 @@ class Choice < Root
     # ---------------------------------------------------------------------------------------
     #
 
-    # maximizeFeature(feature_idurl)
-    # maximizeFeature(feature_idurl, :intensity) where intensity is either :very_low, :low, :medium, :high, :very_high
-
-    def maximize(idurl_feature, intensity = nil)
-      intensity ||= very_high
+    # maximizeFeature(idurl_feature)
+    def maximize(idurl_feature)
+      idurl_feature = idurl_feature.to_s if Symbol.is_a?(idurl_feature)
       feature = knowledge.get_feature_by_idurl(idurl_feature)
-      feature.get_value_01(selected_product) * intensity
+      feature.get_value_01(selected_product)
     end
 
+    def minimize(idurl_feature) 1.0 - maximize(idurl_feature) end
+
+    # combine(maximize(:price), minimize(:weight))
+    def combine(*weights) weights.inject(0.0) { |s,w| s += w } / weights.size.to_f end
+    
     # ----------------------------------------------------------------------------------------
     # not part of the language (private)
 
-    def very_high() 1.0 end
-    def high() 0.75 end
-    def medium() 0.5 end
-    def low() 0.25 end
-    def very_low() 0.0 end
 
+    def self.intensities() { "very_high" => 1.0, "high" => 0.75, "medium" => 0.5, "low" => 0.25, "very_low" => 0.0 } end
+    def self.intensity2float(i)
+      i = i.to_ if i.is_a?(Symbol)
+      Evaluator.intensities[i]
+    end
+    def self.float2intensity(i)
+      closest_name, closest_distance = nil, nil
+      Evaluator.intensities[i].each do |name, intensity|
+        new_distance = (intensity - i).abs
+        closest_name, closest_distance = k, new_distance if closest_distance.nil? or closest_distance > new_distance
+      end
+      closest_name
+    end
 
     def check_hash_options(options, operators)
       raise "wrong syntax" unless options.size == 1
@@ -399,19 +427,18 @@ class Choice < Root
       [key, values]
     end
 
-    def check_list_symbol_or_string(l)
-      l.collect do |value|
-          case value.class
-            when Symbol then value.to_s
-            when String then value
-            else raise "error"
-          end
+    def check_list_string(l)
+      raise "error not a list of string #{l.inspect}" unless l.all? {|v| v.is_a?(String) }
+      l
     end
+    
 
     def convert(feature, value)
       feature.is_a?(FeatureDate) ? FeatureDate.xml2date(value) : Float(value)
     end
 
+    def ensure_boolean(b) b ? true : false end
+    
   end
 
   # ---------------------------------------------------------------------------------------
@@ -420,117 +447,9 @@ class Choice < Root
 
 
 
-
 end
 
 
-# ----------------------------------------------------------------------------------------
-# Recommendation
-# ----------------------------------------------------------------------------------------
-
-# generate_hash_product_idurl_2_weight is a hash of product_idurl with an associated recommendation weight (-1.00 .. +1.00)
-class Recommendation < Root
-
-  include MongoMapper::EmbeddedDocument
-
-  key :weight, Float
-  key :predicate , String
-
-  attr_accessor :choice
-
-  def link_back(choice)
-    self.choice = choice
-  end
-
-  def knowledge() choice.knowledge end
-
-  def self.initialize_from_xml(xml_node)
-    recommendation = super(xml_node)
-    recommendation.weight = Float(xml_node['weight'])
-    recommendation.predicate = xml_node['predicate']
-    recommendation
-  end
-
-
-  def generate_xml(top_node)
-    node_recommendation = super(top_node)
-    node_recommendation['weight'] = weight.to_s
-    node_recommendation['predicate'] = predicate
-    node_recommendation
-  end
-
-  # this is where theXML predicate is interpreted
-  # generate the weights for the considered products
-  # return a HashProductIdurl2Weight object
-  def generate_hash_product_idurl_2_weight(products)
-    # interpreting predicate
-    #begin
-      tokens = predicate.strip.split(' ').collect(&:strip)
-
-      # -------------------------------------------------------------------------
-      # FeatureTag.idurl is Tag.idurl, ... Tag.idurl
-      # -------------------------------------------------------------------------
-      if tokens[1] == "is:"  and tokens[0] != "product"
-        feature_idurl = tokens.shift
-        tokens.shift # skip "is:"
-
-        feature = knowledge.get_feature_by_idurl(feature_idurl)
-        raise "wrong feature #{feature_idurl} in predicate #{predicate}" unless feature
-        raise "feature #{feature_idurl} should be a FeatureTags in predicate #{predicate}" unless feature.is_a?(FeatureTags)
-        # check tag idurls
-        raise "you need at least one tag in predicate #{predicate}" unless tokens.size > 0
-        authorized_tag_idurls = feature.tags.collect(&:idurl)
-        tokens.each do |tag_idurl|
-          raise "tag #{tag_idurl} doesn't exist for feature #{feature.idurl} in predicate #{predicate}" unless authorized_tag_idurls.include?(tag_idurl)
-        end
-
-        products.inject(HashProductIdurl2Weight.new) do |h, product|
-          if values = feature.get_value(product)
-            # true if product hast at least one of the tokens values
-            # puts "h=#{h.inspect} product.idurl=#{product.idurl}"
-            if tokens.any? { | tag_idurl | values.include?(tag_idurl) }
-              h.add(product.idurl, weight)
-            elsif is_reverse
-              h.add(product.idurl, -1.0 * weight)
-            end
-          end
-          h
-        end
-
-      # -------------------------------------------------------------------------
-      # product is Product.idurl, ... Product.idurl
-      # -------------------------------------------------------------------------
-      elsif tokens[0] == "product" and tokens[1] == "is:"
-        tokens.shift # skip "product"
-        tokens.shift # skip "is:"
-        products.inject(HashProductIdurl2Weight.new) do |h, product|
-          if tokens.include?(product.idurl)
-            h.add(product.idurl, weight)
-          elsif is_reverse
-            h.add(product.idurl, -1.0 * weight)
-          end
-          h
-        end
-        # write an other predicate here
-        # always return a hash product_idurl => weight
-
-      # -------------------------------------------------------------------------
-      # other predicate
-      # -------------------------------------------------------------------------
-      else
-        raise "predicate unrecognized #{predicate}"
-      end
-
-    #rescue Exception => e
-      #puts "*** #{e.message}"
-      #nil
-    #end
-  end
-
-
-  def to_s() "R @#{predicate}=#{weight}" end
-
-end
 
 # this is a collection of the weight distribution for each product (merging choices according to proba)
 # for a given question

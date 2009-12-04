@@ -2,9 +2,9 @@
 <Question  is_exclusive="false" label="What feature is most important to you?"  dimension="Price">
     
     <Choice idurl="c182_killer_camera" label="killer camera" url_description="files/c182_killer_camera@description.txt" url_image="images/c182_killer_camera@main_image.jpg"
-      preference="productIs(:any => %w[nokia_n96 samsung_impression samsung_memoir_t929])" />
+      recommendation="productIs(:any => %w[nokia_n96 samsung_impression samsung_memoir_t929])" />
 
     <Choice idurl="c183_killer_music_player" label="killer music player" url_description="files/c183_killer_music_player@description.txt" url_image="images/c183_killer_music_player@main_image.jpg"
-      preference="productIs(:any => %w[lg_arena apple_iphone_3g nokia_n85])" />
+      recommendation="productIs(:any => %w[lg_arena apple_iphone_3g nokia_n85])" />
 
   </Question>

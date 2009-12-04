@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="" />
-    <ignored path="pikizi-engine.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="pikizi-engine.iws" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
       <file leaf-file-name="knowledge.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="845" column="1" selection-start="28308" selection-end="28308" vertical-scroll-proportion="-326.03845">
+            <state line="841" column="1" selection-start="28131" selection-end="28131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -48,7 +48,16 @@
       <file leaf-file-name="question.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/question.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.67154473">
+            <state line="294" column="116" selection-start="10522" selection-end="10522" vertical-scroll-proportion="0.19889502">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/question.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="18" selection-start="288" selection-end="298" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,9 +88,9 @@
         <option value="$PROJECT_DIR$/app/views/quizzes/myquizze_results.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
-        <option value="$PROJECT_DIR$/public/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/question.xml" />
         <option value="$PROJECT_DIR$/app/models/root.rb" />
         <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
+        <option value="$PROJECT_DIR$/public/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/question.xml" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
       </list>
     </option>
@@ -225,6 +234,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -463,9 +473,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,7 +485,7 @@
     <property name="recentsLimit" value="5" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
   </component>
-  <component name="RunManager" selected="Rails.Development">
+  <component name="RunManager" selected="Rake.pikizi:reset_db">
     <configuration default="false" name="pikizi:reset_db" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="pikizi-engine" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -708,9 +717,9 @@
     <layout>
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14473684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35964912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2996661" sideWeight="0.65643275" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2996661" sideWeight="0.63011694" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -804,30 +813,28 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/question.xml">
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="288" selection-end="288" vertical-scroll-proportion="0.07488299">
+        <state line="841" column="1" selection-start="28131" selection-end="28131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="19" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="50" column="19" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/question.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="845" column="1" selection-start="28308" selection-end="28308" vertical-scroll-proportion="-326.03845">
+        <state line="4" column="18" selection-start="288" selection-end="298" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/question.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.67154473">
+        <state line="294" column="116" selection-start="10522" selection-end="10522" vertical-scroll-proportion="0.19889502">
           <folding />
         </state>
       </provider>
