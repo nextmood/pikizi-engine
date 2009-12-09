@@ -77,7 +77,7 @@
                           <span style="margin-left:30px;">#<%= affinity.ranking %></span>
                           <div id="weight_<%= affinity.product_idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>    
                           <%= affinity.product_idurl %>&nbsp;
-                          <small title="measure=<%= affinity.measure %>">affinity=<%= affinity.measure_normalized %>%,&nbsp;confidence=<%= "%3d" % (affinity.confidence * 100) %>%</small>
+                          <small>affinity=<%= Root.as_percentage(affinity.measure) %>%,&nbsp;confidence=<%= "%3d" % (affinity.confidence * 100) %>%</small>
                           &nbsp;
                       </li>
                   <% end %>

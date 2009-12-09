@@ -3,7 +3,7 @@
   <div class="pkz_item_list"
        answered="<%= answered_choice_idurls ? 'true' : 'false' %>">
 
-    <%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %>
+    <%= link_to("#{question.label} <small>#{question.is_choice_exclusive ? 'one' : 'many'}</small>", "/questions/#{knowledge.idurl}/#{question.idurl}") %>
 
     <div style="font-size:80%;">
         presentation=<%= question.nb_presentation.round %>

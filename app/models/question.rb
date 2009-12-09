@@ -65,7 +65,7 @@ class Question < Root
   # compute and store HashProductIdurl2Weight for each choice of this question
   def generate_choices_hash_product_idurl_2_weight
     products = knowledge.products
-    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products) }
+    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products, self) }
     save
   end
 
@@ -95,42 +95,6 @@ class Question < Root
       true
     end
   end
-
-
-  def compute_ab_factors(quizze)
-    weight_min, weight_max = nil, nil
-    if is_choice_exclusive
-      choices.each do |choice|
-        weight_min, weight_max = compute_ab_factors_bis(quizze, [choice], weight_min, weight_max)
-      end
-    else
-      Array.combinatorial(choices.clone, false) do |selected_choices|
-        weight_min, weight_max = compute_ab_factors_bis(quizze, selected_choices, weight_min, weight_max)
-      end
-    end
-    if weight_min and weight_max and weight_max - weight_min > 0
-      a_factor = 1.0 / (weight_max - weight_min)
-      b_factor = weight_min * - a_factor
-      [a_factor, b_factor, weight_min, weight_max]
-    else
-      puts "warning: NO PRODUCT SEGMENTATION FOR #{idurl} IN #{quizze.idurl}"
-      nil
-    end
-
-  end
-
-  def compute_ab_factors_bis(quizze, selected_choices, weight_min, weight_max)
-    quizze.product_idurls.each do |product_idurl|
-      product_weight = selected_choices.inject(0.0) do |s, choice|
-        a_weight = choice.hash_product_idurl_2_weight[product_idurl]
-        a_weight ? s += a_weight * weight : s
-      end
-      weight_min = product_weight if weight_min.nil? or weight_min > product_weight
-      weight_max = product_weight if weight_max.nil? or weight_max < product_weight
-    end
-    [weight_min, weight_max]
-  end
-
 
   # define the proba of no opinion 0.0 .. 1.0
   def proba_oo(user=nil) nb_presentation == 0.0 ? 0.0 : (nb_oo /  nb_presentation) end
@@ -248,7 +212,7 @@ class Choice < Root
   # it's interpret the preference string
   # generate the weights for the considered products
   # return a HashProductIdurl2Weight object  
-  def generate_hash_product_idurl_2_weight(products)
+  def generate_hash_product_idurl_2_weight(products, question)
     self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, products, recommendation, intensity)
   end
 
@@ -567,7 +531,9 @@ end
 class HashProductIdurl2Weight
   attr_accessor :hash_pidurl_weight
 
-  def initialize(hash_pidurl_weight_initial={}) @hash_pidurl_weight = hash_pidurl_weight_initial end
+  def initialize(hash_pidurl_weight_initial={})
+    @hash_pidurl_weight = hash_pidurl_weight_initial
+  end
 
   def add(product_idurl, weight) @hash_pidurl_weight[product_idurl] = weight end
 
@@ -576,6 +542,12 @@ class HashProductIdurl2Weight
       @hash_pidurl_weight[pidurl] ||= 0.0
       @hash_pidurl_weight[pidurl] += weight
     end
+    self
+  end
+
+  def normalize(question)
+    cardinality = question.is_choice_exclusive ? 1.0 : question.nb_choices.size.to_f
+    @hash_pidurl_weight.each { |pidurl, weight| @hash_pidurl_weight[pidurl] = (weight / cardinality) * question.weight }
     self
   end
 
@@ -591,7 +563,21 @@ class HashProductIdurl2Weight
   # proxy
   def each(&block) @hash_pidurl_weight.each(&block) end
 
+  # create a new  HashProductIdurl2Weight object, weights are the one resulting from the answer
+  # return normalized weight (divided by the number of choices)
+  def self.after_answer(question, answer)
+    question.get_choice_ok_from_idurls(answer.choice_idurls_ok).inject(nil) do |s, choice_ok|
+      hp = choice_ok.hash_product_idurl_2_weight
+      s ? s + hp : hp
+    end.normalize(question)
+  end
 
+  def min_max()
+    @hash_pidurl_weight.inject([nil, nil]) do |(min, max), (product_idurl, weight)|
+      [ ((min.nil? or weight < min) ? weight : min), ((max.nil? or weight > max) ? weight : max) ]
+    end
+  end
+  
 end
 
 

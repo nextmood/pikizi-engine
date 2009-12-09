@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<Quizze label="Camera Phone Advisor">
-	<BackgroundHtml idurl="description" local_url="files/description.txt"/>
-    <BackgroundImage idurl="main_image" local_url="images/main_image.png"/>
+<Quizze label="Camera Phone Advisor" description="files/description.txt" main_image="images/main_image.png">
+
 	
 	<!-- if no product_idurls, then all products will be considered -->
     <product_idurls>

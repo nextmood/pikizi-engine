@@ -32,9 +32,8 @@ class QuizzesController < ApplicationController
     @current_user = get_logged_user
     @quizze_instance = @current_user.get_quizze_instance(@quizze)
     @sorted_affinities = @quizze_instance.sorted_affinities
-    @hash_dimension2answers = @quizze_instance.answers.group_by do |answer|
-      @knowledge.get_question_by_idurl(answer.question_idurl).dimension
-    end
+    @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+
     #@results_details = @quizze_instance.results_details(@knowledge)
     #@rankings_and_products = .collect { |affinity| [affinity.ranking, @knowledge.get_product_by_idurl(affinity.product_idurl)] }
   end

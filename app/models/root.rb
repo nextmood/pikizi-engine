@@ -23,7 +23,6 @@ class Root
     end
     k = Knowledge.initialize_from_xml("cell_phones")
     k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight }
-    k.quizzes.each { |quizze| quizze.generate_ab_factors }
     "database reset"
   end
 

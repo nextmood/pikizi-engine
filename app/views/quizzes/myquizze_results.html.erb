@@ -7,7 +7,7 @@
             <% for affinity in @sorted_affinities %>
                 <th valign="top">
                   <div style="width:80px; overflow:hidden;">
-                  #<%= affinity.ranking %> <small><%= affinity.measure_normalized %>%</small>
+                  #<%= affinity.ranking %> <small>m=<%= Root.as_percentage(affinity.measure) %>, m=<%= affinity.sum_weight %></small>
                   <div style="font-size:80%">
                     <%= @knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
                   </div>
@@ -15,32 +15,52 @@
             <% end %>
           </tr>
 
+
+
+          <!-- explanations[product_idurl]["aggregated_dimensions"][:sum | :percentage] -->
+          <!-- explanations[product_idurl]["dimension_#{dimension}"][:sum | :percentage] -->
+          <!-- explanations[product_idurl][question_idurl][:sum | :percentage] -->
+          <!-- hash_dimension2answers[dimension] => list of answers -->
+
           <tr>
             <th >Sum</th>
             <% for affinity in @sorted_affinities %>
-                <th align="center"><%= colored_weight(affinity.sum_weight) %></th>
+                <th align="center">
+                  <%= colored_weight(affinity.sum_weight) %>
+                  <%= @explanations[affinity.product_idurl]["aggregated_dimensions"][:sum] %>
+                  <br/>
+                  <%= Root.as_percentage(@explanations[affinity.product_idurl]["aggregated_dimensions"][:percentage]) %>
+                </th>
             <% end %>
           </tr>
 
           <% for dimension, answers in @hash_dimension2answers %>
-              <tr style="background-color:yellow;"><td colspan="<%= @sorted_affinities.size + 1%>"><%= dimension %></td></tr>
+              <tr style="background-color:yellow;">
+                <td><%= dimension %></td>
+                <% for affinity in @sorted_affinities %>
+                    <td align="center">
+                      <%= @explanations[affinity.product_idurl]["dimension_#{dimension}"][:sum] %>
+                      <br/>
+                      <%= Root.as_percentage(@explanations[affinity.product_idurl]["dimension_#{dimension}"][:percentage]) %>
+                    </td>
+                <% end %>
+              </tr>
               <% for answer in answers %>
                 <% if answer.has_opinion? %>
-                    <% question, choices_ok, min_weight, max_weight, hash_pidurl2explanation = answer.get_explanations(@knowledge, @quizze) %>
-
+                    <% question = @knowledge.get_question_by_idurl(answer.question_idurl) %>
+                    <% choices_ok = question.get_choice_ok_from_idurls(answer.choice_idurls_ok) %>
                     <tr>
                         <td>
-                            <div style="width:200px;" title="weight: min=<%= min_weight %>, max=<%= max_weight %>">
+                            <div style="width:200px;" title="weight=<%= '%2.1f' % question.weight %>, min-max<%= @hash_question_idurl2min_max_weight[answer.question_idurl].inspect %>">
                                 <%= question.to_html(choices_ok) %>
+                                <span style="color:red;"><%= question.weight %></span>
                             </div>
                         </td>
                         <% for affinity in @sorted_affinities %>
                             <td align="center">
-                                <% sum_weights, explanation, proportional_weight = hash_pidurl2explanation[affinity.product_idurl] %>
-
-                                <span title="<%= explanation %>"><%= colored_weight(sum_weights) %></span>
-                                <br/>
-                                <%= "#{'%3d' % (proportional_weight * 100)}%" if proportional_weight %>
+                              <%= @explanations[affinity.product_idurl][answer.question_idurl][:sum] %>
+                              <br/>
+                              <%= Root.as_percentage(@explanations[affinity.product_idurl][answer.question_idurl][:percentage]) %>
                             </td>
                         <% end %>
                     </tr>

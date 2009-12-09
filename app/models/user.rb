@@ -223,7 +223,6 @@ class QuizzeInstance < Root
       end
       current_ranking = 0; previous_measure = nil
       @sorted_affinities.each do |affinity|
-        affinity.normalized(should_normalized, a, b)
         if affinity.measure != previous_measure
           current_ranking += 1
           previous_measure = affinity.measure
@@ -251,7 +250,7 @@ class QuizzeInstance < Root
 
   # look up for the last quizze instance for a given quizze
   # if the last answer of this quiz instance is older than TIME_OUT_QUIZZE_INSTANCE returns nil
-  TIME_OUT_QUIZZE_INSTANCE = 3600.0
+  TIME_OUT_QUIZZE_INSTANCE = 36000000.0   # 10000h for debug !
   def self.get_latest_for_quizze(quizze, user)
     quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl and qi.closed_at.nil? }
     raise "we should not have more than one quiz instance open" if quizze_instances.size > 1
@@ -318,18 +317,62 @@ class QuizzeInstance < Root
     recorded_answer.get_answer_code_for(choice_idurl) == value_answered  if recorded_answer
   end
 
-  # return details results for a list of products
-  # product_idurl => [list_of_questions involved, ]
-  # [ [Qi, choice_idurls_ok, [Pw1%, Pw2%,...]], ...,  [Qj, answers, [Pw1%, Pw2%,...]]  ]
-  # where Pw1% = [weight, proportional_weight]
-  def results_details(knowledge)
-    product_idurls = affinities.collect(&:product_idurl)
-    answers.collect do |answer|
-      [ question = knowledge.get_question_by_idurl(answer.question_idurl),
-        choice_idurls_ok = answer.choice_idurls_ok,
-        product_idurls.collect { |product_idurl| question.proportional_weight(product_idurl, choice_idurls_ok) } ]
+  # return a  explanations, hash_dimension2answers
+  # explanations[product_idurl]["aggregated_dimensions"][:sum | :percentage]
+  # explanations[product_idurl][question_idurl][:sum | :percentage]
+  # hash_dimension2answers[dimension] => list of answers
+  # hash_question_idurl2min_max_weight => min, max weight for a given question
+  def get_explanations(knowledge, sorted_affinities)
+    hash_dimension2answers = answers.group_by do |answer|
+      answer.has_opinion? ? answer.question(knowledge).dimension : :no_opinion
     end
+
+    explanations = {}
+    hash_question_idurl2min_max_weight = {}
+    answers.each do |answer|
+      question = answer.question(knowledge)
+      hash_pidurl2weight = HashProductIdurl2Weight.after_answer(question, answer)
+      min_weight, max_weight = hash_pidurl2weight.min_max
+      hash_question_idurl2min_max_weight[answer.question_idurl] = [min_weight, max_weight]
+      ab = (min_weight == max_weight) ? nil : Root.rule3_ab(min_weight, max_weight)
+      sorted_affinities.each do |affinity|
+        product_idurl = affinity.product_idurl
+        weight = hash_pidurl2weight[product_idurl]
+        explanations[product_idurl] ||= {}
+        explanations[product_idurl][answer.question_idurl] = { :sum => weight, :percentage => (ab ? Root.rule3_cache(weight, ab) : 1.0) }
+      end
+    end
+
+    # compute the sum per dimension
+    hash_dimension2answers.each do |dimension, answers_4_dimension|
+      puts "answers_4_dimension=#{answers_4_dimension.class}"
+      sum_weight_questions = answers_4_dimension.inject(0.0) { |s, answer| s += answer.question(knowledge).weight }
+      explanations.each do |product_idurl, explanation|
+        sum_weight = 0.0
+        sum_percentage = 0.0
+        sum_weight_questions = 0.0
+        answers_4_dimension.each do |answer|
+          question_weight = answer.question(knowledge).weight
+          sum_weight += explanation[answer.question_idurl][:sum]
+          sum_percentage += (explanation[answer.question_idurl][:percentage] * question_weight)
+          sum_weight_questions += question_weight
+        end
+        explanation["dimension_#{dimension}"] = {:sum => sum_weight, :percentage => sum_percentage / sum_weight_questions }
+      end
+    end
+
+    # compute the total sum
+    sum_weight_questions = answers.inject(0.0) { |s, answer| s += answer.question(knowledge).weight }
+    explanations.each do |product_idurl, explanation|
+      sum_weight = answers.inject(0.0) { |s, answer| s += explanation[answer.question_idurl][:sum] }
+      sum_percentage = answers.inject(0.0) { |s, answer| s += (explanation[answer.question_idurl][:percentage] * answer.question(knowledge).weight) }
+
+      explanation["aggregated_dimensions"] = {:sum => sum_weight, :percentage => sum_percentage / sum_weight_questions }
+    end
+
+    [explanations, hash_dimension2answers, hash_question_idurl2min_max_weight]
   end
+
 
 
 end
@@ -356,7 +399,7 @@ class Affinity < Root
 
   def add(weight, question_weight)
     self.nb_weight += question_weight
-    self.sum_weight += question_weight * weight
+    self.sum_weight += weight
   end
 
   def self.initialize_from_xml(xml_node)
@@ -391,9 +434,6 @@ class Affinity < Root
   # between (-1.00 hated product and +1.00:prefered product)
   def measure() @measure ||= (nb_weight == 0.0 ? 0.0 : sum_weight / nb_weight) end
 
-  def normalized(should_normalized, a, b)
-    @measure_normalized = (should_normalized ? (a * measure + b).round : 0)
-  end
 
   NB_INPUT_4_MAX_CONFIDENCE = 5.0
   def confidence() @confidence ||= ([NB_INPUT_4_MAX_CONFIDENCE, nb_weight].min / NB_INPUT_4_MAX_CONFIDENCE) end
@@ -440,23 +480,8 @@ class Answer < Root
   # return a list of choice object matching the answer of this user to the question
   def choices_ok(question) question.get_choice_ok_from_idurls(choice_idurls_ok) end
 
-  # for results/debugging
-  def get_explanations(knowledge, quizze)
-    question = knowledge.get_question_by_idurl(question_idurl)
-    choices_ok = question.get_choice_ok_from_idurls(choice_idurls_ok)
-    a, b, min_weight, max_weight =  quizze.hash_question_idurl_2_ab_factors[question_idurl]
-    
-    hash_pidurl2explanation = knowledge.product_idurls.inject({}) do |h, product_idurl|
-      
-      weight = question.weight * choices_ok.inject(0.0) { |s, choice_ok| s += (choice_ok.hash_product_idurl_2_weight[product_idurl] || 0.0) }
-      weights_explanation = choices_ok.collect { |choice_ok| "#{choice_ok.label} => #{choice_ok.hash_product_idurl_2_weight[product_idurl] || 'none'}" }.join(' + ')
-      weights_explanation = "#{question.weight} * (#{weights_explanation})"
-      h[product_idurl] = [weight, weights_explanation, quizze.proportional_weight(question_idurl, weight)]
-      h
-    end
-    [question, choices_ok, min_weight, max_weight, hash_pidurl2explanation]
-
-  end
+  def question(knowledge) knowledge.get_question_by_idurl(question_idurl) end
+  
 
 end
 

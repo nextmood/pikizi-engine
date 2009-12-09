@@ -1,0 +1,47 @@
+<div id="main">
+  <div class="box952">
+    <h1>Advisor: <strong><%= @quizze.label %></strong></h1>
+    <% next_question = @current_user.get_next_question(@knowledge, @quizze) %>
+    <ul class="bugRt">
+      <li class="backAd"><a href="/test_results">results</a></li>
+      <li class="answers">12</li>
+    </ul>
+    <div id="quizzBox">
+      <h2>1. <%= next_question.label %></h2>
+
+      <ul class="advisors">
+        <% last_choice = (choices = next_question.choices).last %>
+        <% for choice in choices %>
+            <li <%= "class=\"last\"" if choice == last_choice%>>
+                <img src=<%= "/domains/#{@knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}" %> />
+                <input type="<%= next_question.is_choice_exclusive ? 'RADIO' : 'CHECKBOX' %>" name="option1" value="">
+                <%= choice.label %>
+                <a href="#"><img src="/images/gene/iconSrch16.png" /></a>
+            </li>
+        <% end %>
+
+
+        <div class="spcr"></div>
+      </ul>
+      <ul class="bugRt nav">
+      <li class="dir">Select one or more of the products then click Next.</li>
+        <li class="backAdBk"><a href="#">back</a></li>
+        <li class="backAdNxt"><a href="#">next</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<div class="boxLwr">
+  <div class="box952">
+    <ul class="bugRt">
+      <li class="backAd">Filter by</li>
+      <li class="answers"><a href="#">price</a></li>
+
+      <li><a href="#">rating</a></li>
+      <li><a href="#">brand</a></li>
+      <li><a href="#">carrier</a></li>
+    </ul>
+    <div class="spcr"></div>
+  </div>
+</div>

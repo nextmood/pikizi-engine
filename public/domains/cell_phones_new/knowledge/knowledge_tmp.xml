@@ -36,11 +36,11 @@
 		</FeatureTags>
 
 
-		<FeatureText idurl="nickname" label="Nickname"/> 
+		<FeatureTextarea idurl="nickname" label="Nickname"/> 
 
 		<FeatureTags idurl="phone_category" label="Phone Category" is_exclusive="true">
 			<tags>
-				<Tag idurl="cell_phone" label="Cell Phone"/>
+				<Tag idurl="Cell_phone" label="Cell Phone"/>
 				<Tag idurl="smartphone" label="Smartphone"/>
 				<Tag idurl="messaging_phone" label="Messaging phone"/>
 				<Tag idurl="camera_phone" label="Camera phone"/>
@@ -110,7 +110,7 @@
 				<FeatureHeader idurl="controls_navigation" label="Controls &amp; Navigation">    
 					<sub_features>
 						<FeatureRating idurl="controls_navigation_rating" label="Controls &amp; Navigation Rating" min_rating="0" max_rating="10" user_category="user"/>
-						<FeatureTags idurl="navigation" label="navigation" is_exclusive="false">
+						<FeatureTags idurl="f257_navigation" label="navigation" is_exclusive="false">
 							<tags>
 								<Tag idurl="touch_pad" label="Touch pad"/>
 								<Tag idurl="dpad" label="D-pad"/>
@@ -181,7 +181,7 @@
 					</sub_features>
 				</FeatureCondition>
 
-				<FeatureCondition idurl="gps" label="GPS" is_exclusive="false">
+				<FeatureTags idurl="GPS" label="GPS" is_exclusive="false">
 					<sub_features>
 						<FeatureRating idurl="gps_rating" label="Geolocation Rating" min_rating="0" max_rating="10" user_category="user"/>
 						<FeatureTags idurl="gps_type" label="GPS Services" is_exclusive="false">
@@ -199,7 +199,7 @@
 							</tags>
 						</FeatureTags>
 					</sub_features>
-				</FeatureCondition>
+				</FeatureTags>
 
 			</sub_features>
 		</FeatureHeader>
@@ -209,15 +209,15 @@
 				<FeatureHeader idurl="connectivity" label="Connectivity &amp; Internet Experience">
 					<sub_features>
 						<FeatureRating idurl="connectivity_internet_rating" label="Connectivity &amp; Internet Experience Rating" min_rating="0" max_rating="10" user_category="user"/>
-						<FeatureTags idurl="conectivity" label="Connectivity" is_exclusive="false">
+						<FeatureTags idurl="Conectivity" label="Connectivity" is_exclusive="false">
 							<tags>
 								<Tag idurl="bluetooth" label="Bluetooth"/>
 								<Tag idurl="wifi" label="wifi"/>
-								<Tag idurl="2g" label="2G"/>
-								<Tag idurl="3g" label="3G"/>
-								<Tag idurl="4g" label="4G"/>
-								<Tag idurl="cdma" label="CDMA"/>
-								<Tag idurl="gsm" label="GSM"/>
+								<Tag idurl="2G" label="2G"/>
+								<Tag idurl="3G" label="3G"/>
+								<Tag idurl="4G" label="4G"/>
+								<Tag idurl="CDMA" label="CDMA"/>
+								<Tag idurl="GSM" label="GSM"/>
 								<Tag idurl="umts" label="UMTS"/>
 								<Tag idurl="hsdpa" label="HSDPA"/>
 								<Tag idurl="wcdma" label="WCDMA"/>
@@ -225,11 +225,10 @@
 								<Tag idurl="gprs" label="GPRS"/>
 								<Tag idurl="edge" label="EDGE"/>
 								<Tag idurl="tri_band" label="Tri-Band"/>
-								<Tag idurl="quad_band" label="Quad-Band"/>
+								<Tag idurl="Quad_band" label="Quad-Band"/>
 							</tags>
 						</FeatureTags>
-						<FeatureCondition idurl="data_tethering" label="Data Tethering"/>
-						<FeatureTags idurl="internet" label="Internet" is_exclusive="true">
+						<FeatureTags idurl="Internet" label="Internet" is_exclusive="false">
 							<tags>
 								<Tag idurl="full_internet" label="Full Internet"/>
 								<Tag idurl="partial_internet" label="Partial Internet"/>
@@ -265,7 +264,7 @@
 								<FeatureNumeric idurl="multiple_email_accounts" label="Multiple Email Accounts" format="% " value_min="0" value_max="20" help="# of email accounts on the same device" />
 							</sub_features>
 						</FeatureCondition>
-						<FeatureTags idurl="messaging" label="Messaging" is_exclusive="false">
+						<FeatureTags idurl="Messaging" label="Messaging" is_exclusive="false">
 							<tags>
 								<Tag idurl="sms" label="SMS"/>
 								<Tag idurl="mms" label="MMS"/>
@@ -273,25 +272,25 @@
 								<Tag idurl="none" label="none"/>
 							</tags>
 						</FeatureTags>
-						<FeatureTags idurl="im" label="Instant Messaging" is_exclusive="false">
+						<FeatureTags idurl="IM" label="Instant Messaging" is_exclusive="false">
 							<tags>
-								<Tag idurl="gtalk" label="GTalk"/>
-								<Tag idurl="aim" label="AIM"/>
+								<Tag idurl="GTalk" label="GTalk"/>
+								<Tag idurl="AIM" label="AIM"/>
 								<Tag idurl="yahoo_messenger" label="Yahoo Messenger"/>
-								<Tag idurl="windows_live" label="Windows Live Messenger"/>
-								<Tag idurl="skype" label="Skype"/>
+								<Tag idurl="Windows_live" label="Windows Live Messenger"/>
+								<Tag idurl="Skype" label="Skype"/>
 								<Tag idurl="none" label="none"/>
 							</tags>
 						</FeatureTags>
 						<FeatureTags idurl="social_networks" label="Social Networks" is_exclusive="false">
 							<tags>
-								<Tag idurl="facebook" label="Facebook"/>
-								<Tag idurl="twitter" label="twitter"/>
-								<Tag idurl="tumblr" label="Tumblr"/>
-								<Tag idurl="myspace" label="MySpace"/>
-								<Tag idurl="foursquare" label="Foursquare"/>
-								<Tag idurl="gowalla" label="Gowalla"/>
-								<Tag idurl="loopt" label="Loopt"/>
+								<Tag idurl="Facebook" label="Facebook"/>
+								<Tag idurl="Twitter" label="twitter"/>
+								<Tag idurl="Tumblr" label="Tumblr"/>
+								<Tag idurl="MySpace" label="MySpace"/>
+								<Tag idurl="Foursquare" label="Foursquare"/>
+								<Tag idurl="Gowalla" label="Gowalla"/>
+								<Tag idurl="Loopt" label="Loopt"/>
 								<Tag idurl="none" label="none"/>
 							</tags>
 						</FeatureTags>
@@ -310,7 +309,7 @@
 						<FeatureTags idurl="call_features" label="Calling Features" is_exclusive="false">
 							<tags>
 								<Tag idurl="push_to_talk" label="Push-to-talk"/>
-								<Tag idurl="international_roaming" label="International Roaming"/>
+								<Tag idurl="International_roaming" label="International Roaming"/>
 								<Tag idurl="voice_calling" label="Voice Calling"/>
 								<Tag idurl="visual_voicemail" label="Visual Voicemail"/>
 								<Tag idurl="speed_dialing" label="Speed Dialing"/>
@@ -332,10 +331,10 @@
 					<tags>
 						<Tag idurl="apple" label="Apple"/>
 						<Tag idurl="android" label="Android"/>
-						<Tag idurl="symbian" label="Symbian"/>
+						<Tag idurl="Symbian" label="Symbian"/>
 						<Tag idurl="blackberry" label="Blackberry"/>
 						<Tag idurl="palm_webos" label="Palm WebOS"/>
-						<Tag idurl="windows_mobile" label="Windows Mobile"/>
+						<Tag idurl="Windows_mobile" label="Windows Mobile"/>
 						<Tag idurl="proprietary" label="Proprietary"/>
 					</tags>
 				</FeatureTags>
@@ -363,9 +362,8 @@
 				<Tag idurl="activesync" label="ActiveSync Policies"/>
 				<Tag idurl="ondevice_encryption" label="On-device Encryption"/>
 				<Tag idurl="complex_passwords" label="Complex Passwords"/>
-				<Tag idurl="remote_wipe" label="Remote Device Wipe"/>
-				<Tag idurl="remote_management" label="Remote Management"/>
-				<Tag idurl="vpn_connection" label="VPN Connection"/>
+				<Tag idurl="Remote_wipe" label="Remote Device Wipe"/>
+				<Tag idurl="Remote_management" label="VPN Connectivity"/>
 				<Tag idurl="none" label="none"/>
 			</tags>
 		</FeatureTags>
@@ -454,22 +452,19 @@
 						</FeatureTags>
 						<FeatureTags idurl="Video_formats" label="Video Formats" is_exclusive="false">
 							<tags>
-								<Tag idurl=".3gp" label=".3gp"/>
-								<Tag idurl=".m4v" label=".m4v"/>
-								<Tag idurl=".mp4" label=".mp4"/>
-								<Tag idurl=".mov" label=".mov"/>
-								<Tag idurl="avc/h.264" label="avc/h.264"/>
 								<Tag idurl="flash" label="Flash"/>
+								<Tag idurl="mpeg_4" label="Mpeg-4"/>
+								<Tag idurl="avc/h.264" label="avc/h.264"/>
+								<Tag idurl="windows_media_(wmv9)" label="windows media (wmv9)"/>
 								<Tag idurl="cif_@_30_fps" label="cif @ 30 fps"/>
 								<Tag idurl="divx_4" label="divx 4"/>
 								<Tag idurl="divx_5" label="divx 5"/>
 								<Tag idurl="divx_6" label="divx 6"/>
-								<Tag idurl="mpeg_4" label="Mpeg-4"/>
-								<Tag idurl="windows_media_(wmv9)" label="windows media (wmv9)"/>
 								<Tag idurl="wmv3" label="wmv3"/>
 								<Tag idurl="xvid" label="xvid"/>
 								<Tag idurl="h.263" label="h.263"/>
 								<Tag idurl="realvideo" label="realvideo"/>
+								<Tag idurl=".3gp" label=".3gp"/>
 							</tags>
 						</FeatureTags>
 					</sub_features>
@@ -480,20 +475,18 @@
 						<FeatureRating idurl="music_rating" label="Music Rating" min_rating="0" max_rating="10" user_category="user"/>
 						<FeatureTags idurl="music_formats" label="Music Formats" is_exclusive="false">
 							<tags>
+								<Tag idurl="mp3" label="mp3"/>
+								<Tag idurl="aac" label="aac"/>
+								<Tag idurl="wav" label="wav"/>
+								<Tag idurl="aiff" label="aiff"/>
+								<Tag idurl="apple_lossless" label="apple lossless"/>
+								<Tag idurl="midi" label="midi"/>
+								<Tag idurl="amr_nb" label="amr-nb"/>
+								<Tag idurl="aac+" label="aac+"/>
+								<Tag idurl="eaac+" label="eaac+"/>
 								<Tag idurl="3gp" label="3gp"/>
-								<Tag idurl="aac" label="AAC"/>
-								<Tag idurl="aiff" label="AIFF"/>
-								<Tag idurl="apple_lossless" label="Apple Lossless"/>
-								<Tag idurl="amr_nb" label="AMR-NB"/>
-								<Tag idurl="aac+" label="AAC+"/>
-								<Tag idurl="eaac+" label="EAAC+"/>
-								<Tag idurl="mp3" label="MP3 VBR"/>
-								<Tag idurl="mp3_vbr" label="MP3 VBR"/>
-								<Tag idurl="midi" label="MIDI"/>
-								<Tag idurl="protected_aac" label="Protected AAC"/>
-								<Tag idurl="wav" label="WAV"/>
-								<Tag idurl="wma9_pro" label="WMA9 pro"/>
-								<Tag idurl="wma_10" label="WMA10"/>
+								<Tag idurl="wma9_pro" label="wma9 pro"/>
+								<Tag idurl="wma_10" label="wma 10"/>
 							</tags>
 						</FeatureTags>
 						<FeatureTags idurl="music_store" label="Music Store &amp; Services " is_exclusive="false">

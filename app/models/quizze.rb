@@ -8,10 +8,11 @@ class Quizze < Root
   key :idurl, String, :index => true # unique url
 
   key :label, String # unique url
-
+  key :main_image_url, String
+  key :description_url, String
+  
   key :question_idurls, Array
   key :product_idurls, Array
-  key :hash_question_idurl_2_ab_factors, Hash, :default => {}
   
   timestamps!
   
@@ -41,7 +42,8 @@ class Quizze < Root
 
   def self.initialize_from_xml(knowledge, xml_node)
     quizze = super(xml_node)
-
+    quizze.main_image_url = xml_node["main_image"]
+    quizze.description_url = xml_node["description"]
     quizze.product_idurls = read_xml_list_idurl(xml_node, "product_idurls")
     quizze.product_idurls = knowledge.product_idurls if quizze.product_idurls.size == 0
 
@@ -52,22 +54,11 @@ class Quizze < Root
     quizze
   end
 
-  def generate_ab_factors
-    question_idurls.each do |question_idurl|
-      question = knowledge.get_question_by_idurl(question_idurl)
-      hash_question_idurl_2_ab_factors[question_idurl] = question.compute_ab_factors(self)
-    end
-    save
-  end
-
-  # return a percentange between 0..1
-  def proportional_weight(question_idurl, weight)
-    a_factor, b_factor, min_weight, max_weight = hash_question_idurl_2_ab_factors[question_idurl]
-    a_factor * weight +  b_factor if weight and a_factor and b_factor
-  end
 
   def generate_xml(top_node)
     node_quizze = super(top_node)
+    node_quizze["main_image"] = main_image_url
+    node_quizze["description"] = description_url
     Root.write_xml_list_idurl(node_quizze, product_idurls, "product_idurls")
     Root.write_xml_list_idurl(node_quizze, question_idurls, "question_idurls")
     node_quizze

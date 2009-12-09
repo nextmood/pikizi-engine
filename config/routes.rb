@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'questions', :action => 'show'
   map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
 
-  map.connect '/home' , :controller => 'home', :action => 'index'
+  map.connect '/home' , :controller => 'home', :action => 'test_index'
   map.connect '/test_results', :controller => 'home', :action => 'test_results'
   map.connect '/test_products_search', :controller => 'home', :action => 'test_products_search'
   map.connect '/test_quizz', :controller => 'home', :action => 'test_quizz'
@@ -68,6 +68,11 @@ ActionController::Routing::Routes.draw do |map|
   #   end
   map.connect "/beta_test/:user_idurl/:is_new_user", :controller => 'landing', :action => 'toggle_beta_test'
   map.connect "/thanks/:user_idurl/:is_new_user", :controller => 'landing', :action => 'thanks'
+
+  # real pages...
+  map.connect "/:knowledge_idurl/myquiz/:quizze_idurl", :controller => 'home', :action => 'myquiz'
+  map.connect "/:knowledge_idurl", :controller => 'home', :action => 'index'
+
   map.root :controller => "landing"  # default
 
   # See how all your routes lay out with "rake routes"
