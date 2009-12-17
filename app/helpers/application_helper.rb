@@ -6,11 +6,12 @@ module ApplicationHelper
 
   def compute_body_id(controller_action_name)
     case controller_action_name
-      when "home/index" then "home" # ok
+      when "home/quizzes" then "home" # ok
+      when "home/my_results" then "results"  # result page quizz   ko (menu issue?)
+      when "home/my_quiz" then "quizz"   # quizze  #number of answer wrong position
+
       when "home/test_products_search" then "products"  # search result ok      products_results
-      when "home/myresults" then "results"  # result page quizz   ko (menu issue?)
-      when "home/test_box" then "products"   # global box   ko (inside)
-      when "home/myquiz" then "quizz"   # quizze  #number of answer wrong position
+      when "home/test_box" then "products"   # global box   ko (inside)      
       when "home/test_product_alone" then "prodResults"  # ok   the product/show
       when "home/test_product_page_results" then   "prodResults"  # one product / results
       

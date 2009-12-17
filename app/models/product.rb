@@ -36,11 +36,16 @@ class Product < Root
     xml_node.find("Value").each do |node_value|
       feature_idurl = node_value['idurl']
       if feature = knowledge.get_feature_by_idurl(feature_idurl)
+        node_value_content = node_value.content.strip
         begin
-          value = feature.xml2value(node_value.content)
+          value = feature.xml2value(node_value_content)
         rescue
           value = nil
-          puts "there is a miss interpreted value for feature=#{feature.idurl} product=#{product.idurl}"
+          if node_value_content == ""
+            puts "EMPTY value product=#{product.idurl} feature=#{feature.idurl}"  unless feature.is_optional
+          else
+            puts "ERROR value product=#{product.idurl} feature=#{feature.idurl} xml_value=#{node_value_content.inspect}"
+          end
         end
         product.hash_feature_idurl_value[feature_idurl] = value
       else

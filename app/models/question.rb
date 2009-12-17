@@ -258,8 +258,8 @@ class Choice < Root
           evaluator.selected_product = product
           begin
             value = evaluator.instance_eval(recommendation)
-          rescue
-            puts "***** OUPS I can't evalaluate #{recommendation} in question #{question.idurl} for product #{product.idurl}"
+          rescue Exception => e
+            puts "***** OUPS I can't evaluate #{recommendation} in question #{question.idurl} for product #{product.idurl} : #{e.message}"
             value = nil
           end
 
@@ -315,6 +315,7 @@ class Choice < Root
       if options.is_a?(Hash)
         key, values = check_hash_options(options, [:all, :any, :moreThan, :lessThan, :in, :is, :atLeast, :atMost])
         feature = knowledge.get_feature_by_idurl(idurl_feature)
+        raise "error feature #{idurl_feature} doesn't exist in model" unless feature
         if feature_value = feature.get_value(selected_product)
           case key
             when :all

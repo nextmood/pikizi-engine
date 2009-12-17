@@ -30,8 +30,6 @@ class Knowledge < Root
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
 
-
-
   def self.all_key_label(options={})
     @@all_key_label ||= Knowledge.find(:all).collect {|k| [k.idurl, k.label] }
     if options[:only] == :idurl
@@ -131,9 +129,14 @@ class Knowledge < Root
     doc.root =  (top_node = XML::Node.new("Product"))
     top_node['label'] = product ? product.label : "Label..."
     features.each { |feature| feature.generate_product_template(top_node, 0, product)  }
-    path = "public/domains/#{idurl}/knowledge/"
-    path << "#{product ? product.idurl : 'product_template'}.xml"
-    doc.save(path)
+    path = "public/domains/#{idurl}"
+    if product
+      path = "#{path}/products/#{product.idurl}"
+      system("mv #{path}/product.xml #{path}/product_ph.xml")
+      doc.save("#{path}/product.xml")
+    else
+      doc.save("#{path}/knowledge/product_template.xml")
+    end
   end
 
   # return the number of products handled by this model
@@ -229,7 +232,7 @@ class Feature < Root
   key :idurl, String, :index => true # unique url
 
   key :label, String # text
-  key :mandatory, Boolean, :default => true
+  key :is_optional, Boolean, :default => false
 
   many :features, :polymorphic => true # sub features
 
@@ -262,14 +265,14 @@ class Feature < Root
 
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
-    feature.mandatory = !xml_node['is_optional']
+    feature.is_optional = xml_node['is_optional']
     feature.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
     feature
   end
 
   def generate_xml(top_node)
     node_feature = super(top_node)
-    node_feature['is_optional'] = "true" unless mandatory
+    node_feature['is_optional'] = "true" if is_optional
     Root.write_xml_list(node_feature, features, 'sub_features')
     node_feature
   end
@@ -312,13 +315,13 @@ class Feature < Root
 
   def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{feature_html_suffix}" end
   def feature_html_suffix()
-    "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" if mandatory
+    "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" unless is_optional
   end
   # this is included in a form
   def get_feature_edit_html()
     "<div class=\"field\" title=\"edit feature #{self.class}\">
         <div style='font-weight:normal; font-size:90%;'>#{self.class} : #{idurl}</div>
-        <div>mandatory<input type='checkbox' #{'checked' if mandatory}/></div>
+        <div>mandatory<input type='checkbox' #{'checked' unless is_optional}/></div>
         <div><span>label<span><input type='text' value='#{label}' /></div>
      <div>"
   end
@@ -333,7 +336,7 @@ class Feature < Root
     elsif get_value(product)
       "lightblue"
     else
-      mandatory ? "red" : "white"
+      is_optional ? "white" : "red"
     end
   end
 

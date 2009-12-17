@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Product label="HTC Ozone with Talks">
+<Product label="T-Mobile Dash 3G">
   <!--FeatureRating Expert Rating -->
   <Value idurl="overall_expert_rating">
     <!--a number between 0 and 10 -->
@@ -9,7 +9,7 @@
     <!--a number between 0 and 10 -->
   </Value>
   <!--FeatureImage Product Picture -->
-  <Value idurl="main_image">images/htc-ozone.jpg<!--an url, like images/mabelle_image.html --></Value>
+  <Value idurl="main_image">images/t-mobile-dash-3g.png<!--an url, like images/mabelle_image.html --></Value>
   <!--FeatureUrl URL -->
   <Value idurl="main_url">http://www.htc.com/www/product/snap/overview.html<!--an url, like http//amazon.com/iphone.html --></Value>
   <!--FeatureTextarea Product Description -->
@@ -29,11 +29,13 @@
   <!--FeatureTags Release Status -->
   <Value idurl="release_status">released<!--ONE tag among: released  announced  leaked --></Value>
   <!--FeatureNumeric Unsubsidized Price -->
-  <Value idurl="unsubsidized_price">499.99<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="unsubsidized_price">339.99<!--a number between 0.0 and 1000.0 --></Value>
   <!--FeatureNumeric Special [Carrier] Promotion -->
-  <Value idurl="special_carrier_promotion">149.99<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="special_carrier_promotion">
+    <!--a number between 0.0 and 1000.0 -->
+  </Value>
   <!--FeatureNumeric Subsidized price -->
-  <Value idurl="subsidized_price">249.99<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="subsidized_price">99.99<!--a number between 0.0 and 1000.0 --></Value>
   <!--    FeatureCondition  -->
   <Value idurl="plan_requirements">
     <!--    true or false -->
@@ -41,25 +43,21 @@
   <!--        FeatureNumeric Minimum monthly plan -->
   <Value idurl="minimum_plam">39.99<!--        a number between 0.0 and 1000.0 --></Value>
   <!--        FeatureNumeric Minimum monthly data plan -->
-  <Value idurl="data_plan">40.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="data_plan">30.0<!--        a number between 0.0 and 1000.0 --></Value>
   <!--        FeatureNumeric Minimum subscription time -->
   <Value idurl="minimum_subcription">2.0<!--        a number between 0.0 and 4.0 --></Value>
   <!--        FeatureNumeric Activation Fee -->
   <Value idurl="activation_fee">35.0<!--        a number between 0.0 and 1000.0 --></Value>
   <!--        FeatureNumeric Early Cancellation Costs -->
-  <Value idurl="early_cancellation">350.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="early_cancellation">200.0<!--        a number between 0.0 and 1000.0 --></Value>
   <!--        FeatureUrl Carrier Product Page -->
   <Value idurl="carrier_url">
     <!--        an url, like http//amazon.com/iphone.html -->
   </Value>
   <!--FeatureNumeric Amazon's Price -->
-  <Value idurl="amazon_price">
-    <!--a number between 0.0 and 1000.0 -->
-  </Value>
+  <Value idurl="amazon_price">99.0<!--a number between 0.0 and 1000.0 --></Value>
   <!--    FeatureUrl Amazon's Product Page -->
-  <Value idurl="amazon_url">
-    <!--    an url, like http//amazon.com/iphone.html -->
-  </Value>
+  <Value idurl="amazon_url">http://www.amazon.com/gp/product/B002FL5160?ie=UTF8&amp;tag=pikizi-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B002FL5160<!--    an url, like http//amazon.com/iphone.html --></Value>
   <!--FeatureNumeric BestBuy's Price -->
   <Value idurl="best_buy_price">
     <!--a number between 0.0 and 1000.0 -->
@@ -170,15 +168,19 @@
   <!--        FeatureTags Camera Features -->
   <Value idurl="camera_features">contact_pictures<!--        MANY tags among: autofocus  contact_pictures  digital_zoom  flash  image_correction  image_stabilization  optical_zoom  red_eye_reduction  video_mode --></Value>
   <!--    FeatureCondition GPS -->
-  <Value idurl="gps">true<!--    true or false --></Value>
+  <Value idurl="gps">
+    <!--    true or false -->
+  </Value>
   <!--        FeatureRating Geolocation Rating -->
   <Value idurl="gps_rating">
     <!--        a number between 0 and 10 -->
   </Value>
   <!--        FeatureTags GPS Services -->
-  <Value idurl="gps_services">vz_navigator<!--        MANY tags among: att_navigator  blackberry_maps  google_maps  google_maps_navigation  google_maps_latitude  navigon_app  nokia_maps  other_gps_app  other_gps_service  sprint_nav  telenav_app  telenav_navigator  tomtom_app  vz_navigator  vz_navigator_global --></Value>
+  <Value idurl="gps_services">none<!--        MANY tags among: att_navigator  blackberry_maps  google_maps  google_maps_navigation  google_maps_latitude  navigon_app  nokia_maps  other_gps_app  other_gps_service  sprint_nav  telenav_app  telenav_navigator  tomtom_app  vz_navigator  vz_navigator_global --></Value>
   <!--        FeatureTags GPS Features -->
-  <Value idurl="gps_features">automatic_reroute  familymap  geotag_pictures    location_based_apps  location_based_services  local_search  traffic_alerts  turn_by_turn_gps  voice-guided<!--        MANY tags among: automatic_reroute  familymap  geotag_pictures  international_navigation  location_based_apps  location_based_services  local_search  social_network_location_sharing  traffic_alerts  turn_by_turn_gps  voice-guided  none --></Value>
+  <Value idurl="gps_features">
+    <!--        MANY tags among: automatic_reroute  familymap  geotag_pictures  international_navigation  location_based_apps  location_based_services  local_search  social_network_location_sharing  traffic_alerts  turn_by_turn_gps  voice-guided  none -->
+  </Value>
   <!--    END Hardware -->
   <!--    BEGIN Communication -->
   <!--        BEGIN Connectivity & Internet Experience -->
@@ -187,7 +189,7 @@
     <!--        a number between 0 and 10 -->
   </Value>
   <!--        FeatureTags Connectivity -->
-  <Value idurl="conectivity">bluetooth  wifi  2g  3g  cdma  gsm evdo  tri_band<!--        MANY tags among: bluetooth  wifi  2g  3g  4g  cdma  gsm  umts  hsdpa  wcdma  ev_do  gprs  edge  tri_band  quad_band --></Value>
+  <Value idurl="conectivity">bluetooth  wifi  2g  3g  gsm gprs umts hsdpa quad-band<!--        MANY tags among: bluetooth  wifi  2g  3g  4g  cdma  gsm  umts  hsdpa  wcdma  ev_do  gprs  edge  tri_band  quad_band --></Value>
   <!--        FeatureCondition Data Tethering -->
   <Value idurl="data_tethering">true<!--        true or false --></Value>
   <!--        FeatureTags Internet -->
@@ -241,7 +243,7 @@
     <!--a number between 0 and 10 -->
   </Value>
   <!--FeatureTags Advanced User Features -->
-  <Value idurl="ui_advanced_features">voice_commands visual_voicemail text_to_speech<!--MANY tags among: accelerometer  copy_and_paste  copy_and_paste_pictures  home_screen_personalization  multi_touch  multi_tasking_voice_app  multi_tasking_app  text_to_speech  universal_search  voice_commands  none --></Value>
+  <Value idurl="ui_advanced_features">voice_commands visual_voicemail<!--MANY tags among: accelerometer  copy_and_paste  copy_and_paste_pictures  home_screen_personalization  multi_touch  multi_tasking_voice_app  multi_tasking_app  text_to_speech  universal_search  voice_commands  none --></Value>
   <!--FeatureRating Security & Management Rating -->
   <Value idurl="security_management_rating">
     <!--a number between 0 and 10 -->
@@ -256,7 +258,7 @@
   <!--    FeatureNumeric internal memory size -->
   <Value idurl="internal_memory_size">0.256<!--    a number between 0.0 and 64.0 --></Value>
   <!--    FeatureNumeric maximum external memory -->
-  <Value idurl="maximum_external_memory">16.0<!--    a number between 0.0 and 64.0 --></Value>
+  <Value idurl="maximum_external_memory">8.0<!--    a number between 0.0 and 64.0 --></Value>
   <!--    END Memory -->
   <!--    BEGIN Apps & Productivity -->
   <!--        BEGIN Productivity -->
@@ -314,6 +316,6 @@
     <!--        MANY tags among: att_cellular_video  blackberrymedia_center  flash_video  itunes  realplayer  roxio_media_manager  sprint_tv  vcasttv  vcast_video  youtube -->
   </Value>
   <!--        FeatureTags Video Formats -->
-  <Value idurl="Video_formats">avi  avc/h.264  h.263  mpeg_4  mp4  windows_media_(wmv9)<!--        MANY tags among: .3gp  avc/h.264  avi  cif_@_30_fps  divx_4  divx_5  divx_6  flash  h.263  .m4v  .mp4  .mov  mpeg_4  realvideo  windows_media_(wmv9)  wmv3  xvid --></Value>
+  <Value idurl="Video_formats">.mp4  .mov  avc/h.264  h.263  mpeg_4   windows_media_(wmv9)<!--        MANY tags among: .3gp  avc/h.264  avi  cif_@_30_fps  divx_4  divx_5  divx_6  flash  h.263  .m4v  .mp4  .mov  mpeg_4  realvideo  windows_media_(wmv9)  wmv3  xvid --></Value>
   <!--    END Media -->
 </Product>

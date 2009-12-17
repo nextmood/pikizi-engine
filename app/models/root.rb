@@ -27,21 +27,6 @@ class Root
   end
 
 
-  def self.update_users_idurl()
-    User.find(:all).each do |user|
-      if user.rpx_identifier
-        user.idurl = Digest::MD5.hexdigest(user.rpx_identifier)
-        puts "updating user=#{user.inspect}"
-        user.save
-      else
-        puts "destroying user=#{user.inspect}"
-        puts user.inspect
-        user.destroy
-      end
-    end
-  end
-
-
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
   def self.rule3(x, min, max)
     y = Root.rule3_cache(x, Root.rule3_ab(min, max))
@@ -143,14 +128,14 @@ class Root
   # retrieve a main document from it's idurl (unique!)
   # also works for a list of idurls'
   #
-  def self.get_from_idurl(idurl, knowledge=nil, options = {})
+  def self.get_from_idurl(idurl, link_back_object=nil, options = {})
     if idurl.is_a?(Array)
       objects = self.find(:all, :conditions => { :idurl => idurl })
-      objects.each { |o| o.link_back(knowledge) } unless options[:no_link_back]
+      objects.each { |o| o.link_back(link_back_object) } unless options[:no_link_back]
       objects
     else
       object = self.find(:first, :conditions => { :idurl => idurl })
-      object.link_back(knowledge)  if object and  !options[:no_link_back]
+      object.link_back(link_back_object)  if object and  !options[:no_link_back]
       object
     end
   end

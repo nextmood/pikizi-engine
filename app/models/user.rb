@@ -67,7 +67,8 @@ class User < Root
   end
 
   #API public, return a quizze_instance (create a new one for a given quizze)
-  def get_quizze_instance(quizze) QuizzeInstance.get_or_create_latest_for_quiz(quizze, self) end
+  def get_latest_quizze_instance() QuizzeInstance.get_latest_quizze(self) end
+  def create_quizze_instance(quizze) QuizzeInstance.create_for_quizze(quizze, self) end
 
   # step #1 user.record_answer
   # step #2 quizze_instance.record_answer
@@ -78,14 +79,16 @@ class User < Root
   # dispatch the record_answer methods
   def record_answer(knowledge, quizze, question, choices_idurls_selected_ok)
     choices_idurls_selected_ok ||= []
-    quizze_instance = get_quizze_instance(quizze)
+    quizze_instance = get_latest_quizze_instance
+    raise "error" unless quizze_instance and quizze_instance.get_quizze == quizze
     choices_ok = question.get_choice_ok_from_idurls(choices_idurls_selected_ok)
     knowledge.trigger_recommendations(quizze_instance, question, quizze.products, choices_ok, false)
     question.record_answer(self, choices_ok, false)
   end
 
   def cancel_answer(knowledge, quizze, question)
-    quizze_instance = get_quizze_instance(quizze)
+    quizze_instance = get_latest_quizze_instance
+    raise "error" unless quizze_instance and quizze_instance.quizze == quizze
     last_answer = quizze_instance.user_last_answer(question.idurl)
     raise "no answer to cancel " unless last_answer
     knowledge.cancel_recommendations(question, last_answer, quizze_instance, quizze.products)
@@ -96,7 +99,8 @@ class User < Root
   # return the next question to be asked
   # return nil if there is no question available
   def get_next_question(knowledge, quizze)
-    quizze_instance = get_quizze_instance(quizze)
+    quizze_instance = get_latest_quizze_instance
+    raise "error" unless quizze_instance and quizze_instance.get_quizze == quizze
     product_idurls_ranked_123 = quizze_instance.affinities.inject([]) do |l,a|
       l << a.product_idurl if a.ranking <= 3
       l
@@ -178,6 +182,8 @@ class QuizzeInstance < Root
     end
   end
 
+  def get_quizze() @quizze ||= Quizze.get_from_idurl(quizze_idurl) end
+  
   def self.initialize_from_xml(xml_node)
     quizze_instance = super(xml_node)
     quizze_instance.quizze_idurl = xml_node['quizze_idurl']
@@ -228,38 +234,27 @@ class QuizzeInstance < Root
     @sorted_affinities
   end
 
-  # look up for the last quizze instance for a given quizze
-  # if it doesn't exist create one...'
-  def self.get_or_create_latest_for_quiz(quizze, user)
-    unless quizze_instance = QuizzeInstance.get_latest_for_quizze(quizze, user)
-      quizze_instance = QuizzeInstance.new(
-        :quizze_idurl => quizze.idurl,
-        :created_at => Time.now,
-        :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
-      user.quizze_instances << quizze_instance
-      user.save
-      quizze_instance.link_back(user)
+
+  def self.create_for_quizze(quizze, user)
+    if existing_quizze_instance = QuizzeInstance.get_latest_quizze(user)
+      existing_quizze_instance.closed_at = Time.now
+      user.save  
     end
+    quizze_instance = QuizzeInstance.new(
+      :quizze_idurl => quizze.idurl,
+      :created_at => Time.now,
+      :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
+    user.quizze_instances << quizze_instance
+    user.save
+    quizze_instance.link_back(user)
     quizze_instance
   end
 
-  # look up for the last quizze instance for a given quizze
-  # if the last answer of this quiz instance is older than TIME_OUT_QUIZZE_INSTANCE returns nil
-  TIME_OUT_QUIZZE_INSTANCE = 36000000.0   # 10000h for debug !
-  def self.get_latest_for_quizze(quizze, user)
-    quizze_instances = user.quizze_instances.find_all { |qi| qi.quizze_idurl == quizze.idurl and qi.closed_at.nil? }
+  # look up for the last quizze instance
+  def self.get_latest_quizze(user)
+    quizze_instances = user.quizze_instances.find_all { |qi| qi.closed_at.nil? }
     raise "we should not have more than one quiz instance open" if quizze_instances.size > 1
-    if quizze_instance = quizze_instances.first
-      current_time = Time.now
-      if (current_time - quizze_instance.last_update) < TIME_OUT_QUIZZE_INSTANCE
-        quizze_instance
-      else
-        # close this old quizze
-        quizze_instance.closed_at = current_time
-        user.save
-        nil
-      end
-    end
+    quizze_instances.first
   end
 
   # return the last time this quizze instance was updated

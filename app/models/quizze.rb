@@ -6,7 +6,8 @@ class Quizze < Root
   include MongoMapper::Document
   
   key :idurl, String, :index => true # unique url
-
+  key :knowledge_idurl, String
+  
   key :label, String # unique url
   key :main_image_url, String
   key :description_url, String
@@ -15,7 +16,11 @@ class Quizze < Root
   key :product_idurls, Array
   
   timestamps!
-  
+
+
+  def link_back(knowledge) @knowledge = knowledge end
+  def knowledge() @knowledge ||= Knowledge.get_from_idurl(knowledge_idurl) end
+
   def self.is_main_document() true end
 
   def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge) end
@@ -34,14 +39,10 @@ class Quizze < Root
   
   def products() @products ||= Product.get_from_idurl(product_idurls, knowledge) end
 
-  attr_accessor :knowledge
-
-  def link_back(knowledge)
-    self.knowledge = knowledge
-  end
 
   def self.initialize_from_xml(knowledge, xml_node)
     quizze = super(xml_node)
+    quizze.knowledge_idurl = knowledge.idurl
     quizze.main_image_url = xml_node["main_image"]
     quizze.description_url = xml_node["description"]
     quizze.product_idurls = read_xml_list_idurl(xml_node, "product_idurls")

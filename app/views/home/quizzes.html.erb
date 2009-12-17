@@ -1,0 +1,68 @@
+<div id="main">
+    <div class="box952">
+
+        <h1>Let's find your next <%= @knowledge.label %></h1>
+        <% last_quizze = (quizzes = @knowledge.quizzes).last %>
+        <ul class="advisors">
+            <% for quizze in quizzes %>
+                <li <%= "class=\"last\"" if quizze == last_quizze %>>
+                  <img src="<%= "/domains/#{@knowledge.idurl}/quizzes/#{quizze.idurl}/#{quizze.main_image_url}" %>" />
+                  <%= quizze.label %>
+                  <%= link_to("<p></p>", "/start_quiz/#{quizze.idurl}") %>
+                </li>
+
+            <% end %>
+            <div class="spcr"></div>
+        </ul>
+
+        stay tuned more to come
+    </div>
+</div>
+<div class="boxLwr">
+    <ul id="news">
+        <li>
+            <ul class="inner">
+                <h1>News and updates</h1>
+                <li class="first">
+
+                <img src="/images/gene/newsPhone1.png" />
+                <h2><a href="#">Palm Pre - the beginning of the end for Palm?</a></h2>
+                1 hour ago<br />
+                <p>text text text text text text text text text text text texttext text text</p>
+                <a href="#" class="more">more</a>
+                </li>
+                <li>
+
+                <img src="/images/gene/newsPhone1.png" />
+                <h2><a href="#">Palm Pre - the beginning of the end for Palm?</a></h2>
+                1 hour ago<br />
+                <p>text text text text text text text text text text text texttext text text</p>
+                <a href="#" class="more">more</a>
+                </li>
+            </ul>
+
+        </li>
+     </ul>
+     <ul id="welcome">
+         <li>
+            <ul class="inner">
+                <h1>Welcome to pikizi</h1>
+                <li class="first">
+                <p>Looking for the <a href="#">best cell phone, smartphone
+                or camera?</a> One that suits your needs and
+                preferences? Let pikizi help you pick the right
+                product for you.</p>
+
+
+                <p>The pikizi advisors help you make the smart
+                pick by answering just a few personalized
+                questions. We’ll then make a recommendation
+                of our top picks for you.</p>
+
+                <p>To begin, click on the topic of your choice &#8211;
+                cell phones, smart phones or cameras.</p>
+                </li>
+            </ul>
+         </li>
+    </ul>
+</div>

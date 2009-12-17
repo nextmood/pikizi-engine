@@ -1,394 +1,307 @@
 <?xml version="1.0"?>
 <Product label="Label...">
-<!--FeatureRating Expert Rating -->
+  <!--FeatureRating Expert Rating -->
   <Value idurl="overall_expert_rating">
-<!--a number between 0 and 10 -->
+    <!--a number between 0 and 10 -->
   </Value>
-<!--FeatureRating User Rating -->
-  <Value idurl="overall_user_rating">7.8  </Value>
-<!--FeatureImage Product Picture -->
-  <Value idurl="main_image">images/motorola_cliq.jpg</Value>
-<!--FeatureUrl URL -->
-  <Value idurl="main_url">http://www.motorola.com/consumers/US-EN/Motorola-CLIQ-US-EN.do?vgnextoid=62045a6e00be2210VgnVCM1000006d06b10aRCRD</Value>
-<!--FeatureTextarea Product Description -->
-  <Value idurl="description">
-content/motorola_cliq.html  </Value>
-<!--FeatureTags Brand -->
-  <Value idurl="brand">
-motorola  
+  <!--FeatureRating User Rating -->
+  <Value idurl="overall_user_rating">7.8<!--a number between 0 and 10 --></Value>
+  <!--FeatureImage Product Picture -->
+  <Value idurl="main_image">images/motorola_cliq.jpg<!--an url, like images/mabelle_image.html --></Value>
+  <!--FeatureUrl URL -->
+  <Value idurl="main_url">http://www.motorola.com/consumers/US-EN/Motorola-CLIQ-US-EN.do?vgnextoid=62045a6e00be2210VgnVCM1000006d06b10aRCRD<!--an url, like http//amazon.com/iphone.html --></Value>
+  <!--FeatureTextarea Product Description -->
+  <Value idurl="description">content/motorola_cliq.html<!--an url, like files/toto.html --></Value>
+  <!--FeatureTags Brand -->
+  <Value idurl="brand">motorola<!--ONE tag among: nokia  motorola  blackberry  sony_ericsson  samsung  lg_electronics  apple  sanyo  siemens  htc  palm --></Value>
+  <!--FeatureTags Carriers -->
+  <Value idurl="carriers">t_mobile<!--ONE tag among: att  sprint  t_mobile  verizon  prepaid  unlocked --></Value>
+  <!--FeatureText Nickname -->
+  <Value idurl="nickname">Motorola Cliq<!--a string --></Value>
+  <!--FeatureTags Phone Category -->
+  <Value idurl="phone_category">smartphone<!--ONE tag among: cell_phone  smartphone  messaging_phone  camera_phone  media_phone --></Value>
+  <!--FeatureDate Release Date -->
+  <Value idurl="release_date">2009/10/14 22:00:00<!--a date between 2000/01/01 00:00:00 and 2020/01/01 00:00:00 --></Value>
+  <!--FeatureTags Release Status -->
+  <Value idurl="release_status">released<!--ONE tag among: released  announced  leaked --></Value>
+  <!--FeatureNumeric Unsubsidized Price -->
+  <Value idurl="unsubsidized_price">399.0<!--a number between 0.0 and 1000.0 --></Value>
+  <!--FeatureNumeric Special [Carrier] Promotion -->
+  <Value idurl="special_carrier_promotion">199.0<!--a number between 0.0 and 1000.0 --></Value>
+  <!--FeatureNumeric Subsidized price -->
+  <Value idurl="subsidized_price">199.0<!--a number between 0.0 and 1000.0 --></Value>
+  <!--    FeatureCondition  -->
+  <Value idurl="plan_requirements">true<!--    true or false --></Value>
+  <!--        FeatureNumeric Minimum monthly plan -->
+  <Value idurl="minimum_plam">39.99<!--        a number between 0.0 and 1000.0 --></Value>
+  <!--        FeatureNumeric Minimum monthly data plan -->
+  <Value idurl="data_plan">30.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <!--        FeatureNumeric Minimum subscription time -->
+  <Value idurl="minimum_subcription">2.0<!--        a number between 0.0 and 4.0 --></Value>
+  <!--        FeatureNumeric Activation Fee -->
+  <Value idurl="activation_fee">
+    <!--        a number between 0.0 and 1000.0 -->
   </Value>
-<!--FeatureTags Carriers -->
-  <Value idurl="carriers">
-t_mobile
+  <!--        FeatureNumeric Early Cancellation Costs -->
+  <Value idurl="early_cancellation">200.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <!--        FeatureUrl Carrier Product Page -->
+  <Value idurl="carrier_url">
+    <!--        an url, like http//amazon.com/iphone.html -->
   </Value>
-<!--FeatureText Nickname -->
-  <Value idurl="nickname">
-Motorola Cliq
-  </Value>
-<!--FeatureTags Phone Category -->
-  <Value idurl="phone_category">
-smartphone
-  </Value>
-<!--FeatureDate Release Date -->
-  <Value idurl="release_date">
-2009/10/15 00:00:00 
-  </Value>
-<!--FeatureTags Release Status -->
-  <Value idurl="release_status">
-released
-  </Value>
-<!--FeatureNumeric Unsubsidized Price -->
-  <Value idurl="unsubsidized_price">
-399  </Value>
-<!--FeatureNumeric Special [Carrier] Promotion -->
-  <Value idurl="special_carrier_promotion">
-199  </Value>
-<!--FeatureNumeric Subsidized price -->
-  <Value idurl="subsidized_price">
-199  </Value>
-<!--    FeatureCondition  -->
-  <Value idurl="plan_requirements">
-true 
-  </Value>
-<!--        FeatureNumeric Minimum monthly plan -->
-  <Value idurl="minimum_plam">
-39.99  </Value>
-<!--        FeatureNumeric Minimum monthly data plan -->
-  <Value idurl="data_plan">
-30  </Value>
-<!--        FeatureNumeric Minimum subscription time -->
-  <Value idurl="minimum_subcription">
-2  </Value>
-<!--        FeatureNumeric Early Cancellation Costs -->
-  <Value idurl="early_cancellation">
-200  </Value>
-<!--FeatureNumeric Amazon's Price -->
-  <Value idurl="amazon_price">
-99  </Value>
-<!--    FeatureUrl Amazon's Product Page -->
-  <Value idurl="amazon_url">
-"http://www.amazon.com/gp/product/B002TX754K?ie=UTF8&tag=pikizi-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B002TX754K"  </Value>
-<!--FeatureNumeric BestBuy's Price -->
-  <Value idurl="best_buy_price">
-99  </Value>
-<!--    FeatureUrl BestBuy's Product Page -->
-  <Value idurl="bestbuy_url">
-http://wireless.bestbuy.com/specialoffer.aspx?cid=34309_dd609536ed564d6eb4614c918410460b  </Value>
-<!--FeatureNumeric Radioshack's Price -->
-  <Value idurl="radioshack_price">
-79.99  </Value>
-<!--    FeatureUrl Radioshack's Product Page -->
-  <Value idurl="radioshack_url">
-http://radioshackwireless.com/specialoffer.aspx?cid=25578_1c1dcdfaa5c94a5f893ac0597ef8eee0  </Value>
-<!--    BEGIN Hardware -->
-<!--        BEGIN Screen -->
-<!--        FeatureRating Screen Rating -->
+  <!--FeatureNumeric Amazon's Price -->
+  <Value idurl="amazon_price">99.0<!--a number between 0.0 and 1000.0 --></Value>
+  <!--    FeatureUrl Amazon's Product Page -->
+  <Value idurl="amazon_url">http://www.amazon.com/gp/product/B002TX754K?ie=UTF8&amp;tag=pikizi-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B002TX754K<!--    an url, like http//amazon.com/iphone.html --></Value>
+  <!--FeatureNumeric BestBuy's Price -->
+  <Value idurl="best_buy_price">99.0<!--a number between 0.0 and 1000.0 --></Value>
+  <!--    FeatureUrl BestBuy's Product Page -->
+  <Value idurl="bestbuy_url">http://wireless.bestbuy.com/specialoffer.aspx?cid=34309_dd609536ed564d6eb4614c918410460b<!--    an url, like http//amazon.com/iphone.html --></Value>
+  <!--FeatureNumeric Radioshack's Price -->
+  <Value idurl="radioshack_price">79.99<!--a number between 0.0 and 1000.0 --></Value>
+  <!--    FeatureUrl Radioshack's Product Page -->
+  <Value idurl="radioshack_url">http://radioshackwireless.com/specialoffer.aspx?cid=25578_1c1dcdfaa5c94a5f893ac0597ef8eee0<!--    an url, like http//amazon.com/iphone.html --></Value>
+  <!--    BEGIN Hardware -->
+  <!--        BEGIN Screen -->
+  <!--        FeatureRating Screen Rating -->
   <Value idurl="screen_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureNumeric Screen Size -->
-  <Value idurl="screen_size">
-3.1  </Value>
-<!--        FeatureNumeric Screen Resolution L -->
-  <Value idurl="screen_resolution_l">
-480  </Value>
-<!--        FeatureNumeric Screen Resolution W -->
-  <Value idurl="screen_resolution_w">
-320  </Value>
-<!--        FeatureTags Touchscreen -->
-  <Value idurl="touchscreen">
-capacitive 
-  </Value>
-<!--        END Screen -->
-<!--        BEGIN Design & Construction -->
-<!--        FeatureRating Design & Construction rating -->
+  <!--        FeatureNumeric Screen Size -->
+  <Value idurl="screen_size">3.1<!--        a number between 0.0 and 5.0 --></Value>
+  <!--        FeatureNumeric Screen Resolution L -->
+  <Value idurl="screen_resolution_l">480.0<!--        a number between 0.0 and 2000.0 --></Value>
+  <!--        FeatureNumeric Screen Resolution W -->
+  <Value idurl="screen_resolution_w">320.0<!--        a number between 0.0 and 1100.0 --></Value>
+  <!--        FeatureTags Touchscreen -->
+  <Value idurl="touchscreen">capacitive<!--        ONE tag among: capacitive  resistive  none --></Value>
+  <!--        END Screen -->
+  <!--        BEGIN Design & Construction -->
+  <!--        FeatureRating Design & Construction rating -->
   <Value idurl="design_construction_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Form Factor -->
-  <Value idurl="form_factor">
-touchscreen slider
-  </Value>
-<!--        FeatureCondition Ruggedized -->
+  <!--        FeatureTags Form Factor -->
+  <Value idurl="form_factor">touchscreen slider<!--        MANY tags among: candy_bar  touchscreen  clamshell  swivel  slider --></Value>
+  <!--        FeatureCondition Ruggedized -->
   <Value idurl="ruggedized">
-false
+    <!--        true or false -->
   </Value>
-<!--            BEGIN Device size -->
-<!--            FeatureNumeric Device Height -->
-  <Value idurl="device_height">
-4.49  </Value>
-<!--            FeatureNumeric Device Width -->
-  <Value idurl="device_width">
-2.28  </Value>
-<!--            FeatureNumeric Device Depth -->
-  <Value idurl="device_depth">
-0.62  </Value>
-<!--            FeatureNumeric Device Weight -->
-  <Value idurl="device_weight">
-5.6  </Value>
-<!--            END Device size -->
-<!--        END Design & Construction -->
-<!--        BEGIN Controls & Navigation -->
-<!--        FeatureRating Controls & Navigation Rating -->
+  <!--            BEGIN Device size -->
+  <!--            FeatureNumeric Device Height -->
+  <Value idurl="device_height">4.49<!--            a number between 2.0 and 5.0 --></Value>
+  <!--            FeatureNumeric Device Width -->
+  <Value idurl="device_width">2.28<!--            a number between 1.0 and 3.5 --></Value>
+  <!--            FeatureNumeric Device Depth -->
+  <Value idurl="device_depth">0.62<!--            a number between 0.0 and 1.5 --></Value>
+  <!--            FeatureNumeric Device Weight -->
+  <Value idurl="device_weight">5.6<!--            a number between 2.0 and 7.0 --></Value>
+  <!--            END Device size -->
+  <!--        END Design & Construction -->
+  <!--        BEGIN Controls & Navigation -->
+  <!--        FeatureRating Controls & Navigation Rating -->
   <Value idurl="controls_navigation_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags navigation -->
-  <Value idurl="navigation">
-toggle dpad
-  </Value>
-<!--        END Controls & Navigation -->
-<!--        BEGIN Keyboard & Input -->
-<!--        FeatureRating Keyboard & Input Rating -->
+  <!--        FeatureTags navigation -->
+  <Value idurl="navigation">toggle dpad<!--        MANY tags among: dpad  keypad  navigation_array  touch_pad  touchscreen  toggle  trackball --></Value>
+  <!--        END Controls & Navigation -->
+  <!--        BEGIN Keyboard & Input -->
+  <!--        FeatureRating Keyboard & Input Rating -->
   <Value idurl="keyboard_input_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Keyboard Type -->
-  <Value idurl="keyboard_type">
-horizontal_qwerty  virtual
-  </Value>
-<!--        END Keyboard & Input -->
-<!--        BEGIN Battery -->
-<!--        FeatureRating Battery Life Rating -->
+  <!--        FeatureTags Keyboard Type -->
+  <Value idurl="keyboard_type">horizontal_qwerty  virtual<!--        MANY tags among: numeric  horizontal_qwerty  vertical_qwerty  suretype  virtual --></Value>
+  <!--        END Keyboard & Input -->
+  <!--        BEGIN Battery -->
+  <!--        FeatureRating Battery Life Rating -->
   <Value idurl="battery_life_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureNumeric power -->
-  <Value idurl="battery_power">
-1420  </Value>
-<!--        FeatureNumeric Talk Time -->
+  <!--        FeatureNumeric power -->
+  <Value idurl="battery_power">1420.0<!--        a number between 1.0 and 3000.0 --></Value>
+  <!--        FeatureNumeric Talk Time -->
   <Value idurl="talk_time">
-<!--        a number between 1.0 and 24.0 -->
+    <!--        a number between 1.0 and 24.0 -->
   </Value>
-<!--            FeatureNumeric 2G Talk Time -->
+  <!--            FeatureNumeric 2G Talk Time -->
   <Value idurl="2g_talk_time">
-<!--            a number between 0.0 and 24.0 -->
+    <!--            a number between 0.0 and 24.0 -->
   </Value>
-<!--            FeatureNumeric 3G Talk Time -->
-  <Value idurl="3g_talk_time">
-6  </Value>
-<!--        FeatureNumeric Standby Time -->
-  <Value idurl="standby_time">
-325  </Value>
-<!--        FeatureNumeric Video Playback Time -->
+  <!--            FeatureNumeric 3G Talk Time -->
+  <Value idurl="3g_talk_time">6.0<!--            a number between 0.0 and 24.0 --></Value>
+  <!--        FeatureNumeric Standby Time -->
+  <Value idurl="standby_time">325.0<!--        a number between 1.0 and 1000.0 --></Value>
+  <!--        FeatureNumeric Video Playback Time -->
   <Value idurl="video_playback_time">
-<!--        a number between 1.0 and 24.0 -->
+    <!--        a number between 1.0 and 24.0 -->
   </Value>
-<!--        FeatureNumeric Music Playback Time -->
+  <!--        FeatureNumeric Music Playback Time -->
   <Value idurl="music_playback_time">
-<!--        a number between 1.0 and 48.0 -->
+    <!--        a number between 1.0 and 48.0 -->
   </Value>
-<!--        FeatureNumeric Wifi Time -->
+  <!--        FeatureNumeric Wifi Time -->
   <Value idurl="wifi_time">
-<!--        a number between 0.0 and 24.0 -->
+    <!--        a number between 0.0 and 24.0 -->
   </Value>
-<!--        FeatureTags Battery Type -->
-  <Value idurl="battery_type">
- removable_battery  
-  </Value>
-<!--        END Battery -->
-<!--    FeatureCondition Camera -->
-  <Value idurl="camera">
-true 
-  </Value>
-<!--        FeatureRating Camera Rating -->
+  <!--        FeatureTags Battery Type -->
+  <Value idurl="battery_type">removable_battery<!--        ONE tag among: removable_battery  extensible_battery --></Value>
+  <!--        END Battery -->
+  <!--    FeatureCondition Camera -->
+  <Value idurl="camera">true<!--    true or false --></Value>
+  <!--        FeatureRating Camera Rating -->
   <Value idurl="camera_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureNumeric Camera Resolution -->
-  <Value idurl="camera_resolution">
-5  </Value>
-<!--        FeatureTags Camera Features -->
-  <Value idurl="camera_features">
-contact_pictures  video_mode 
-  </Value>
-<!--    FeatureCondition GPS -->
-  <Value idurl="gps">
-true 
-  </Value>
-<!--        FeatureRating Geolocation Rating -->
+  <!--        FeatureNumeric Camera Resolution -->
+  <Value idurl="camera_resolution">5.0<!--        a number between 0.0 and 15.0 --></Value>
+  <!--        FeatureTags Camera Features -->
+  <Value idurl="camera_features">contact_pictures  video_mode<!--        MANY tags among: autofocus  contact_pictures  digital_zoom  flash  image_correction  image_stabilization  optical_zoom  red_eye_reduction  video_mode --></Value>
+  <!--    FeatureCondition GPS -->
+  <Value idurl="gps">true<!--    true or false --></Value>
+  <!--        FeatureRating Geolocation Rating -->
   <Value idurl="gps_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags GPS Services -->
-  <Value idurl="gps_services">
- google_maps  telenav_app  
-  </Value>
-<!--        FeatureTags GPS Services -->
-  <Value idurl="gps_features">
-automatic_reroute  familymap  location_based_apps  location_based_services  local_search  traffic_alerts  turn_by_turn_gps    </Value>
-<!--    END Hardware -->
-<!--    BEGIN Communication -->
-<!--        BEGIN Connectivity & Internet Experience -->
-<!--        FeatureRating Connectivity & Internet Experience Rating -->
+  <!--        FeatureTags GPS Services -->
+  <Value idurl="gps_services">google_maps  telenav_app<!--        MANY tags among: att_navigator  blackberry_maps  google_maps  google_maps_navigation  google_maps_latitude  navigon_app  nokia_maps  other_gps_app  other_gps_service  sprint_nav  telenav_app  telenav_navigator  tomtom_app  vz_navigator  vz_navigator_global --></Value>
+  <!--        FeatureTags GPS Features -->
+  <Value idurl="gps_features">automatic_reroute  familymap  location_based_apps  location_based_services  local_search  traffic_alerts  turn_by_turn_gps<!--        MANY tags among: automatic_reroute  familymap  geotag_pictures  international_navigation  location_based_apps  location_based_services  local_search  social_network_location_sharing  traffic_alerts  turn_by_turn_gps  voice-guided  none --></Value>
+  <!--    END Hardware -->
+  <!--    BEGIN Communication -->
+  <!--        BEGIN Connectivity & Internet Experience -->
+  <!--        FeatureRating Connectivity & Internet Experience Rating -->
   <Value idurl="connectivity_internet_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Connectivity -->
-  <Value idurl="conectivity">
-bluetooth  wifi    3g      gsm  umts  hsdpa  wcdma gprs  edge    quad_band
-  </Value>
-<!--        FeatureCondition Data Tethering -->
+  <!--        FeatureTags Connectivity -->
+  <Value idurl="conectivity">bluetooth  wifi    3g      gsm  umts  hsdpa  wcdma gprs  edge    quad_band<!--        MANY tags among: bluetooth  wifi  2g  3g  4g  cdma  gsm  umts  hsdpa  wcdma  ev_do  gprs  edge  tri_band  quad_band --></Value>
+  <!--        FeatureCondition Data Tethering -->
   <Value idurl="data_tethering">
-false
+    <!--        true or false -->
   </Value>
-<!--        FeatureTags Internet -->
-  <Value idurl="internet">
-full_internet   </Value>
-<!--        END Connectivity & Internet Experience -->
-<!--        BEGIN Messaging, Emails, and Social Networks -->
-<!--        FeatureRating Messaging, Emails, and Social Networks Rating -->
+  <!--        FeatureTags Internet -->
+  <Value idurl="internet">full_internet<!--        ONE tag among: full_internet  partial_internet  none --></Value>
+  <!--        END Connectivity & Internet Experience -->
+  <!--        BEGIN Messaging, Emails, and Social Networks -->
+  <!--        FeatureRating Messaging, Emails, and Social Networks Rating -->
   <Value idurl="messaging_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureCondition Email -->
-  <Value idurl="email">
-true   </Value>
-<!--            FeatureTags email platform -->
-  <Value idurl="email_platform">
-aol_mail  gmail  windows_live_hotmail  yahoo    ms_exchange    imap/pop3 
-  </Value>
-<!--            FeatureCondition Email Push Delivery -->
-  <Value idurl="push_delivery">
-true
-  </Value>
-<!--            FeatureNumeric Multiple Email Accounts -->
-  <Value idurl="multiple_email_accounts">
-5  </Value>
-<!--        FeatureTags Messaging -->
-  <Value idurl="messaging">
-sms  mms  mms_w_video_messaging
-  </Value>
-<!--        FeatureTags Instant Messaging -->
-  <Value idurl="im">
-aim   gtalk   windows_live  yahoo_messenger  
-  </Value>
-<!--        FeatureTags Social Networks -->
-  <Value idurl="social_networks">
-facebook  myspace twitter
-  </Value>
-<!--        END Messaging, Emails, and Social Networks -->
-<!--        BEGIN Contacts and Social Networks -->
-<!--        FeatureRating Contacts and Social Networks Rating -->
+  <!--        FeatureCondition Email -->
+  <Value idurl="email">true<!--        true or false --></Value>
+  <!--            FeatureTags email platform -->
+  <Value idurl="email_platform">aol_mail  gmail  windows_live_hotmail  yahoo    ms_exchange    imap/pop3<!--            MANY tags among: aol_mail  gmail  mobileme  windows_live_hotmail  yahoo  lotus_notes  ms_exchange  novell_groupwise  imap/pop3  smtp  web  other --></Value>
+  <!--            FeatureCondition Email Push Delivery -->
+  <Value idurl="push_delivery">true<!--            true or false --></Value>
+  <!--            FeatureNumeric Multiple Email Accounts -->
+  <Value idurl="multiple_email_accounts">5.0<!--            a number between 0.0 and 20.0 --></Value>
+  <!--        FeatureTags Messaging -->
+  <Value idurl="messaging">sms  mms  mms_w_video_messaging<!--        MANY tags among: sms  mms  mms_w_video_messaging  none --></Value>
+  <!--        FeatureTags Instant Messaging -->
+  <Value idurl="im">aim   gtalk   windows_live  yahoo_messenger<!--        MANY tags among: aim  blackberry_messenger  gtalk  fring  skype  msn-messenger  windows_live  yahoo_messenger  none --></Value>
+  <!--        FeatureTags Social Networks -->
+  <Value idurl="social_networks">facebook  myspace twitter<!--        MANY tags among: facebook  foursquare  gowalla  linkedin  loopt  myspace  tumblr  twitter  none --></Value>
+  <!--        END Messaging, Emails, and Social Networks -->
+  <!--        BEGIN Contacts and Social Networks -->
+  <!--        FeatureRating Contacts and Social Networks Rating -->
   <Value idurl="contacts_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        END Contacts and Social Networks -->
-<!--        BEGIN Call Functionality & Quality -->
-<!--        FeatureRating Call Functionality & Quality Rating -->
+  <!--        END Contacts and Social Networks -->
+  <!--        BEGIN Call Functionality & Quality -->
+  <!--        FeatureRating Call Functionality & Quality Rating -->
   <Value idurl="call_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Calling Features -->
-  <Value idurl="call_features">
-international_roaming  voice_calling  visual_voicemail    </Value>
-<!--        END Call Functionality & Quality -->
-<!--    END Communication -->
-<!--    BEGIN Overall Functionality & Performance -->
-<!--    FeatureRating Functionality & Performance Rating -->
+  <!--        FeatureTags Calling Features -->
+  <Value idurl="call_features">international_roaming  voice_calling  visual_voicemail<!--        MANY tags among: push_to_talk  international_roaming  voice_calling  visual_voicemail  speed_dialing  google_voice  skype  voip --></Value>
+  <!--        END Call Functionality & Quality -->
+  <!--    END Communication -->
+  <!--    BEGIN Overall Functionality & Performance -->
+  <!--    FeatureRating Functionality & Performance Rating -->
   <Value idurl="functionality_performance_rating">
-<!--    a number between 0 and 10 -->
+    <!--    a number between 0 and 10 -->
   </Value>
-<!--    FeatureTags Operating System -->
-  <Value idurl="operating_system">
-android  
-  </Value>
-<!--    END Overall Functionality & Performance -->
-<!--FeatureRating User Interface Rating -->
+  <!--    FeatureTags Operating System -->
+  <Value idurl="operating_system">android<!--    ONE tag among: apple  android_15  android_16  android_2  android_21  android  blackberry  palm_webos  symbian  windows_mobile_61  windows_mobile  proprietary --></Value>
+  <!--    END Overall Functionality & Performance -->
+  <!--FeatureRating User Interface Rating -->
   <Value idurl="user_interface_rating">
-<!--a number between 0 and 10 -->
+    <!--a number between 0 and 10 -->
   </Value>
-<!--FeatureTags Advanced User Features -->
-  <Value idurl="ui_advanced_features">
-accelerometer  home_screen_personalization   universal_search    </Value>
-<!--FeatureRating Security & Management Rating -->
+  <!--FeatureTags Advanced User Features -->
+  <Value idurl="ui_advanced_features">accelerometer  home_screen_personalization   universal_search<!--MANY tags among: accelerometer  copy_and_paste  copy_and_paste_pictures  home_screen_personalization  multi_touch  multi_tasking_voice_app  multi_tasking_app  text_to_speech  universal_search  voice_commands  none --></Value>
+  <!--FeatureRating Security & Management Rating -->
   <Value idurl="security_management_rating">
-<!--a number between 0 and 10 -->
+    <!--a number between 0 and 10 -->
   </Value>
-<!--FeatureTags Security & Management Features -->
-  <Value idurl="security_features">
-none
-  </Value>
-<!--FeatureRating Storage & Syncing Rating -->
+  <!--FeatureTags Security & Management Features -->
+  <Value idurl="security_features">none<!--MANY tags among: activesync  ondevice_encryption  complex_passwords  remote_wipe  remote_management  vpn_connection  none --></Value>
+  <!--FeatureRating Storage & Syncing Rating -->
   <Value idurl="storage_syncing_rating">
-<!--a number between 0 and 10 -->
+    <!--a number between 0 and 10 -->
   </Value>
-<!--    BEGIN Memory -->
-<!--    FeatureNumeric internal memory size -->
-  <Value idurl="internal_memory_size">
-0.256  </Value>
-<!--    FeatureNumeric maximum external memory -->
-  <Value idurl="maximum_external_memory">
-32  </Value>
-<!--    END Memory -->
-<!--    BEGIN Apps & Productivity -->
-<!--        BEGIN Productivity -->
-<!--        FeatureRating Productivity Rating -->
+  <!--    BEGIN Memory -->
+  <!--    FeatureNumeric internal memory size -->
+  <Value idurl="internal_memory_size">0.256<!--    a number between 0.0 and 64.0 --></Value>
+  <!--    FeatureNumeric maximum external memory -->
+  <Value idurl="maximum_external_memory">32.0<!--    a number between 0.0 and 64.0 --></Value>
+  <!--    END Memory -->
+  <!--    BEGIN Apps & Productivity -->
+  <!--        BEGIN Productivity -->
+  <!--        FeatureRating Productivity Rating -->
   <Value idurl="productivity_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Email Attachments Viewer -->
-  <Value idurl="view_email_attachments">
-adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png    </Value>
-<!--        END Productivity -->
-<!--    FeatureCondition Third-party Applications -->
-  <Value idurl="third_party_applications">
-true 
-  </Value>
-<!--        FeatureRating Apps Rating -->
+  <!--        FeatureTags Email Attachments Viewer -->
+  <Value idurl="view_email_attachments">adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png<!--        MANY tags among: adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png  none --></Value>
+  <!--        END Productivity -->
+  <!--    FeatureCondition Third-party Applications -->
+  <Value idurl="third_party_applications">true<!--    true or false --></Value>
+  <!--        FeatureRating Apps Rating -->
   <Value idurl="apps_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureCondition Application Store -->
-  <Value idurl="application_store">
-true 
-  </Value>
-<!--        FeatureTags Application Marketplace -->
-  <Value idurl="application_marketplace">
-thriving  
-  </Value>
-<!--    END Apps & Productivity -->
-<!--    BEGIN Media -->
-<!--    FeatureRating Media Rating -->
+  <!--        FeatureCondition Application Store -->
+  <Value idurl="application_store">true<!--        true or false --></Value>
+  <!--        FeatureTags Application Marketplace -->
+  <Value idurl="application_marketplace">thriving<!--        ONE tag among: none  limited  satisfying  thriving  large  largest --></Value>
+  <!--    END Apps & Productivity -->
+  <!--    BEGIN Media -->
+  <!--    FeatureRating Media Rating -->
   <Value idurl="media_rating">
-<!--    a number between 0 and 10 -->
+    <!--    a number between 0 and 10 -->
   </Value>
-<!--    FeatureTags Media Player & Sync Up -->
-  <Value idurl="media_sync_up">
-android_media_player  mass_storage    </Value>
-<!--    FeatureCondition Music -->
+  <!--    FeatureTags Media Player & Sync Up -->
+  <Value idurl="media_sync_up">android_media_player  mass_storage<!--    MANY tags among: android_media_player  blackberry_media_sync  itunes  mass_storage  nokia_music_manager  proprietary  windows_media_player --></Value>
+  <!--    FeatureTags Media Sharing -->
+  <Value idurl="media_sharing">
+    <!--    MANY tags among: facebook  flickr  picasa  twitter  youtube -->
+  </Value>
+  <!--    FeatureCondition Music -->
   <Value idurl="music">
-<!--    true or false -->
+    <!--    true or false -->
   </Value>
-<!--        FeatureRating Music Rating -->
+  <!--        FeatureRating Music Rating -->
   <Value idurl="music_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Music Formats -->
-  <Value idurl="music_formats">
-aac  mp3  wav  -->
-  </Value>
-<!--        FeatureTags Music Store & Services  -->
-  <Value idurl="music_store">
-amazon_mp3  andora  imeem_mobile shazam   </Value>
-<!--        FeatureTags Audio Connector -->
-  <Value idurl="audio_connector">
-3.5_mm  
-  </Value>
-<!--    FeatureCondition Video -->
-  <Value idurl="video">
-true 
-  </Value>
-<!--        FeatureRating Video Rating -->
+  <!--        FeatureTags Music Formats -->
+  <Value idurl="music_formats">aac  mp3  wav  --&gt;<!--        MANY tags among: 3gp  3g2  aac  aac+  aiff  apple_lossless  amr_nb  amr_wb  asf  avi  eaac+  m4a  mp3  mp3_vbr  mp4  midi  ogg  protected_aac  qcelp_evrc  wav  wma9_pro  wma_10 --></Value>
+  <!--        FeatureTags Music Store & Services  -->
+  <Value idurl="music_store">amazon_mp3  andora  imeem_mobile shazam<!--        MANY tags among: amazon_mp3  att_mobile_music  comes_with_music_(nokia)  itunes  imeem_mobile  lastfm  pandora  shazam  spotify  sprint_music  sprint_radio  vcast_with_rhapsody --></Value>
+  <!--        FeatureTags Audio Connector -->
+  <Value idurl="audio_connector">3.5_mm<!--        ONE tag among: 3.5_mm  2.5_mm  custom --></Value>
+  <!--    FeatureCondition Video -->
+  <Value idurl="video">true<!--    true or false --></Value>
+  <!--        FeatureRating Video Rating -->
   <Value idurl="video_rating">
-<!--        a number between 0 and 10 -->
+    <!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags Video Services -->
-  <Value idurl="video_services">
-flash_video   youtube
-  </Value>
-<!--        FeatureTags Video Formats -->
-  <Value idurl="Video_formats">
-avc/h.264   h.263  mpeg_4  windows_media_(wmv9)    </Value>
-<!--    END Media -->
+  <!--        FeatureTags Video Services -->
+  <Value idurl="video_services">flash_video   youtube<!--        MANY tags among: att_cellular_video  blackberrymedia_center  flash_video  itunes  realplayer  roxio_media_manager  sprint_tv  vcasttv  vcast_video  youtube --></Value>
+  <!--        FeatureTags Video Formats -->
+  <Value idurl="Video_formats">avc/h.264   h.263  mpeg_4  windows_media_(wmv9)<!--        MANY tags among: .3gp  avc/h.264  avi  cif_@_30_fps  divx_4  divx_5  divx_6  flash  h.263  .m4v  .mp4  .mov  mpeg_4  realvideo  windows_media_(wmv9)  wmv3  xvid --></Value>
+  <!--    END Media -->
 </Product>
