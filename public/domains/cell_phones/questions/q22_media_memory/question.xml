@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="How much media would you like your keep on your device?"  dimension="Media" weight="1">   
+    <Choice idurl="none" label="none" recommendation="maximize(:internal_memory_size)" intensity="very_low"/>
+    <Choice idurl="few" label="a few music albums" recommendation="maximize(:internal_memory_size)" intensity="low"/>
+    <Choice idurl="medium" label="my favorite playlists" recommendation="maximize(:internal_memory_size)" intensity="medium"/>
+    <Choice idurl="some" label="some music and videos" recommendation="maximize(:internal_memory_size)" intensity="high"/>
+    <Choice idurl="max" label="as much as possible" recommendation="maximize(:internal_memory_size)" intensity="very_high"/>
+</Question>

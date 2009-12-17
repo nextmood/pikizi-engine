@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="Would you like to use any of these music services on your device?"  dimension="Media" weight="1">   
+    <Choice idurl="itunes" label="iTunes" recommendation="featureIs(:music_store, :itunes)"/>
+    <Choice idurl="pandora" label="Pandora" recommendation="featureIs(:music_store, :pandora)"/>
+    <Choice idurl="amazon" label="Amazon mp3" recommendation="[]"/>
+    <Choice idurl="any" label="any music streaming service" recommendation="[]"/>
+    <Choice idurl="any" label="any music buying service" recommendation="[]"/>
+</Question>

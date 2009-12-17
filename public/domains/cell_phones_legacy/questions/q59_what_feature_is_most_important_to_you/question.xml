@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What feature is most important to you?"   dimension="Lifestyle">
+    
+    <Choice idurl="c188_eco-friendly" label="eco-friendly" url_description="files/c188_eco-friendly@description.txt" url_image="images/c188_eco-friendly@main_image.jpg"
+      recommendation="productIs('motorola_renew_w233')"/>
+
+    <Choice idurl="c189_fashionable" label="fashionable" url_description="files/c189_fashionable@description.txt" url_image="images/c189_fashionable@main_image.jpg"
+      recommendation="productIs('sony_ericsson_w508')"/>
+
+  </Question>

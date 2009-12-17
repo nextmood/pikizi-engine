@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="What budget do you have in mind?" dimension="Price" weight="2">
+    
+    <Choice idurl="c85_minimal" label="Minimal" url_description="files/c85_minimal@description.txt" url_image="images/c85_minimal@main_image.jpg"
+      recommendation="productIs(:any => %w[samsung_t ance lg_cf360 nokia_e71 lg_vx8350 motorola_renew_w233 blackberry_pearl_flip_8220 samsung_knack_sch-u310 lg_xenon sanyo_scp-2700 lg_lotus blackberry_pearl_8130])" />
+
+    <Choice idurl="c86_mid-range" label="Mid-range" url_description="files/c86_mid-range@description.txt" url_image="images/c86_mid-range@main_image.jpg"
+      recommendation="productIs(:any => %w[motorola_i9_stature samsung_omnia blackberry_storm samsung_instinct_s30 htc_touch_diamond nokia_5130_xpressmusic samsung_sgh-a657 lg_versa sony_ericsson_w508 nokia_7205_intrigue samsung_impression blackberry_curve_8900 nokia_e75 samsung_propel_pro])" />
+
+    <Choice idurl="c87_high-end" label="High-end" url_description="files/c87_high-end@description.txt" url_image="images/c87_high-end@main_image.jpg"
+      recommendation="productIs(:any => %w[samsung_s8300_ultratouch nokia_e63 nokia_n79 lg_arena blackberry_bold_9000 nokia_5800_xpressmusic apple_iphone_3g nokia_n85 palm_eos nokia_6500_classic htc_touch_cruise_2009])" />
+
+    <Choice idurl="c88_unlimited" label="Unlimited" url_description="files/c88_unlimited@description.txt" url_image="images/c88_unlimited@main_image.jpg"
+      recommendation="productIs(:any => %w[nokia_n96 sony_ericsson_xperia_x1 samsung_memoir_t929])" />
+
+  </Question>

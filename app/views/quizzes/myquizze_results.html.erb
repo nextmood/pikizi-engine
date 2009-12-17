@@ -3,11 +3,11 @@
 
       <table border=1>
           <tr>
-            <th>Question/ansers</th>
+            <th>Question/anwsers</th>
             <% for affinity in @sorted_affinities %>
                 <th valign="top">
                   <div style="width:80px; overflow:hidden;">
-                  #<%= affinity.ranking %> <small>m=<%= Root.as_percentage(affinity.measure) %>, m=<%= affinity.sum_weight %></small>
+                  #<%= affinity.ranking %>
                   <div style="font-size:80%">
                     <%= @knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
                   </div>
@@ -26,7 +26,6 @@
             <th >Sum</th>
             <% for affinity in @sorted_affinities %>
                 <th align="center">
-                  <%= colored_weight(affinity.sum_weight) %>
                   <%= @explanations[affinity.product_idurl]["aggregated_dimensions"][:sum] %>
                   <br/>
                   <%= Root.as_percentage(@explanations[affinity.product_idurl]["aggregated_dimensions"][:percentage]) %>
@@ -53,7 +52,7 @@
                         <td>
                             <div style="width:200px;" title="weight=<%= '%2.1f' % question.weight %>, min-max<%= @hash_question_idurl2min_max_weight[answer.question_idurl].inspect %>">
                                 <%= question.to_html(choices_ok) %>
-                                <span style="color:red;"><%= question.weight %></span>
+                                <span style="font-weight:bold; font-size:80%;">w=<%= question.weight %></span>
                             </div>
                         </td>
                         <% for affinity in @sorted_affinities %>

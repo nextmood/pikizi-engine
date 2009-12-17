@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="Do you have any navigation preferences?"  dimension="Hardware" weight="1">
+    <Choice idurl="trackball" label="trackball" url_image="images/trackball.png" predicate="featureIs(:navigation, :trackball)"/>
+    <Choice idurl="dpad" label="trackpad/d-pad" url_image="images/trackpad.png" predicate="featureIs(:navigation, :d-pad)"/>
+    <Choice idurl="touchscreen" label="touchscreen" url_image="images/touch.png" predicate="featureIs(:navigation, :touchscreen)"/>
+    <Choice idurl="hybrid" label="hybrid" url_image="images/hybrid.png" predicate="productIs(:any => [:palm_pre, :motorola_droid])"/>
+</Question>

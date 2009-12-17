@@ -36,14 +36,21 @@ class Product < Root
     xml_node.find("Value").each do |node_value|
       feature_idurl = node_value['idurl']
       if feature = knowledge.get_feature_by_idurl(feature_idurl)
-        product.hash_feature_idurl_value[feature_idurl] = feature.xml2value(node_value.content)
+        begin
+          value = feature.xml2value(node_value.content)
+        rescue
+          value = nil
+          puts "there is a miss interpreted value for feature=#{feature.idurl} product=#{product.idurl}"
+        end
+        product.hash_feature_idurl_value[feature_idurl] = value
       else
-        puts "**** feature #{feature_idurl} doesn't exist in knowledge"  
+        puts "**** feature #{feature_idurl} in product #{product.idurl} doesn't exist in knowledge"  
       end
     end
     product.save
     product
   end
+
 
   def generate_xml(knowledge, top_node)
     node_product = super(top_node)
@@ -51,11 +58,13 @@ class Product < Root
       feature_idurl = feature.idurl
       if value = get_value(feature_idurl)
         node_value = XML::Node.new("Value")
+        node_value['idurl'] = feature_idurl
         node_value << feature.value2xml(value)
         node_product << node_value
       end
     end
     node_product
   end
+
 
 end

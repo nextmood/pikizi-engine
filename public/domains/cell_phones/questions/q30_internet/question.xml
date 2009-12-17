@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="How often would you like to access and browse the internet?"  dimension="Communication" weight="1">   
+    <Choice idurl="rarely" label="rarely" recommendation="maximize(:connectivity_internet_rating)" intensity="low"/>
+    <Choice idurl="occasionally" label="occasionally" recommendation="maximize(:connectivity_internet_rating)" intensity="medium"/>
+    <Choice idurl="regularly" label="regularly" recommendation="maximize(:connectivity_internet_rating)" intensity="high"/>
+    <Choice idurl="constantly" label="constantly" recommendation="maximize(:connectivity_internet_rating)" intensity="very_high"/>
+</Question>

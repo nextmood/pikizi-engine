@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="What carrier's phones would you like to consider?"  extra="filter" dimension="Functionality" weight="2">   
+    <Choice idurl="att" label="ATamp;T&apos; phones" url_image="images/att-logo.jpg" recommendation="featureIs(:carriers, :att)"/>
+    <Choice idurl="sprint" label="Sprint&apos; phones" url_image="images/sprint-logo.png" recommendation="featureIs(:carriers, :sprint)"/>
+    <Choice idurl="t_mobile" label="T-Mobile&apos; phones" url_image="images/tmobile.png" recommendation="featureIs(:carriers, :t_mobile)"/>
+    <Choice idurl="verizon" label="Verizon&apos; phones" url_image="images/verizon-logo.png" recommendation="featureIs(:carriers, :verizon)"/>
+    <Choice idurl="unlocked" label="unlocked phones" recommendation="featureIs(:carriers, :unlocked)"/>
+</Question>

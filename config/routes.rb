@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'questions', :action => 'show'
   map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
 
-  map.connect '/home' , :controller => 'home', :action => 'test_index'
+  map.connect '/home' , :controller => 'home', :action => 'index'
   map.connect '/test_results', :controller => 'home', :action => 'test_results'
   map.connect '/test_products_search', :controller => 'home', :action => 'test_products_search'
   map.connect '/test_quizz', :controller => 'home', :action => 'test_quizz'
@@ -70,7 +70,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/thanks/:user_idurl/:is_new_user", :controller => 'landing', :action => 'thanks'
 
   # real pages...
+  map.connect "/record_answer", :controller => 'home', :action => 'record_answer'  
   map.connect "/:knowledge_idurl/myquiz/:quizze_idurl", :controller => 'home', :action => 'myquiz'
+  map.connect "/:knowledge_idurl/myresults/:quizze_idurl", :controller => 'home', :action => 'myresults'
   map.connect "/:knowledge_idurl", :controller => 'home', :action => 'index'
 
   map.root :controller => "landing"  # default

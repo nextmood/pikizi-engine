@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="Do you have a favorite app?"  dimension="Apps" weight="1">
+    
+    <Choice idurl="pandora" label="pandora" url_image="images/pandora.png" predicate="featureIs(:music_store, :pandora)"/>
+    <Choice idurl="youtube" label="youtube" url_image="images/youtube.png" predicate="featureIs(:video_services, :youtube)"/>
+    <Choice idurl="facebook" label="facebook" url_image="images/facebook.png" predicate="featureIs(:social_networks, :Facebook)"/>
+    <Choice idurl="twitter" label="twitter" url_image="images/twitter.png" predicate="featureIs(:social_networks, :twitter)"/>
+    <Choice idurl="foursquare" label="foursquare" url_image="images/foursquare.png"  predicate="featureIs(:social_networks, :foursquare)"/>
+</Question>

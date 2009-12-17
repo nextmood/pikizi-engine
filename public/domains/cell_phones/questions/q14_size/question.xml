@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="Do you have any size preferences?"  dimension="Hardware" weight="1">
+    <Choice idurl="small" label="as small as possible" url_image="images/small.png" predicate="featureIs(:form_factor, :clamshell)"/>
+    <Choice idurl="compact" label="compact" url_image="images/compact.png" predicate="featureIs(:device_height, :lessThan => 4)"/>
+    <Choice idurl="large screen" label="large screen" url_image="images/large_screen.png" predicate="featureIs(:screen_size, :moreThan => 3.3)"/>
+    <Choice idurl="large keyboard" label="large keyboard" url_image="images/large_keyboard.png" predicate="featureIs(:keyboard_type, horizontal_qwerty) and productIs(:blackberry_bold)"/>
+    <Choice idurl="slim" label="slim" url_image="images/slim.png" predicate="featureIs(:device_depth, :lessThan => 0.5)"/>
+</Question>

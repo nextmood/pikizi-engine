@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="Would you like an ecosystem of third-party applications that is... "  dimension="Apps" weight="1">   
+    <Choice idurl="basic" label="basic" recommendation="featureIs(:operating_system, :any => [:palm_webos, :proprietary])"/>
+    <Choice idurl="limited" label="limited" recommendation="featureIs(:operating_system, :windows_mobile) or featureIs(:brand, nokia)" intensity="low"/>
+    <Choice idurl="satisfying" label="satisfying" recommendation="featureIs(:operating_system, :blackberry)" intensity="medium"/>
+    <Choice idurl="thriving" label="thriving" recommendation="featureIs(:operating_system, :android)" intensity="high"/>
+    <Choice idurl="largest" label="largest" recommendation="featureIs(:operating_system, :apple)"/>
+</Question>

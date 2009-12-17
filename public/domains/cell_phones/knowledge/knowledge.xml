@@ -1,941 +1,580 @@
 <?xml version="1.0"?>
-  <Knowledge label="Cell Phones">
-    <sub_features>
-      <FeatureRating idurl="main_expert_rating" label="Expert rating" min_rating="1" max_rating="5" user_category="expert"/>
-      <FeatureRating idurl="main_user_rating" label="Everyone rating" min_rating="1" max_rating="5" user_category="user"/>
-      <FeatureImage  idurl="main_image" label="Picture" />
-      <FeatureUrl  idurl="main_url" label="Url" />
-      <FeatureTextarea idurl="description" label="Full description" />
-      <FeatureTags idurl="f1_brand" label="Brand" is_exclusive="true">
-        <tags>
-          <Tag idurl="t4_nokia" label="nokia"/>
-          <Tag idurl="t5_motorola" label="motorola"/>
-          <Tag idurl="t6_blackberry" label="blackberry"/>
-          <Tag idurl="t7_sony_ericsson" label="sony ericsson"/>
-          <Tag idurl="t8_samsung" label="samsung"/>
-          <Tag idurl="t9_lg_electronics" label="lg electronics"/>
-          <Tag idurl="t10_apple" label="apple"/>
-          <Tag idurl="t11_sanyo" label="sanyo"/>
-          <Tag idurl="t12_siemens" label="siemens"/>
-          <Tag idurl="t310_htc" label="htc"/>
-          <Tag idurl="t789_palm" label="palm"/>
-        </tags>
-      </FeatureTags>
-      <FeatureDate idurl="f3_release_date" label="Release date" format="%Y/%m/%d %H:%M:%S" value_min="2000/01/01 00:00:00" value_max="2020/01/01 00:00:00">
-        <sub_features>
-          <FeatureTags idurl="f210_status" label="status" is_exclusive="true" is_optional="true">
-            <tags>
-              <Tag idurl="t795_released" label="released"/>
-              <Tag idurl="t796_unreleased" label="unreleased"/>
-              <Tag idurl="t797_announced" label="announced"/>
-              <Tag idurl="t798_leaked" label="leaked"/>
-            </tags>
-          </FeatureTags>
-        </sub_features>
-      </FeatureDate>
-      <FeatureHeader idurl="f5_tips" label="Tips">
-        <sub_features>
-          <FeatureTags idurl="f108_pros" label="pros" is_exclusive="true">
-            <tags/>
-          </FeatureTags>
-          <FeatureTags idurl="f109_cons" label="cons" is_exclusive="true">
-            <tags/>
-          </FeatureTags>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureHeader idurl="f13_hardware" label="Hardware">
-        <sub_features>
-          <FeatureHeader idurl="f14_screen" label="screen">
-            <sub_features>
-              <FeatureNumeric idurl="f17_colors" label="colors" format="%1dc" value_min="1.0" value_max="2000000000.0"/>
-              <FeatureNumeric idurl="f114_size" label="size" format="% .2finch" value_min="0.0" value_max="10.0"/>
-              <FeatureTags idurl="f117_type" label="type" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t355_lcd" label="lcd"/>
-                  <Tag idurl="t989_lcd_tft" label="lcd tft"/>
-                  <Tag idurl="t990_amoled" label="amoled"/>
-                  <Tag idurl="t991_pmoled" label="pmoled"/>
-                  <Tag idurl="t1147_oled" label="oled"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f122_touch_screen" label="touch screen" is_exclusive="false">
-                <tags>
-                  <Tag idurl="f245_haptic_feedback" label="haptic feedback"/>
-                  <Tag idurl="t361_capacitive" label="capacitive"/>
-                  <Tag idurl="t362_resistive" label="resistive"/>
-                  <Tag idurl="t363_none" label="none"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f144_resolution_(in_pixels)" label="resolution (in pixels)" is_exclusive="true">
-                <tags>
-                  <Tag idurl="t1005_640_x_480_(vga)" label="640 x 480 (vga)"/>
-                  <Tag idurl="t1006_640_x_360" label="640 x 360"/>
-                  <Tag idurl="t1007_480_x_320_(hvga)" label="480 x 320 (hvga)"/>
-                  <Tag idurl="t1008_320_x_240_(qvga)" label="320 x 240 (qvga)"/>
-                  <Tag idurl="t1070_400_x_240" label="400 x 240"/>
-                  <Tag idurl="t1114_480_x_360" label="480 x 360"/>
-                  <Tag idurl="t1117_800_x_480" label="800 x 480"/>
-                  <Tag idurl="t1124_260_x_240" label="260 x 240"/>
-                  <Tag idurl="t1126_220_x_176" label="220 x 176"/>
-                  <Tag idurl="t1132_320_x_320" label="320 x 320"/>
-                  <Tag idurl="t1137_320x_400" label="320x 400"/>
-                  <Tag idurl="t1146_128_x_128" label="128 x 128"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f214_resolution" label="resolution" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t1001_vga" label="vga"/>
-                  <Tag idurl="t1002_nhd" label="nhd"/>
-                  <Tag idurl="t1003_hvga" label="hvga"/>
-                  <Tag idurl="t1004_qvga" label="qvga"/>
-                  <Tag idurl="t1127_lower" label="lower"/>
-                </tags>
-              </FeatureTags>
-              <FeatureRating idurl="f283_screen_quality" label="screen quality" min_rating="1" max_rating="5" user_category="user, expert"/>
-            </sub_features>
-          </FeatureHeader>
-          <FeatureTags idurl="f20_form_factor" label="form factor" is_exclusive="false">
-            <tags>
-              <Tag idurl="t58_candy_bar" label="candy bar"/>
-              <Tag idurl="t59_touch_screen" label="touch screen"/>
-              <Tag idurl="t60_clamshell" label="clamshell"/>
-              <Tag idurl="t61_swivel" label="swivel"/>
-              <Tag idurl="t62_slider" label="slider"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f21_body" label="body" is_exclusive="false">
-            <sub_features>
-              <FeatureTags idurl="f165_materials" label="materials" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t556_brushed_metal" label="brushed metal"/>
-                  <Tag idurl="t558_metal_grip" label="metal grip"/>
-                  <Tag idurl="t559_ruggedized_plastic" label="ruggedized plastic"/>
-                  <Tag idurl="t560_matted_plastic" label="matted plastic"/>
-                  <Tag idurl="t975_smooth_plastic" label="smooth plastic"/>
-                  <Tag idurl="t978_high-end_plastic" label="high-end plastic"/>
-                  <Tag idurl="t979_glassy_screen" label="glassy screen"/>
-                  <Tag idurl="t980_leatherette" label="leatherette"/>
-                  <Tag idurl="t1009_soft_touch_plastic" label="soft touch plastic"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f166_skin" label="skin" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t568_brands_&amp;_fashion" label="brands &amp; fashion"/>
-                  <Tag idurl="t569_leatherette" label="leatherette"/>
-                  <Tag idurl="t570_luxurious" label="luxurious"/>
-                  <Tag idurl="t981_texture" label="texture"/>
-                  <Tag idurl="t982_colors" label="colors"/>
-                  <Tag idurl="t983_plain" label="plain"/>
-                  <Tag idurl="t984_smooth" label="smooth"/>
-                  <Tag idurl="t985_solid" label="solid"/>
-                  <Tag idurl="t986_matted" label="matted"/>
-                  <Tag idurl="t987_steely" label="steely"/>
-                  <Tag idurl="t988_metal" label="metal"/>
-                  <Tag idurl="f252_ruggedized_body" label="ruggedized body"/>
-                </tags>
-              </FeatureTags>
+<Knowledge label="Cell Phones">
 
-            </sub_features>
-            <tags>
-              <Tag idurl="t66_stylish" label="stylish"/>
-              <Tag idurl="t67_sharp" label="sharp"/>
-              <Tag idurl="t68_robust" label="robust"/>
-              <Tag idurl="t69_thick" label="thick"/>
-              <Tag idurl="t935_basic" label="basic"/>
-              <Tag idurl="t1010_rounded" label="rounded"/>
-              <Tag idurl="t1011_square" label="square"/>
-              <Tag idurl="t1077_slim" label="slim"/>
-              <Tag idurl="t1078_appealing" label="appealing"/>
-              <Tag idurl="t1079_handsome" label="handsome"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f23_hardware_buttons" label="hardware buttons" is_exclusive="false">
-            <sub_features>
-              <FeatureTags idurl="f257_navigation" label="navigation" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t1025_touch_pad" label="touch pad"/>
-                  <Tag idurl="t1026_touch_screen" label="touch screen"/>
-                  <Tag idurl="t1027_scroll_wheel" label="scroll wheel"/>
-                  <Tag idurl="t1130_toggle" label="toggle"/>
-                  <Tag idurl="t1141_navigation_array" label="navigation array"/>
-                  <Tag idurl="t1144_keypad" label="keypad"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-            <tags>
-              <Tag idurl="t75_call" label="call"/>
-              <Tag idurl="t76_hang" label="hang"/>
-              <Tag idurl="t77_menu" label="menu"/>
-              <Tag idurl="t78_home" label="home"/>
-              <Tag idurl="t79_mute" label="mute"/>
-              <Tag idurl="t80_volume" label="volume"/>
-              <Tag idurl="t81_lock" label="lock"/>
-              <Tag idurl="t617_on/off" label="on/off"/>
-              <Tag idurl="t648_ringer_on/off" label="ringer on/off"/>
-              <Tag idurl="t824_email" label="email"/>
-              <Tag idurl="t825_calendar" label="calendar"/>
-              <Tag idurl="t933_media" label="media"/>
-              <Tag idurl="t1021_navigation" label="navigation"/>
-              <Tag idurl="t1067_contacts" label="contacts"/>
-              <Tag idurl="t1081_shutter" label="shutter"/>
-              <Tag idurl="t1082_back" label="back"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f118_keyboard" label="keyboard" is_exclusive="false">
-            <sub_features>
-              <FeatureTags idurl="f119_virtual_keyboard_mode" label="virtual keyboard mode" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t348_landscape" label="landscape"/>
-                  <Tag idurl="t349_portrait" label="portrait"/>
-                  <Tag idurl="t1122_none" label="none"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f160_keyboard_characteristics" label="keyboard characteristics" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t537_springy" label="springy"/>
-                  <Tag idurl="t538_cramped" label="cramped"/>
-                  <Tag idurl="t1068_tactile" label="tactile"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f194_sliding_keyboard" label="sliding keyboard" is_exclusive="true">
-                <tags>
-                  <Tag idurl="t732_vertical" label="vertical"/>
-                  <Tag idurl="t733_horizontal" label="horizontal"/>
-                  <Tag idurl="t1035_none" label="none"/>
-                </tags>
-              </FeatureTags>
-              <FeatureNumeric idurl="f276_keyboard_experience" label="keyboard experience" format="% .2f" value_min="0.0" value_max="5.0"/>
-            </sub_features>
-            <tags>
-              <Tag idurl="t341_full_qwerty" label="full qwerty"/>
-              <Tag idurl="t342_numeric" label="numeric"/>
-              <Tag idurl="t343_suretype" label="suretype"/>
-              <Tag idurl="t344_virtual" label="virtual"/>
-              <Tag idurl="t561_full_sliding_keyboard" label="full sliding keyboard"/>
-              <Tag idurl="t1036_full_detachable_keyboard" label="full detachable keyboard"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f120_sensors" label="sensors" is_exclusive="false">
-            <tags>
-              <Tag idurl="t353_accelerometer" label="accelerometer"/>
-              <Tag idurl="t354_ambient_light" label="ambient light"/>
-              <Tag idurl="t639_proximity" label="proximity"/>
-              <Tag idurl="t640_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureHeader idurl="f135_size" label="size">
-            <sub_features>
-              <FeatureNumeric idurl="f136_height" label="height" format="% .2finches" value_min="2.0" value_max="5.0"/>
-              <FeatureNumeric idurl="f137_width" label="width" format="% .2finches" value_min="1.0" value_max="3.5"/>
-              <FeatureNumeric idurl="f138_depth" label="depth" format="% .2finches" value_min="0.0" value_max="1.5"/>
-            </sub_features>
-          </FeatureHeader>
-          <FeatureNumeric idurl="f139_weight" label="weight" format="% .2foz" value_min="2.0" value_max="7.0"/>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureHeader idurl="f25_communication" label="Communication">
-        <sub_features>
-          <FeatureCondition idurl="f123_email" label="email">
-            <sub_features>
-              <FeatureTags idurl="f124_email_platform" label="email platform" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t372_gmail" label="gmail"/>
-                  <Tag idurl="t374_lotus_notes" label="lotus notes"/>
-                  <Tag idurl="t379_other" label="other"/>
-                  <Tag idurl="t380_yahoo" label="yahoo"/>
-                  <Tag idurl="t469_aol_mail" label="aol mail"/>
-                  <Tag idurl="t470_windows_live_hotmail" label="windows live hotmail"/>
-                  <Tag idurl="t482_novell_groupwise" label="novell groupwise"/>
-                  <Tag idurl="t701_mobileme" label="mobileme"/>
-                  <Tag idurl="t702_imap/pop3" label="imap/pop3"/>
-                  <Tag idurl="t703_ms_exchange" label="ms exchange"/>
-                  <Tag idurl="t801_ms_outlook" label="ms outlook"/>
-                  <Tag idurl="t924_smtp" label="smtp"/>
-                  <Tag idurl="t1128_none" label="none"/>
-                  <Tag idurl="t1145_web" label="web"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f149_view_email_attachments" label="view email attachments" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t474_jpeg" label="jpeg"/>
-                  <Tag idurl="t475_adobe_pdf" label="adobe pdf"/>
-                  <Tag idurl="t476_ms_office" label="ms office"/>
-                  <Tag idurl="t477_ms_word" label="ms word"/>
-                  <Tag idurl="t478_ms_excel" label="ms excel"/>
-                  <Tag idurl="t479_ms_powerpoint" label="ms powerpoint"/>
-                  <Tag idurl="t1028_zip_manager" label="zip manager"/>
-                  <Tag idurl="t1069_none" label="none"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f140-f274" label="Misc" is_exclusive="false">
-                <Tag idurl="f150_push_delivery" label="push delivery"/>
-                <Tag idurl="f274_email_encryption" label="Email encryption"/>
-              </FeatureTags>
+	<sub_features>
+		<FeatureRating idurl="overall_expert_rating" label="Expert Rating" min_rating="0" max_rating="10" user_category="expert"/>
+		<FeatureRating idurl="overall_user_rating" label="User Rating" min_rating="0" max_rating="10" user_category="user"/>
+		<FeatureImage  idurl="main_image" label="Product Picture" />
+		<FeatureUrl  idurl="main_url" label="URL" />
+		<FeatureTextarea idurl="description" label="Product Description" />
 
-              <FeatureNumeric idurl="f151_multiple_email_accounts" label="Multiple email accounts" format="% .2f" value_min="0.0" value_max="20.0" help="# of email accounts on the same device" />
+		<FeatureTags idurl="brand" label="Brand" is_exclusive="true">
+			<tags>
+				<Tag idurl="nokia" label="Nokia"/>
+				<Tag idurl="motorola" label="Motorola"/>
+				<Tag idurl="blackberry" label="Blackberry"/>
+				<Tag idurl="sony_ericsson" label="Sony Ericsson"/>
+				<Tag idurl="samsung" label="Samsung"/>
+				<Tag idurl="lg_electronics" label="LG Electronics"/>
+				<Tag idurl="apple" label="Apple"/>
+				<Tag idurl="sanyo" label="Sanyo"/>
+				<Tag idurl="siemens" label="Siemens"/>
+				<Tag idurl="htc" label="HTC"/>
+				<Tag idurl="palm" label="Palm"/>
+			</tags>
+		</FeatureTags>
 
-            </sub_features>
-          </FeatureCondition>
-          <FeatureRating idurl="f251_call_quality" label="call quality" min_rating="1" max_rating="5" user_category="user, expert"/>
+		<FeatureTags idurl="carriers" label="Carriers" is_exclusive="true">
+			<tags>
+				<Tag idurl="att" label="ATamp;T"/>
+				<Tag idurl="sprint" label="Sprint"/>
+				<Tag idurl="t_mobile" label="T-Mobile"/>
+				<Tag idurl="verizon" label="Verizon"/>
+				<Tag idurl="prepaid" label="prepaid card"/>
+				<Tag idurl="unlocked" label="unlocked"/>
+			</tags>
+		</FeatureTags>
 
-          <FeatureTags idurl="f125_call" label="call" is_exclusive="false">              
-              <Tag idurl="f176_visual_voicemail" label="visual voicemail"/>
-              <Tag idurl="f187_ringtones" label="ringtones"/>
-              <Tag idurl="f253_push-to-talk" label="push-to-talk"/>
-          </FeatureTags>
-          <FeatureTags idurl="f140_hearing_aid_rating" label="hearing aid rating" is_exclusive="false">
-            <tags>
-              <Tag idurl="t429_m3" label="m3"/>
-              <Tag idurl="t430_m4" label="m4"/>
-              <Tag idurl="t431_t3" label="t3"/>
-              <Tag idurl="t432_t4" label="t4"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f152_messaging" label="messaging" is_exclusive="false">
-            <tags>
-              <Tag idurl="t487_sms" label="sms"/>
-              <Tag idurl="t488_mms" label="mms"/>
-              <Tag idurl="t489_im" label="im"/>
-              <Tag idurl="t490_twitter" label="twitter"/>
-              <Tag idurl="t491_facebook" label="facebook"/>
-              <Tag idurl="t963_mms_w/_video_messaging" label="mms w/ video messaging"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f167_best_suited_for" label="best suited for" is_exclusive="false">
-            <tags>
-              <Tag idurl="t574_calling" label="calling"/>
-              <Tag idurl="t575_emails" label="emails"/>
-              <Tag idurl="t576_texting" label="texting"/>
-              <Tag idurl="t616_social_media" label="social media"/>
-              <Tag idurl="t925_entertainment" label="entertainment"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f186_voice_recording" label="voice recording" is_exclusive="true">
-            <tags>
-              <Tag idurl="t666_native" label="native"/>
-              <Tag idurl="t667_third-party" label="third-party"/>
-              <Tag idurl="t668_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f197_contacts" label="contacts" is_exclusive="false">
-              <Tag idurl="f198_contact_import" label="contact import"/>
-              <Tag idurl="f199_contact_aggregation" label="contact aggregation"/>
-              <Tag idurl="f215_send_contacts" label="send contacts"/>
-              <Tag idurl="f238_company_name_search" label="company name search"/>
-              <Tag idurl="f248_contact_favorites" label="contact favorites"/>
-              <Tag idurl="f273_phone_book_entries" label="phone book entries" format="% .2fentries" value_min="0.0" value_max="10000.0"/>
-          </FeatureTags>
-          <FeatureTags idurl="f200+229+237" label="misc" is_exclusive="false">
-              <Tag idurl="f200_combined_messaging" label="combined messaging"/>
-              <Tag idurl="f229_real_time_video_sharing" label="real time video sharing"/>
-              <Tag idurl="f237_voip" label="voip"/>
-          </FeatureTags>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureHeader idurl="f33_connectivity" label="Connectivity">
-        <sub_features>
-          <FeatureCondition idurl="f38_bluetooth" label="bluetooth">
-            <sub_features>
-              <FeatureTags idurl="f39_type" label="type" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t130_1.0" label="1.0"/>
-                  <Tag idurl="t131_2.0" label="2.0"/>
-                  <Tag idurl="t802_2.1" label="2.1"/>
-                  <Tag idurl="t849_stereo" label="stereo"/>
-                  <Tag idurl="t850_edr" label="edr"/>
-                  <Tag idurl="t851_a2dp" label="a2dp"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f36_wifi" label="wifi">
-            <sub_features>
-              <FeatureTags idurl="f37_type" label="type" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t511_a" label="a"/>
-                  <Tag idurl="t512_b" label="b"/>
-                  <Tag idurl="t513_g" label="g"/>
-                  <Tag idurl="t514_n" label="n"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureTags idurl="f178_bands" label="bands" is_exclusive="false">
-            <sub_features>
-              <FeatureTags idurl="f180_bands_frequency" label="bands frequency" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t635_850" label="850"/>
-                  <Tag idurl="t670_900" label="900"/>
-                  <Tag idurl="t671_1800" label="1800"/>
-                  <Tag idurl="t672_1900" label="1900"/>
-                  <Tag idurl="t673_2100" label="2100"/>
-                  <Tag idurl="t960_800" label="800"/>
-                  <Tag idurl="t1088_1700" label="1700"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f224_multiple_bands" label="multiple bands" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t847_tri-band" label="tri-band"/>
-                  <Tag idurl="t848_quad-band" label="quad-band"/>
-                  <Tag idurl="t1108_dual-band" label="dual-band"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-            <tags>
-              <Tag idurl="t624_umts" label="umts"/>
-              <Tag idurl="t625_hsdpa" label="hsdpa"/>
-              <Tag idurl="t841_gsm" label="gsm"/>
-              <Tag idurl="t842_wcdma" label="wcdma"/>
-              <Tag idurl="t843_3g" label="3g"/>
-              <Tag idurl="t959_cdma" label="cdma"/>
-              <Tag idurl="t964_ev-do" label="ev-do"/>
-              <Tag idurl="t1012_gprs" label="gprs"/>
-              <Tag idurl="t1013_edge" label="edge"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f183_audio_connector" label="audio connector" is_exclusive="true">
-            <tags>
-              <Tag idurl="t653_3.5_mm" label="3.5 mm"/>
-              <Tag idurl="t654_2.5_mm" label="2.5 mm"/>
-              <Tag idurl="t998_custom" label="custom"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f185-f212-f249-f280" label="misc" is_exclusive="false">
-              <Tag idurl="f185_tethering" label="tethering"/>
-              <Tag idurl="f212_micro-usb" label="micro-usb"/>
-              <Tag idurl="f249_international_roaming" label="international roaming"/>
-              <Tag idurl="f280_mini-usb" label="mini-usb"/>
-          </FeatureTags>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureHeader idurl="f41_memory" label="Memory">
-        <sub_features>
-          <FeatureNumeric idurl="f42_internal_memory_size" label="internal memory size" format="% .1f gb" value_min="0.0" value_max="64.0"/>
-          <FeatureTags idurl="f43_external_memory_type" label="external memory type" is_exclusive="false">
-            <tags>
-              <Tag idurl="t138_sd" label="sd"/>
-              <Tag idurl="t139_micro-sd" label="micro-sd"/>
-              <Tag idurl="t140_sdhc" label="sdhc"/>
-              <Tag idurl="t141_stick" label="stick"/>
-              <Tag idurl="t142_stick_micro" label="stick micro"/>
-              <Tag idurl="t620_none" label="none"/>
-              <Tag idurl="t1150_m2" label="m2"/>
-            </tags>
-          </FeatureTags>
-          <FeatureNumeric idurl="f282_maximum_external_memory" label="maximum external memory" format="% .2fgb" value_min="0.0" value_max="64.0"/>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureHeader idurl="f44_battery" label="Battery">
-        <sub_features>
-          <FeatureNumeric idurl="f45_power" label="power" format="% .1f mAh" value_min="1.0" value_max="9000.0"/>
-          <FeatureNumeric idurl="f46_talk_time" label="talk time" format="% .1f Hours" value_min="1.0" value_max="24.0">
-            <sub_features>
-              <FeatureNumeric idurl="f173_2g_talk_time" label="2G talk time" format="% .2fHours" value_min="0.0" value_max="1000.0"/>
-              <FeatureNumeric idurl="f174_3g_talk_time" label="3G talk time" format="% .2fHours" value_min="0.0" value_max="1000.0"/>
-            </sub_features>
-          </FeatureNumeric>
-          <FeatureNumeric idurl="f47_standby_time" label="standby_time" format="% .1f Hours" value_min="1.0" value_max="500.0"/>
-          <FeatureNumeric idurl="f48_video_playback_time" label="video_playback_time" format="% .1f Hours" value_min="1.0" value_max="24.0"/>
-          <FeatureNumeric idurl="f49_music_playback_time" label="music_playback_time" format="% .1f Hours" value_min="1.0" value_max="48.0"/>
-          <FeatureNumeric idurl="f175_wifi_time" label="Wifi time" format="% .2fHours" value_min="0.0" value_max="24.0"/>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureTags idurl="f50_operating_system" label="Operating system" is_exclusive="false">
-        <sub_features>
-          <FeatureTags idurl="f192_ui" label="UI" is_exclusive="false">
-            <tags>
-              <Tag idurl="t720_multi-touch" label="multi-touch"/>
-              <Tag idurl="t721_single-handed" label="single-handed"/>
-              <Tag idurl="t852_single_touch" label="single touch"/>
-              <Tag idurl="t853_keyboard_and_buttons" label="keyboard and buttons"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f193_touch_hand_gesture" label="touch hand gesture" is_exclusive="false">
-            <tags>
-              <Tag idurl="t725_multi-touch" label="multi-touch"/>
-              <Tag idurl="t726_pinching" label="pinching"/>
-              <Tag idurl="t727_sliding" label="sliding"/>
-              <Tag idurl="t728_multi-touch_zooming" label="multi-touch zooming"/>
-              <Tag idurl="t767_double_tap" label="double tap"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f195_multi-tasking" label="multi-tasking" is_exclusive="true">
-            <tags>
-              <Tag idurl="t737_none" label="none"/>
-              <Tag idurl="t739_poor" label="poor"/>
-              <Tag idurl="t740_decent" label="decent"/>
-              <Tag idurl="t741_good" label="good"/>
-              <Tag idurl="t742_seamless" label="seamless"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f203_advanced_features" label="advanced features" is_exclusive="false">
-            <tags>
-              <Tag idurl="t765_copy_and_paste" label="copy and paste"/>
-              <Tag idurl="t766_none" label="none"/>
-              <Tag idurl="t769_copy_and_paste_pictures" label="copy and paste pictures"/>
-              <Tag idurl="t1100_home_screen_personalization" label="home screen personalization"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f239-240-etc..." label="misc" is_exclusive="false">
-            <tags>
-              <Tag idurl="f239_voice_commands" label="voice commands"/>
-              <Tag idurl="f240_text-to-speech" label="text-to-speech"/>
-              <Tag idurl="f202_search_phone" label="search phone"/>
-            </tags>
-          </FeatureTags>
-          <FeatureNumeric idurl="f256_ui_ease_of_use" label="UI ease of use" format="% .2f" value_min="0.0" value_max="5.0"/>
-          <FeatureNumeric idurl="f261_responsiveness" label="Responsiveness" format="% .2f" value_min="0.0" value_max="5.0"/>
+		<FeatureText idurl="nickname" label="Nickname"/> 
 
-          <FeatureTags idurl="f271_ui_system" label="UI system" is_exclusive="false">
-            <tags>
-              <Tag idurl="t1064_samsung_touchwiz" label="samsung touchwiz"/>
-              <Tag idurl="t1065_lg_touchflo_3d" label="lg touchflo 3d"/>
-              <Tag idurl="t1066_apple" label="apple"/>
-              <Tag idurl="t1093_blackberry" label="blackberry"/>
-              <Tag idurl="t1121_sony_ericsson_xperia" label="sony ericsson xperia"/>
-              <Tag idurl="t1149_sprint_one_click" label="sprint one click"/>
-            </tags>
-          </FeatureTags>
-        </sub_features>
-        <tags>
-          <Tag idurl="t146_apple" label="apple"/>
-          <Tag idurl="t147_google_android" label="google android"/>
-          <Tag idurl="t148_symbian" label="symbian"/>
-          <Tag idurl="t150_motomagx" label="motomagx"/>
-          <Tag idurl="t151_blackberry" label="blackberry"/>
-          <Tag idurl="t790_palm_webos" label="palm webos"/>
-          <Tag idurl="t1014_windows_mobile" label="windows mobile"/>
-          <Tag idurl="t1072_proprietary" label="proprietary"/>
-        </tags>
-      </FeatureTags>
-      <FeatureHeader idurl="f51_internet" label="Internet">
-        <sub_features>
-          <FeatureTags idurl="f157_internet_access" label="Internet access" is_exclusive="false">
-            <tags>
-              <Tag idurl="t523_full" label="full"/>
-              <Tag idurl="t524_partial" label="partial"/>
-              <Tag idurl="t525_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f59_page_zoom" label="page zoom" is_exclusive="false">
-            <tags>
-              <Tag idurl="t197_multi-touch" label="multi-touch"/>
-              <Tag idurl="t198_button" label="button"/>
-              <Tag idurl="t1076_magnifying_glass" label="magnifying glass"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f158_browser" label="browser" is_exclusive="false">
-            <tags>
-              <Tag idurl="t688_safari" label="safari"/>
-              <Tag idurl="t854_nokia" label="nokia"/>
-              <Tag idurl="t1015_opera" label="opera"/>
-              <Tag idurl="t1016_internet_explorer" label="internet explorer"/>
-              <Tag idurl="t1071_samsung" label="samsung"/>
-              <Tag idurl="t1089_blackberry" label="blackberry"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f172_social_media" label="Social media" is_exclusive="false">
-            <tags>
-              <Tag idurl="t612_facebook" label="facebook"/>
-              <Tag idurl="t613_myspace" label="myspace"/>
-              <Tag idurl="t614_twitter" label="twitter"/>
-              <Tag idurl="t615_none" label="none"/>
-              <Tag idurl="t952_rss_feed" label="rss feed"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f189_internet_platforms" label="internet platforms" is_exclusive="false">
-            <tags>
-              <Tag idurl="t693_css/html" label="css/html"/>
-              <Tag idurl="t694_flash" label="flash"/>
-              <Tag idurl="t695_java" label="java"/>
-              <Tag idurl="t855_javascript" label="javascript"/>
-              <Tag idurl="t961_wap" label="wap"/>
-              <Tag idurl="f270_rss_reader" label="rss reader"/>
-            </tags>
-          </FeatureTags>
-          <FeatureNumeric idurl="f255_internet_experience" label="Internet experience" format="% .2f" value_min="0.0" value_max="5.0"/>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureCondition idurl="f60_camera" label="Camera">
-        <sub_features>
-          <FeatureNumeric idurl="f61_camera_resolution" label="camera resolution" format="% .1f mpx" value_min="0.0" value_max="12.0"/>
-          <FeatureTags idurl="f62_features" label="features" is_exclusive="false">
-            <tags>
-              <Tag idurl="t204_autofocus" label="autofocus"/>
-              <Tag idurl="t405_zeiss_lens" label="zeiss lens"/>
-              <Tag idurl="t799_image_correction" label="image correction"/>
-            </tags>
-          </FeatureTags>
-          <FeatureCondition idurl="f63_zoom" label="zoom">
-            <sub_features>
-              <FeatureNumeric idurl="f64_range" label="range" format="% .1f time" value_min="1.0" value_max="20.0"/>
-              <FeatureTags idurl="f65_type" label="type" is_exclusive="true">
-                <tags>
-                  <Tag idurl="t212_optical" label="optical"/>
-                  <Tag idurl="t404_digital" label="digital"/>
-                  <Tag idurl="t1123_none" label="none"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f66_video" label="video">
-            <sub_features>
-              <FeatureTags idurl="f67_features" label="features" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t219_hd" label="hd"/>
-                  <Tag idurl="t220_dvd" label="dvd"/>
-                  <Tag idurl="t221_16x9" label="16x9"/>
-                  <Tag idurl="t222_30fps" label="30fps"/>
-                  <Tag idurl="t223_flash_with_continuous_lighting" label="flash with continuous lighting"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f227_resolution" label="resolution" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t872_vga" label="vga"/>
-                  <Tag idurl="t873_qvga" label="qvga"/>
-                  <Tag idurl="t874_qcif" label="qcif"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f228-f231" label="misc" is_exclusive="false">
-                <tags>
-                  <Tag idurl="f228_front_camera_for_video_calls" label="front camera for video calls"/>
-                  <Tag idurl="f231_real_time_video_sharing" label="real time video sharing"/>
-                </tags>
-              </FeatureTags>
+		<FeatureTags idurl="phone_category" label="Phone Category" is_exclusive="true">
+			<tags>
+				<Tag idurl="cell_phone" label="Cell Phone"/>
+				<Tag idurl="smartphone" label="Smartphone"/>
+				<Tag idurl="messaging_phone" label="Messaging phone"/>
+				<Tag idurl="camera_phone" label="Camera phone"/>
+				<Tag idurl="media_phone" label="Media phone"/>
+			</tags>
+		</FeatureTags>
 
-              <FeatureRating idurl="f260_video_quality" label="video quality" min_rating="1" max_rating="5" user_category="user, expert"/>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureTags idurl="f146_online_picture_and_video_sharing" label="online picture and video sharing" is_exclusive="false">
-            <tags>
-              <Tag idurl="t445_flickr" label="flickr"/>
-              <Tag idurl="t446_facebook" label="facebook"/>
-              <Tag idurl="t865_ovi" label="ovi"/>
-              <Tag idurl="t1080_photobucket" label="photobucket"/>
-              <Tag idurl="t1084_kodak_gallery" label="kodak gallery"/>
-              <Tag idurl="t1085_snapfish" label="snapfish"/>
-              <Tag idurl="t1136_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f225_flash" label="flash" is_exclusive="false">
-            <tags>
-              <Tag idurl="t861_led_flash" label="led flash"/>
-              <Tag idurl="t862_xenon_flash" label="xenon flash"/>
-              <Tag idurl="t863_red-eye_reduction" label="red-eye reduction"/>
-              <Tag idurl="t864_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f234_camera_modes" label="camera modes" is_exclusive="false">
-            <tags>
-              <Tag idurl="t896_scene_modes" label="scene modes"/>
-              <Tag idurl="t897_capture_modes" label="capture modes"/>
-            </tags>
-          </FeatureTags>
-          <FeatureTags idurl="f235_camera_controls" label="camera controls" is_exclusive="false">
-            <tags>
-              <Tag idurl="t901_white_balance" label="white balance"/>
-              <Tag idurl="t902_color_tones" label="color tones"/>
-              <Tag idurl="t903_exposure" label="exposure"/>
-              <Tag idurl="t1083_advanced" label="advanced"/>
-            </tags>
-          </FeatureTags>
-          <FeatureRating idurl="f259_picture_quality" label="picture quality" min_rating="1" max_rating="5" user_category="user, expert"/>
-          <FeatureNumeric idurl="f284_camera_controls_sophistication" label="camera controls sophistication" format="% .2f" value_min="0.0" value_max="5.0"/>
-        </sub_features>
-      </FeatureCondition>
-      <FeatureHeader idurl="f70_media" label="Media">
-        <sub_features>
-          <FeatureCondition idurl="f71_video_playback" label="video playback">
-            <sub_features>
-              <FeatureTags idurl="f72_services" label="services" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t229_youtube" label="youtube"/>
-                  <Tag idurl="t230_itunes" label="itunes"/>
-                  <Tag idurl="t231_blackberrymedia_center" label="blackberrymedia center"/>
-                  <Tag idurl="t232_roxio_media_manager" label="roxio media manager"/>
-                  <Tag idurl="t233_hd" label="hd"/>
-                  <Tag idurl="t879_realplayer" label="realplayer"/>
-                  <Tag idurl="t965_vcast" label="vcast"/>
-                  <Tag idurl="t1017_spring_tv" label="spring tv"/>
-                  <Tag idurl="t1074_at&amp;t_cellular_video" label="at&amp;t cellular video"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f73_formats" label="formats" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t237_flash" label="flash"/>
-                  <Tag idurl="t238_mpeg-4" label="mpeg-4"/>
-                  <Tag idurl="t239_avc/h.264" label="avc/h.264"/>
-                  <Tag idurl="t241_windows_media_(wmv9)" label="windows media (wmv9)"/>
-                  <Tag idurl="t242_cif_@_30_fps" label="cif @ 30 fps"/>
-                  <Tag idurl="t451_divx_4" label="divx 4"/>
-                  <Tag idurl="t453_divx_5" label="divx 5"/>
-                  <Tag idurl="t454_divx_6" label="divx 6"/>
-                  <Tag idurl="t456_wmv3" label="wmv3"/>
-                  <Tag idurl="t465_xvid" label="xvid"/>
-                  <Tag idurl="t466_h.263" label="h.263"/>
-                  <Tag idurl="t880_realvideo" label="realvideo"/>
-                  <Tag idurl="t885_.3gp" label=".3gp"/>
-                </tags>
-              </FeatureTags>
-              <FeatureRating idurl="f279_video_quality" label="video quality" min_rating="1" max_rating="5" user_category="user, expert"/>
-            </sub_features>
-          </FeatureCondition>
+		<FeatureDate idurl="release_date" label="Release Date" format="%Y/%m/%d %H:%M:%S" value_min="2000/01/01 00:00:00" value_max="2020/01/01 00:00:00" />
+		<FeatureTags idurl="release_status" label="Release Status" is_exclusive="true" is_optional="true">
+			<tags>
+				<Tag idurl="released" label="Released"/>
+				<Tag idurl="announced" label="Announced"/>
+				<Tag idurl="leaked" label="Leaked"/>
+			</tags>
+		</FeatureTags>
 
-          <FeatureCondition idurl="f74_music_player" label="music player">
+        <FeatureNumeric idurl="unsubsidized_price" label="Unsubsidized Price" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+        <FeatureNumeric idurl="special_carrier_promotion" label="Special [Carrier] Promotion" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+        <FeatureNumeric idurl="subsidized_price" label="Subsidized price" format="% .2f$" value_min="0.0" value_max="1000.0">
             <sub_features>
-              <FeatureTags idurl="f75_formats" label="formats" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t248_mp3" label="mp3"/>
-                  <Tag idurl="t249_aac" label="aac"/>
-                  <Tag idurl="t252_wav" label="wav"/>
-                  <Tag idurl="t253_aiff" label="aiff"/>
-                  <Tag idurl="t254_apple_lossless" label="apple lossless"/>
-                  <Tag idurl="t457_midi" label="midi"/>
-                  <Tag idurl="t459_amr-nb" label="amr-nb"/>
-                  <Tag idurl="t460_aac+" label="aac+"/>
-                  <Tag idurl="t461_eaac+" label="eaac+"/>
-                  <Tag idurl="t462_3gp" label="3gp"/>
-                  <Tag idurl="t463_wma9_pro" label="wma9 pro"/>
-                  <Tag idurl="t464_wma_10" label="wma 10"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f161_media_sync_up" label="media sync up" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t542_itunes" label="itunes"/>
-                  <Tag idurl="t543_windows_media_player" label="windows media player"/>
-                  <Tag idurl="t868_nokia_music_manager" label="nokia music manager"/>
-                  <Tag idurl="t1115_blackberry_media_sync" label="blackberry media sync"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f162_media_player" label="media player" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t866_itunes" label="itunes"/>
-                  <Tag idurl="t867_windows_media_player" label="windows media player"/>
-                  <Tag idurl="t923_realplayer" label="realplayer"/>
-                  <Tag idurl="t1059_phone-specific" label="phone-specific"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f188_music_store" label="music store" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t685_thru_wifi" label="thru wifi"/>
-                  <Tag idurl="t686_thru_cell" label="thru cell"/>
-                  <Tag idurl="t687_none" label="none"/>
-                  <Tag idurl="t1142_thru_pc_sync" label="thru pc sync"/>
-                </tags>
-              </FeatureTags>
-              <FeatureTags idurl="f244_music_service" label="music service" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t939_comes_with_music_(nokia)" label="comes with music (nokia)"/>
-                  <Tag idurl="t940_itunes" label="itunes"/>
-                  <Tag idurl="t962_vcast_with_rhapsody" label="vcast with rhapsody"/>
-                  <Tag idurl="t1019_sprint_music" label="sprint music"/>
-                  <Tag idurl="t1073_at&amp;t_mobile_music" label="at&amp;t mobile music"/>
-                </tags>
-              </FeatureTags>
-              <FeatureRating idurl="f281_music_quality" label="music quality" min_rating="1" max_rating="5" user_category="user, expert"/>
+                <FeatureCondition idurl="plan_requirements" lable="Plan Requirements">
+                    <sub_features>
+                        <FeatureNumeric idurl="minimum_plam" label="Minimum monthly plan" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+                        <FeatureNumeric idurl="data_plan" label="Minimum monthly data plan" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+                        <FeatureNumeric idurl="minimum_subcription" label="Minimum subscription time" format="% .2fYears" value_min="0.0" value_max="4.0"/>
+                        <FeatureNumeric idurl="activation_fee" label="Activation Fee" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+                        <FeatureNumeric idurl="early_cancellation" label="Early Cancellation Costs" format="% .2f$" value_min="0.0" value_max="1000.0"/>
+                    </sub_features>
+                </FeatureCondition>
             </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f76_radio" label="radio">
+        </FeatureNumeric>
+        <FeatureNumeric idurl="amazon_price" label="Amazon's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
             <sub_features>
-              <FeatureTags idurl="f77_radio_type" label="radio type" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t260_fm" label="fm"/>
-                  <Tag idurl="t261_rds" label="rds"/>
-                  <Tag idurl="t1075_internet" label="internet"/>
-                  <Tag idurl="t1135_none" label="none"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f78_media_center" label="media center">
+                <FeatureUrl  idurl="amazon_url" label="Amazon's Product Page" />
+              </sub_features>
+ 		</FeatureNumeric>
+        <FeatureNumeric idurl="best_buy_price" label="BestBuy's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
             <sub_features>
-              <FeatureTags idurl="f79_features" label="features" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t267_upnp_support" label="upnp support"/>
-                  <Tag idurl="t268_media_synchronizing" label="media synchronizing"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f81_tv-out_support" label="tv-out support">
+                <FeatureUrl  idurl="bestbuy_url" label="BestBuy's Product Page" />
+              </sub_features>
+ 		</FeatureNumeric>
+        <FeatureNumeric idurl="radioshack_price" label="Radioshack's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
             <sub_features>
-              <FeatureTags idurl="f82_format" label="format" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t276_pal" label="pal"/>
-                  <Tag idurl="t277_ntsc" label="ntsc"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f201_gaming_platform" label="gaming platform">
-            <sub_features>
-              <FeatureTags idurl="f247_gaming_platform" label="gaming platform" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t949_n-gage" label="n-gage"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
+                <FeatureUrl  idurl="radioshack_url" label="Radioshack's Product Page" />
+              </sub_features>
+ 		</FeatureNumeric>
+
+		<FeatureHeader idurl="hardware" label="Hardware">
+			<sub_features>
+				<FeatureHeader idurl="screen" label="Screen">
+					<sub_features>
+						<FeatureRating idurl="screen_rating" label="Screen Rating" min_rating="0" max_rating="10" user_category="user, expert"/>
+						<FeatureNumeric idurl="screen_size" label="Screen Size" format="% .2finch" value_min="0.0" value_max="5.0"/>
+						<FeatureNumeric idurl="screen_resolution_l" label="Screen Resolution L" format="% pixels" value_min="0" value_max="2000"/>
+						<FeatureNumeric idurl="screen_resolution_w" label="Screen Resolution W" format="% pixels" value_min="0" value_max="1100"/>          
+						<FeatureTags idurl="touchscreen" label="Touchscreen" is_exclusive="true">
+							<tags>
+								<Tag idurl="capacitive" label="Capacitive"/>
+								<Tag idurl="resistive" label="Resistive"/>
+								<Tag idurl="none" label="None"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureHeader>
+
+				<FeatureHeader idurl="design_construction" label="Design &amp; Construction">
+					<sub_features>
+						<FeatureRating idurl="design_construction_rating" label="Design &amp; Construction rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="form_factor" label="Form Factor" is_exclusive="false">
+							<tags>
+								<Tag idurl="candy_bar" label="Candy Bar"/>
+								<Tag idurl="touchscreen" label="Touchscreen"/>
+								<Tag idurl="clamshell" label="Clamshell"/>
+								<Tag idurl="swivel" label="Swivel"/>
+								<Tag idurl="slider" label="Slider"/>
+							</tags>
+						</FeatureTags>
+						<FeatureCondition idurl="ruggedized" label="Ruggedized"/>
+                        <FeatureHeader idurl="device_size" label="Device size">
+							<sub_features>
+								<FeatureNumeric idurl="device_height" label="Device Height" format="% .2finches" value_min="2.0" value_max="5.0"/>
+								<FeatureNumeric idurl="device_width" label="Device Width" format="% .2finches" value_min="1.0" value_max="3.5"/>
+								<FeatureNumeric idurl="device_depth" label="Device Depth" format="% .2finches" value_min="0.0" value_max="1.5"/>
+								<FeatureNumeric idurl="device_weight" label="Device Weight" format="% .2foz" value_min="2.0" value_max="7.0"/>
+							</sub_features>
+						</FeatureHeader>
+					</sub_features>
+				</FeatureHeader>  
+
+				<FeatureHeader idurl="controls_navigation" label="Controls &amp; Navigation">    
+					<sub_features>
+						<FeatureRating idurl="controls_navigation_rating" label="Controls &amp; Navigation Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="navigation" label="navigation" is_exclusive="false">
+							<tags>
+								<Tag idurl="dpad" label="D-pad"/>
+								<Tag idurl="keypad" label="Keypad"/>
+								<Tag idurl="navigation_array" label="Navigation Array"/>
+								<Tag idurl="touch_pad" label="Touch pad"/>
+								<Tag idurl="touchscreen" label="Touchscreen"/>
+								<Tag idurl="toggle" label="Toggle"/>
+								<Tag idurl="trackball" label="Trackball"/>
+							</tags>
+						</FeatureTags>
+
+					</sub_features>
+
+				</FeatureHeader>  
+
+				<FeatureHeader idurl="keyboard_input" label="Keyboard &amp; Input">    
+					<sub_features>
+						<FeatureRating idurl="keyboard_input_rating" label="Keyboard &amp; Input Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="keyboard_type" label="Keyboard Type" is_exclusive="false">
+							<tags>
+								<Tag idurl="numeric" label="Numeric"/>
+								<Tag idurl="horizontal_qwerty" label="Horizontal Qwerty"/>
+								<Tag idurl="vertical_qwerty" label="Vertical Qwerty"/>
+								<Tag idurl="suretype" label="Suretype"/>
+								<Tag idurl="virtual" label="Virtual"/>
+							</tags>
+						</FeatureTags>           
+					</sub_features>
+				</FeatureHeader>
+
+				<FeatureHeader idurl="battery" label="Battery">
+					<sub_features>
+						<FeatureRating idurl="battery_life_rating" label="Battery Life Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureNumeric idurl="battery_power" label="power" format="% .1f mAh" value_min="1.0" value_max="3000.0"/>
+						<FeatureNumeric idurl="talk_time" label="Talk Time" format="% .1f Hours" value_min="1.0" value_max="24.0">
+							<sub_features>
+								<FeatureNumeric idurl="2g_talk_time" label="2G Talk Time" format="% .2fHours" value_min="0.0" value_max="24.0"/>
+								<FeatureNumeric idurl="3g_talk_time" label="3G Talk Time" format="% .2fHours" value_min="0.0" value_max="24.0"/>
+							</sub_features>
+						</FeatureNumeric>
+						<FeatureNumeric idurl="standby_time" label="Standby Time" format="% .1f Hours" value_min="1.0" value_max="1000.0"/>
+						<FeatureNumeric idurl="video_playback_time" label="Video Playback Time" format="% .1f Hours" value_min="1.0" value_max="24.0"/>
+						<FeatureNumeric idurl="music_playback_time" label="Music Playback Time" format="% .1f Hours" value_min="1.0" value_max="48.0"/>
+						<FeatureNumeric idurl="wifi_time" label="Wifi Time" format="% .2fHours" value_min="0.0" value_max="24.0"/>
+						<FeatureTags idurl="battery_type" label="Battery Type" is_exclusive="true">
+							<tags>
+								<Tag idurl="removable_battery" label="Removable Battery"/>
+								<Tag idurl="extensible_battery" label="Extensible Battery"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureHeader>
+
+				<FeatureCondition idurl="camera" label="Camera">
+					<sub_features>
+						<FeatureRating idurl="camera_rating" label="Camera Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureNumeric idurl="camera_resolution" label="Camera Resolution" format="% .1f mpx" value_min="0.0" value_max="15.0"/>
+						<FeatureTags idurl="camera_features" label="Camera Features" is_exclusive="false">
+							<tags>
+								<Tag idurl="autofocus" label="Autofocus"/>
+								<Tag idurl="contact_pictures" label="Contact Pictures"/>
+								<Tag idurl="digital_zoom" label="Digital Zoom"/>
+								<Tag idurl="flash" label="Flash"/>
+								<Tag idurl="image_correction" label="Image Correction"/>
+								<Tag idurl="image_stabilization" label="Image Stabilization"/>
+								<Tag idurl="optical_zoom" label="Optical Zoom"/>              
+								<Tag idurl="red_eye_reduction" label="Red Eye Reduction"/>
+								<Tag idurl="video_mode" label="Video Mode"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureCondition>
+
+				<FeatureCondition idurl="gps" label="GPS" is_exclusive="false">
+					<sub_features>
+						<FeatureRating idurl="gps_rating" label="Geolocation Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="gps_services" label="GPS Services" is_exclusive="false">
+							<tags>
+								<Tag idurl="att_navigator" label="AT&amp;T Navigator"/>
+								<Tag idurl="blackberry_maps" label="Blackberry Maps"/>
+								<Tag idurl="google_maps" label="Google Maps"/>
+								<Tag idurl="google_maps_navigation" label="Google Maps with Navigation"/>
+								<Tag idurl="navigon_app" label="Navigon App"/>
+								<Tag idurl="nokia_maps" label="Nokia Maps"/>
+								<Tag idurl="other_gps_app" label="Other GPS App"/>
+								<Tag idurl="other_gps_service" label="Other GPS Service"/>
+								<Tag idurl="sprint_nav" label="Sprint Navigation"/>
+								<Tag idurl="telenav_app" label="TeleNav GPS App"/>
+								<Tag idurl="telenav_navigator" label="TeleNav GPS Navigator"/>
+								<Tag idurl="tomtom_app" label="Tomtom GPS App"/>
+								<Tag idurl="vz_navigator" label="VZ Navigator"/>
+								<Tag idurl="vz_navigator_global" label="VZ Navigator Global"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="gps_features" label="GPS Features" is_exclusive="false">
+							<tags>
+                                <Tag idurl="automatic_reroute" label="automatic reroute" />
+                                <Tag idurl="familymap" label="Family Locator" />
+								<Tag idurl="geotag_pictures" label="geotag pictures"/>
+                                <Tag idurl="international_navigation" label="International Navigation" />
+								<Tag idurl="location_based_apps" label="location-based apps (e.g. Yelp)"/>
+								<Tag idurl="location_based_services" label="location-based services"/>
+								<Tag idurl="local_search" label="local search"/>
+                                <Tag idurl="traffic_alerts" label="traffic_alerts" />
+                                <Tag idurl="turn_by_turn_gps" label=" Turn-by-Turn Directions"/>
+                                <Tag idurl="voice-guided" label="voice-guided directions" />
+								<Tag idurl="none" label="none"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureCondition>
+
+			</sub_features>
+		</FeatureHeader>
+
+		<FeatureHeader idurl="communication" label="Communication">
+			<sub_features>
+				<FeatureHeader idurl="connectivity" label="Connectivity &amp; Internet Experience">
+					<sub_features>
+						<FeatureRating idurl="connectivity_internet_rating" label="Connectivity &amp; Internet Experience Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="conectivity" label="Connectivity" is_exclusive="false">
+							<tags>
+								<Tag idurl="bluetooth" label="Bluetooth"/>
+								<Tag idurl="wifi" label="wifi"/>
+								<Tag idurl="2g" label="2G"/>
+								<Tag idurl="3g" label="3G"/>
+								<Tag idurl="4g" label="4G"/>
+								<Tag idurl="cdma" label="CDMA"/>
+								<Tag idurl="gsm" label="GSM"/>
+								<Tag idurl="umts" label="UMTS"/>
+								<Tag idurl="hsdpa" label="HSDPA"/>
+								<Tag idurl="wcdma" label="WCDMA"/>
+								<Tag idurl="ev_do" label="EVDO"/>
+								<Tag idurl="gprs" label="GPRS"/>
+								<Tag idurl="edge" label="EDGE"/>
+								<Tag idurl="tri_band" label="Tri-Band"/>
+								<Tag idurl="quad_band" label="Quad-Band"/>
+							</tags>
+						</FeatureTags>
+						<FeatureCondition idurl="data_tethering" label="Data Tethering"/>
+						<FeatureTags idurl="internet" label="Internet" is_exclusive="true">
+							<tags>
+								<Tag idurl="full_internet" label="Full Internet"/>
+								<Tag idurl="partial_internet" label="Partial Internet"/>
+								<Tag idurl="none" label="None"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureHeader>
+
+				<FeatureHeader idurl="messaging_header" label="Messaging, Emails, and Social Networks">
+					<sub_features>
+						<FeatureRating idurl="messaging_rating" label="Messaging, Emails, and Social Networks Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureCondition idurl="email" label="Email">
+							<sub_features>
+								<FeatureTags idurl="email_platform" label="email platform" is_exclusive="false">
+									<tags>
+										<Tag idurl="aol_mail" label="AOL mail"/>
+										<Tag idurl="gmail" label="GMail"/>
+										<Tag idurl="mobileme" label="MobileMe"/>
+										<Tag idurl="windows_live_hotmail" label="Windows Live Hotmail"/>
+										<Tag idurl="yahoo" label="Yahoo!Mail"/>
+										<Tag idurl="lotus_notes" label="Lotus Notes"/>
+										<Tag idurl="ms_exchange" label="Microsoft Exchange"/>
+										<Tag idurl="novell_groupwise" label="Novell Groupwise"/>
+										<Tag idurl="imap/pop3" label="IMAP/POP3"/>
+										<Tag idurl="smtp" label="SMTP"/>
+										<Tag idurl="web" label="web"/>
+										<Tag idurl="other" label="other"/>
+									</tags>
+								</FeatureTags>
+								<FeatureCondition idurl="push_delivery" label="Email Push Delivery"/>
+								<FeatureNumeric idurl="multiple_email_accounts" label="Multiple Email Accounts" format="% " value_min="0" value_max="20" help="# of email accounts on the same device" />
+							</sub_features>
+						</FeatureCondition>
+						<FeatureTags idurl="messaging" label="Messaging" is_exclusive="false">
+							<tags>
+								<Tag idurl="sms" label="SMS"/>
+								<Tag idurl="mms" label="MMS"/>
+								<Tag idurl="mms_w_video_messaging" label="MMS with Video Messaging"/>
+								<Tag idurl="none" label="none"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="im" label="Instant Messaging" is_exclusive="false">
+							<tags>
+								<Tag idurl="aim" label="AIM"/>
+								<Tag idurl="blackberry_messenger" label="BlackBerry Messenger"/>
+								<Tag idurl="gtalk" label="Google Talk"/>
+								<Tag idurl="fring" label="Fring"/>
+								<Tag idurl="skype" label="Skype"/>
+								<Tag idurl="windows_live" label="Windows Live Messenger"/>
+								<Tag idurl="yahoo_messenger" label="Yahoo Messenger"/>
+								<Tag idurl="none" label="none"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="social_networks" label="Social Networks" is_exclusive="false">
+							<tags>
+								<Tag idurl="facebook" label="Facebook"/>
+								<Tag idurl="foursquare" label="Foursquare"/>
+								<Tag idurl="gowalla" label="Gowalla"/>
+								<Tag idurl="linkedin" label="LinkedIn"/>
+								<Tag idurl="loopt" label="Loopt"/>
+								<Tag idurl="myspace" label="MySpace"/>
+								<Tag idurl="tumblr" label="Tumblr"/>
+								<Tag idurl="twitter" label="twitter"/>
+								<Tag idurl="none" label="none"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>         	 	
+				</FeatureHeader>             
+
+				<FeatureHeader idurl="contacts" label="Contacts and Social Networks">
+					<sub_features>
+						<FeatureRating idurl="contacts_rating" label="Contacts and Social Networks Rating" min_rating="0" max_rating="10" user_category="user"/>       
+					</sub_features>
+				</FeatureHeader>             
+
+				<FeatureHeader idurl="call_functionality" label="Call Functionality &amp; Quality">
+					<sub_features>
+						<FeatureRating idurl="call_rating" label="Call Functionality &amp; Quality Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="call_features" label="Calling Features" is_exclusive="false">
+							<tags>
+								<Tag idurl="push_to_talk" label="Push-to-talk"/>
+								<Tag idurl="international_roaming" label="International Roaming"/>
+								<Tag idurl="voice_calling" label="Voice Activated Dialing"/>
+								<Tag idurl="visual_voicemail" label="Visual Voicemail"/>
+								<Tag idurl="speed_dialing" label="Speed Dialing"/>
+								<Tag idurl="google_voice" label="Google Voice"/>
+								<Tag idurl="skype" label="Skype"/>
+								<Tag idurl="voip" label="VoIP"/>
+							</tags>
+						</FeatureTags>        
+					</sub_features>
+				</FeatureHeader>             
+
+			</sub_features>
+		</FeatureHeader>
+
+		<FeatureHeader idurl="overall_functionality_performance" label="Overall Functionality &amp; Performance">
+			<sub_features>
+				<FeatureRating idurl="functionality_performance_rating" label="Functionality &amp; Performance Rating" min_rating="0" max_rating="10" user_category="user"/>
+				<FeatureTags idurl="operating_system" label="Operating System" is_exclusive="true">
+					<tags>
+						<Tag idurl="apple" label="Apple"/>
+						<Tag idurl="android" label="Android"/>
+						<Tag idurl="blackberry" label="Blackberry"/>
+						<Tag idurl="palm_webos" label="Palm WebOS"/>
+						<Tag idurl="symbian" label="Symbian"/>
+						<Tag idurl="windows_mobile" label="Windows Mobile"/>
+						<Tag idurl="proprietary" label="Proprietary"/>
+					</tags>
+				</FeatureTags>
+			</sub_features>
+		</FeatureHeader>
+
+		<FeatureRating idurl="user_interface_rating" label="User Interface Rating" min_rating="0" max_rating="10" user_category="user"/>
+		<FeatureTags idurl="ui_advanced_features" label="Advanced User Features" is_exclusive="false">
+			<tags>
+				<Tag idurl="accelerometer" label="Accelerometer"/>
+				<Tag idurl="copy_and_paste" label="Copy and Paste"/>
+				<Tag idurl="copy_and_paste_pictures" label="Copy and Paste Pictures"/>
+				<Tag idurl="home_screen_personalization" label="Home Screen Personalization"/>
+				<Tag idurl="multi_touch" label="Multitouch"/>
+				<Tag idurl="multi_tasking_voice_app" label="Multitasking Voice/App"/>
+				<Tag idurl="multi_tasking_app" label="Multitasking Apps"/>
+				<Tag idurl="text_to_speech" label="Text-to-speech"/>
+				<Tag idurl="universal_search" label="Universal Search"/>
+				<Tag idurl="voice_commands" label="Voice Commands"/>
+				<Tag idurl="none" label="none"/>
+			</tags>
+		</FeatureTags>
+
+		<FeatureRating idurl="security_management_rating" label="Security &amp; Management Rating" min_rating="0" max_rating="10" user_category="user"/>
+		<FeatureTags idurl="security_features" label="Security &amp; Management Features" is_exclusive="false">
+			<tags>
+				<Tag idurl="activesync" label="ActiveSync Policies"/>
+				<Tag idurl="ondevice_encryption" label="On-device Encryption"/>
+				<Tag idurl="complex_passwords" label="Complex Passwords"/>
+				<Tag idurl="remote_wipe" label="Remote Device Wipe"/>
+				<Tag idurl="remote_management" label="Remote Management"/>
+				<Tag idurl="vpn_connection" label="VPN Connection"/>
+				<Tag idurl="none" label="none"/>
+			</tags>
+		</FeatureTags>
+
+		<FeatureRating idurl="storage_syncing_rating" label="Storage &amp; Syncing Rating" min_rating="0" max_rating="10" user_category="user"/>
+		<FeatureHeader idurl="memory" label="Memory">
+			<sub_features>
+				<FeatureNumeric idurl="internal_memory_size" label="internal memory size" format="% .1f gb" value_min="0.0" value_max="64.0"/>
+				<FeatureNumeric idurl="maximum_external_memory" label="maximum external memory" format="% .2fgb" value_min="0.0" value_max="64.0"/>
+			</sub_features>
+		</FeatureHeader>
 
 
-          <FeatureTags idurl="f275_speakerphones" label="speakerphones" is_exclusive="false">
-            <tags>
-              <Tag idurl="t1097_stereo" label="stereo"/>
-              <Tag idurl="t1098_mono" label="mono"/>
-              <Tag idurl="t1099_none" label="none"/>
-            </tags>
-          </FeatureTags>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureTags idurl="f110_carriers" label="Carriers" is_exclusive="false">
-        <tags>
-          <Tag idurl="t325_alltel" label="alltel"/>
-          <Tag idurl="t326_at&amp;t" label="at&amp;t"/>
-          <Tag idurl="t327_sprint" label="sprint"/>
-          <Tag idurl="t328_t-mobile" label="t-mobile"/>
-          <Tag idurl="t329_verizon" label="verizon"/>
-          <Tag idurl="t1018_unlocked" label="unlocked"/>
-        </tags>
-      </FeatureTags>
-      <FeatureTextarea idurl="f111_nickname" label="Nickname"/>
-      <FeatureHeader idurl="f130_third-party_applications" label="Third-party applications">
-        <sub_features>
-          <FeatureCondition idurl="f131_application_store" label="application store">
-            <sub_features>
-              <FeatureTags idurl="f236_application_store" label="application store" is_exclusive="true">
-                <tags>
-                  <Tag idurl="t908_iphone_app_store" label="iphone app store"/>
-                  <Tag idurl="t909_blackberry_store" label="blackberry store"/>
-                  <Tag idurl="t910_ovi_store" label="ovi store"/>
-                  <Tag idurl="t974_none" label="none"/>
-                  <Tag idurl="t1107_verizon_appzone" label="verizon appzone"/>
-                  <Tag idurl="t1134_at&amp;t" label="at&amp;t"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureTags idurl="f196_application_marketplace" label="application marketplace" is_exclusive="true">
-            <tags>
-              <Tag idurl="t746_none" label="none"/>
-              <Tag idurl="t747_limited" label="limited"/>
-              <Tag idurl="t748_satisfying" label="satisfying"/>
-              <Tag idurl="t749_thriving" label="thriving"/>
-              <Tag idurl="t750_large" label="large"/>
-              <Tag idurl="t751_largest" label="largest"/>
-            </tags>
-          </FeatureTags>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureTags idurl="f153_geolocation" label="Geolocation" is_exclusive="false">
-        <sub_features>
-          <FeatureCondition idurl="f266_gps" label="GPS">
-            <sub_features>
-              <FeatureTags idurl="f267_gps_type" label="gps type" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t1042_gps" label="gps"/>
-                  <Tag idurl="t1043_assisted_gps" label="assisted gps"/>
-                  <Tag idurl="t1045_turn-by-turn_gps" label="turn-by-turn gps"/>
-                  <Tag idurl="t1046_voice-guided_directions" label="voice-guided directions"/>
-                  <Tag idurl="t1047_none" label="none"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureCondition idurl="f268_location-based_services" label="Location-based services">
-            <sub_features>
-              <FeatureTags idurl="f269_maps_service" label="Maps service" is_exclusive="false">
-                <tags>
-                  <Tag idurl="t1053_google_maps" label="google maps"/>
-                  <Tag idurl="t1054_nokia_maps" label="nokia maps"/>
-                  <Tag idurl="t1055_vz_navigator" label="vz navigator"/>
-                  <Tag idurl="t1056_sprint_lbs" label="sprint lbs"/>
-                  <Tag idurl="t1092_blackberry_maps" label="blackberry maps"/>
-                  <Tag idurl="t1133_at&amp;t_telenav_navigator" label="at&amp;t telenav navigator"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-          <FeatureTags idurl="f277_geolocation_features" label="Geolocation features" is_exclusive="false">
-            <tags>
-              <Tag idurl="t1104_geotag_pictures" label="geotag pictures"/>
-              <Tag idurl="t1105_location-based_services" label="location-based services"/>
-              <Tag idurl="t1106_none" label="none"/>
-            </tags>
-          </FeatureTags>
-          <FeatureNumeric idurl="f285_gps_experience" label="GPS experience" format="% .2f" value_min="0.0" value_max="5.0"/>
-        </sub_features>
-        <tags>
-          <Tag idurl="t496_gps" label="gps"/>
-          <Tag idurl="t497_triangulation" label="triangulation"/>
-          <Tag idurl="t498_none" label="none"/>
-        </tags>
-      </FeatureTags>
-      <FeatureTags idurl="f168_usage" label="Usage" is_exclusive="false">
-        <tags>
-          <Tag idurl="t581_make_phone_calls" label="make phone calls"/>
-          <Tag idurl="t582_email_&amp;_office_productivity" label="email &amp; office productivity"/>
-          <Tag idurl="t583_internet_&amp;_social_media" label="internet &amp; social media"/>
-          <Tag idurl="t584_games_&amp;_entertainment" label="games &amp; entertainment"/>
-          <Tag idurl="t586_gps_&amp;_location-based_services" label="gps &amp; location-based services"/>
-        </tags>
-      </FeatureTags>
-      <FeatureTags idurl="f170_category" label="Category" is_exclusive="true">
-        <tags>
-          <Tag idurl="t595_cell_phone" label="cell phone"/>
-          <Tag idurl="t596_smart_phone" label="smart phone"/>
-          <Tag idurl="t597_messaging_phone" label="messaging phone"/>
-          <Tag idurl="t598_camera_phone" label="camera phone"/>
-          <Tag idurl="t599_media_phone" label="media phone"/>
-          <Tag idurl="t600_ruggedized_phone" label="ruggedized phone"/>
-          <Tag idurl="t1138_gps_phone" label="gps phone"/>
-        </tags>
-      </FeatureTags>
-      <FeatureTags idurl="f191_cool_factor" label="Cool factor" is_exclusive="true">
-        <tags>
-          <Tag idurl="t709_non_descript" label="non descript"/>
-          <Tag idurl="t711_mainstream" label="mainstream"/>
-          <Tag idurl="t712_sleek" label="sleek"/>
-          <Tag idurl="t713_hot" label="hot"/>
-          <Tag idurl="t714_passe" label="passe"/>
-          <Tag idurl="t715_professional" label="professional"/>
-        </tags>
-      </FeatureTags>
-      <FeatureHeader idurl="f204_productivity" label="Productivity">
-        <sub_features>
-          <FeatureCondition idurl="f205_calendar" label="Calendar">
-            <sub_features>
-              <FeatureTags idurl="f206_calendar_support" label="Calendar support" is_exclusive="false" help="ics = iCal&#xD;
-caldav = google &amp; yahoo">
-                <tags>
-                  <Tag idurl="t775_ics" label="ics"/>
-                  <Tag idurl="t776_caldav" label="caldav"/>
-                </tags>
-              </FeatureTags>
-            </sub_features>
-          </FeatureCondition>
-        </sub_features>
-      </FeatureHeader>
-      <FeatureTags idurl="f241_segment" label="Segment" is_exclusive="false">
-        <tags>
-          <Tag idurl="t922_business" label="business"/>
-          <Tag idurl="t926_entertainment" label="entertainment"/>
-          <Tag idurl="t1086_lightweight" label="lightweight"/>
-          <Tag idurl="t1087_camera" label="camera"/>
-          <Tag idurl="t1125_basic" label="basic"/>
-          <Tag idurl="t1129_messaging" label="messaging"/>
-          <Tag idurl="t1140_travel" label="travel"/>
-        </tags>
-      </FeatureTags>
-      <FeatureInterval idurl="f262_price_range" label="Price range" class_name="numeric">
-        <sub_features>
-          <FeatureNumeric idurl="f263_subsidized_price" label="Subsidized price" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-          <FeatureNumeric idurl="f264_unsubsidized_price" label="Unsubsidized Price" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-        </sub_features>
-        <ranges>
-          <FeatureNumeric idurl="f262_price_range-min" label="Price range-min" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-          <FeatureNumeric idurl="f262_price_range-max" label="Price range-max" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-        </ranges>
-      </FeatureInterval>
-      <FeatureNumeric idurl="f272_overall_ux" label="Overall ux" format="% .2f" value_min="0.0" value_max="5.0"/>
-    </sub_features>
-  </Knowledge>
+		<FeatureHeader idurl="apps_productivity" label="Apps &amp; Productivity">
+			<sub_features>
+				<FeatureHeader idurl="productivity" label="Productivity">
+					<sub_features>
+						<FeatureRating idurl="productivity_rating" label="Productivity Rating" min_rating="0" max_rating="10" user_category="user"/>
+
+						<FeatureTags idurl="view_email_attachments" label="Email Attachments Viewer" is_exclusive="false">
+							<tags>
+								<Tag idurl="adobe_pdf" label="Adobe pdf"/>
+								<Tag idurl="ms_word" label="Word document"/>
+								<Tag idurl="ms_excel" label="Excel spreadsheet"/>
+								<Tag idurl="ms_powerpoint" label="Powerpoint presentation"/>
+								<Tag idurl="zip_manager" label="zip manager"/>
+								<Tag idurl="gif" label="gif"/>
+								<Tag idurl="jpg" label="jpg"/>
+								<Tag idurl="png" label="png"/>
+								<Tag idurl="none" label="none"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureHeader>
+
+				<FeatureCondition idurl="third_party_applications" label="Third-party Applications">
+					<sub_features>
+						<FeatureRating idurl="apps_rating" label="Apps Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureCondition idurl="application_store" label="Application Store"/>
+						<FeatureTags idurl="application_marketplace" label="Application Marketplace" is_exclusive="true">
+							<tags>
+								<Tag idurl="none" label="none"/>
+								<Tag idurl="limited" label="limited"/>
+								<Tag idurl="satisfying" label="satisfying"/>
+								<Tag idurl="thriving" label="thriving"/>
+								<Tag idurl="large" label="large"/>
+								<Tag idurl="largest" label="largest"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureCondition>
+
+			</sub_features>
+		</FeatureHeader>
+
+
+		<FeatureHeader idurl="media" label="Media">
+			<sub_features>
+				<FeatureRating idurl="media_rating" label="Media Rating" min_rating="0" max_rating="10" user_category="user"/>
+				<FeatureTags idurl="media_sync_up" label="Media Player &amp; Sync Up" is_exclusive="false">
+					<tags>
+						<Tag idurl="android_media_player" label="Android Media Player"/>
+						<Tag idurl="blackberry_media_sync" label="blackberry media sync"/>
+						<Tag idurl="itunes" label="iTunes"/>
+						<Tag idurl="mass_storage" label="Mass Storage Mode"/>
+						<Tag idurl="nokia_music_manager" label="Nokia Music Manager"/>
+						<Tag idurl="proprietary" label="Proprietary"/>
+						<Tag idurl="windows_media_player" label="Windows Media Player"/>
+					</tags>
+				</FeatureTags>
+
+				<FeatureCondition idurl="music" label="Music">
+					<sub_features>
+						<FeatureRating idurl="music_rating" label="Music Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="music_formats" label="Music Formats" is_exclusive="false">
+							<tags>
+								<Tag idurl="3gp" label="3gp"/>
+								<Tag idurl="aac" label="AAC"/>
+								<Tag idurl="aiff" label="AIFF"/>
+								<Tag idurl="apple_lossless" label="Apple Lossless"/>
+								<Tag idurl="amr_nb" label="AMR-NB"/>
+								<Tag idurl="amr_wb" label="AMR-WB"/>
+								<Tag idurl="aac+" label="AAC+"/>
+								<Tag idurl="eaac+" label="EAAC+"/>
+								<Tag idurl="mp3" label="MP3 VBR"/>
+								<Tag idurl="mp3_vbr" label="MP3 VBR"/>
+								<Tag idurl="midi" label="MIDI"/>
+								<Tag idurl="protected_aac" label="Protected AAC"/>
+								<Tag idurl="qcelp_evrc" label="QCELP EVRC"/>
+								<Tag idurl="wav" label="WAV"/>
+								<Tag idurl="wma9_pro" label="WMA9 pro"/>
+								<Tag idurl="wma_10" label="WMA10"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="music_store" label="Music Store &amp; Services " is_exclusive="false">
+							<tags>
+								<Tag idurl="amazon_mp3" label="Amazon MP3"/>
+								<Tag idurl="comes_with_music_(nokia)" label="Comes with music (Nokia)"/>
+								<Tag idurl="itunes" label="iTunes"/>
+								<Tag idurl="imeem_mobile" label="iMeem Mobile"/>
+								<Tag idurl="lastfm" label="Last.fm"/>
+								<Tag idurl="pandora" label="Pandora"/>
+								<Tag idurl="shazam" label="Shazam"/>
+								<Tag idurl="spotify" label="Spotify"/>
+								<Tag idurl="sprint_music" label="Sprint Digital Lounge"/>
+								<Tag idurl="sprint_radio" label="Sprint Radio"/>
+								<Tag idurl="vcast_with_rhapsody" label="VCast Music with Rhapsody"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="audio_connector" label="Audio Connector" is_exclusive="true">
+							<tags>
+								<Tag idurl="3.5_mm" label="3.5 mm jack"/>
+								<Tag idurl="2.5_mm" label="2.5 mm jack"/>
+								<Tag idurl="custom" label="proprietary jack"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureCondition>
+
+				<FeatureCondition idurl="video" label="Video">
+					<sub_features>
+						<FeatureRating idurl="video_rating" label="Video Rating" min_rating="0" max_rating="10" user_category="user"/>
+						<FeatureTags idurl="video_services" label="Video Services" is_exclusive="false">
+							<tags>
+								<Tag idurl="att_cellular_video" label="AT&amp;T Mobile TV"/>
+								<Tag idurl="blackberrymedia_center" label="blackberrymedia center"/>
+								<Tag idurl="flash_video" label="Flash Internet Video"/>
+								<Tag idurl="itunes" label="iTunes"/>
+								<Tag idurl="realplayer" label="RealPlayer"/>
+								<Tag idurl="roxio_media_manager" label="Roxio media manager"/>
+								<Tag idurl="sprint_tv" label="Sprint TV"/>
+								<Tag idurl="vcasttv" label="VCast TV"/>
+								<Tag idurl="vcast_video" label="VCast Video"/>
+								<Tag idurl="youtube" label="YouTube"/>
+							</tags>
+						</FeatureTags>
+						<FeatureTags idurl="Video_formats" label="Video Formats" is_exclusive="false">
+							<tags>
+								<Tag idurl=".3gp" label=".3gp"/>
+								<Tag idurl=".m4v" label=".m4v"/>
+								<Tag idurl=".mp4" label=".mp4"/>
+								<Tag idurl=".mov" label=".mov"/>
+								<Tag idurl="avc/h.264" label="avc/h.264"/>
+								<Tag idurl="cif_@_30_fps" label="cif @ 30 fps"/>
+								<Tag idurl="divx_4" label="divx 4"/>
+								<Tag idurl="divx_5" label="divx 5"/>
+								<Tag idurl="divx_6" label="divx 6"/>
+								<Tag idurl="flash" label="Flash"/>
+								<Tag idurl="h.263" label="h.263"/>
+								<Tag idurl="mpeg_4" label="Mpeg-4"/>
+								<Tag idurl="realvideo" label="realvideo"/>
+								<Tag idurl="windows_media_(wmv9)" label="windows media (wmv9)"/>
+								<Tag idurl="wmv3" label="wmv3"/>
+								<Tag idurl="xvid" label="xvid"/>
+							</tags>
+						</FeatureTags>
+					</sub_features>
+				</FeatureCondition>
+
+			</sub_features>
+		</FeatureHeader>
+
+	</sub_features>
+</Knowledge>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="Do you have a favorite brand?" dimension="Lifestyle" weight="0.5">
+    <Choice idurl="c1_nokia" label="nokia" url_description="files/c1_nokia@description.txt" url_image="images/c1_nokia@main_image.jpg"
+      recommendation="featureIs('f1_brand', 't4_nokia')"/>
+
+    <Choice idurl="c3_blackberry" label="blackberry" url_description="files/c3_blackberry@description.txt" url_image="images/c3_blackberry@main_image.jpg"
+      recommendation="featureIs('f1_brand', 't6_blackberry')"/>
+
+    <Choice idurl="c4_samsung" label="samsung" url_description="files/c4_samsung@description.txt" url_image="images/c4_samsung@main_image.jpg"
+      recommendation="featureIs('f1_brand', 't8_samsung')"/>
+
+    <Choice idurl="c7_apple" label="apple" url_description="files/c7_apple@description.txt" url_image="images/c7_apple@main_image.jpg"
+      recommendation="featureIs('f1_brand', 't10_apple')"/>
+
+    <Choice idurl="c8_other" label="other" url_description="files/c8_other@description.txt" url_image="images/c8_other@main_image.jpg"
+      recommendation="featureIs('f1_brand', :any => %w[t4_nokia t10_apple t8_samsung t6_blackberry t10_apple])"/>
+
+  </Question>

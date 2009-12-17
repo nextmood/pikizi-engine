@@ -211,16 +211,11 @@ class QuizzeInstance < Root
     node_quizze_instance
   end
 
-  # sort the affinities by ranking, and normalized the affinities measures (from 0 to 100)
+  # sort the affinities by ranking
   def sorted_affinities
     unless @sorted_affinities
       @sorted_affinities = hash_productidurl_affinity.collect { |product_idurl, affinity| affinity }
       @sorted_affinities.sort! { |a1, a2| a2.measure <=> a1.measure }
-      # normalization...
-      measure_max, measure_min = @sorted_affinities.first.measure, @sorted_affinities.last.measure
-      if should_normalized = (measure_min != measure_max)
-        a = 100.0 / (measure_max - measure_min); b = -a * measure_min
-      end
       current_ranking = 0; previous_measure = nil
       @sorted_affinities.each do |affinity|
         if affinity.measure != previous_measure
@@ -270,8 +265,11 @@ class QuizzeInstance < Root
   # return the last time this quizze instance was updated
   def last_update() (last_answer = answers.last) ? last_answer.time_stamp : created_at end
 
-  def nb_answers()
-    hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
+  def nb_answers() answers.size end
+  #  hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
+
+  def nb_products_ranked_at_most(max_ranking=3)
+    34  
   end
 
   # record a user's answer  for this quizze_instance
@@ -332,6 +330,7 @@ class QuizzeInstance < Root
     answers.each do |answer|
       question = answer.question(knowledge)
       hash_pidurl2weight = HashProductIdurl2Weight.after_answer(question, answer)
+      hash_pidurl2weight = hash_pidurl2weight * question.weight
       min_weight, max_weight = hash_pidurl2weight.min_max
       hash_question_idurl2min_max_weight[answer.question_idurl] = [min_weight, max_weight]
       ab = (min_weight == max_weight) ? nil : Root.rule3_ab(min_weight, max_weight)
@@ -393,14 +392,15 @@ class Affinity < Root
   key :feedback, Integer, :default => 0
 
   attr_accessor :quiz_instance
-  attr_accessor :measure_normalized # return the normalized value, between 0 and 100
 
   def link_back(quiz_instance) self.quiz_instance = quiz_instance end
 
   def add(weight, question_weight)
     self.nb_weight += question_weight
-    self.sum_weight += weight
+    self.sum_weight += weight * question_weight
   end
+
+  def product(knowledge) knowledge.get_product_by_idurl(product_idurl) end
 
   def self.initialize_from_xml(xml_node)
     affinity = super(xml_node)

@@ -213,7 +213,7 @@ class Choice < Root
   # generate the weights for the considered products
   # return a HashProductIdurl2Weight object  
   def generate_hash_product_idurl_2_weight(products, question)
-    self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, products, recommendation, intensity)
+    self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, question, products, recommendation, intensity)
   end
 
   def hash_product_idurl_2_weight
@@ -245,20 +245,30 @@ class Choice < Root
 
     attr_accessor :selected_product, :knowledge
 
+    def initialize(knowledge)
+      @knowledge = knowledge
+    end
+    
     # return a hash product_idurl -> weight
-    def self.eval(knowledge, products, recommendation, intensity)
+    def self.eval(knowledge, question, products, recommendation, intensity)
       hash_product_idurl2weight = {}
       if recommendation
-        evaluator = Evaluator.new
-        evaluator.knowledge = knowledge
+        evaluator = Evaluator.new(knowledge)
         products.each do |product|
           evaluator.selected_product = product
-          unless (value = evaluator.instance_eval(recommendation)).nil?
+          begin
+            value = evaluator.instance_eval(recommendation)
+          rescue
+            puts "***** OUPS I can't evalaluate #{recommendation} in question #{question.idurl} for product #{product.idurl}"
+            value = nil
+          end
+
+          unless value.nil?
             if value == true or value == false
               value = (value == true ? Evaluator.intensity2float("very_high") : Evaluator.intensity2float("very_low"))
             end
-            raise "error value=#{value} intensity=#{intensity} recommendation=#{recommendation}" unless value >= 0.0 and value <= 1.0
-            value = value * intensity
+            raise "error value=#{value} intensity=#{intensity} recommendation=#{recommendation}" unless value.is_a?(Float) and value >= 0.0 and value <= 1.0
+            value = value * intensity  * (question.is_choice_exclusive ? 1.0 : 1.0 / question.nb_choices.to_f)
             hash_product_idurl2weight[product.idurl] = value
             # puts "evaluating product=#{product.idurl} against #{recommendation} --> value=#{value}"
           end
@@ -545,9 +555,8 @@ class HashProductIdurl2Weight
     self
   end
 
-  def normalize(question)
-    cardinality = question.is_choice_exclusive ? 1.0 : question.nb_choices.size.to_f
-    @hash_pidurl_weight.each { |pidurl, weight| @hash_pidurl_weight[pidurl] = (weight / cardinality) * question.weight }
+  def *(multiplicator)
+    @hash_pidurl_weight.each { |pidurl, weight| @hash_pidurl_weight[pidurl] = weight * multiplicator }
     self
   end
 
@@ -564,12 +573,11 @@ class HashProductIdurl2Weight
   def each(&block) @hash_pidurl_weight.each(&block) end
 
   # create a new  HashProductIdurl2Weight object, weights are the one resulting from the answer
-  # return normalized weight (divided by the number of choices)
   def self.after_answer(question, answer)
     question.get_choice_ok_from_idurls(answer.choice_idurls_ok).inject(nil) do |s, choice_ok|
       hp = choice_ok.hash_product_idurl_2_weight
       s ? s + hp : hp
-    end.normalize(question)
+    end
   end
 
   def min_max()

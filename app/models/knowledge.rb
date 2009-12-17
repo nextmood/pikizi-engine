@@ -113,7 +113,7 @@ class Knowledge < Root
 
   end
 
-  # this entry will updtate the whole xml directories/files
+  # this entry will update the whole xml directories/files
   def generate_xml
     domain_directory = "public/domains/#{idurl}"
     doc = XML::Document.new
@@ -126,12 +126,14 @@ class Knowledge < Root
     Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
   end
 
-  def generate_product_template
+  def generate_product_template(product=nil)
     doc = XML::Document.new
     doc.root =  (top_node = XML::Node.new("Product"))
-    top_node['label'] = "Label..."
-    features.each { |feature| feature.generate_product_template(top_node, 0)  }
-    doc.save("public/domains/#{idurl}/knowledge/product_template.xml")
+    top_node['label'] = product ? product.label : "Label..."
+    features.each { |feature| feature.generate_product_template(top_node, 0, product)  }
+    path = "public/domains/#{idurl}/knowledge/"
+    path << "#{product ? product.idurl : 'product_template'}.xml"
+    doc.save(path)
   end
 
   # return the number of products handled by this model
@@ -193,7 +195,7 @@ class Knowledge < Root
   end
 
   def ensure_unique(h, o)
-    raise "OUPS more than one #{o.idurl}" if h[o.idurl]
+    raise "OUPS more than one idurl=#{o.idurl}" if h[o.idurl]
     h[o.idurl] = o; h
   end
   # --------- Matrix Html ----------------------------------------------------------------
@@ -203,7 +205,14 @@ class Knowledge < Root
   end
   # ---------------------------------------------------------------------------------------
 
-
+  def clean_url(url, product)
+    if url.has_prefix("http") or url.has_prefix("/")
+      url
+    else
+      # local url
+      "/domains/#{idurl}/products/#{product.idurl}/#{url}"
+    end
+  end
 
 end
 
@@ -265,21 +274,25 @@ class Feature < Root
     node_feature
   end
 
-  def generate_product_template(top_node, depth)
+  def generate_product_template(top_node, depth, product)
     tag_name = self.class.to_s
 
     if tag_name == "FeatureHeader"
       tabulation = "    " * (depth + 1)
       top_node << XML::Node.new_comment("#{tabulation}BEGIN #{label} ")
-      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1) } if features.size > 0
+      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
       top_node << XML::Node.new_comment("#{tabulation}END #{label} ")
     else
       tabulation = "    " * depth
       top_node << XML::Node.new_comment("#{tabulation}#{tag_name} #{label} ")
       top_node << (xml_node = XML::Node.new("Value"))
-      xml_node << XML::Node.new_comment("#{tabulation}#{product_template_comment} ")
       xml_node['idurl'] = idurl
-      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1) } if features.size > 0
+      if product and value = product.get_value(idurl)
+        xml_node << value2xml(value)
+      end
+      xml_node << XML::Node.new_comment("#{tabulation}#{product_template_comment()} ")
+      
+      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
     end
 
     top_node
@@ -311,7 +324,7 @@ class Feature < Root
   end
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) content_string end
+  def xml2value(content_string) content_string.strip end
   def value2xml(value) value.to_s end
 
   def color_from_status(product)
@@ -380,14 +393,7 @@ class Feature < Root
     g.output( :png => "/public/images/graphviz/distance.png" )
   end
 
-  def clean_url(url, product)
-    if url.has_prefix("http") or url.has_prefix("/")
-      url
-    else
-      # local url
-      "/domains/#{knowledge.idurl}/products/#{product.idurl}/#{url}"
-    end
-  end
+
 
 end
 
@@ -437,7 +443,7 @@ class FeatureTags < Feature
 
   def get_value_html(product)
     if idurls_ok = get_value(product)
-      tags.select { |t| idurls_ok.include?(t.idurl) }.collect {|t| "\"#{t.label}\"" }.join(', ')
+      tags.select { |t| idurls_ok.include?(t.idurl) }.collect {|t| "#{t.label}" }.join(', ')
     end
   end
 
@@ -463,7 +469,7 @@ class FeatureTags < Feature
   end
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) content_string.split(', ') end
+  def xml2value(content_string) content_string.strip.split(', ') end
   def value2xml(value) value.join(', ') end
 
   # ---------------------------------------------------------------------
@@ -556,7 +562,7 @@ class FeatureRating < Feature
   def self.icon_star() "<img src=\"/images/icons/star.png\" />" end
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) Float(content_string) end
+  def xml2value(content_string) Float(content_string.strip) end
   def value2xml(value) value.to_s end
 
   # ---------------------------------------------------------------------
@@ -723,7 +729,7 @@ class FeatureNumeric < FeatureContinous
   def get_value_01(product) Root.rule3(get_value(product), value_min, value_max) end
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) Float(content_string) end
+  def xml2value(content_string) Float(content_string.strip) end
   def value2xml(value) value.to_s end
 
   def product_template_comment() "a number between #{value_min} and #{value_max}" end
@@ -760,7 +766,7 @@ class FeatureDate < FeatureContinous
 
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) FeatureDate.xml2date(content_string) end
+  def xml2value(content_string) FeatureDate.xml2date(content_string.strip) end
   def value2xml(value) FeatureDate.date2xml(value) end
 
   def product_template_comment() "a date between #{value2xml(value_min)} and #{value2xml(value_max)}" end
@@ -804,7 +810,10 @@ class FeatureCondition < Feature
   # ---------------------------------------------------------------------
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) content_string != "" and content_string.downcase != "false" end
+  def xml2value(content_string)
+    content_string = content_string.strip
+    content_string != "" and content_string.downcase != "false"
+  end
   def value2xml(value) value.to_s end
 
 end
@@ -881,7 +890,7 @@ end
 class FeatureTextarea < Feature
   def get_value_html(product)
     if url = get_value(product)
-      "<a href=\"#{clean_url(url, product)}\">link</a>"
+      "<a href=\"#{knowledge.clean_url(url, product)}\">link</a>"
     end
   end
 
@@ -893,7 +902,7 @@ class FeatureImage < Feature
 
   def get_value_html(product)
     if url = get_value(product)
-      "<img src=\"#{clean_url(url, product)}\" width=\"100\" height=\"100\" />"
+      "<img src=\"#{knowledge.clean_url(url, product)}\" width=\"100\" height=\"100\" />"
     end
   end
 
@@ -905,7 +914,7 @@ end
 class FeatureUrl < Feature
   def get_value_html(product)
     if url = get_value(product)
-      "<a href=\"#{clean_url(url, product)}\">link</a>"
+      "<a href=\"#{knowledge.clean_url(url, product)}\">link</a>"
     end
   end
 

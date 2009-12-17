@@ -1,0 +1,110 @@
+<div id="main">
+    <div class="box952">
+
+        <h1>Results</h1>
+        <ul class="bugRt">
+            <li><a href="#">save</a></li>
+            <li><a href="#">| share</a></li>
+            <li class="iconBtn"><a href="#"><img src="/images/gene/twitTxt.jpg" /></a></li>
+            <li class="iconBtn"><a href="#"><img src="/images/gene/faceBkTxt.jpg" /></a></li>
+            <li class="backAd"><a href="/test_quizz">back to advisor</a></li>
+
+            <li class="answers">12</li>
+        </ul>
+        <div id="search_boxBg">
+            <div class="spcr"></div>
+
+        <% for affinity in @sorted_affinities %>
+            <% if affinity.ranking <= 3 %>
+                <% product = affinity.product(@knowledge) %>
+                <ul class="<%= { 1 => "one", 2 => "two", 3 => "three" }[affinity.ranking] %>"
+                    <h3><%= product.label %></h3>
+                    <% feature = @knowledge.get_feature_by_idurl("main_image") %>
+                    <li class="img">
+
+                      <img src="<%= @knowledge.clean_url(feature.get_value(product), product) %>" width="200" height=200" />
+
+                    </li>
+                               <li class="details">
+                <table>
+                    <tr>
+                        <td>Model:</td>
+                        <td class="lft"><strong><%= affinity.product(@knowledge).label %></strong></td>
+                    </tr>
+                    <tr>
+                        <% feature = @knowledge.get_feature_by_idurl("f1_brand") %>
+                        <td><%= feature.label %></td>    
+                        <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
+                    </tr>
+                    <tr>
+                        <% feature = @knowledge.get_feature_by_idurl("f110_carriers") %>
+                        <td><%= feature.label %></td>
+                        <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rating:</td>
+                        <td class="lft"><ul class='star-rating'>
+                    <li class='current-rating' style="width:16px;">Currently 3.5/5 Stars.</li>
+                </ul></td>
+                    </tr>
+                    <tr>
+                        <td>Best Price:</td>
+
+                        <td class="lft blue"><strong>$243.95</strong></td>
+                    </tr>
+                </table>
+                <ul class="icons">
+                    <li><a href="#"><img src="/images/gene/iconCart.png"</a></li>
+                    <li><a href="#"><img src="/images/gene/iconSrch.png"</a></li>
+                    <li><a href="#"><img src="/images/gene/iconHrt.png"</a></li>
+                    <li><a href="#"><img src="/images/gene/iconX.png"</a></li>
+
+                    <li><a href="#"><img src="/images/gene/iconFace.png"</a></li>
+                    <li><a href="#"><img src="/images/gene/iconTwit.png"</a></li>
+                    <div class="spcr"></div>
+                </ul>
+                <a href="/test_product_page_results">Product Details</a>
+            </li>
+            <li class="fit">
+                <table>
+
+                    <tr>
+                        <td class="header">Personal&nbsp;Fit</td>
+                        <td class="countr"><div class="count"><%= (affinity.measure * 100).round %>%</div></td>
+                    </tr>
+                    <tr>
+                        <td>Overall fit</td>
+                        <td class="bar">
+                          <ul class='star-rating'>
+                            <li class='current-rating' style="width:120px;">Currently 3.5/5 Stars.</li>
+                          </ul>
+                        </td>
+                        <td class="grn">8</td>
+                    </tr>
+
+                    <% for dimension in @quizze.dimensions %>
+                    <tr>
+                        <td><%= dimension %></td>
+                        <td class="bar">
+                          <ul class='star-rating'>
+                            <li class='current-rating' style="width:42px;">Currently 3.5/5 Stars.</li>
+                          </ul>
+                        </td>
+                        <td class="grn">8</td>
+                    </tr>
+                    <% end %>
+
+
+                </table>
+            </li>
+            <div class="spcr"></div>
+                </ul>
+            <% end %>
+        <% end %>
+
+
+         </div>
+         <div class="spcr"></div>
+    </div>
+</div>

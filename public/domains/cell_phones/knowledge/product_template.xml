@@ -1,587 +1,441 @@
 <?xml version="1.0"?>
 <Product label="Label...">
-<!--FeatureRating Expert rating -->
-  <Value idurl="main_expert_rating">
-<!--a number between 1 and 5 -->
+<!--FeatureRating Expert Rating -->
+  <Value idurl="overall_expert_rating">
+<!--a number between 0 and 10 -->
   </Value>
-<!--FeatureRating Everyone rating -->
-  <Value idurl="main_user_rating">
-<!--a number between 1 and 5 -->
+<!--FeatureRating User Rating -->
+  <Value idurl="overall_user_rating">
+<!--a number between 0 and 10 -->
   </Value>
-<!--FeatureImage Picture -->
+<!--FeatureImage Product Picture -->
   <Value idurl="main_image">
 <!--an url, like images/mabelle_image.html -->
   </Value>
-<!--FeatureUrl Url -->
+<!--FeatureUrl URL -->
   <Value idurl="main_url">
 <!--an url, like http//amazon.com/iphone.html -->
   </Value>
-<!--FeatureTextarea Full description -->
+<!--FeatureTextarea Product Description -->
   <Value idurl="description">
 <!--an url, like files/toto.html -->
   </Value>
 <!--FeatureTags Brand -->
-  <Value idurl="f1_brand">
-<!--ONE tag among: t4_nokia  t5_motorola  t6_blackberry  t7_sony_ericsson  t8_samsung  t9_lg_electronics  t10_apple  t11_sanyo  t12_siemens  t310_htc  t789_palm -->
+  <Value idurl="brand">
+<!--ONE tag among: nokia  motorola  blackberry  sony_ericsson  samsung  lg_electronics  apple  sanyo  siemens  htc  palm -->
   </Value>
-<!--FeatureDate Release date -->
-  <Value idurl="f3_release_date">
+<!--FeatureTags Carriers -->
+  <Value idurl="carriers">
+<!--ONE tag among: att  sprint  t_mobile  verizon  prepaid  unlocked -->
+  </Value>
+<!--FeatureText Nickname -->
+  <Value idurl="nickname">
+<!--a string -->
+  </Value>
+<!--FeatureTags Phone Category -->
+  <Value idurl="phone_category">
+<!--ONE tag among: cell_phone  smartphone  messaging_phone  camera_phone  media_phone -->
+  </Value>
+<!--FeatureDate Release Date -->
+  <Value idurl="release_date">
 <!--a date between 2000/01/01 00:00:00 and 2020/01/01 00:00:00 -->
   </Value>
-<!--    FeatureTags status -->
-  <Value idurl="f210_status">
-<!--    ONE tag among: t795_released  t796_unreleased  t797_announced  t798_leaked -->
+<!--FeatureTags Release Status -->
+  <Value idurl="release_status">
+<!--ONE tag among: released  announced  leaked -->
   </Value>
-<!--    BEGIN Tips -->
-<!--    FeatureTags pros -->
-  <Value idurl="f108_pros">
-<!--    ONE tag among:  -->
+<!--FeatureNumeric Unsubsidized Price -->
+  <Value idurl="unsubsidized_price">
+<!--a number between 0.0 and 1000.0 -->
   </Value>
-<!--    FeatureTags cons -->
-  <Value idurl="f109_cons">
-<!--    ONE tag among:  -->
+<!--FeatureNumeric Special [Carrier] Promotion -->
+  <Value idurl="special_carrier_promotion">
+<!--a number between 0.0 and 1000.0 -->
   </Value>
-<!--    END Tips -->
+<!--FeatureNumeric Subsidized price -->
+  <Value idurl="subsidized_price">
+<!--a number between 0.0 and 1000.0 -->
+  </Value>
+<!--    FeatureCondition  -->
+  <Value idurl="plan_requirements">
+<!--    true or false -->
+  </Value>
+<!--        FeatureNumeric Minimum monthly plan -->
+  <Value idurl="minimum_plam">
+<!--        a number between 0.0 and 1000.0 -->
+  </Value>
+<!--        FeatureNumeric Minimum monthly data plan -->
+  <Value idurl="data_plan">
+<!--        a number between 0.0 and 1000.0 -->
+  </Value>
+<!--        FeatureNumeric Minimum subscription time -->
+  <Value idurl="minimum_subcription">
+<!--        a number between 0.0 and 4.0 -->
+  </Value>
+<!--        FeatureNumeric Activation Fee -->
+  <Value idurl="activation_fee">
+<!--        a number between 0.0 and 1000.0 -->
+  </Value>
+<!--        FeatureNumeric Early Cancellation Costs -->
+  <Value idurl="early_cancellation">
+<!--        a number between 0.0 and 1000.0 -->
+  </Value>
+<!--FeatureNumeric Amazon's Price -->
+  <Value idurl="amazon_price">
+<!--a number between 0.0 and 1000.0 -->
+  </Value>
+<!--    FeatureUrl Amazon's Product Page -->
+  <Value idurl="amazon_url">
+<!--    an url, like http//amazon.com/iphone.html -->
+  </Value>
+<!--FeatureNumeric BestBuy's Price -->
+  <Value idurl="best_buy_price">
+<!--a number between 0.0 and 1000.0 -->
+  </Value>
+<!--    FeatureUrl BestBuy's Product Page -->
+  <Value idurl="bestbuy_url">
+<!--    an url, like http//amazon.com/iphone.html -->
+  </Value>
+<!--FeatureNumeric Radioshack's Price -->
+  <Value idurl="radioshack_price">
+<!--a number between 0.0 and 1000.0 -->
+  </Value>
+<!--    FeatureUrl Radioshack's Product Page -->
+  <Value idurl="radioshack_url">
+<!--    an url, like http//amazon.com/iphone.html -->
+  </Value>
 <!--    BEGIN Hardware -->
-<!--        BEGIN screen -->
-<!--        FeatureNumeric colors -->
-  <Value idurl="f17_colors">
-<!--        a number between 1.0 and 2000000000.0 -->
+<!--        BEGIN Screen -->
+<!--        FeatureRating Screen Rating -->
+  <Value idurl="screen_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureNumeric size -->
-  <Value idurl="f114_size">
-<!--        a number between 0.0 and 10.0 -->
-  </Value>
-<!--        FeatureTags type -->
-  <Value idurl="f117_type">
-<!--        MANY tags among: t355_lcd  t989_lcd_tft  t990_amoled  t991_pmoled  t1147_oled -->
-  </Value>
-<!--        FeatureTags touch screen -->
-  <Value idurl="f122_touch_screen">
-<!--        MANY tags among: f245_haptic_feedback  t361_capacitive  t362_resistive  t363_none -->
-  </Value>
-<!--        FeatureTags resolution (in pixels) -->
-  <Value idurl="f144_resolution_(in_pixels)">
-<!--        ONE tag among: t1005_640_x_480_(vga)  t1006_640_x_360  t1007_480_x_320_(hvga)  t1008_320_x_240_(qvga)  t1070_400_x_240  t1114_480_x_360  t1117_800_x_480  t1124_260_x_240  t1126_220_x_176  t1132_320_x_320  t1137_320x_400  t1146_128_x_128 -->
-  </Value>
-<!--        FeatureTags resolution -->
-  <Value idurl="f214_resolution">
-<!--        MANY tags among: t1001_vga  t1002_nhd  t1003_hvga  t1004_qvga  t1127_lower -->
-  </Value>
-<!--        FeatureRating screen quality -->
-  <Value idurl="f283_screen_quality">
-<!--        a number between 1 and 5 -->
-  </Value>
-<!--        END screen -->
-<!--    FeatureTags form factor -->
-  <Value idurl="f20_form_factor">
-<!--    MANY tags among: t58_candy_bar  t59_touch_screen  t60_clamshell  t61_swivel  t62_slider -->
-  </Value>
-<!--    FeatureTags body -->
-  <Value idurl="f21_body">
-<!--    MANY tags among: t66_stylish  t67_sharp  t68_robust  t69_thick  t935_basic  t1010_rounded  t1011_square  t1077_slim  t1078_appealing  t1079_handsome -->
-  </Value>
-<!--        FeatureTags materials -->
-  <Value idurl="f165_materials">
-<!--        MANY tags among: t556_brushed_metal  t558_metal_grip  t559_ruggedized_plastic  t560_matted_plastic  t975_smooth_plastic  t978_high-end_plastic  t979_glassy_screen  t980_leatherette  t1009_soft_touch_plastic -->
-  </Value>
-<!--        FeatureTags skin -->
-  <Value idurl="f166_skin">
-<!--        MANY tags among: t568_brands_&_fashion  t569_leatherette  t570_luxurious  t981_texture  t982_colors  t983_plain  t984_smooth  t985_solid  t986_matted  t987_steely  t988_metal  f252_ruggedized_body -->
-  </Value>
-<!--    FeatureTags hardware buttons -->
-  <Value idurl="f23_hardware_buttons">
-<!--    MANY tags among: t75_call  t76_hang  t77_menu  t78_home  t79_mute  t80_volume  t81_lock  t617_on/off  t648_ringer_on/off  t824_email  t825_calendar  t933_media  t1021_navigation  t1067_contacts  t1081_shutter  t1082_back -->
-  </Value>
-<!--        FeatureTags navigation -->
-  <Value idurl="f257_navigation">
-<!--        MANY tags among: t1025_touch_pad  t1026_touch_screen  t1027_scroll_wheel  t1130_toggle  t1141_navigation_array  t1144_keypad -->
-  </Value>
-<!--    FeatureTags keyboard -->
-  <Value idurl="f118_keyboard">
-<!--    MANY tags among: t341_full_qwerty  t342_numeric  t343_suretype  t344_virtual  t561_full_sliding_keyboard  t1036_full_detachable_keyboard -->
-  </Value>
-<!--        FeatureTags virtual keyboard mode -->
-  <Value idurl="f119_virtual_keyboard_mode">
-<!--        MANY tags among: t348_landscape  t349_portrait  t1122_none -->
-  </Value>
-<!--        FeatureTags keyboard characteristics -->
-  <Value idurl="f160_keyboard_characteristics">
-<!--        MANY tags among: t537_springy  t538_cramped  t1068_tactile -->
-  </Value>
-<!--        FeatureTags sliding keyboard -->
-  <Value idurl="f194_sliding_keyboard">
-<!--        ONE tag among: t732_vertical  t733_horizontal  t1035_none -->
-  </Value>
-<!--        FeatureNumeric keyboard experience -->
-  <Value idurl="f276_keyboard_experience">
+<!--        FeatureNumeric Screen Size -->
+  <Value idurl="screen_size">
 <!--        a number between 0.0 and 5.0 -->
   </Value>
-<!--    FeatureTags sensors -->
-  <Value idurl="f120_sensors">
-<!--    MANY tags among: t353_accelerometer  t354_ambient_light  t639_proximity  t640_none -->
+<!--        FeatureNumeric Screen Resolution L -->
+  <Value idurl="screen_resolution_l">
+<!--        a number between 0.0 and 2000.0 -->
   </Value>
-<!--        BEGIN size -->
-<!--        FeatureNumeric height -->
-  <Value idurl="f136_height">
-<!--        a number between 2.0 and 5.0 -->
+<!--        FeatureNumeric Screen Resolution W -->
+  <Value idurl="screen_resolution_w">
+<!--        a number between 0.0 and 1100.0 -->
   </Value>
-<!--        FeatureNumeric width -->
-  <Value idurl="f137_width">
-<!--        a number between 1.0 and 3.5 -->
+<!--        FeatureTags Touchscreen -->
+  <Value idurl="touchscreen">
+<!--        ONE tag among: capacitive  resistive  none -->
   </Value>
-<!--        FeatureNumeric depth -->
-  <Value idurl="f138_depth">
-<!--        a number between 0.0 and 1.5 -->
+<!--        END Screen -->
+<!--        BEGIN Design & Construction -->
+<!--        FeatureRating Design & Construction rating -->
+  <Value idurl="design_construction_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        END size -->
-<!--    FeatureNumeric weight -->
-  <Value idurl="f139_weight">
-<!--    a number between 2.0 and 7.0 -->
+<!--        FeatureTags Form Factor -->
+  <Value idurl="form_factor">
+<!--        MANY tags among: candy_bar  touchscreen  clamshell  swivel  slider -->
+  </Value>
+<!--        FeatureCondition Ruggedized -->
+  <Value idurl="ruggedized">
+<!--        true or false -->
+  </Value>
+<!--            BEGIN Device size -->
+<!--            FeatureNumeric Device Height -->
+  <Value idurl="device_height">
+<!--            a number between 2.0 and 5.0 -->
+  </Value>
+<!--            FeatureNumeric Device Width -->
+  <Value idurl="device_width">
+<!--            a number between 1.0 and 3.5 -->
+  </Value>
+<!--            FeatureNumeric Device Depth -->
+  <Value idurl="device_depth">
+<!--            a number between 0.0 and 1.5 -->
+  </Value>
+<!--            FeatureNumeric Device Weight -->
+  <Value idurl="device_weight">
+<!--            a number between 2.0 and 7.0 -->
+  </Value>
+<!--            END Device size -->
+<!--        END Design & Construction -->
+<!--        BEGIN Controls & Navigation -->
+<!--        FeatureRating Controls & Navigation Rating -->
+  <Value idurl="controls_navigation_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureTags navigation -->
+  <Value idurl="navigation">
+<!--        MANY tags among: dpad  keypad  navigation_array  touch_pad  touchscreen  toggle  trackball -->
+  </Value>
+<!--        END Controls & Navigation -->
+<!--        BEGIN Keyboard & Input -->
+<!--        FeatureRating Keyboard & Input Rating -->
+  <Value idurl="keyboard_input_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureTags Keyboard Type -->
+  <Value idurl="keyboard_type">
+<!--        MANY tags among: numeric  horizontal_qwerty  vertical_qwerty  suretype  virtual -->
+  </Value>
+<!--        END Keyboard & Input -->
+<!--        BEGIN Battery -->
+<!--        FeatureRating Battery Life Rating -->
+  <Value idurl="battery_life_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureNumeric power -->
+  <Value idurl="battery_power">
+<!--        a number between 1.0 and 3000.0 -->
+  </Value>
+<!--        FeatureNumeric Talk Time -->
+  <Value idurl="talk_time">
+<!--        a number between 1.0 and 24.0 -->
+  </Value>
+<!--            FeatureNumeric 2G Talk Time -->
+  <Value idurl="2g_talk_time">
+<!--            a number between 0.0 and 24.0 -->
+  </Value>
+<!--            FeatureNumeric 3G Talk Time -->
+  <Value idurl="3g_talk_time">
+<!--            a number between 0.0 and 24.0 -->
+  </Value>
+<!--        FeatureNumeric Standby Time -->
+  <Value idurl="standby_time">
+<!--        a number between 1.0 and 1000.0 -->
+  </Value>
+<!--        FeatureNumeric Video Playback Time -->
+  <Value idurl="video_playback_time">
+<!--        a number between 1.0 and 24.0 -->
+  </Value>
+<!--        FeatureNumeric Music Playback Time -->
+  <Value idurl="music_playback_time">
+<!--        a number between 1.0 and 48.0 -->
+  </Value>
+<!--        FeatureNumeric Wifi Time -->
+  <Value idurl="wifi_time">
+<!--        a number between 0.0 and 24.0 -->
+  </Value>
+<!--        FeatureTags Battery Type -->
+  <Value idurl="battery_type">
+<!--        ONE tag among: removable_battery  extensible_battery -->
+  </Value>
+<!--        END Battery -->
+<!--    FeatureCondition Camera -->
+  <Value idurl="camera">
+<!--    true or false -->
+  </Value>
+<!--        FeatureRating Camera Rating -->
+  <Value idurl="camera_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureNumeric Camera Resolution -->
+  <Value idurl="camera_resolution">
+<!--        a number between 0.0 and 15.0 -->
+  </Value>
+<!--        FeatureTags Camera Features -->
+  <Value idurl="camera_features">
+<!--        MANY tags among: autofocus  contact_pictures  digital_zoom  flash  image_correction  image_stabilization  optical_zoom  red_eye_reduction  video_mode -->
+  </Value>
+<!--    FeatureCondition GPS -->
+  <Value idurl="gps">
+<!--    true or false -->
+  </Value>
+<!--        FeatureRating Geolocation Rating -->
+  <Value idurl="gps_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureTags GPS Services -->
+  <Value idurl="gps_services">
+<!--        MANY tags among: att_navigator  blackberry_maps  google_maps  google_maps_navigation  navigon_app  nokia_maps  other_gps_app  other_gps_service  sprint_nav  telenav_app  telenav_navigator  tomtom_app  vz_navigator  vz_navigator_global -->
+  </Value>
+<!--        FeatureTags GPS Features -->
+  <Value idurl="gps_features">
+<!--        MANY tags among: automatic_reroute  familymap  geotag_pictures  international_navigation  location_based_apps  location_based_services  local_search  traffic_alerts  turn_by_turn_gps  voice-guided  none -->
   </Value>
 <!--    END Hardware -->
 <!--    BEGIN Communication -->
-<!--    FeatureCondition email -->
-  <Value idurl="f123_email">
-<!--    true or false -->
+<!--        BEGIN Connectivity & Internet Experience -->
+<!--        FeatureRating Connectivity & Internet Experience Rating -->
+  <Value idurl="connectivity_internet_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags email platform -->
-  <Value idurl="f124_email_platform">
-<!--        MANY tags among: t372_gmail  t374_lotus_notes  t379_other  t380_yahoo  t469_aol_mail  t470_windows_live_hotmail  t482_novell_groupwise  t701_mobileme  t702_imap/pop3  t703_ms_exchange  t801_ms_outlook  t924_smtp  t1128_none  t1145_web -->
+<!--        FeatureTags Connectivity -->
+  <Value idurl="conectivity">
+<!--        MANY tags among: bluetooth  wifi  2g  3g  4g  cdma  gsm  umts  hsdpa  wcdma  ev_do  gprs  edge  tri_band  quad_band -->
   </Value>
-<!--        FeatureTags view email attachments -->
-  <Value idurl="f149_view_email_attachments">
-<!--        MANY tags among: t474_jpeg  t475_adobe_pdf  t476_ms_office  t477_ms_word  t478_ms_excel  t479_ms_powerpoint  t1028_zip_manager  t1069_none -->
+<!--        FeatureCondition Data Tethering -->
+  <Value idurl="data_tethering">
+<!--        true or false -->
   </Value>
-<!--        FeatureTags Misc -->
-  <Value idurl="f140-f274">
-<!--        MANY tags among:  -->
+<!--        FeatureTags Internet -->
+  <Value idurl="internet">
+<!--        ONE tag among: full_internet  partial_internet  none -->
   </Value>
-<!--        FeatureNumeric Multiple email accounts -->
-  <Value idurl="f151_multiple_email_accounts">
-<!--        a number between 0.0 and 20.0 -->
+<!--        END Connectivity & Internet Experience -->
+<!--        BEGIN Messaging, Emails, and Social Networks -->
+<!--        FeatureRating Messaging, Emails, and Social Networks Rating -->
+  <Value idurl="messaging_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--    FeatureRating call quality -->
-  <Value idurl="f251_call_quality">
-<!--    a number between 1 and 5 -->
+<!--        FeatureCondition Email -->
+  <Value idurl="email">
+<!--        true or false -->
   </Value>
-<!--    FeatureTags call -->
-  <Value idurl="f125_call">
-<!--    MANY tags among:  -->
+<!--            FeatureTags email platform -->
+  <Value idurl="email_platform">
+<!--            MANY tags among: aol_mail  gmail  mobileme  windows_live_hotmail  yahoo  lotus_notes  ms_exchange  novell_groupwise  imap/pop3  smtp  web  other -->
   </Value>
-<!--    FeatureTags hearing aid rating -->
-  <Value idurl="f140_hearing_aid_rating">
-<!--    MANY tags among: t429_m3  t430_m4  t431_t3  t432_t4 -->
+<!--            FeatureCondition Email Push Delivery -->
+  <Value idurl="push_delivery">
+<!--            true or false -->
   </Value>
-<!--    FeatureTags messaging -->
-  <Value idurl="f152_messaging">
-<!--    MANY tags among: t487_sms  t488_mms  t489_im  t490_twitter  t491_facebook  t963_mms_w/_video_messaging -->
+<!--            FeatureNumeric Multiple Email Accounts -->
+  <Value idurl="multiple_email_accounts">
+<!--            a number between 0.0 and 20.0 -->
   </Value>
-<!--    FeatureTags best suited for -->
-  <Value idurl="f167_best_suited_for">
-<!--    MANY tags among: t574_calling  t575_emails  t576_texting  t616_social_media  t925_entertainment -->
+<!--        FeatureTags Messaging -->
+  <Value idurl="messaging">
+<!--        MANY tags among: sms  mms  mms_w_video_messaging  none -->
   </Value>
-<!--    FeatureTags voice recording -->
-  <Value idurl="f186_voice_recording">
-<!--    ONE tag among: t666_native  t667_third-party  t668_none -->
+<!--        FeatureTags Instant Messaging -->
+  <Value idurl="im">
+<!--        MANY tags among: aim  blackberry_messenger  gtalk  fring  skype  windows_live  yahoo_messenger  none -->
   </Value>
-<!--    FeatureTags contacts -->
-  <Value idurl="f197_contacts">
-<!--    MANY tags among:  -->
+<!--        FeatureTags Social Networks -->
+  <Value idurl="social_networks">
+<!--        MANY tags among: facebook  foursquare  gowalla  linkedin  loopt  myspace  tumblr  twitter  none -->
   </Value>
-<!--    FeatureTags misc -->
-  <Value idurl="f200+229+237">
-<!--    MANY tags among:  -->
+<!--        END Messaging, Emails, and Social Networks -->
+<!--        BEGIN Contacts and Social Networks -->
+<!--        FeatureRating Contacts and Social Networks Rating -->
+  <Value idurl="contacts_rating">
+<!--        a number between 0 and 10 -->
   </Value>
+<!--        END Contacts and Social Networks -->
+<!--        BEGIN Call Functionality & Quality -->
+<!--        FeatureRating Call Functionality & Quality Rating -->
+  <Value idurl="call_rating">
+<!--        a number between 0 and 10 -->
+  </Value>
+<!--        FeatureTags Calling Features -->
+  <Value idurl="call_features">
+<!--        MANY tags among: push_to_talk  international_roaming  voice_calling  visual_voicemail  speed_dialing  google_voice  skype  voip -->
+  </Value>
+<!--        END Call Functionality & Quality -->
 <!--    END Communication -->
-<!--    BEGIN Connectivity -->
-<!--    FeatureCondition bluetooth -->
-  <Value idurl="f38_bluetooth">
-<!--    true or false -->
+<!--    BEGIN Overall Functionality & Performance -->
+<!--    FeatureRating Functionality & Performance Rating -->
+  <Value idurl="functionality_performance_rating">
+<!--    a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags type -->
-  <Value idurl="f39_type">
-<!--        MANY tags among: t130_1.0  t131_2.0  t802_2.1  t849_stereo  t850_edr  t851_a2dp -->
+<!--    FeatureTags Operating System -->
+  <Value idurl="operating_system">
+<!--    ONE tag among: apple  android  blackberry  palm_webos  symbian  windows_mobile  proprietary -->
   </Value>
-<!--    FeatureCondition wifi -->
-  <Value idurl="f36_wifi">
-<!--    true or false -->
+<!--    END Overall Functionality & Performance -->
+<!--FeatureRating User Interface Rating -->
+  <Value idurl="user_interface_rating">
+<!--a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags type -->
-  <Value idurl="f37_type">
-<!--        MANY tags among: t511_a  t512_b  t513_g  t514_n -->
+<!--FeatureTags Advanced User Features -->
+  <Value idurl="ui_advanced_features">
+<!--MANY tags among: accelerometer  copy_and_paste  copy_and_paste_pictures  home_screen_personalization  multi_touch  multi_tasking_voice_app  multi_tasking_app  text_to_speech  universal_search  voice_commands  none -->
   </Value>
-<!--    FeatureTags bands -->
-  <Value idurl="f178_bands">
-<!--    MANY tags among: t624_umts  t625_hsdpa  t841_gsm  t842_wcdma  t843_3g  t959_cdma  t964_ev-do  t1012_gprs  t1013_edge -->
+<!--FeatureRating Security & Management Rating -->
+  <Value idurl="security_management_rating">
+<!--a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags bands frequency -->
-  <Value idurl="f180_bands_frequency">
-<!--        MANY tags among: t635_850  t670_900  t671_1800  t672_1900  t673_2100  t960_800  t1088_1700 -->
+<!--FeatureTags Security & Management Features -->
+  <Value idurl="security_features">
+<!--MANY tags among: activesync  ondevice_encryption  complex_passwords  remote_wipe  remote_management  vpn_connection  none -->
   </Value>
-<!--        FeatureTags multiple bands -->
-  <Value idurl="f224_multiple_bands">
-<!--        MANY tags among: t847_tri-band  t848_quad-band  t1108_dual-band -->
+<!--FeatureRating Storage & Syncing Rating -->
+  <Value idurl="storage_syncing_rating">
+<!--a number between 0 and 10 -->
   </Value>
-<!--    FeatureTags audio connector -->
-  <Value idurl="f183_audio_connector">
-<!--    ONE tag among: t653_3.5_mm  t654_2.5_mm  t998_custom -->
-  </Value>
-<!--    FeatureTags misc -->
-  <Value idurl="f185-f212-f249-f280">
-<!--    MANY tags among:  -->
-  </Value>
-<!--    END Connectivity -->
 <!--    BEGIN Memory -->
 <!--    FeatureNumeric internal memory size -->
-  <Value idurl="f42_internal_memory_size">
+  <Value idurl="internal_memory_size">
 <!--    a number between 0.0 and 64.0 -->
   </Value>
-<!--    FeatureTags external memory type -->
-  <Value idurl="f43_external_memory_type">
-<!--    MANY tags among: t138_sd  t139_micro-sd  t140_sdhc  t141_stick  t142_stick_micro  t620_none  t1150_m2 -->
-  </Value>
 <!--    FeatureNumeric maximum external memory -->
-  <Value idurl="f282_maximum_external_memory">
+  <Value idurl="maximum_external_memory">
 <!--    a number between 0.0 and 64.0 -->
   </Value>
 <!--    END Memory -->
-<!--    BEGIN Battery -->
-<!--    FeatureNumeric power -->
-  <Value idurl="f45_power">
-<!--    a number between 1.0 and 9000.0 -->
+<!--    BEGIN Apps & Productivity -->
+<!--        BEGIN Productivity -->
+<!--        FeatureRating Productivity Rating -->
+  <Value idurl="productivity_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--    FeatureNumeric talk time -->
-  <Value idurl="f46_talk_time">
-<!--    a number between 1.0 and 24.0 -->
+<!--        FeatureTags Email Attachments Viewer -->
+  <Value idurl="view_email_attachments">
+<!--        MANY tags among: adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png  none -->
   </Value>
-<!--        FeatureNumeric 2G talk time -->
-  <Value idurl="f173_2g_talk_time">
-<!--        a number between 0.0 and 1000.0 -->
-  </Value>
-<!--        FeatureNumeric 3G talk time -->
-  <Value idurl="f174_3g_talk_time">
-<!--        a number between 0.0 and 1000.0 -->
-  </Value>
-<!--    FeatureNumeric standby_time -->
-  <Value idurl="f47_standby_time">
-<!--    a number between 1.0 and 500.0 -->
-  </Value>
-<!--    FeatureNumeric video_playback_time -->
-  <Value idurl="f48_video_playback_time">
-<!--    a number between 1.0 and 24.0 -->
-  </Value>
-<!--    FeatureNumeric music_playback_time -->
-  <Value idurl="f49_music_playback_time">
-<!--    a number between 1.0 and 48.0 -->
-  </Value>
-<!--    FeatureNumeric Wifi time -->
-  <Value idurl="f175_wifi_time">
-<!--    a number between 0.0 and 24.0 -->
-  </Value>
-<!--    END Battery -->
-<!--FeatureTags Operating system -->
-  <Value idurl="f50_operating_system">
-<!--MANY tags among: t146_apple  t147_google_android  t148_symbian  t150_motomagx  t151_blackberry  t790_palm_webos  t1014_windows_mobile  t1072_proprietary -->
-  </Value>
-<!--    FeatureTags UI -->
-  <Value idurl="f192_ui">
-<!--    MANY tags among: t720_multi-touch  t721_single-handed  t852_single_touch  t853_keyboard_and_buttons -->
-  </Value>
-<!--    FeatureTags touch hand gesture -->
-  <Value idurl="f193_touch_hand_gesture">
-<!--    MANY tags among: t725_multi-touch  t726_pinching  t727_sliding  t728_multi-touch_zooming  t767_double_tap -->
-  </Value>
-<!--    FeatureTags multi-tasking -->
-  <Value idurl="f195_multi-tasking">
-<!--    ONE tag among: t737_none  t739_poor  t740_decent  t741_good  t742_seamless -->
-  </Value>
-<!--    FeatureTags advanced features -->
-  <Value idurl="f203_advanced_features">
-<!--    MANY tags among: t765_copy_and_paste  t766_none  t769_copy_and_paste_pictures  t1100_home_screen_personalization -->
-  </Value>
-<!--    FeatureTags misc -->
-  <Value idurl="f239-240-etc...">
-<!--    MANY tags among: f239_voice_commands  f240_text-to-speech  f202_search_phone -->
-  </Value>
-<!--    FeatureNumeric UI ease of use -->
-  <Value idurl="f256_ui_ease_of_use">
-<!--    a number between 0.0 and 5.0 -->
-  </Value>
-<!--    FeatureNumeric Responsiveness -->
-  <Value idurl="f261_responsiveness">
-<!--    a number between 0.0 and 5.0 -->
-  </Value>
-<!--    FeatureTags UI system -->
-  <Value idurl="f271_ui_system">
-<!--    MANY tags among: t1064_samsung_touchwiz  t1065_lg_touchflo_3d  t1066_apple  t1093_blackberry  t1121_sony_ericsson_xperia  t1149_sprint_one_click -->
-  </Value>
-<!--    BEGIN Internet -->
-<!--    FeatureTags Internet access -->
-  <Value idurl="f157_internet_access">
-<!--    MANY tags among: t523_full  t524_partial  t525_none -->
-  </Value>
-<!--    FeatureTags page zoom -->
-  <Value idurl="f59_page_zoom">
-<!--    MANY tags among: t197_multi-touch  t198_button  t1076_magnifying_glass -->
-  </Value>
-<!--    FeatureTags browser -->
-  <Value idurl="f158_browser">
-<!--    MANY tags among: t688_safari  t854_nokia  t1015_opera  t1016_internet_explorer  t1071_samsung  t1089_blackberry -->
-  </Value>
-<!--    FeatureTags Social media -->
-  <Value idurl="f172_social_media">
-<!--    MANY tags among: t612_facebook  t613_myspace  t614_twitter  t615_none  t952_rss_feed -->
-  </Value>
-<!--    FeatureTags internet platforms -->
-  <Value idurl="f189_internet_platforms">
-<!--    MANY tags among: t693_css/html  t694_flash  t695_java  t855_javascript  t961_wap  f270_rss_reader -->
-  </Value>
-<!--    FeatureNumeric Internet experience -->
-  <Value idurl="f255_internet_experience">
-<!--    a number between 0.0 and 5.0 -->
-  </Value>
-<!--    END Internet -->
-<!--FeatureCondition Camera -->
-  <Value idurl="f60_camera">
-<!--true or false -->
-  </Value>
-<!--    FeatureNumeric camera resolution -->
-  <Value idurl="f61_camera_resolution">
-<!--    a number between 0.0 and 12.0 -->
-  </Value>
-<!--    FeatureTags features -->
-  <Value idurl="f62_features">
-<!--    MANY tags among: t204_autofocus  t405_zeiss_lens  t799_image_correction -->
-  </Value>
-<!--    FeatureCondition zoom -->
-  <Value idurl="f63_zoom">
+<!--        END Productivity -->
+<!--    FeatureCondition Third-party Applications -->
+  <Value idurl="third_party_applications">
 <!--    true or false -->
   </Value>
-<!--        FeatureNumeric range -->
-  <Value idurl="f64_range">
-<!--        a number between 1.0 and 20.0 -->
+<!--        FeatureRating Apps Rating -->
+  <Value idurl="apps_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags type -->
-  <Value idurl="f65_type">
-<!--        ONE tag among: t212_optical  t404_digital  t1123_none -->
+<!--        FeatureCondition Application Store -->
+  <Value idurl="application_store">
+<!--        true or false -->
   </Value>
-<!--    FeatureCondition video -->
-  <Value idurl="f66_video">
-<!--    true or false -->
+<!--        FeatureTags Application Marketplace -->
+  <Value idurl="application_marketplace">
+<!--        ONE tag among: none  limited  satisfying  thriving  large  largest -->
   </Value>
-<!--        FeatureTags features -->
-  <Value idurl="f67_features">
-<!--        MANY tags among: t219_hd  t220_dvd  t221_16x9  t222_30fps  t223_flash_with_continuous_lighting -->
-  </Value>
-<!--        FeatureTags resolution -->
-  <Value idurl="f227_resolution">
-<!--        MANY tags among: t872_vga  t873_qvga  t874_qcif -->
-  </Value>
-<!--        FeatureTags misc -->
-  <Value idurl="f228-f231">
-<!--        MANY tags among: f228_front_camera_for_video_calls  f231_real_time_video_sharing -->
-  </Value>
-<!--        FeatureRating video quality -->
-  <Value idurl="f260_video_quality">
-<!--        a number between 1 and 5 -->
-  </Value>
-<!--    FeatureTags online picture and video sharing -->
-  <Value idurl="f146_online_picture_and_video_sharing">
-<!--    MANY tags among: t445_flickr  t446_facebook  t865_ovi  t1080_photobucket  t1084_kodak_gallery  t1085_snapfish  t1136_none -->
-  </Value>
-<!--    FeatureTags flash -->
-  <Value idurl="f225_flash">
-<!--    MANY tags among: t861_led_flash  t862_xenon_flash  t863_red-eye_reduction  t864_none -->
-  </Value>
-<!--    FeatureTags camera modes -->
-  <Value idurl="f234_camera_modes">
-<!--    MANY tags among: t896_scene_modes  t897_capture_modes -->
-  </Value>
-<!--    FeatureTags camera controls -->
-  <Value idurl="f235_camera_controls">
-<!--    MANY tags among: t901_white_balance  t902_color_tones  t903_exposure  t1083_advanced -->
-  </Value>
-<!--    FeatureRating picture quality -->
-  <Value idurl="f259_picture_quality">
-<!--    a number between 1 and 5 -->
-  </Value>
-<!--    FeatureNumeric camera controls sophistication -->
-  <Value idurl="f284_camera_controls_sophistication">
-<!--    a number between 0.0 and 5.0 -->
-  </Value>
+<!--    END Apps & Productivity -->
 <!--    BEGIN Media -->
-<!--    FeatureCondition video playback -->
-  <Value idurl="f71_video_playback">
+<!--    FeatureRating Media Rating -->
+  <Value idurl="media_rating">
+<!--    a number between 0 and 10 -->
+  </Value>
+<!--    FeatureTags Media Player & Sync Up -->
+  <Value idurl="media_sync_up">
+<!--    MANY tags among: android_media_player  blackberry_media_sync  itunes  mass_storage  nokia_music_manager  proprietary  windows_media_player -->
+  </Value>
+<!--    FeatureCondition Music -->
+  <Value idurl="music">
 <!--    true or false -->
   </Value>
-<!--        FeatureTags services -->
-  <Value idurl="f72_services">
-<!--        MANY tags among: t229_youtube  t230_itunes  t231_blackberrymedia_center  t232_roxio_media_manager  t233_hd  t879_realplayer  t965_vcast  t1017_spring_tv  t1074_at&t_cellular_video -->
+<!--        FeatureRating Music Rating -->
+  <Value idurl="music_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags formats -->
-  <Value idurl="f73_formats">
-<!--        MANY tags among: t237_flash  t238_mpeg-4  t239_avc/h.264  t241_windows_media_(wmv9)  t242_cif_@_30_fps  t451_divx_4  t453_divx_5  t454_divx_6  t456_wmv3  t465_xvid  t466_h.263  t880_realvideo  t885_.3gp -->
+<!--        FeatureTags Music Formats -->
+  <Value idurl="music_formats">
+<!--        MANY tags among: 3gp  aac  aiff  apple_lossless  amr_nb  amr_wb  aac+  eaac+  mp3  mp3_vbr  midi  protected_aac  qcelp_evrc  wav  wma9_pro  wma_10 -->
   </Value>
-<!--        FeatureRating video quality -->
-  <Value idurl="f279_video_quality">
-<!--        a number between 1 and 5 -->
+<!--        FeatureTags Music Store & Services  -->
+  <Value idurl="music_store">
+<!--        MANY tags among: amazon_mp3  comes_with_music_(nokia)  itunes  imeem_mobile  lastfm  pandora  shazam  spotify  sprint_music  sprint_radio  vcast_with_rhapsody -->
   </Value>
-<!--    FeatureCondition music player -->
-  <Value idurl="f74_music_player">
+<!--        FeatureTags Audio Connector -->
+  <Value idurl="audio_connector">
+<!--        ONE tag among: 3.5_mm  2.5_mm  custom -->
+  </Value>
+<!--    FeatureCondition Video -->
+  <Value idurl="video">
 <!--    true or false -->
   </Value>
-<!--        FeatureTags formats -->
-  <Value idurl="f75_formats">
-<!--        MANY tags among: t248_mp3  t249_aac  t252_wav  t253_aiff  t254_apple_lossless  t457_midi  t459_amr-nb  t460_aac+  t461_eaac+  t462_3gp  t463_wma9_pro  t464_wma_10 -->
+<!--        FeatureRating Video Rating -->
+  <Value idurl="video_rating">
+<!--        a number between 0 and 10 -->
   </Value>
-<!--        FeatureTags media sync up -->
-  <Value idurl="f161_media_sync_up">
-<!--        MANY tags among: t542_itunes  t543_windows_media_player  t868_nokia_music_manager  t1115_blackberry_media_sync -->
+<!--        FeatureTags Video Services -->
+  <Value idurl="video_services">
+<!--        MANY tags among: att_cellular_video  blackberrymedia_center  flash_video  itunes  realplayer  roxio_media_manager  sprint_tv  vcasttv  vcast_video  youtube -->
   </Value>
-<!--        FeatureTags media player -->
-  <Value idurl="f162_media_player">
-<!--        MANY tags among: t866_itunes  t867_windows_media_player  t923_realplayer  t1059_phone-specific -->
-  </Value>
-<!--        FeatureTags music store -->
-  <Value idurl="f188_music_store">
-<!--        MANY tags among: t685_thru_wifi  t686_thru_cell  t687_none  t1142_thru_pc_sync -->
-  </Value>
-<!--        FeatureTags music service -->
-  <Value idurl="f244_music_service">
-<!--        MANY tags among: t939_comes_with_music_(nokia)  t940_itunes  t962_vcast_with_rhapsody  t1019_sprint_music  t1073_at&t_mobile_music -->
-  </Value>
-<!--        FeatureRating music quality -->
-  <Value idurl="f281_music_quality">
-<!--        a number between 1 and 5 -->
-  </Value>
-<!--    FeatureCondition radio -->
-  <Value idurl="f76_radio">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags radio type -->
-  <Value idurl="f77_radio_type">
-<!--        MANY tags among: t260_fm  t261_rds  t1075_internet  t1135_none -->
-  </Value>
-<!--    FeatureCondition media center -->
-  <Value idurl="f78_media_center">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags features -->
-  <Value idurl="f79_features">
-<!--        MANY tags among: t267_upnp_support  t268_media_synchronizing -->
-  </Value>
-<!--    FeatureCondition tv-out support -->
-  <Value idurl="f81_tv-out_support">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags format -->
-  <Value idurl="f82_format">
-<!--        MANY tags among: t276_pal  t277_ntsc -->
-  </Value>
-<!--    FeatureCondition gaming platform -->
-  <Value idurl="f201_gaming_platform">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags gaming platform -->
-  <Value idurl="f247_gaming_platform">
-<!--        MANY tags among: t949_n-gage -->
-  </Value>
-<!--    FeatureTags speakerphones -->
-  <Value idurl="f275_speakerphones">
-<!--    MANY tags among: t1097_stereo  t1098_mono  t1099_none -->
+<!--        FeatureTags Video Formats -->
+  <Value idurl="Video_formats">
+<!--        MANY tags among: .3gp  .m4v  .mp4  .mov  avc/h.264  cif_@_30_fps  divx_4  divx_5  divx_6  flash  h.263  mpeg_4  realvideo  windows_media_(wmv9)  wmv3  xvid -->
   </Value>
 <!--    END Media -->
-<!--FeatureTags Carriers -->
-  <Value idurl="f110_carriers">
-<!--MANY tags among: t325_alltel  t326_at&t  t327_sprint  t328_t-mobile  t329_verizon  t1018_unlocked -->
-  </Value>
-<!--FeatureTextarea Nickname -->
-  <Value idurl="f111_nickname">
-<!--an url, like files/toto.html -->
-  </Value>
-<!--    BEGIN Third-party applications -->
-<!--    FeatureCondition application store -->
-  <Value idurl="f131_application_store">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags application store -->
-  <Value idurl="f236_application_store">
-<!--        ONE tag among: t908_iphone_app_store  t909_blackberry_store  t910_ovi_store  t974_none  t1107_verizon_appzone  t1134_at&t -->
-  </Value>
-<!--    FeatureTags application marketplace -->
-  <Value idurl="f196_application_marketplace">
-<!--    ONE tag among: t746_none  t747_limited  t748_satisfying  t749_thriving  t750_large  t751_largest -->
-  </Value>
-<!--    END Third-party applications -->
-<!--FeatureTags Geolocation -->
-  <Value idurl="f153_geolocation">
-<!--MANY tags among: t496_gps  t497_triangulation  t498_none -->
-  </Value>
-<!--    FeatureCondition GPS -->
-  <Value idurl="f266_gps">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags gps type -->
-  <Value idurl="f267_gps_type">
-<!--        MANY tags among: t1042_gps  t1043_assisted_gps  t1045_turn-by-turn_gps  t1046_voice-guided_directions  t1047_none -->
-  </Value>
-<!--    FeatureCondition Location-based services -->
-  <Value idurl="f268_location-based_services">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags Maps service -->
-  <Value idurl="f269_maps_service">
-<!--        MANY tags among: t1053_google_maps  t1054_nokia_maps  t1055_vz_navigator  t1056_sprint_lbs  t1092_blackberry_maps  t1133_at&t_telenav_navigator -->
-  </Value>
-<!--    FeatureTags Geolocation features -->
-  <Value idurl="f277_geolocation_features">
-<!--    MANY tags among: t1104_geotag_pictures  t1105_location-based_services  t1106_none -->
-  </Value>
-<!--    FeatureNumeric GPS experience -->
-  <Value idurl="f285_gps_experience">
-<!--    a number between 0.0 and 5.0 -->
-  </Value>
-<!--FeatureTags Usage -->
-  <Value idurl="f168_usage">
-<!--MANY tags among: t581_make_phone_calls  t582_email_&_office_productivity  t583_internet_&_social_media  t584_games_&_entertainment  t586_gps_&_location-based_services -->
-  </Value>
-<!--FeatureTags Category -->
-  <Value idurl="f170_category">
-<!--ONE tag among: t595_cell_phone  t596_smart_phone  t597_messaging_phone  t598_camera_phone  t599_media_phone  t600_ruggedized_phone  t1138_gps_phone -->
-  </Value>
-<!--FeatureTags Cool factor -->
-  <Value idurl="f191_cool_factor">
-<!--ONE tag among: t709_non_descript  t711_mainstream  t712_sleek  t713_hot  t714_passe  t715_professional -->
-  </Value>
-<!--    BEGIN Productivity -->
-<!--    FeatureCondition Calendar -->
-  <Value idurl="f205_calendar">
-<!--    true or false -->
-  </Value>
-<!--        FeatureTags Calendar support -->
-  <Value idurl="f206_calendar_support">
-<!--        MANY tags among: t775_ics  t776_caldav -->
-  </Value>
-<!--    END Productivity -->
-<!--FeatureTags Segment -->
-  <Value idurl="f241_segment">
-<!--MANY tags among: t922_business  t926_entertainment  t1086_lightweight  t1087_camera  t1125_basic  t1129_messaging  t1140_travel -->
-  </Value>
-<!--FeatureInterval Price range -->
-  <Value idurl="f262_price_range">
-<!--[numeric, numeric] -->
-  </Value>
-<!--    FeatureNumeric Subsidized price -->
-  <Value idurl="f263_subsidized_price">
-<!--    a number between 0.0 and 1000.0 -->
-  </Value>
-<!--    FeatureNumeric Unsubsidized Price -->
-  <Value idurl="f264_unsubsidized_price">
-<!--    a number between 0.0 and 1000.0 -->
-  </Value>
-<!--FeatureNumeric Overall ux -->
-  <Value idurl="f272_overall_ux">
-<!--a number between 0.0 and 5.0 -->
-  </Value>
 </Product>

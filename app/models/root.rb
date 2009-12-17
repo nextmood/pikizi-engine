@@ -21,7 +21,7 @@ class Root
       user.reviews = []
       user.save
     end
-    k = Knowledge.initialize_from_xml("cell_phones")
+    k = Knowledge.initialize_from_xml("cell_phones_legacy")
     k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight }
     "database reset"
   end
@@ -157,7 +157,7 @@ class Root
 
   def self.get_entries(path)
     Dir.new("#{path}").entries.inject([]) do |l, entry|
-      [".", ".."].include?(entry) ? l : l << entry
+      (entry.has_prefix(".") or entry.has_prefix("..")) ? l : l << entry
     end
   end
 

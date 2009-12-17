@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="false" label="How often do you typically charge your phone?"  dimension="Hardware" weight="1">
+    <Choice idurl="not" label="from time to time" preference="maximize(:battery_life_rating, :low)"/>
+    <Choice idurl="medium" label="overnight" preference="maximize(:battery_life_rating, :medium)"/>
+    <Choice idurl="important" label="several times a day" preference="maximize(:battery_life_rating, :high)"/>
+    <Choice idurl="critical" label="I always run out of power" preference="maximize(:battery_life_rating, :very_high)"/>
+</Question>

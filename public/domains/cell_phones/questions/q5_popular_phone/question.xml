@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="Are you interested in any popular phone?"  dimension="Overall" weight="1"> 
+    <Choice idurl="iphone3gs" label="iPhone 3GS" url_image="images/iphone3gs.png" predicate="productIs(:iphone3gs)"/>
+    <Choice idurl="motorola_droid" label="Motorola Droid" url_image="images/motodroid.png" predicate="productIs(:motorola_droid)"/>
+    <Choice idurl="palm_pre" label="Palm Pre" url_image="images/palm_pre.jpg" predicate="productIs(:palm_pre)"/>
+    <Choice idurl="blackberry_bold" label="BlackBerry Bold" url_image="images/blackberry-bold-9700.jpg" predicate="productIs(:blackberry_bold_9700)"/>
+    <Choice idurl="htc_mytouch" label="HTC mytouch 3G" url_image="images/HTC_mytouch3g.png" predicate="productIs(:htc_mytouch3g)"/>
+</Question>

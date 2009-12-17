@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="Is camera resolution important?"  dimension="Hardware" weight="1">   
+    <Choice idurl="not" label="not really" url_image="images/low_camera.png" recommendation="maximize(:camera_resolution)" intensity="very_low"/>
+    <Choice idurl="somewhat" label="somewhat" url_image="images/average_camera.png" recommendation="maximize(:camera_resolution)" intensity="medium"/>
+    <Choice idurl="very" label="very important" url_image="images/camera2.png" recommendation="maximize(:camera_resolution)" intensity="very_high"/>
+</Question>
+
+
+
+

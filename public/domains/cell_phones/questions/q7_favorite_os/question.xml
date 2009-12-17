@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="Do you have a favorite operating system?"  dimension="Functionality" weight="1">  
+    <Choice idurl="apple" label="Apple" url_image="images/apple_homescreen.jpg" predicate="featureIs(:operating_system, :apple)"/>
+    <Choice idurl="android" label="Android" url_image="images/android_home_screen.png" predicate="featureIs(:operating_system, :android)"/>
+    <Choice idurl="blackberry" label="BlackBerry" url_image="images/blackberry_homescreen.jpg" predicate="featureIs(:operating_system, :blackberry)"/>
+    <Choice idurl="palm_webos" label="Palm webos" url_image="images/palm_pre_homescreen.jpg" predicate="featureIs(:operating_system, :palm_webos)"/>
+    <Choice idurl="windows_mobile" label="Windows Mobile" url_image="images/MS_screenshot.jpg" predicate="featureIs(:operating_system, :windows_mobile)"/>
+</Question>
