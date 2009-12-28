@@ -71,11 +71,13 @@ ActionController::Routing::Routes.draw do |map|
 
   # real pages...
   map.connect "/quizzes", :controller => 'home', :action => 'quizzes'
-  map.connect "/start_quiz/:quizze_idurl", :controller => 'home', :action => 'start_quiz'
+  map.connect "/start_quiz/:quizze_id", :controller => 'home', :action => 'start_quiz'
   map.connect "/my_quiz", :controller => 'home', :action => 'my_quiz'
   map.connect "/record_my_answer", :controller => 'home', :action => 'record_my_answer'
   map.connect "/my_results", :controller => 'home', :action => 'my_results'
-  
+  map.connect "/product/:product_idurl", :controller => 'home', :action => 'product'
+  map.connect "/products_search", :controller => 'home', :action => 'products_search'
+
   map.root :controller => "landing"  # default
 
   # See how all your routes lay out with "rake routes"

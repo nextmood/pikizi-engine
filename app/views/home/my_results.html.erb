@@ -9,7 +9,7 @@
             <li class="iconBtn"><a href="#"><img src="/images/gene/faceBkTxt.jpg" /></a></li>
             <li class="backAd"><a href="/my_quiz">back to advisor</a></li>
 
-            <li class="answers">12</li>
+            <li class="answers"><%= @quizze_instance.nb_products_ranked_at_most(3) %></li>
         </ul>
         <div id="search_boxBg">
             <div class="spcr"></div>
@@ -32,12 +32,12 @@
                         <td class="lft"><strong><%= affinity.product(@knowledge).label %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("f1_brand") %>
+                        <% feature = @knowledge.get_feature_by_idurl("brand") %>
                         <td><%= feature.label %></td>    
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("f110_carriers") %>
+                        <% feature = @knowledge.get_feature_by_idurl("carriers") %>
                         <td><%= feature.label %></td>
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>

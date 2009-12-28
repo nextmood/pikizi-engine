@@ -1,14 +1,14 @@
 <div id="main">
     <div class="box952">
 
-        <h1>Let's find your next <%= @knowledge.label %></h1>
-        <% last_quizze = (quizzes = @knowledge.quizzes).last %>
+        <h1>Let's find your next <%= @label %></h1>
+        <% last_quizze = (quizzes = @quizzes).last %>
         <ul class="advisors">
             <% for quizze in quizzes %>
                 <li <%= "class=\"last\"" if quizze == last_quizze %>>
-                  <img src="<%= "/domains/#{@knowledge.idurl}/quizzes/#{quizze.idurl}/#{quizze.main_image_url}" %>" />
+                  <img src="<%= "/domains/#{quizze.knowledge_idurl}/quizzes/#{quizze.idurl}/#{quizze.main_image_url}" %>" />
                   <%= quizze.label %>
-                  <%= link_to("<p></p>", "/start_quiz/#{quizze.idurl}") %>
+                  <%= link_to("<p></p>", "/start_quiz/#{quizze.id}") %>
                 </li>
 
             <% end %>

@@ -17,13 +17,12 @@ class Quizze < Root
   
   timestamps!
 
-
-  def link_back(knowledge) @knowledge = knowledge end
-  def knowledge() @knowledge ||= Knowledge.get_from_idurl(knowledge_idurl) end
+  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
 
   def self.is_main_document() true end
 
-  def questions() @questions ||= Question.get_from_idurl(question_idurls, knowledge) end
+  def questions() @questions ||= Question.load(question_idurls) end
+  def products() @products ||= Product.load(product_idurls) end
 
   # return all questions within a given dimension
   def questions_4_dimension(dimension) questions.select { |question| question.dimension == dimension } end
@@ -37,9 +36,6 @@ class Quizze < Root
     end
   end
   
-  def products() @products ||= Product.get_from_idurl(product_idurls, knowledge) end
-
-
   def self.initialize_from_xml(knowledge, xml_node)
     quizze = super(xml_node)
     quizze.knowledge_idurl = knowledge.idurl
@@ -54,6 +50,7 @@ class Quizze < Root
     quizze.save
     quizze
   end
+
 
 
   def generate_xml(top_node)

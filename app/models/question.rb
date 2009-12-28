@@ -18,6 +18,7 @@ class Question < Root
   key :idurl, String, :index => true # unique url
 
   key :label, String, :required => true  # text
+  key :knowledge_idurl, String
 
 
   key :is_choice_exclusive, Boolean
@@ -36,19 +37,17 @@ class Question < Root
 
   timestamps!
 
-  attr_accessor :knowledge
-
-
-  def link_back(knowledge)
-    self.knowledge = knowledge
-    choices.each { |choice| choice.link_back(self) }
-  end
+  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
+  
+  # load a question object from an idurl  or a mongo db_id
+  def link_back() choices.each { |choice| choice.link_back(self) } end
 
   def self.is_main_document() true end
 
   # read and create question objects from xml
   def self.initialize_from_xml(knowledge, xml_node)
       question = super(xml_node)
+      question.knowledge_idurl = knowledge.idurl      
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
       question.extra = xml_node['extra']
       question.dimension = xml_node['dimension'] || "unknown"
@@ -63,9 +62,9 @@ class Question < Root
 
 
   # compute and store HashProductIdurl2Weight for each choice of this question
-  def generate_choices_hash_product_idurl_2_weight
+  def generate_choices_hash_product_idurl_2_weight(knowledge)
     products = knowledge.products
-    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products, self) }
+    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products, self, knowledge) }
     save
   end
 
@@ -179,7 +178,6 @@ class Choice < Root
     self.question = question
   end
 
-  def knowledge() question.knowledge end
 
   def nb_ko() @nb_ko ||= (question.nb_presentation - question.nb_oo - nb_ok) end
   def proba_ok() @proba_ok ||= (question.nb_presentation == 0 ? question.default_choice_proba_ok : (nb_ok.to_f / question.nb_presentation.to_f)) end
@@ -212,7 +210,7 @@ class Choice < Root
   # it's interpret the preference string
   # generate the weights for the considered products
   # return a HashProductIdurl2Weight object  
-  def generate_hash_product_idurl_2_weight(products, question)
+  def generate_hash_product_idurl_2_weight(products, question, knowledge)
     self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, question, products, recommendation, intensity)
   end
 
@@ -312,18 +310,20 @@ class Choice < Root
     #
     # expect selected_product in context
     def featureIs(idurl_feature, options)
+      idurl_feature = idurl_feature.to_s if idurl_feature.is_a?(Symbol)
+      feature = knowledge.get_feature_by_idurl(idurl_feature)
+      raise "error feature #{idurl_feature.inspect} #{idurl_feature.class} doesn't exist in model" unless feature
+
       if options.is_a?(Hash)
         key, values = check_hash_options(options, [:all, :any, :moreThan, :lessThan, :in, :is, :atLeast, :atMost])
-        feature = knowledge.get_feature_by_idurl(idurl_feature)
-        raise "error feature #{idurl_feature} doesn't exist in model" unless feature
         if feature_value = feature.get_value(selected_product)
           case key
             when :all
-              raise "error" unless feature.is_a?(FeatureTags)
+              raise "error: expecting a FeatureTags" unless feature.is_a?(FeatureTags)
               values = check_list_string(values)
               ensure_boolean(feature_value.all? { |fv| values.include?(fv) })
             when :any
-              raise "error" unless feature.is_a?(FeatureTags)
+              raise "error expecting a FeatureTags" unless feature.is_a?(FeatureTags)
               values = check_list_string(values)
               ensure_boolean(feature_value.any? { |fv| values.include?(fv) })
             when :moreThan
@@ -354,6 +354,8 @@ class Choice < Root
         end
       elsif options.is_a?(String) or options.is_a?(Symbol)
         featureIs(idurl_feature, :any => [options.to_s])
+      elsif feature.is_a?(FeatureCondition) and (options.is_a?(FalseClass) or options.is_a?(TrueClass))
+        featureIs(idurl_feature, :is => [options.to_s])
       else
         raise "wrong syntax"
       end
@@ -369,6 +371,7 @@ class Choice < Root
     def maximize(idurl_feature)
       idurl_feature = idurl_feature.to_s if idurl_feature.is_a?(Symbol)
       feature = knowledge.get_feature_by_idurl(idurl_feature)
+      raise "#{idurl_feature} doesn't belong to model" unless feature
       feature.get_value_01(selected_product)
     end
 
@@ -398,6 +401,7 @@ class Choice < Root
     def check_hash_options(options, operators)
       raise "wrong syntax" unless options.size == 1
       key, values = options.collect.first
+      values = [values] unless values.is_a?(Array)
       values = values.collect {|x| x.is_a?(Symbol) ? x.to_s : x }
       raise "key should be #{operators.join(', ')}" unless operators.include?(key)
       [key, values]

@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="What kind of phone are you looking for?"  dimension="Overall" weight="2">
-    
-    <Choice idurl="cell_phone" label="cell phone" url_image="images/cellphone.png" predicate="featureIs(:phone_category, :Cell_phone)"/>
-    <Choice idurl="smartphone" label="smartphone" url_image="images/smartphone.png" predicate="featureIs(:phone_category, :smartphone)"/>
-    <Choice idurl="messaging_phone" label="messaging phone" url_image="images/messagingphone.png" predicate="featureIs(:phone_category, :messaging_phone)"/>
-    <Choice idurl="camera_phone" label="camera phone" url_image="images/cameraphone.png" predicate="featureIs(:phone_category, :camera_phone)"/>
-    <Choice idurl="media_phone" label="media phone" url_image="images/mediaphone.png" predicate="featureIs(:phone_category, :media_phone)"/>
+<Question  is_exclusive="true" label="What kind of phone are you looking for?"  dimension="Overall" weight="2">    
+    <Choice idurl="cell_phone" label="cell phone" url_image="images/cellphone.png" recommendation="featureIs(:phone_category, :cell_phone)"/>
+    <Choice idurl="smartphone" label="smartphone" url_image="images/smartphone.png" recommendation="featureIs(:phone_category, :smartphone)"/>
+    <Choice idurl="messaging_phone" label="messaging phone" url_image="images/messagingphone.png" recommendation="featureIs(:phone_category, :messaging_phone)"/>
+    <Choice idurl="camera_phone" label="camera phone" url_image="images/cameraphone.png" recommendation="featureIs(:phone_category, :camera_phone)"/>
+    <Choice idurl="media_phone" label="media phone" url_image="images/mediaphone.png" recommendation="featureIs(:phone_category, :media_phone)"/>
 </Question>

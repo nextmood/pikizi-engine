@@ -28,7 +28,7 @@ class KnowledgesController < ApplicationController
   end
 
   def get_products_selected(params)
-    knowledge =  Knowledge.get_from_idurl(params[:knowledge_idurl])
+    knowledge =  Knowledge.load(params[:knowledge_idurl])
     products = knowledge.products.sort! { |p1, p2| p1.idurl <=> p2.idurl }
     pidurls_selected = params[:select_product_idurls]
     pidurls_selected ||= session[:pidurls_selected]
@@ -40,9 +40,9 @@ class KnowledgesController < ApplicationController
 
   # this is rjs
   def feature_value_edit
-    knowledge =  Knowledge.get_from_idurl(params[:knowledge_idurl])
+    knowledge =  Knowledge.load(params[:knowledge_idurl])
     feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
-    product =  Product.get_from_idurl(params[:product_idurl], knowledge)
+    product =  Product.load(params[:product_idurl], knowledge)
     dom_id = "cell_#{feature.idurl}_#{product.idurl}"
     mode = params[:mode] # in "edit", "cancel"
     partial_name = "/knowledges/feature_value_#{ params[:mode] == 'cancel' ? 'show' : 'edit' }"
@@ -55,8 +55,8 @@ class KnowledgesController < ApplicationController
 
   # thsi is rjs
   def feature_edit
-    knowledge =  Knowledge.get_from_idurl(params[:knowledge_idurl])
-    feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
+    knowledge =  Knowledge.load(params[:knowledge_idurl])
+    feature = knowledge.load(params[:feature_idurl])
     dom_id = "cell_#{feature.idurl}"
     mode = params[:mode] # in "edit", "cancel"
     partial_name = "/knowledges/feature_#{ params[:mode] == 'cancel' ? 'show' : 'edit' }"
@@ -71,9 +71,9 @@ class KnowledgesController < ApplicationController
 
   # GET /aggregations/:knowledge_idurl/model/:product_idurl/[:feature_idurl]
   def aggregations
-    @knowledge = Knowledge.get_from_idurl(params[:knowledge_idurl])
+    @knowledge = Knowledge.load(params[:knowledge_idurl])
     @feature = @knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
-    @product = Product.get_from_idurl(params[:product_idurl])
+    @product = Product.load(params[:product_idurl])
     @aggregations = @knowledge.get_aggregations(@product)
   end
 

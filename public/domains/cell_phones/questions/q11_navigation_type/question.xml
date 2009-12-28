@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="false" label="Do you have any navigation preferences?"  dimension="Hardware" weight="1">
-    <Choice idurl="trackball" label="trackball" url_image="images/trackball.png" predicate="featureIs(:navigation, :trackball)"/>
-    <Choice idurl="dpad" label="trackpad/d-pad" url_image="images/trackpad.png" predicate="featureIs(:navigation, :d-pad)"/>
-    <Choice idurl="touchscreen" label="touchscreen" url_image="images/touch.png" predicate="featureIs(:navigation, :touchscreen)"/>
-    <Choice idurl="hybrid" label="hybrid" url_image="images/hybrid.png" predicate="productIs(:any => [:palm_pre, :motorola_droid])"/>
+    <Choice idurl="trackball" label="trackball" url_image="images/trackball.png" recommendation="featureIs(:navigation, :trackball)"/>
+    <Choice idurl="trackpad" label="trackpad" url_image="images/trackpad.png" recommendation="featureIs(:navigation, :dpad)"/>
+    <Choice idurl="touchscreen" label="touchscreen" url_image="images/touch.png" recommendation="featureIs(:navigation, :touchscreen)"/>
+    <Choice idurl="dpad" label="dpad" url_image="images/dpad.png" recommendation="featureIs(:navigation, :touchscreen)"/>
+    <Choice idurl="hybrid" label="hybrid" url_image="images/hybrid.png" recommendation="productIs(:any => [:htc_droid_eris, :htc_imagio, :htc_hero, :lg_env_touch, :htc_mytouch3g, :htc_tilt2, :samsung_omnia2, :palm_pre, :motorola_droid])"/>
 </Question>

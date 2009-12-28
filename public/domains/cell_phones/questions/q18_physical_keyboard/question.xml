@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="How important is a physical QWERTY keyboard to you?"  dimension="Hardware" weight="1">   
+<Question  is_exclusive="true" label="How important is a physical QWERTY keyboard to you?"  dimension="Hardware" weight="1">   
     <Choice idurl="not" label="not important" recommendation="featureIs(:keyboard_type, :any => [:horizontal_qwerty, :vertical_qwerty])" intensity="low"/>
     <Choice idurl="maybe" label="somewhat important" recommendation="featureIs(:keyboard_type, :any => [:horizontal_qwerty, :vertical_qwerty])" intensity="medium"/>
     <Choice idurl="very_important" label="very important" recommendation="featureIs(:keyboard_type, :any => [:horizontal_qwerty, :vertical_qwerty])" intensity="high"/>

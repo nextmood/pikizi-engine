@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<Product label="Samsung Omnia II">
+  <Value idurl="main_image">images/samsung_omnia2.jpg<!--an url, like images/mabelle_image.png --></Value>
+  <Value idurl="main_url">http://omnia.samsungmobile.com/omnia2/<!--an url, like <![CDATA[ http//amazon.com/iphone.html ]]> --></Value>
+  <Value idurl="description">
+    <!--an url, like files/toto.html -->
+  </Value>
+  <Value idurl="brand">samsung<!--ONE tag among: apple  blackberry  casio  htc  lg_electronics  motorola  nokia  palm  pantech  samsung  sanyo  siemens  sony_ericsson --></Value>
+  <Value idurl="carriers">verizon<!--ONE tag among: att  sprint  t_mobile  verizon  prepaid  unlocked --></Value>
+  <Value idurl="carrier_compatibility">
+    <!--MANY tags among: att  sprint  t_mobile  verizon -->
+  </Value>
+  <Value idurl="nickname">Omnia II<!--a string --></Value>
+  <Value idurl="phone_category">smartphone<!--ONE tag among: cell_phone  smartphone  messaging_phone  camera_phone  media_phone --></Value>
+  <Value idurl="release_date">2009/12/01 22:00:00<!--a date between 1999/12/31 23:00:00 and 2019/12/31 23:00:00 --></Value>
+  <Value idurl="release_status">released<!--ONE tag among: released  announced  leaked --></Value>
+  <Value idurl="unsubsidized_price">599.0<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="special_carrier_promotion">199.0<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="subsidized_price">199.0<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="plan_requirements">true<!--    true or false --></Value>
+  <Value idurl="minimum_plam">39.99<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="data_plan">40.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="minimum_subcription">2.0<!--        a number between 0.0 and 4.0 --></Value>
+  <Value idurl="activation_fee">35.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="early_cancellation">200.0<!--        a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="carrier_url">http://phones.verizonwireless.com/samsung/omnia2/<!--        an url, like <![CDATA[ http//amazon.com/iphone.html ]]> --></Value>
+  <Value idurl="amazon_price">199.0<!--a number between 0.0 and 1000.0 --></Value>
+  <Value idurl="amazon_url">http://www.amazon.com/gp/product/B002YIHRKM?ie=UTF8&amp;tag=decisionfacto-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B002YIHRKM<!--    an url, like <![CDATA[ http//amazon.com/iphone.html ]]> --></Value>
+  <Value idurl="best_buy_price">
+    <!--a number between 0.0 and 1000.0 -->
+  </Value>
+  <Value idurl="bestbuy_url">
+    <!--    an url, like <![CDATA[ http//amazon.com/iphone.html ]]> -->
+  </Value>
+  <Value idurl="radioshack_price">
+    <!--a number between 0.0 and 1000.0 -->
+  </Value>
+  <Value idurl="radioshack_url">
+    <!--    an url, like <![CDATA[ http//amazon.com/iphone.html ]]> -->
+  </Value>
+  <!--    BEGIN Hardware -->
+  <!--        BEGIN Screen -->
+  <Value idurl="screen_size">3.7<!--        a number between 0.0 and 5.0 --></Value>
+  <Value idurl="screen_resolution_l">800.0<!--        a number between 0.0 and 2000.0 --></Value>
+  <Value idurl="screen_resolution_w">480.0<!--        a number between 0.0 and 1100.0 --></Value>
+  <Value idurl="touchscreen">
+    <!--        ONE tag among: capacitive  resistive  none -->
+  </Value>
+  <!--        END Screen -->
+  <!--        BEGIN Design & Construction -->
+  <Value idurl="form_factor">touchscreen<!--        MANY tags among: candy_bar  touchscreen  clamshell  swivel  slider --></Value>
+  <Value idurl="ruggedized">
+    <!--        true or false -->
+  </Value>
+  <Value idurl="projector">
+    <!--        true or false -->
+  </Value>
+  <!--            BEGIN Device size -->
+  <Value idurl="device_height">4.75<!--            a number between 2.0 and 5.0 --></Value>
+  <Value idurl="device_width">2.38<!--            a number between 1.0 and 3.5 --></Value>
+  <Value idurl="device_depth">0.53<!--            a number between 0.0 and 1.5 --></Value>
+  <Value idurl="device_weight">5.08<!--            a number between 2.0 and 7.0 --></Value>
+  <!--            END Device size -->
+  <!--        END Design & Construction -->
+  <!--        BEGIN Controls & Navigation -->
+  <Value idurl="navigation">dpad  touchscreen<!--        MANY tags among: dpad  keypad  navigation_array  touch_pad  touchscreen  toggle  trackball  trackpad --></Value>
+  <!--        END Controls & Navigation -->
+  <!--        BEGIN Keyboard & Input -->
+  <Value idurl="keyboard_type">virtual<!--        MANY tags among: numeric  horizontal_qwerty  vertical_qwerty  suretype  virtual --></Value>
+  <!--        END Keyboard & Input -->
+  <!--        BEGIN Battery -->
+  <Value idurl="battery_power">1500.0<!--        a number between 1.0 and 3000.0 --></Value>
+  <Value idurl="talk_time">6.0<!--        a number between 1.0 and 24.0 --></Value>
+  <Value idurl="2g_talk_time">8.0<!--            a number between 0.0 and 24.0 --></Value>
+  <Value idurl="3g_talk_time">6.0<!--            a number between 0.0 and 24.0 --></Value>
+  <Value idurl="standby_time">375.0<!--        a number between 1.0 and 1000.0 --></Value>
+  <Value idurl="video_playback_time">
+    <!--        a number between 1.0 and 24.0 -->
+  </Value>
+  <Value idurl="music_playback_time">
+    <!--        a number between 1.0 and 48.0 -->
+  </Value>
+  <Value idurl="wifi_time">
+    <!--        a number between 0.0 and 24.0 -->
+  </Value>
+  <Value idurl="battery_type">
+    <!--        ONE tag among: removable_battery  extensible_battery -->
+  </Value>
+  <!--        END Battery -->
+  <Value idurl="camera">true<!--    true or false --></Value>
+  <Value idurl="camera_resolution">5.0<!--        a number between 0.0 and 15.0 --></Value>
+  <Value idurl="camera_features">autofocus  contact_pictures  digital_zoom  flash    image_stabilization   video_mode<!--        MANY tags among: autofocus  contact_pictures  digital_zoom  flash  geotag_pictures  image_correction  image_stabilization  macro  optical_zoom  red_eye_reduction  timer  video_mode  white_balance --></Value>
+  <Value idurl="gps">true<!--    true or false --></Value>
+  <Value idurl="gps_services">vz_navigator<!--        MANY tags among: att_navigator  blackberry_maps  google_maps  google_maps_navigation  google_maps_latitude  navigon_app  nokia_maps  other_gps_app  ovi_maps  other_gps_service  sprint_nav  telenav_app  telenav_navigator  tomtom_app  vz_navigator  vz_navigator_global --></Value>
+  <Value idurl="gps_features">automatic_reroute  familymap    international_navigation  location_based_apps  location_based_services  local_search    traffic_alerts  turn_by_turn_gps  voice-guided<!--        MANY tags among: automatic_reroute  familymap  field_force_mgt  international_navigation  location_based_apps  location_based_services  local_search  social_network_location_sharing  traffic_alerts  turn_by_turn_gps  voice-guided  none --></Value>
+  <!--    END Hardware -->
+  <!--    BEGIN Communication -->
+  <!--        BEGIN Connectivity & Internet Experience -->
+  <Value idurl="conectivity">bluetooth  wifi  2g  3g  4g  cdma   ev_do<!--        MANY tags among: bluetooth  wifi  2g  3g  4g  cdma  gsm  umts  hsdpa  wcdma  ev_do  gprs  edge  tri_band  quad_band --></Value>
+  <Value idurl="data_tethering">
+    <!--        true or false -->
+  </Value>
+  <Value idurl="internet">full_internet<!--        ONE tag among: full_internet  partial_internet  none --></Value>
+  <!--        END Connectivity & Internet Experience -->
+  <!--        BEGIN Messaging, Emails, and Social Networks -->
+  <Value idurl="email">true<!--        true or false --></Value>
+  <Value idurl="email_platform">aol_mail  gmail   windows_live_hotmail  yahoo  lotus_notes  ms_exchange  novell_groupwise  imap/pop3<!--            MANY tags among: aol_mail  gmail  mobileme  windows_live_hotmail  yahoo  lotus_notes  ms_exchange  novell_groupwise  imap/pop3  smtp  web  other --></Value>
+  <Value idurl="push_delivery">true<!--            true or false --></Value>
+  <Value idurl="multiple_email_accounts">8.0<!--            a number between 0.0 and 20.0 --></Value>
+  <Value idurl="messaging">sms  mms  mms_w_video_messaging<!--        MANY tags among: sms  mms  mms_w_video_messaging  none --></Value>
+  <Value idurl="im">aim      windows_live  yahoo_messenger<!--        MANY tags among: aim  blackberry_messenger  gtalk  fring  skype  lotus_sametime  msn-messenger  windows_live  yahoo_messenger  none --></Value>
+  <Value idurl="social_networks">facebook   myspace<!--        MANY tags among: facebook  foursquare  gowalla  linkedin  loopt  myspace  tumblr  twitter  none --></Value>
+  <!--        END Messaging, Emails, and Social Networks -->
+  <!--        BEGIN Contacts and Social Networks -->
+  <!--        END Contacts and Social Networks -->
+  <!--        BEGIN Call Functionality & Quality -->
+  <Value idurl="call_features">voice_calling  visual_voicemail  speed_dialing<!--        MANY tags among: google_voice  international_roaming  noise_cancellation  push_to_talk  speakerphone  speed_dialing  skype  video_share  visual_voicemail  voip  voice_calling  wifi_calling --></Value>
+  <!--        END Call Functionality & Quality -->
+  <!--    END Communication -->
+  <!--    BEGIN Overall Functionality & Performance -->
+  <Value idurl="operating_system">windows_mobile<!--    ONE tag among: apple  android_15  android_16  android_2  android_21  android  blackberry  blackberry_5  palm_webos  maemo5  symbian  windows_mobile_61  windows_mobile  proprietary --></Value>
+  <!--    END Overall Functionality & Performance -->
+  <Value idurl="ui_advanced_features">accelerometer  copy_and_paste   home_screen_personalization    universal_search  voice_commands<!--MANY tags among: accelerometer  copy_and_paste  copy_and_paste_pictures  home_screen_personalization  multi_touch  multi_tasking_voice_app  multi_tasking_app  text_to_speech  universal_search  voice_commands  none --></Value>
+  <Value idurl="security_features">activesync  ondevice_encryption  complex_passwords    vpn_connection<!--MANY tags among: activesync  ondevice_encryption  complex_passwords  fingerprint  remote_wipe  remote_management  vpn_connection  none --></Value>
+  <!--    BEGIN Memory -->
+  <Value idurl="internal_memory_size">8.0<!--    a number between 0.0 and 64.0 --></Value>
+  <Value idurl="maximum_external_memory">32.0<!--    a number between 0.0 and 64.0 --></Value>
+  <!--    END Memory -->
+  <!--    BEGIN Apps & Productivity -->
+  <!--        BEGIN Productivity -->
+  <Value idurl="view_email_attachments">adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png<!--        MANY tags among: adobe_pdf  ms_word  ms_excel  ms_powerpoint  zip_manager  gif  jpg  png  none --></Value>
+  <!--        END Productivity -->
+  <Value idurl="third_party_applications">true<!--    true or false --></Value>
+  <Value idurl="application_store">true<!--        true or false --></Value>
+  <Value idurl="application_marketplace">satisfying<!--        ONE tag among: none  limited  satisfying  thriving  large  largest --></Value>
+  <!--    END Apps & Productivity -->
+  <!--    BEGIN Media -->
+  <Value idurl="media_sync_up">windows_media_player --&gt;<!--    MANY tags among: android_media_player  blackberry_media_sync  itunes  mass_storage  nokia_music_manager  proprietary  windows_media_player --></Value>
+  <Value idurl="media_sharing">facebook  flickr<!--    MANY tags among: facebook  flickr  myspace  picasa  twitter  youtube --></Value>
+  <Value idurl="music">true<!--    true or false --></Value>
+  <Value idurl="music_formats">aac  aac+    eaac+   mp4   wma9_pro  wma_10 --&gt;<!--        MANY tags among: 3gp  3g2  aac  aac+  aiff  apple_lossless  amr_nb  amr_wb  asf  avi  eaac+  m4a  mp3  mp3_vbr  mp4  midi  ogg  protected_aac  qcelp_evrc  realplayer10  wav  wma9_pro  wma_10 --></Value>
+  <Value idurl="music_store">vcast_with_rhapsody<!--        MANY tags among: amazon_mp3  att_mobile_music  nokia_comes_with_music  itunes  imeem_mobile  lastfm  nokia_comes_with_music  nokia_music  pandora  shazam  spotify  sprint_music  sprint_radio  vcast_with_rhapsody  xm_radio --></Value>
+  <Value idurl="audio_connector">3.5_mm<!--        ONE tag among: 3.5_mm  2.5_mm  custom --></Value>
+  <Value idurl="video">true<!--    true or false --></Value>
+  <Value idurl="video_services">vcast_video<!--        MANY tags among: att_cellular_video  blackberrymedia_center  flash_video  itunes  mobiTV  realplayer  roxio_media_manager  sprint_tv  vcasttv  vcast_video  youtube --></Value>
+  <Value idurl="Video_formats">avc/h.264  avi   divx_4  divx_5  divx_6  flash  h.263   mpeg_4  wmv3  xvid<!--        MANY tags among: .3gp  avc/h.264  avi  cif_@_30_fps  divx_4  divx_5  divx_6  flash  h.263  .m4v  .mp4  .mov  mpeg_4  realvideo  windows_media_(wmv9)  wmv3  xvid --></Value>
+  <!--    END Media -->
+</Product>

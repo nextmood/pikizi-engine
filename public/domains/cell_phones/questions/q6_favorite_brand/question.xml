@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="true" label="Do you have a favorite brand?"  dimension="Overall" weight="2">   
-    <Choice idurl="apple" label="Apple" url_image="images/apple-logo-blue.jpg" predicate="featureIs(:brand, :apple)"/>
-    <Choice idurl="blackberry" label="BlackBerry" url_image="images/blackberry_logo.png" predicate="featureIs(:brand, :blackberry)"/>
-    <Choice idurl="motorola" label="Motorola" url_image="images/motorola-logo1.jpg" predicate="featureIs(:brand, :motorola)"/>
-    <Choice idurl="nokia" label="Nokia" url_image="images/nokia-logo.jpg" predicate="featureIs(:brand, :nokia)"/>
-    <Choice idurl="htc" label="HTC" url_image="images/htc.png" predicate="featureIs(:brand, :htc)"/>
+<Question  is_exclusive="false" label="Do you have (a) favorite brand(s)?"  dimension="Overall" weight="2">   
+    <Choice idurl="apple" label="Apple" url_image="images/apple-logo-blue.jpg" recommendation="featureIs(:brand, :apple)"/>
+    <Choice idurl="blackberry" label="BlackBerry" url_image="images/blackberry_logo.png" recommendation="featureIs(:brand, :blackberry)"/>
+    <Choice idurl="motorola" label="Motorola" url_image="images/motorola-logo1.jpg" recommendation="featureIs(:brand, :motorola)"/>
+    <Choice idurl="nokia" label="Nokia" url_image="images/nokia-logo.jpg" recommendation="featureIs(:brand, :nokia)"/>
+    <Choice idurl="htc" label="HTC" url_image="images/htc.png" recommendation="featureIs(:brand, :htc)"/>
 </Question>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="What form factor are you considering?"  dimension="Hardware" weight="2">   
-    <Choice idurl="candy_bar" label="candy bar" url_image="images/candybar.png" predicate="featureIs(:form_factor, :candy_bar)"/>
-    <Choice idurl="candy_bar" label="candy bar with full keyboard" url_image="images/messagingphone.png" predicate="featureIs(:form_factor, :candy_bar) and featureIs(:keyboard_type, :vertical_qwerty)"/>
-    <Choice idurl="touchscreen" label="touchscreen" url_image="images/touchscreen.png" predicate="featureIs(:form_factor, :touchscreen)"/>
-    <Choice idurl="clamshell" label="clamshell" url_image="images/clamshell.png" predicate="featureIs(:form_factor, :clamshell)"/>
-    <Choice idurl="swivel" label="slider" url_image="images/slider.png" predicate="featureIs(:form_factor, :any => [:swivel, :slider]"/>
+<Question is_exclusive="false" label="What form factor(s) are you considering?"  dimension="Hardware" weight="2">   
+    <Choice idurl="candy_bar" label="candy bar" url_image="images/candybar.png" recommendation="featureIs(:form_factor, :candy_bar)"/>
+    <Choice idurl="candy_bar_keyboard" label="candy bar with full keyboard" url_image="images/messagingphone.png" recommendation="featureIs(:form_factor, :candy_bar) and featureIs(:keyboard_type, :vertical_qwerty)"/>
+    <Choice idurl="touchscreen" label="touchscreen" url_image="images/touchscreen.png" recommendation="featureIs(:form_factor, :touchscreen)"/>
+    <Choice idurl="clamshell" label="clamshell" url_image="images/clamshell.png" recommendation="featureIs(:form_factor, :clamshell)"/>
+    <Choice idurl="slider" label="slider" url_image="images/slider.png" recommendation="featureIs(:form_factor, :any => [:swivel, :slider])"/>
 </Question>

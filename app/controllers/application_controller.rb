@@ -16,11 +16,11 @@ class ApplicationController < ActionController::Base
 
   # get the current logged user, the active record object
   def get_logged_user()
-    if session[:logged_user_idurl]
+    if session[:logged_user_id]
       begin
-        @current_user ||= User.get_from_idurl(session[:logged_user_idurl])
+        @current_user ||= User.load(session[:logged_user_id])
       rescue
-        logger.error "Oups I'can't find user with id=#{session[:logged_user_idurl].inspect}"
+        logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
         nil
       end
     end
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
     developper_rpx_identifier = "#001"
     developper_rpx_email = "info@nextmood.com"
     developper_idurl = Digest::MD5.hexdigest(developper_rpx_identifier)
-    unless @current_user = User.get_from_idurl(developper_idurl)
+    unless @current_user = User.load(developper_idurl)
       # create a new user
       @current_user = User.create({:idurl => developper_idurl,
                                    :rpx_identifier => developper_rpx_identifier,
@@ -54,9 +54,8 @@ class ApplicationController < ActionController::Base
                                    :rpx_username => "fpatte",
                                    :role => "admin",
                                    :rpx_email => developper_rpx_email})
-      @current_user.link_back(nil)
     end
-    session[:logged_user_idurl] = @current_user.idurl
+    session[:logged_user_id] = @current_user.id
   end
 
 

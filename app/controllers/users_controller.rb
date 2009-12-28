@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
   # POST /answer
   def record_answer
-     knowledge = Knowledge.get_from_idurl(knowledge_idurl = params[:knowledge_idurl])
-     quizze = Quizze.get_from_idurl(quizze_idurl = params[:quizze_idurl])
-     question = Question.get_from_idurl(question_idurl = params[:question_idurl])
+     knowledge = Knowledge.load(knowledge_idurl = params[:knowledge_idurl])
+     quizze = Quizze.load(quizze_idurl = params[:quizze_idurl])
+     question = Question.load(question_idurl = params[:question_idurl])
      user = get_logged_user
      user.record_answer(knowledge, quizze, question, params[:choices_idurls_ok])
      user.save
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def end_quizze
-    quizze = Quizze.get_from_idurl(params[:quizze_idurl])
+    quizze = Quizze.load(params[:quizze_idurl])
     user = get_logged_user
     quizze_instance = QuizzeInstance.get_latest_for_quizze(quizze, user)
     raise "no quizze for feedack" unless quizze_instance
@@ -37,13 +37,13 @@ class UsersController < ApplicationController
   end
 
   def show_by_idurl
-    @user = User.get_from_idurl(params[:user_idurl])
+    @user = User.load(params[:user_idurl])
     render(:action => 'show')
   end
 
   def toggle_role
     user_idurl = params[:user_idurl]
-    user =  User.get_from_idurl(user_idurl)
+    user =  User.load(user_idurl)
     raise " no user  #{user_idurl}" unless user
     case user.role
       when "unauthorised" then user.role = "tester"
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 
   def access_restricted
     get_logged_user
-    session.delete(:logged_user_idurl)
+    session.delete(:logged_user_id)
   end
 
   # this method is call back for rpxnow (this is triggered after login)
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
       rpx_identifier = rpx_data[:identifier]
       user_idurl = Digest::MD5.hexdigest(rpx_identifier)
 
-      logged_user = User.get_from_idurl(user_idurl)
+      logged_user = User.load(user_idurl)
 
       # new user creation
       is_new_user = false
@@ -85,14 +85,13 @@ class UsersController < ApplicationController
                               :rpx_email => rpx_email }
         initial_attributes[:role] = "admin" if rpx_email == "cpatte@gmail.com"
         logged_user = User.create(initial_attributes)
-        logged_user.link_back(nil)
       end
 
       if logged_user.is_authorized
-        session[:logged_user_idurl] ||= user_idurl
+        session[:logged_user_id] ||= logged_user.id
         redirect_to '/home'
       else
-        redirect_to "/thanks/#{user_idurl}/#{is_new_user}"
+        redirect_to "/thanks/#{logged_user.id}/#{is_new_user}"
       end
     rescue
       redirect_to '/'  
@@ -101,7 +100,7 @@ class UsersController < ApplicationController
   end
 
   def logout
-    session.delete(:logged_user_idurl)
+    session.delete(:logged_user_id)
   end
 
   def login

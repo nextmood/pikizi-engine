@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Question  is_exclusive="true" label="How do you use your cell phone the most?"  dimension="Overall" weight="2">  
+    <Choice idurl="keep_in_touch" label="keep in touch with friends and family" recommendation="featureIs(:subsidized_price, :lessThan => 100)"/> 
+    <Choice idurl="business_calls" label="business calls" recommendation="maximize(:call_rating)"/> 
+    <Choice idurl="business_emails" label="emails &amp; productivity" recommendation="combine(maximize(:messaging_rating), maximize(:productivity_rating))"/>		  
+    <Choice idurl="apps" label="apps &amp; social networks" recommendation="combine(maximize(:apps_rating), maximize(:contacts_rating))"/>		
+    <Choice idurl="web" label="surfing the web" recommendation="maximize(:connectivity_internet_rating)"/>  
+</Question>

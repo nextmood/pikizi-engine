@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="false" label="Are you looking for specific calling features?"  dimension="Functionality" weight="1">   
-    <Choice idurl="push_to_talk" label="push-to-talk" recommendation="featureIs(:call_features, :push_to_talk)"/>
-    <Choice idurl="international_roaming" label="international roaming" recommendation="featureIs(:call_features, :international_roaming)"/>
-    <Choice idurl="advanced_calling" label="advanced calling (voice activation, speed dialing)" recommendation="featureIs(:call_features, :any =>[:voice_calling, :speed_dialing])"/>
-    <Choice idurl="visual_voicemail" label="visual voicemail" recommendation="featureIs(:call_features, :visual_voicemail)"/>
-    <Choice idurl="voip" label="voip (Skype, Google, Fring)" recommendation="featureIs(:call_features,:any =>[:skype, :google_voice, :voip])"/>
+    <Choice idurl="push_to_talk" label="Push-to-talk" recommendation="featureIs(:call_features, :push_to_talk)"/>
+    <Choice idurl="international_roaming" label="International Roaming" recommendation="featureIs(:call_features, :international_roaming)"/>
+    <Choice idurl="video_share" label="Video Share" recommendation="featureIs(:call_features, :video_share)"/>
+    <Choice idurl="visual_voicemail" label="Visual Voicemail" recommendation="featureIs(:call_features, :visual_voicemail)"/>
+    <Choice idurl="voip" label="Voice over IP" recommendation="featureIs(:call_features,:any =>[:skype, :google_voice, :voip, :wifi_calling])"/>
 </Question>

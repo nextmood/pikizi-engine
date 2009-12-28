@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="Is battery life important to you?"  dimension="Hardware" weight="1">
-    <Choice idurl="not" label="not really" preference="maximizeFeature(:battery_life_rating, :low)"/>
-    <Choice idurl="medium" label="somewhat" preference="maximizeFeature(:battery_life_rating, :medium)"/>
-    <Choice idurl="important" label="important" preference="maximizeFeature(:battery_life_rating, :high)"/>
-    <Choice idurl="critical" label="critical" preference="maximizeFeature(:battery_life_rating, :very_high)"/>
+<Question  is_exclusive="true" label="Is battery life important to you?"  dimension="Hardware" weight="1">
+    <Choice idurl="not" label="not really" recommendation="maximize(:battery_life_rating)" intensity="low"/>
+    <Choice idurl="medium" label="somewhat" recommendation="maximize(:battery_life_rating)" intensity="medium"/>
+    <Choice idurl="important" label="important" recommendation="maximize(:battery_life_rating)" intensity="high"/>
+    <Choice idurl="critical" label="critical" recommendation="maximize(:battery_life_rating)" intensity="very_high"/>
 </Question>

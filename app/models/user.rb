@@ -48,9 +48,8 @@ class User < Root
     user
   end
 
-  def link_back(parent_object)
-    quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) }
-  end
+  # load a user object from an idurl  or a mongo db_id
+  def link_back() quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) } end
 
   def generate_xml(top_node)
     node_user = super(top_node)
@@ -162,6 +161,7 @@ class QuizzeInstance < Root
   key :quizze_idurl, String
   key :created_at, Time  # when the QuizInstqnce was created
   key :closed_at, Time, :default => nil   # when the suer or system (time out) has closed this QuizzeInstance
+  key :question_ids, Array
 
   many :answers
   many :affinities
@@ -182,7 +182,7 @@ class QuizzeInstance < Root
     end
   end
 
-  def get_quizze() @quizze ||= Quizze.get_from_idurl(quizze_idurl) end
+  def get_quizze() @quizze ||= Quizze.load(quizze_idurl) end
   
   def self.initialize_from_xml(xml_node)
     quizze_instance = super(xml_node)
@@ -243,7 +243,8 @@ class QuizzeInstance < Root
     quizze_instance = QuizzeInstance.new(
       :quizze_idurl => quizze.idurl,
       :created_at => Time.now,
-      :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)} )
+      :affinities => quizze.product_idurls.collect { |product_idurl| Affinity.create_product_idurl(product_idurl)}, 
+      :question_ids => quizze.questions.collect(&:id))
     user.quizze_instances << quizze_instance
     user.save
     quizze_instance.link_back(user)

@@ -2,7 +2,7 @@
 <Question  is_exclusive="false" label="Do you have any security requirements?"  dimension="Functionality" weight="1">   
     <Choice idurl="activesync" label="ActiveSync Policies" recommendation="featureIs(:security_features, :activesync)"/>
     <Choice idurl="ondevice_encryption" label="On-device Encryption" recommendation="featureIs(:security_features, :ondevice_encryption)"/>
-    <Choice idurl="complex_passwords" label="Complex Passwords" recommendation="featureIs(:security_features, :complex_passwords)"/>
+    <Choice idurl="authentication" label="Strong Authentication" recommendation="featureIs(:security_features, :any =>[:complex_passwords, :fingerprint])"/>
     <Choice idurl="remote_wipe" label="Remote Device Wipe" recommendation="featureIs(:security_features, :remote_wipe)"/>
-    <Choice idurl="remote_management" label="VPN Connectivity" recommendation="featureIs(:security_features, :remote_management)"/>
+    <Choice idurl="vpn_connection" label="VPN Connectivity" recommendation="featureIs(:security_features, :remote_management)"/>
 </Question>

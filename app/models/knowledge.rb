@@ -13,13 +13,13 @@ class Knowledge < Root
   many :features, :polymorphic => true   # first level features
 
   key :question_idurls, Array
-  def questions() @questions ||= Question.get_from_idurl(question_idurls, self)  end
+  def questions() @questions ||= Question.load(question_idurls)  end
 
   key :product_idurls, Array
-  def products() @products ||= Product.get_from_idurl(product_idurls, self) end
+  def products() @products ||= Product.load(product_idurls) end
 
   key :quizze_idurls, Array
-  def quizzes() @quizzes ||= Quizze.get_from_idurl(quizze_idurls, self) end
+  def quizzes() @quizzes ||= Quizze.load(quizze_idurls) end
 
   timestamps!
 
@@ -41,6 +41,9 @@ class Knowledge < Root
     end
   end
 
+
+  def link_back() features.each { |sub_feature| sub_feature.link_back(self) } end
+
   # read and create a domain (knowledge + questions, products and quizzes in the database)
   # this could be called by a rast task
   # return the newly created knowledge
@@ -51,12 +54,13 @@ class Knowledge < Root
 
       knowledge = super(xml_node)
       knowledge.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
-      knowledge.save
       knowledge.link_back
+      knowledge.save
 
       knowledge.product_idurls = read_children_xml(knowledge, domain_directory, "Product")
       knowledge.question_idurls = read_children_xml(knowledge, domain_directory, "Question")
       knowledge.quizze_idurls = read_children_xml(knowledge, domain_directory, "Quizze")
+      knowledge.link_back
       knowledge.save
 
       knowledge
@@ -92,7 +96,6 @@ class Knowledge < Root
     xml_node
   end
 
-  def link_back(parent=nil) features.each { |sub_feature| sub_feature.link_back(self) } end
 
   # return a list of sub idurl
   def self.write_children_xml(knowledge, object_idurls, domain_directory, tag)
@@ -102,7 +105,7 @@ class Knowledge < Root
 
     object_idurls.each do |object_idurl|
       sub_doc = XML::Document.new
-      new_object = tag_class.get_from_idurl(object_idurl, knowledge)
+      new_object = tag_class.load(object_idurl)
       new_object.generate_xml(knowledge, sub_doc)
       domain_tag_directory = "#{domain_directory}/#{tag_downcase_plural}/#{object_idurl}"
       system("mkdir #{domain_tag_directory}") unless File.exist?(domain_tag_directory)
@@ -124,6 +127,10 @@ class Knowledge < Root
     Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
   end
 
+  def compute_rating()
+    Review.initialize_from_xml(self)
+  end
+  
   def generate_product_template(product=nil)
     doc = XML::Document.new
     doc.root =  (top_node = XML::Node.new("Product"))
@@ -136,6 +143,40 @@ class Knowledge < Root
       doc.save("#{path}/product.xml")
     else
       doc.save("#{path}/knowledge/product_template.xml")
+    end
+  end
+
+  def generate_reviews_template(product=nil)
+    doc = XML::Document.new
+    doc.root =  (top_node = XML::Node.new("Review"))
+    top_node['author'] = "ph"
+    top_node['product_idurl'] = product ? product.idurl : "a product idurl"
+    top_node['date'] = FeatureDate.date2xml(Time.now)
+
+    each_feature do |feature|
+      if feature.is_a?(FeatureRating)
+        top_node << (node_feature_opinion = XML::Node.new("FeatureOpinion"))
+        node_feature_opinion["idurl"] = feature.idurl
+        node_feature_opinion << XML::Node.new_comment("<tip usage=\"take picture at night\" intensity=\"pro\" confidence=\"1.0\" >...</Tip>")
+        node_feature_opinion << XML::Node.new_comment("<better_than predicate=\"\" />")
+        node_feature_opinion << XML::Node.new_comment("<same_as predicate=\"\" />")
+        node_feature_opinion << XML::Node.new_comment("<worse_than predicate=\"\" />")
+        node_feature_opinion << XML::Node.new_comment("<rated min_rating=\"0\" max_rating=\"5\">3</Rated>")
+        node_feature_opinion << (node_rated = XML::Node.new("Rated"))
+        node_rated["min_rating"] = feature.min_rating.to_s
+        node_rated["max_rating"] = feature.max_rating.to_s
+        if product
+          node_rated << feature.get_value(product).to_s
+        else
+          node_rated << XML::Node.new_comment("a value")
+        end
+      end
+    end
+    path = "public/domains/#{idurl}"
+    if product
+      doc.save("#{path}/reviews/review_4_#{product.idurl}.xml")
+    else
+      doc.save("#{path}/reviews/review_template.xml")
     end
   end
 
@@ -192,10 +233,6 @@ class Knowledge < Root
     @hash_idurl_feature[idurl]
   end
 
-  def get_quizze_by_idurl(idurl)
-    @hash_idurl_quizze ||= quizzes.inject({}) { |h, q| h[q.idurl] = q; h }
-    @hash_idurl_quizze[idurl]
-  end
 
   def ensure_unique(h, o)
     raise "OUPS more than one idurl=#{o.idurl}" if h[o.idurl]
@@ -285,9 +322,11 @@ class Feature < Root
       top_node << XML::Node.new_comment("#{tabulation}BEGIN #{label} ")
       features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
       top_node << XML::Node.new_comment("#{tabulation}END #{label} ")
+    elsif tag_name == "FeatureRating"
+      features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
     else
       tabulation = "    " * depth
-      top_node << XML::Node.new_comment("#{tabulation}#{tag_name} #{label} ")
+      #top_node << XML::Node.new_comment("#{tabulation}#{tag_name} #{label} ")
       top_node << (xml_node = XML::Node.new("Value"))
       xml_node['idurl'] = idurl
       if product and value = product.get_value(idurl)
@@ -529,6 +568,10 @@ class FeatureRating < Feature
     get_value(product).to_f
   end
 
+  def get_value_in_min_max_rating(product)
+    get_value_01(product) * (max_rating - min_rating) + min_rating 
+  end
+
   # ---------------------------------------------------------------------
   # to display the matrix
   # value is a float between 0 and 1
@@ -727,9 +770,19 @@ class FeatureNumeric < FeatureContinous
     node_feature_numeric
   end
 
-  def format_value(numeric_value) value_format % numeric_value end
+  def format_value(numeric_value)
+    begin
+      value_format % numeric_value
+    rescue
+      numeric_value.to_s
+    end
+    
+  end
 
-  def get_value_01(product) Root.rule3(get_value(product), value_min, value_max) end
+  def get_value_01(product)
+    value = get_value(product)
+    Root.rule3(value, value_min, value_max) if value 
+  end
 
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) Float(content_string.strip) end
@@ -909,7 +962,7 @@ class FeatureImage < Feature
     end
   end
 
-  def product_template_comment() "an url, like images/mabelle_image.html" end
+  def product_template_comment() "an url, like images/mabelle_image.png" end
 
 
 end
@@ -921,7 +974,7 @@ class FeatureUrl < Feature
     end
   end
 
-  def product_template_comment() "an url, like http//amazon.com/iphone.html" end
+  def product_template_comment() "an url, like <![CDATA[ http//amazon.com/iphone.html ]]>" end
 
 end
 # define a feature with no value
@@ -931,5 +984,4 @@ class FeatureHeader < Feature
 
 
 end
-
 

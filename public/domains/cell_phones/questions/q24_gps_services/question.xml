@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
-<Question  is_exclusive="false" label="Would you like any particular gps capabilities?"  dimension="Hardware" weight="1">   
-    <Choice idurl="maps" label="maps" url_image="images/maps.png" recommendation="featureIs(:gps_services, :any => [:google_maps, nokia_maps, blackberry_maps])"/>
-    <Choice idurl="turn_by_turn_gps" label="turn-by-turn directions" url_image="images/tbyt.png" recommendation="featureIs(:gps_services, :any => [:vz_navigator, :sprint_lbs, :telenav_navigator] or featureIs(:operating_system, :android) or productIs(:any => [:iphone_3gs, :iphone_3g])" />
-    <Choice idurl="location_based_services" label="location-based services" url_image="images/lbs.png" recommendation="featureIs(:gps_services, :location_based_services)"/>
+<Question  is_exclusive="false" label="Would you like any particular gps-enabled capabilities?"  dimension="Hardware" weight="1">   
+    <Choice idurl="maps" label="maps" url_image="images/maps.png" recommendation="featureIs(:gps, true)"/>
+    <Choice idurl="turn_by_turn_gps" label="turn-by-turn directions" url_image="images/tbyt.png" recommendation="featureIs(:gps_features, :turn_by_turn_gps)" />
+    <Choice idurl="location_based_services" label="location-based services" url_image="images/lbs.png" recommendation="featureIs(:gps_features, :any =>[:location_based_services, :location_based_apps])"/>
+    <Choice idurl="familymap" label="family locator" url_image="images/familymap.png" recommendation="featureIs(:gps_features, :familymap)"/>
+    <Choice idurl="location_sharing" label="location sharing" url_image="images/locshare.png" recommendation="featureIs(:gps_features, :social_network_location_sharing)"/>
 </Question>

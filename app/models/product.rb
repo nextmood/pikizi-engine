@@ -8,6 +8,7 @@ class Product < Root
   key :idurl, String, :index => true # unique url
 
   key :label, String # unique url
+  key :knowledge_idurl, String
 
   # no backgrounds (handled by feature...)
   
@@ -17,13 +18,8 @@ class Product < Root
 
   def self.is_main_document() true end
 
+  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
   
-  attr_accessor :knowledge
-
-  def link_back(knowledge)
-    self.knowledge = knowledge
-  end
-
   def get_value(feature_idurl)
     x = hash_feature_idurl_value[feature_idurl]
     # puts "getting feature=#{feature_idurl} for product=#{idurl} --> #{x.inspect}"
@@ -33,6 +29,7 @@ class Product < Root
   def self.initialize_from_xml(knowledge, xml_node)
     product = super(xml_node)
     product.hash_feature_idurl_value = {}
+    product.knowledge_idurl = knowledge.idurl
     xml_node.find("Value").each do |node_value|
       feature_idurl = node_value['idurl']
       if feature = knowledge.get_feature_by_idurl(feature_idurl)
@@ -42,7 +39,7 @@ class Product < Root
         rescue
           value = nil
           if node_value_content == ""
-            puts "EMPTY value product=#{product.idurl} feature=#{feature.idurl}"  unless feature.is_optional
+            #puts "EMPTY value product=#{product.idurl} feature=#{feature.idurl}"  unless feature.is_optional
           else
             puts "ERROR value product=#{product.idurl} feature=#{feature.idurl} xml_value=#{node_value_content.inspect}"
           end

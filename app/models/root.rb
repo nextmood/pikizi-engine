@@ -21,8 +21,8 @@ class Root
       user.reviews = []
       user.save
     end
-    k = Knowledge.initialize_from_xml("cell_phones_legacy")
-    k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight }
+    k = Knowledge.initialize_from_xml("cell_phones")
+    k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight(k) }
     "database reset"
   end
 
@@ -30,10 +30,12 @@ class Root
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
   def self.rule3(x, min, max)
     y = Root.rule3_cache(x, Root.rule3_ab(min, max))
-    raise "error x=#{x} y=#{y} min=#{min} max=#{max} ab=#{Root.rule3_ab(min, max).inspect}" unless y.in01? and x.in01?
+    puts "error x=#{x} y=#{y} min=#{min} max=#{max} ab=#{Root.rule3_ab(min, max).inspect}" unless y.in01? and x.in01?
     y
   end
-  def self.rule3_cache(x, ab) ab.first * x + ab.last end
+  def self.rule3_cache(x, ab)
+    ab.first * x + ab.last
+  end
   def self.rule3_ab(min, max)
     a = 1.0 / (max - min)
     [ a , - a * min ]
@@ -44,7 +46,7 @@ class Root
   def self.is_main_document() false end
 
   def self.initialize_from_xml(xml_node)
-    o = self.is_main_document ? self.get_from_idurl(xml_node['idurl'], nil, :no_link_back => true) : nil
+    o = ((self.is_main_document and xml_node['idurl']) ? self.load(xml_node['idurl']) : nil)
     o ||= self.new
     class_keys = self.keys.collect(&:first).concat(self.associations.collect(&:first))
     o.idurl = xml_node['idurl'] if class_keys.include?("idurl")
@@ -125,20 +127,6 @@ class Root
     xml_node
   end
 
-  # retrieve a main document from it's idurl (unique!)
-  # also works for a list of idurls'
-  #
-  def self.get_from_idurl(idurl, link_back_object=nil, options = {})
-    if idurl.is_a?(Array)
-      objects = self.find(:all, :conditions => { :idurl => idurl })
-      objects.each { |o| o.link_back(link_back_object) } unless options[:no_link_back]
-      objects
-    else
-      object = self.find(:first, :conditions => { :idurl => idurl })
-      object.link_back(link_back_object)  if object and  !options[:no_link_back]
-      object
-    end
-  end
 
   def self.get_entries(path)
     Dir.new("#{path}").entries.inject([]) do |l, entry|
@@ -168,6 +156,20 @@ class Root
     generate_xml(doc)
     doc.to_s(:indent => true)
   end
+
+  def self.load(object_ids)
+    if object_ids.is_a?(Array)
+      objects = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.find(:all, :conditions => { :idurl => object_ids })
+      objects.each(&:link_back)
+      objects
+    else
+      object = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.find(:first, :conditions => { :idurl => object_ids })
+      object.link_back if object
+      object
+    end
+  end
+
+  def link_back() end
 
 end
 

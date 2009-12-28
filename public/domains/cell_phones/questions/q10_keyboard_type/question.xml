@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Question  is_exclusive="false" label="What kind of keyboard would you like?"  dimension="Hardware" weight="1">   
-    <Choice idurl="numeric" label="numeric" url_image="images/numeric.png" predicate="featureIs(:keyboard_type, :numeric)"/>
-    <Choice idurl="suretype" label="suretype" url_image="images/suretype.png" predicate="featureIs(:keyboard_type, :suretype)"/>
-    <Choice idurl="virtual" label="virtual" url_image="images/virtual.png" predicate="featureIs(:keyboard_type, :virtual)"/>
-    <Choice idurl="vertical_qwerty" label="vertical qwerty" url_image="images/vertical_qwerty.png" predicate="featureIs(:keyboard_type, :vertical_qwerty)"/>
-    <Choice idurl="horizontal_qwerty" label="horizontal qwerty" url_image="images/horizontal_qwerty.png" predicate="featureIs(:keyboard_type, :horizontal_qwerty)"/>
+    <Choice idurl="numeric" label="numeric" url_image="images/numeric.png" recommendation="featureIs(:keyboard_type, :numeric)"/>
+    <Choice idurl="suretype" label="suretype" url_image="images/suretype.png" recommendation="featureIs(:keyboard_type, :suretype)"/>
+    <Choice idurl="virtual" label="virtual" url_image="images/virtual.png" recommendation="featureIs(:keyboard_type, :virtual)"/>
+    <Choice idurl="vertical_qwerty" label="vertical qwerty" url_image="images/vertical_qwerty.png" recommendation="featureIs(:keyboard_type, :vertical_qwerty)"/>
+    <Choice idurl="horizontal_qwerty" label="horizontal qwerty" url_image="images/horizontal_qwerty.png" recommendation="featureIs(:keyboard_type, :horizontal_qwerty)"/>
 </Question>

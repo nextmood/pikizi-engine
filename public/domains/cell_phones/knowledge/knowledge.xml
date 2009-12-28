@@ -10,17 +10,19 @@
 
 		<FeatureTags idurl="brand" label="Brand" is_exclusive="true">
 			<tags>
-				<Tag idurl="nokia" label="Nokia"/>
-				<Tag idurl="motorola" label="Motorola"/>
-				<Tag idurl="blackberry" label="Blackberry"/>
-				<Tag idurl="sony_ericsson" label="Sony Ericsson"/>
-				<Tag idurl="samsung" label="Samsung"/>
-				<Tag idurl="lg_electronics" label="LG Electronics"/>
 				<Tag idurl="apple" label="Apple"/>
+				<Tag idurl="blackberry" label="RIM Blackberry"/>
+				<Tag idurl="casio" label="Casio"/>
+				<Tag idurl="htc" label="HTC"/>
+				<Tag idurl="lg_electronics" label="LG Electronics"/>
+				<Tag idurl="motorola" label="Motorola"/>
+				<Tag idurl="nokia" label="Nokia"/>
+				<Tag idurl="palm" label="Palm"/>
+				<Tag idurl="pantech" label="Pantech"/>
+				<Tag idurl="samsung" label="Samsung"/>
 				<Tag idurl="sanyo" label="Sanyo"/>
 				<Tag idurl="siemens" label="Siemens"/>
-				<Tag idurl="htc" label="HTC"/>
-				<Tag idurl="palm" label="Palm"/>
+				<Tag idurl="sony_ericsson" label="Sony Ericsson"/>
 			</tags>
 		</FeatureTags>
 
@@ -34,6 +36,14 @@
 				<Tag idurl="unlocked" label="unlocked"/>
 			</tags>
 		</FeatureTags>
+        <FeatureTags idurl="carrier_compatibility" label="Carrier Compatibility" is_exclusive="false">
+            <tags>
+                <Tag idurl="att" label="ATamp;T"/>
+                <Tag idurl="sprint" label="Sprint"/>
+                <Tag idurl="t_mobile" label="T-Mobile"/>
+                <Tag idurl="verizon" label="Verizon"/>
+            </tags>
+        </FeatureTags>
 
 		<FeatureText idurl="nickname" label="Nickname"/> 
 
@@ -119,6 +129,7 @@
 							</tags>
 						</FeatureTags>
 						<FeatureCondition idurl="ruggedized" label="Ruggedized"/>
+						<FeatureCondition idurl="projector" label="Portable projector"/>
                         <FeatureHeader idurl="device_size" label="Device size">
 							<sub_features>
 								<FeatureNumeric idurl="device_height" label="Device Height" format="% .2finches" value_min="2.0" value_max="5.0"/>
@@ -142,6 +153,7 @@
 								<Tag idurl="touchscreen" label="Touchscreen"/>
 								<Tag idurl="toggle" label="Toggle"/>
 								<Tag idurl="trackball" label="Trackball"/>
+								<Tag idurl="trackpad" label="Trackpad"/>
 							</tags>
 						</FeatureTags>
 
@@ -197,11 +209,15 @@
 								<Tag idurl="contact_pictures" label="Contact Pictures"/>
 								<Tag idurl="digital_zoom" label="Digital Zoom"/>
 								<Tag idurl="flash" label="Flash"/>
+								<Tag idurl="geotag_pictures" label="geotag pictures"/>
 								<Tag idurl="image_correction" label="Image Correction"/>
 								<Tag idurl="image_stabilization" label="Image Stabilization"/>
+								<Tag idurl="macro" label="Macro Settings"/>              
 								<Tag idurl="optical_zoom" label="Optical Zoom"/>              
 								<Tag idurl="red_eye_reduction" label="Red Eye Reduction"/>
+								<Tag idurl="timer" label="Timer"/>
 								<Tag idurl="video_mode" label="Video Mode"/>
+								<Tag idurl="white_balance" label="White Balance"/>
 							</tags>
 						</FeatureTags>
 					</sub_features>
@@ -220,6 +236,7 @@
 								<Tag idurl="navigon_app" label="Navigon App"/>
 								<Tag idurl="nokia_maps" label="Nokia Maps"/>
 								<Tag idurl="other_gps_app" label="Other GPS App"/>
+								<Tag idurl="ovi_maps" label="Ovi Maps"/>
 								<Tag idurl="other_gps_service" label="Other GPS Service"/>
 								<Tag idurl="sprint_nav" label="Sprint Navigation"/>
 								<Tag idurl="telenav_app" label="TeleNav GPS App"/>
@@ -233,7 +250,7 @@
 							<tags>
                                 <Tag idurl="automatic_reroute" label="automatic reroute" />
                                 <Tag idurl="familymap" label="Family Locator" />
-								<Tag idurl="geotag_pictures" label="geotag pictures"/>
+                                <Tag idurl="field_force_mgt" label="Field Force Management" />
                                 <Tag idurl="international_navigation" label="International Navigation" />
 								<Tag idurl="location_based_apps" label="location-based apps (e.g. Yelp)"/>
 								<Tag idurl="location_based_services" label="location-based services"/>
@@ -326,6 +343,7 @@
 								<Tag idurl="gtalk" label="Google Talk"/>
 								<Tag idurl="fring" label="Fring"/>
 								<Tag idurl="skype" label="Skype"/>
+								<Tag idurl="lotus_sametime" label="Lotus Sametime"/>
 								<Tag idurl="msn-messenger" label="MSN Messenger"/>
 								<Tag idurl="windows_live" label="Windows Live Messenger"/>
 								<Tag idurl="yahoo_messenger" label="Yahoo Messenger"/>
@@ -359,14 +377,18 @@
 						<FeatureRating idurl="call_rating" label="Call Functionality &amp; Quality Rating" min_rating="0" max_rating="10" user_category="user"/>
 						<FeatureTags idurl="call_features" label="Calling Features" is_exclusive="false">
 							<tags>
-								<Tag idurl="push_to_talk" label="Push-to-talk"/>
-								<Tag idurl="international_roaming" label="International Roaming"/>
-								<Tag idurl="voice_calling" label="Voice Activated Dialing"/>
-								<Tag idurl="visual_voicemail" label="Visual Voicemail"/>
-								<Tag idurl="speed_dialing" label="Speed Dialing"/>
 								<Tag idurl="google_voice" label="Google Voice"/>
+								<Tag idurl="international_roaming" label="International Roaming"/>
+								<Tag idurl="noise_cancellation" label="Background Noise Cancellation"/>
+								<Tag idurl="push_to_talk" label="Push-to-talk"/>
+								<Tag idurl="speakerphone" label="Speed Dialing"/>
+								<Tag idurl="speed_dialing" label="Speed Dialing"/>
 								<Tag idurl="skype" label="Skype"/>
+								<Tag idurl="video_share" label="Video Share"/>
+								<Tag idurl="visual_voicemail" label="Visual Voicemail"/>
 								<Tag idurl="voip" label="VoIP"/>
+								<Tag idurl="voice_calling" label="Voice Activated Dialing"/>
+								<Tag idurl="wifi_calling" label="Wifi Calling"/>
 							</tags>
 						</FeatureTags>        
 					</sub_features>
@@ -387,7 +409,9 @@
 						<Tag idurl="android_21" label="Android 2.1"/>
 						<Tag idurl="android" label="Android"/>
 						<Tag idurl="blackberry" label="Blackberry"/>
+						<Tag idurl="blackberry_5" label="Blackberry 5.0"/>
 						<Tag idurl="palm_webos" label="Palm WebOS"/>
+						<Tag idurl="maemo5" label="Maemo 5"/>
 						<Tag idurl="symbian" label="Symbian S60"/>
 						<Tag idurl="windows_mobile_61" label="Windows Mobile 6.1"/>
 						<Tag idurl="windows_mobile" label="Windows Mobile 6.5"/>
@@ -420,6 +444,7 @@
 				<Tag idurl="activesync" label="ActiveSync Policies"/>
 				<Tag idurl="ondevice_encryption" label="On-device Encryption"/>
 				<Tag idurl="complex_passwords" label="Complex Passwords"/>
+				<Tag idurl="fingerprint" label="Fingerprint Recognition"/>
 				<Tag idurl="remote_wipe" label="Remote Device Wipe"/>
 				<Tag idurl="remote_management" label="Remote Management"/>
 				<Tag idurl="vpn_connection" label="VPN Connection"/>
@@ -498,6 +523,7 @@
 					<tags>
 						<Tag idurl="facebook" label="facebook"/>
 						<Tag idurl="flickr" label="Flickr"/>
+						<Tag idurl="myspace" label="MySpace"/>
 						<Tag idurl="picasa" label="Picasa"/>
 						<Tag idurl="twitter" label="twitter"/>
 						<Tag idurl="youtube" label="Youtube"/>
@@ -529,6 +555,7 @@
 								<Tag idurl="ogg" label="ogg"/>
 								<Tag idurl="protected_aac" label="Protected AAC"/>
 								<Tag idurl="qcelp_evrc" label="QCELP EVRC"/>
+								<Tag idurl="realplayer10" label="RealPlayer10"/>
 								<Tag idurl="wav" label="WAV"/>
 								<Tag idurl="wma9_pro" label="WMA9 pro"/>
 								<Tag idurl="wma_10" label="WMA10"/>
@@ -538,16 +565,19 @@
 							<tags>
 								<Tag idurl="amazon_mp3" label="Amazon MP3"/>
 								<Tag idurl="att_mobile_music" label="AT&amp;T Mobile Music"/>
-								<Tag idurl="comes_with_music_(nokia)" label="Comes with music (Nokia)"/>
+								<Tag idurl="nokia_comes_with_music" label="Nokia Comes with music"/>
 								<Tag idurl="itunes" label="iTunes"/>
 								<Tag idurl="imeem_mobile" label="iMeem Mobile"/>
 								<Tag idurl="lastfm" label="Last.fm"/>
+								<Tag idurl="nokia_comes_with_music" label="Nokia Comes with music"/>
+								<Tag idurl="nokia_music" label="Nokia Music Store"/>
 								<Tag idurl="pandora" label="Pandora"/>
 								<Tag idurl="shazam" label="Shazam"/>
 								<Tag idurl="spotify" label="Spotify"/>
 								<Tag idurl="sprint_music" label="Sprint Digital Lounge"/>
 								<Tag idurl="sprint_radio" label="Sprint Radio"/>
 								<Tag idurl="vcast_with_rhapsody" label="VCast Music with Rhapsody"/>
+								<Tag idurl="xm_radio" label="XM Satellite Radio"/>
 							</tags>
 						</FeatureTags>
 						<FeatureTags idurl="audio_connector" label="Audio Connector" is_exclusive="true">
@@ -569,6 +599,7 @@
 								<Tag idurl="blackberrymedia_center" label="blackberrymedia center"/>
 								<Tag idurl="flash_video" label="Flash Internet Video"/>
 								<Tag idurl="itunes" label="iTunes"/>
+								<Tag idurl="mobiTV" label="MobiTV"/>
 								<Tag idurl="realplayer" label="RealPlayer"/>
 								<Tag idurl="roxio_media_manager" label="Roxio media manager"/>
 								<Tag idurl="sprint_tv" label="Sprint TV"/>
