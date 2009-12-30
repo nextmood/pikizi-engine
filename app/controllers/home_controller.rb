@@ -4,10 +4,8 @@ class HomeController < ApplicationController
   # GET /quizzes
   # return all available quizzes for all knowledges
   def quizzes
-    knowledge = Knowledge.find(:first)
-    @title = knowledge.label
-    @quizzes = knowledge.quizzes
-    
+    @knowledge = Knowledge.load("cell_phones")
+    @quizzes = @knowledge.quizzes    
   end
 
   # GET /start_quiz/:quizze_id
@@ -54,10 +52,17 @@ class HomeController < ApplicationController
      redirect_to("/my_quiz")
   end
 
+  def my_product()
+    product_idurl = params[:product_idurl]
+    @product = Product.load(product_idurl)
+    @knowledge = Knowledge.load("cell_phones")    
+  end
+
   # GET /product/:product_idurl
   def product
     product_idurl = params[:product_idurl]
     @product = Product.load(product_idurl)
+    @knowledge = Knowledge.load("cell_phones")
   end
 
   # GET /products_search
@@ -68,6 +73,8 @@ class HomeController < ApplicationController
     hash_category_products = @knowledge.products.group_by {|product| product.get_value("phone_category") }
     @list_category_products = hash_category_products.collect { |categories, products| [categories.join(', '), products] }
     @last_category = @list_category_products.last.first
+    @knowledge = Knowledge.load("cell_phones")
+    @quizzes = @knowledge.quizzes
   end
 
 end

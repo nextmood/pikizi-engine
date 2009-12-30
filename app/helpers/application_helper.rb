@@ -9,6 +9,7 @@ module ApplicationHelper
       when "home/quizzes" then "home" # ok
       when "home/my_results" then "results"  # result page quizz   ko (menu issue?)
       when "home/my_quiz" then "quizz"   # quizze  #number of answer wrong position
+      when "home/my_product" then "prodResults"   # product page for a given quizz
       when "home/product" then "prodResults"   # product alone
       when "home/products_search" then "products"  # search result
 

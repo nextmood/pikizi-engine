@@ -36,7 +36,7 @@ class User < Root
     user.rpx_name = xml_node['rpx_name']
     user.rpx_username = xml_node['rpx_username']
     user.rpx_email = xml_node['rpx_email']
-    user.idurl = Digest::MD5.hexdigest(user.rpx_identifier)
+    user.idurl = User.compute_idurl(user.rpx_email)
     user.role = xml_node['role']
     user.category = xml_node['category']
     user.reputation = Float(xml_node['reputation'])
@@ -48,6 +48,23 @@ class User < Root
     user
   end
 
+  def self.compute_idurl(rpx_email) Digest::MD5.hexdigest(rpx_email) end
+
+  # create a new user in the database, options:
+  # :rpx_identifier  (mandatory)
+  # :rpx_username (mandatory)
+  # :rpx_email (mandatory)
+  # :rpx_name  (default to username)
+  # :rpx_role (default 'user')
+  def self.first_create(options)
+    u = User.create( :idurl => User.compute_idurl(options[:rpx_email]),
+                     :rpx_identifier => options[:rpx_identifier],
+                     :rpx_username => options[:rpx_username],
+                     :rpx_email => options[:rpx_email],
+                     :rpx_name => (options[:rpx_name] || options[:rpx_username]),
+                     :rpx_role => (options[:rpx_role] || "user") )
+    u
+  end
   # load a user object from an idurl  or a mongo db_id
   def link_back() quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) } end
 

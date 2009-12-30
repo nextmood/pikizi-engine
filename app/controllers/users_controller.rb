@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
       rpx_email = rpx_data[:email]
       rpx_identifier = rpx_data[:identifier]
-      user_idurl = Digest::MD5.hexdigest(rpx_identifier)
+      user_idurl = User.compute_idurl(rpx_email)
 
       logged_user = User.load(user_idurl)
 
@@ -78,13 +78,11 @@ class UsersController < ApplicationController
       is_new_user = false
       unless logged_user
         is_new_user = true
-        initial_attributes = {:idurl => user_idurl,
-                              :rpx_identifier => rpx_identifier,
-                              :rpx_name => rpx_data[:name],
-                              :rpx_username => rpx_data[:username],
-                              :rpx_email => rpx_email }
-        initial_attributes[:role] = "admin" if rpx_email == "cpatte@gmail.com"
-        logged_user = User.create(initial_attributes)
+        logged_user = User.first_create(:rpx_identifier => rpx_identifier,
+                            :rpx_name => rpx_data[:name],
+                            :rpx_username => rpx_data[:username],
+                            :rpx_email => rpx_email,
+                            :role => ("admin" if rpx_email == "cpatte@gmail.com") )
       end
 
       if logged_user.is_authorized

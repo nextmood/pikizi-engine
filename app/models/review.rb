@@ -10,10 +10,10 @@ class Review < Root
   key :filename, String
   key :knowledge_idurl, String
   key :product_idurl, String
-  key :author, String
+  key :author_email, String
   key :source, String
   key :url, String      # external url for the review
-  key :written_at, Array
+  key :written_at, Date
   key :datas, Array
 
   key :user_id, String
@@ -33,7 +33,7 @@ class Review < Root
         review = Review.create(:filename => file_review_xml,
                                :knowledge_idurl => knowledge.idurl,
                                :product_idurl => xml_node['product_idurl'],
-                               :author => xml_node['author'],
+                               :author_email => xml_node['author'],
                                :source => xml_node['source'],
                                :url => xml_node['url'],
                                :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
@@ -42,9 +42,9 @@ class Review < Root
         xml_node.find("FeatureOpinion").each do |node_feature_opinion|
           opinion = Opinion.new(node_feature_opinion['idurl'])
 
-          node_feature_opinion.find("Rated").each do |node_rating|
-            min_rating = node_rating["min_rating"] || 0   
-            max_rating = node_rating["max_rating"] || 10
+          node_feature_opinion.find("rating").each do |node_rating|
+            min_rating = Float(node_rating["min_rating"] || 0)
+            max_rating = Float(node_rating["max_rating"] || 10)
             node_content = node_rating.content.strip
             opinion.add_rating(min_rating, max_rating, Float(node_content)) if node_content != ""
           end
@@ -67,7 +67,7 @@ class Review < Root
             opinion.add_comparator(:worse, node_worse["predicate"], node_worse.content.strip)
           end
 
-          puts "feature_idurl=#{opinion.feature_idurl} product_idurl=#{review.product_idurl} author_idurl=#{review.author}  source=#{review.source} url=#{review.url} date=#{review.written_at} ratings=#{opinion.ratings.inspect} tips=#{opinion.tips.inspect} comparators=#{opinion.comparators.inspect}" if opinion.ratings.size >0 and opinion.ratings.first.last 
+          puts "feature_idurl=#{opinion.feature_idurl} product_idurl=#{review.product_idurl} author_idurl=#{review.author_email}  source=#{review.source} url=#{review.url} date=#{review.written_at} ratings=#{opinion.ratings.inspect} tips=#{opinion.tips.inspect} comparators=#{opinion.comparators.inspect}" if opinion.ratings.size >0 and opinion.ratings.first.last 
 
           review.datas << opinion.to_data
           review.save
@@ -75,6 +75,8 @@ class Review < Root
       end
     end
   end
+
+  def opinions() datas.collect { |feature_idurl, ratings, comparators, tips| Opinion.from_data(feature_idurl, ratings, comparators, tips) } end
 
   def self.generate_xml
 
@@ -94,7 +96,8 @@ class Opinion
   end
 
   def to_data() [@feature_idurl, @ratings, @comparators, @tips] end
-
+  def self.from_data(feature_idurl, ratings, comparators, tips) Opinion.new(feature_idurl, ratings, comparators, tips) end
+  
   def add_rating(min_rating, max_rating, rating)
     @ratings << [min_rating, max_rating, rating]
   end

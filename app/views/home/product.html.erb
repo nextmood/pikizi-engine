@@ -1,3 +1,5 @@
+<% feature_image = @knowledge.get_feature_by_idurl("main_image").get_value(@product) %>
+
 <div id="main">
     <div class="box952">
 
@@ -10,32 +12,11 @@
             <div class="spcr"></div>
         <ul class="one">
             <li class="img">
-                <img src="/images/gene/iPhone3Gfrontback.png" />
+                <img src="<%= @knowledge.clean_url(feature_image, @product) %>" width="220" height="220" />
             </li>
 
             <li class="details  blank">
-                <table>
-                    <tr>
-                        <td>Model:</td>
-                        <td class="lft"><strong>iPhone 3GS</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Manufacturer</td>
-
-                        <td class="lft"><strong>Apple</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Carrier:</td>
-                        <td class="lft"><strong>AT&T</strong></td>
-                    </tr>
-                    <tr>
-
-                        <td>Rating:</td>
-                        <td class="lft"><ul class='star-rating'>
-                    <li class='current-rating' style="width:42px;">Currently 3.5/5 Stars.</li>
-                </ul></td>
-                    </tr>
-                </table>
+              <%= render(:partial => "/home/product_details", :locals => {:knowledge => @knowledge, :product => @product}) %>
             </li>
             <li class="fit advisor">
 
@@ -45,38 +26,7 @@
             </li>
             <div class="spcr"></div>
         </ul>
-        <ul class="buy">
-            <li>
-                <h3>Buy</h3>
-
-                <table>
-                    <tr>
-                        <td class="src"><a href="#">Amazon.com</a></td>
-                        <td class="prc">$299</td>
-                    </tr>
-                    <tr>
-                        <td class="src"><a href="#">Apple</a></td>
-
-                        <td class="prc">$299</td>
-                    </tr>
-                    <tr>
-                        <td class="src"><a href="#">AT&amp;T</a></td>
-                        <td class="prc">$299</td>
-                    </tr>
-                    <tr>
-
-                        <td class="src"><a href="#">BestBuy</a></td>
-                        <td class="prc">$299</td>
-                    </tr>
-                </table>
-            </li>
-            <li>
-            <h3>Typical price</h3>
-
-            <p>With plan: $ 199 to $ 299</p>
-            <p>Unlocked: $ 599 to 699</p>
-            </li>
-        </ul>
+        <%= render(:partial => "/home/product_price", :locals => {:knowledge => @knowledge, :product => @product}) %>
          </div>
          <!-- HERE IS WHERE THE ADVISOR RESULTS GO-->
          <div class="spcr"></div>

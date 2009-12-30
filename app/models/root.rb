@@ -15,6 +15,7 @@ class Root
     Question.find(:all).each(&:destroy)
     Quizze.find(:all).each(&:destroy)
     Product.find(:all).each(&:destroy)
+    Review.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
     User.find(:all).each do |user|
       user.quizze_instances = []
@@ -23,14 +24,16 @@ class Root
     end
     k = Knowledge.initialize_from_xml("cell_phones")
     k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight(k) }
-    "database reset"
+    Review.initialize_from_xml(k)
+    k.recompute_ratings
+    "database reset"    
   end
 
 
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
   def self.rule3(x, min, max)
     y = Root.rule3_cache(x, Root.rule3_ab(min, max))
-    puts "error x=#{x} y=#{y} min=#{min} max=#{max} ab=#{Root.rule3_ab(min, max).inspect}" unless y.in01? and x.in01?
+    puts "error x=#{x} y=#{y} min=#{min} max=#{max} ab=#{Root.rule3_ab(min, max).inspect}" unless y.in01?
     y
   end
   def self.rule3_cache(x, ab)

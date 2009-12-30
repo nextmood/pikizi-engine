@@ -1,0 +1,28 @@
+<% feature_brand = knowledge.get_feature_by_idurl("brand").get_value_html(product) %>
+<% feature_carrier = knowledge.get_feature_by_idurl("carriers").get_value_html(product) %>
+
+<table>
+    <tr>
+        <td>Model:</td>
+        <td class="lft"><strong><%= product.label %></strong></td>
+    </tr>
+    <tr>
+        <td>Manufacturer</td>
+
+        <td class="lft"><strong><%= feature_brand %></strong></td>
+    </tr>
+    <tr>
+        <td>Carrier:</td>
+        <td class="lft"><strong><%= feature_carrier %></strong></td>
+    </tr>
+    <tr>
+        <td>Rating:</td>
+        <td class="lft">
+          <% if feature_rating = knowledge.get_feature_by_idurl("overall_rating").get_value(product) %>
+            <ul class='star-rating'>
+                <li title="rating=<%= feature_rating %>" class='current-rating' style="<%= "width:#{(70 * feature_rating).round }px;" %>"></li>
+            </ul>
+          <% end %>
+        </td>
+    </tr>
+</table>

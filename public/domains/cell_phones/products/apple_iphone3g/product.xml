@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Product label="iPhone 3G">
-  <Value idurl="main_image">images/iphone3g/iphone3g.png<!--an url, like images/mabelle_image.png --></Value>
+  <Value idurl="main_image">images/iphone3g.png<!--an url, like images/mabelle_image.png --></Value>
   <Value idurl="main_url">http://www.apple.com/iphone/specs-3g.html<!--an url, like <![CDATA[ http//amazon.com/iphone.html ]]> --></Value>
   <Value idurl="description">content/iphone3g.html<!--an url, like files/toto.html --></Value>
   <Value idurl="brand">apple<!--ONE tag among: apple  blackberry  casio  htc  lg_electronics  motorola  nokia  palm  pantech  samsung  sanyo  siemens  sony_ericsson --></Value>
@@ -30,7 +30,7 @@
   <Value idurl="amazon_url">
     <!--    an url, like <![CDATA[ http//amazon.com/iphone.html ]]> -->
   </Value>
-  <Value idurl="best_buy_price">
+  <Value idurl="bestbuy_price">
     <!--a number between 0.0 and 1000.0 -->
   </Value>
   <Value idurl="bestbuy_url">

@@ -1,0 +1,27 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2009-12-30 16:27:26) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1004ms (View: 118 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2009-12-30 16:28:14) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 139ms (View: 7 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2009-12-30 16:28:22) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 762ms (View: 226 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2009-12-30 16:28:47) [GET]
+  Parameters: {"product_idurl"=>"nokia_7705_twist"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (6.0ms)
+Rendered home/_product_price (8.1ms)
+Completed in 237ms (View: 48 | 200 OK [http://localhost/product/nokia_7705_twist]

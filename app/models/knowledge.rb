@@ -26,6 +26,7 @@ class Knowledge < Root
   def self.is_main_document() true end
 
   def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end
+  def each_feature_rating(&block) each_feature { |feature| block.call(feature) if feature.is_a?(FeatureRating) } ;nil end
   def each_feature_collect(&block) l = []; each_feature { |feature| l << block.call(feature) }; l end
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
@@ -96,6 +97,23 @@ class Knowledge < Root
     xml_node
   end
 
+  def get_price_min_html(product) get_price_min_max_html(product, :min) end
+  def get_price_min_max_html(product, mode = :minmax)
+    f_prices = ["unsubsidized_price", "subsidized_price", "special_carrier_promotion", "amazon_price", "bestbuy_price", "radioshack_price"]
+    prices = f_prices.collect { |feature_name| get_feature_by_idurl(feature_name).get_value(product) }.compact
+    if prices.size > 0
+      price_min = prices.min
+      price_max = prices.max
+      if mode == :minmax and price_min != price_max
+        "$ #{'%.2f' % price_min} to $ #{'%.2f' % price_max}"
+      else
+        "$ #{'%.2f' % price_min}"
+      end
+    else
+      "n/a"
+    end
+  end
+
 
   # return a list of sub idurl
   def self.write_children_xml(knowledge, object_idurls, domain_directory, tag)
@@ -127,10 +145,7 @@ class Knowledge < Root
     Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
   end
 
-  def compute_rating()
-    Review.initialize_from_xml(self)
-  end
-  
+
   def generate_product_template(product=nil)
     doc = XML::Document.new
     doc.root =  (top_node = XML::Node.new("Product"))
@@ -146,39 +161,98 @@ class Knowledge < Root
     end
   end
 
-  def generate_reviews_template(product=nil)
+  def generate_reviews_template
     doc = XML::Document.new
     doc.root =  (top_node = XML::Node.new("Review"))
     top_node['author'] = "ph"
-    top_node['product_idurl'] = product ? product.idurl : "a product idurl"
+    top_node['product_idurl'] = "a product idurl"
     top_node['date'] = FeatureDate.date2xml(Time.now)
 
-    each_feature do |feature|
-      if feature.is_a?(FeatureRating)
-        top_node << (node_feature_opinion = XML::Node.new("FeatureOpinion"))
-        node_feature_opinion["idurl"] = feature.idurl
-        node_feature_opinion << XML::Node.new_comment("<tip usage=\"take picture at night\" intensity=\"pro\" confidence=\"1.0\" >...</Tip>")
-        node_feature_opinion << XML::Node.new_comment("<better_than predicate=\"\" />")
-        node_feature_opinion << XML::Node.new_comment("<same_as predicate=\"\" />")
-        node_feature_opinion << XML::Node.new_comment("<worse_than predicate=\"\" />")
-        node_feature_opinion << XML::Node.new_comment("<rated min_rating=\"0\" max_rating=\"5\">3</Rated>")
-        node_feature_opinion << (node_rated = XML::Node.new("Rated"))
-        node_rated["min_rating"] = feature.min_rating.to_s
-        node_rated["max_rating"] = feature.max_rating.to_s
-        if product
-          node_rated << feature.get_value(product).to_s
-        else
-          node_rated << XML::Node.new_comment("a value")
+    each_feature_rating do |feature|
+      top_node << (node_feature_opinion = XML::Node.new("FeatureOpinion"))
+      node_feature_opinion["idurl"] = feature.idurl
+      node_feature_opinion << XML::Node.new_comment("<tip usage=\"take picture at night\" intensity=\"pro\" confidence=\"1.0\" >...</Tip>")
+      node_feature_opinion << XML::Node.new_comment("<better_than predicate=\"\" />")
+      node_feature_opinion << XML::Node.new_comment("<same_as predicate=\"\" />")
+      node_feature_opinion << XML::Node.new_comment("<worse_than predicate=\"\" />")
+      node_feature_opinion << XML::Node.new_comment("<rated min_rating=\"0\" max_rating=\"5\">3</Rated>")
+      node_feature_opinion << (node_rated = XML::Node.new("Rated"))
+      node_rated["min_rating"] = feature.min_rating.to_s
+      node_rated["max_rating"] = feature.max_rating.to_s
+      node_rated << XML::Node.new_comment("a value")
+    end
+    path = "public/domains/#{idurl}"
+    doc.save("#{path}/reviews/review_template.xml")
+  end
+
+  
+  def recompute_ratings
+
+    # compute
+    # hash_p_f_aggregation[product_idurl][feature_idurl] -> [nb_weighted, sum_weighted]
+
+    # initialize for each ratable features
+    # hash_p_f_aggregation[product_idurl][feature_idurl]  -> [0.0, 0.0]
+    puts "initialization... for model #{label}"
+    hash_p_f_aggregation = {}
+    products.each do |product|
+      hash_p_f_aggregation[product.idurl] = {}
+      each_feature_rating do |feature|
+        hash_p_f_aggregation[product.idurl][feature.idurl] = [0.0, 0.0]
+      end
+    end
+
+    # process each review objects
+    puts "processing reviews..."
+    Review.find(:all).each do |review|
+      if review.knowledge_idurl == idurl
+        p_idurl = review.product_idurl
+        raise "no author in review #{review.filename}" unless review.author_email
+        user = User.load(User.compute_idurl(review.author_email))
+        user ||= User.first_create( :rpx_identifier => "user_#{review.author_email}",
+                                    :rpx_email => review.author_email,
+                                    :rpx_username => "user_#{review.author_email}",
+                                    :role => "reviewer")
+        hash_f_aggregation = hash_p_f_aggregation[p_idurl]
+        raise "error unknown product=#{p_idurl} in review #{review.filename}" unless hash_f_aggregation
+
+        review.opinions.each do |opinion|
+
+          f_idurl = opinion.feature_idurl
+
+          # :ratings      => min_rating, max_rating, rating
+          # :comparators  => type, predicate, label
+          # :tips         => usage, intensity, label
+
+          nb_weighted, sum_weighted = hash_f_aggregation[f_idurl]
+          raise "error unknown feature=#{f_idurl} for product=#{p_idurl}" unless nb_weighted and sum_weighted
+
+          opinion.ratings.each do |min_rating, max_rating, rating|
+            rating_01 = Root.rule3(rating, min_rating, max_rating)
+            nb_weighted += user.reputation
+            sum_weighted += (user.reputation * rating_01)
+          end
+
+          hash_p_f_aggregation[p_idurl][f_idurl] = [nb_weighted, sum_weighted]
+
         end
       end
     end
-    path = "public/domains/#{idurl}"
-    if product
-      doc.save("#{path}/reviews/review_4_#{product.idurl}.xml")
-    else
-      doc.save("#{path}/reviews/review_template.xml")
+
+    # write the result for each models and products
+    puts "writing results..."
+    products.each do |product|
+      each_feature_rating do |feature|
+        nb_weighted, sum_weighted = hash_p_f_aggregation[product.idurl][feature.idurl]
+        average_rating = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
+        product.set_value(feature.idurl, average_rating)
+        puts "#{product.idurl}/#{feature.idurl}=#{average_rating}" if average_rating
+      end
+      product.save
     end
+
   end
+
 
   # return the number of products handled by this model
   def nb_products() products.size end
@@ -580,7 +654,7 @@ class FeatureRating < Feature
     if rating = get_value(product)
       nb_stars = ((max_rating - min_rating).to_f * rating).round
       s = ""; nb_stars.times { s << FeatureRating.icon_star.clone }
-      s
+      "<span title=\"rating=#{rating}\">#{s}</span>"
     end
   end
 

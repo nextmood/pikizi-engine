@@ -73,6 +73,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/quizzes", :controller => 'home', :action => 'quizzes'
   map.connect "/start_quiz/:quizze_id", :controller => 'home', :action => 'start_quiz'
   map.connect "/my_quiz", :controller => 'home', :action => 'my_quiz'
+  map.connect "/my_product/:product_idurl", :controller => 'home', :action => 'my_product'
   map.connect "/record_my_answer", :controller => 'home', :action => 'record_my_answer'
   map.connect "/my_results", :controller => 'home', :action => 'my_results'
   map.connect "/product/:product_idurl", :controller => 'home', :action => 'product'

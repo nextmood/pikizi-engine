@@ -2,8 +2,7 @@
 <Knowledge label="Cell Phones">
 
 	<sub_features>
-		<FeatureRating idurl="overall_expert_rating" label="Expert Rating" min_rating="0" max_rating="10" user_category="expert"/>
-		<FeatureRating idurl="overall_user_rating" label="User Rating" min_rating="0" max_rating="10" user_category="user"/>
+		<FeatureRating idurl="overall_rating" label="Rating" min_rating="0" max_rating="10" />
 		<FeatureImage  idurl="main_image" label="Product Picture" />
 		<FeatureUrl  idurl="main_url" label="URL" />
 		<FeatureTextarea idurl="description" label="Product Description" />
@@ -28,7 +27,7 @@
 
 		<FeatureTags idurl="carriers" label="Carriers" is_exclusive="true">
 			<tags>
-				<Tag idurl="att" label="ATamp;T"/>
+				<Tag idurl="att" label="AT&amp;T"/>
 				<Tag idurl="sprint" label="Sprint"/>
 				<Tag idurl="t_mobile" label="T-Mobile"/>
 				<Tag idurl="verizon" label="Verizon"/>
@@ -87,7 +86,7 @@
                 <FeatureUrl  idurl="amazon_url" label="Amazon's Product Page" />
               </sub_features>
  		</FeatureNumeric>
-        <FeatureNumeric idurl="best_buy_price" label="BestBuy's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
+        <FeatureNumeric idurl="bestbuy_price" label="BestBuy's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
             <sub_features>
                 <FeatureUrl  idurl="bestbuy_url" label="BestBuy's Product Page" />
               </sub_features>

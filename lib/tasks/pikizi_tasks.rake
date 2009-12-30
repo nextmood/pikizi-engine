@@ -27,75 +27,11 @@ namespace :pikizi do
   end
 
 
-
-  desc "Recompute all aggregations based on reviews of all users on all products for all models"
+  desc "Recompute all aggregations based on reviews on all products for a model"
   task :recompute_ratings => :environment do
+    knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
+    knowledge = Knowledge.load(knowledge_idurl)
 
-    # compute
-    # hash_k_f_p_aggregation[knowledge_idurl][feature_idurl][product_idurl] -> [nb_weighted, sum_weighted, [[user_idurl, reputation, note], ....]]
-
-    # initialize for each ratable features
-    # hash_k_f_p_aggregation[knowledge_idurl][feature_idurl][product_idurl] -> [0.0, 0.0, []]
-    puts "initialization..."
-    hash_k_f_p_aggregation = {}
-    product_idurls = Product.xml_idurls
-    Knowledge.xml_idurls.each do |knowledge_idurl|
-      hash_f_p_aggregation = hash_k_f_p_aggregation[knowledge_idurl] = {}
-      Knowledge.get_from_idurl(knowledge_idurl).hash_idurl_feature.each do |feature_idurl, feature|
-        if feature.is_a?(FeatureRating)
-          puts "setting up for feature #{feature_idurl} "
-          hash_f_p_aggregation[feature_idurl] = product_idurls.inject({}) { |h, product_idurl| h[product_idurl] = [0.0, 0.0, []]; h }
-        end
-      end
-    end
-
-    # process each user
-    puts "processing users..."
-    User.xml_idurls.each do |user_idurl|
-      user = User.create_from_xml(user_idurl)
-      user.authored_reviews.each do |auth_review|
-        k_idurl = auth_review.knowledge_idurl
-        f_idurl = auth_review.feature_idurl
-        p_idurl = auth_review.product_idurl
-        raise "Wrong parameters #{auth_review.inspect}" unless k_idurl and f_idurl and p_idurl
-
-        hash_f_p_aggregation = hash_k_f_p_aggregation[k_idurl]
-        raise "knowledge idurl unknown #{k_idurl} #{hash_k_f_p_aggregation.inspect}" unless hash_f_p_aggregation
-
-        hash_p_aggregation = hash_f_p_aggregation[f_idurl]
-        raise "feature idurl unknown #{f_idurl}" unless hash_p_aggregation
-
-        aggregation = hash_p_aggregation[p_idurl]
-        raise "product idurl unknown #{p_idurl}" unless aggregation
-
-        nb_weighted, sum_weighted, authors = aggregation
-        nb_weighted += user.reputation
-        sum_weighted += (user.reputation * auth_review.value)
-        authors << [user.idurl, user.reputation, auth_review.value]
-        hash_k_f_p_aggregation[k_idurl][f_idurl][p_idurl] = [nb_weighted, sum_weighted, authors]
-      end
-    end
-
-    # write the result for each product
-    puts "writing results..."
-    Product.xml_idurls.each do |product_idurl|
-      product = Product.get_from_idurl(product_idurl)
-
-      hash_k_f_p_aggregation.each do |knowledge_idurl, hash_f_p_aggregation|
-        hash_f_p_aggregation.each do |feature_idurl, hash_p_aggregation|
-          if aggregation = hash_p_aggregation[product_idurl]
-            nb_weighted, sum_weighted, authors = aggregation
-            average_rating = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
-            values = authors.inject([average_rating]) do |l, (user_idurl, user_reputation, user_rating)|
-              l << "#{user_idurl}(#{user_reputation})=#{user_rating}"
-            end
-            product.feature_data(knowledge_idurl, feature_idurl).values = values
-          end
-        end
-      end
-
-      product.save
-    end
 
   end
 

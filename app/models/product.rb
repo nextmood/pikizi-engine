@@ -20,12 +20,15 @@ class Product < Root
 
   def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
   
-  def get_value(feature_idurl)
-    x = hash_feature_idurl_value[feature_idurl]
-    # puts "getting feature=#{feature_idurl} for product=#{idurl} --> #{x.inspect}"
-    x
-  end
+  def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
 
+  def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
+
+  def gallery_image_urls
+    path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"
+    Root.get_entries("public/#{path}").collect { |entry| "#{path}/#{entry}"}.first(3)
+  end
+  
   def self.initialize_from_xml(knowledge, xml_node)
     product = super(xml_node)
     product.hash_feature_idurl_value = {}
@@ -44,7 +47,7 @@ class Product < Root
             puts "ERROR value product=#{product.idurl} feature=#{feature.idurl} xml_value=#{node_value_content.inspect}"
           end
         end
-        product.hash_feature_idurl_value[feature_idurl] = value
+        product.set_value(feature_idurl, value)
       else
         puts "**** feature #{feature_idurl} in product #{product.idurl} doesn't exist in knowledge"  
       end
