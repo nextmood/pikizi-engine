@@ -1,6 +1,6 @@
 require 'xml'
 require 'mongo_mapper'
-require 'graphviz'
+#require 'graphviz'
 
 class Knowledge < Root
 
@@ -493,23 +493,23 @@ class Feature < Root
 
   def distance_metric(product1, product2) "Undef #{get_value(product1).inspect}" end
 
-  def distance_graph(products)
-    g = GraphViz.new( :G, :type => :graph, :use => :dot, :path => "/usr/local/bin/" )
-
-    # adding nodes....
-    products.each { |p| g.add_node(p.idurl) }
-
-    # adding distance
-    products.each do |p1|
-      products.each do |p2|
-        if p1.idurl > p2.idurl
-          g.add_edge(g.get_node(p1.idurl), g.get_node(p2.idurl), :len => distance(p1, p2))
-        end
-      end
-    end
-    # Generate output image
-    g.output( :png => "/public/images/graphviz/distance.png" )
-  end
+#  def distance_graph(products)
+#    g = GraphViz.new( :G, :type => :graph, :use => :dot, :path => "/usr/local/bin/" )
+#
+#    # adding nodes....
+#    products.each { |p| g.add_node(p.idurl) }
+#
+#    # adding distance
+#    products.each do |p1|
+#      products.each do |p2|
+#        if p1.idurl > p2.idurl
+#          g.add_edge(g.get_node(p1.idurl), g.get_node(p2.idurl), :len => distance(p1, p2))
+#        end
+#      end
+#    end
+#    # Generate output image
+#    g.output( :png => "/public/images/graphviz/distance.png" )
+#  end
 
 
 
