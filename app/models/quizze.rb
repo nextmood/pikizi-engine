@@ -31,7 +31,7 @@ class Quizze < Root
   def dimensions()
     @dimensions ||= questions.inject([]) do |l, question|
       question_dimension = question.dimension
-      l << question_dimension unless l.include?(question_dimension)
+      l << question_dimension unless l.include?(question_dimension) or question_dimension == "unknown"
       l
     end
   end

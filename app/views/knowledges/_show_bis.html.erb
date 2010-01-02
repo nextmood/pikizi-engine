@@ -2,13 +2,13 @@
 <tr id="<%= feature.dom_id %>">
   <td class="feature_header">
      
-       <%= render(:partial => "feature_show",
+       <%= render(:partial => "/knowledges/feature_show",
                   :locals => { :knowledge => knowledge, :feature => feature }) %>
      </div>
    </td>
    <% for product in products %>
         <td style="background-color:<%= feature.color_from_status(product) %>;" >
-              <%= render(:partial => "feature_value_show",
+              <%= render(:partial => "/knowledges/feature_value_show",
                          :locals => { :knowledge => knowledge, :feature => feature, :product => product }) %>
 
         </td>

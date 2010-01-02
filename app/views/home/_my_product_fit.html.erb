@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <td class="header">Personal&nbsp;Fit</td>
+        <td class="countr"><div class="count"><%= (overall * 100).round %>%</div></td>
+    </tr>
+    <tr>
+        <td>Overall fit</td>
+        <td class="bar">
+          <ul class='star-rating'>
+            <li class='current-rating' style="width:120px;">Currently 3.5/5 Stars.</li>
+          </ul>
+        </td>
+        <td class="grn">2</td>
+    </tr>
+    <% for dimension in quizze.dimensions %>
+        <tr>
+            <td><%= dimension %></td>
+            <td class="bar">
+              <ul class='star-rating'>
+                <li class='current-rating' style="width:42px;">Currently 3.5/5 Stars.</li>
+              </ul>
+            </td>
+            <td class="grn">8</td>
+        </tr>
+    <% end %>
+</table>

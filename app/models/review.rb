@@ -12,10 +12,13 @@ class Review < Root
   key :product_idurl, String
   key :author_email, String
   key :source, String
-  key :url, String      # external url for the review
+  key :source_url, String      # external url for the review
   key :written_at, Date
-  key :datas, Array
+  key :feature_idurl, String
+  key :label, String
 
+  key :_type, String
+  
   key :user_id, String
   belongs_to :user
   
@@ -30,84 +33,120 @@ class Review < Root
     get_entries(directory).each do |file_review_xml|
       if file_review_xml.has_suffix(".xml")
         xml_node = XML::Document.file("#{directory}/#{file_review_xml}").root
-        review = Review.create(:filename => file_review_xml,
-                               :knowledge_idurl => knowledge.idurl,
-                               :product_idurl => xml_node['product_idurl'],
-                               :author_email => xml_node['author'],
-                               :source => xml_node['source'],
-                               :url => xml_node['url'],
-                               :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
-                               :datas => [])
-        product = Product.load(review.product_idurl)
+        options_create = { :filename => file_review_xml,
+                           :knowledge_idurl => knowledge.idurl,
+                           :product_idurl => xml_node['product_idurl'],
+                           :author_email => xml_node['author'],
+                           :source => xml_node['source'],
+                           :source_url => xml_node['url'],
+                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now }
+
         xml_node.find("FeatureOpinion").each do |node_feature_opinion|
-          opinion = Opinion.new(node_feature_opinion['idurl'])
+
+          options_create[:feature_idurl] = node_feature_opinion['idurl']
 
           node_feature_opinion.find("rating").each do |node_rating|
-            min_rating = Float(node_rating["min_rating"] || 0)
-            max_rating = Float(node_rating["max_rating"] || 10)
+            cleanup_options_create(options_create)
+            options_create[:min_rating] = Float(node_rating["min_rating"] || 0)
+            options_create[:max_rating] = Float(node_rating["max_rating"] || 10)
             node_content = node_rating.content.strip
-            opinion.add_rating(min_rating, max_rating, Float(node_content)) if node_content != ""
+            if node_content != ""
+              options_create[:rating] = Float(node_content)
+              Review::Rating.create(options_create)
+            end
           end
 
           node_feature_opinion.find("tip").each do |node_tip|
-           usage = node_tip["usage"]
-           intensity = node_tip["intensity"] || 1.0
-           intensity = 1.0 if intensity == "pro"
-           intensity = -1.0 if intensity == "cons"
-           opinion.add_tip(usage, Float(intensity), node_tip.content.strip)
+             cleanup_options_create(options_create)
+             options_create[:usage] = node_tip["usage"]
+             intensity = node_tip["intensity"] || 1.0
+             intensity = 1.0 if intensity == "pro"
+             intensity = -1.0 if intensity == "cons"
+             options_create[:intensity] = Float(intensity)
+             options_create[:label] = node_tip.content.strip
+             Review::Tip.create(options_create)
           end
 
           node_feature_opinion.find("better").each do |node_better|
-            opinion.add_comparator(:better, node_better["predicate"], node_better.content.strip)
+            cleanup_options_create(options_create)
+            options_create[:operator_type] = "better"
+            options_create[:predicate] = node_better["predicate"]
+            options_create[:label] = node_better.content.strip
+            Review::Comparator.create(options_create)
           end
           node_feature_opinion.find("same").each do |node_same|
-            opinion.add_comparator(:same, node_same["predicate"], node_same.content.strip)
+            cleanup_options_create(options_create)
+            options_create[:operator_type] = "same"
+            options_create[:predicate] = node_same["predicate"]
+            options_create[:label] = node_same.content.strip
+            Review::Comparator.create(options_create)
           end
           node_feature_opinion.find("worse").each do |node_worse|
-            opinion.add_comparator(:worse, node_worse["predicate"], node_worse.content.strip)
+            cleanup_options_create(options_create)
+            options_create[:operator_type] = "worse"
+            options_create[:predicate] = node_worse["predicate"]
+            options_create[:label] = node_worse.content.strip
+            Review::Comparator.create(options_create)
           end
 
-          puts "feature_idurl=#{opinion.feature_idurl} product_idurl=#{review.product_idurl} author_idurl=#{review.author_email}  source=#{review.source} url=#{review.url} date=#{review.written_at} ratings=#{opinion.ratings.inspect} tips=#{opinion.tips.inspect} comparators=#{opinion.comparators.inspect}" if opinion.ratings.size >0 and opinion.ratings.first.last 
-
-          review.datas << opinion.to_data
-          review.save
         end
       end
     end
   end
 
-  def opinions() datas.collect { |feature_idurl, ratings, comparators, tips| Opinion.from_data(feature_idurl, ratings, comparators, tips) } end
-
   def self.generate_xml
 
   end
-  
+
+  private
+
+  def self.cleanup_options_create(options_create)
+    options_create[:operator_type] = nil
+    options_create[:predicate] = nil
+    options_create[:label] = nil
+    options_create[:usage] = nil
+    options_create[:intensity] = nil
+    options_create[:min_rating] = nil
+    options_create[:max_rating] = nil
+    options_create[:rating] = nil
+  end
 end
 
-class Opinion
 
-  attr_accessor :feature_idurl, :ratings, :comparators, :tips
-  
-  def initialize(feature_idurl, ratings=nil, comparators=nil, tips=nil)
-    @feature_idurl = feature_idurl
-    @ratings = ratings || []
-    @comparators = comparators || []
-    @tips = tips || []
-  end
+class Rating < Review
 
-  def to_data() [@feature_idurl, @ratings, @comparators, @tips] end
-  def self.from_data(feature_idurl, ratings, comparators, tips) Opinion.new(feature_idurl, ratings, comparators, tips) end
-  
-  def add_rating(min_rating, max_rating, rating)
-    @ratings << [min_rating, max_rating, rating]
-  end
 
-  def add_comparator(type, predicate, label)
-    @comparators << [type, predicate, label]
-  end
+  key :min_rating, Float
+  key :max_rating, Float
+  key :rating, Float
 
-  def add_tip(usage, intensity, label)
-    @tips << [usage, intensity, label]
-  end
-  
+
+
+  def is_valid?() min_rating and max_rating and rating end
+
+  def to_html() "#{rating} in [#{min_rating}, #{max_rating}]" end
+
+end
+
+class Comparator < Review
+
+  key :operator_type, String
+  key :predicate, String
+
+  def to_html() "#{operator_type} predicate=#{predicate}:#{label}" end
+
+  def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
+
+end
+
+
+class Tip < Review
+
+  key :usage, String
+  key :intensity, Float
+
+  def to_html() "usage=#{usage}, i=#{intensity}:#{label}" end
+
+  def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
+
 end

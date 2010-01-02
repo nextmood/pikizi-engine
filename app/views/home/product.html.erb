@@ -22,9 +22,16 @@
 
                 <p>Is it a good fit?</p>
                 Try our advisor
-                <a href="/test_quizz"><img src="/images/gene/startBtnBg.png"</a>
+                <a href="/my_quiz"><img src="/images/gene/startBtnBg.png"</a>
             </li>
             <div class="spcr"></div>
+        </ul>
+        <ul class="gallery">
+          <li class="gallRd"><a href="#"><img src="/images/gene/galleryArwRw.png" /></a></li>
+          <% for image_url in @product.gallery_image_urls %>
+            <li><a href="#"><img src="<%= image_url %>" width="64" height="64" /></a></a></li>
+          <% end %>
+          <li class="gallFd"><a href="#"><img src="/images/gene/galleryArwFd.png" /></a></li>
         </ul>
         <%= render(:partial => "/home/product_price", :locals => {:knowledge => @knowledge, :product => @product}) %>
          </div>
@@ -33,18 +40,5 @@
     </div>
 
 </div>
-<div class="boxLwr">
-    <ul class="tabs">
-        <li><a class="overview" href="#" style="background-position:left top">Overview</a></li>
-        <li><a href="#">Pros &amp; Cons</a></li>
-        <li><a href="#">Specifications</a></li>
+<%= render(:partial => "/home/product_tabs", :locals => {:selected_key => "overview", :knowledge => @knowledge, :product => @product}) %>
 
-        <li><a href="#">Reviews</a></li>
-        <li><a class="last" href="#">Prices</a></li>
-    </ul>
-    <div class="box952">
-        <div class="spcr"></div>
-
-        <div class="spcr"></div>
-    </div>
-</div>

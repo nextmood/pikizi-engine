@@ -1,0 +1,39 @@
+<!-- expected local : tab ("overview", "pros_cons", "specifications", "reviews", "prices") -->
+
+<% tabs = [ { :key => "overview", :label => "Overview", :classname => "overview" },
+            { :key => "pros_cons", :label => "Pros &amp; Cons" },
+            { :key => "specifications", :label => "Specifications" },
+            { :key => "reviews", :label => "Reviews", :classname => "last" }  ] %>
+
+<div class="boxLwr" id="product_tabs">
+
+    <ul class="tabs">
+        <% for tab in tabs %>
+            <li>
+              <% html_options = {} %>
+              <% html_options[:class] = tab[:classname] if tab[:classname] %>
+              <% html_options[:style] = "background-position:left top" if tab[:key] == selected_key %>
+
+              <%= link_to_remote(tab[:label],
+                      :url => {  :action => "switch_product_tab",
+                                 :knowledge_idurl => knowledge.idurl,
+                                 :product_idurl => product.idurl,
+                                 :new_tab => tab[:key]  },
+                      :html => html_options) %>
+
+
+            </li>
+        <% end %>
+
+    </ul>
+    <div class="box952" style="height:auto;">
+        <div class="spcr"></div>
+            <!-- BEGIN content -->
+            <div style="text-align:left; padding-left:15px; height:auto;">
+              <%= render(:partial => "/home/product_tab_#{selected_key}", :locals => {:product => product, :knowledge => knowledge }) %>
+            </div>
+            <!-- END content -->
+        <div class="spcr"></div>
+    </div>
+  
+</div>

@@ -53,9 +53,17 @@ class HomeController < ApplicationController
   end
 
   def my_product()
-    product_idurl = params[:product_idurl]
-    @product = Product.load(product_idurl)
-    @knowledge = Knowledge.load("cell_phones")    
+    if @quizze_instance = get_logged_user.get_latest_quizze_instance
+      product_idurl = params[:product_idurl]
+      @product = Product.load(product_idurl)
+      @quizze = @quizze_instance.get_quizze
+      @knowledge = @quizze.get_knowledge
+      @sorted_affinities = @quizze_instance.sorted_affinities
+      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+    else
+      redirect_to("/quizzes") # select a quizz first !
+    end
+
   end
 
   # GET /product/:product_idurl
@@ -75,6 +83,18 @@ class HomeController < ApplicationController
     @last_category = @list_category_products.last.first
     @knowledge = Knowledge.load("cell_phones")
     @quizzes = @knowledge.quizzes
+  end
+
+  # this is rjs
+  def switch_product_tab
+    knowledge =  Knowledge.load(params[:knowledge_idurl])
+    product = Product.load(params[:product_idurl])
+    selected_key = params[:new_tab]
+    puts "selected_key=#{selected_key.inspect} in controller"
+    render :update do |page|
+      page.replace("product_tabs", :partial => "/home/product_tabs", 
+                  :locals => { :selected_key => selected_key, :knowledge => knowledge, :product => product })
+    end
   end
 
 end

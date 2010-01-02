@@ -9,7 +9,8 @@
       <li class="answers">12</li>
     </ul>
     <div id="search_boxBg">
-      <div class="spcr"></div>
+        <div class="spcr">
+    </div>
       <ul class="one">
         <li class="img"><img src="<%= @knowledge.clean_url(feature_image, @product) %>" width="220" height="220"/> </li>
 
@@ -17,61 +18,7 @@
           <%= render(:partial => "/home/product_details", :locals => {:knowledge => @knowledge, :product => @product}) %>
         </li>
         <li class="fit">
-
-          <table>
-            <tr>
-              <td class="header">Personal Fit</td>
-              <td class="countr"><div class="count">80%</div></td>
-            </tr>
-            <tr>
-              <td>Overall fit</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:80%;">Currently 8.</li>
-                </ul></td>
-              <td class="grn">8</td>
-            </tr>
-            <tr>
-              <td>Communication</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:60%;">Currently 6.</li>
-                </ul></td>
-              <td class="grn">6</td>
-            </tr>
-            <tr>
-              <td>Hardware</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:100%;">Currently 10.</li>
-                </ul></td>
-              <td class="grn">10</td>
-            </tr>
-            <tr>
-              <td>Lifestyle</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:80%;">Currently 8.</li>
-                </ul></td>
-              <td class="grn">8</td>
-            </tr>
-            <tr>
-              <td>Expert rating</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:70%x;">Currently 7.</li>
-                </ul></td>
-              <td class="grn">7</td>
-            </tr>
-            <tr>
-              <td>Price</td>
-
-              <td class="bar"><ul class='star-rating'>
-                  <li class='current-rating' style="width:30%;">Currently 3.</li>
-                </ul></td>
-              <td class="grn">3</td>
-            </tr>
-          </table>
+          <%= render(:partial => "/home/my_product_fit", :locals => {:quizze => @quizze, :overall => 0.1}) %>
         </li>
         <div class="spcr"></div>
 
@@ -90,18 +37,7 @@
     <div class="spcr"></div>
   </div>
 </div>
-<div class="boxLwr">
-  <ul class="tabs">
-    <li><a class="overview" href="#" style="background-position:left top">Overview</a></li>
-    <li><a href="#">Pros &amp; Cons</a></li>
 
-    <li><a href="#">Specifications</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a class="last" href="#">Prices</a></li>
-  </ul>
-  <div class="box952">
-    <div class="spcr"></div>
-    <div class="spcr"></div>
+  <%= render(:partial => "/home/product_tabs", :locals => {:selected_key => "overview", :knowledge => @knowledge, :product => @product}) %>
 
-  </div>
 </div>

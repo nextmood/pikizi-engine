@@ -1,0 +1,8 @@
+
+  <%= begin
+        feature_description = knowledge.get_feature_by_idurl("description").get_value(product)
+        File.read("public/domains/#{knowledge.idurl}/products/#{product.idurl}/#{feature_description}")
+      rescue
+        "No file... public/domains/#{knowledge.idurl}/products/#{product.idurl}/#{feature_description}"
+      end
+  %>

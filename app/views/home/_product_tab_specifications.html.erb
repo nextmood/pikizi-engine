@@ -1,0 +1,9 @@
+<div>
+    <%= link_to_function("Expand all", "treetable_expandAll('thematrix');") %>
+    &nbsp;|&nbsp;
+    <%= link_to_function("Collapse all", "treetable_collapseAll('thematrix');") %>
+</div>
+
+
+<%= render(:partial => "/knowledges/show",
+            :locals => {:selected_products => [product], :knowledge => knowledge }) %>

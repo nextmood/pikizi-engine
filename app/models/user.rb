@@ -20,6 +20,19 @@ class User < Root
 
   timestamps!
 
+  def self.create_default_users
+   [  { :rpx_email => "info@nextmood.com", :rpx_username => "fpatte", :rpx_name => "Franck PATTE", :role => "admin", :category => "user", :rpx_identifier => "http://pipo_for_developper" },
+      { :rpx_email => "", :rpx_username => "FranckPATTE", :rpx_name => "Franck PATTE", :role => "user", :category => "user", :rpx_identifier => "http://www.facebook.com/profile.php?id=562704993" },
+      { :rpx_email => "", :rpx_username => "JulienSalanon", :rpx_name => "Julien Salanon", :role => "user", :category => "user", :rpx_identifier => "http://www.facebook.com/profile.php?id=576451838" },
+      { :rpx_email => "gareyte@gmail.com", :rpx_username => "gareyte", :rpx_name => "gareyte", :role => "user", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawlD3frzF_xhWS5QTyCKibuTIDBNCio_8I0" },
+      { :rpx_email => "cpatte@gmail.com", :rpx_username => "cpatte", :rpx_name => "cpatte", :role => "admin", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawnpmDf5QToZ19rH88JKkxvekvh3Ve9HAmA" },
+      { :rpx_email => "eric.degoul@gmail.com", :rpx_username => "eric.degoul", :rpx_name => "eric.degoul", :role => "unauthorised", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawk_GgNV2dsjnPAvVe5rcxdPT0vPD7-qmiQ" },
+      { :rpx_email => "", :rpx_username => "EricDegoul", :rpx_name => "Eric Degoul", :role => "user", :category => "user", :rpx_identifier => "http://www.facebook.com/profile.php?id=771667528" },
+      { :rpx_email => "phclouin@yahoo.com", :rpx_username => "phclouin", :rpx_name => "phclouin", :role => "tester", :category => "expert", :rpx_identifier => "https://me.yahoo.com/a/DQGsE5AIpen1BT84wjDptBjnsMBZ#16c18" },
+      { :rpx_email => "mr.gene.kim@gmail.com", :rpx_username => "mr.gene.kim", :rpx_name => "mr.gene.kim", :role => "unauthorised", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawmn_Bt_gUemsxYfrj6LRniDCpALfuSFoSk" }
+   ].each { |options| User.first_create(options) }
+  end
+
   def self.is_main_document() true end
 
   def is_authorized() !is_unauthorized end
@@ -36,7 +49,7 @@ class User < Root
     user.rpx_name = xml_node['rpx_name']
     user.rpx_username = xml_node['rpx_username']
     user.rpx_email = xml_node['rpx_email']
-    user.idurl = User.compute_idurl(user.rpx_email)
+    user.idurl = User.compute_idurl(user.rpx_email, user.rpx_identifier)
     user.role = xml_node['role']
     user.category = xml_node['category']
     user.reputation = Float(xml_node['reputation'])
@@ -48,7 +61,20 @@ class User < Root
     user
   end
 
-  def self.compute_idurl(rpx_email) Digest::MD5.hexdigest(rpx_email) end
+  def self.compute_idurl(rpx_email, rpx_identifier=nil)
+    rpx_email = nil if rpx_email == ""
+    Digest::MD5.hexdigest(
+      if String.is_not_empty(rpx_email)
+        rpx_email
+      else      
+        # extract id=something from the rpx_identifier
+        # exemple: facebook http://www.facebook.com/profile.php?id=562704993
+        service, external_id = rpx_identifier.extract_external_id
+        raise "no id for this user" unless service and external_id
+        "#{service}_#{external_id}"
+      end
+    )
+  end
 
   # create a new user in the database, options:
   # :rpx_identifier  (mandatory)
@@ -57,13 +83,10 @@ class User < Root
   # :rpx_name  (default to username)
   # :rpx_role (default 'user')
   def self.first_create(options)
-    u = User.create( :idurl => User.compute_idurl(options[:rpx_email]),
-                     :rpx_identifier => options[:rpx_identifier],
-                     :rpx_username => options[:rpx_username],
-                     :rpx_email => options[:rpx_email],
-                     :rpx_name => (options[:rpx_name] || options[:rpx_username]),
-                     :rpx_role => (options[:rpx_role] || "user") )
-    u
+    options[:idurl] = User.compute_idurl(options[:rpx_email], options[:rpx_identifier])
+    options[:rpx_role] ||= "user"
+    options[:rpx_name] ||= options[:rpx_username]
+    User.create( options )
   end
   # load a user object from an idurl  or a mongo db_id
   def link_back() quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) } end
@@ -282,7 +305,7 @@ class QuizzeInstance < Root
   #  hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
 
   def nb_products_ranked_at_most(max_ranking=3)
-    34  
+    sorted_affinities.inject(0) { |s, a| s += (a.ranking <= max_ranking ? 1 : 0) }  
   end
 
   # record a user's answer  for this quizze_instance

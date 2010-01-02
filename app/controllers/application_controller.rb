@@ -43,18 +43,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_as_developper
-    developper_rpx_identifier = "#001"
-    developper_rpx_email = "info@nextmood.com"
-    developper_idurl = User.compute_idurl(developper_rpx_email)
-    unless @current_user = User.load(developper_idurl)
-      # create a new user
-
-      @current_user = User.first_create(:rpx_identifier => developper_rpx_identifier,
-                                        :rpx_email => developper_rpx_email,
-                                        :rpx_username => "fpatte",
-                                        :rpx_name => "Franck Patte",
-                                        :role => "admin")
-    end
+    @current_user = User.load(User.compute_idurl("info@nextmood.com"))
     session[:logged_user_id] = @current_user.id
   end
 

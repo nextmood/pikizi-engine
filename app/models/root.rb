@@ -17,13 +17,19 @@ class Root
     Product.find(:all).each(&:destroy)
     Review.find(:all).each(&:destroy)
     Knowledge.find(:all).each(&:destroy)
-    User.find(:all).each do |user|
-      user.quizze_instances = []
-      user.reviews = []
-      user.save
-    end
+
+    # optional totally destroy users
+    User.find(:all).each(&:destroy)
+
+#    User.find(:all).each do |user|
+#      user.quizze_instances = []
+#      user.reviews = []
+#      user.save
+#    end
+    
     k = Knowledge.initialize_from_xml("cell_phones")
     k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight(k) }
+    User.create_default_users
     Review.initialize_from_xml(k)
     k.recompute_ratings
     "database reset"    
@@ -186,6 +192,17 @@ class String
   def remove_prefix(prefix) self[prefix.size..self.size-1] end
 
   def has_suffix(suffix) self[self.size-suffix.size..self.size-1] == suffix end
+
+  def self.is_not_empty(s) s if s and s != "" end
+
+  def extract_external_id
+    if has_prefix(prefix = "http://www.facebook.com/profile.php?id=")
+      [:facebook, String.is_not_empty(remove_prefix(prefix))]
+    elsif has_prefix(prefix = "http://www.twitter.com/profile.php?id=")
+      [:twitter, String.is_not_empty(remove_prefix(prefix))]
+    end
+  end
+
 
 end
 

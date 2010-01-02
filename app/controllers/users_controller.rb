@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
       rpx_email = rpx_data[:email]
       rpx_identifier = rpx_data[:identifier]
-      user_idurl = User.compute_idurl(rpx_email)
+      user_idurl = User.compute_idurl(rpx_email, rpx_identifier)
 
       logged_user = User.load(user_idurl)
 

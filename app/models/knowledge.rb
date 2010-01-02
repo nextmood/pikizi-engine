@@ -204,38 +204,40 @@ class Knowledge < Root
 
     # process each review objects
     puts "processing reviews..."
-    Review.find(:all).each do |review|
+    cache_users = {}
+    Review::Rating.find(:all).each do |review|
       if review.knowledge_idurl == idurl
         p_idurl = review.product_idurl
         raise "no author in review #{review.filename}" unless review.author_email
-        user = User.load(User.compute_idurl(review.author_email))
-        user ||= User.first_create( :rpx_identifier => "user_#{review.author_email}",
-                                    :rpx_email => review.author_email,
-                                    :rpx_username => "user_#{review.author_email}",
-                                    :role => "reviewer")
+        unless user = cache_users[review.author_email]
+          user = User.load(User.compute_idurl(review.author_email))
+          user ||= User.first_create( :rpx_identifier => "user_#{review.author_email}",
+                                      :rpx_email => review.author_email,
+                                      :rpx_username => "user_#{review.author_email}",
+                                      :role => "reviewer")
+          cache_users[review.author_email] = user
+        end
+
         hash_f_aggregation = hash_p_f_aggregation[p_idurl]
         raise "error unknown product=#{p_idurl} in review #{review.filename}" unless hash_f_aggregation
 
-        review.opinions.each do |opinion|
 
-          f_idurl = opinion.feature_idurl
+        f_idurl = review.feature_idurl
 
-          # :ratings      => min_rating, max_rating, rating
-          # :comparators  => type, predicate, label
-          # :tips         => usage, intensity, label
+        # :ratings      => min_rating, max_rating, rating
+        # :comparators  => type, predicate, label
+        # :tips         => usage, intensity, label
 
-          nb_weighted, sum_weighted = hash_f_aggregation[f_idurl]
-          raise "error unknown feature=#{f_idurl} for product=#{p_idurl}" unless nb_weighted and sum_weighted
+        nb_weighted, sum_weighted = hash_f_aggregation[f_idurl]
+        raise "error unknown feature=#{f_idurl} for product=#{p_idurl}" unless nb_weighted and sum_weighted
 
-          opinion.ratings.each do |min_rating, max_rating, rating|
-            rating_01 = Root.rule3(rating, min_rating, max_rating)
-            nb_weighted += user.reputation
-            sum_weighted += (user.reputation * rating_01)
-          end
+        rating_01 = Root.rule3(review.rating, review.min_rating, review.max_rating)
+        nb_weighted += user.reputation
+        sum_weighted += (user.reputation * rating_01)
 
-          hash_p_f_aggregation[p_idurl][f_idurl] = [nb_weighted, sum_weighted]
+        hash_p_f_aggregation[p_idurl][f_idurl] = [nb_weighted, sum_weighted]
 
-        end
+
       end
     end
 
@@ -275,7 +277,7 @@ class Knowledge < Root
   # propagate the recommendations associated with the choices_ok
   # update hash_pidurl_affinity ( a hash table between a product-idurl and and a user affinity)
   def propagate_recommendations(question, answer, hash_pidurl_affinity, products, reverse_mode)
-    raise "filtering not implemented yet" if question.is_filter
+    puts "filtering not implemented yet" if question.is_filter
     HashProductIdurl2Weight.after_answer(question, answer).each do |product_idurl, weight|
       hash_pidurl_affinity[product_idurl].add(weight * (reverse_mode ? -1.0 : 1.0), question.weight)
     end

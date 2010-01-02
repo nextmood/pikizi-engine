@@ -71,36 +71,7 @@
                 <a href="/my_product/<%= product.idurl %>">Product Details</a>
             </li>
             <li class="fit">
-                <table>
-
-                    <tr>
-                        <td class="header">Personal&nbsp;Fit</td>
-                        <td class="countr"><div class="count"><%= (affinity.measure * 100).round %>%</div></td>
-                    </tr>
-                    <tr>
-                        <td>Overall fit</td>
-                        <td class="bar">
-                          <ul class='star-rating'>
-                            <li class='current-rating' style="width:120px;">Currently 3.5/5 Stars.</li>
-                          </ul>
-                        </td>
-                        <td class="grn">8</td>
-                    </tr>
-
-                    <% for dimension in @quizze.dimensions %>
-                    <tr>
-                        <td><%= dimension %></td>
-                        <td class="bar">
-                          <ul class='star-rating'>
-                            <li class='current-rating' style="width:42px;">Currently 3.5/5 Stars.</li>
-                          </ul>
-                        </td>
-                        <td class="grn">8</td>
-                    </tr>
-                    <% end %>
-
-
-                </table>
+                <%= render(:partial => "/home/my_product_fit", :locals => {:quizze => @quizze, :overall => affinity.measure}) %>
             </li>
             <div class="spcr"></div>
                 </ul>
