@@ -12,7 +12,7 @@
         <%= hidden_field_tag "question_idurl", next_question.idurl %>
 
         <div id="quizzBox">
-          <h2><%= @quizze_instance.nb_answers + 1 %>. <%= next_question.label %></h2>
+          <h2><%= "#{@quizze_instance.nb_answers + 1}. #{next_question.label}"%> <%= link_to("more..." , "/questions/#{@knowledge.idurl}/#{next_question.idurl}", :style=>"font-size:40%;") if @current_user.role == "admin" %></h2>
 
           <ul class="advisors">
             <% last_choice = (choices = next_question.choices).last %>

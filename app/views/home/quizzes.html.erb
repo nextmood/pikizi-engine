@@ -9,6 +9,7 @@
                   <img src="<%= "/domains/#{quizze.knowledge_idurl}/quizzes/#{quizze.idurl}/#{quizze.main_image_url}" %>" />
                   <%= quizze.label %>
                   <%= link_to("<p></p>", "/start_quiz/#{quizze.id}") %>
+                  <%= link_to("more...", "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}", :style => "font-size:80%; margin-top:-15px;") if @current_user.role == "admin" %>
                 </li>
 
             <% end %>

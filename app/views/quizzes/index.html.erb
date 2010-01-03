@@ -3,8 +3,6 @@
      <div class="pkz_main">
        <% for quizze in @knowledge.quizzes %>
          <div class="pkz_item_list">
-               <%= link_to(image_tag("icons/play.png"), "/myquizze/#{@knowledge.idurl}/#{quizze.idurl}") %>
-               &nbsp;
                <%= link_to(quizze.label, "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
          </div>
        <% end %>

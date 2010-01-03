@@ -6,7 +6,7 @@
         <% form_tag "/quizzes/#{@knowledge.idurl}/#{@quizze.idurl}/edit", :id => "select_products" do -%>
             <table border=1 width="100%">
               <tr>
-                <th><%= @quizze.label %><br/><%= link_to(image_tag("icons/play.png"), "/myquizze/#{@knowledge.idurl}/#{@quizze.idurl}") %></th>
+                <th><%= @quizze.label %></th>
                 <th>Products<br/><%= render(:partial => "/knowledges/select_all", :locals => {:name => "select_product_idurls"}) %></th>
                 <th>Questions<br/><%= render(:partial => "/knowledges/select_all", :locals => {:name => "select_question_idurls"}) %></th>
               </tr>
