@@ -4,7 +4,7 @@
     <% next_question = @current_user.get_next_question(@knowledge, @quizze) %>
     <ul class="bugRt">
       <li class="backAd"><a href="<%= "/my_results" %>">results</a></li>
-      <li class="answers"><%= @quizze_instance.nb_products_ranked_at_most(3) %></li>
+      <li class="answers"><%= @quizze_instance.nb_products_ranked_at_most %></li>
     </ul>
     <% form_tag "/record_my_answer", :id => "question_form" do -%>
         <%= hidden_field_tag "knowledge_idurl", @knowledge.idurl %>

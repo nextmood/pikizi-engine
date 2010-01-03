@@ -304,8 +304,22 @@ class QuizzeInstance < Root
   def nb_answers() answers.size end
   #  hash_answered_question_answers.inject(0) { |sum, (question_idurl, answers)| sum += answers.size }
 
-  def nb_products_ranked_at_most(max_ranking=3)
-    sorted_affinities.inject(0) { |s, a| s += (a.ranking <= max_ranking ? 1 : 0) }  
+  def nb_products_ranked_at_most
+    max_ranking_1 = 0
+    max_ranking_12 = 0
+    max_ranking_123 = 0
+    sorted_affinities.each do |a|
+      max_ranking_1 += (a.ranking == 1 ? 1 : 0)
+      max_ranking_12 += (a.ranking <= 2 ? 1 : 0)
+      max_ranking_123 += (a.ranking <= 3 ? 1 : 0)
+    end
+    if max_ranking_1 > 5
+      max_ranking_1
+    elsif max_ranking_12 > 5
+      max_ranking_12
+    else
+      max_ranking_123
+    end
   end
 
   # record a user's answer  for this quizze_instance
