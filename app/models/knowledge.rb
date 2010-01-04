@@ -162,6 +162,7 @@ class Knowledge < Root
   end
 
   def generate_reviews_template
+    raise "ne pas lancer"
     doc = XML::Document.new
     doc.root =  (top_node = XML::Node.new("Review"))
     top_node['author'] = "ph"
@@ -587,7 +588,21 @@ class FeatureTags < Feature
   end
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) content_string.strip.split(', ') end
+  def xml2value(content_string)
+    content_string = content_string.strip
+    has_space = content_string.include?(' ')
+    has_comma = content_string.include?(',')
+    raise "error" if has_space and has_comma
+    if has_space
+      tag_idurls = content_string.split(' ')
+    elsif has_comma
+      tag_idurls = content_string.split(',')
+    else
+      tag_idurls = [content_string]
+    end
+    tag_idurls.each(&:strip!)
+    tag_idurls
+  end
   def value2xml(value) value.join(', ') end
 
   # ---------------------------------------------------------------------

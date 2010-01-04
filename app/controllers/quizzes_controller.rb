@@ -24,18 +24,17 @@ class QuizzesController < ApplicationController
   end
 
   # show details results of a quizze instance
-  # GET /myquizze_results/knowledge_idurl/quizze_idurl
-  # GET /myquizze_results/knowledge_idurl
+  # GET /myquizze_results
   def myquizze_results
-    @knowledge = Knowledge.load(params[:knowledge_idurl])
-    @quizze = Quizze.load(params[:quizze_idurl])
     @current_user = get_logged_user
-    @quizze_instance = @current_user.get_quizze_instance(@quizze)
-    @sorted_affinities = @quizze_instance.sorted_affinities
-    @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
-
-    #@results_details = @quizze_instance.results_details(@knowledge)
-    #@rankings_and_products = .collect { |affinity| [affinity.ranking, @knowledge.get_product_by_idurl(affinity.product_idurl)] }
+    if @quizze_instance = @current_user.get_latest_quizze_instance
+      @quizze = @quizze_instance.get_quizze
+      @knowledge = @quizze.get_knowledge
+      @sorted_affinities = @quizze_instance.sorted_affinities
+      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+    else
+      redirect_to("/quizzes") # select a quizz first !
+    end
   end
 
 

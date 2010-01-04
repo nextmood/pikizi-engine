@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '/myquizze/:knowledge_idurl/:quizze_idurl', :controller => 'quizzes', :action => 'myquizze'
   map.connect '/myquizze/:knowledge_idurl', :controller => 'quizzes', :action => 'myquizze'
-  map.connect '/myquizze_results/:knowledge_idurl/:quizze_idurl', :controller => 'quizzes', :action => 'myquizze_results'
+  map.connect '/myquizze_results', :controller => 'quizzes', :action => 'myquizze_results'
 
   map.resources :users, :member => { :process_review => :get }
   map.connect '/profile/:user_idurl', :controller => 'users', :action => 'show_by_idurl'  
