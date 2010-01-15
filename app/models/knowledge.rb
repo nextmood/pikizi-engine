@@ -664,8 +664,10 @@ class FeatureRating < Feature
     get_value(product).to_f
   end
 
-  def get_value_in_min_max_rating(product)
-    get_value_01(product) * (max_rating - min_rating) + min_rating 
+  def get_value_in_min_max_rating(product) get_value_in_min_max_rating_bis(get_value_01(product)) end
+
+  def get_value_in_min_max_rating_bis(value_01)
+    value_01 * (max_rating - min_rating) + min_rating
   end
 
   # ---------------------------------------------------------------------

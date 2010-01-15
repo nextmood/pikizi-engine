@@ -10,8 +10,7 @@
         <div id="details_<%= feature_rating.idurl %>" style="display:none;">
             <% for review in reviews %>
                 <div style="border-top:1px dashed black; margin-top:8px; font-style:italic;" title="filename:<%= review.filename %>, <%= review.class %>">
-                    
-                    <div>on <%= review.written_at %>, <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %></div>
+                    <div><%= review.written_at %>, <%= feature_rating.get_value_in_min_max_rating_bis(Root.rule3(review.rating, review.min_rating, review.max_rating)) %> <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %></div>
                 </div>
             <% end %>
         </div>
