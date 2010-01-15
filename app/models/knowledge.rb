@@ -30,6 +30,8 @@ class Knowledge < Root
 
   def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end
   def each_feature_rating(&block) each_feature { |feature| block.call(feature) if feature.is_a?(FeatureRating) } ;nil end
+  def feature_ratings() l = []; each_feature_rating { |o| l << o }; l end
+
   def each_feature_collect(&block) l = []; each_feature { |feature| l << block.call(feature) }; l end
   def features_all() each_feature_collect { |o| o } end
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end

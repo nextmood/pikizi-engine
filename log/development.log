@@ -1,0 +1,806 @@
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-01-15 16:19:02) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 3757ms (View: 269 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:19:09) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.2ms)
+Rendered home/_product_price (7.0ms)
+Rendered home/_product_tab_overview (1.9ms)
+Rendered home/_product_tabs (12.7ms)
+Completed in 1009ms (View: 50 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:19:15) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (519.0ms)
+Rendered home/_product_tabs (529.5ms)
+Completed in 945ms (View: 533 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:19:21) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+
+ActionView::TemplateError (Missing template /home/_product_tab_ratings.erb in view path app/views:vendor/plugins/mongo_admin/app/views) on line #34 of app/views/home/_product_tabs.html.erb:
+31:         <div class="spcr"></div>
+32:             <!-- BEGIN content -->
+33:             <div style="text-align:left; padding-left:15px; height:auto;">
+34:               <%= render(:partial => "/home/product_tab_#{selected_key}", :locals => {:product => product, :knowledge => knowledge }) %>
+35:             </div>
+36:             <!-- END content -->
+37:         <div class="spcr"></div>
+
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (70.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:21:50) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.2ms)
+Rendered home/_product_price (7.0ms)
+Rendered home/_product_tab_overview (1.8ms)
+Rendered home/_product_tabs (12.9ms)
+Completed in 1035ms (View: 99 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:21:53) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (0.7ms)
+Rendered home/_product_tabs (614.4ms)
+Completed in 1054ms (View: 618 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:24:04) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.8ms)
+Rendered home/_product_price (7.4ms)
+Rendered home/_product_tab_overview (2.2ms)
+Rendered home/_product_tabs (557.5ms)
+Completed in 1057ms (View: 597 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:24:07) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+ERROR: compiling _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings RAISED compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer
+        ^
+Function body:           def _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];knowledge = local_assigns[:knowledge];product = local_assigns[:product];product_tab_ratings = local_assigns[:product_tab_ratings];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div><h1>Rating</h1></h1></div>\n\n"
+
+;  for knowledge.each_feature_rating do |feature_rating| ; @output_buffer.concat "\n    <div>"
+; @output_buffer.concat(( feature_rating ).to_s); @output_buffer.concat "</div>\n"
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tabs.html.erb:34:in `_run_erb_app47views47home47_product_tabs46html46erb_locals_knowledge_object_product_product_tabs_selected_key'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:993:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:792:in `replace'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:94:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `instance_exec'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/capture_helper.rb:129:in `with_output_buffer'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:577:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:93:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/cache/strategy/local_cache.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer
+        ^) on line #5 of app/views/home/_product_tab_ratings.html.erb:
+2: 
+3: <% for knowledge.each_feature_rating do |feature_rating| %>
+4:     <div><%= feature_rating %></div>
+5: <% end %>
+
+    app/views/home/_product_tab_ratings.html.erb:8:in `compile!'
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (77.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:24:19) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+ERROR: compiling _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings RAISED compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer
+        ^
+Function body:           def _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];knowledge = local_assigns[:knowledge];product = local_assigns[:product];product_tab_ratings = local_assigns[:product_tab_ratings];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div><h1>Rating</h1></h1></div>\n\n"
+
+;  for knowledge.each_feature_rating do |feature_rating| ; @output_buffer.concat "\n    <div>"
+; @output_buffer.concat(( feature_rating ).to_s); @output_buffer.concat "</div>\n"
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tabs.html.erb:34:in `_run_erb_app47views47home47_product_tabs46html46erb_locals_knowledge_object_product_product_tabs_selected_key'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:993:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:792:in `replace'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:94:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `instance_exec'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/capture_helper.rb:129:in `with_output_buffer'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:577:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:93:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/cache/strategy/local_cache.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer
+        ^) on line #5 of app/views/home/_product_tab_ratings.html.erb:
+2: 
+3: <% for knowledge.each_feature_rating do |feature_rating| %>
+4:     <div><%= feature_rating %></div>
+5: <% end %>
+
+    app/views/home/_product_tab_ratings.html.erb:8:in `compile!'
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (726.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:25:56) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (6.7ms)
+Rendered home/_product_price (8.9ms)
+Rendered home/_product_tab_overview (2.5ms)
+Rendered home/_product_tabs (71.6ms)
+Completed in 1455ms (View: 155 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:26:01) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (116.5ms)
+Rendered home/_product_tabs (132.3ms)
+Completed in 594ms (View: 136 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:29:57) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.0ms)
+Rendered home/_product_price (7.4ms)
+Rendered home/_product_tab_overview (2.2ms)
+Rendered home/_product_tabs (14.5ms)
+Completed in 571ms (View: 55 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:30:00) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+ERROR: compiling _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings RAISED compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:3: syntax error, unexpected ')', expecting kDO_COND or ':' or '\n' or ';'
+...in knowledge.feature_ratings ).to_s); @output_buffer.concat ...
+                              ^
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:9: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47home47_product_tab_ratings46html46erb_locals_knowledge_object_product_product_tab_ratings(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];product_tab_ratings = local_assigns[:product_tab_ratings];knowledge = local_assigns[:knowledge];product = local_assigns[:product];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div><h1>Rating</h1></h1></div>\n\n"
+
+; @output_buffer.concat(( for feature_rating in knowledge.feature_ratings ).to_s); @output_buffer.concat "\n    <div>\n      "
+
+; @output_buffer.concat(( feature_rating.label ).to_s); @output_buffer.concat "\n    </div>\n"
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:9:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tabs.html.erb:34:in `_run_erb_app47views47home47_product_tabs46html46erb_locals_knowledge_object_product_product_tabs_selected_key'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:993:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:792:in `replace'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:94:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `instance_exec'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:578:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/capture_helper.rb:129:in `with_output_buffer'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/helpers/prototype_helper.rb:577:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:979:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/controllers/home_controller.rb:93:in `switch_product_tab'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/cache/strategy/local_cache.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:3: syntax error, unexpected ')', expecting kDO_COND or ':' or '\n' or ';'
+...in knowledge.feature_ratings ).to_s); @output_buffer.concat ...
+                              ^
+/Users/fpatte/Desktop/nextmood/societe/projects/research/pikizi-engine/app/views/home/_product_tab_ratings.html.erb:9: syntax error, unexpected kENSURE, expecting $end) on line #3 of app/views/home/_product_tab_ratings.html.erb:
+1: <div><h1>Rating</h1></h1></div>
+2: 
+3: <%= for feature_rating in knowledge.feature_ratings %>
+4:     <div>
+5:       <%= feature_rating.label %>
+6:     </div>
+
+    app/views/home/_product_tab_ratings.html.erb:9:in `compile!'
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (70.9ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:30:19) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.6ms)
+Rendered home/_product_price (8.2ms)
+Rendered home/_product_tab_overview (123.1ms)
+Rendered home/_product_tabs (135.4ms)
+Completed in 711ms (View: 175 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:30:22) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (138.5ms)
+Rendered home/_product_tabs (154.5ms)
+Completed in 640ms (View: 159 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:30:49) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (16.9ms)
+Rendered home/_product_tabs (32.0ms)
+Completed in 561ms (View: 36 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:34:55) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (131.7ms)
+Rendered home/_product_tabs (146.7ms)
+Completed in 660ms (View: 150 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:37:22) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (17.6ms)
+Rendered home/_product_tabs (33.7ms)
+Completed in 567ms (View: 38 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:39:07) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (27.9ms)
+Rendered home/_product_tabs (45.0ms)
+Completed in 568ms (View: 49 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:47:44) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (161.6ms)
+Rendered home/_product_tabs (176.7ms)
+Completed in 707ms (View: 183 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:48:20) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.6ms)
+Rendered home/_product_price (6.8ms)
+Rendered home/_product_tab_overview (1.8ms)
+Rendered home/_product_tabs (11.7ms)
+Completed in 586ms (View: 47 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:48:24) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (38.8ms)
+Rendered home/_product_tabs (53.7ms)
+Completed in 566ms (View: 60 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 16:59:14) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (142.3ms)
+Rendered home/_product_price (7.7ms)
+Rendered home/_product_tab_overview (2.0ms)
+Rendered home/_product_tabs (12.6ms)
+Completed in 746ms (View: 188 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 16:59:17) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (255.6ms)
+Rendered home/_product_tabs (270.9ms)
+Completed in 662ms (View: 276 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 17:00:12) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (147.2ms)
+Rendered home/_product_price (7.4ms)
+Rendered home/_product_tab_overview (1.7ms)
+Rendered home/_product_tabs (12.5ms)
+Completed in 729ms (View: 191 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:00:17) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (269.3ms)
+Rendered home/_product_tabs (283.8ms)
+Completed in 685ms (View: 289 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 17:01:38) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.5ms)
+Rendered home/_product_price (8.8ms)
+Rendered home/_product_tab_overview (1.9ms)
+Rendered home/_product_tabs (14.1ms)
+Completed in 794ms (View: 214 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:01:40) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (279.1ms)
+Rendered home/_product_tabs (293.7ms)
+Completed in 722ms (View: 300 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 17:02:18) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (7.3ms)
+Rendered home/_product_price (9.1ms)
+Rendered home/_product_tab_overview (1.9ms)
+Rendered home/_product_tabs (14.2ms)
+Completed in 781ms (View: 223 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:02:20) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (290.9ms)
+Rendered home/_product_tabs (305.2ms)
+Completed in 730ms (View: 311 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 17:05:25) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_16gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.6ms)
+Rendered home/_product_price (8.2ms)
+Rendered home/_product_tab_overview (1.9ms)
+Rendered home/_product_tabs (17.4ms)
+Completed in 834ms (View: 246 | 200 OK [http://localhost/product/apple_iphone3gs_16gb]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:05:32) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_16gb", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (288.3ms)
+Rendered home/_product_tabs (303.4ms)
+Completed in 716ms (View: 309 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_16gb]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-01-15 17:06:15) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 3366ms (View: 501 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-01-15 17:06:24) [GET]
+  Parameters: {"product_idurl"=>"blackberry_curve_8520_tmobile"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.0ms)
+Rendered home/_product_price (7.7ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (12.5ms)
+Completed in 669ms (View: 52 | 200 OK [http://localhost/product/blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:06:28) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (324.8ms)
+Rendered home/_product_tabs (340.2ms)
+Completed in 982ms (View: 348 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:07:15) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (130.3ms)
+Rendered home/_product_tabs (147.1ms)
+Completed in 746ms (View: 153 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:07:54) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (279.1ms)
+Rendered home/_product_tabs (294.5ms)
+Completed in 890ms (View: 301 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:08:07) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (128.0ms)
+Rendered home/_product_tabs (140.1ms)
+Completed in 750ms (View: 146 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:08:23) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (289.9ms)
+Rendered home/_product_tabs (300.3ms)
+Completed in 906ms (View: 306 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:08:26) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (127.0ms)
+Rendered home/_product_tabs (139.1ms)
+Completed in 848ms (View: 145 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:08:48) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (382.7ms)
+Rendered home/_product_tabs (397.9ms)
+Completed in 1051ms (View: 404 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-01-15 17:09:13) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8520_tmobile", "authenticity_token"=>"pUJcqvhlDDzfyY54wvc5aAFLKCfgqi5RVGdu5ECtcdc=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (79.6ms)
+Rendered home/_product_tabs (96.3ms)
+Completed in 752ms (View: 102 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8520_tmobile]

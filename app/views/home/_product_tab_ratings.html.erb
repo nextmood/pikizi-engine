@@ -1,0 +1,23 @@
+<br/>
+<% for feature_rating in knowledge.feature_ratings %>
+    <% reviews = Review.find(:all, :product_idurl => product.idurl, :feature_idurl => feature_rating.idurl ) %>
+    <div style="border-bottom:1px solid black;">
+      <%= simpler_rating_label(feature_rating.label) %>
+      <%= feature_rating.get_value_html(product) %>
+      <% if reviews.size > 0 %>
+        <%= link_to_function(pluralize(reviews.size, "review"), "document.getElementById('details_#{feature_rating.idurl}').toggle();") %>
+
+        <div id="details_<%= feature_rating.idurl %>" style="display:none;">
+            <% for review in reviews %>
+                <div style="border-top:1px dashed black; margin-top:8px; font-style:italic;" title="filename:<%= review.filename %>, <%= review.class %>">
+                    
+                    <div>on <%= review.written_at %>, <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %></div>
+                </div>
+            <% end %>
+        </div>
+      <% else %>
+        <small>no reviews yet</small>
+      <% end %>
+
+    </div>
+<% end %>
