@@ -1,26 +1,23 @@
+<!-- explanations["aggregated_dimensions"][:sum | :percentage] -->
+
 <table>
     <tr>
         <td class="header">Personal&nbsp;Fit</td>
-        <td class="countr"><div class="count"><%= (overall * 100).round %>%</div></td>
-    </tr>
-    <tr>
-        <td>Overall fit</td>
-        <td class="bar">
-          <ul class='star-rating'>
-            <li class='current-rating' style="width:120px;">Currently 3.5/5 Stars.</li>
-          </ul>
-        </td>
-        <td class="grn">2</td>
+        <td class="countr"><div class="count"><%= (explanations["aggregated_dimensions"][:percentage] * 100).round %>%</div></td>
     </tr>
     <% for dimension in quizze.dimensions %>
+        <% values = explanations["dimension_#{dimension}"]
+           value_percentage = values ? values[:percentage] : nil
+           value_sum = values ? values[:sum] : nil %>
         <tr>
             <td><%= dimension %></td>
             <td class="bar">
               <ul class='star-rating'>
-                <li class='current-rating' style="width:42px;">Currently 3.5/5 Stars.</li>
+                <!-- max size is 120 -->
+                <li class='current-rating' style="<%= "width:#{value_percentage ? (value_percentage * 120).round : 0}px;" %>">Currently 3.5/5 Stars.</li>
               </ul>
             </td>
-            <td class="grn">8</td>
+            <td class="grn"><%= value_percentage ? (value_percentage * 10).round : "?" %></td>
         </tr>
     <% end %>
 </table>
