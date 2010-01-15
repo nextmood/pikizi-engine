@@ -24027,3 +24027,54 @@ Processing HomeController#my_quiz (for 127.0.0.1 at 2010-01-15 21:45:50) [GET]
 Rendering template within layouts/application
 Rendering home/my_quiz
 Completed in 2604ms (View: 1796 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#my_results (for 127.0.0.1 at 2010-01-15 22:30:16) [GET]
+Rendering template within layouts/application
+Rendering home/my_results
+Rendered home/_my_product_fit (1455.5ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Completed in 5557ms (View: 3361 | 200 OK [http://localhost/my_results]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-01-15 22:30:42) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 2352ms (View: 151 | 200 OK [http://localhost/products_search]
