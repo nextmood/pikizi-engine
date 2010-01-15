@@ -14,6 +14,9 @@ class Knowledge < Root
 
   key :question_idurls, Array
   def questions() @questions ||= Question.load(question_idurls)  end
+  def questions_sorted_by_desc_discrimination(pidurls, user=nil)
+    questions.sort { |q1, q2| q2.discrimination(user, pidurls) <=> q1.discrimination(user, pidurls) }
+  end
 
   key :product_idurls, Array
   def products() @products ||= Product.load(product_idurls) end
@@ -279,7 +282,7 @@ class Knowledge < Root
   # update hash_pidurl_affinity ( a hash table between a product-idurl and and a user affinity)
   def propagate_recommendations(question, answer, hash_pidurl_affinity, products, reverse_mode)
     puts "filtering not implemented yet" if question.is_filter
-    HashProductIdurl2Weight.after_answer(question, answer).each do |product_idurl, weight|
+    question.delta_weight(answer).each do |product_idurl, weight|
       hash_pidurl_affinity[product_idurl].add(weight * (reverse_mode ? -1.0 : 1.0), question.weight)
     end
   end
@@ -288,7 +291,7 @@ class Knowledge < Root
   def trigger_recommendations(quizze_instance, question, products, choices_ok, simulation)
     choice_idurls_ok = choices_ok.collect(&:idurl)
     answer = quizze_instance.record_answer(self.idurl, question.idurl, choice_idurls_ok)
-    hash_pidurl_affinity = quizze_instance.hash_productidurl_affinity
+    hash_pidurl_affinity = quizze_instance.hash_pidurl_affinity
     hash_pidurl_affinity = hash_pidurl_affinity.inject({}) { |h, (pidurl, a)| h[pidurl] = a.clone } if simulation
     propagate_recommendations(question, answer, hash_pidurl_affinity, products, false)
     quizze_instance.cancel_answer(answer) if simulation

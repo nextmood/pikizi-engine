@@ -1,6 +1,6 @@
 require 'xml'
 require 'mongo_mapper'
-
+require 'pidurl2weight'
 
 # =======================================================================================
 # Questions
@@ -13,8 +13,10 @@ require 'mongo_mapper'
 
 class Question < Root
 
+  
   include MongoMapper::Document
 
+  
   key :idurl, String, :index => true # unique url
 
   key :label, String, :required => true  # text
@@ -31,7 +33,9 @@ class Question < Root
   key :precondition, String
   key :nb_presentation, Integer, :default => 0
   key :nb_oo, Integer, :default => 0
-  key :weight, Float
+  key :weight, Float  # the weight of the question
+  key :distribution_avg_weight, Hash
+  key :distribution_deviation, Hash
 
   many :choices, :polymorphic => true
 
@@ -61,11 +65,56 @@ class Question < Root
   def is_polling() extra == "polling" end
 
 
-  # compute and store HashProductIdurl2Weight for each choice of this question
-  def generate_choices_hash_product_idurl_2_weight(knowledge)
+  # compute and store Pidurl2Weight for each choice of this question
+  def generate_choices_pidurl2weight(knowledge)
     products = knowledge.products
-    choices.each { |choice| choice.generate_hash_product_idurl_2_weight(products, self, knowledge) }
+    choices.each { |choice| choice.generate_pidurl2weight(products, self, knowledge) }
+    compute_distribution
     save
+  end
+
+  # compute a Pidurl2Weight
+  # weight if the probability of "extra points" for a given product/question
+  # weight = question_weight * (...)
+  def compute_distribution
+    self.distribution_avg_weight = {}
+    self.distribution_deviation = {}
+    if is_choice_exclusive
+      choices.collect do |choice|
+        delta_weight([choice]).each do |pidurl, product_weight|
+          compute_distribution_bis(pidurl, product_weight * choice.proba_ok)
+        end
+      end
+    else
+      l = choices.clone
+      Array.combinatorial(l, false) do |combination_choices|
+        # combination is a list of choices
+        choice_probability = l.inject(1.0) { |x, c| x *= (combination_choices.include?(c) ? c.proba_ok : c.proba_ko) }
+        delta_weight(combination_choices).each do |pidurl, product_weight|
+          compute_distribution_bis(pidurl, product_weight * choice_probability)
+        end
+      end
+    end
+    distribution_deviation.each { |pidurl, weights| distribution_deviation[pidurl] = weights.stat_standard_deviation }
+  end
+
+  def compute_distribution_bis(pidurl, x)
+    distribution_avg_weight[pidurl] ||= 0; distribution_avg_weight[pidurl] += x
+    (distribution_deviation[pidurl] ||= []) << x
+  end
+
+
+  # this function  returns a measure of how the answer to a question will discrimate
+  # a set of products
+  # the measure is a 3-upple made of [standard deviation, nb product, average weight]
+  def discrimination(user,  product_idurls)
+    raise "error" unless product_idurls.is_a?(Array) and product_idurls.size > 0
+    weights = []; deviations = []
+    product_idurls.each do |pidurl|
+      weights << (distribution_avg_weight[pidurl] || 0.0)
+      deviations << (distribution_deviation[pidurl] || 0.0)
+    end
+    [weights.stat_standard_deviation * weight, deviations.stat_mean * weight, weights.nb_unique]
   end
 
   def generate_xml(top_node)
@@ -110,7 +159,6 @@ class Question < Root
   def record_answer(user, choices_ok, reverse_mode)
     increment = reverse_mode ? -1.0 : +1.0
     self.nb_presentation += increment
-
     if choices_ok.size == 0
       # this is a no opinion
       self.nb_oo += increment
@@ -120,13 +168,17 @@ class Question < Root
     save
   end
 
-  # this is a collection of the weight distribution for each product (merging choices according to proba)
-  # for a given question
-  # return for this question, a hash (product_idurl => Distribution)
-  # for example: p1 -> [DistributionAtom(20%,-1.0), DistributionAtom(50%,0.5), DistributionAtom(30%,0.2)]
-  # meaning is: if this question is asked, there is a probability of
-  # 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
-  def products_distribution() @products_distribution ||= ProductsDistribution.new(self) end
+  # return the incremental value for each product following a choice
+  # choices_ok is either a list of choices, an answer, a list of choice_idurls
+  # return a Pidurl2Weight object
+  def delta_weight(choices_ok)
+    if choices_ok.is_a?(Answer)
+      choices_ok = get_choice_ok_from_idurls(choices_ok.choice_idurls_ok)
+    elsif !choices_ok.first.is_a?(Choice)
+      choices_ok = get_choice_ok_from_idurls(choices_ok) 
+    end
+    choices_ok.inject(Pidurl2Weight.new) { |h, choice_ok| h.sum(choice_ok.pidurl2weight) }.normalize!
+  end
 
   # sort the questions by criterions
   def self.sort_by_discrimination(questions, product_idurls, user)
@@ -138,12 +190,7 @@ class Question < Root
   end
 
 
-  # this function  returns a measure of how the answer to a question will discrimate
-  # a set of products
-  # the measure is a 3-upple made of [standard deviation, nb product, average weight]
-  def discrimination(user, product_idurls)
-    products_distribution.discrimination(user, product_idurls)
-  end
+
 
   def to_html(choices_ok=[])
     label << "<small style='margin-left:3px'>(#{is_choice_exclusive ? 'exclusive' : 'multiple'})" << "&nbsp;[" << choices.collect {|choice| choices_ok.include?(choice) ? "<b>#{choice.label}</b>" : "#{choice.label}"}.join(', ') << "]</small>"
@@ -170,7 +217,8 @@ class Choice < Root
   key :intensity, Float
   key :nb_ok, Integer, :default => 0
 
-  key :hash_product_idurl_2_weight_cache, Hash
+  key :pidurl2weight, Pidurl2Weight
+
 
   attr_accessor :question
 
@@ -205,22 +253,22 @@ class Choice < Root
   # record a choice by a user
   def record_answer(user, reverse_mode) self.nb_ok += (reverse_mode ? -1.0 : +1.0) end
 
-  # initialize the hash_product_idurl_2_weight_cache for this choice
+  # initialize the hash_pidurl2weight_cache for this choice
   # this is call from question
   # it's interpret the preference string
   # generate the weights for the considered products
-  # return a HashProductIdurl2Weight object  
-  def generate_hash_product_idurl_2_weight(products, question, knowledge)
-    self.hash_product_idurl_2_weight_cache = Evaluator.eval(knowledge, question, products, recommendation, intensity)
+  # return a Pidurl2Weight object
+  def generate_pidurl2weight(products, question, knowledge)
+    self.pidurl2weight = Evaluator.eval(knowledge, question, products, recommendation, intensity)
+    pidurl2weight.check_01
+    raise "wrong type=#{pidurl2weight.class}" unless pidurl2weight.is_a?(Pidurl2Weight)
   end
 
-  def hash_product_idurl_2_weight
-    @hash_product_idurl_2_weight ||= HashProductIdurl2Weight.new(hash_product_idurl_2_weight_cache)
-  end
 
   def generate_javascript_weights(products)
     js_string = ""
-    pidurl_with_weights = hash_product_idurl_2_weight.collect do |pidurl, weight|
+    pidurl2weight.check_01
+    pidurl_with_weights = pidurl2weight.collect do |pidurl, weight|
       js_string << generate_javascript_weights_bis(pidurl, weight)
       pidurl
     end
@@ -232,6 +280,15 @@ class Choice < Root
   end
   def generate_javascript_weights_bis(pidurl, weight=nil) "tr_arrow('#{pidurl}','" << (weight ? weight.to_s : "&nbsp;") << "');" end
 
+  def path_image(knowledge_idurl, question_idurl)
+    path = "/domains/#{knowledge_idurl}"
+    if url_image and url_image != ""
+      "#{path}/questions/#{question_idurl}/#{url_image}"
+    else
+      "#{path}/knowledge/default_image.jpg" 
+    end
+
+  end
 
   # =======================================================================================
   # Begin evaluator (to interpret script language)
@@ -249,7 +306,7 @@ class Choice < Root
     
     # return a hash product_idurl -> weight
     def self.eval(knowledge, question, products, recommendation, intensity)
-      hash_product_idurl2weight = {}
+      pidurl2weight = Pidurl2Weight.new
       if recommendation
         evaluator = Evaluator.new(knowledge)
         products.each do |product|
@@ -266,13 +323,14 @@ class Choice < Root
               value = (value == true ? Evaluator.intensity2float("very_high") : Evaluator.intensity2float("very_low"))
             end
             raise "error value=#{value} intensity=#{intensity} recommendation=#{recommendation}" unless value.is_a?(Float) and value >= 0.0 and value <= 1.0
-            value = value * intensity  * (question.is_choice_exclusive ? 1.0 : 1.0 / question.nb_choices.to_f)
-            hash_product_idurl2weight[product.idurl] = value
-            # puts "evaluating product=#{product.idurl} against #{recommendation} --> value=#{value}"
+            value *= intensity
+            pidurl2weight.set(product.idurl, value)
+            pidurl2weight.check_01
+            puts "evaluating product=#{product.idurl} against #{recommendation} --> value=#{value}"
           end
         end
       end
-      hash_product_idurl2weight
+      pidurl2weight
     end
 
     # ---------------------------------------------------------------------------------------
@@ -431,199 +489,6 @@ end
 
 
 
-# this is a collection of the weight distribution for each product (merging choices according to proba)
-# for a given question
-# return for this question, a hash (product_idurl => Distribution)
-# for example: p1 -> [DistributionAtom(20%,-1.0), DistributionAtom(50%,0.5), DistributionAtom(30%,0.2)]
-# meaning is: if this question is asked, there is a probability of
-# 20% of product p1 getting a -1.0, 50% of getting 0.5 etc...
-# compute also the minimum/maximum weight that this product can get
-class ProductsDistribution
-
-  attr_accessor :hash_pidurl_distribution, :question
-
-  def initialize(question)
-    @hash_pidurl_distribution = {}
-    @question = question
-    question.is_choice_exclusive ? initialize_exclusive : initialize_inclusive
-  end
-
-  def collect(&block) @hash_pidurl_distribution.collect(&block) end
-
-  # this function  returns a measure of how the answer to a question will discrimate
-  # a set of products
-  # the measure is a 3-upple made of [standard deviation, nb product, average weight]
-  def discrimination(user, product_idurls)
-    weights = @hash_pidurl_distribution.inject([]) do |l, (pidurl, distribution)|
-      l << distribution.weighted_average * question.weight if product_idurls.include?(pidurl)
-      l
-    end
-
-    if (size = weights.size) == 0
-        [0.0, 0 , 0.0]
-    elsif size == 1
-        [0.0, 1, weights.first]
-    else
-        [weights.stat_standard_deviation, weights.size, weights.stat_mean]
-    end
-  end
-
-  def get_distribution4product_idurl(product_idurl) @hash_pidurl_distribution[product_idurl] end
-  # private below
 
 
-  def initialize_inclusive
-    ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_product_idurl_2_weight, choice_probability|
-      hash_product_idurl_2_weight.each do |pidurl, weight|
-        distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
-        distribution.add(weight, choice_probability)
-      end
-    end
-  end
-
-  def initialize_exclusive
-    question.choices.each do |choice|
-      choice_probability = choice.proba_ok
-      choice.hash_product_idurl_2_weight.each do |pidurl, weight|
-        distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
-        distribution.add(weight, choice_probability)
-      end
-    end
-  end
-
-
-  def self.combinatorial_weight(choices, &block)
-    hash_combinationkey2hash_product_idurl_2_weight = {}
-
-    Array.combinatorial(choices, false) do |combination_choices|
-      # combination is a list of choices
-      choice_probability = choices.inject(1.0) { |x, c| x *= (combination_choices.include?(c) ? c.proba_ok : c.proba_ko) }
-
-      combination_choices_new = combination_choices.clone
-      combination_key = ProductsDistribution.compute_combination_key(combination_choices_new)
-      first_choice = combination_choices_new.shift
-      hash_product_idurl_2_weight = first_choice.hash_product_idurl_2_weight
-      hash_product_idurl_2_weight += hash_combinationkey2hash_product_idurl_2_weight[ProductsDistribution.compute_combination_key(combination_choices_new)] if combination_choices_new.size > 0
-      hash_combinationkey2hash_product_idurl_2_weight[combination_key] = hash_product_idurl_2_weight
-      block.call(combination_choices, hash_product_idurl_2_weight, choice_probability)
-    end
-  end
-
-  def self.compute_combination_key(combination_choices) combination_choices.collect(&:idurl).join end
-
-
-
-
-end
-
-# Distribution is a collection of weight/proba for a given product/question
-class Distribution
-  attr_accessor :hash_weight_probability
-
-  def initialize()
-    @hash_weight_probability = {}
-  end
-
-  def add(weight, probability)
-    @hash_weight_probability[weight] ||= 0.0
-    @hash_weight_probability[weight] += probability
-  end
-
-  def weighted_average
-    @hash_weight_probability.inject(0.0) { |wa, (weight, probability)| wa += (probability * weight) }
-  end
-
-
-  def to_s()
-    "Distribution=[" << @hash_weight_probability.collect {|weight, probability| "#{weight} => #{Root.as_percentage(probability)}"}.join(", ") << "]"
-  end
-
-
-end
-
-
-# this a hash between Product Idurl and weight
-class HashProductIdurl2Weight
-  attr_accessor :hash_pidurl_weight
-
-  def initialize(hash_pidurl_weight_initial={})
-    @hash_pidurl_weight = hash_pidurl_weight_initial
-  end
-
-  def add(product_idurl, weight) @hash_pidurl_weight[product_idurl] = weight end
-
-  def +(other_hash)
-    other_hash.hash_pidurl_weight.each do |pidurl, weight|
-      @hash_pidurl_weight[pidurl] ||= 0.0
-      @hash_pidurl_weight[pidurl] += weight
-    end
-    self
-  end
-
-  def *(multiplicator)
-    @hash_pidurl_weight.each { |pidurl, weight| @hash_pidurl_weight[pidurl] = weight * multiplicator }
-    self
-  end
-
-  # return the weight for a given product_idurl
-  def [](product_idurl) @hash_pidurl_weight[product_idurl] end
-
-  def to_s
-    "HashProductIdurl2Weight[" << @hash_pidurl_weight.collect { |pidurl, weight| "#{pidurl}:#{'%3.1f' % weight}" }.join(', ') << "]"
-  end
-
-  def collect(&block) @hash_pidurl_weight.collect(&block) end
-
-  # proxy
-  def each(&block) @hash_pidurl_weight.each(&block) end
-
-  # create a new  HashProductIdurl2Weight object, weights are the one resulting from the answer
-  def self.after_answer(question, answer)
-    question.get_choice_ok_from_idurls(answer.choice_idurls_ok).inject(nil) do |s, choice_ok|
-      hp = choice_ok.hash_product_idurl_2_weight
-      s ? s + hp : hp
-    end
-  end
-
-  def min_max()
-    @hash_pidurl_weight.inject([nil, nil]) do |(min, max), (product_idurl, weight)|
-      [ ((min.nil? or weight < min) ? weight : min), ((max.nil? or weight > max) ? weight : max) ]
-    end
-  end
-  
-end
-
-
-
-# extented array with basic statistical functions
-class Array
-
-  def stat_sum() inject(0.0) { |s, x| s += x } end
-  def stat_mean() stat_sum / size.to_f end
-  def stat_standard_deviation()
-    m = stat_mean
-    Math.sqrt((inject(0.0) { |s, x| s += (x - m)**2 } / size.to_f))
-  end
-
-  # yield all all possible combinations in an array
-  # and return the number of combination (empty set count for one)
-  def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
-  def self.combinatorial_bis(tail, empty_count, elt_set, x, &block)
-    if tail.size == 0
-      if elt_set.size > 0 or empty_count
-        block.call(elt_set)
-        x += 1
-      else
-        x
-      end
-    else
-      new_tail = tail.clone
-      first_elt = new_tail.shift
-      x = self.combinatorial_bis(new_tail, empty_count, elt_set, x, &block)
-      x = self.combinatorial_bis(new_tail, empty_count, elt_set.clone << first_elt, x, &block)
-    end
-    x
-  end
-
-end
 

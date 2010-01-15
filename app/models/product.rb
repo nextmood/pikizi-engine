@@ -1,5 +1,6 @@
 require 'xml'
 require 'mongo_mapper'
+require 'amazon'
 
 class Product < Root
 
@@ -23,6 +24,43 @@ class Product < Root
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
 
   def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
+
+  # return the amazon_id for request
+  def get_amazon_id
+    if amazon_url = get_value("amazon_url")
+      amazon_url = amazon_url.remove_prefix("http://www.amazon.com/gp/product/")
+      amazon_url[0, 10] if amazon_url
+    end    
+  end
+
+  def create_amazon_reviews(knowledge)
+    xml_filename = "amazon.xml"
+    #Review.delete_all(:filename => xml_filename)
+    #Review.find(:all, :filename => xml_filename, :product_idurl => idurl).each(&:destroy)
+    Review.delete_all(:filename => xml_filename, :product_idurl => idurl)
+    begin
+      ApiAmazon.get_amazon_reviews(get_amazon_id, 1, 10).each do |amazon_review|
+        puts "#{idurl}=#{amazon_review.inspect}"
+        Review::Rating.create(:filename => xml_filename,
+                              :knowledge_idurl => knowledge.idurl,
+                              :product_idurl => idurl,
+                              :author_email => "amazon_customer_#{amazon_review[:customerid]}",
+                              :source => "Amazon",
+                              :source_url => get_value("amazon_url"),
+                              :written_at => DateTime.parse(amazon_review[:date]),
+                              :feature_idurl => "overall_rating",
+                              :label => amazon_review[:summary],
+                              :label_full => amazon_review[:content],
+                              :reputation => Float(amazon_review[:totalvotes]),
+                              :min_rating => 1,
+                              :max_rating => 5,
+                              :rating => Float(amazon_review[:rating]) )
+        puts "#{idurl} created"
+      end
+    rescue Exception => e
+      puts "Oups extractring reviews for product #{idurl} #{e.message}"
+    end
+  end
 
   def gallery_image_urls
     path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"

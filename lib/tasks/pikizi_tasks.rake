@@ -6,13 +6,12 @@ namespace :pikizi do
   end
 
   desc "Load a domain"
-  task :load_domain => :environment do
+  task :domain_load_xml => :environment do
     unless ENV.include?("name")
       raise "usage: rake pikizi::load_domain name= a directory name in public/domains"
     end
     Knowledge.initialize_from_xml(ENV['name'])
   end
-
 
   desc "Check consistency of a domain"
   task :domain_quality_check => :environment do
@@ -26,81 +25,112 @@ namespace :pikizi do
     end
   end
 
-
-  desc "Recompute all aggregations based on reviews on all products for a model"
-  task :recompute_ratings => :environment do
-    knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
-    knowledge = Knowledge.load(knowledge_idurl)
-
-
+  desc "Generate reviews in database based on features values"
+  task :reviews_load_features => :environment do
+    k = get_knowledge
+    # destroy previous automatic reviews
+    # analyze the model and generates reviews objects, saved in DB
+    compute_rating(k)
   end
 
+  desc "Generate reviews from amazons"
+  task :reviews_load_amazon => :environment do
+    k = get_knowledge
+    # destroy previous automatic reviews
+    # analyze the model and geenrates reviews objects, saved in DB
+    k.products.each { |product| product.create_amazon_reviews(k) }     
+    compute_rating(k)
+  end
 
+  desc "Add xml reviews to the database"
+  task :reviews_load_xml => :environment do
+    k = get_knowledge
+    # destroy the previous reviews  if exists
+    # read review xml files and create objects in DB
+    compute_rating(k)
+  end
 
-  desc "Recompute all questions and choices counters for all knowledges"
-  task :recompute_counters => :environment do
+  desc "recompute weights after an update to knowledge, products or questions"
+  task :notify_update_model => :environment do
+    compute_weights(get_knowledge)
+  end
 
+  desc "CRON: Take into account answers and recompute question's proba"
+  task :compute_answers => :environment do
+
+    # read all answers, create proba
     # compute
-    # hash_k_q_counter_presentation[knowledge_idurl][question_idurl] -> nb_presentation
-    # hash_k_q_c_counter_ok[knowledge_idurl][question_idurl][choice_idurl] -> nb_ok
+    # hash_q_counter_presentation[question_idurl] -> nb_presentation
+    # hash_q_c_counter_ok[question_idurl][choice_idurl] -> nb_ok
 
     # initialize...
-    hash_k_q_counter_presentation = {}
-    hash_k_q_c_counter_ok = {}
-
-    Knowledge.xml_idurls.each do |knowledge_idurl|
-      hash_q_c_counter_ok = hash_k_q_c_counter_ok[knowledge_idurl] = {}
-      hash_q_counter_presentation = hash_k_q_counter_presentation[knowledge_idurl] = {}
-      Knowledge.get_from_idurl(knowledge_idurl).questions.each do |question|
-        hash_q_counter_presentation[question.idurl] = {:presentation => 0, :oo => 0}
-        hash_q_c_counter_ok[question.idurl] = {}
-        question.choices.each do |choice|
-          hash_q_c_counter_ok[question.idurl][choice.idurl] = 0
-        end
+    hash_q_counter_presentation = {}
+    hash_q_c_counter_ok = {}
+    questions = Question.find(:all)
+    questions.each do |question|
+      hash_q_counter_presentation[question.idurl] = {:presentation => 0, :oo => 0}
+      hash_q_c_counter_ok[question.idurl] = {}
+      question.choices.each do |choice|
+        hash_q_c_counter_ok[question.idurl][choice.idurl] = 0
       end
     end
 
     # process each user
-    User.xml_idurls.each do |user_idurl|
-      user = User.create_from_xml(user_idurl)
+    User.find(:all).each do |user|
       user.quizze_instances.each do |quizze_instance|
         quizze_instance.hash_answered_question_answers.each do |question_idurl, answers|
           answer = answers.last
-          knowledge_idurl = answer.knowledge_idurl
-          puts "knowledge_idurl=#{knowledge_idurl}, question_idurl=#{question_idurl}"
-          hash_k_q_counter_presentation[knowledge_idurl][question_idurl][:presentation] += 1
-          hash_k_q_counter_presentation[knowledge_idurl][question_idurl][:oo] += 1 unless answer.has_opinion?
+          puts "question_idurl=#{question_idurl}"
+          hash_q_counter_presentation[question_idurl][:presentation] += 1
+          hash_q_counter_presentation[question_idurl][:oo] += 1 unless answer.has_opinion?
           answer.choice_idurls_ok.each do |choice_idurl_ok|
-            hash_k_q_c_counter_ok[knowledge_idurl][question_idurl][choice_idurl_ok] += 1
+            hash_q_c_counter_ok[question_idurl][choice_idurl_ok] += 1
           end
         end
       end
     end
 
+    # write the results in questions, recompte distribution and save
+    hash_q_counter_presentation.each do |question_idurl, counters|
+      question = questions.detect? {|q| q.idurl == question_idurl}
+      question.nb_presentation = counters[:presentation]
+      question.nb_oo = counters[:oo]
 
-    # write the results in knowledge files
-    hash_k_q_counter_presentation.each do |knowledge_idurl, hash_q_counter_presentation|
-      knowledge = Knowledge.create_from_xml(knowledge_idurl)
-      hash_q_counter_presentation.each do |question_idurl, counters|
-        question = knowledge.get_question_by_idurl(question_idurl)
-        question.nb_presentation_static = counters[:presentation]
-        question.nb_oo_static = counters[:oo]
-        # write in cache...
-        Knowledge.counter_question_presentation(knowledge_idurl, question_idurl, :initialize => counters[:presentation])
-        Knowledge.counter_question_oo(knowledge_idurl, question_idurl, :initialize => counters[:oo])
-
-        hash_k_q_c_counter_ok[knowledge_idurl][question_idurl].each do |choice_idurl, counter_ok|
-          choice = question.get_choice_from_idurl(choice_idurl)
-          choice.nb_ok_static = counter_ok
-          # write in cache...
-          Knowledge.counter_choice_ok(knowledge_idurl, question_idurl, choice_idurl, :initialize => counter_ok)
-        end
+      hash_q_c_counter_ok[question_idurl].each do |choice_idurl, counter_ok|
+        choice = question.get_choice_from_idurl(choice_idurl)
+        choice.nb_ok = counter_ok
       end
-      knowledge.save
+      question.compute_distribution
+      question.save
     end
 
   end
 
+
+  # ========================================================================================
+
+
+  def get_knowledge
+    knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
+    Knowledge.load(knowledge_idurl)
+  end
+
+  # recompute all rating and update distributions
+  def compute_ratings(knowledge)
+    # read reviews in database and compute aggregated rating
+    compute_weights(knowledge)
+  end
+
+  # recompute all vertors pidurl -> weight per question/choice
+  def compute_weights(knowledge)
+    # compute weight for each question using the evaluator
+    Question.find(:all).each do |question|
+      # recompute weights, compute distribution and save the question
+      question.generate_choices_pidurl2weight(knowledge)
+      # quality check
+      question.choices.each { |choice| choice.pidurl2weight.check_01 }
+    end
+  end
 
 
 end

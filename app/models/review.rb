@@ -15,8 +15,9 @@ class Review < Root
   key :source_url, String      # external url for the review
   key :written_at, Date
   key :feature_idurl, String
-  key :label, String
-
+  key :label, String # summary of the review
+  key :label_full, String # full content
+  key :reputation, Float # the user reputation
   key :_type, String
   
   key :user_id, String
@@ -97,6 +98,8 @@ class Review < Root
   def self.generate_xml
 
   end
+
+
 
   private
 

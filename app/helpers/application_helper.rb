@@ -37,4 +37,12 @@ module ApplicationHelper
     "<div style='width:50px; background-color:#{color_weight}'>#{'%4.2f' % weight}</div>"
   end
 
+  def source_as_html(review)
+    if review.source or review.source_url
+      s = review.source || "source"
+      s = link_to(s, review.source_url) if review.source_url
+      " (from #{s})"
+    end
+  end
+
 end

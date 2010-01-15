@@ -90,7 +90,6 @@ class HomeController < ApplicationController
     knowledge =  Knowledge.load(params[:knowledge_idurl])
     product = Product.load(params[:product_idurl])
     selected_key = params[:new_tab]
-    puts "selected_key=#{selected_key.inspect} in controller"
     render :update do |page|
       page.replace("product_tabs", :partial => "/home/product_tabs", 
                   :locals => { :selected_key => selected_key, :knowledge => knowledge, :product => product })

@@ -1,16 +1,17 @@
 <% reviews = Review.find(:all, :product_idurl => product.idurl) %>
 <div><%= pluralize(reviews.size, "review") %></div>
-<table border="1">
-    <tr><th>date</th><th>author</th><th>filename</th><th>source</th><th>type</th><th>feature</th><th>opinion</th></tr>
-    <% for review in reviews %>
-        <tr>
-          <td><%= review.written_at %></td>
-          <td><%= review.author_email %></td>
-          <td><%= review.filename %></td>
-          <td><%= link_to(review.source || "link", review.source_url || "#") if review.source or review.source_url %></td>
-          <td><%= review.class %></td>
-          <td><%= review.feature_idurl %></td>
-          <td><%= review.to_html %></td>
-        </tr>
-    <% end %>
-</table>
+
+<% for review in reviews %>
+    <div style="border-top:1px dashed black; margin-top:8px;" title="filename:<%= review.filename %>, <%= review.class %>">
+
+        <div>on <%= review.written_at %>, <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %> regarding <%= knowledge.get_feature_by_idurl(review.feature_idurl).label %></div>
+        <div>
+          <%= review.label %>
+          <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.label_full %>  
+          <%= %>
+        </div>
+        <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.label_full %></div>
+    </div>
+<% end %>
+
+

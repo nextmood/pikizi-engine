@@ -10,7 +10,7 @@
     &nbsp;|&nbsp;
     <%= link_to_function("Collapse all", "treetable_collapseAll('thematrix');") %>
     &nbsp;|&nbsp;
-    <%= link_to_function("add/remove products", "document.getElementById('select_products').toggle();") %>
+    <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",

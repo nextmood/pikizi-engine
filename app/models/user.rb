@@ -28,7 +28,7 @@ class User < Root
       { :rpx_email => "cpatte@gmail.com", :rpx_username => "cpatte", :rpx_name => "cpatte", :role => "admin", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawnpmDf5QToZ19rH88JKkxvekvh3Ve9HAmA" },
       { :rpx_email => "eric.degoul@gmail.com", :rpx_username => "eric.degoul", :rpx_name => "eric.degoul", :role => "unauthorised", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawk_GgNV2dsjnPAvVe5rcxdPT0vPD7-qmiQ" },
       { :rpx_email => "", :rpx_username => "EricDegoul", :rpx_name => "Eric Degoul", :role => "user", :category => "user", :rpx_identifier => "http://www.facebook.com/profile.php?id=771667528" },
-      { :rpx_email => "phclouin@yahoo.com", :rpx_username => "phclouin", :rpx_name => "phclouin", :role => "tester", :category => "expert", :rpx_identifier => "https://me.yahoo.com/a/DQGsE5AIpen1BT84wjDptBjnsMBZ#16c18" },
+      { :rpx_email => "phclouin@yahoo.com", :rpx_username => "phclouin", :rpx_name => "phclouin", :role => "admin", :category => "expert", :rpx_identifier => "https://me.yahoo.com/a/DQGsE5AIpen1BT84wjDptBjnsMBZ#16c18" },
       { :rpx_email => "mr.gene.kim@gmail.com", :rpx_username => "mr.gene.kim", :rpx_name => "mr.gene.kim", :role => "unauthorised", :category => "user", :rpx_identifier => "https://www.google.com/accounts/o8/id?id=AItOawmn_Bt_gUemsxYfrj6LRniDCpALfuSFoSk" }
    ].each { |options| User.first_create(options) }
   end
@@ -110,10 +110,9 @@ class User < Root
   def create_quizze_instance(quizze) QuizzeInstance.create_for_quizze(quizze, self) end
 
   # step #1 user.record_answer
-  # step #2 quizze_instance.record_answer
   # step #2 question.record_answer
   # step #2.1 choice.record_answer
-  # step #3 trigger valide recommendations
+  # step #3 trigger valide recommendations (quizze_instance.record_answer)
   # recording an answer to a question from a user
   # dispatch the record_answer methods
   def record_answer(knowledge, quizze, question, choices_idurls_selected_ok)
@@ -206,7 +205,7 @@ class QuizzeInstance < Root
   many :answers
   many :affinities
 
-  attr_accessor :user, :hash_answered_question_answers, :hash_productidurl_affinity
+  attr_accessor :user, :hash_answered_question_answers, :hash_pidurl_affinity
 
   def link_back(user)
     self.user = user
@@ -215,7 +214,7 @@ class QuizzeInstance < Root
       (h[answer.question_idurl] ||= []) << answer
       h
     end
-    self.hash_productidurl_affinity  = affinities.inject({}) do |h, affinity|
+    self.hash_pidurl_affinity  = affinities.inject({}) do |h, affinity|
       affinity.link_back(self)
       h[affinity.product_idurl] = affinity
       h
@@ -245,7 +244,7 @@ class QuizzeInstance < Root
     node_quizze_instance['quizze_idurl'] = quizze_idurl
 
     node_quizze_instance << (node_affinities = XML::Node.new('affinities'))
-    hash_productidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) }
+    hash_pidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) }
 
     node_quizze_instance['created_at'] = created_at.strftime(Root.default_date_format)
     node_quizze_instance['closed_at'] = closed_at.strftime(Root.default_date_format) if closed_at
@@ -260,7 +259,7 @@ class QuizzeInstance < Root
   # sort the affinities by ranking
   def sorted_affinities
     unless @sorted_affinities
-      @sorted_affinities = hash_productidurl_affinity.collect { |product_idurl, affinity| affinity }
+      @sorted_affinities = hash_pidurl_affinity.collect { |product_idurl, affinity| affinity }
       @sorted_affinities.sort! { |a1, a2| a2.measure <=> a1.measure }
       current_ranking = 0; previous_measure = nil
       @sorted_affinities.each do |affinity|
@@ -379,7 +378,7 @@ class QuizzeInstance < Root
     hash_question_idurl2min_max_weight = {}
     answers.each do |answer|
       question = answer.question(knowledge)
-      hash_pidurl2weight = HashProductIdurl2Weight.after_answer(question, answer)
+      hash_pidurl2weight = question.delta_weight(answer)
       hash_pidurl2weight = hash_pidurl2weight * question.weight
       min_weight, max_weight = hash_pidurl2weight.min_max
       hash_question_idurl2min_max_weight[answer.question_idurl] = [min_weight, max_weight]

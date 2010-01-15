@@ -1,8 +1,8 @@
-<% standard_deviation, nb, mean = discrimination %>
+<% standard_deviation, mean_deviation, nb_separaration = discrimination %>
 [
-<span title="standard deviation of separation among products">sd:<%= "%.2f" % standard_deviation %></span>
+<span title="standard deviation of weight of products weighted by the probability of logical choice">sd:<b><%= "%.2f" % standard_deviation %></b></span>
 ,&nbsp;
-<span title="number of products separated">nb:<%= nb %></span>
-,&nbsp;
-<span title="average separation among products">m:<%= "%.2f" % mean %></span>
+<span title="mean of standard deviation of weight of product/probability">ds:<b><%= "%.6f" % mean_deviation %></b></span>
+<!-- ,&nbsp;
+<span title="number of equivalence classes among products">m:<%= "%2d" % nb_separaration %></span>  -->
 ]

@@ -10,18 +10,19 @@
 <div class="pkz_box">
   <%= model_selector(@knowledge, :questions) %>
 
+
     <div class="pkz_main">
 
       <!-- question header -->
       <div style="width:100%; height:60px; margin-bottom:10px; padding:5px;">
           <div >
-
-            <span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= pluralize @question.nb_presentation.round, "presentation" %></span>,&nbsp;
+            weight=<%= @question.weight.round %>,&nbsp;
             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+            presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
             <%= colored_confidence(@question) %>
-            ,&nbsp;weight=<%= @question.weight %>
+
           </div>
-          <div style="font-weight:bold; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+          <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
       </div>
 
       <!-- xml description -->
@@ -38,7 +39,7 @@
       <!-- choices -->
       <div style="width:100%; margin-bottom:5px; border-bottom:1px solid black; border-top:1px solid black;">
           <div>
-            <%= pluralize @question.nb_choices, "choice" %>,&nbsp;
+            &nbsp;<%= pluralize @question.nb_choices, "choice" %>,&nbsp;
             <%= @question.is_choice_exclusive ? "exclusive" : "multiple" %>,&nbsp;
             pre-condition:<%= @question.precondition || 'none' %>,&nbsp;
             <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
@@ -47,6 +48,7 @@
           <% for choice in @question.choices %>
             <td style="background-color:lightblue;" valign="top" >
                 <div style="width:100%; text-align:center; font-weight:bold; border-bottom:1px solid black;" title="<%= choice.idurl %>">
+                    <%= @question.is_choice_exclusive ? "<input type='radio'>" : "<input type='checkbox'>" %>
                     <% if choice.url_description %>
                         <%= link_to(choice.label, "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_description}") %>
                     <% else %>
@@ -55,17 +57,16 @@
                 </div>
                 <table><tr>
                   <td>
-                    <img src="<%= "/domains/cell_phones/questions/q13_what_form_factor_are_you_looking_for/images/c36_candy_bar@main_image.jpg" %>" width="80" height=80 />
+                    <img src="<%= choice.path_image(@knowledge.idurl, @question.idurl) %>" width="80" height=80 />
                   </td>
                   <td valign="top">
                     <div  style="font-size:90%;">
                       probability=<%= (choice.proba_ok * 100).round %>%
                       <br/>
                       nb selection=<%= choice.nb_ok %>
-                      <br/>
-                      <span onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();">
-                        reveal tensors...  
-                      </span>
+                      <div onmouseover="<%= choice.generate_javascript_weights(@products) %>" onmouseout="clean_up_arrows();" class="pkz_button_hover">
+                        weights
+                      </div>
                     </div>
                   </td>
                 </tr></table>
@@ -75,22 +76,37 @@
 
       </div>
       <div style="border-bottom:1px solid black;">
-        discrimination=
-        <%= render(:partial => "/questions/discrimination",
-               :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
-      </div>
-      <div style="-moz-column-count:3; clear:left;">
-          <% for product in @products %>
-              <div id="product_<%= product.idurl %>" style="width:100%;">
-                <% distribution_proba_weight =  @products_distribution.get_distribution4product_idurl(product.idurl) %>
-                <div style="display:inline-block;  text-align:right; width:30px;" title="<%= distribution_proba_weight.to_s  %>">
-                    <%= "%+5.1f" % distribution_proba_weight.weighted_average if distribution_proba_weight %>
-                </div>
-                <div id="weight_<%= product.idurl %>" style="display:inline-block; width:30px; text-align:right;">&nbsp;</div>
-                <span>&nbsp;<%= product.idurl %></span>
+        &nbsp;discrimination=
 
+        <%= render(:partial => "/questions/discrimination",
+               :locals => {:discrimination => @question.discrimination(nil, @pidurls_selected)}) %>
+        <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
+        <% unless @products_selected.size == @products.size %>
+            global=
+            <%= render(:partial => "/questions/discrimination",
+               :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
+        <% end %>
+        <%= render(:partial => "/knowledges/products_selection",
+               :locals => { :page_url => "/questions/#{@knowledge.idurl}/#{@question.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+
+      </div>
+
+
+
+      <div style="-moz-column-count:2; clear:left;">
+          <% for product in @products %>
+            <% distribution_proba_weight =  @products_distribution[product.idurl] %>
+
+              <div id="product_<%= product.idurl %>" style="width:100%; <%= 'display:none;' unless @products_selected.include?(product) %>">
+
+                <div style="display:inline-block;  text-align:right; width:30px;" >
+                    <%= "%+5.1f" % (distribution_proba_weight || 0.0) %>
+                </div>
+                <div id="weight_<%= product.idurl %>" style="display:inline-block; width:40px; text-align:right; padding-right:2px;">&nbsp;</div>
+                &nbsp;<span title="idurl=<%= product.idurl %>"><%= product.label %></span>
 
               </div>
+
           <% end %>
        </div>
 

@@ -36,6 +36,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect "/rpx_token_sessions_url", :controller => 'users', :action => 'rpx_token_sessions_url'
 
+
+  map.connect "/question_incr_weight/:knowledge_idurl/:question_idurl", :controller => 'questions', :action => 'update_weight', :delta => 1
+  map.connect "/question_decr_weight/:knowledge_idurl/:question_idurl", :controller => 'questions', :action => 'update_weight', :delta => -1
+
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -78,6 +83,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/my_results", :controller => 'home', :action => 'my_results'
   map.connect "/product/:product_idurl", :controller => 'home', :action => 'product'
   map.connect "/products_search", :controller => 'home', :action => 'products_search'
+
 
   map.root :controller => "landing"  # default
 

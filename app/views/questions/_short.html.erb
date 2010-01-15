@@ -1,4 +1,5 @@
-<%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %>
-<%= question.is_choice_exclusive ? "{" : "[" %>
-<%= question.choices.collect {|c| "#{c.label} <small>#{Root.as_percentage(c.proba_ok)}</small>" }.join(',  ') %>
-<%= question.is_choice_exclusive ? "}" : "]" %>
+<div>
+    <div style="font-size:120%;"><%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %></div>
+    <% exclusive = question.is_choice_exclusive ? "<input type='radio'>" : "<input type='checkbox'>" %>
+    <%= question.choices.collect {|c| "#{exclusive}#{c.label} <small>#{Root.as_percentage(c.proba_ok)}</small>" }.join(',  ') %>
+</div>

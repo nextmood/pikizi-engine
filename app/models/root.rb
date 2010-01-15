@@ -28,7 +28,7 @@ class Root
 #    end
     
     k = Knowledge.initialize_from_xml("cell_phones")
-    k.questions.each { |question| question.generate_choices_hash_product_idurl_2_weight(k) }
+    k.questions.each { |question| question.generate_choices_pidurl2weight(k) }
     User.create_default_users
     Review.initialize_from_xml(k)
     k.recompute_ratings
@@ -203,9 +203,52 @@ class String
     end
   end
 
-
 end
 
 class Float
   def in01?() self >= 0.0 and self <= 1.0 end
+end
+
+
+
+
+# extented array
+class Array
+
+  # with basic statistical functions
+
+  def stat_sum() inject(0.0) { |s, x| (x.nil? or x.nan?) ? s : s + x } end
+  def stat_mean() stat_sum / size.to_f end
+  def stat_standard_deviation()
+    m = stat_mean
+    begin
+      Math.sqrt((inject(0.0) { |s, x| x.nan? ? s : s + (x - m)**2 } / size.to_f))
+    rescue Exception => e
+      raise "error #{e.message} x=#{self.inspect}"
+      0.0
+    end
+  end
+
+  def nb_unique() inject([]) { |l, x| l.include?(x) ? l : l << x }.size  end
+
+  # yield all all possible combinations in an array
+  # and return the number of combination (empty set count for one)
+  def self.combinatorial(tail, empty_count, &block) self.combinatorial_bis(tail, empty_count, [], 0, &block) end
+  def self.combinatorial_bis(tail, empty_count, elt_set, x, &block)
+    if tail.size == 0
+      if elt_set.size > 0 or empty_count
+        block.call(elt_set)
+        x += 1
+      else
+        x
+      end
+    else
+      new_tail = tail.clone
+      first_elt = new_tail.shift
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set, x, &block)
+      x = self.combinatorial_bis(new_tail, empty_count, elt_set.clone << first_elt, x, &block)
+    end
+    x
+  end
+
 end

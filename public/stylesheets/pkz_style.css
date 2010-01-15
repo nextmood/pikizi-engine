@@ -77,3 +77,15 @@
     margin-left:5px;
 
 }
+
+.pkz_button_hover {
+    border:1px dashed black;
+    margin:5px;
+    padding:2px;
+    text-align:center;
+}
+
+.pkz_button_hover:hover {
+    cursor: crosshair;
+    background-color: lightslategray;
+}
