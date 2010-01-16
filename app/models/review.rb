@@ -18,6 +18,7 @@ class Review < Root
   key :label, String # summary of the review
   key :label_full, String # full content
   key :reputation, Float # the user reputation
+  key :category, String
   key :_type, String
   
   key :user_id, String
@@ -29,7 +30,10 @@ class Review < Root
   def self.is_main_document() true end
 
   def self.initialize_from_xml(knowledge)
-    Review.find(:all).each(&:destroy)
+
+    # destroy all reviews with
+    Review.delete_all(:author_email => "phclouin@yahoo.com")
+
     directory = "public/domains/#{knowledge.idurl}/reviews"
     get_entries(directory).each do |file_review_xml|
       if file_review_xml.has_suffix(".xml")
@@ -38,6 +42,8 @@ class Review < Root
                            :knowledge_idurl => knowledge.idurl,
                            :product_idurl => xml_node['product_idurl'],
                            :author_email => xml_node['author'],
+                           :reputation => xml_node['reputation'],
+                           :category => xml_node['category'],
                            :source => xml_node['source'],
                            :source_url => xml_node['url'],
                            :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now }
@@ -112,6 +118,8 @@ class Review < Root
     options_create[:min_rating] = nil
     options_create[:max_rating] = nil
     options_create[:rating] = nil
+    options_create[:reputation] = nil
+    options_create[:category] = nil
   end
 end
 
