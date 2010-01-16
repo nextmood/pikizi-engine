@@ -1,6 +1,7 @@
 require 'xml'
 require 'mongo_mapper'
 require 'pidurl2weight'
+require 'user'
 
 # =======================================================================================
 # Questions

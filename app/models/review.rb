@@ -18,7 +18,7 @@ class Review < Root
   key :label, String # summary of the review
   key :label_full, String # full content
   key :reputation, Float # the user reputation
-  key :category, String
+  key :is_xml_source, Boolean, :default => false
   key :_type, String
   
   key :user_id, String
@@ -29,10 +29,25 @@ class Review < Root
 
   def self.is_main_document() true end
 
+  # all categories of review and their weights
+  def self.categories() {"amazon" => 1.0, "user" => 2.0, "expert" => 10.0, "feature" => 1.0} end
+  # return the category (one of the above) of a review
+  def get_category
+    if source == "amazon"
+      "amazon"
+    elsif author_email == "phclouin@yahoo.com"
+      "expert"
+    else
+      "user"
+    end
+  end
+  def get_reputation() source == "amazon" ? reputation + 1.0 : 1.0 end
+
+
   def self.initialize_from_xml(knowledge)
 
     # destroy all reviews with
-    Review.delete_all(:author_email => "phclouin@yahoo.com")
+    Review.delete_all(:is_xml_source => true)
 
     directory = "public/domains/#{knowledge.idurl}/reviews"
     get_entries(directory).each do |file_review_xml|
@@ -43,10 +58,10 @@ class Review < Root
                            :product_idurl => xml_node['product_idurl'],
                            :author_email => xml_node['author'],
                            :reputation => xml_node['reputation'],
-                           :category => xml_node['category'],
                            :source => xml_node['source'],
                            :source_url => xml_node['url'],
-                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now }
+                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
+                           :is_xml_source => true }
 
         xml_node.find("FeatureOpinion").each do |node_feature_opinion|
 
@@ -105,6 +120,8 @@ class Review < Root
 
   end
 
+  # generate amazon reviews
+  def self.create_from_amazon(k) k.products.each { |product| product.create_amazon_reviews(k) } end
 
 
   private
@@ -119,7 +136,6 @@ class Review < Root
     options_create[:max_rating] = nil
     options_create[:rating] = nil
     options_create[:reputation] = nil
-    options_create[:category] = nil
   end
 end
 

@@ -2,7 +2,28 @@ namespace :pikizi do
 
   desc "reset the Database"
   task :reset_db => :environment do
-    Root.reset_db
+
+    Question.delete_all
+    Quizze.delete_all
+    Product.delete_all
+    Review.delete_all
+    Knowledge.delete_all
+
+    User.delete_all
+    User.create_default_users
+
+#    User.find(:all).each do |user|
+#      user.quizze_instances = []
+#      user.reviews = []
+#      user.save
+#    end
+
+    k = Knowledge.initialize_from_xml(ENV.include?("name") ? ENV['name'] : "cell_phones")
+    Review.initialize_from_xml(k)
+    Review.create_from_amazon(k)
+    compute_ratings(k)
+
+    "database reset"
   end
 
   desc "Load a domain"
@@ -30,16 +51,16 @@ namespace :pikizi do
     k = get_knowledge
     # destroy previous automatic reviews
     # analyze the model and generates reviews objects, saved in DB
-    compute_rating(k)
+    compute_ratings(k)
   end
 
-  desc "Generate reviews from amazons"
+  desc "Generate reviews from amazon"
   task :reviews_load_amazon => :environment do
     k = get_knowledge
     # destroy previous automatic reviews
     # analyze the model and geenrates reviews objects, saved in DB
-    k.products.each { |product| product.create_amazon_reviews(k) }     
-    compute_rating(k)
+    Review.create_from_amazon(k)
+    compute_ratings(k)
   end
 
   desc "Add xml reviews to the database"
@@ -47,7 +68,8 @@ namespace :pikizi do
     k = get_knowledge
     # destroy the previous reviews  if exists
     # read review xml files and create objects in DB
-    compute_rating(k)
+    Review.initialize_from_xml(k)
+    compute_ratings(k)
   end
 
   desc "recompute weights after an update to knowledge, products or questions"
@@ -114,17 +136,82 @@ namespace :pikizi do
     knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
     Knowledge.load(knowledge_idurl)
   end
-
   # recompute all rating and update distributions
   def compute_ratings(knowledge)
     # read reviews in database and compute aggregated rating
+    # hash_p_f_c_aggregation[product_idurl][feature_idurl][category] -> [nb_weighted, sum_weighted]
+
+    # initialize for each ratable features
+    # hash_p_f_c_aggregation[product_idurl][feature_idurl][category]  -> [0.0, 0.0]
+    puts "initialization... for model #{knowledge.label}"
+    hash_p_f_c_aggregation = knowledge.products.inject({}) do |h, product|
+      h[product.idurl] = knowledge.feature_ratings.inject({}) do |h1, feature_rating|
+        h1[feature_rating.idurl] = Review.categories.inject({}) { |h2, (category, weight)| h2[category] = [0.0, 0.0]; h2 }
+        h1
+      end
+      h
+    end
+
+    # process each review objects
+    puts "processing reviews..."
+    Review::Rating.find(:all).each do |review|
+      if review.knowledge_idurl == knowledge.idurl
+        p_idurl = review.product_idurl
+        f_idurl = review.feature_idurl
+        nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category]
+        raise "error unknown feature=#{f_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
+
+        rating_01 = Root.rule3(review.rating, review.min_rating, review.max_rating)
+        nb_weighted += review.get_reputation
+        sum_weighted += (review.get_reputation * rating_01)
+
+        hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category] = [nb_weighted, sum_weighted]
+      end
+    end
+
+    # write the result for each  and products
+    puts "computing and writing results..."
+    knowledge.products.each do |product|
+      knowledge.each_feature_rating do |feature_rating|
+
+        # compute the average rating for each product/feature/category
+        Review.categories.each do |category, weight|
+          raise "error no product #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl]
+          raise "error no feature #{feature_rating.idurl} for product  #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl][feature_rating.idurl]
+          raise "error no category #{category} for feature #{feature_rating.idurl} for product  #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
+
+          nb_weighted, sum_weighted = hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
+          average_rating = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
+          hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category] = average_rating
+        end
+
+        # compute the global rating for this product/feature (weighted average of category rating)
+        sum_weighted, nb_weighted = Review.categories.inject([0.0, 0.0]) do |(sw, nw), (category, category_weight)|
+          if rating = hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
+            [sw + rating * category_weight, nw + category_weight]
+          else
+            [sw, nw]
+          end
+        end
+        average_rating_global = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
+        hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][:global_rating] = average_rating_global
+
+        # save the average rating for each category for this product
+        product.set_value(feature_rating.idurl, average_rating_global)
+        puts "#{product.idurl}/#{feature_rating.idurl}=#{average_rating_global}" if average_rating_global
+
+      end
+      product.save
+    end
+
+    # recompute weights...
     compute_weights(knowledge)
   end
 
   # recompute all vertors pidurl -> weight per question/choice
   def compute_weights(knowledge)
     # compute weight for each question using the evaluator
-    Question.find(:all).each do |question|
+    knowledge.questions.each do |question|
       # recompute weights, compute distribution and save the question
       question.generate_choices_pidurl2weight(knowledge)
       # quality check

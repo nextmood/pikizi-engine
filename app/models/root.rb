@@ -11,30 +11,6 @@ class Root
   # ---------------------------------------------------
   # utilities
 
-  def self.reset_db()
-    Question.find(:all).each(&:destroy)
-    Quizze.find(:all).each(&:destroy)
-    Product.find(:all).each(&:destroy)
-    Review.find(:all).each(&:destroy)
-    Knowledge.find(:all).each(&:destroy)
-
-    # optional totally destroy users
-    User.find(:all).each(&:destroy)
-
-#    User.find(:all).each do |user|
-#      user.quizze_instances = []
-#      user.reviews = []
-#      user.save
-#    end
-    
-    k = Knowledge.initialize_from_xml("cell_phones")
-    k.questions.each { |question| question.generate_choices_pidurl2weight(k) }
-    User.create_default_users
-    Review.initialize_from_xml(k)
-    k.recompute_ratings
-    "database reset"    
-  end
-
 
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
   def self.rule3(x, min, max)
