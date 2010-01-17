@@ -282,6 +282,7 @@ class Feature < Root
 
   key :label, String # text
   key :is_optional, Boolean, :default => false
+  key :no_specification, Boolean, :default => false
 
   many :features, :polymorphic => true # sub features
 
@@ -315,6 +316,7 @@ class Feature < Root
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
     feature.is_optional = xml_node['is_optional']
+    feature.no_specification = xml_node['no-spec'] ? true : false
     feature.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
     feature
   end
@@ -322,6 +324,7 @@ class Feature < Root
   def generate_xml(top_node)
     node_feature = super(top_node)
     node_feature['is_optional'] = "true" if is_optional
+    node_feature['no-spec'] = "true" if no_specification
     Root.write_xml_list(node_feature, features, 'sub_features')
     node_feature
   end
@@ -391,7 +394,7 @@ class Feature < Root
     end
   end
 
-
+  # this is related to feature condition
   def is_relevant(product)
     if is_a?(FeatureCondition)
       (value = get_value(product)).nil? or value
@@ -400,6 +403,12 @@ class Feature < Root
     end
   end
 
+  # this is related to display the specification
+  def is_specification?(product) !no_specification and (feature_parent ? feature_parent.is_specification?(product) : true) end
+
+
+
+  # the depth level of a feature
   def level() feature_parent ? 1 + feature_parent.level() : 1 end
 
   # ---------------------------------------------------------------------
@@ -640,6 +649,8 @@ class FeatureRating < Feature
   def value2xml(value) value.to_s end
 
   # ---------------------------------------------------------------------
+
+  def is_specification?(product) false end
 
 end
 
@@ -899,6 +910,8 @@ class FeatureCondition < Feature
     content_string != "" and content_string.downcase != "false"
   end
   def value2xml(value) value.to_s end
+
+  def is_specification?(product) super(product) and get_value(product) end
 
 end
 

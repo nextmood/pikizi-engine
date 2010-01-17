@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <Knowledge label="Cell Phones">
-
 	<sub_features>
-		<FeatureRating idurl="overall_rating" label="Rating" min_rating="0" max_rating="10" />
-		<FeatureImage  idurl="main_image" label="Product Picture" />
-		<FeatureUrl  idurl="main_url" label="URL" />
-		<FeatureTextarea idurl="description" label="Product Description" />
-
+		<FeatureRating idurl="overall_rating" label="Rating" min_rating="0" max_rating="10"/>
+		<FeatureImage  idurl="main_image" label="Product Picture" no-spec="true"/>
+        <FeatureUrl  idurl="main_url" label="URL" no-spec="true"/>
+        <FeatureTextarea idurl="description" label="Product Description" no-spec="true"/>
 		<FeatureTags idurl="brand" label="Brand" is_exclusive="true">
 			<tags>
 				<Tag idurl="apple" label="Apple"/>
@@ -65,11 +63,11 @@
 			</tags>
 		</FeatureTags>
 
-        <FeatureNumeric idurl="unsubsidized_price" label="Unsubsidized Price" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-        <FeatureNumeric idurl="special_carrier_promotion" label="Special [Carrier] Promotion" format="% .2f$" value_min="0.0" value_max="1000.0"/>
-        <FeatureNumeric idurl="subsidized_price" label="Subsidized price" format="% .2f$" value_min="0.0" value_max="1000.0">
+        <FeatureNumeric idurl="unsubsidized_price" label="Unsubsidized Price" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" />
+        <FeatureNumeric idurl="special_carrier_promotion" label="Special [Carrier] Promotion" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" />
+        <FeatureNumeric idurl="subsidized_price" label="Subsidized price" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" >
             <sub_features>
-                <FeatureCondition idurl="plan_requirements" lable="Plan Requirements">
+                <FeatureCondition idurl="plan_requirements" label="Plan Requirements">
                     <sub_features>
                         <FeatureNumeric idurl="minimum_plam" label="Minimum monthly plan" format="% .2f$" value_min="0.0" value_max="1000.0"/>
                         <FeatureNumeric idurl="data_plan" label="Minimum monthly data plan" format="% .2f$" value_min="0.0" value_max="1000.0"/>
@@ -81,17 +79,17 @@
                 </FeatureCondition>
             </sub_features>
         </FeatureNumeric>
-        <FeatureNumeric idurl="amazon_price" label="Amazon's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
+        <FeatureNumeric idurl="amazon_price" label="Amazon's Price" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" >
             <sub_features>
                 <FeatureUrl  idurl="amazon_url" label="Amazon's Product Page" />
               </sub_features>
  		</FeatureNumeric>
-        <FeatureNumeric idurl="bestbuy_price" label="BestBuy's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
+        <FeatureNumeric idurl="bestbuy_price" label="BestBuy's Price" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" >
             <sub_features>
                 <FeatureUrl  idurl="bestbuy_url" label="BestBuy's Product Page" />
               </sub_features>
  		</FeatureNumeric>
-        <FeatureNumeric idurl="radioshack_price" label="Radioshack's Price" format="% .2f$" value_min="0.0" value_max="1000.0">
+        <FeatureNumeric idurl="radioshack_price" label="Radioshack's Price" format="% .2f$" value_min="0.0" value_max="1000.0" no-spec="true" >
             <sub_features>
                 <FeatureUrl  idurl="radioshack_url" label="Radioshack's Product Page" />
               </sub_features>
