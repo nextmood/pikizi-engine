@@ -1,21 +1,28 @@
 <br/>
+<% hash_fidurl_category_opinions = product.get_ratings_group_by_feature_and_category %>
+
 <% for feature_rating in knowledge.feature_ratings %>
-    <% reviews = Review.find(:all, :product_idurl => product.idurl, :feature_idurl => feature_rating.idurl ) %>
+    <% hash_category_opinions = hash_fidurl_category_opinions[feature_rating.idurl] %>
     <div style="border-bottom:1px solid black;">
-      <%= simpler_rating_label(feature_rating.label) %>
       <%= feature_rating.get_value_html(product) %>
-      <% if reviews.size > 0 %>
-        <%= link_to_function(pluralize(reviews.size, "review"), "document.getElementById('details_#{feature_rating.idurl}').toggle();") %>
+      <%= simpler_rating_label(feature_rating.label) %>
+      <% if hash_category_opinions and hash_category_opinions.size > 0 %>
+        <%= link_to_function(pluralize(2, "review"), "document.getElementById('details_#{feature_rating.idurl}').toggle();", :style => "font-size:80%;") %>
 
         <div id="details_<%= feature_rating.idurl %>" style="display:none;">
-            <% for review in reviews %>
-                <div style="border-top:1px dashed black; margin-top:8px; font-style:italic;" title="filename:<%= review.filename %>, <%= review.class %>">
-                    <div><%= review.written_at %>, <%= feature_rating.get_value_in_min_max_rating_bis(Root.rule3(review.rating, review.min_rating, review.max_rating)) %> <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %></div>
-                </div>
+           <% for category, weight in Review.categories %>
+             <% if hash_opinions = hash_category_opinions[category] and hash_opinions[:weighted_avg_01] %>
+                 <div>
+                    <%= feature_rating.stars_html(hash_opinions[:weighted_avg_01]) %>
+                   in category <span title="category=<%= category %> weight=<%= weight %>"><%= category %></span>,
+                   through <%= pluralize(hash_opinions[:reviews].size, "review") %>
+                 </div>
+             <% end %>
             <% end %>
+          </table>
         </div>
       <% else %>
-        <small>no reviews yet</small>
+        <span style="font-size:80%;">no reviews yet <%= feature_rating.idurl %></span>
       <% end %>
 
     </div>

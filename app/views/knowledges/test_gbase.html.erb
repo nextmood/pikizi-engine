@@ -1,0 +1,28 @@
+<h1>request</h1>
+<% form_tag '/test_gbase' do -%>
+    <%=  text_field_tag 'query', @query || 'Enter your search query here', :size => 30  %>
+    <div><%= submit_tag 'Search' %></div>
+<% end -%>
+
+<% if @results %>
+    <h1>results for </h1>
+    <%= @gurl %>
+    <% for id, result in @results %>
+        <div style="border:1px solid black; margin-top:10px;">
+          <%= id %>
+          <br/>
+          <%= result[:updated] %>
+          <br/>
+          <b><%= result[:title] %></b>
+          <br/>
+          <%= result[:entry].elements['g:product_type'].text %>
+          <ul>
+            <% for link_label, link in result[:links] %>
+                <li><%= link_label %> => <%= link %></li>    
+            <% end %>
+
+        </div>
+    <% end %>
+    <h1>feed</h1>
+    <%= @feed %>
+<% end %>

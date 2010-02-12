@@ -39,9 +39,9 @@ module ApplicationHelper
 
   def source_as_html(review)
     if review.source or review.source_url
-      s = review.source || "source"
+      s = "source"
       s = link_to(s, review.source_url) if review.source_url
-      " (from #{s})"
+      "<span title=\"source=#{review.source}\" style=\"font-size:80%;\"> #{s}</span>"
     end
   end
 

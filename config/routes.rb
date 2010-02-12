@@ -17,9 +17,14 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/distance/:knowledge_idurl/:feature_idurl', :controller => 'knowledges', :action => 'distance'
   map.connect '/distance/:knowledge_idurl', :controller => 'knowledges', :action => 'distance'
   map.connect '/show/:knowledge_idurl', :controller => 'knowledges', :action => 'show'
+  map.connect '/test_gbase' , :controller => 'knowledges', :action => 'test_gbase'
 
   map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'questions', :action => 'show'
   map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
+
+  map.connect '/review/:review_id', :controller => 'reviews', :action => 'show'
+  map.connect '/reviews/:knowledge_idurl', :controller => 'reviews', :action => 'index'
+  map.connect '/cut_paragraph/:review_id/:ranking_number/:caret_position', :controller => 'reviews', :action => 'cut_paragraph'
 
   map.connect '/home' , :controller => 'home', :action => 'quizzes'
   map.connect '/test_results', :controller => 'home', :action => 'test_results'

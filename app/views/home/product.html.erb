@@ -1,4 +1,4 @@
-<% feature_image = @knowledge.get_feature_by_idurl("main_image").get_value(@product) %>
+<% url_image = @knowledge.get_feature_by_idurl("main_image").get_value(@product) %>
 
 <div id="main">
     <div class="box952">
@@ -12,7 +12,7 @@
             <div class="spcr"></div>
         <ul class="one">
             <li class="img">
-                <img src="<%= @knowledge.clean_url(feature_image, @product) %>" width="220" height="220" />
+                <img src="<%= @knowledge.clean_url(url_image, @product) %>" width="220" height="220" />
             </li>
 
             <li class="details  blank">

@@ -1,179 +1,255 @@
 require 'mongo_mapper'
+require 'hpricot'
 
-# describe an review of a user for a given product/feature
-# with associated backgrounds
-# rating in between ).0 and 1.0
+# describe a review
 class Review < Root
-  
+
   include MongoMapper::Document
 
-  key :filename, String
+  # this is the global rating
+  key :min_rating, Float
+  key :max_rating, Float
+  key :rating, Float
+
+  key :product_idurl, String
+
+  key :author, String
+  key :source, String          # amazon, user, expert, etc...
+  key :source_url, String      # external url for the review
+
+  key :written_at, Date
+
+  key :summary, String # summary of the review
+  key :content, String # full content
+
+  key :reputation, Float # the source reputation
+
+  key :filename_xml, String
   key :knowledge_idurl, String
   key :product_idurl, String
-  key :author_email, String
-  key :source, String
-  key :source_url, String      # external url for the review
-  key :written_at, Date
-  key :feature_idurl, String
-  key :label, String # summary of the review
-  key :label_full, String # full content
-  key :reputation, Float # the user reputation
-  key :is_xml_source, Boolean, :default => false
-  key :_type, String
-  
-  key :user_id, String
-  belongs_to :user
-  
+
+  key :_type, String # class management
+
+  many :opinions, :polymorphic => true
+
+  many :paragraphs
+
   timestamps!
 
 
   def self.is_main_document() true end
 
-  # all categories of review and their weights
-  def self.categories() {"amazon" => 1.0, "user" => 2.0, "expert" => 10.0, "feature" => 1.0} end
-  # return the category (one of the above) of a review
-  def get_category
-    if source == "amazon"
-      "amazon"
-    elsif author_email == "phclouin@yahoo.com"
-      "expert"
-    else
-      "user"
-    end
+
+  def get_reputation() source == Review::FromAmazon.source_default ? reputation + 1.0 : 1.0 end
+
+  # all categories of reviews and their weights
+  def self.categories() {:amazon => 1.0, :user => 2.0, :expert => 10.0, :feature => 1.0} end
+
+  # return the category (one of the above) of an opinion
+  # this is overloaded in subclasses
+  def get_category() :user end
+
+  # destroy the record in mongo db, but first we need to remove all attached opinions
+  def self.delete_with_opinions(find_options)
+    Review.find(:all, find_options).each { |review| Opinion.delete_all(:review_id => review.id) }
+    Review.delete_all(find_options)
   end
-  def get_reputation() source == "amazon" ? reputation + 1.0 : 1.0 end
 
+  def product() Product.load(product_idurl) end
 
-  def self.initialize_from_xml(knowledge)
+  def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
 
-    # destroy all reviews with
-    Review.delete_all(:is_xml_source => true)
+  def get_paragraph_by_ranking_number(ranking_number)
+    ranking_number = Float(ranking_number)
+    paragraphs.detect { |p| p.ranking_number == ranking_number}  
+  end
 
-    directory = "public/domains/#{knowledge.idurl}/reviews"
-    get_entries(directory).each do |file_review_xml|
-      if file_review_xml.has_suffix(".xml")
-        xml_node = XML::Document.file("#{directory}/#{file_review_xml}").root
-        options_create = { :filename => file_review_xml,
-                           :knowledge_idurl => knowledge.idurl,
-                           :product_idurl => xml_node['product_idurl'],
-                           :author_email => xml_node['author'],
-                           :reputation => xml_node['reputation'],
-                           :source => xml_node['source'],
-                           :source_url => xml_node['url'],
-                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
-                           :is_xml_source => true }
+  def self.opinion_types
+    [["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature of a product", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
+  end
 
-        xml_node.find("FeatureOpinion").each do |node_feature_opinion|
-
-          options_create[:feature_idurl] = node_feature_opinion['idurl']
-
-          node_feature_opinion.find("rating").each do |node_rating|
-            cleanup_options_create(options_create)
-            options_create[:min_rating] = Float(node_rating["min_rating"] || 0)
-            options_create[:max_rating] = Float(node_rating["max_rating"] || 10)
-            node_content = node_rating.content.strip
-            if node_content != ""
-              options_create[:rating] = Float(node_content)
-              Review::Rating.create(options_create)
-            end
-          end
-
-          node_feature_opinion.find("tip").each do |node_tip|
-             cleanup_options_create(options_create)
-             options_create[:usage] = node_tip["usage"]
-             intensity = node_tip["intensity"] || 1.0
-             intensity = 1.0 if intensity == "pro"
-             intensity = -1.0 if intensity == "cons"
-             options_create[:intensity] = Float(intensity)
-             options_create[:label] = node_tip.content.strip
-             Review::Tip.create(options_create)
-          end
-
-          node_feature_opinion.find("better").each do |node_better|
-            cleanup_options_create(options_create)
-            options_create[:operator_type] = "better"
-            options_create[:predicate] = node_better["predicate"]
-            options_create[:label] = node_better.content.strip
-            Review::Comparator.create(options_create)
-          end
-          node_feature_opinion.find("same").each do |node_same|
-            cleanup_options_create(options_create)
-            options_create[:operator_type] = "same"
-            options_create[:predicate] = node_same["predicate"]
-            options_create[:label] = node_same.content.strip
-            Review::Comparator.create(options_create)
-          end
-          node_feature_opinion.find("worse").each do |node_worse|
-            cleanup_options_create(options_create)
-            options_create[:operator_type] = "worse"
-            options_create[:predicate] = node_worse["predicate"]
-            options_create[:label] = node_worse.content.strip
-            Review::Comparator.create(options_create)
-          end
-
-        end
+  def cut_paragraph_at(paragraph, caret_position)
+    max_size = paragraph.content.size - 1
+    if caret_position > 0 or caret_position < max_size
+      p1_content = paragraph.content[0 .. caret_position-1].strip
+      p2_content = paragraph.content[caret_position .. max_size].strip
+      p2_ranking_number = paragraph.ranking_number + 1
+      if p1_content.size > 0 and p2_content.size > 0
+        paragraph.content = p1_content
+        paragraphs.each {|p| p.ranking_number += 1 if p.ranking_number >= p2_ranking_number }
+        paragraphs << Paragraph.new(:ranking_number => p2_ranking_number, :content => p2_content)
+        save
       end
     end
   end
 
-  def self.generate_xml
+end
 
+# reviews extracted from Amazon
+class FromAmazon < Review
+
+  def self.source_default() "Amazon" end
+
+  def get_category() :amazon end
+
+  def self.create_with_opinions_4_all_products(knowledge)
+    knowledge.products.each { |product| product.create_amazon_reviews(knowledge) }
   end
 
-  # generate amazon reviews
-  def self.create_from_amazon(k) k.products.each { |product| product.create_amazon_reviews(k) } end
-
-
-  private
-
-  def self.cleanup_options_create(options_create)
-    options_create[:operator_type] = nil
-    options_create[:predicate] = nil
-    options_create[:label] = nil
-    options_create[:usage] = nil
-    options_create[:intensity] = nil
-    options_create[:min_rating] = nil
-    options_create[:max_rating] = nil
-    options_create[:rating] = nil
-    options_create[:reputation] = nil
+  def self.create_with_opinions(knowledge, product_idurl, amazon_url, amazon_review)
+    r = Review::FromAmazon.create(:knowledge_idurl => knowledge.idurl,
+                                  :product_idurl => product_idurl,
+                                  :author => "amazon_customer_#{amazon_review[:customerid]}",
+                                  :source => Review::FromAmazon.source_default,
+                                  :source_url => amazon_url,
+                                  :written_at => DateTime.parse(amazon_review[:date]),
+                                  :feature_idurl => "overall_rating",
+                                  :summary => amazon_review[:summary],
+                                  :content => amazon_review[:content],
+                                  :reputation => Float(amazon_review[:totalvotes]),
+                                  :min_rating => 1,
+                                  :max_rating => 5,
+                                  :rating => Float(amazon_review[:rating]) )
+    r.generate_opinions
   end
+
+  def generate_opinions
+    self.opinions << Opinion::Rating.create(:feature_idurl => "overall_rating",
+                           :min_rating => 1,
+                           :max_rating => 5,
+                           :rating => rating)
+    split_in_paragraphs
+  end
+
+
+
+  # break the content in paragraphs
+  def split_in_paragraphs
+    #url = File.open(url) if File.exist?(url)
+    #public/to_scrap/text_article.html
+    paragraphs_generated = []
+    content.split(/<br \/>|<br\/>|<br>|<p>|<\/p>/).each do |paragraph_content|
+      paragraph_content.strip!
+      if paragraph_content != ""
+        paragraphs_generated << Paragraph.new(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
+      end
+    end
+    self.paragraphs = paragraphs_generated
+    self.save
+  end
+
+
 end
 
+# review generated by PH
+class Inpaper < Review
 
-class Rating < Review
-
-
-  key :min_rating, Float
-  key :max_rating, Float
-  key :rating, Float
-
-
-
-  def is_valid?() min_rating and max_rating and rating end
-
-  def to_html() "#{rating} in [#{min_rating}, #{max_rating}]" end
-
-end
-
-class Comparator < Review
-
-  key :operator_type, String
-  key :predicate, String
-
-  def to_html() "#{operator_type} predicate=#{predicate}:#{label}" end
-
-  def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
+  # break the content in paragraphs
+  def split_in_paragraphs
+    #url = File.open(url) if File.exist?(url)
+    #public/to_scrap/text_article.html
+    doc = Hpricot(url)
+    title = doc.at("//title").inner_html
+    original_url =  doc.at("body/div/a")['href']
+    ps = doc.search("//p").collect { |p| p.inner_html }
+    if title and original_url and ps.size > 0
+      r = Review.create(:title => title, :original_url => original_url)
+      ps.each_with_index { |p, i| r.paragraphs.create(:num => i, :content => p) }
+      r
+    end
+  end
 
 end
 
+# review generated by PH
+class FileXml < Review
 
-class Tip < Review
+  def get_category() :expert end
 
-  key :usage, String
-  key :intensity, Float
+  def self.create_with_opinions(knowledge)
+    directory = "public/domains/#{knowledge.idurl}/reviews"
+    get_entries(directory).each do |file_review_xml|
+      if file_review_xml.has_suffix(".xml")
+        xml_node = XML::Document.file("#{directory}/#{file_review_xml}").root
+        product_idurl = xml_node['product_idurl']
 
-  def to_html() "usage=#{usage}, i=#{intensity}:#{label}" end
+        # get or create API in mongo mapper ?
+        r = FileXml.create(:filename => file_review_xml,
+                           :knowledge_idurl => knowledge.idurl,
+                           :product_idurl => product_idurl,
+                           :author => xml_node['author'],
+                           :source => xml_node['source'],
+                           :source_url => xml_node['url'],
+                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
+                           :reputation => 1)
+        r.generate_opinions(xml_node)
+      end
+    end
+  end
 
-  def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
+
+  def generate_opinions(xml_node)
+    xml_node.find("FeatureOpinion").each do |node_feature_opinion|
+
+      feature_idurl = node_feature_opinion['idurl']
+
+      # processing Rating Opinion
+      node_feature_opinion.find("rating").each do |node_rating|
+        node_content = node_rating.content.strip
+        if (node_content = node_rating.content.strip) != ""
+          opinion = Opinion::Rating.create(:feature_idurl => feature_idurl,
+                                           :min_rating => Float(node_rating["min_rating"] || 0),
+                                           :max_rating => Float(node_rating["max_rating"] || 10),
+                                           :rating => Float(node_content))
+          self.opinions << opinion
+          if feature_idurl == "overall_rating"
+            self.min_rating = opinion.min_rating
+            self.max_rating = opinion.max_rating
+            self.rating = opinion.rating
+            save
+          end
+        end
+      end
+
+      # processing Tip Opinion
+      node_feature_opinion.find("tip").each do |node_tip|
+         intensity = node_tip["intensity"] || 1.0
+         intensity = 1.0 if intensity == "pro"
+         intensity = -1.0 if intensity == "cons"
+         self.opinions << Opinion::Tip.create(:feature_idurl => feature_idurl,
+                             :usage => node_tip["usage"],
+                             :intensity => Float(intensity),
+                             :label => node_tip.content.strip)
+      end
+
+      # processing Better Comparator Opinion
+      node_feature_opinion.find("better").each do |node_better|
+        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "better", node_better)
+      end
+
+      # processing Same Comparator  Opinion
+      node_feature_opinion.find("same").each do |node_same|
+        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "same", node_better)
+      end
+
+      # processing Worse Comparator  Opinion
+      node_feature_opinion.find("worse").each do |node_worse|
+        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "worse", node_better)
+      end
+      
+    end
+  end
+
+end
+
+# a sub-division of the content of a review
+class Paragraph
+
+  include MongoMapper::EmbeddedDocument
+
+  key :content, String # full content
+  key :ranking_number, Integer # the first, 2nd third paragraph etc...
+
+
 
 end

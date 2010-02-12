@@ -29,6 +29,18 @@ class ApplicationController < ActionController::Base
 
   def self.release_version() "v 3.0 alpha 11/1/09"  end
 
+  # this is used by the controller
+  def get_product_selected(params)
+    @knowledge = Knowledge.load(params[:knowledge_idurl])
+    @products = @knowledge.products
+    @products_idurls = @products.collect(&:idurl)
+    @pidurls_selected = params[:select_product_idurls]
+    @pidurls_selected ||= session[:pidurls_selected]
+    @pidurls_selected ||= @products_idurls
+    session[:pidurls_selected] = @pidurls_selected
+    @products_selected = @products.select { |p| @pidurls_selected.include?(p.idurl) }
+  end
+
   private
 
   def check_user_authorization

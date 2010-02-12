@@ -162,7 +162,7 @@ class User < Root
   end
 
   def add_review(knowledge_idurl, feature_idurl, product_idurl, value)
-    new_review = Review.new
+    new_review = Opinion.new
     new_review.knowledge_idurl = knowledge_idurl
     new_review.feature_idurl = feature_idurl
     new_review.product_idurl = product_idurl

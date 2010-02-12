@@ -1,6 +1,7 @@
 require 'xml'
 require 'mongo_mapper'
 require 'amazon'
+require 'review'
 
 class Product < Root
 
@@ -16,6 +17,8 @@ class Product < Root
   key :hash_feature_idurl_value, Hash
 
   timestamps!
+
+  def reviews() Review.find(:all, :product_idurl => idurl) end
 
   def self.is_main_document() true end
 
@@ -33,33 +36,67 @@ class Product < Root
     end    
   end
 
+  AMAZON_SOURCE = "Amazon"
   def create_amazon_reviews(knowledge)
-    xml_filename = "amazon.xml"
-    #Review.delete_all(:filename => xml_filename)
-    #Review.find(:all, :filename => xml_filename, :product_idurl => idurl).each(&:destroy)
-    Review.delete_all(:filename => xml_filename, :product_idurl => idurl)
+    Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.source_default) # also destroy the attached opinions
+
     begin
+      nb_reviews_imported = 0
       ApiAmazon.get_amazon_reviews(get_amazon_id, 1, 10).each do |amazon_review|
-        puts "#{idurl}=#{amazon_review.inspect}"
-        Review::Rating.create(:filename => xml_filename,
-                              :knowledge_idurl => knowledge.idurl,
-                              :product_idurl => idurl,
-                              :author_email => "amazon_customer_#{amazon_review[:customerid]}",
-                              :source => "Amazon",
-                              :source_url => get_value("amazon_url"),
-                              :written_at => DateTime.parse(amazon_review[:date]),
-                              :feature_idurl => "overall_rating",
-                              :label => amazon_review[:summary],
-                              :label_full => amazon_review[:content],
-                              :reputation => Float(amazon_review[:totalvotes]),
-                              :min_rating => 1,
-                              :max_rating => 5,
-                              :rating => Float(amazon_review[:rating]) )
-        puts "#{idurl} created"
+        Review::FromAmazon.create_with_opinions(knowledge, idurl, get_value("amazon_url"), amazon_review)
+        nb_reviews_imported += 1
       end
+      puts "#{'* ' if nb_reviews_imported == 0} #{idurl}=#{nb_reviews_imported} reviews imported"
     rescue Exception => e
-      puts "Oups extractring reviews for product #{idurl} #{e.message}"
+      puts "*** #{idurl} (reviews=#{nb_reviews_imported}) #{e.message}"
     end
+  end
+
+  # return a hash
+  # h[feature_idurl][category][:weighted_avg_01]
+  # h[feature_idurl][category][:review_ids]
+  #
+  def get_ratings_group_by_feature_and_category
+
+    hash_fidurl_category_opinions = {}
+    Review.find(:all, :product_idurl => idurl).each do |review|
+      review.opinions.each do |opinion|
+        puts "opinion class=#{opinion.class}"
+        if opinion.is_rating?
+          puts "opinion rating"
+          tupple = [opinion, review]
+          ((hash_fidurl_category_opinions[opinion.feature_idurl] ||= {})[review.get_category] ||= []) <<  tupple
+        end
+      end
+    end
+
+
+    # compute the average rating for each category
+    hash_fidurl_category_opinions.each do |feature_idurl, hash_category_opinions|
+
+      # Begin for a given feature
+      hash_category_opinions.each do |category, opinions_reviews|
+
+        # Begin for a given category
+        sum_reputation = 0.0; sum_weighted = 0.0; reviews = []
+
+        opinions_reviews.each do |opinion, review|
+          review.reputation ||= 1.0
+          sum_reputation += review.reputation
+          sum_weighted += review.reputation * opinion.rating_01
+          reviews << review unless reviews.include?(review) 
+        end
+
+        hash_category_opinions[category] = { :weighted_avg_01 => sum_weighted / sum_reputation, :reviews => reviews } if sum_reputation > 0.0
+
+        # End for a given feature
+
+      end
+      # End for a given feature
+
+    end
+    puts "hash_fidurl_category_opinions=#{hash_fidurl_category_opinions.inspect}"
+    hash_fidurl_category_opinions  
   end
 
   def gallery_image_urls

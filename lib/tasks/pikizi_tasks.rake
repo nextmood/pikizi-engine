@@ -6,6 +6,7 @@ namespace :pikizi do
     Question.delete_all
     Quizze.delete_all
     Product.delete_all
+    Opinion.delete_all
     Review.delete_all
     Knowledge.delete_all
 
@@ -19,8 +20,13 @@ namespace :pikizi do
 #    end
 
     k = Knowledge.initialize_from_xml(ENV.include?("name") ? ENV['name'] : "cell_phones")
-    Review.initialize_from_xml(k)
-    Review.create_from_amazon(k)
+
+    # create all reviews from xml located in domain/reviews directory
+    Review::FileXml.create_with_opinions(k)
+
+    # create all reviews from amazon web site for all products
+    Review::FromAmazon.create_with_opinions_4_all_products(k)
+
     compute_ratings(k)
 
     "database reset"
@@ -59,7 +65,7 @@ namespace :pikizi do
     k = get_knowledge
     # destroy previous automatic reviews
     # analyze the model and geenrates reviews objects, saved in DB
-    Review.create_from_amazon(k)
+    Review::FromAmazon.create_with_opinions_4_all_products(k)
     compute_ratings(k)
   end
 
@@ -68,7 +74,7 @@ namespace :pikizi do
     k = get_knowledge
     # destroy the previous reviews  if exists
     # read review xml files and create objects in DB
-    Review.initialize_from_xml(k)
+    Opinion.initialize_from_xml(k)
     compute_ratings(k)
   end
 
@@ -154,18 +160,20 @@ namespace :pikizi do
 
     # process each review objects
     puts "processing reviews..."
-    Review::Rating.find(:all).each do |review|
+    Review.find(:all).each do |review|
       if review.knowledge_idurl == knowledge.idurl
         p_idurl = review.product_idurl
-        f_idurl = review.feature_idurl
-        nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category]
-        raise "error unknown feature=#{f_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
+        review.opinions.each do |opinion|
+          f_idurl = opinion.feature_idurl
+          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category]
+          raise "error unknown feature=#{f_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
 
-        rating_01 = Root.rule3(review.rating, review.min_rating, review.max_rating)
-        nb_weighted += review.get_reputation
-        sum_weighted += (review.get_reputation * rating_01)
+          rating_01 = Root.rule3(opinion.rating, opinion.min_rating, opinion.max_rating)
+          nb_weighted += review.get_reputation
+          sum_weighted += (review.get_reputation * rating_01)
 
-        hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category] = [nb_weighted, sum_weighted]
+          hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category] = [nb_weighted, sum_weighted]
+        end
       end
     end
 

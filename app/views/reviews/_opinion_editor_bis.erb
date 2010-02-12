@@ -1,0 +1,12 @@
+ <!-- the recording opinions -->
+ <div style="margin-top:5px; padding-top:2px; border-bottom:1px dashed black;">
+     no opinions recorded
+ </div>
+ <div id="opinion_<%= ranking_number %>_form" style="margin-top:5px; padding-top:2px;">
+    create an opinion of type <%= select_tag("type_opinion_#{ranking_number}", options_for_select(Review.opinion_types)) %>
+    <%= link_to_remote("create",
+        :url => {:controller => "reviews", :action => "add_opinion", :id => review.id, :ranking_number => ranking_number},
+        :with =>  "'type_opinion=' + $('type_opinion_#{ranking_number}').value") %>
+    &nbsp;or&nbsp;
+    <%= link_to_function("cancel", "document.getElementById('p#{ranking_number}').innerHTML =''") %>
+ </div>

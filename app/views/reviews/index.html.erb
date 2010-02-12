@@ -1,0 +1,38 @@
+<div class="pkz_box">
+  <%= model_selector(@knowledge, :reviews) %>
+  <div>
+    <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
+  </div>
+
+  <%= render(:partial => "/knowledges/products_selection",
+         :locals => { :page_url => "/reviews/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+
+  <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
+  <% for product in @products_selected %>
+     <div style="margin-top:10px; border:1px solid black; ">
+          <% reviews = product.reviews
+             image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top") %>
+          <h2><%= pluralize(reviews.size, "review") %> for <%= product.label %></h2>
+          <% for review in reviews %>
+            <div class="pkz_item_list" style="background-color:lightgray;">
+                <table>
+                  <tr>
+                    <td valign="top"><%= image_url %></td>
+                    <td valign="top">
+                        on <%= review.written_at %>
+                        <%= origin_review(review) %>
+                        <%= "<br/><i>#{review.summary}</i>"if review.summary %>
+                        <div style="font-size:80%; margin-top:3px;">
+                           <%= link_to("#{pluralize(review.paragraphs.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}", "/reviews/show/#{review.id}") %>
+                           <br/>rated <%= review.rating %> (min=<%= review.min_rating %>, max=<%= review.max_rating %>)
+                        </div>
+                    </td>
+                  </tr>
+                </table>
+
+
+            </div>
+          <% end %>
+     </div>
+   <% end %>
+</div>

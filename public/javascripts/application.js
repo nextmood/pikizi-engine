@@ -157,3 +157,33 @@ function treetable_toggle_edit(feature_idurl, product_idurl) {
     document.getElementById('f_' + feature_idurl + '_' + product_idurl + '_edit').toggle();
     return(true);
 }
+
+/*
+    get the carret position in a text area
+*/
+
+function GetCaretPosition(control) {
+    var CaretPos = 0;
+
+    // IE Support
+    if (document.selection)
+    {
+        control.focus();
+        var Sel = document.selection.createRange ();
+        var Sel2 = Sel.duplicate();
+        Sel2.moveToElementText(control);
+        CaretPos = -1;
+        while(Sel2.inRange(Sel))
+        {
+            Sel2.moveStart('character');
+            CaretPos++;
+        }
+    }
+
+    // Firefox support
+
+    else if (control.selectionStart || control.selectionStart == '0')
+        CaretPos = control.selectionStart;
+
+    return (CaretPos);
+}

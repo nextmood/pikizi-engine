@@ -1,0 +1,36 @@
+<% unless type_opinion == "none" %>
+    <div style="margin-top:5px; padding-top:2px;">
+        <% if ["pro", "cons"].include?(type_opinion) %>
+            <%= type_opinion %> for usage <%= text_field_tag("pro_con_usage", nil, :size => 80 ) %>
+
+        <% elsif type_opinion == "comparator_product" %>
+            <%= select_tag("comparator_#{review.id}_#{ranking_number}", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
+            product
+            <%= select_tag("comparator_product_#{review.id}_#{ranking_number}", options_for_select(dimension_product(knowledge)) ) %>
+
+        <% elsif type_opinion == "comparator_feature" %>
+            <%= select_tag("comparator_#{review.id}_#{ranking_number}", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
+            products with feature
+            <%=     select_tag("comparator_feature_#{review.id}_#{ranking_number}", options_for_select(dimension_feature(knowledge, :comparator))) %>
+
+        <% elsif type_opinion == "rating" %>
+            <%= type_opinion %> <%= text_field_tag("toto", nil, :size => 2) %> min=<%= text_field_tag("toto", "1", :size => 2) %> max=<%= text_field_tag("toto", "5", :size => 2) %>
+
+        <% elsif type_opinion == "feature_related" %>
+            related to<%= dimension_feature_related(knowledge, review.id, ranking_number) %>
+
+        <% else %>
+            type d'opinion inconnu <%= type_opinion %>
+        <% end %>
+        <% unless ["feature_related"].include?(type_opinion) %>
+          <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;" >
+             dimension<%= dimension_rating(knowledge, review.id, ranking_number) %>
+          </div>
+        <% end %>
+    </div>
+    <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;">
+        <%= link_to "record opinion...", "#" %>
+        &nbsp;or&nbsp;
+        <%= link_to_function("cancel", "document.getElementById('p#{ranking_number}').innerHTML =''") %>
+    </div>
+<% end %>

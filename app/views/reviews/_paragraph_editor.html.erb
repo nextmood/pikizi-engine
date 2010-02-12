@@ -1,0 +1,11 @@
+<% paragraph_editor_domid = "paragraph_editor_#{review.id}_#{paragraph.ranking_number}" %>
+
+<%= text_area_tag paragraph_editor_domid, paragraph.content, :style => "width:100%; height:100px;"  %>
+
+set the cursor where you want to split and
+
+<%= link_to("validate", "#",
+     :onclick => "window.location = '/cut_paragraph/#{review.id}/#{paragraph.ranking_number}/' + GetCaretPosition(document.getElementById('#{paragraph_editor_domid}'));") %>
+or
+<%= link_to_remote("cancel", :html => {:style => "margin-left:10px;"},
+         :url => {:controller => "reviews", :action => "edit_paragraph_cancel", :id => review.id, :ranking_number => paragraph.ranking_number}) %>

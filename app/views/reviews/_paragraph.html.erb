@@ -1,0 +1,9 @@
+<b><%= paragraph.ranking_number %>)</b>
+<%= paragraph.content %>
+<small>
+    <%= link_to_remote(pluralize(0, "opinion"),
+        :url => {:controller => "reviews", :action => "open_opinion_editor", :id => review.id, :ranking_number => paragraph.ranking_number}) %>
+    ,&nbsp;
+    <%= link_to_remote("cut paragraph",
+        :url => {:controller => "reviews", :action => "edit_paragraph", :id => review.id, :ranking_number => paragraph.ranking_number}) %>
+</small>

@@ -22,16 +22,7 @@ class QuestionsController < ApplicationController
     @products_distribution = @question.distribution_avg_weight
   end
 
-  def get_product_selected(params)
-    @knowledge = Knowledge.load(params[:knowledge_idurl])
-    @products = @knowledge.products
-    @products_idurls = @products.collect(&:idurl)
-    @pidurls_selected = params[:select_product_idurls]
-    @pidurls_selected ||= session[:pidurls_selected]
-    @pidurls_selected ||= @products_idurls
-    session[:pidurls_selected] = @pidurls_selected
-    @products_selected = @products.select { |p| @pidurls_selected.include?(p.idurl) }
-  end
+
 
 
 end

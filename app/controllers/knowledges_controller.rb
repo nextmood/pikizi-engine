@@ -1,4 +1,6 @@
 
+require 'google.rb'
+
 class KnowledgesController < ApplicationController
 
   # layout "minimal", :only => :quizze
@@ -77,5 +79,12 @@ class KnowledgesController < ApplicationController
     @aggregations = @knowledge.get_aggregations(@product)
   end
 
+
+  def test_gbase
+    @results = nil
+    if @query = params[:query]
+      @gurl, @results, @feed = gsearch(:q => @query, :bq => "[item type:products]" )
+    end
+  end
 
 end

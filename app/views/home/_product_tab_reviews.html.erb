@@ -1,18 +1,34 @@
 <br/>
-<% reviews = Review.find(:all, :product_idurl => product.idurl) %>
-<div><%= pluralize(reviews.size, "review") %></div>
+<% feature_rating = knowledge.get_feature_by_idurl("overall_rating") %>
+<% hash_category_opinions = product.get_ratings_group_by_feature_and_category["overall_rating"] %>
+<div><%= pluralize(3, "review") %></div>
 
-<% for review in reviews %>
-    <div style="border-top:1px dashed black; margin-top:8px;" title="filename:<%= review.filename %>, <%= review.class %>">
+<% for category, weight in Review.categories %>
+    <% if hash_opinion = hash_category_opinions[category] %>
+        <div class="pkz_category_title" style="padding-left0px;"><%= category %></div>
+        <% for review in hash_opinion[:reviews] %>
+            <div style="border-top:1px dashed black; margin-top:8px;" title="filename:<%= review.filename_xml %>, <%= review.class %>">
 
-        <div>on <%= review.written_at %>, <%= review.author_email %><%= source_as_html(review) %> said <%= review.to_html %> regarding <%= knowledge.get_feature_by_idurl(review.feature_idurl).label %></div>
-        <div>
-          <%= review.label %>
-          <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.label_full %>  
-          <%= %>
-        </div>
-        <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.label_full %></div>
-    </div>
+                <div>
+                    <%= review.written_at %> by
+                    <%= review.author %>
+                    <%= source_as_html(review) %>
+                    <small><%= pluralize(review.opinions.size, "rating") %> generated</small>
+                </div>
+                <div>
+                  <%= feature_rating.stars_html(Root.rule3(review.rating, review.min_rating, review.max_rating) ) %>
+                  <%= review.summary %>
+                  <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.content %>
+
+                </div>
+                <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.content %></div>
+            </div>
+        <% end %>
+        
+    <% end %>
+
 <% end %>
+
+
 
 
