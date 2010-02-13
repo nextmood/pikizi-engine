@@ -65,7 +65,7 @@ class Review < Root
   end
 
   def self.opinion_types
-    [["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
+    [["", ""], ["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
   end
 
   def cut_paragraph_at(paragraph, caret_position)

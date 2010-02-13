@@ -23,11 +23,12 @@ module ReviewsHelper
   end
 
   def dimension_rating(knowledge, review_id, paragraph_number)
-    options = knowledge.feature_ratings.collect {|f| [f.label, f.idurl]}
+    key_overall_rating = "overall_rating"
+    options = knowledge.feature_ratings.collect {|f| [f.label.gsub("Rating", ""), f.idurl]}
     options.sort! { |f1, f2| f1.first <=> f2.first }
-    overall = options.detect {|f| f.last == "overall_rating" }
+    overall = options.detect {|f| f.last == key_overall_rating }
     options.delete(overall)
-    options = [overall].concat(options)
+    options = [["Overall", key_overall_rating]].concat(options)
     select_tag("dimension_rating_#{review_id}_#{paragraph_number}", options_for_select(options) )
   end
 

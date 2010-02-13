@@ -27,37 +27,28 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="knowledges_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/knowledges_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="5" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="60" selection-start="1386" selection-end="1386" vertical-scroll-proportion="-10.105263">
+            <state line="28" column="38" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.41379312">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="knowledge.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/knowledge/knowledge.xml">
+      <file leaf-file-name="_opinion_editor_bis.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.33251232">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="question.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q27_carrier/question.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="13" selection-start="8801" selection-end="8801" vertical-scroll-proportion="0.0">
+            <state line="7" column="32" selection-start="392" selection-end="392" vertical-scroll-proportion="-4.4210525">
               <folding />
             </state>
           </provider>
@@ -66,43 +57,16 @@
       <file leaf-file-name="reviews_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
+            <state line="26" column="78" selection-start="923" selection-end="923" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <file leaf-file-name="review.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/review.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="18" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_filter_feature.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_filter_feature.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="228" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="knowledge.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="490" column="33" selection-start="17626" selection-end="17653" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="22" selection-start="31" selection-end="45" vertical-scroll-proportion="-1.2631578">
+            <state line="67" column="11" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,22 +85,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/root.rb" />
-        <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/knowledges_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_filter_editor.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/reviews_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_filter_feature.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb" />
         <option value="$PROJECT_DIR$/public/domains/cell_phones/questions/q27_carrier/question.xml" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/public/domains/cell_phones/knowledge/knowledge.xml" />
+        <option value="$PROJECT_DIR$/app/models/review.rb" />
+        <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/reviews_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb" />
       </list>
     </option>
   </component>
@@ -600,7 +564,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Rake.pikizi:reset_db">
+  <component name="RunManager" selected="Rails.Development">
     <configuration default="false" name="pikizi:recompute_ratings" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="pikizi-engine" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -956,11 +920,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="0" selection-start="4444" selection-end="4444" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="0" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" />
@@ -969,27 +928,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="18" selection-start="4295" selection-end="4295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="17" selection-start="8801" selection-end="8801" vertical-scroll-proportion="0.9133574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="22" selection-start="31" selection-end="45" vertical-scroll-proportion="-1.2631578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/knowledges_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1008,23 +946,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/knowledge/knowledge.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="490" column="33" selection-start="17626" selection-end="17653" vertical-scroll-proportion="0.0">
+        <state line="37" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.33251232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q27_carrier/question.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="846" selection-end="846" vertical-scroll-proportion="0.10344828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="13" selection-start="8801" selection-end="8801" vertical-scroll-proportion="0.84115523">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="18" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
+        <state line="60" column="18" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.85106385">
           <folding />
         </state>
       </provider>
@@ -1036,30 +981,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/questions/q27_carrier/question.xml">
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
+        <state line="490" column="33" selection-start="17626" selection-end="17653" vertical-scroll-proportion="0.5198556">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="13" selection-start="8801" selection-end="8801" vertical-scroll-proportion="0.0">
+        <state line="2" column="22" selection-start="31" selection-end="45" vertical-scroll-proportion="0.029020555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="11" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/knowledges_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="78" selection-start="923" selection-end="923" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="392" selection-end="392" vertical-scroll-proportion="-4.4210525">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="60" selection-start="1386" selection-end="1386" vertical-scroll-proportion="-10.105263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/domains/cell_phones/knowledge/knowledge.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.33251232">
+        <state line="28" column="38" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.41379312">
           <folding />
         </state>
       </provider>

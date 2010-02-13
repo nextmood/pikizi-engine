@@ -26,7 +26,7 @@
         <% end %>
         <% unless ["feature_related"].include?(type_opinion) %>
           <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;" >
-             dimension<%= dimension_rating(knowledge, review.id, ranking_number) %>
+             dimension of rating&nbsp;<%= dimension_rating(knowledge, review.id, ranking_number) %>
           </div>
         <% end %>
     </div>
