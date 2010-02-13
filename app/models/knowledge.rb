@@ -674,14 +674,9 @@ class FeatureRating < Feature
   end
 
   def stars_html(value_01)
-    value = get_value_in_min_max_rating_bis(value_01)
-    nb_stars_full = value.round
-    s = ""
-    max_rating.round.times do |i|
-      s << FeatureRating.icon_star(i < nb_stars_full).clone
-    end
-    "<span title=\"rated #{ '%2.1f' % value } out of #{max_rating}\">#{s}</span>"
+    Root.stars_html(get_value_in_min_max_rating_bis(value_01), max_rating)
   end
+
 
   # this is included in a form
   def get_value_edit_html(product)
@@ -692,7 +687,7 @@ class FeatureRating < Feature
   end
 
   def get_feature_html()
-    suffix = "#{FeatureRating.icon_star}#{feature_html_suffix}"
+    suffix = "#{Root.icon_star}#{feature_html_suffix}"
     "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label} #{suffix} </span>"
   end
 
@@ -704,7 +699,6 @@ class FeatureRating < Feature
                 </div>"
   end
 
-  def self.icon_star(full=true) "<img src=\"/images/icons/star#{'_empty' unless full}.png\" />" end
 
   # convert value to string (and reverse for dumping data product's feature value)
   def xml2value(content_string) Float(content_string.strip) end

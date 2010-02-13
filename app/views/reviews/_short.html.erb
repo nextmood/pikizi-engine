@@ -1,25 +1,15 @@
 
-# this is the global rating
-<%= review.min_rating %>
-<%= review.max_rating %>
-<%= review.rating %>
+<div style="border-top:1px dashed black; margin-top:8px;" >
+    on <%= review.written_at %>
+    <%= origin_review(review) %>
 
-<%= review.product_idurl %>
-
-<%= review.author %>
-<%= review.source %>
-<%= review.source_url %>
-
-<%= review.written_at %>
-
-<%= review.summary %>
-<%= review.content %>
-
-<%= review.reputation %>
-
-<%= review.filename_xml %>
-<%= review.knowledge_idurl %>
-<%= review.product_idurl %>
-
-<%= review._type %>
-
+    <div style="font-size:80%; margin-top:3px;">
+        <%= Root.stars_html(review.rating, review.max_rating) %>
+        <%= link_to("#{pluralize(review.paragraphs.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}",
+                    "/reviews/show/#{review.id}") %>
+        reputation of source=<%= review.source %>, user's reputation=<%= review.reputation %>
+    </div>
+  <%= "<br/><i>#{review.summary}</i>"if review.summary %>
+    <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.content %>
+    <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.content %></div>
+</div>

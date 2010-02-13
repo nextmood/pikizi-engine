@@ -31,7 +31,7 @@
         <% end %>
     </div>
     <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;">
-        <%= link_to "record opinion...", "#" %>
+        <%= link_to_function "record opinion...", "alert('working on it...,  mon gars')" %>
         &nbsp;or&nbsp;
         <%= link_to_function("cancel", "document.getElementById('p#{ranking_number}').innerHTML =''") %>
     </div>

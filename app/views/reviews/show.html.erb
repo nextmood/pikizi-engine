@@ -4,12 +4,12 @@
 
     <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
     <% product = @review.product %>
-    <% image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top") %>
+    <% image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top", :border => 0) %>
 
     <div class="pkz_item_list" style="background-color:lightgray;">
         <table>
           <tr>
-            <td valign="top"><%= image_url %></td>
+            <td valign="top"><%= link_to(image_url, "/product/#{product.idurl}") %></td>
             <td valign="top">
                 on <%= @review.written_at %>
                 <%= origin_review(@review) %>

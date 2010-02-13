@@ -156,6 +156,18 @@ class Root
 
   def link_back() end
 
+
+  def self.stars_html(value, max_rating)
+    nb_stars_full = value.round
+    s = ""
+    max_rating.round.times do |i|
+      s << Root.icon_star(i < nb_stars_full).clone
+    end
+    "<span title=\"rated #{ '%2.1f' % value } out of #{max_rating}\">#{s}</span>"
+  end
+
+  def self.icon_star(full=true) "<img src=\"/images/icons/star#{'_empty' unless full}.png\" />" end
+  
   def self.duration(nb=1)
     t = Time.now
     nb.times { yield }

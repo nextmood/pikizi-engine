@@ -1,30 +1,16 @@
-<br/>
 <% feature_rating = knowledge.get_feature_by_idurl("overall_rating") %>
-<% hash_category_opinions = product.get_ratings_group_by_feature_and_category["overall_rating"] %>
-<div><%= pluralize(3, "review") %></div>
+<% hash_category_reviews = product.reviews.group_by(&:get_category) %>
 
 <% for category, weight in Review.categories %>
-    <% if hash_opinion = hash_category_opinions[category] %>
+
+
+    <% if hash_category_reviews and reviews = hash_category_reviews[category] %>
+
         <div class="pkz_category_title" style="padding-left0px;"><%= category %></div>
-        <% for review in hash_opinion[:reviews] %>
-            <div style="border-top:1px dashed black; margin-top:8px;" title="filename:<%= review.filename_xml %>, <%= review.class %>">
-
-                <div>
-                    <%= review.written_at %> by
-                    <%= review.author %>
-                    <%= source_as_html(review) %>
-                    <small><%= pluralize(review.opinions.size, "rating") %> generated</small>
-                </div>
-                <div>
-                  <%= feature_rating.stars_html(Root.rule3(review.rating, review.min_rating, review.max_rating) ) %>
-                  <%= review.summary %>
-                  <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.content %>
-
-                </div>
-                <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.content %></div>
-            </div>
+        <% for review in reviews %>
+            <%= render(:partial => "/reviews/short", :locals => {:review => review, :feature_rating => feature_rating} ) %>
         <% end %>
-        
+
     <% end %>
 
 <% end %>
