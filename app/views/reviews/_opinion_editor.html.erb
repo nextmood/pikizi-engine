@@ -11,8 +11,13 @@
         <% elsif type_opinion == "comparator_feature" %>
             <%= select_tag("comparator_#{review.id}_#{ranking_number}", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
             products with feature
-            <%=     select_tag("comparator_feature_#{review.id}_#{ranking_number}", options_for_select(dimension_feature(knowledge, :comparator))) %>
-
+            <%= select_tag("comparator_feature_#{review.id}_#{ranking_number}", options_for_select(dimension_feature(knowledge, :comparator)),
+                :onchange => "alert('change editor...')"
+            ) %>
+            <span id="filter_editor_<%= ranking_number %>">
+              <%= render(:partial => "/reviews/filter_editor",
+                    :locals => {:ranking_number => ranking_number, :knowledge => knowledge }) %>
+            </span>
         <% elsif type_opinion == "rating" %>
             <%= type_opinion %> <%= text_field_tag("toto", nil, :size => 2) %> min=<%= text_field_tag("toto", "1", :size => 2) %> max=<%= text_field_tag("toto", "5", :size => 2) %>
 

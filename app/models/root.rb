@@ -54,7 +54,7 @@ class Root
     xml_node['label'] = label if class_keys.include?("label")
 
     xml_node['url_description'] = url_description if class_keys.include?("url_description") and url_description
-    xml_node['url_image'] = url_image if class_keys.include?("url_image")  and url_image    
+    xml_node['url_image'] = url_image if class_keys.include?("url_image")  and url_image
     xml_node
   end
 
@@ -156,6 +156,12 @@ class Root
 
   def link_back() end
 
+  def self.duration(nb=1)
+    t = Time.now
+    nb.times { yield }
+    "nb_run=#{nb} average=#{(Time.now - t) / Float(nb)}"
+  end
+
 end
 
 
@@ -228,3 +234,4 @@ class Array
   end
 
 end
+

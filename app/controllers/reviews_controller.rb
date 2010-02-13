@@ -10,12 +10,13 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/:review_id
   def show
-    puts params.inspect
+    puts Root.duration {
     @review = Review.find(params[:id])
     @knowledge = Knowledge.load(@review.knowledge_idurl)
+    }
   end
 
-  # this is a rjs  
+  # this is a rjs
   def open_opinion_editor
     review = Review.find(params[:id])
     knowledge = Knowledge.load(review.knowledge_idurl)
@@ -31,7 +32,7 @@ class ReviewsController < ApplicationController
   def add_opinion
     review = Review.find(params[:id])
     knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = params[:ranking_number] 
+    ranking_number = params[:ranking_number]
     type_opinion = params[:type_opinion]
     render :update do |page|
       page.replace_html("opinion_#{ranking_number}_form",
@@ -47,7 +48,7 @@ class ReviewsController < ApplicationController
     ranking_number = params[:ranking_number]
     paragraph = review.get_paragraph_by_ranking_number(ranking_number)
     raise "no paragraph with ranking=#{ranking_number.inspect}" unless paragraph
-    
+
     render :update do |page|
       page.replace_html("paragraph_#{ranking_number}",
          :partial => "/reviews/paragraph_editor",

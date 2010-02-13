@@ -1,12 +1,15 @@
 module KnowledgesHelper
 
   def admin_menu(knowledge)
-    [ [ :matrix , link_to(pluralize(knowledge.nb_features, "feature"), "/show/#{knowledge.idurl}") ],
+    [
+
+      [ :matrix , link_to(pluralize(knowledge.nb_features, "feature"), "/show/#{knowledge.idurl}") ],
       #[ :distance , link_to("Distance", "/distance/#{knowledge.idurl}") ],
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.idurl}") ],
       [ :quizzes , link_to(pluralize(knowledge.nb_quizzes, "quizze"), "/quizzes/#{knowledge.idurl}")   ] ,
       [ :reviews , link_to(pluralize(knowledge.nb_reviews, "review"), "/reviews/#{knowledge.idurl}")   ] ,
-      [ :users , link_to("users", "/users")   ] ]
+      [ :users , link_to("users", "/users")   ]
+    ]
   end
 
 

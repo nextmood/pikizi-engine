@@ -142,6 +142,7 @@ namespace :pikizi do
     knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
     Knowledge.load(knowledge_idurl)
   end
+
   # recompute all rating and update distributions
   def compute_ratings(knowledge)
     # read reviews in database and compute aggregated rating
@@ -209,6 +210,7 @@ namespace :pikizi do
         puts "#{product.idurl}/#{feature_rating.idurl}=#{average_rating_global}" if average_rating_global
 
       end
+
       product.save
     end
 
@@ -225,6 +227,9 @@ namespace :pikizi do
       # quality check
       question.choices.each { |choice| choice.pidurl2weight.check_01 }
     end
+
+    # pre compute number of questions, reviews, quizzes, products etc... and save the knowledge
+    k.compute_counters
   end
 
 

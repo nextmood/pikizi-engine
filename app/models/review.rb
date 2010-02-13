@@ -61,11 +61,11 @@ class Review < Root
 
   def get_paragraph_by_ranking_number(ranking_number)
     ranking_number = Float(ranking_number)
-    paragraphs.detect { |p| p.ranking_number == ranking_number}  
+    paragraphs.detect { |p| p.ranking_number == ranking_number}
   end
 
   def self.opinion_types
-    [["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature of a product", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
+    [["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
   end
 
   def cut_paragraph_at(paragraph, caret_position)
@@ -236,7 +236,7 @@ class FileXml < Review
       node_feature_opinion.find("worse").each do |node_worse|
         self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "worse", node_better)
       end
-      
+
     end
   end
 
