@@ -6314,3 +6314,219 @@ Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 21
   Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b76c84744b40507dd000e2a", "ranking_number"=>"4"}
 Rendered reviews/_opinion_editor_bis (2.4ms)
 Completed in 334ms (View: 7 | 200 OK [http://localhost/reviews/open_opinion_editor/4b76c84744b40507dd000e2a?ranking_number=4]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:04:24) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.1ms)
+Completed in 564ms (View: 307 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:05:54) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.0ms)
+Completed in 515ms (View: 256 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:07:16) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (2.0ms)
+Rendered reviews/_paragraph (69.5ms)
+Completed in 575ms (View: 325 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:07:28) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_paragraph (2.1ms)
+Completed in 523ms (View: 262 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:07:46) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_paragraph (2.4ms)
+Completed in 525ms (View: 258 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:08:09) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.4ms)
+Rendered reviews/_paragraph (2.1ms)
+Completed in 525ms (View: 253 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:08:17) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.4ms)
+Rendered reviews/_paragraph (2.3ms)
+Completed in 534ms (View: 261 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:08:56) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (9.9ms)
+Rendered reviews/_paragraph (2.5ms)
+Completed in 674ms (View: 373 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:09:09) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (9.9ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 559ms (View: 274 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:09:49) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.1ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 549ms (View: 264 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:10:02) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (9.6ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 554ms (View: 266 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:10:24) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.3ms)
+Rendered reviews/_paragraph (2.1ms)
+Completed in 554ms (View: 271 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 22:10:45) [GET]
+  Parameters: {"id"=>"4b76c84844b40507dd000ef0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (9.6ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 470ms (View: 271 | 200 OK [http://localhost/reviews/show/4b76c84844b40507dd000ef0]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-13 22:10:55) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.7ms)
+Rendered home/_product_price (5.8ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (19.8ms)
+Completed in 351ms (View: 59 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 22:10:58) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"motorola_droid", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (104.0ms)
+Rendered reviews/_short (5.0ms)
+Rendered reviews/_short (4.7ms)
+Rendered reviews/_short (4.6ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (4.7ms)
+Rendered reviews/_short (5.6ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (4.4ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_short (4.4ms)
+Rendered reviews/_short (4.4ms)
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_short (4.2ms)
+Rendered reviews/_short (4.6ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (5.8ms)
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (5.0ms)
+Rendered reviews/_short (4.2ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (4.5ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_short (5.2ms)
+Rendered reviews/_short (4.8ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (4.8ms)
+Rendered reviews/_short (5.4ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (5.9ms)
+Rendered reviews/_short (4.4ms)
+Rendered reviews/_short (5.2ms)
+Rendered reviews/_short (4.2ms)
+Rendered reviews/_short (7.6ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (5.6ms)
+Rendered reviews/_short (5.7ms)
+Rendered reviews/_short (4.2ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (4.8ms)
+Rendered reviews/_short (4.3ms)
+Rendered reviews/_short (3.7ms)
+Rendered home/_product_tab_reviews (867.9ms)
+Rendered home/_product_tabs (886.5ms)
+Completed in 1323ms (View: 1021 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 22:11:10) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"motorola_droid", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (990.7ms)
+Rendered home/_product_tabs (1008.3ms)
+Completed in 1308ms (View: 1013 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=motorola_droid]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-13 22:12:54) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.0ms)
+Rendered home/_product_price (4.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (15.6ms)
+Completed in 462ms (View: 145 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 22:12:56) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"motorola_droid", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (1006.4ms)
+Rendered home/_product_tabs (1024.1ms)
+Completed in 1337ms (View: 1029 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 22:13:23) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"motorola_droid", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (210.4ms)
+Rendered home/_product_tabs (228.1ms)
+Completed in 565ms (View: 234 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=motorola_droid]

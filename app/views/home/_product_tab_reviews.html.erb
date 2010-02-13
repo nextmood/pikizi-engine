@@ -1,4 +1,3 @@
-<% feature_rating = knowledge.get_feature_by_idurl("overall_rating") %>
 <% hash_category_reviews = product.reviews.group_by(&:get_category) %>
 
 <% for category, weight in Review.categories %>
@@ -8,7 +7,7 @@
 
         <div class="pkz_category_title" style="padding-left0px;"><%= category %></div>
         <% for review in reviews %>
-            <%= render(:partial => "/reviews/short", :locals => {:review => review, :feature_rating => feature_rating} ) %>
+            <%= render(:partial => "/reviews/short", :locals => {:review => review } ) %>
         <% end %>
 
     <% end %>

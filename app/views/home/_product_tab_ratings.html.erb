@@ -7,7 +7,7 @@
       <%= feature_rating.get_value_html(product) %>
       <%= simpler_rating_label(feature_rating.label) %>
       <% if hash_category_opinions and hash_category_opinions.size > 0 %>
-        <%= link_to_function(pluralize(2, "review"), "document.getElementById('details_#{feature_rating.idurl}').toggle();", :style => "font-size:80%;") %>
+        <%= link_to_function("details", "document.getElementById('details_#{feature_rating.idurl}').toggle();", :style => "font-size:80%;") %>
 
         <div id="details_<%= feature_rating.idurl %>" style="display:none;">
            <% for category, weight in Review.categories %>

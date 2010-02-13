@@ -6,25 +6,18 @@
     <% product = @review.product %>
     <% image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top", :border => 0) %>
 
-    <div class="pkz_item_list" style="background-color:lightgray;">
-        <table>
+    <div class="pkz_item_list">
+        <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
           <tr>
-            <td valign="top"><%= link_to(image_url, "/product/#{product.idurl}") %></td>
+            <td valign="top" width=80><%= link_to(image_url, "/product/#{product.idurl}") %></td>
             <td valign="top">
-                on <%= @review.written_at %>
-                <%= origin_review(@review) %>
-                <%= "<br/><i>#{@review.summary}</i>"if @review.summary %>
-                <div style="font-size:80%; margin-top:3px;">
-                   <%= "#{pluralize(@review.paragraphs.size, 'paragraph')}, #{pluralize(@review.opinions.size, 'opinion')}" %>
-                   <br/>rated <%= @review.rating %> (min=<%= @review.min_rating %>, max=<%= @review.max_rating %>)
-                   <br/>reputation of source=<%= @review.source %>, user's reputation=<%= @review.reputation %>
-                </div>
+                <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
             </td>
           </tr>
         </table>
 
           <% for paragraph in @review.paragraphs_sorted %>
-              <div style="border:1px solid black; margin-top:5px; padding:2px;">
+              <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
                   <!-- the paragraph -->
                   <div id="<%= "paragraph_#{paragraph.ranking_number}" %>" >
                     <%= render(:partial => "/reviews/paragraph", :locals => { :review => @review, :paragraph => paragraph }) %>
