@@ -35,14 +35,14 @@
 		</FeatureTags>
         <FeatureTags idurl="carrier_compatibility" label="Carrier Compatibility" is_exclusive="false">
             <tags>
-                <Tag idurl="att" label="ATamp;T"/>
-                <Tag idurl="sprint" label="Sprint"/>
+                <Tag idurl="att" label="AT&amp;T"/>
+              <Tag idurl="sprint" label="Sprint"/>
                 <Tag idurl="t_mobile" label="T-Mobile"/>
                 <Tag idurl="verizon" label="Verizon"/>
             </tags>
         </FeatureTags>
 
-		<FeatureText idurl="nickname" label="Nickname"/> 
+		<FeatureText idurl="nickname" label="Nickname"/>
 
 		<FeatureTags idurl="phone_category" label="Phone Category" is_exclusive="true">
 			<tags>
@@ -102,7 +102,7 @@
 						<FeatureRating idurl="screen_rating" label="Screen Rating" min_rating="0" max_rating="10" user_category="user, expert"/>
 						<FeatureNumeric idurl="screen_size" label="Screen Size" format="% .2finch" value_min="0.0" value_max="5.0"/>
 						<FeatureNumeric idurl="screen_resolution_l" label="Screen Resolution L" format="% pixels" value_min="0" value_max="2000"/>
-						<FeatureNumeric idurl="screen_resolution_w" label="Screen Resolution W" format="% pixels" value_min="0" value_max="1100"/>          
+						<FeatureNumeric idurl="screen_resolution_w" label="Screen Resolution W" format="% pixels" value_min="0" value_max="1100"/>
 						<FeatureTags idurl="touchscreen" label="Touchscreen" is_exclusive="true">
 							<tags>
 								<Tag idurl="capacitive" label="Capacitive"/>
@@ -136,9 +136,9 @@
 							</sub_features>
 						</FeatureHeader>
 					</sub_features>
-				</FeatureHeader>  
+				</FeatureHeader>
 
-				<FeatureHeader idurl="controls_navigation" label="Controls &amp; Navigation">    
+				<FeatureHeader idurl="controls_navigation" label="Controls &amp; Navigation">
 					<sub_features>
 						<FeatureRating idurl="controls_navigation_rating" label="Controls &amp; Navigation Rating" min_rating="0" max_rating="10" user_category="user"/>
 						<FeatureTags idurl="navigation" label="navigation" is_exclusive="false">
@@ -156,9 +156,9 @@
 
 					</sub_features>
 
-				</FeatureHeader>  
+				</FeatureHeader>
 
-				<FeatureHeader idurl="keyboard_input" label="Keyboard &amp; Input">    
+				<FeatureHeader idurl="keyboard_input" label="Keyboard &amp; Input">
 					<sub_features>
 						<FeatureRating idurl="keyboard_input_rating" label="Keyboard &amp; Input Rating" min_rating="0" max_rating="10" user_category="user"/>
 						<FeatureTags idurl="keyboard_type" label="Keyboard Type" is_exclusive="false">
@@ -169,7 +169,7 @@
 								<Tag idurl="suretype" label="Suretype"/>
 								<Tag idurl="virtual" label="Virtual"/>
 							</tags>
-						</FeatureTags>           
+						</FeatureTags>
 					</sub_features>
 				</FeatureHeader>
 
@@ -209,8 +209,8 @@
 								<Tag idurl="geotag_pictures" label="geotag pictures"/>
 								<Tag idurl="image_correction" label="Image Correction"/>
 								<Tag idurl="image_stabilization" label="Image Stabilization"/>
-								<Tag idurl="macro" label="Macro Settings"/>              
-								<Tag idurl="optical_zoom" label="Optical Zoom"/>              
+								<Tag idurl="macro" label="Macro Settings"/>
+								<Tag idurl="optical_zoom" label="Optical Zoom"/>
 								<Tag idurl="red_eye_reduction" label="Red Eye Reduction"/>
 								<Tag idurl="timer" label="Timer"/>
 								<Tag idurl="video_mode" label="Video Mode"/>
@@ -360,14 +360,14 @@
 								<Tag idurl="none" label="none"/>
 							</tags>
 						</FeatureTags>
-					</sub_features>         	 	
-				</FeatureHeader>             
+					</sub_features>
+				</FeatureHeader>
 
 				<FeatureHeader idurl="contacts" label="Contacts and Social Networks">
 					<sub_features>
-						<FeatureRating idurl="contacts_rating" label="Contacts and Social Networks Rating" min_rating="0" max_rating="10" user_category="user"/>       
+						<FeatureRating idurl="contacts_rating" label="Contacts and Social Networks Rating" min_rating="0" max_rating="10" user_category="user"/>
 					</sub_features>
-				</FeatureHeader>             
+				</FeatureHeader>
 
 				<FeatureHeader idurl="call_functionality" label="Call Functionality &amp; Quality">
 					<sub_features>
@@ -387,9 +387,9 @@
 								<Tag idurl="voice_calling" label="Voice Activated Dialing"/>
 								<Tag idurl="wifi_calling" label="Wifi Calling"/>
 							</tags>
-						</FeatureTags>        
+						</FeatureTags>
 					</sub_features>
-				</FeatureHeader>             
+				</FeatureHeader>
 
 			</sub_features>
 		</FeatureHeader>

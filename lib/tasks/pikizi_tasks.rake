@@ -229,7 +229,7 @@ namespace :pikizi do
     end
 
     # pre compute number of questions, reviews, quizzes, products etc... and save the knowledge
-    k.compute_counters
+    knowledge.compute_counters
   end
 
 

@@ -42,6 +42,24 @@ class ReviewsController < ApplicationController
   end
 
   # this is a rjs
+  def feature_filter
+    review = Review.find(params[:id])
+    knowledge = Knowledge.load(review.knowledge_idurl)
+    ranking_number = params[:ranking_number]
+    feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
+    puts "feature found=#{feature.inspect}"
+    render :update do |page|
+      page.replace_html("filter_feature_#{ranking_number}",
+         :partial => "/reviews/filter_feature",
+         :locals => { :review => review, :knowledge => knowledge, :ranking_number => ranking_number, :feature => feature } )
+    end
+  end
+
+  def create_opinion
+
+  end
+
+  # this is a rjs
   def edit_paragraph
     review = Review.find(params[:id])
     knowledge = Knowledge.load(review.knowledge_idurl)

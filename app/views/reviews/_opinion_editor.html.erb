@@ -12,17 +12,14 @@
             <%= select_tag("comparator_#{review.id}_#{ranking_number}", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
             products with feature
             <%= select_tag("comparator_feature_#{review.id}_#{ranking_number}", options_for_select(dimension_feature(knowledge, :comparator)),
-                :onchange => "alert('change editor...')"
-            ) %>
-            <span id="filter_editor_<%= ranking_number %>">
-              <%= render(:partial => "/reviews/filter_editor",
-                    :locals => {:ranking_number => ranking_number, :knowledge => knowledge }) %>
-            </span>
+                :onchange => remote_function(:url => { :action => "feature_filter", :id => review.id, :ranking_number => ranking_number },
+                                             :with => "'feature_idurl=' + document.getElementById('comparator_feature_#{review.id}_#{ranking_number}').value")) %>
+            <span id="filter_feature_<%= ranking_number %>"></span>
         <% elsif type_opinion == "rating" %>
             <%= type_opinion %> <%= text_field_tag("toto", nil, :size => 2) %> min=<%= text_field_tag("toto", "1", :size => 2) %> max=<%= text_field_tag("toto", "5", :size => 2) %>
 
         <% elsif type_opinion == "feature_related" %>
-            related to<%= dimension_feature_related(knowledge, review.id, ranking_number) %>
+            related to feature<%= dimension_feature_related(knowledge, review.id, ranking_number) %>
 
         <% else %>
             type d'opinion inconnu <%= type_opinion %>

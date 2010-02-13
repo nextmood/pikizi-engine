@@ -1,0 +1,2358 @@
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-13 12:26:16) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 2474ms (View: 412 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-13 12:26:22) [GET]
+  Parameters: {"product_idurl"=>"blackberry_curve_8520_att"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.3ms)
+Rendered home/_product_price (7.0ms)
+Rendered home/_product_tab_overview (6.0ms)
+Rendered home/_product_tabs (31.0ms)
+Completed in 802ms (View: 321 | 200 OK [http://localhost/product/blackberry_curve_8520_att]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 12:26:25) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_att", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (278.1ms)
+Rendered home/_product_tabs (286.0ms)
+Completed in 765ms (View: 291 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_att]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 12:26:29) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8520_att", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (269.6ms)
+Rendered home/_product_tabs (278.2ms)
+Completed in 757ms (View: 280 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8520_att]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 12:26:34) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_curve_8520_att", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (280.2ms)
+Rendered home/_product_tabs (286.2ms)
+Completed in 794ms (View: 291 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_curve_8520_att]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-13 12:26:37) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8520_att", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_reviews (37.0ms)
+Rendered home/_product_tabs (43.9ms)
+Completed in 529ms (View: 46 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8520_att]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2010-02-13 15:48:46) [GET]
+Redirected to http://localhost:3000/show/cell_phones
+Completed in 430ms | 302 Found [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-02-13 15:48:46) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (19.2ms)
+Rendered knowledges/_feature_show (0.5ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.8ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.0ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (244.3ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.2ms)
+Rendered knowledges/_feature_show (1.7ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (5.2ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.0ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.0ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.9ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (3.6ms)
+Rendered knowledges/_feature_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.8ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.2ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.0ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (4.5ms)
+Rendered knowledges/_feature_show (0.7ms)
+Rendered knowledges/_feature_value_show (1.3ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (5.4ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.3ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.4ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.3ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_show_bis (31.7ms)
+Rendered knowledges/_show_bis (36.0ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.0ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.1ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.1ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.4ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (237.8ms)
+Rendered knowledges/_feature_show (0.5ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.3ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.1ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (4.5ms)
+Rendered knowledges/_show_bis (257.9ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.1ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.0ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (3.9ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (4.0ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.1ms)
+Rendered knowledges/_feature_show (0.3ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.4ms)
+Rendered knowledges/_show_bis (19.8ms)
+Rendered knowledges/_show_bis (37.8ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.4ms)
+Rendered knowledges/_feature_show (1.2ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.4ms)
+Rendered knowledges/_show_bis (10.8ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_feature_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.3ms)
+Rendered knowledges/_show_bis (10.6ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (238.8ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.9ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.1ms)
+Rendered knowledges/_show_bis (13.5ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (4.2ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.0ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.3ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.9ms)
+Rendered knowledges/_feature_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_show_bis (279.9ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.5ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.3ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.4ms)
+Rendered knowledges/_feature_show (1.7ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_show_bis (19.1ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.9ms)
+Rendered knowledges/_feature_show (2.2ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_feature_show (1.6ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_show_bis (20.5ms)
+Rendered knowledges/_show_bis (640.5ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_feature_show (2.4ms)
+Rendered knowledges/_feature_value_show (1.2ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_feature_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (237.5ms)
+Rendered knowledges/_show_bis (254.7ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.5ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (1.7ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (6.0ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (4.1ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.2ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (4.9ms)
+Rendered knowledges/_show_bis (20.7ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.4ms)
+Rendered knowledges/_feature_show (1.5ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (4.8ms)
+Rendered knowledges/_feature_show (1.4ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (4.7ms)
+Rendered knowledges/_show_bis (42.2ms)
+Rendered knowledges/_feature_show (1.3ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.4ms)
+Rendered knowledges/_feature_show (1.7ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (5.4ms)
+Rendered knowledges/_show_bis (12.0ms)
+Rendered knowledges/_show_bis (320.3ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.2ms)
+Rendered knowledges/_feature_show (1.9ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_show_bis (13.2ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.5ms)
+Rendered knowledges/_feature_show (1.5ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (4.6ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_feature_show (2.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (238.9ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.3ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.5ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.2ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_show_bis (11.2ms)
+Rendered knowledges/_feature_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (1.5ms)
+Rendered knowledges/_feature_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (3.6ms)
+Rendered knowledges/_feature_show (1.4ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (5.3ms)
+Rendered knowledges/_show_bis (12.7ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.5ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.4ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (4.1ms)
+Rendered knowledges/_feature_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (5.1ms)
+Rendered knowledges/_show_bis (18.6ms)
+Rendered knowledges/_show_bis (35.5ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (3.2ms)
+Rendered knowledges/_feature_show (1.1ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (4.5ms)
+Rendered knowledges/_feature_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_show_bis (4.6ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_show_bis (4.0ms)
+Rendered knowledges/_feature_show (3.1ms)
+Rendered knowledges/_feature_value_show (1.2ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (7.7ms)
+Rendered knowledges/_feature_show (1.9ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (6.3ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_show_bis (4.9ms)
+Rendered knowledges/_show_bis (27.8ms)
+Rendered knowledges/_feature_show (0.9ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_value_show (0.7ms)
+Rendered knowledges/_feature_show (0.4ms)
+Rendered knowledges/_feature_value_show (0.8ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (238.6ms)
+Rendered knowledges/_feature_show (1.7ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_show_bis (6.3ms)
+Rendered knowledges/_feature_show (2.2ms)
+Rendered knowledges/_feature_value_show (1.1ms)
+Rendered knowledges/_feature_value_show (1.0ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_show_bis (256.8ms)
+Rendered knowledges/_show_bis (300.7ms)
+Rendered knowledges/_show (1931.5ms)
+Completed in 3973ms (View: 2082 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-02-13 15:48:53) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering reviews/index
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (20.2ms)
+Completed in 2732ms (View: 1016 | 200 OK [http://localhost/reviews/cell_phones]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 15:48:59) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.2ms)
+Rendered reviews/_paragraph (2.4ms)
+Rendered reviews/_paragraph (2.2ms)
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.1ms)
+Completed in 924ms (View: 443 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 15:49:05) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"2"}
+Rendered reviews/_opinion_editor_bis (1.7ms)
+Completed in 489ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=2]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 15:49:15) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"2", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_editor (0.2ms)
+Rendered reviews/_opinion_editor (257.3ms)
+Completed in 766ms (View: 260 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=2]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:01:43) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.3ms)
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (2.2ms)
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 965ms (View: 476 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:01:46) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"4"}
+Rendered reviews/_opinion_editor_bis (1.7ms)
+Completed in 267ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=4]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:01:51) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"4", "type_opinion"=>"comparator_feature"}
+
+ActionView::TemplateError (undefined local variable or method `feature' for #<ActionView::Base:0x10c0d4640>) on line #3 of app/views/reviews/_filter_feature.html.erb:
+1: knowledge_id= <%= knowledge.id %>
+2: <br/>ranking_number<%= ranking_number %>
+3: <% if feature %>
+4:    <% if feature.is_a?(Feature::Tags) %>
+5:         <%= feature.tags.collect { |t| t.label }.join(', ') %>
+6:    <% else %>
+
+    app/views/reviews/_filter_feature.html.erb:3
+    app/views/reviews/_opinion_editor.html.erb:19
+    app/controllers/reviews_controller.rb:38:in `add_opinion'
+    app/controllers/reviews_controller.rb:37:in `add_opinion'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:02:09) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"4", "type_opinion"=>"cons"}
+Rendered reviews/_opinion_editor (265.9ms)
+Completed in 778ms (View: 268 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=4]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:02:14) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.8ms)
+Completed in 504ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:02:21) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+
+ActionView::TemplateError (undefined local variable or method `feature' for #<ActionView::Base:0x10b43da30>) on line #3 of app/views/reviews/_filter_feature.html.erb:
+1: knowledge_id= <%= knowledge.id %>
+2: <br/>ranking_number<%= ranking_number %>
+3: <% if feature %>
+4:    <% if feature.is_a?(Feature::Tags) %>
+5:         <%= feature.tags.collect { |t| t.label }.join(', ') %>
+6:    <% else %>
+
+    app/views/reviews/_filter_feature.html.erb:3
+    app/views/reviews/_opinion_editor.html.erb:19
+    app/controllers/reviews_controller.rb:38:in `add_opinion'
+    app/controllers/reviews_controller.rb:37:in `add_opinion'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (306.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:02:45) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"4"}
+Rendered reviews/_opinion_editor_bis (1.9ms)
+Completed in 523ms (View: 4 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=4]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:02:51) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"4", "type_opinion"=>"comparator_feature"}
+
+ActionView::TemplateError (undefined local variable or method `feature' for #<ActionView::Base:0x10b558de8>) on line #3 of app/views/reviews/_filter_feature.html.erb:
+1: knowledge_id= <%= knowledge.id %>
+2: <br/>ranking_number<%= ranking_number %>
+3: <% if feature %>
+4:    <% if feature.is_a?(Feature::Tags) %>
+5:         <%= feature.tags.collect { |t| t.label }.join(', ') %>
+6:    <% else %>
+
+    app/views/reviews/_filter_feature.html.erb:3
+    app/views/reviews/_opinion_editor.html.erb:19
+    app/controllers/reviews_controller.rb:38:in `add_opinion'
+    app/controllers/reviews_controller.rb:37:in `add_opinion'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (291.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:03:11) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (3.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.7ms)
+Rendered reviews/_paragraph (2.3ms)
+Rendered reviews/_paragraph (2.3ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.7ms)
+Completed in 889ms (View: 386 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:03:14) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_opinion_editor_bis (2.5ms)
+Completed in 301ms (View: 6 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:03:23) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_editor (928.9ms)
+Completed in 1299ms (View: 935 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:03:38) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_opinion_editor_bis (1.8ms)
+Completed in 327ms (View: 4 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:03:47) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_feature"}
+
+ActionView::TemplateError (undefined local variable or method `feature' for #<ActionView::Base:0x102f22120>) on line #3 of app/views/reviews/_filter_feature.html.erb:
+1: knowledge_id= <%= knowledge.id %>
+2: <br/>ranking_number<%= ranking_number %>
+3: <% if feature %>
+4:    <% if feature.is_a?(Feature::Tags) %>
+5:         <%= feature.tags.collect { |t| t.label }.join(', ') %>
+6:    <% else %>
+
+    app/views/reviews/_filter_feature.html.erb:3
+    app/views/reviews/_opinion_editor.html.erb:19
+    app/controllers/reviews_controller.rb:38:in `add_opinion'
+    app/controllers/reviews_controller.rb:37:in `add_opinion'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (105.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:05:05) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.8ms)
+Rendered reviews/_opinion_editor (101.2ms)
+Completed in 412ms (View: 106 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:15:23) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.9ms)
+Completed in 645ms (View: 336 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:15:26) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 309ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:15:31) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.2ms)
+Rendered reviews/_opinion_editor (118.0ms)
+Completed in 440ms (View: 123 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:15:34) [POST]
+  Parameters: {"feature_idurl"=>"4b7571ce44b405032b00004a", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (0.2ms)
+Completed in 340ms (View: 1 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:16:19) [POST]
+  Parameters: {"feature_idurl"=>"4b7571ce44b405032b00006a", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (0.2ms)
+Completed in 424ms (View: 1 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:17:21) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.7ms)
+Completed in 334ms (View: 4 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:17:25) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.1ms)
+Rendered reviews/_opinion_editor (113.8ms)
+Completed in 458ms (View: 118 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:17:29) [POST]
+  Parameters: {"feature_idurl"=>"4b7571ce44b405032b00004a", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+
+RuntimeError (error params={"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "feature_idurl"=>"4b7571ce44b405032b00004a", "action"=>"feature_filter", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "controller"=>"reviews"}):
+  app/controllers/reviews_controller.rb:46:in `feature_filter'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:19:03) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (3.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 640ms (View: 301 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:19:07) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"6"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 324ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=6]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:19:11) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"6", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.1ms)
+Rendered reviews/_opinion_editor (113.0ms)
+Completed in 456ms (View: 115 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=6]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:19:14) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"6"}
+
+RuntimeError (error params={"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "feature_idurl"=>"phone_category", "action"=>"feature_filter", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"6", "controller"=>"reviews"}):
+  app/controllers/reviews_controller.rb:46:in `feature_filter'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:19:57) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 333ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:20:00) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.2ms)
+Rendered reviews/_opinion_editor (113.9ms)
+Completed in 452ms (View: 116 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:20:04) [POST]
+  Parameters: {"feature_idurl"=>"release_status", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+
+ActionView::TemplateError (uninitialized constant Feature::Tags) on line #4 of app/views/reviews/_filter_feature.html.erb:
+1: knowledge_id= <%= knowledge.id %>
+2: <br/>ranking_number<%= ranking_number %>
+3: <% if feature %>
+4:    <% if feature.is_a?(Feature::Tags) %>
+5:         <%= feature.tags.collect { |t| t.label }.join(', ') %>
+6:    <% else %>
+7:         unknown filter <%= "#{feature.label} class=#{feature.class}" %>
+
+    app/views/reviews/_filter_feature.html.erb:4
+    app/controllers/reviews_controller.rb:51:in `feature_filter'
+    app/controllers/reviews_controller.rb:50:in `feature_filter'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:22:12) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (2.0ms)
+Completed in 374ms (View: 4 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:22:17) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.8ms)
+Rendered reviews/_opinion_editor (126.3ms)
+Completed in 476ms (View: 128 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:24:15) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 358ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:24:20) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.8ms)
+Rendered reviews/_opinion_editor (132.6ms)
+Completed in 484ms (View: 135 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:24:25) [POST]
+  Parameters: {"feature_idurl"=>"touchscreen", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (0.6ms)
+Completed in 361ms (View: 2 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:24:37) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (0.8ms)
+Completed in 353ms (View: 2 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:24:43) [POST]
+  Parameters: {"feature_idurl"=>"keyboard_type", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (0.8ms)
+Completed in 383ms (View: 2 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:26:30) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 352ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:26:36) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.6ms)
+Rendered reviews/_opinion_editor (138.8ms)
+Completed in 493ms (View: 141 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:26:43) [POST]
+  Parameters: {"feature_idurl"=>"carrier_compatibility", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+
+ActionView::TemplateError (undefined method `checkbox_tag' for #<ActionView::Base:0x10633b178>) on line #3 of app/views/reviews/_filter_feature.html.erb:
+1: <% if feature %>
+2:    <% if feature.is_compatible_grammar(:comparator) %>
+3:         <%= feature.tags.collect { |t| "#{checkbox_tag(:toto)} #{t.label}" }.join(', ') %>
+4:    <% else %>
+5:         unknown filter <%= "#{feature.label} class=#{feature.class}" %>
+6:    <% end %>
+
+    app/views/reviews/_filter_feature.html.erb:3
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.6.10/lib/mongo_mapper/associations/proxy.rb:90:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.6.10/lib/mongo_mapper/associations/proxy.rb:90:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.6.10/lib/mongo_mapper/associations/proxy.rb:90:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.6.10/lib/mongo_mapper/associations/proxy.rb:90:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.6.10/lib/mongo_mapper/associations/proxy.rb:90:in `method_missing'
+    app/views/reviews/_filter_feature.html.erb:3
+    app/controllers/reviews_controller.rb:52:in `feature_filter'
+    app/controllers/reviews_controller.rb:51:in `feature_filter'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:27:40) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 235ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:27:44) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.6ms)
+Rendered reviews/_opinion_editor (144.8ms)
+Completed in 384ms (View: 147 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:27:47) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (1.2ms)
+Completed in 380ms (View: 3 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:28:16) [POST]
+  Parameters: {"feature_idurl"=>"operating_system", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (3.2ms)
+Completed in 373ms (View: 5 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:30:01) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.2ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.0ms)
+Rendered reviews/_paragraph (2.2ms)
+Rendered reviews/_paragraph (2.0ms)
+Completed in 685ms (View: 328 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:30:04) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.7ms)
+Completed in 361ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:30:09) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor (9.8ms)
+Completed in 419ms (View: 12 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-13 16:30:30) [GET]
+  Parameters: {"id"=>"4b7571d944b405032b000302"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_paragraph (2.1ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.9ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.8ms)
+Rendered reviews/_paragraph (1.9ms)
+Completed in 714ms (View: 335 | 200 OK [http://localhost/reviews/show/4b7571d944b405032b000302]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:30:32) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 392ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:30:36) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor (10.5ms)
+Completed in 435ms (View: 15 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:30:53) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 239ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:30:57) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_editor (1174.3ms)
+Completed in 1568ms (View: 1177 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:31:08) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_opinion_editor_bis (1.7ms)
+Completed in 418ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:31:15) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.1ms)
+Rendered reviews/_opinion_editor (19.5ms)
+Completed in 421ms (View: 22 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:31:24) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_filter_feature (1.2ms)
+Completed in 407ms (View: 3 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:37:29) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_opinion_editor_bis (1.6ms)
+Completed in 244ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:37:33) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_filter_feature (0.1ms)
+Rendered reviews/_opinion_editor (175.4ms)
+Completed in 571ms (View: 178 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:37:39) [POST]
+  Parameters: {"feature_idurl"=>"carrier_compatibility", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"7"}
+Rendered reviews/_filter_feature (1.1ms)
+Completed in 400ms (View: 3 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=7]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-13 16:38:41) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_opinion_editor_bis (1.8ms)
+Completed in 405ms (View: 3 | 200 OK [http://localhost/reviews/open_opinion_editor/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-02-13 16:38:44) [POST]
+  Parameters: {"authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_opinion_editor (20.2ms)
+Completed in 440ms (View: 25 | 200 OK [http://localhost/reviews/add_opinion/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:38:49) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (1.7ms)
+Completed in 410ms (View: 6 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:38:53) [POST]
+  Parameters: {"feature_idurl"=>"navigation", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (2.0ms)
+Completed in 411ms (View: 4 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:38:59) [POST]
+  Parameters: {"feature_idurl"=>"phone_category", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (1.3ms)
+Completed in 412ms (View: 3 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-02-13 16:39:02) [POST]
+  Parameters: {"feature_idurl"=>"carrier_compatibility", "authenticity_token"=>"JZhFhjzGVEXJ0Wk0/IcJnnXrJnXJgji9sgWzAXUq4io=", "id"=>"4b7571d944b405032b000302", "ranking_number"=>"5"}
+Rendered reviews/_filter_feature (1.1ms)
+Completed in 441ms (View: 3 | 200 OK [http://localhost/reviews/feature_filter/4b7571d944b405032b000302?ranking_number=5]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-13 16:40:26) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 444ms (View: 19 | 200 OK [http://localhost/home]
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:40:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A40%3A55Z&Signature=2aqo4XH%2B6uyVmITYezvzuFb6oiIevhNuz2pFKGwXfxE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:40:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A40%3A56Z&Signature=OAZRgM9H1w0ZciV9u/8eotJ59cFaU5BP3PJt8rGPnZo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:40:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A40%3A56Z&Signature=OAZRgM9H1w0ZciV9u/8eotJ59cFaU5BP3PJt8rGPnZo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:40:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A40%3A56Z&Signature=HKKKfidPUg8vUBL%2BPxpBEeeTRrY3VzBmab/iAr/Odd8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:40:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A40%3A57Z&Signature=DeSz1LDmJjsdFGATYdQqUnMq3Y4zjLcjmFTM/c47P6A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:40:58Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A40%3A58Z&Signature=%2BWKRz1uv%2B3AOgrukNVsVNQEVN4hOxiK8alSIY8fudAQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:40:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A40%3A59Z&Signature=J0PurpLeSI6lQOSMOSUyBdVWfujilRNvvcLvA%2BLcq6Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:00Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A00Z&Signature=JR5jqufSo8/NJC0B0pZR3yfuDSmwBEGn/VqBEDJZZ8E%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A01Z&Signature=bWI5qV7J2NFV2EUhMe53Lq%2BqOa6I1i8bqpYII67Xq80%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A02Z&Signature=wchiT/cW2IyHu8EFW8Aj8y%2BgrQJ440FGxdWiFvKL76I%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZG8H9S
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZG8H9S&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A03Z&Signature=MfK5gHPG51Yiq1YNtqYUc/jGINMBKH1TIzfi6A%2BWK10%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JPJ118
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JPJ118&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A03Z&Signature=4EmRyfnd072ptSCpWleO8p6t2kW9hkoK%2B9SpehExQOk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A04Z&Signature=xoUGl%2Bte9HTMDbOMuF7mmri5Br6MjwHOcBbXGWzyzUg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQK06
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQK06&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A04Z&Signature=aXejPavp1std9KpCvXzQ8RJXaRCoT3rh94FLwNjEF%2BE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A05Z&Signature=1LkLyfSUeqJ9zXiSFOHpoWr0HJ5U/MS%2BWMNMOKH6Obo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A05Z&Signature=JKLdFZnshDdnnwR9fgTc1oINwurkDp9YQbOfH4WQT5Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A06Z&Signature=B4%2BfsgQa3mqEFgyTroWyPqOUhH9Ch6L7GyayFBdtHUM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A07Z&Signature=9JTx5ZYITrI9tQvS69sq1X9RjwANdJ7b2/0%2By%2BWPpaI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A07Z&Signature=HKx7GVtr9oepvpfUZ5JQKH38yHNnnbDWsB9YbGnS1Qk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A08Z&Signature=7i%2BzW3oUTB2bzvX%2BIgtDLVidSS6OUASWQolDk4ey1PE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A09Z&Signature=X1fcuerEpQ42KMKMyt3MiH/EOAP5r8nMsp73nps8QBM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A09Z&Signature=ofAzR0xIBmb3Gwn1VgPsqu6jkU30KPDpuxxCmYGdAP8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:10Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A10Z&Signature=P/Zo6gPadukVDYlonuN1PHSNkXcsTVWaRzRstOFWDNw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:41:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A41%3A11Z&Signature=KFTOdCh8%2B7UCAKI7A%2BiQGOgLQAajAhkB66/QSYOowSY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:41:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A41%3A11Z&Signature=FGwX9sws%2BUCRdgn6AV740oelxO1QE6oOY3JUR5x/nrU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:41:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A41%3A12Z&Signature=v%2BZuQ5Mqe852q93sHbVUWtnsO7/ryMlX9PE1XcCcxFI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:41:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A41%3A13Z&Signature=xxUQxHPYQRsSV%2BEy99M4zGriFSFfU%2Ba/oArMQSyCnMk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-13T15:41:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-13T15%3A41%3A14Z&Signature=2KKQB4xKtAYZyVIDxmx1XGFs6ep8/qkPpDKzjobBhfY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A16Z&Signature=aJ7JliOpsDOpfJiCXy5QokfFukk01SDH7Gb64utBgTo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A16Z&Signature=SOT4oLA4ZQ4QARZyIdlRILcog14bxdrY6xQxEHTBM8c%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A17Z&Signature=enz61F9HYkxpoLU8RytswTogHFntAGCs%2BMZF8X1ARNM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A18Z&Signature=x0XoQmM8yv3iYJESivnSoJgIm45Zsl56reJ9cj0OUMg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A18Z&Signature=olOweAUdp6uAh7AAre%2BCltS3B83pNw9BUb009%2B9Tqtc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002IC0VM0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002IC0VM0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A20Z&Signature=VAuCS%2B7rynL0ugdG18vLjzytBK0Ejiix9Gr%2BrK7L7A4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002IC0VM0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002IC0VM0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A20Z&Signature=osshCEuxswz25WJS104oCwrlFA%2Bj6Qfl3YgejlcDbV4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A22Z&Signature=j7gpWk8XPCEp4Zet6TuIhXdO1AK63cauKY9qaDzRPsM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A22Z&Signature=ABLwcAHCtcwowz7K361ySj%2BBDbb2T6rlb2W4eIbj6wI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:23Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A23Z&Signature=ZGmLvZrmBdjKIfmFjpIomU/G2YkqcaqVDU%2BWQWKRGic%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A24Z&Signature=YcPyr%2BU6U23NH9n%2BDQKA3Sc074QoNHsjseaK7f8teV8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A24Z&Signature=lMw5mAv/0e/3706v%2BiWRFmmAjhph5Tn6n6zYzTgI5XU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A25Z&Signature=y0tstvjSVWzGjBgBc5L8mYserzXtGZZ4RS7Jv6HYLsg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:41:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A41%3A26Z&Signature=eNBIYCkbnAWCtGbKUE52xQqMbORTIsxbB9/%2Bc9F3FYQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:41:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A41%3A27Z&Signature=cTgVGpOYqKojBfKdo5ixKqnNjaZSSwFJQdIQ7GdoIu0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:41:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A41%3A28Z&Signature=It7ag3OfH76AQCluAjTZBChtdnyc/gJcWo5IAd2JvEo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:41:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A41%3A28Z&Signature=lZhQjUa/EAsShZSlGQKRN8Jcj6VmHlGtk0nsl6SQL7o%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:30Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A30Z&Signature=yO0QPcR%2Bjq0iTvX3m2PCVEstQa5OBl/PPsmDNlXQ4Sk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YD86H0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YD86H0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A31Z&Signature=eQL/spTHxTYiAr82gRn6PHME2uToOE9UoqgcSxmNT30%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YD86H0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YD86H0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A31Z&Signature=DPVVtzRUGfymGPLdtHVw27cWOcd0UkbCwzkT75zQFAY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A32Z&Signature=uxTGst5an2EuxziUbQQogXbvTPmI6WR8d%2BKiyKGIJP4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A32Z&Signature=jbBSh5EE2%2B/3hN0eBFUpK0Akyx1qHqk2FxNZTUrWK20%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A33Z&Signature=0ufUOEbt6pcioFTgt/0Roh3yw8%2BvLt6pNrxRBK6uTdQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A34Z&Signature=101J46Jj7ndKZ1zjJRjAiAenC3rDwlrmanN/4hJS9%2Bs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A34Z&Signature=cWJAKYdaU8BizlIAkl8Jo2Aedctdb4gTAhzhr4yVfXQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:41:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A41%3A34Z&Signature=4EXT4N%2B55u8JbBa4MauZnLmrzMVSRLt7hz8H8SZFaCY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A36Z&Signature=737VIP%2BzMFBGdLkNEOgWd/i4OY8mtmJRFGzr7VjW/DQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A36Z&Signature=737VIP%2BzMFBGdLkNEOgWd/i4OY8mtmJRFGzr7VjW/DQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6ZD2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A36Z&Signature=J8HpHDe5VNcYlF1v1PydFg4KantddY0brn4mhUmkHVU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=Touch-3G-P
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:37Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=Touch-3G-P&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A37Z&Signature=HqhgHTeCP8lFYczYLYl1d9WjSoVOQ4VsXtKs/irlMAk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJU6J8
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:37Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJU6J8&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A37Z&Signature=A4QWK1dQNtdc/nGwAc%2BQmH/fjiRr5bXCRntSXPAmE4A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A38Z&Signature=Ev/JQ8QG89MSueZwKMLvCEjc78N6heKDKK%2B/83Z2NXw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A38Z&Signature=PL5CSJ7vu9ob/b%2BnBg0vWDkxKHKdTmQGOunw0486WRE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:39Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A39Z&Signature=5DGDX5l7gsOJ98vAQKwKJNL8ZJa8KCTYuLNGoLKIYVY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:39Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A39Z&Signature=iuXfBV2023AEIQV2WeYcn6YN4%2Bk6uBc160S9hzVizYk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:40Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A40Z&Signature=Xqcs65xqvgmRbbXXrk8WsQrJjc5Gi3Qd4Z6qHyigY0Y%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A41Z&Signature=a6t6gNZIot1VFNUaddJtKlhnI1JOW2O7aPBxJ4GQKRc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002Z7ER1O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002Z7ER1O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A41Z&Signature=ulOnddLx8hhLbWs/A8o52t1dEQwBAJCVibatfhTRH7Y%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A42Z&Signature=nZXvYSDasUVz%2BlN/S%2BHbbXJrSL0etmh5UKwwaTT61Tc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A42Z&Signature=SJyCbYInbhXcTZwGjW5KIE%2B%2BzFqriFj3Mqqfc5QTloY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A43Z&Signature=J3b%2BhzvwYRU2wHz6q/b491mYh%2ByEhBjs/bWM%2BzCDFZM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A43Z&Signature=KNnH3NrRaIun%2B4OF0SjdvVP/xoUGZ7ufeHvwwLPgtkE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:44Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A44Z&Signature=s2z5Sl9ZScQSJbWEmruIFqelk5jZr0I5svwuGwaaIDc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:44Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A44Z&Signature=WLE469V7gM%2B2MZ9NXzc/0O6xI3A86l88ok%2Bmv3XozdM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A45Z&Signature=r5kaizFBn%2BKvG0N35tT0aUwWIsH%2B%2B7tAVDr%2BDImWAHg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A45Z&Signature=zauQvYQSsIXqztp66PsPakVX3IQNWWqhOEUpGj4QYNM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:41:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A41%3A46Z&Signature=0UAOEyaq6yZ3Q4TMLvuORswpJH1Yvo%2B4mZ4Mqzy2Wlw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:41:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A41%3A47Z&Signature=5mjBzqDBdegDvCBJpBVxB30IU%2BlSMOFQYIqDkKRsz%2B4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:41:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A41%3A47Z&Signature=bd7kdiNklI3WKxV3EiV8pYvPGJF%2B3fvJTDcxp3Jc21Y%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:41:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A41%3A48Z&Signature=gvrdeD2puGouDD%2BrWRCpi4v0EhyIycIxjRgFyYEoEBI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZNJO34
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZNJO34&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A50Z&Signature=cJbSEXSEf9wd9AcJ76zsWsanw/PBEOQt8%2ByTsoBntPs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQJRA
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQJRA&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A50Z&Signature=iXcDdCpqep3oM0TWteGBkNRxCHdcW4wCD/vxkpY4Zqo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A51Z&Signature=Tx5EIoHtQw2NTzYHaeUO5D43aHzPppjvZCxbeR67aVs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WTC1NG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1NG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A51Z&Signature=Q5iMhEm27hXTSULQW6/xld5vgx%2BiDRDFliAQJQsbnu0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A52Z&Signature=b4qGYk5EUbbdVaiWMw9J8qdufh/HkrHLAjs7r1zRN/0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A52Z&Signature=flocFz921OdEcwILsB8NIY%2BwSrP5rJocNXiE1J7U3NA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A52Z&Signature=78BauP9OrwaS6hE/4SuhEa3s%2BYRy0CwwXASijqjWLZs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:53Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A53Z&Signature=eJd3hwQcNpW9H4RMaboFiOUHQKDIT67zJoWNwMMgiUA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:41:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A41%3A54Z&Signature=XgR6q/35ztBDfK8AucM2siro3QmZxE0ObE2IhhlqR68%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:41:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A41%3A54Z&Signature=QWUM5AGrQisQW1ZnBHaXEfMIIrTNNPepANKVReNxbYY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:41:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A41%3A55Z&Signature=X4zvz9IdNnk1I5rmtQAfofgChFNwtphV4dgukR4ayPQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:41:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A41%3A55Z&Signature=0E6dXSwUt2k2ajnx/QCGha43cR5YwD7GezPU62a1NQI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:41:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A41%3A56Z&Signature=5IepNpkvi4kO81wKRNLHupWfENXwq7oMkfBCfmJ1q7c%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:41:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A41%3A56Z&Signature=Mj3iKIS7ri3%2BMhz06JeBB4DRcEx5bIDL8awEu8TfyGo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:41:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A41%3A57Z&Signature=AkCo8lPGrlivNJafHtNrxtFT81FqKEABYLcAOaMGLV8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:41:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A41%3A57Z&Signature=EgLelPdJucXlQrwJd%2BNVMN17c/9nDp7Oeb6%2B4zHPUCY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:41:58Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A41%3A58Z&Signature=glCCHBXCtK9WemUl0WDqNI5O1X9MGOrx3ci8TH5ru%2BY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-13T15:41:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-13T15%3A41%3A59Z&Signature=M50lx41cze7rIjwmtbZ1hjCBe029CfD/iPrx%2B4hK7cM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A01Z&Signature=sK9ZDXgoNsZ5zMa29f4rOeRfL1Yt4WWAn/wTNRUFftA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX79HS
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX79HS&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A01Z&Signature=6JREBF4t%2B4S5kXKDODP79j94ULTCENmFeVeOjJTksxA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YIHQ2G
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YIHQ2G&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A01Z&Signature=bO0RCiRun4iv/Ot43mfkSwMM2yIrWlWTvpHuRiqa0OI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A02Z&Signature=nCHcaLB8MrO1iZP3dYViyH8A%2Bf7CNFXD5WSIh%2BDoLgA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A02Z&Signature=AUiFa3QNloKqHMvrovwi51gWXLBUERN/7HCiCkeSHTM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A03Z&Signature=PddbpKN%2BxAy4bu3wkZ8zr2IeCLpBnPoYvKETwT3N930%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A03Z&Signature=o6CQ23uvE/eaSBNTv/UB7vv8Gnx7VwZOueS6ZoxB4Fs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:42:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A42%3A04Z&Signature=AkfnRh9LejhQvh3nVka4Aub/yKEsu2y8sLV9U%2BdXbH4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:42:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A42%3A04Z&Signature=Dlwbtd9BpXFWRTr5ySTUIiTUXp28Bsc1wSu/004a1tk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:42:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A42%3A05Z&Signature=Z7TUPyMyrLgRQDaDM0Ay0bx%2BBfLrl%2Bx/bnYWl72wx%2BU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:42:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A42%3A05Z&Signature=J3tgsvM40i76NZ/fattnJYB4643WoJYB%2BGzz1yEIJ34%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B0027A7XWE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:42:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B0027A7XWE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A42%3A06Z&Signature=bdL%2BoU2HdD2WBufAWdtNRcIVO4fVbqU9%2B5hLg7TVBcM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX7AH2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX7AH2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A07Z&Signature=KsRPA8CZ/l1OAPOvccqrf/sLbFj5L7h0OX3uh8lKBPU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A08Z&Signature=YKi6npScy/bzl0AfhqnGrzvgxrY6v48nZoE1QmX1rvA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A08Z&Signature=WpmpB2BX7IOrxB6TYEZvAsrenmfY/gHf%2BOyWMYczZ%2BA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A09Z&Signature=a2hS7vkfgN%2B21Ki%2B3l4S9zLD3UA3RFdIPzRYraTwNjs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A09Z&Signature=D7f3YxhEEv1ERqgnajx%2BnHUjPZ%2ByQ6A4m4Z0eeDzYPg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:10Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A10Z&Signature=l9XGuNhilIs46aSZz2R285ZDWCtgD27koUlVkEiw3T4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A11Z&Signature=IFECat0mhyBvfSGeCnRo8ttijeIusg69NODNXh/cDGo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A11Z&Signature=qouz8y/sL7IjCSBhIT0vZo4HEYdlelFFR1gMaC881UQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A12Z&Signature=7nH%2BJbo8QlELdpXXXOJIYI395traMvv01Ni5IIuIrRQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:42:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A42%3A12Z&Signature=7zHHEtszFeen9xQxJCvP4nz/Tb3h97AaMLuJCIPhMvI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:42:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A42%3A13Z&Signature=BzsZ5sPZaOiyd1MCDFVDN2%2B9NtxiFsiKKsw4/AWNe7Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:42:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A42%3A13Z&Signature=mEFRBFOAIF8yB9vAehuIU5aCHFbcM4yD2lSJyAhMpEc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:42:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A42%3A14Z&Signature=%2BbsihqSCOdrvQ67ozgVBs5FpQkPwTWTHjSMLYlVMUTg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:42:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A42%3A14Z&Signature=E%2BeU0m6zZbEHJw5wir310RcvHpnb0x/3mvTPcE2Mvd8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-13T15:42:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-13T15%3A42%3A14Z&Signature=jwRyP0HjrVE6%2BR6JtHDkjqFVEF0k9BVr8dQOoGJFzBY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WB2P4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WB2P4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A16Z&Signature=OGyJmeWbwWYfHXbUteWJCdae4UWPksjStfvI0bwsPF0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WB2P4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WB2P4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A17Z&Signature=pBlhjdtPJ6YlRZ2AQ4x4pGu71qvsFwHh8kXyOCxlCg0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A17Z&Signature=VE7Sh4aW%2Bb2fpm0VK3i2I5wU%2B1hFIsGFOYsWMBRBw3Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A18Z&Signature=WAIVLJpS5KIUzscfyyalQL7%2BEyyVXgXiZPksWbczOl4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:19Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A19Z&Signature=LnhMyrLP%2B7vNgJsc6pAPg/abmUWsxgdigUUZabydQjs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:19Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A19Z&Signature=jRzigqWX3hZAXTPicntYubtpnC0wRpXH%2BBagVEH3aao%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A20Z&Signature=jBA29vLKlAdiIpLPb1Zw3QxNq7UQjgBczkAnnosn9p8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A20Z&Signature=lwubdDui6JiGDXBoa5hhitmniZEJLHYmklVR39mGUt0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A21Z&Signature=pgMpw7E626b240k39PfE540yLag8N%2BiiqeRXhWsLIJ0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:42:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A42%3A21Z&Signature=vIph66PQuJ4Q8SxJ1tQFtNHl9QxOx4lmfNDBBSBwHD8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:42:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A42%3A22Z&Signature=UNj%2BAZmtIADvKHraMhwNjCc0U%2B1EtDV6Y3AIhGTRJ7g%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-13T15:42:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-13T15%3A42%3A22Z&Signature=NtD2I8uafypDbjSbWEvB9g/ByDfjGlOyprLLmLvAUXw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-13T15:42:23Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-13T15%3A42%3A23Z&Signature=ns1y4yvXHMUdkexdW7spIm7d0QQer3qUWjYO%2Ba4J0pM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-13T15:42:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-13T15%3A42%3A24Z&Signature=jR0z7mfJnt8eMxjj9qlFZCoC46HqHLexgIPbWYVdHHM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-13T15:42:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-13T15%3A42%3A24Z&Signature=L7ON6FLn2ofHaFIN4G4VJvHlVjLYHg%2B5ASfoU27O2SY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWK83E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWK83E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A26Z&Signature=PXIOzhyP3hE%2BuL3rpfq/uIeHTbnKCHCL9f38SMR46yg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WTC1TK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1TK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A26Z&Signature=q9D9oQSQJhdjZk%2BuhakRc5iolwf4gj%2BAFPSofGjsBCY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC858
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC858&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A27Z&Signature=yI5dcw13T211hoIahxLVvSlqQWIaYstqXHaBqdq5GiA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZRQEAG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZRQEAG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A27Z&Signature=HroeOAwdKKW5mBTFJOjhix1UFN4fBNmHF8VUE2v46FY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A28Z&Signature=t6yoK5uXM%2BtMUSk9j8iC0nYgnwhrF0HlFjJ5RlsC0A8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A28Z&Signature=2yLBzUc9hSqEH6q3l8U8RibRpNJGAUvrj7lYFMws26Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A29Z&Signature=Eh7jT6xk0uTqa81FOBBeUdFP2xAkneW0abKuOM%2BRfT0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:30Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A30Z&Signature=ZV7BszZzmz2qlJtatXQbHVBF0qjbzKaP04qqqc4HL2A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-13T15:42:30Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-13T15%3A42%3A30Z&Signature=%2B%2B78Ut9FWLSz0bpGmmM/0Xln3dp8/HrkHniJEmD/M/8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-13T15:42:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-13T15%3A42%3A31Z&Signature=No0Lpt18f4Mqf5j8wSnYCU7d2iivWjlkJAVFrBw41AY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A32Z&Signature=dwZjg6d8TH/L6e8T5LEhtFWtN8SggvYYUPJVnDOIWj4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A32Z&Signature=8v94MNCDTdzDTcJwOh4JfqGkdyu3MF6O8EG9Q%2BXA9fI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A33Z&Signature=RTyqGdNFEzZUVwnUuYtyXZIrXCOqjAKQVb07FaDhLh0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-13T15:42:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-13T15%3A42%3A33Z&Signature=f6Djd0AIrAcCUKfsE2mmgL06/Ufn9bAzQ563T2LXT38%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YIHRKM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YIHRKM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A34Z&Signature=QwuRQYS8RFV1P6HURyu6s9ukPmVeZsEqL91xATr8Ywc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:35Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A35Z&Signature=EVqP53mtP3yR798ix2VteEYKVnLMAJFfd22dbXMk0tk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:35Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A35Z&Signature=JM%2BMZwNLEv2BSswZED5XyonOp6fhyZXUcR8VO8skSAE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-13T15:42:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-13T15%3A42%3A36Z&Signature=ulMLNeapuFSioi8TPJXjfnqiltzCNgPjX6LFA/ZVi2I%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:37Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A37Z&Signature=orMn9BBVO/KaQEPP095ybFtdSFcdO3u%2BcsPfl/%2BXpWc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-13T15:42:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-13T15%3A42%3A38Z&Signature=kpm3YHimnSR4YUHmbixJNAOBJUNmWPVDLYr2SWX72Ss%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002FL5160
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002FL5160&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A38Z&Signature=kPCNMc9ssqEccPtx4UTJ5jTGnFpSmLWr/OfjWpzMULI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WC8XNK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-13T15:42:39Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WC8XNK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-13T15%3A42%3A39Z&Signature=YHCrEU9d6I99oxC3s8ZCZyfYqcwtgPuCuB6qjyGjP9o%3D
