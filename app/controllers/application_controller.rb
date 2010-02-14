@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def self.release_version() "v 3.0 alpha 11/1/09"  end
+  def self.release_version() "v 3.0 alpha 24 feb 2010"  end
 
   # this is used by the controller
   def get_product_selected(params)
