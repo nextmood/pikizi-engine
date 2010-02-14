@@ -1,5 +1,5 @@
 <% if feature.is_compatible_grammar(:comparator) %>
-    <%= feature.tags.collect { |t| "#{check_box_tag(:toto)} #{t.label}" }.join(', ') %>
+    <%= feature.tags.collect { |t| "#{check_box_tag("feature_filter_datas[]", t.idurl )} #{t.label}" }.join(', ') %>
 <% else %>
     unknown filter <%= "#{feature.label} class=#{feature.class}" %>
 <% end %>

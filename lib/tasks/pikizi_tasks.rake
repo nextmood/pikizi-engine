@@ -165,15 +165,15 @@ namespace :pikizi do
       if review.knowledge_idurl == knowledge.idurl
         p_idurl = review.product_idurl
         review.opinions.each do |opinion|
-          f_idurl = opinion.feature_idurl
-          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category]
-          raise "error unknown feature=#{f_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
+          feature_rating_idurl = opinion.feature_rating_idurl
+          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.get_category]
+          raise "error unknown dimension_rating=#{feature_rating_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
 
           rating_01 = Root.rule3(opinion.rating, opinion.min_rating, opinion.max_rating)
           nb_weighted += review.get_reputation
           sum_weighted += (review.get_reputation * rating_01)
 
-          hash_p_f_c_aggregation[p_idurl][f_idurl][review.get_category] = [nb_weighted, sum_weighted]
+          hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.get_category] = [nb_weighted, sum_weighted]
         end
       end
     end

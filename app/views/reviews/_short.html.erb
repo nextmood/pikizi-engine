@@ -5,7 +5,7 @@
 
     <div style="font-size:80%; margin-top:3px;">
         <%= Root.stars_html(review.rating, review.max_rating) %>
-        <%= link_to("#{pluralize(review.paragraphs.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}",
+        <%= link_to("#{pluralize(review.paragraphs.size, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
                     "/reviews/show/#{review.id}") %>
         reputation of source=<%= review.source %>, user's reputation=<%= review.reputation %>
     </div>

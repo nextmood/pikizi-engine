@@ -57,6 +57,8 @@ class Review < Root
 
   def product() Product.load(product_idurl) end
 
+  def opinions_for_paragraph(ranking_number) Opinion.find(:all, :review_id => self.id, :paragraph_ranking_number => ranking_number) end
+
   def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
 
   def get_paragraph_by_ranking_number(ranking_number)
@@ -65,7 +67,7 @@ class Review < Root
   end
 
   def self.opinion_types
-    [["", ""], ["pro", "pro"], ["cons", "cons"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["related to feature", "feature_related"] ]
+    [["", ""], ["pro/cons", "tip"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["related to feature", "feature_related"] ]
   end
 
   def cut_paragraph_at(paragraph, caret_position)
@@ -82,6 +84,7 @@ class Review < Root
       end
     end
   end
+
 
 end
 
@@ -114,7 +117,7 @@ class FromAmazon < Review
   end
 
   def generate_opinions
-    self.opinions << Opinion::Rating.create(:feature_idurl => "overall_rating",
+    self.opinions << Opinion::Rating.create(:feature_rating_idurl => "overall_rating",
                            :min_rating => 1,
                            :max_rating => 5,
                            :rating => rating)
@@ -191,18 +194,18 @@ class FileXml < Review
   def generate_opinions(xml_node)
     xml_node.find("FeatureOpinion").each do |node_feature_opinion|
 
-      feature_idurl = node_feature_opinion['idurl']
+      feature_rating_idurl = node_feature_opinion['idurl'] #dimension of rating
 
       # processing Rating Opinion
       node_feature_opinion.find("rating").each do |node_rating|
         node_content = node_rating.content.strip
         if (node_content = node_rating.content.strip) != ""
-          opinion = Opinion::Rating.create(:feature_idurl => feature_idurl,
+          opinion = Opinion::Rating.create(:feature_rating_idurl => feature_rating_idurl,
                                            :min_rating => Float(node_rating["min_rating"] || 0),
                                            :max_rating => Float(node_rating["max_rating"] || 10),
                                            :rating => Float(node_content))
           self.opinions << opinion
-          if feature_idurl == "overall_rating"
+          if feature_rating_idurl == "overall_rating"
             self.min_rating = opinion.min_rating
             self.max_rating = opinion.max_rating
             self.rating = opinion.rating
@@ -216,7 +219,7 @@ class FileXml < Review
          intensity = node_tip["intensity"] || 1.0
          intensity = 1.0 if intensity == "pro"
          intensity = -1.0 if intensity == "cons"
-         self.opinions << Opinion::Tip.create(:feature_idurl => feature_idurl,
+         self.opinions << Opinion::Tip.create(:feature_rating_idurl => feature_rating_idurl,
                              :usage => node_tip["usage"],
                              :intensity => Float(intensity),
                              :label => node_tip.content.strip)
@@ -224,17 +227,17 @@ class FileXml < Review
 
       # processing Better Comparator Opinion
       node_feature_opinion.find("better").each do |node_better|
-        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "better", node_better)
+        self.opinions << Opinion::Comparator.create_from_xml(feature_rating_idurl, "better", node_better)
       end
 
       # processing Same Comparator  Opinion
       node_feature_opinion.find("same").each do |node_same|
-        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "same", node_better)
+        self.opinions << Opinion::Comparator.create_from_xml(feature_rating_idurl, "same", node_better)
       end
 
       # processing Worse Comparator  Opinion
       node_feature_opinion.find("worse").each do |node_worse|
-        self.opinions << Opinion::Comparator.create_from_xml(feature_idurl, "worse", node_better)
+        self.opinions << Opinion::Comparator.create_from_xml(feature_rating_idurl, "worse", node_better)
       end
 
     end

@@ -1,6 +1,15 @@
  <!-- the recording opinions -->
  <div style="margin-top:5px; padding-top:2px; border-bottom:1px dashed black;">
-     no opinions recorded
+   <ul style="list-style-type: square; margin-left:-15px; margin-top:0px;">
+      <% for opinion in review.opinions_for_paragraph(ranking_number) %>
+        <li>
+          <%= opinion.to_html %>
+          <%= link_to_remote("delete",
+                             :url => {:controller => "reviews", :action => "delete_opinion", :id => review.id, :opinion_id => opinion.id, :ranking_number => ranking_number},
+                             :html => {:style => "font-size:80%;"} ) %>
+         </li>
+      <% end %>
+       </ul>
  </div>
  <div id="opinion_<%= ranking_number %>_form" style="margin-top:5px; padding-top:2px;">
     create an opinion of type

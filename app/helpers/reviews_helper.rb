@@ -10,7 +10,7 @@ module ReviewsHelper
   end
 
   def dimension_feature_related(knowledge, review_id, paragraph_number)
-    select_tag("feature_related_#{review_id}_#{paragraph_number}", options_for_select(dimension_feature(knowledge, :related)))
+    select_tag("feature_related", options_for_select(dimension_feature(knowledge, :related)))
   end
 
   #mode is either :comparator or :related
@@ -29,7 +29,7 @@ module ReviewsHelper
     overall = options.detect {|f| f.last == key_overall_rating }
     options.delete(overall)
     options = [["Overall", key_overall_rating]].concat(options)
-    select_tag("dimension_rating_#{review_id}_#{paragraph_number}", options_for_select(options) )
+    select_tag("dimension_rating", options_for_select(options) )
   end
 
   def dimension_product(knowledge, except_pidurl=nil)
