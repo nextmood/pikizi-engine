@@ -25,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/review/:review_id', :controller => 'reviews', :action => 'show'
   map.connect '/reviews/:knowledge_idurl', :controller => 'reviews', :action => 'index'
   map.connect '/cut_paragraph/:review_id/:ranking_number/:caret_position', :controller => 'reviews', :action => 'cut_paragraph'
+  map.connect '/review_new/:knowledge_idurl', :controller => 'reviews', :action => 'review_new'
+  map.connect '/review_create', :controller => 'reviews', :action => 'review_create'
 
   map.connect '/home' , :controller => 'home', :action => 'quizzes'
   map.connect '/test_results', :controller => 'home', :action => 'test_results'

@@ -65,7 +65,7 @@ class Product < Root
         if opinion.is_rating?
           puts "opinion rating"
           tupple = [opinion, review]
-          ((hash_fidurl_category_opinions[opinion.feature_rating_idurl] ||= {})[review.get_category] ||= []) <<  tupple
+          ((hash_fidurl_category_opinions[opinion.feature_rating_idurl] ||= {})[review.category] ||= []) <<  tupple
         end
       end
     end

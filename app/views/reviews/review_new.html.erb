@@ -1,0 +1,46 @@
+<div class="pkz_box">
+
+    <%= model_selector(@knowledge, :reviews) %>
+
+    <% form_for :review, @review, :url => "/review_create" do |f| %>
+        <%= f.hidden_field :knowledge_idurl %>
+
+
+
+
+          <p>about <%= f.select(:product_idurl, dimension_product(@knowledge))  %></p>
+
+          <p>
+            written on <%= f.date_select :written_at %>
+            by <%= f.text_field :author, :size => 50 %>
+          </p>
+
+          <p>
+            source<%= f.text_field :source, :size => 60 %>
+            <%= f.select(:category, Review.categories_select)  %>
+            reputation=<%= f.text_field :reputation, :size => 2 %>
+          </p>
+
+          <p>source url <small>http://...</small><br/><%= f.text_field :source_url, :style => "width:700px;" %> </p>
+          <p>rating=<%= f.text_field :rating, :size => 2 %> (min<%= f.text_field :min_rating, :size => 2 %>  max<%= f.text_field :max_rating, :size => 2 %>)</p>
+
+
+          <p>summary<br/><%= f.text_area :summary, :style => "width:700px; ; height:35px;" %><br/></p>
+          <p>content <small>copy html below</small><br/><%= f.text_area :content, :style => "width:700px; height:200px;" %></p>
+
+
+          <p>
+            split paragraphs by
+            <%= radio_button_tag("split_by[]", "br") %>&lt;BR&gt;
+            &nbsp; 
+            <%= radio_button_tag("split_by[]", "p", :selected => true) %>&lt;P&gt;
+            <%= submit_tag 'Create review', :style => "margin-left:20px;" %>
+          </p>
+    <% end %>
+
+
+
+
+
+
+</div>

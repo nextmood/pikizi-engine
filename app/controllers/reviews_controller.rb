@@ -178,5 +178,22 @@ class ReviewsController < ApplicationController
   end
 
 
+  # get /review_new
+  def review_new
+    @review = Review::Inpaper.new
+    @knowledge = Knowledge.load(params[:knowledge_idurl])
+    @review = Review.new(:knowledge_idurl => @knowledge.idurl,
+                         :user => get_logged_user,
+                         :category => "expert",
+                         :written_at => Time.now,
+                         :reputation => 1,
+                         :min_rating => 1,
+                         :max_rating => 5)
+  end
 
+  # get /review_create
+  def review_create
+    raise "oups"
+  end
+  
 end
