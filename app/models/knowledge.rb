@@ -52,6 +52,14 @@ class Knowledge < Root
     end
   end
 
+  # just to boost for the demo (to remove after)
+  def self.load(object_ids)
+    if object_ids == "cell_phones"
+      @@knowledge_cellphones ||= super(object_ids)
+    else
+      super(object_ids)
+    end
+  end
 
   def link_back() features.each { |sub_feature| sub_feature.link_back(self) } end
 

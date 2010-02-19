@@ -13,17 +13,17 @@ class Product < Root
   key :knowledge_idurl, String
 
   # no backgrounds (handled by feature...)
-  
+
   key :hash_feature_idurl_value, Hash
 
   timestamps!
 
-  def reviews() Review.find(:all, :product_idurl => idurl) end
+  def reviews() Review.find(:all, :product_idurl => idurl, :order => "created_at DESC") end
 
   def self.is_main_document() true end
 
   def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
-  
+
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
 
   def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
@@ -33,12 +33,12 @@ class Product < Root
     if amazon_url = get_value("amazon_url")
       amazon_url = amazon_url.remove_prefix("http://www.amazon.com/gp/product/")
       amazon_url[0, 10] if amazon_url
-    end    
+    end
   end
 
   AMAZON_SOURCE = "Amazon"
   def create_amazon_reviews(knowledge)
-    Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.source_default) # also destroy the attached opinions
+    Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
 
     begin
       nb_reviews_imported = 0
@@ -84,7 +84,7 @@ class Product < Root
           review.reputation ||= 1.0
           sum_reputation += review.reputation
           sum_weighted += review.reputation * opinion.rating_01
-          reviews << review unless reviews.include?(review) 
+          reviews << review unless reviews.include?(review)
         end
 
         hash_category_opinions[category] = { :weighted_avg_01 => sum_weighted / sum_reputation, :reviews => reviews } if sum_reputation > 0.0
@@ -96,14 +96,14 @@ class Product < Root
 
     end
     puts "hash_fidurl_category_opinions=#{hash_fidurl_category_opinions.inspect}"
-    hash_fidurl_category_opinions  
+    hash_fidurl_category_opinions
   end
 
   def gallery_image_urls
     path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"
     Root.get_entries("public/#{path}").collect { |entry| "#{path}/#{entry}"}.first(3)
   end
-  
+
   def self.initialize_from_xml(knowledge, xml_node)
     product = super(xml_node)
     product.hash_feature_idurl_value = {}
@@ -124,7 +124,7 @@ class Product < Root
         end
         product.set_value(feature_idurl, value)
       else
-        puts "**** feature #{feature_idurl} in product #{product.idurl} doesn't exist in knowledge"  
+        puts "**** feature #{feature_idurl} in product #{product.idurl} doesn't exist in knowledge"
       end
     end
     product.save

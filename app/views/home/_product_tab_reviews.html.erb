@@ -1,11 +1,11 @@
-<% hash_category_reviews = product.reviews.group_by(&:get_category) %>
+<% hash_category_reviews = product.reviews.group_by(&:category) %>
 
 <% for category, weight in Review.categories %>
 
 
     <% if hash_category_reviews and reviews = hash_category_reviews[category] %>
 
-        <div class="pkz_category_title" style="padding-left0px;"><%= category %></div>
+        <div class="pkz_category_title" style="padding-left:0px;" ><%= category %></div>
         <% for review in reviews %>
             <%= render(:partial => "/reviews/short", :locals => {:review => review } ) %>
         <% end %>

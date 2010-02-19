@@ -11,7 +11,7 @@
           <p>about <%= f.select(:product_idurl, dimension_product(@knowledge))  %></p>
 
           <p>
-            written on <%= f.date_select :written_at %>
+            written on <%= select_date @review.written_at, :prefix => :written_at %> 
             by <%= f.text_field :author, :size => 50 %>
           </p>
 
@@ -32,7 +32,7 @@
           <p>
             split paragraphs by
             <%= radio_button_tag("split_by[]", "br") %>&lt;BR&gt;
-            &nbsp; 
+            &nbsp;
             <%= radio_button_tag("split_by[]", "p", :selected => true) %>&lt;P&gt;
             <%= submit_tag 'Create review', :style => "margin-left:20px;" %>
           </p>

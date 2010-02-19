@@ -2,9 +2,7 @@
 <Product label="HTC Droid Eris">
   <Value idurl="main_image">images/htc-droid-eris.jpg<!--an url, like images/mabelle_image.png --></Value>
   <Value idurl="main_url">http://www.htc.com/us/products/droid-eris-verizon/<!--an url, like <![CDATA[ http//amazon.com/iphone.html ]]> --></Value>
-  <Value idurl="description">
-    <!--an url, like files/toto.html -->
-  </Value>
+  <Value idurl="description">content/description.html</Value>
   <Value idurl="brand">htc<!--ONE tag among: apple  blackberry  casio  htc  lg_electronics  motorola  nokia  palm  pantech  samsung  sanyo  siemens  sony_ericsson --></Value>
   <Value idurl="carriers">verizon<!--ONE tag among: att  sprint  t_mobile  verizon  prepaid  unlocked --></Value>
   <Value idurl="carrier_compatibility">

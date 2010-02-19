@@ -3,7 +3,7 @@
    <ul style="list-style-type: square; margin-left:-15px; margin-top:0px;">
       <% for opinion in review.opinions_for_paragraph(ranking_number) %>
         <li>
-          <%= opinion.to_html %>
+          <span style="font-family:Courier New;"><%= opinion.to_html %></span>
           <%= link_to_remote("delete",
                              :url => {:controller => "reviews", :action => "delete_opinion", :id => review.id, :opinion_id => opinion.id, :ranking_number => ranking_number},
                              :html => {:style => "font-size:80%;"} ) %>

@@ -166,14 +166,14 @@ namespace :pikizi do
         p_idurl = review.product_idurl
         review.opinions.each do |opinion|
           feature_rating_idurl = opinion.feature_rating_idurl
-          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.get_category]
-          raise "error unknown dimension_rating=#{feature_rating_idurl} for product=#{p_idurl} and category=#{review.get_category}" unless nb_weighted and sum_weighted
+          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.category]
+          raise "error unknown dimension_rating=#{feature_rating_idurl} for product=#{p_idurl} and category=#{review.category}" unless nb_weighted and sum_weighted
 
           rating_01 = Root.rule3(opinion.rating, opinion.min_rating, opinion.max_rating)
           nb_weighted += review.get_reputation
           sum_weighted += (review.get_reputation * rating_01)
 
-          hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.get_category] = [nb_weighted, sum_weighted]
+          hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.category] = [nb_weighted, sum_weighted]
         end
       end
     end
@@ -232,5 +232,11 @@ namespace :pikizi do
     knowledge.compute_counters
   end
 
+  # ==============================================================================================
+  desc "recompute category for reviews"
+  task :recompute_category => :environment do
+    Review.find(:all).each {|r| r.category = r.class.default_category; r.save }
+    true
+  end
 
 end

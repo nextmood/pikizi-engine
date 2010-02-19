@@ -55,7 +55,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # this is a rjs  
+  # this is a rjs
   def delete_opinion
     review = Review.find(params[:id])
     knowledge = Knowledge.load(review.knowledge_idurl)
@@ -67,7 +67,7 @@ class ReviewsController < ApplicationController
          :partial => "/reviews/opinion_editor_bis",
          :locals => { :review => review, :knowledge => knowledge, :ranking_number => paragraph_ranking_number } )
     end
-    
+
   end
 
   # this a form submit (post)
@@ -120,14 +120,14 @@ class ReviewsController < ApplicationController
                 :label => "rated #{rating} (min=#{min_rating}, max=#{max_rating})",
                 :rating => rating,
                 :min_rating => min_rating,
-                :max_rating => max_rating )) 
+                :max_rating => max_rating ))
 
       when "feature_related"
         feature_related = params[:feature_related]
         Opinion::FeatureRelated.create(base_options.clone.merge(
                 :label => "related to feature #{feature_related}",
                 :feature_related_idurl => feature_related ))
-      
+
       else
         raise "unknown type_opinion #{params[:type_opinion]}"
     end
@@ -193,7 +193,17 @@ class ReviewsController < ApplicationController
 
   # get /review_create
   def review_create
-    raise "oups"
+    @review = Review::Inpaper.new(params[:review])
+    @review.written_at = params[:written_at]
+    @review.user = get_logged_user
+    @knowledge = Knowledge.load(@review.knowledge_idurl)
+    if @review.save
+      flash[:notice] = "Review sucessufuly created"
+      redirect_to  "/reviews/#{@knowledge.idurl}"
+    else
+      flash[:notice] = "ERROR Review was not created"
+      render(:action => "review_new")
+    end
   end
-  
+
 end

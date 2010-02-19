@@ -167,7 +167,7 @@ class Root
   end
 
   def self.icon_star(full=true) "<img src=\"/images/icons/star#{'_empty' unless full}.png\" />" end
-  
+
   def self.duration(nb=1)
     t = Time.now
     nb.times { yield }
