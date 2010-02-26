@@ -3,7 +3,6 @@
   <div>
     <%= pluralize(Review.count(:product_idurl => @pidurls_selected), "review") %> for 
     <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
-    <%= link_to("create a new review", "/review_new/#{@knowledge.idurl}", :style => "margin-left:20px;") %>
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",

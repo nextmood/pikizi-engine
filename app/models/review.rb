@@ -11,8 +11,6 @@ class Review < Root
   key :max_rating, Float
   key :rating, Float
 
-  key :product_idurl, String
-
   key :author, String
   key :source, String # amazon, user, expert, etc...
   key :source_url, String # external url for the review
@@ -34,8 +32,15 @@ class Review < Root
   key :user_id, Mongo::ObjectID # the user who recorded this opinion
   belongs_to :user
 
+  key :knowledge_id, Mongo::ObjectID
+  belongs_to :knowledge
+
+  key :product_id, Mongo::ObjectID
+  belongs_to :product
+
   many :opinions, :polymorphic => true
 
+  key :paragraph_number, Integer, :default => 1 # the index for the paragraph
   many :paragraphs
 
   timestamps!
@@ -53,20 +58,13 @@ class Review < Root
 
   # destroy the record in mongo db, but first we need to remove all attached opinions
   def self.delete_with_opinions(find_options)
-    Review.find(:all, find_options).each { |review| Opinion.delete_all(:review_id => review.id) }
+    Review.all(find_options).each { |review| Opinion.delete_all(:review_id => review.id) }
     Review.delete_all(find_options)
   end
 
-  def product() Product.load(product_idurl) end
-
-  def opinions_for_paragraph(ranking_number) Opinion.find(:all, :review_id => self.id, :paragraph_ranking_number => ranking_number) end
 
   def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
 
-  def get_paragraph_by_ranking_number(ranking_number)
-    ranking_number = Float(ranking_number)
-    paragraphs.detect { |p| p.ranking_number == ranking_number}
-  end
 
   def self.opinion_types
     [["", ""], ["pro/cons", "tip"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["related to feature", "feature_related"] ]
@@ -81,7 +79,7 @@ class Review < Root
       if p1_content.size > 0 and p2_content.size > 0
         paragraph.content = p1_content
         paragraphs.each {|p| p.ranking_number += 1 if p.ranking_number >= p2_ranking_number }
-        paragraphs << Paragraph.new(:ranking_number => p2_ranking_number, :content => p2_content)
+        paragraphs << Paragraph.create(:ranking_number => p2_ranking_number, :content => p2_content)
         save
       end
     end
@@ -135,11 +133,10 @@ class FromAmazon < Review
     content.split(/<br \/>|<br\/>|<br>|<p>|<\/p>/).each do |paragraph_content|
       paragraph_content.strip!
       if paragraph_content != ""
-        paragraphs_generated << Paragraph.new(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
+        paragraphs_generated << Paragraph.create(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
       end
     end
     self.paragraphs = paragraphs_generated
-    self.save
   end
 
 
@@ -157,8 +154,8 @@ class Inpaper < Review
     original_url =  doc.at("body/div/a")['href']
     ps = doc.search("//p").collect { |p| p.inner_html }
     if title and original_url and ps.size > 0
-      r = Review.create(:title => title, :original_url => original_url)
-      ps.each_with_index { |p, i| r.paragraphs.create(:num => i, :content => p) }
+      r = Review.create(:title => title, :original_url => original_url, :knowledge_id => knowledge.id)
+      ps.each_with_index { |p, i| r.paragraphs.create(:ranking_number => i, :content => p) }
       r
     end
   end
@@ -249,14 +246,3 @@ class FileXml < Review
 
 end
 
-# a sub-division of the content of a review
-class Paragraph
-
-  include MongoMapper::EmbeddedDocument
-
-  key :content, String # full content
-  key :ranking_number, Integer # the first, 2nd third paragraph etc...
-
-
-
-end

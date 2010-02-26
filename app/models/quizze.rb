@@ -4,25 +4,25 @@ require 'mongo_mapper'
 class Quizze < Root
 
   include MongoMapper::Document
-  
-  key :idurl, String, :index => true # unique url
+
+  key :idurl, String # unique url
   key :knowledge_idurl, String
-  
+
   key :label, String # unique url
   key :main_image_url, String
   key :description_url, String
-  
+
   key :question_idurls, Array
   key :product_idurls, Array
-  
+
   timestamps!
 
-  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
+  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
 
   def self.is_main_document() true end
 
-  def questions() @questions ||= Question.load(question_idurls) end
-  def products() @products ||= Product.load(product_idurls) end
+  def questions() @questions ||= Question.load_db(question_idurls) end
+  def products() @products ||= Product.load_db(product_idurls) end
 
   # return all questions within a given dimension
   def questions_4_dimension(dimension) questions.select { |question| question.dimension == dimension } end
@@ -35,7 +35,7 @@ class Quizze < Root
       l
     end
   end
-  
+
   def self.initialize_from_xml(knowledge, xml_node)
     quizze = super(xml_node)
     quizze.knowledge_idurl = knowledge.idurl

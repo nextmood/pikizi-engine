@@ -14,11 +14,11 @@ require 'user'
 
 class Question < Root
 
-  
+
   include MongoMapper::Document
 
-  
-  key :idurl, String, :index => true # unique url
+
+  key :idurl, String # unique url
 
   key :label, String, :required => true  # text
   key :knowledge_idurl, String
@@ -42,8 +42,8 @@ class Question < Root
 
   timestamps!
 
-  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
-  
+  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
+
   # load a question object from an idurl  or a mongo db_id
   def link_back() choices.each { |choice| choice.link_back(self) } end
 
@@ -52,7 +52,7 @@ class Question < Root
   # read and create question objects from xml
   def self.initialize_from_xml(knowledge, xml_node)
       question = super(xml_node)
-      question.knowledge_idurl = knowledge.idurl      
+      question.knowledge_idurl = knowledge.idurl
       question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
       question.extra = xml_node['extra']
       question.dimension = xml_node['dimension'] || "unknown"
@@ -176,7 +176,7 @@ class Question < Root
     if choices_ok.is_a?(Answer)
       choices_ok = get_choice_ok_from_idurls(choices_ok.choice_idurls_ok)
     elsif !choices_ok.first.is_a?(Choice)
-      choices_ok = get_choice_ok_from_idurls(choices_ok) 
+      choices_ok = get_choice_ok_from_idurls(choices_ok)
     end
     choices_ok.inject(Pidurl2Weight.new) { |h, choice_ok| h.sum(choice_ok.pidurl2weight) }.normalize!
   end
@@ -208,7 +208,7 @@ class Choice < Root
 
   include MongoMapper::EmbeddedDocument
 
-  key :idurl, String, :index => true # unique url
+  key :idurl, String # unique url
 
   key :label, String # text
 
@@ -286,7 +286,7 @@ class Choice < Root
     if url_image and url_image != ""
       "#{path}/questions/#{question_idurl}/#{url_image}"
     else
-      "#{path}/knowledge/default_image.jpg" 
+      "#{path}/knowledge/default_image.jpg"
     end
 
   end
@@ -304,7 +304,7 @@ class Choice < Root
     def initialize(knowledge)
       @knowledge = knowledge
     end
-    
+
     # return a hash product_idurl -> weight
     def self.eval(knowledge, question, products, recommendation, intensity)
       pidurl2weight = Pidurl2Weight.new
@@ -438,7 +438,7 @@ class Choice < Root
 
     # combine(maximize(:price), minimize(:weight))
     def combine(*weights) weights.inject(0.0) { |s,w| s += w } / weights.size.to_f end
-    
+
     # ----------------------------------------------------------------------------------------
     # not part of the language (private)
 
@@ -470,14 +470,14 @@ class Choice < Root
       raise "error not a list of string #{l.inspect}" unless l.all? {|v| v.is_a?(String) }
       l
     end
-    
+
 
     def convert(feature, value)
       feature.is_a?(FeatureDate) ? FeatureDate.xml2date(value) : Float(value)
     end
 
     def ensure_boolean(b) b ? true : false end
-    
+
   end
 
   # ---------------------------------------------------------------------------------------

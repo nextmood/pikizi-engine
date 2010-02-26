@@ -1,21 +1,21 @@
  <!-- the recording opinions -->
  <div style="margin-top:5px; padding-top:2px; border-bottom:1px dashed black;">
    <ul style="list-style-type: square; margin-left:-15px; margin-top:0px;">
-      <% for opinion in review.opinions_for_paragraph(ranking_number) %>
+      <% for opinion in paragraph.opinions %>
         <li>
           <span style="font-family:Courier New;"><%= opinion.to_html %></span>
           <%= link_to_remote("delete",
-                             :url => {:controller => "reviews", :action => "delete_opinion", :id => review.id, :opinion_id => opinion.id, :ranking_number => ranking_number},
+                             :url => {:controller => "reviews", :action => "delete_opinion", :id => review.id, :opinion_id => opinion.id, :paragraph_id => paragraph.id},
                              :html => {:style => "font-size:80%;"} ) %>
          </li>
       <% end %>
        </ul>
  </div>
- <div id="opinion_<%= ranking_number %>_form" style="margin-top:5px; padding-top:2px;">
+ <div id="opinion_<%= paragraph.id %>_form" style="margin-top:5px; padding-top:2px;">
     create an opinion of type
-    <%= select_tag("type_opinion_#{ranking_number}", options_for_select(Review.opinion_types),
-                   :onchange => remote_function(:url => {:controller => "reviews", :action => "add_opinion", :id => review.id, :ranking_number => ranking_number},
-                                                   :with =>  "'type_opinion=' + $('type_opinion_#{ranking_number}').value") ) %>
+    <%= select_tag("type_opinion_#{paragraph.id}", options_for_select(Review.opinion_types),
+                   :onchange => remote_function(:url => {:controller => "reviews", :action => "add_opinion", :id => review.id, :paragraph_id => paragraph.id},
+                                                   :with =>  "'type_opinion=' + $('type_opinion_#{paragraph.id}').value") ) %>
     &nbsp;or&nbsp;
-    <%= link_to_function("cancel", "document.getElementById('p#{ranking_number}').innerHTML =''") %>
+    <%= link_to_function("cancel", "document.getElementById('p#{paragraph.id}').innerHTML =''") %>
  </div>

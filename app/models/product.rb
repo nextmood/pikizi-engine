@@ -7,7 +7,7 @@ class Product < Root
 
   include MongoMapper::Document
 
-  key :idurl, String, :index => true # unique url
+  key :idurl, String # unique url
 
   key :label, String # unique url
   key :knowledge_idurl, String
@@ -16,13 +16,14 @@ class Product < Root
 
   key :hash_feature_idurl_value, Hash
 
+  
   timestamps!
 
-  def reviews() Review.find(:all, :product_idurl => idurl, :order => "created_at DESC") end
+  def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
 
   def self.is_main_document() true end
 
-  def get_knowledge() @knowledge ||= Knowledge.load(knowledge_idurl) end
+  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
 
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
 
@@ -59,7 +60,7 @@ class Product < Root
   def get_ratings_group_by_feature_and_category
 
     hash_fidurl_category_opinions = {}
-    Review.find(:all, :product_idurl => idurl).each do |review|
+    Review.all( :product_idurl => idurl).each do |review|
       review.opinions.each do |opinion|
         puts "opinion class=#{opinion.class}"
         if opinion.is_rating?

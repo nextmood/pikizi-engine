@@ -6,23 +6,23 @@ class Knowledge < Root
 
   include MongoMapper::Document
 
-  key :idurl, String, :index => true # unique url
+  key :idurl, String # unique url
 
   key :label, String # unique url
 
   many :features, :polymorphic => true   # first level features
 
   key :question_idurls, Array
-  def questions() @questions ||= Question.load(question_idurls)  end
+  def questions() @questions ||= Question.load_db(question_idurls)  end
   def questions_sorted_by_desc_discrimination(pidurls, user=nil)
     questions.sort { |q1, q2| q2.discrimination(user, pidurls) <=> q1.discrimination(user, pidurls) }
   end
 
   key :product_idurls, Array
-  def products() @products ||= Product.load(product_idurls) end
+  def products() @products ||= Product.load_db(product_idurls) end
 
   key :quizze_idurls, Array
-  def quizzes() @quizzes ||= Quizze.load(quizze_idurls) end
+  def quizzes() @quizzes ||= Quizze.load_db(quizze_idurls) end
 
   key :cache_nb_products, Integer
   key :cache_nb_questions, Integer
@@ -42,7 +42,7 @@ class Knowledge < Root
   def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
 
   def self.all_key_label(options={})
-    @@all_key_label ||= Knowledge.find(:all).collect {|k| [k.idurl, k.label] }
+    @@all_key_label ||= Knowledge.all.collect {|k| [k.idurl, k.label] }
     if options[:only] == :idurl
       @@all_key_label.collect { |idurl, label| idurl }
     elsif options[:only] == :label
@@ -52,14 +52,6 @@ class Knowledge < Root
     end
   end
 
-  # just to boost for the demo (to remove after)
-  def self.load(object_ids)
-    if object_ids == "cell_phones"
-      @@knowledge_cellphones ||= super(object_ids)
-    else
-      super(object_ids)
-    end
-  end
 
   def link_back() features.each { |sub_feature| sub_feature.link_back(self) } end
 
@@ -141,7 +133,7 @@ class Knowledge < Root
 
     object_idurls.each do |object_idurl|
       sub_doc = XML::Document.new
-      new_object = tag_class.load(object_idurl)
+      new_object = tag_class.load_db(object_idurl)
       new_object.generate_xml(knowledge, sub_doc)
       domain_tag_directory = "#{domain_directory}/#{tag_downcase_plural}/#{object_idurl}"
       system("mkdir #{domain_tag_directory}") unless File.exist?(domain_tag_directory)
@@ -309,7 +301,7 @@ class Feature < Root
 
   include MongoMapper::EmbeddedDocument
 
-  key :idurl, String, :index => true # unique url
+  key :idurl, String # unique url
 
   key :label, String # text
   key :is_optional, Boolean, :default => false
@@ -505,7 +497,7 @@ end
 class Tag < Root
   include MongoMapper::EmbeddedDocument
 
-  key :idurl, String, :index => true # unique url
+  key :idurl, String # unique url
   key :label, String # text
 
 end

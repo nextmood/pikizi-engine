@@ -22,7 +22,7 @@ module ReviewsHelper
     l
   end
 
-  def dimension_rating(knowledge, review_id, paragraph_number)
+  def dimension_rating(knowledge, review_id, paragraph)
     key_overall_rating = "overall_rating"
     options = knowledge.feature_ratings.collect {|f| [f.label.gsub("Rating", ""), f.idurl]}
     options.sort! { |f1, f2| f1.first <=> f2.first }

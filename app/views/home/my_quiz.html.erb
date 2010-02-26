@@ -18,7 +18,7 @@
             <% last_choice = (choices = next_question.choices).last %>
             <% for choice in choices %>
                 <li <%= "class=\"last\"" if choice == last_choice%>>
-                    <img src="<%= "/domains/#{@knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}" %>" />
+                    <%= image_tag("/domains/#{@knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}") if choice.url_image %>
                     <% if next_question.is_choice_exclusive %>
                         <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
                     <% else %>

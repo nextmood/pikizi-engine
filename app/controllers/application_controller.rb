@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def get_logged_user()
     if session[:logged_user_id]
       begin
-        @current_user ||= User.load(session[:logged_user_id])
+        @current_user ||= User.load_db(session[:logged_user_id])
       rescue
         logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
         nil
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   # this is used by the controller
   def get_product_selected(params)
-    @knowledge = Knowledge.load(params[:knowledge_idurl])
+    @knowledge = Knowledge.load_db(params[:knowledge_idurl])
     @products = @knowledge.products
     @products_idurls = @products.collect(&:idurl)
     @pidurls_selected = params[:select_product_idurls]
@@ -55,7 +55,8 @@ class ApplicationController < ActionController::Base
   end
 
   def log_as_developper
-    @current_user = User.load(User.compute_idurl("info@nextmood.com"))
+    @current_user = User.load_db(User.compute_idurl("info@nextmood.com"))
+    raise "error no user indatabase?" unless @current_user
     session[:logged_user_id] = @current_user.id
   end
 

@@ -7,23 +7,30 @@
     <% image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top", :border => 0) %>
 
     <div class="pkz_item_list">
-        <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
-          <tr>
-            <td valign="top" width=80><%= link_to(image_url, "/product/#{product.idurl}") %></td>
-            <td valign="top">
-                <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
-            </td>
-          </tr>
-        </table>
+         <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
+              <tr>
+                <td valign="top" width=80><%= link_to(image_url, "/product/#{product.idurl}") %></td>
+                <td valign="top">
+                    <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
+                </td>
+              </tr>
+         </table>
+
+          <% if @review.content %>
+             generate paragraphs by&nbsp;
+             <%= link_to("&lt;P&gt;", "reviews/split_paragraphs_p/#{@review.id}") %>,&nbsp;
+             <%= link_to("&lt;BR&gt;", "reviews/split_paragraphs_br/#{@review.id}") %>
+          <% end %>
+
           <% for paragraph in @review.paragraphs_sorted %>
               <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
                   <!-- the paragraph -->
-                  <div id="<%= "paragraph_#{paragraph.ranking_number}" %>" >
+                  <div id="<%= "paragraph_#{paragraph.id}" %>" >
                     <%= render(:partial => "/reviews/paragraph", :locals => { :review => @review, :paragraph => paragraph }) %>
                   </div>
 
                   <!-- the opinion editor -->
-                  <div id="p<%= paragraph.ranking_number %>" style="background-color:white;" >
+                  <div id="p<%= paragraph.id %>" style="background-color:white;" >
                   </div>
               </div>
          <% end %>

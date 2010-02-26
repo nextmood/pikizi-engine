@@ -3,12 +3,10 @@
     <%= model_selector(@knowledge, :reviews) %>
 
     <% form_for :review, @review, :url => "/review_create" do |f| %>
-        <%= f.hidden_field :knowledge_idurl %>
-
-
-
-
-          <p>about <%= f.select(:product_idurl, dimension_product(@knowledge))  %></p>
+          <%= f.hidden_field :knowledge_idurl %>
+          <%= f.text_field :product_id %>
+      
+          <p>about <b><%= @review.product.label  %></b></p>
 
           <p>
             written on <%= select_date @review.written_at, :prefix => :written_at %> 
@@ -30,11 +28,9 @@
 
 
           <p>
-            split paragraphs by
-            <%= radio_button_tag("split_by[]", "br") %>&lt;BR&gt;
-            &nbsp;
-            <%= radio_button_tag("split_by[]", "p", :selected => true) %>&lt;P&gt;
-            <%= submit_tag 'Create review', :style => "margin-left:20px;" %>
+            <%= submit_tag 'Create review' %>
+            
+
           </p>
     <% end %>
 

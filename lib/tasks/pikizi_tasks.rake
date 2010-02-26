@@ -8,12 +8,13 @@ namespace :pikizi do
     Product.delete_all
     Opinion.delete_all
     Review.delete_all
+    Paragraph.delete_all
     Knowledge.delete_all
 
     User.delete_all
     User.create_default_users
 
-#    User.find(:all).each do |user|
+#    User.all.each do |user|
 #      user.quizze_instances = []
 #      user.reviews = []
 #      user.save
@@ -94,7 +95,7 @@ namespace :pikizi do
     # initialize...
     hash_q_counter_presentation = {}
     hash_q_c_counter_ok = {}
-    questions = Question.find(:all)
+    questions = Question.all
     questions.each do |question|
       hash_q_counter_presentation[question.idurl] = {:presentation => 0, :oo => 0}
       hash_q_c_counter_ok[question.idurl] = {}
@@ -104,7 +105,7 @@ namespace :pikizi do
     end
 
     # process each user
-    User.find(:all).each do |user|
+    User.all.each do |user|
       user.quizze_instances.each do |quizze_instance|
         quizze_instance.hash_answered_question_answers.each do |question_idurl, answers|
           answer = answers.last
@@ -140,7 +141,7 @@ namespace :pikizi do
 
   def get_knowledge
     knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
-    Knowledge.load(knowledge_idurl)
+    Knowledge.load_db(knowledge_idurl)
   end
 
   # recompute all rating and update distributions
@@ -161,7 +162,7 @@ namespace :pikizi do
 
     # process each review objects
     puts "processing reviews..."
-    Review.find(:all).each do |review|
+    Review.all.each do |review|
       if review.knowledge_idurl == knowledge.idurl
         p_idurl = review.product_idurl
         review.opinions.each do |opinion|
@@ -235,7 +236,93 @@ namespace :pikizi do
   # ==============================================================================================
   desc "recompute category for reviews"
   task :recompute_category => :environment do
-    Review.find(:all).each {|r| r.category = r.class.default_category; r.save }
+    Review.all.each {|r| r.category = r.class.default_category; r.save }
+    true
+  end
+
+  desc "clean up eric cretan reiews"
+  task :eric_cretan => :environment do
+
+    path = "public/domains/cell_phones/reviews/paragraph_eric"
+    file_names = Root.get_entries(path).inject({}) do |h, entry|
+      l = entry.split(".")
+      product_name, source_name = l.first.split('-')
+      h[product_name] ||= {}
+      h[product_name][source_name] ||= [nil, nil]
+      raise "error #{l.inspect}" unless l[1] == "txt"
+      raise "error" if h[product_name][source_name][l.size-2]
+      h[product_name][source_name][l.size-2] = entry
+      h
+    end
+
+    # not referenced= nexus_one, nokia_E72, htc_magic, nokia_5235
+
+    eric2product_idurl = { "Motorola_Droid" => "motorola_droid",
+                             "Palm_Pre_Plus" => "palm_pre",
+                             "Nexus_One" => "nexus_one",
+                             "Droid_Eris" => "htc_droid_eris",
+                             "Nokia_E72" => "nokia_e72",
+                             "HTC_Magic" => "htc_magic",
+                             "Nokia_5235" => "nokia_5235" }
+
+    # un-used rating dimension
+    # ["contacts_rating", "", "functionality_performance_rating", "", "security_management_rating", "storage_syncing_rating", "",  "music_rating", ""]
+
+    eric2feature_idurl = {
+             "overall" => "overall_rating",
+             "functionality & performance" => "functionality & performance",
+             "design & construction" => "design_construction_rating",
+             "screen" => "screen_rating",
+             "user interface" => "user_interface_rating",
+             "keyboard & input" => "keyboard_input_rating",
+             "controls & navigation" => "controls_navigation_rating",
+             "camera" => "camera_rating",
+             "video" => "video_rating",
+             "battery life" => "battery_life_rating",
+             "connectivity & internet experience" => "connectivity_internet_rating",
+             "gps" => "gps_rating",
+             "apps" => "apps_rating",
+             "value" => nil,
+             "messaging & emails & social networking" => "messaging_rating",
+             "call functionality & quality" => "call_rating",
+             "media" => "media_rating",
+             "productivity" => "productivity_rating" }
+
+    # do the job for each complete review/analysis
+    file_names.each do |product_name, sources|
+      if product_idurl = eric2product_idurl[product_name]
+        sources.each do | source_name, (file_review, file_opinions)|
+          if file_review and file_opinions
+            puts "processing review for #{product_name} source=#{source_name} file_review=#{file_review}  file_opinions=#{file_opinions}"
+            file = File.new("#{path}/#{file_review}", "r")
+            paragraphs = []
+            while (line = file.gets)
+              i = line.index("]\t")
+              paragraphs <<  line[i+2..10000]
+            end
+            file.close
+            file = File.new("#{path}/#{file_opinions}", "r")
+            while (line = file.gets)
+              # "positive", "negative", "very positive", "neutral", "mixed", "very negative"
+
+              opinion = line.strip.split("\t")
+              index_paragraph = Integer(opinion[0])
+              paragraph =  paragraphs[index_paragraph]
+              dimension_idurl_1 = eric2feature_idurl[opinion[1]]
+              value_1 = opinion[3]
+
+              dimension_idurl_2 = eric2feature_idurl[opinion[2]]
+              value_2 = opinion[4]
+
+              puts "opinion p#{index_paragraph} #{dimension_idurl_1}=#{value_1}"  if dimension_idurl_1
+              puts "opinion p#{index_paragraph} #{dimension_idurl_2}=#{value_2}"  if dimension_idurl_2
+
+            end
+            file.close
+          end
+        end
+      end
+    end
     true
   end
 

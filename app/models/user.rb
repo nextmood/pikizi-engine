@@ -221,7 +221,7 @@ class QuizzeInstance < Root
     end
   end
 
-  def get_quizze() @quizze ||= Quizze.load(quizze_idurl) end
+  def get_quizze() @quizze ||= Quizze.load_db(quizze_idurl) end
   
   def self.initialize_from_xml(xml_node)
     quizze_instance = super(xml_node)
@@ -484,8 +484,8 @@ class Affinity < Root
   def measure() @measure ||= (nb_weight == 0.0 ? 0.0 : sum_weight / nb_weight) end
 
 
-  NB_INPUT_4_MAX_CONFIDENCE = 5.0
-  def confidence() @confidence ||= ([NB_INPUT_4_MAX_CONFIDENCE, nb_weight].min / NB_INPUT_4_MAX_CONFIDENCE) end
+  def self.nb_input_4_max_confidence() 5.0 end
+  def confidence() @confidence ||= ([Affinity.nb_input_4_max_confidence, nb_weight].min / Affinity.nb_input_4_max_confidence) end
 
 end
 

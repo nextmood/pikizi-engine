@@ -1,5 +1,7 @@
 <% hash_category_reviews = product.reviews.group_by(&:category) %>
 
+<br/><%= link_to("create a new review for #{product.label} ...", "/review_new/#{knowledge.id}/#{product.id}") %>
+
 <% for category, weight in Review.categories %>
 
 

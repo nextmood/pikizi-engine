@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
 
 
   def update_weight
-    question = Question.load(params[:question_idurl])
+    question = Question.load_db(params[:question_idurl])
     question.weight +=  params[:delta]
     question.save
     redirect_to("/questions/#{params[:knowledge_idurl]}")

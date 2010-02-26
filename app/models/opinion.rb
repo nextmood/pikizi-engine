@@ -18,14 +18,16 @@ class Opinion < Root
   key :user_id, Mongo::ObjectID # the user who recorded this opinion
   belongs_to :user
 
-  key :paragraph_ranking_number, Integer # from which paragraph (if any) this opinion was extracted
+  key :paragraph_id, Mongo::ObjectID # from which paragraph (if any) this opinion was extracted
   
   timestamps!
 
 
+  belongs_to :paragraph
+
   def self.is_main_document() true end
 
-  def to_html() "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} paragraph_ranking_number=#{paragraph_ranking_number}" end
+  def to_html() "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} paragraph_ranking_number=#{paragraph.ranking_number}" end
 
 
   def self.generate_xml

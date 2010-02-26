@@ -8,12 +8,12 @@ class LandingController < ApplicationController
   end
 
   def thanks
-    @user = User.load(params['user_idurl'])
+    @user = User.load_db(params['user_idurl'])
     @is_new_user = params[:is_new_user]
   end
 
   def toggle_beta_test
-    @user = User.load(params['user_idurl'])
+    @user = User.load_db(params['user_idurl'])
     @user.wannabe_beta_tester = !@user.wannabe_beta_tester
     @user.save
     @is_new_user = params[:is_new_user]

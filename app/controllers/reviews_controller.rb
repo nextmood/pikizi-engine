@@ -12,60 +12,60 @@ class ReviewsController < ApplicationController
   def show
     puts Root.duration {
     @review = Review.find(params[:id])
-    @knowledge = Knowledge.load(@review.knowledge_idurl)
+    @knowledge = Knowledge.load_db(@review.knowledge_idurl)
     }
   end
 
   # this is a rjs
   def open_opinion_editor
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
     render :update do |page|
-      page.replace_html("p#{ranking_number}",
+      page.replace_html("p#{paragraph.id}",
          :partial => "/reviews/opinion_editor_bis",
-         :locals => { :review => review, :knowledge => knowledge, :ranking_number => ranking_number } )
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
   end
 
   # this is a rjs
   def add_opinion
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
     type_opinion = params[:type_opinion]
     render :update do |page|
-      page.replace_html("opinion_#{ranking_number}_form",
+      page.replace_html("opinion_#{paragraph.id}_form",
          :partial => "/reviews/opinion_editor",
-         :locals => { :review => review, :knowledge => knowledge, :ranking_number => ranking_number, :type_opinion => type_opinion } )
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph, :type_opinion => type_opinion } )
     end
   end
 
   # this is a rjs
   def feature_filter
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
     feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
     puts "feature found=#{feature.inspect}"
     render :update do |page|
       page.replace_html("filter_feature",
          :partial => "/reviews/filter_feature",
-         :locals => { :review => review, :knowledge => knowledge, :ranking_number => ranking_number, :feature => feature } )
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph, :feature => feature } )
     end
   end
 
   # this is a rjs
   def delete_opinion
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    paragraph_ranking_number = Integer(params[:ranking_number])
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
     opinion = Opinion.find(params[:opinion_id])
     opinion.destroy
     render :update do |page|
-      page.replace_html("p#{paragraph_ranking_number}",
+      page.replace_html("p#{paragraph.id}",
          :partial => "/reviews/opinion_editor_bis",
-         :locals => { :review => review, :knowledge => knowledge, :ranking_number => paragraph_ranking_number } )
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
 
   end
@@ -74,12 +74,12 @@ class ReviewsController < ApplicationController
   # and a rjs
   def create_opinion
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    paragraph_ranking_number = Integer(params[:ranking_number])
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
     base_options = { :review_id => review.id,
                      :user_id => (get_logged_user ? get_logged_user.id : nil),
                      :feature_rating_idurl => params[:dimension_rating],
-                     :paragraph_ranking_number => paragraph_ranking_number }
+                     :paragraph => paragraph }
 
     opinion = case type_opinion = params[:type_opinion]
 
@@ -133,22 +133,21 @@ class ReviewsController < ApplicationController
     end
 
     render :update do |page|
-      page.replace_html("p#{paragraph_ranking_number}",
+      page.replace_html("p#{paragraph.id}",
          :partial => "/reviews/opinion_editor_bis",
-         :locals => { :review => review, :knowledge => knowledge, :ranking_number => paragraph_ranking_number } )
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
   end
 
   # this is a rjs
   def edit_paragraph
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
-    paragraph = review.get_paragraph_by_ranking_number(ranking_number)
-    raise "no paragraph with ranking=#{ranking_number.inspect}" unless paragraph
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
+    raise "no paragraph with id=#{params[:paragraph_id]}" unless paragraph
 
     render :update do |page|
-      page.replace_html("paragraph_#{ranking_number}",
+      page.replace_html("paragraph_#{paragraph.id}",
          :partial => "/reviews/paragraph_editor",
          :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
@@ -157,38 +156,50 @@ class ReviewsController < ApplicationController
   # this is a rjs
   def edit_paragraph_cancel
     review = Review.find(params[:id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
-    paragraph = review.get_paragraph_by_ranking_number(ranking_number)
-    raise "no paragraph with ranking=#{ranking_number.inspect}" unless paragraph
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
+    raise "no paragraph with id=#{params[:paragraph_id]}" unless paragraph
     render :update do |page|
-      page.replace_html("paragraph_#{ranking_number}", :partial => "/reviews/paragraph", :locals => { :review => review, :paragraph => paragraph })
+      page.replace_html("paragraph_#{paragraph.id}", :partial => "/reviews/paragraph", :locals => { :review => review, :paragraph => paragraph })
     end
   end
 
-  # get /cut_paragraph/:review_id/:ranking_number/:caret_position
+  # get /cut_paragraph/:review_id/:paragraph_id/:caret_position
   def cut_paragraph
     review = Review.find(params[:review_id])
-    knowledge = Knowledge.load(review.knowledge_idurl)
-    ranking_number = Integer(params[:ranking_number])
-    paragraph = review.get_paragraph_by_ranking_number(ranking_number)
-    raise "no paragraph with ranking=#{ranking_number.inspect}" unless paragraph
+    knowledge = Knowledge.load_db(review.knowledge_idurl)
+    paragraph = Paragraph.find(params[:paragraph_id])
+    raise "no paragraph with id=#{params[:paragraph_id]}" unless paragraph
     review.cut_paragraph_at(paragraph, Integer(params[:caret_position]))
     redirect_to "/reviews/show/#{review.id}"
   end
 
 
-  # get /review_new
+  # get /review_new/:knowledge_id/:product_id
+  # get /review_edit/:review_id
   def review_new
-    @review = Review::Inpaper.new
-    @knowledge = Knowledge.load(params[:knowledge_idurl])
-    @review = Review.new(:knowledge_idurl => @knowledge.idurl,
-                         :user => get_logged_user,
-                         :category => "expert",
-                         :written_at => Time.now,
-                         :reputation => 1,
-                         :min_rating => 1,
-                         :max_rating => 5)
+    if params[:review_id]
+      # editing a given review
+      @review = Review.find(:id => params[:review_id])
+      @knowledge = @review.knowledge
+    else
+      # a brand new review for a given product
+      @knowledge = Knowledge.first(:id => params[:knowledge_id])
+      product = Product.first(:id => params[:product_id])
+      user = get_logged_user
+      @review = Review.new(:knowledge_idurl => @knowledge.idurl,
+                           :knowledge_id => @knowledge.id,
+                           :product => product,
+                           :product_idurl => product.idurl,
+                           :author => user.rpx_name,
+                           :source => user.rpx_name,
+                           :user => user,
+                           :category => "expert",
+                           :written_at => Time.now,
+                           :reputation => 1,
+                           :min_rating => 1,
+                           :max_rating => 5)
+    end
   end
 
   # get /review_create
@@ -196,10 +207,11 @@ class ReviewsController < ApplicationController
     @review = Review::Inpaper.new(params[:review])
     @review.written_at = params[:written_at]
     @review.user = get_logged_user
-    @knowledge = Knowledge.load(@review.knowledge_idurl)
+    @knowledge = Knowledge.load_db(@review.knowledge_idurl)
+    
     if @review.save
       flash[:notice] = "Review sucessufuly created"
-      redirect_to  "/reviews/#{@knowledge.idurl}"
+      redirect_to  "/reviews/show/#{@review.id}"
     else
       flash[:notice] = "ERROR Review was not created"
       render(:action => "review_new")

@@ -31,7 +31,7 @@ class Root
   def self.is_main_document() false end
 
   def self.initialize_from_xml(xml_node)
-    o = ((self.is_main_document and xml_node['idurl']) ? self.load(xml_node['idurl']) : nil)
+    o = ((self.is_main_document and xml_node['idurl']) ? self.load_db(xml_node['idurl']) : nil)
     o ||= self.new
     class_keys = self.keys.collect(&:first).concat(self.associations.collect(&:first))
     o.idurl = xml_node['idurl'] if class_keys.include?("idurl")
@@ -142,13 +142,13 @@ class Root
     doc.to_s(:indent => true)
   end
 
-  def self.load(object_ids)
+  def self.load_db(object_ids)
     if object_ids.is_a?(Array)
-      objects = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.find(:all, :conditions => { :idurl => object_ids })
+      objects = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.all(:idurl => object_ids )
       objects.each(&:link_back)
       objects
     else
-      object = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.find(:first, :conditions => { :idurl => object_ids })
+      object = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.first(:idurl => object_ids )
       object.link_back if object
       object
     end
