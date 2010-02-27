@@ -44,7 +44,7 @@ class Product < Root
     begin
       nb_reviews_imported = 0
       ApiAmazon.get_amazon_reviews(get_amazon_id, 1, 10).each do |amazon_review|
-        Review::FromAmazon.create_with_opinions(knowledge, idurl, get_value("amazon_url"), amazon_review)
+        Review::FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
         nb_reviews_imported += 1
       end
       puts "#{'* ' if nb_reviews_imported == 0} #{idurl}=#{nb_reviews_imported} reviews imported"

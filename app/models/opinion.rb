@@ -19,11 +19,11 @@ class Opinion < Root
   belongs_to :user
 
   key :paragraph_id, Mongo::ObjectID # from which paragraph (if any) this opinion was extracted
+  belongs_to :paragraph
   
   timestamps!
 
 
-  belongs_to :paragraph
 
   def self.is_main_document() true end
 
@@ -80,13 +80,15 @@ class Tip < Opinion
 
   key :usage, String
   key :intensity, Float
-  key :is_neutral, Boolean, :default => false
+  key :is_mixed, Boolean, :default => false
   
   def to_html()
-    if is_neutral
-      "neutral : #{usage} (#{feature_rating_idurl})"
+    if is_mixed
+      "mixed : #{usage} (#{feature_rating_idurl})"
     else
-      "#{Tip.intensities.detect { |i| intensity == i.last }.first} : #{usage} (#{feature_rating_idurl})"
+      intensity_symbol = Tip.intensities.detect { |i| intensity == i.last }
+      intensity_symbol = intensity_symbol ? intensity_symbol.first  : intensity
+      "#{intensity_symbol} : #{usage} (#{feature_rating_idurl})"
     end
   end
 
@@ -95,10 +97,10 @@ class Tip < Opinion
   def self.intensities
     [ ["very_high", 1.0 ],
       ["high", 0.5],
-      ["mixed", 0.0],
+      ["neutral", 0.0],
       ["low", -0.5],
       ["very_low", -1.0 ],
-      ["neutral", "neutral"] ]
+      ["mixed", "mixed"] ]
   end
   
 end

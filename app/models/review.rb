@@ -22,7 +22,7 @@ class Review < Root
 
   key :reputation, Float # the source reputation
 
-  key :category, String
+  key :category, String # expert, :user etc... needed for weighted aggregation
   key :filename_xml, String
   key :knowledge_idurl, String
   key :product_idurl, String
@@ -85,6 +85,29 @@ class Review < Root
     end
   end
 
+  # break the content in paragraphs
+  def split_in_paragraphs(mode)
+    paragraphs.each(&:destroy) # delete paragraphs (should delete associated opinions)
+    paragraphs_generated = []
+    pattern = case mode
+                    when "br" then /<br \/>|<br\/>|<br>/
+                    when "p_br" then /<br \/>|<br\/>|<br>|<p>|<\/p>/
+                    when "p" then /<p>|<\/p>/
+                  end
+    if pattern
+      content.split(pattern).each do |paragraph_content|
+        paragraph_content.strip!
+        if paragraph_content != ""
+          paragraphs_generated << Paragraph.create(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
+        end
+      end
+    else
+      # 1 paragraph == whole content
+      paragraphs_generated << Paragraph.create(:ranking_number => 1, :content => content)
+    end
+    self.paragraphs = paragraphs_generated
+    
+  end
 
 end
 
@@ -97,9 +120,11 @@ class FromAmazon < Review
     knowledge.products.each { |product| product.create_amazon_reviews(knowledge) }
   end
 
-  def self.create_with_opinions(knowledge, product_idurl, amazon_url, amazon_review)
+  def self.create_with_opinions(knowledge, product, amazon_url, amazon_review)
     r = Review::FromAmazon.create(:knowledge_idurl => knowledge.idurl,
-                                  :product_idurl => product_idurl,
+                                  :knowledge => knowledge,
+                                  :product_idurl => product.idurl,
+                                  :product => product,
                                   :author => "amazon_customer_#{amazon_review[:customerid]}",
                                   :source => Review::FromAmazon.default_category,
                                   :source_url => amazon_url,
@@ -120,24 +145,10 @@ class FromAmazon < Review
                            :min_rating => 1,
                            :max_rating => 5,
                            :rating => rating)
-    split_in_paragraphs
+    split_in_paragraphs("p_br")
   end
 
 
-
-  # break the content in paragraphs
-  def split_in_paragraphs
-    #url = File.open(url) if File.exist?(url)
-    #public/to_scrap/text_article.html
-    paragraphs_generated = []
-    content.split(/<br \/>|<br\/>|<br>|<p>|<\/p>/).each do |paragraph_content|
-      paragraph_content.strip!
-      if paragraph_content != ""
-        paragraphs_generated << Paragraph.create(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
-      end
-    end
-    self.paragraphs = paragraphs_generated
-  end
 
 
 end
@@ -146,19 +157,19 @@ end
 class Inpaper < Review
 
   # break the content in paragraphs
-  def split_in_paragraphs
-    #url = File.open(url) if File.exist?(url)
-    #public/to_scrap/text_article.html
-    doc = Hpricot(url)
-    title = doc.at("//title").inner_html
-    original_url =  doc.at("body/div/a")['href']
-    ps = doc.search("//p").collect { |p| p.inner_html }
-    if title and original_url and ps.size > 0
-      r = Review.create(:title => title, :original_url => original_url, :knowledge_id => knowledge.id)
-      ps.each_with_index { |p, i| r.paragraphs.create(:ranking_number => i, :content => p) }
-      r
-    end
-  end
+#  def split_in_paragraphs
+#    #url = File.open(url) if File.exist?(url)
+#    #public/to_scrap/text_article.html
+#    doc = Hpricot(url)
+#    title = doc.at("//title").inner_html
+#    original_url =  doc.at("body/div/a")['href']
+#    ps = doc.search("//p").collect { |p| p.inner_html }
+#    if title and original_url and ps.size > 0
+#      r = Review.create(:title => title, :original_url => original_url, :knowledge_id => knowledge.id)
+#      ps.each_with_index { |p, i| r.paragraphs.create(:ranking_number => i, :content => p) }
+#      r
+#    end
+#  end
 
   def self.default_category() "expert" end
 
@@ -174,12 +185,14 @@ class FileXml < Review
     get_entries(directory).each do |file_review_xml|
       if file_review_xml.has_suffix(".xml")
         xml_node = XML::Document.file("#{directory}/#{file_review_xml}").root
-        product_idurl = xml_node['product_idurl']
-
+        product = Product.first(:idurl => xml_node['product_idurl'])
+        raise "no product for #{xml_node['product_idurl']}" unless product
         # get or create API in mongo mapper ?
         r = FileXml.create(:filename => file_review_xml,
+                           :knowledge => knowledge,
                            :knowledge_idurl => knowledge.idurl,
-                           :product_idurl => product_idurl,
+                           :product => product,
+                           :product_idurl => product.idurl,
                            :author => xml_node['author'],
                            :category => Review::FileXml.default_category,
                            :source => xml_node['source'],

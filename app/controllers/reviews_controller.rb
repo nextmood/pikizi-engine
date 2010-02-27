@@ -10,10 +10,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/:review_id
   def show
-    puts Root.duration {
     @review = Review.find(params[:id])
     @knowledge = Knowledge.load_db(@review.knowledge_idurl)
-    }
   end
 
   # this is a rjs
@@ -175,12 +173,19 @@ class ReviewsController < ApplicationController
   end
 
 
+  def split_in_paragraphs
+    review = Review.find(params[:id])
+    review.split_in_paragraphs(params[:mode])
+    redirect_to "/reviews/show/#{review.id}"
+  end
+
+
   # get /review_new/:knowledge_id/:product_id
   # get /review_edit/:review_id
   def review_new
     if params[:review_id]
       # editing a given review
-      @review = Review.find(:id => params[:review_id])
+      @review = Review.find(params[:review_id])
       @knowledge = @review.knowledge
     else
       # a brand new review for a given product
@@ -204,11 +209,20 @@ class ReviewsController < ApplicationController
 
   # get /review_create
   def review_create
-    @review = Review::Inpaper.new(params[:review])
-    @review.written_at = params[:written_at]
-    @review.user = get_logged_user
-    @knowledge = Knowledge.load_db(@review.knowledge_idurl)
-    
+    if params[:review_id]
+      # this is an update
+      @review = Review.find(params[:review_id])
+      @review.update_attributes(params[:review])
+    else
+      # this is a new product
+      @review = Review::Inpaper.new(params[:review])
+      @review.written_at = params[:written_at]
+      @review.user = get_logged_user
+
+    end
+
+    @knowledge = @review.knowledge
+
     if @review.save
       flash[:notice] = "Review sucessufuly created"
       redirect_to  "/reviews/show/#{@review.id}"
@@ -217,5 +231,6 @@ class ReviewsController < ApplicationController
       render(:action => "review_new")
     end
   end
+
 
 end

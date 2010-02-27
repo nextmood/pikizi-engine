@@ -288,12 +288,27 @@ namespace :pikizi do
              "media" => "media_rating",
              "productivity" => "productivity_rating" }
 
+    ericvalue2intensity = {
+            "very positive" => {:intensity => 1.0, :is_mixed => false },
+            "positive" => {:intensity => 0.5, :is_mixed => false} ,
+            "neutral" => {:intensity => 0.0, :is_mixed => false} ,
+            "negative" => {:intensity => -0.5, :is_mixed => false} ,
+            "very negative" => {:intensity => -1.0, :is_mixed => false} ,
+            "mixed" => {:intensity => 0.0, :is_mixed => true}
+            }
+
+    knowledge = Knowledge.first(:idurl => "cell_phones")
     # do the job for each complete review/analysis
     file_names.each do |product_name, sources|
       if product_idurl = eric2product_idurl[product_name]
+        product = Product.first(:idurl => product_idurl)
+        
         sources.each do | source_name, (file_review, file_opinions)|
           if file_review and file_opinions
+
+
             puts "processing review for #{product_name} source=#{source_name} file_review=#{file_review}  file_opinions=#{file_opinions}"
+
             file = File.new("#{path}/#{file_review}", "r")
             paragraphs = []
             while (line = file.gets)
@@ -301,21 +316,39 @@ namespace :pikizi do
               paragraphs <<  line[i+2..10000]
             end
             file.close
+            content = paragraphs.collect { |p| "<p>#{p}</p>"}.join
+
+            # create the review object
+            review = Review::Inpaper.create(:product => product, :category => "expert", :product_idurl => product.idurl, :source => source_name, :written_at => Time.now, :knowledge_idurl => knowledge.idurl, :knowledge => knowledge, :summary => "#{content[0..40]} ..." , :content => content, :author => "ecrestan")
+
+            # create the paragraphs
+            paragraphs_generated = []
+            paragraphs.each_with_index do |p, count|
+              paragraphs_generated << Paragraph.create(:ranking_number => count, :content => p, :review_id => review.id)
+            end
+            review.paragraphs = paragraphs_generated
+
             file = File.new("#{path}/#{file_opinions}", "r")
             while (line = file.gets)
               # "positive", "negative", "very positive", "neutral", "mixed", "very negative"
 
               opinion = line.strip.split("\t")
               index_paragraph = Integer(opinion[0])
-              paragraph =  paragraphs[index_paragraph]
+              paragraph =  paragraphs_generated[index_paragraph]
+
               dimension_idurl_1 = eric2feature_idurl[opinion[1]]
               value_1 = opinion[3]
+              if dimension_idurl_1  and value_1 and value_1 != ""
+                Opinion::Tip.create({:paragraph => paragraph, :review => review, :feature_rating_idurl => dimension_idurl_1}.merge(ericvalue2intensity[value_1]))
+                puts "opinion p#{index_paragraph} #{dimension_idurl_1}=#{value_1}"  if dimension_idurl_1
+              end
 
               dimension_idurl_2 = eric2feature_idurl[opinion[2]]
               value_2 = opinion[4]
-
-              puts "opinion p#{index_paragraph} #{dimension_idurl_1}=#{value_1}"  if dimension_idurl_1
-              puts "opinion p#{index_paragraph} #{dimension_idurl_2}=#{value_2}"  if dimension_idurl_2
+              if dimension_idurl_2 and  value_2 and value_2 != ""
+                Opinion::Tip.create({:paragraph => paragraph, :review => review, :feature_rating_idurl => dimension_idurl_2 }.merge(ericvalue2intensity[value_2]))
+                puts "opinion p#{index_paragraph} #{dimension_idurl_2}=#{value_2}"  if dimension_idurl_2
+              end
 
             end
             file.close
