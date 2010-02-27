@@ -29320,3 +29320,1834 @@ Rendering reviews/index
 Rendered knowledges/_select_all (4.3ms)
 Rendered knowledges/_products_selection (179.7ms)
 Completed in 48752ms (View: 44263 | 200 OK [http://localhost/reviews/cell_phones]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-02-27 14:12:36) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 53ms (View: 51 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-27 14:12:42) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 734ms (View: 25 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-27 14:12:47) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 3386ms (View: 380 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:12:58) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.8ms)
+Rendered home/_product_price (7.4ms)
+Rendered home/_product_tab_overview (1.5ms)
+Rendered home/_product_tabs (18.9ms)
+Completed in 603ms (View: 188 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:13:04) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (53.1ms)
+Rendered reviews/_short (19.8ms)
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_short (10.4ms)
+Rendered reviews/_short (10.3ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (10.0ms)
+Rendered reviews/_short (10.5ms)
+Rendered reviews/_short (10.0ms)
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_short (119.6ms)
+Rendered reviews/_short (26.0ms)
+Rendered reviews/_short (10.3ms)
+Rendered reviews/_short (11.1ms)
+Rendered reviews/_short (17.5ms)
+Rendered reviews/_short (15.4ms)
+Rendered reviews/_short (15.1ms)
+Rendered home/_product_tab_reviews (524.2ms)
+Rendered home/_product_tabs (538.8ms)
+Completed in 982ms (View: 547 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:13:10) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (0.7ms)
+Rendered home/_product_tabs (15.4ms)
+Completed in 412ms (View: 18 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:17:06) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (14.9ms)
+Rendered home/_product_tabs (29.3ms)
+Completed in 435ms (View: 32 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:17:25) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.3ms)
+Rendered home/_product_price (6.0ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (11.6ms)
+Completed in 454ms (View: 44 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:17:29) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (14.1ms)
+Rendered home/_product_tabs (29.0ms)
+Completed in 456ms (View: 32 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:17:54) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.3ms)
+Rendered home/_product_price (5.6ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (12.9ms)
+Completed in 583ms (View: 164 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:17:56) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (17.1ms)
+Rendered home/_product_tabs (31.9ms)
+Completed in 479ms (View: 35 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:18:37) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.3ms)
+Rendered home/_product_price (5.3ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (13.3ms)
+Completed in 487ms (View: 42 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:18:40) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (196.1ms)
+Rendered home/_product_tabs (211.7ms)
+Completed in 643ms (View: 215 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:18:55) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (17.9ms)
+Rendered home/_product_tabs (33.3ms)
+Completed in 485ms (View: 36 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:19:33) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.6ms)
+Rendered home/_product_price (5.5ms)
+Rendered home/_product_tab_overview (1.2ms)
+Rendered home/_product_tabs (12.8ms)
+Completed in 591ms (View: 44 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:19:36) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (16.8ms)
+Rendered home/_product_tabs (31.6ms)
+Completed in 482ms (View: 34 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:26:19) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (32.6ms)
+Rendered reviews/_short (20.2ms)
+Rendered reviews/_short (13.7ms)
+Rendered reviews/_short (9.9ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (10.9ms)
+Rendered reviews/_short (9.8ms)
+Rendered reviews/_short (10.6ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (25.3ms)
+Rendered reviews/_short (25.7ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.0ms)
+Rendered reviews/_short (182.8ms)
+Rendered reviews/_short (16.0ms)
+Rendered reviews/_short (16.1ms)
+Rendered home/_product_tab_reviews (521.9ms)
+Rendered home/_product_tabs (533.1ms)
+Completed in 1014ms (View: 543 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 14:26:26) [GET]
+  Parameters: {"id"=>"4b88fb2adb599504d90002f6"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (29.4ms)
+Rendered reviews/_paragraph (26.5ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (6.5ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.0ms)
+Completed in 1010ms (View: 590 | 200 OK [http://localhost/reviews/show/4b88fb2adb599504d90002f6]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-02-27 14:26:33) [POST]
+  Parameters: {"paragraph_id"=>"4b88fb2adb599504d90002f7", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "id"=>"4b88fb2adb599504d90002f6"}
+Rendered reviews/_opinion_editor_bis (24.9ms)
+Completed in 477ms (View: 31 | 200 OK [http://localhost/reviews/open_opinion_editor/4b88fb2adb599504d90002f6?paragraph_id=4b88fb2adb599504d90002f7]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:37:02) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.3ms)
+Rendered home/_product_price (5.3ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (12.3ms)
+Completed in 524ms (View: 43 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:37:07) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (385.5ms)
+Rendered home/_product_tabs (400.6ms)
+Completed in 883ms (View: 404 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:40:38) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (359.6ms)
+Rendered home/_product_tabs (374.0ms)
+Completed in 668ms (View: 377 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:41:16) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (160.3ms)
+Rendered home/_product_tabs (170.9ms)
+Completed in 661ms (View: 175 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:41:31) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (161.9ms)
+Rendered home/_product_tabs (381.5ms)
+Completed in 684ms (View: 386 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:41:53) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (159.9ms)
+Rendered home/_product_tabs (174.7ms)
+Completed in 675ms (View: 179 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:42:51) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (166.7ms)
+Rendered home/_product_tabs (389.1ms)
+Completed in 690ms (View: 393 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 14:43:04) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.4ms)
+Rendered home/_product_price (5.0ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (16.0ms)
+Completed in 560ms (View: 43 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:43:07) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (163.1ms)
+Rendered home/_product_tabs (178.8ms)
+Completed in 680ms (View: 182 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:47:43) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (32.8ms)
+Rendered reviews/_short (20.7ms)
+Rendered reviews/_short (13.6ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.9ms)
+Rendered reviews/_short (27.1ms)
+Rendered reviews/_short (26.2ms)
+Rendered reviews/_short (11.0ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (17.9ms)
+Rendered reviews/_short (15.2ms)
+Rendered reviews/_short (15.3ms)
+Rendered home/_product_tab_reviews (583.5ms)
+Rendered home/_product_tabs (594.7ms)
+Completed in 904ms (View: 603 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:48:49) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (33.4ms)
+Rendered reviews/_short (21.7ms)
+Rendered reviews/_short (13.0ms)
+Rendered reviews/_short (10.7ms)
+Rendered reviews/_short (10.7ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (15.8ms)
+Rendered reviews/_short (30.1ms)
+Rendered reviews/_short (29.9ms)
+Rendered reviews/_short (12.9ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (18.3ms)
+Rendered reviews/_short (16.9ms)
+Rendered reviews/_short (16.5ms)
+Rendered home/_product_tab_reviews (382.5ms)
+Rendered home/_product_tabs (616.7ms)
+Completed in 923ms (View: 626 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:48:52) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (390.4ms)
+Rendered home/_product_tabs (400.8ms)
+Completed in 700ms (View: 405 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:53:48) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+
+ActionView::TemplateError (undefined method `paragraphs' for #<Array:0x1054fb518>) on line #8 of app/views/home/_product_tab_pros_cons.html.erb:
+5:   <tr><th align="center">Pros: Do you agree?</th><th align="center">Cons Do you agree?</th></tr>
+6:   <tr>
+7:     <td>
+8:         <%= pluralize(product.tips(:pro).size, "tip")%>
+9:         <% for pro in product.tips(:pro) %>
+10:             <div><%= pro.inspect %></div>
+11:         <% end %>
+
+    app/models/product.rb:155:in `tips'
+    app/views/home/_product_tab_pros_cons.html.erb:8
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (301.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:53:52) [POST]
+  Parameters: {"new_tab"=>"overview", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_overview (17.3ms)
+Rendered home/_product_tabs (28.2ms)
+Completed in 625ms (View: 32 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=overview&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:53:55) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+
+ActionView::TemplateError (undefined method `paragraphs' for #<Array:0x10aee6ca8>) on line #8 of app/views/home/_product_tab_pros_cons.html.erb:
+5:   <tr><th align="center">Pros: Do you agree?</th><th align="center">Cons Do you agree?</th></tr>
+6:   <tr>
+7:     <td>
+8:         <%= pluralize(product.tips(:pro).size, "tip")%>
+9:         <% for pro in product.tips(:pro) %>
+10:             <div><%= pro.inspect %></div>
+11:         <% end %>
+
+    app/models/product.rb:155:in `tips'
+    app/views/home/_product_tab_pros_cons.html.erb:8
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:55:22) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (786.3ms)
+Rendered home/_product_tabs (796.7ms)
+Completed in 1382ms (View: 800 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:55:54) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (770.1ms)
+Rendered home/_product_tabs (781.2ms)
+Completed in 1382ms (View: 784 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:56:16) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (458.5ms)
+Rendered home/_product_tabs (752.4ms)
+Completed in 1349ms (View: 756 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 14:57:19) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (882.6ms)
+Rendered home/_product_tabs (1208.3ms)
+Completed in 1512ms (View: 1213 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:00:15) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1293.8ms)
+Rendered home/_product_tabs (1314.1ms)
+Completed in 2122ms (View: 1319 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:00:40) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1311.2ms)
+Rendered home/_product_tabs (1333.2ms)
+Completed in 1973ms (View: 1338 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:02:38) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (612.9ms)
+Rendered home/_product_tabs (643.9ms)
+Completed in 2450ms (View: 656 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 15:02:47) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (5.1ms)
+Rendered home/_product_price (7.1ms)
+Rendered home/_product_tab_overview (1.6ms)
+Rendered home/_product_tabs (17.0ms)
+Completed in 472ms (View: 73 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:02:49) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (517.6ms)
+Rendered home/_product_tabs (623.5ms)
+Completed in 1108ms (View: 730 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:03:18) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1057.9ms)
+Rendered home/_product_tabs (1081.0ms)
+Completed in 1547ms (View: 1086 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:40Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A40Z&Signature=Vih6uzdivUBU3U5m48zRAfYb4ogieHQA6XGYvjG/pVo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:04:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A04%3A41Z&Signature=7OVsPWrdV/d4DH/eRrUZoqsecgvImXDUMzs7ufohIi0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:04:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A04%3A41Z&Signature=KMDu6QOuLOeJg7o%2ByNxa4sv1mYZyQeec5rLnD2jPsck%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:04:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A04%3A42Z&Signature=4yc9rnQyM4IoHRWwEgq9aSqTKnSmyAFgAWcTpTuF/V8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC826
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:04:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC826&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A04%3A42Z&Signature=1o78X4QOzsCX/LV3qUf/OFkOMNaKH9Nu3Xeg30MYR%2BU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A43Z&Signature=Zd5RcImD0/NLQNcY5VZY5AuCXnw6S69SxdZS7sw1DAU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:04:44Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A04%3A44Z&Signature=mFTod1jJAkNSzu/TecCDG9U5eXUVuNlqCIX22r/9BMk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002HJ300E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:04:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002HJ300E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A04%3A45Z&Signature=hA/LAttyIZr458bMHyxS5/vDd/wqCmWnZrQsq/A9vMI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002FL5160
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002FL5160&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A46Z&Signature=JGdSeiilppttZC53O6PlWJNFE%2BcDAqNs%2B5uTlbb%2Bvb0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A47Z&Signature=T%2BviLBqrZoUxiWKcOkM9pRIfveMilk5nyBXv6h7wn2s%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A47Z&Signature=T%2BviLBqrZoUxiWKcOkM9pRIfveMilk5nyBXv6h7wn2s%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A47Z&Signature=T%2BviLBqrZoUxiWKcOkM9pRIfveMilk5nyBXv6h7wn2s%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A48Z&Signature=TOLA2nixFA85VBJ6ZWMLV2%2B2l4Zr7yRsatEZ9m%2BmLDw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:04:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A04%3A48Z&Signature=y0mVGQoR7OMRYrVAseV%2BXXjMBZfNhtHWPuMbYkQSU1A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:04:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A04%3A49Z&Signature=j5XrMugMwE/95ApAiJR4XGzwanxOuNsLrp%2BkU0Ej5SA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQHWW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:04:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A04%3A50Z&Signature=7Hv7a0cPo6dCMFYaI2R10IjpkbAlQpmlMP0IpkIBm1w%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A52Z&Signature=QgfRrBLd2HpF6AyQaGF36g0oj31aEX85qxijODR4KLg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:04:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A04%3A52Z&Signature=XaZltNDOsZpcCpOKExV1mpL4GEIsAc3yLW4UKC/SwD8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:04:53Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A04%3A53Z&Signature=KHqYNM2WdMQmwvOq3%2BbcJyDoexdyFKOvDME6ZBn0iWI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:04:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A04%3A54Z&Signature=0QNJmTNVk9s19oMUlHtGL2lfhUd%2BvP62mJzPWJpw81w%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZG8H9S
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZG8H9S&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A55Z&Signature=oq%2BEFlNKc8QgcxkcGsCzabOx4%2B0KTZl8FW0tfCbytl8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JPJ118
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JPJ118&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A56Z&Signature=9SS6Rf3Trw/RzJKy9d%2BIKwPglpeRMaGN6cHCjLRAFQc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A57Z&Signature=piGjnpSevGnqApYrOd6FtjLu7P6pLyz/NLkgbeLsx7A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQK06
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQK06&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A57Z&Signature=j%2Bi8LLHtueb/18LofFYGzcZss0Lhdcp2VjnyJFyur5I%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:04:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A04%3A57Z&Signature=u0Wj9pBi6uiAdeIxobh4FR70xYmTqKU69WdZxO3RzNY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:04:58Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A04%3A58Z&Signature=ZR/ZlA1Myi3pWHARv8m/%2BrngvJpBc0fpJBG1rv3Z4S0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:04:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A04%3A59Z&Signature=hrVei7hKfFAuC3N9woitPBMqJOuijJGD0wd/8yWAaiM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002AKKJWM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:04:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002AKKJWM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A04%3A59Z&Signature=C34zoz9ko3oSemTWS9gU8oOuKJo49mSlPrBlW0wrdQ0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A31Z&Signature=09NBz2aDoyCSnS6KbzIx44Gb0mwjsWLY2dBEr%2BvsdGk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:05:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A05%3A32Z&Signature=%2Bc4YaEI0U9G6YNAkzOWAeOE5MhwlbmhubEELOayRrTg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:05:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A05%3A32Z&Signature=R5eJ9417Yj7WiYLF7GRbt1TNvL28ZeXK8zrO1Lxmfe8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:05:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A05%3A33Z&Signature=gvSA5%2BsuJ67EOc1ovuJIJzgSdm8BXsptIPvvev79/Jw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:05:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A05%3A33Z&Signature=SFNqRlz2mmrca5SKD8vGMkGYqS5/61dA2wSJyegVVIg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:05:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A05%3A34Z&Signature=LjgkdI8z0eUZLy/ZbhGHP/YowJnyktf5tOPpSejQI4E%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:05:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A05%3A34Z&Signature=ZP%2BpeRjJSlFtr6Hx%2BhsLWdjhwfMp8wE6FkxDE1CFNxU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:05:35Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A05%3A35Z&Signature=HRoJQ2NgkxvbLmo34GNDtgesyUVICRRtsOspwGdXHVU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:05:35Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A05%3A35Z&Signature=U%2BNWrZprgqWDVxf98RK55pxOTI4mmuMlVx9e%2BGATcIw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-27T14:05:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-27T14%3A05%3A36Z&Signature=89bKB5jHgIaCID8AZRLdLqQRSczKK%2BO%2BlbdmqgM1jD0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A41Z&Signature=yVKY3E4HfRZ/odY6j3T2jeWKPbKpS7jP41TEgiOyiEQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:05:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A05%3A42Z&Signature=qRVoygfVSGwrWH1dwBucXy6FBr0qxurTiIAIpX7tw28%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:05:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A05%3A42Z&Signature=/No5fp67MpLdrBdbQDS7ojp%2B83I/PWZ18PhtIurSeZw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:05:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A05%3A43Z&Signature=cqkO0HawnKeEkoQIxgB0FJAdvoEHSEGxk0BNMcPtnKU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:05:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A05%3A43Z&Signature=s9fmCX3q/NfkPdpkedYZEipKSKLmQnUN9sFO9uI5k0o%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002IC0VM0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002IC0VM0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A45Z&Signature=fZujy%2B01cRk89FriHqwpnoqk5U6cuOs9ZprsCTAh/dg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002IC0VM0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:05:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002IC0VM0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A05%3A46Z&Signature=9jN3bm%2BG7GE5sGdS%2B125DqdlaXVCmiGSIazoFTAJLxQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002IC0VM0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:05:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002IC0VM0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A05%3A46Z&Signature=rifqES9FGIOr1qWDFJNAvxi/c0eQHPrNt6co%2BoZU0Fo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A47Z&Signature=Oh1fJ3eqeRHkcVwJOEfbRnt0N3a3fu8AYykssOltmKc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A48Z&Signature=ahMpsMr0UdVZsNglfJfRKcJWQG/a5KIW0cdgTm4zyP0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:05:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A05%3A48Z&Signature=dl2fk6/HijAUSGlpVdazMijLyREIzXOBXLZMac9R1GQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:05:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A05%3A49Z&Signature=jQvoUOfrIDG243n31B4gTjAR%2B7cOJqYzMAIZ3C82hmI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:05:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A05%3A49Z&Signature=gODZEaZcoNMmE1PdzmqiUrO1jwhRxN6yaGg4XHRiMaU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:05:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A05%3A50Z&Signature=QPH0FNd1l7v0z8h%2BZQbeG7f7B8h44Pk2Fe149C95Qx0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:05:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A05%3A51Z&Signature=dnvB%2B77MDUDsHjodAhOpC/c5adJfMqjdqpc6Qc8XA5g%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:05:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A05%3A51Z&Signature=SoYIVDQRQUGy5XCgrhV7eu1iUvZ5%2B8DiNjNNmH6lJSk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:05:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A05%3A52Z&Signature=/4iLLkblMMMcxNDc92pp4ThjSNA/420UVvzxSOfIPNE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJTS3I
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:05:53Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A05%3A53Z&Signature=AXrYMfwDyJu46ykx2YPG3y/6poML/P7hlWeJeDg%2Bfyo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A56Z&Signature=nE/9KoFOJsc4gnQfVSKmHFt/Oi6wEijTCcdORNyg1S0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YD86H0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:58Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YD86H0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A58Z&Signature=FzOO7W7PBnHIWlYsHlF3Fak4GeSZf0JP/3PYyNE/0Zc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YD86H0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:05:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YD86H0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A05%3A59Z&Signature=MHliK2mjS%2B9UBQCFqGhdFia1KbRT2gNnSeWz3xMA8UM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:05:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A05%3A59Z&Signature=KXK%2B2jM9O9kqqEY50WjQltSrT5IpCY9BDk%2BdWKOtjpU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:00Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A00Z&Signature=3GEMH/W1q5gf1%2BCsRVF7erQSd4018uzqa4G6jVHWXxg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:00Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A00Z&Signature=z/RcxFCVPP248AjhrqyagtHneQrRMrML0koXb4To/TE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A01Z&Signature=5CZEipNfaNY0sDfF7FFxXrrCzaLTZUAfpx1ONcSBxZY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:06:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A06%3A01Z&Signature=pfrcwockInCqHc7BT8Ud1Tu0WMwU23meHUwPIAx4ENo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:06:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A06%3A02Z&Signature=6NRkdA5LqabOgfiM6TLEp2n0r2wpeV8k92NNdC47Z5Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VJJZ0Y
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:06:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VJJZ0Y&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A06%3A02Z&Signature=5KBpdAlqE2f6wJxZ%2BRASdA6I1DDOR1WsdZP5X3RulWs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A05Z&Signature=9HmQReFbhy5yf%2BFZ87ExLBJIRqGvm4JYtAzT8Lr6Pj8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A05Z&Signature=9HmQReFbhy5yf%2BFZ87ExLBJIRqGvm4JYtAzT8Lr6Pj8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6ZD2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A06Z&Signature=vKdNc3N2UlpsekpfVB61/EKSl2KbO8OTn29CuiOFtRQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6ZD2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A06Z&Signature=vKdNc3N2UlpsekpfVB61/EKSl2KbO8OTn29CuiOFtRQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=Touch-3G-P
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=Touch-3G-P&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A07Z&Signature=TmQ%2BWESAhP8boRUQYoqwhsgTicPXGsbSZi75xfwzhO4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002GJU6J8
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJU6J8&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A07Z&Signature=YEm/62J7KHsbpSg7M96PqQqnlGxHnHEo8Fq4AryQhSc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A08Z&Signature=RXzecXLpL1qk4iHzFdszaSEAP9QJfj5XHyet3IxhMQg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A08Z&Signature=m5piO2JTpp0VJ1IeQ2smLJNcAYWmYsXfHYqh7UeGXtw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A09Z&Signature=l2aPWQVTaCpSdCg/VSBzyUHLYssxlBDa8EasKwxyXmY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002S0OD4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002S0OD4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A09Z&Signature=6qHzatmbwd2YxMCQ4rLyb82XutSydx23%2BE5Qvt78ejM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A11Z&Signature=1pZOglTfTgg26D/JgPFHTQhe6HWsOGdDxlLL0rg35pM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A12Z&Signature=ztCckDyJ2FJrKm%2BTWOZ38gVLk%2BNJOH6oK2HmnlWqKn0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002Z7ER1O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002Z7ER1O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A13Z&Signature=seEQK6seLY3HnvgvIW4DGXzgOZQVV0zYk2SWu31dWnI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A13Z&Signature=gxN5aVIPHYT9sikYyRto2KwQaqsKboNz61oxJrf1G7A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A14Z&Signature=whsJtH2bewql2PWNO84d/iJzfffchnPVL%2BKNUCKKuDY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:15Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A15Z&Signature=8GjinygTq/Ia/U08UBs9oXKZ6X/%2BFi0YfL1y0KPYyRc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A16Z&Signature=9m%2B8kQodfpxkE3lpki/pCSVyyivJk%2Bk68vNt7r9nfxI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A16Z&Signature=S50t561QE%2Bn%2BbfNZLR%2BhtzyMQXSyLobOnQI9nngRuY4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A17Z&Signature=8WjZeENoPa/dxJML0nRqVSa55r1Jkr6fvcHRr3NID84%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A18Z&Signature=ZBV1/6Lhki55/qUTKcCWSE05cFm14oJQvo4zs7iEuwc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:06:19Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A06%3A19Z&Signature=5CURgon0gMJWbem/ZDs2ILlKWS%2BHeph1gLwwSw7uzlQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:06:19Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A06%3A19Z&Signature=EXgBITZCQ8/4eeEaJdYoGf6pFWPbAML2CQgImJwk5Mk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:06:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A06%3A20Z&Signature=8NrWWez7ZB2O%2Bpbteyh/7p0bkIAV5dNOqfQNc22y3sA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:06:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A06%3A20Z&Signature=eHVgEyxPZH2bupiO882yr/K71sSjj9mF6jXNyY0/M4g%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ASA0XC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:06:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ASA0XC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A06%3A21Z&Signature=GG1xwoVd7dSy/RjW8WdV4qN7n%2BsRRLy9a3UNodTDOEU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZNJO34
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:23Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZNJO34&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A23Z&Signature=8Q/inqgOXQ2O/ixBv%2BWarvlsvZk6ILDkyTK4YgRkmbY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002XDQJRA
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQJRA&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A24Z&Signature=v7YVeuGewwfXbHgfHD06IbaXF6/YR8kkAlPkKrwrV7k%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A25Z&Signature=gVctwSqV0JU63%2BsROy01w%2BxxWo2dj3at%2BcoAVqbAwzc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WTC1NG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1NG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A25Z&Signature=OEemx8rn6zeiJHcADOjy0AHVcOIzAN8qTsAV96DdnIg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A25Z&Signature=2SCrp5MChi8IWSCOmnOQB0w5g7EZU/oVyqnrHCGFv6I%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A26Z&Signature=sQIbisQAsnzWCVQeIpPIR9mb8/jvNkEHitFR8qlFXBs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A26Z&Signature=tijhP7sIOl3M6/m6JaAIj5KSxDAil%2BN9Zk1e9y8SbAI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX754K
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX754K&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A27Z&Signature=R7wuJOlIEgDmOZ5pU2RECJrOYJd8ljt9HDAEBQM3Jlw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A28Z&Signature=IGAKZvP5Z0t/cqJNOCJcwoLGctfIkPLYGev7crkqNYw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A29Z&Signature=kTTBmJcZRuy5jrP8p5wSKED89GFhTobKbstZZSDMMsw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A29Z&Signature=f3IumU5nZRl0/de4XfXZVT9DZNjU3MOtBF5HxkL1bXE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A29Z&Signature=Hu2KD94ormPZ8FVfL14Lpfbo/EvsPAZ7mdCl/smtwTE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:06:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A06%3A31Z&Signature=BJEFryooBh6qH9QtYUFPFuckYCipXcT/Q5ccSlq65/c%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:06:31Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A06%3A31Z&Signature=GDcf1vP1no%2BYc8OWUcZUKiUcgHNw8vkCUr8Hsm1XOuo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:06:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A06%3A33Z&Signature=Hvhnr/CS7seMNkgiIr%2B3l5Tcye/Ergx7dsPIH2Njwy8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:06:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A06%3A33Z&Signature=sD5uM7DMGCYXQG4mtDraijcX3/T8EsIIqoq9gMYYFfg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:06:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A06%3A33Z&Signature=G0WegxQjbrMNEF5M60DeNM19mV7wRQojr9o8N0YWQuU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCKC
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-27T14:06:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-27T14%3A06%3A36Z&Signature=8DZL0eZCvyOuinXGBbK9FnsBNQ6m2ct%2BOaNy7dFbP0c%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A41Z&Signature=uXN0/hQgabprLKElAgsxtZ3DdZA8ZfoukUK0d0v8G6A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A42Z&Signature=CnjLD3Okd2xT60ciEMsMwLMniX9Jx0MQkRk5OMxOOo8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A42Z&Signature=mLe33PH77mQP5ssv59bMDUSZprc%2B5KTSGEKMukRG1Eg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A42Z&Signature=KpLoqTd4/C1jzKLdrtX3%2B3E47c/Zdqn1NSTq45Q3Ezw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A43Z&Signature=mw0k2XJ4ODvFOJSoGNcGYwjGbYd60skIcczJWvG9zXg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A43Z&Signature=bXltTFz00IVl9YZbut5s0p%2BW4WD4rtJuiQstypDBF/4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX79HS
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX79HS&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A45Z&Signature=LvLV4cQDOOs2uITsPCYnE%2BW3tCjf/c7VnPfV6g9dftg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YIHQ2G
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YIHQ2G&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A45Z&Signature=Fzmmsg5cwJAkGdt8oEJ7wjYgFaEZP3hhXRNxHHWmI%2Bc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=Phone-Blac
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=Phone-Blac&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A46Z&Signature=fxMJ5/IeTYKf1JMK%2B5pp6qX1DJH1Kj6zzZlGKvI9Nag%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A46Z&Signature=dVAHYc2snDztqg4COe1XALogG4KLCLHvgWIIwkDfcCY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A47Z&Signature=FCeB%2BicNx%2BLZ7M/LP1KKfx3JC8pCPKEy2c8ChcvTFHY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A47Z&Signature=JEn3ctr2O6CXLi90Bj/hYHcyg/mI3hwWdz/GKJSUwUc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A47Z&Signature=Oht8Vvo1dDyw/L/o1OSbxqaOqTy8Qtaa9bsuv%2B%2BwGfo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX7AH2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX7AH2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A49Z&Signature=hMCL4FeNAvu7AKQUs0iBOVqI1yDjCcbJ4OClaCqSDIE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A50Z&Signature=5gfo9Lutz/jeSkXw/qZ3ACClbpQ6ba19Y9FfD%2BO0cGk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A50Z&Signature=hI1JKJC7Z4QjQTSampyuUMy/UfVhKFvMAYwRLIrHzTg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A50Z&Signature=YnPvt/65jwOU%2BC2beBB9y3Posyvoll7kC%2BisaTP8acw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LSHVUG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A51Z&Signature=dqpLTKUYGzrBnW%2BDcBEB/a5WCTuoZxTANAIrMzFuF7A%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:06:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A06%3A52Z&Signature=W2jbxqdW5BTKBQ3gM%2BpU6Cyjf%2BKxX8jtJJkmllJoH8U%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:06:53Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A06%3A53Z&Signature=aNZMYJYmt20ZZ/47Pd4d80SPhzZLxLWbXkYiJ9VqRtc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:06:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A06%3A54Z&Signature=gmXo87xvhMx2cFq3PnzZzpqHP7VwuM0XgRNunMGe4Mk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:06:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A06%3A54Z&Signature=LuCfKHtkm4SUK8Ucr80mmHLd11vCgVWlTTIXDT33QGM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:06:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A06%3A55Z&Signature=CeUWZ5cnqyv5bliC1lxv0C4HN11AZ96OUGfDX3XwApQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:06:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A06%3A55Z&Signature=KIBRAqHKs%2BfTJ3LuyiY7t%2BW91FmbdOIDONMmSzzs77M%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:06:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A06%3A56Z&Signature=hqJQbD0fy00DDKcHHZrs/RYTcwo%2BUM5Fvc2hSI669QY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:06:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A06%3A56Z&Signature=0yQFQLkeU/k/96tc35MaG7ca/vcPP7siZeGA9EA3FjM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:06:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A06%3A57Z&Signature=pwFK4Ab2xhKHMgp6xiCinGBKi7yilCZrrKYv45HXQf0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002OB49SW
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-27T14:06:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002OB49SW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-27T14%3A06%3A57Z&Signature=SYPAuSOtCjYbBVgX8cUqti9CBTwTUlkf6gs4sSuUw/Q%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WB2P4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WB2P4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A01Z&Signature=c58Wcrnz66dD//AKb38sY%2Btdfc0AGiZvq69kHrD/lQ8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WB2P4O
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WB2P4O&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A01Z&Signature=eBNLnLgfwCpfn0lq9BSDHwXd2FacJwyZNWbug%2BOh%2BOA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A02Z&Signature=EybIFc8/eEGpiHg8%2BbpJLnIicxsQGDUSXDz/1XCnWA0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A03Z&Signature=3NsWo/hW3sdyBKEYMOueQ2vHdZiZZKlWBCuRFqYW3Zg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VPE1CK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:07:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VPE1CK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A07%3A03Z&Signature=XXq5ZDM88Y7rtDwG7mR6Brw6y%2BkGDJT0Jw1%2BXHMQV7U%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A04Z&Signature=JZ//bMT4HE7AZqpxE26CEQgkQlEPmz6rURqFPGVCOo0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A05Z&Signature=nOGWn0bKV1WDQxOkqB3TeH0Fky09zm6HoPd7x3FHRJw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:07:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A07%3A05Z&Signature=2/GiJHLp/TQ9GDWzgAbgrWU9MoAeLKAqhziteJXEt8E%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:07:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A07%3A06Z&Signature=NbYQDXDD8NlAjXt0LGGkk7KB3pMz1xWWtuMl6GyK0l4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:07:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A07%3A06Z&Signature=p4UksS2VgDu%2BIo1UZVrYrR92HtXNsgmIpUG7YBEeYBU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:07:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A07%3A07Z&Signature=tG62IXWRa0PTBGEcMQqrFfjNmEJ9Kb6skvwc/6zDMyE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-02-27T14:07:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-02-27T14%3A07%3A07Z&Signature=mJlnh1XfGeOaX%2Bze/Ixgr2qe2PLXRi3BYaGJjLAAIsk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-02-27T14:07:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-02-27T14%3A07%3A08Z&Signature=1z%2BJsiMr7Ony7q6pfG25vs8FbrxwP4f5RHhhFxhPxaE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-02-27T14:07:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-02-27T14%3A07%3A08Z&Signature=JXiJj/WWV1Q66eMCyfaestWjBHF0qTJf%2BdRZ1q41Cz4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JIO4JY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-02-27T14:07:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JIO4JY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-02-27T14%3A07%3A09Z&Signature=cvRmzCjJIGxNJUo/ykgLhBEGZ0hChHsYKySPVYw0Kg0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWK83E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWK83E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A12Z&Signature=VUtbWnWq5I3p%2BtJe5fcHGo533LBuXgg5vpeYlzUdVIM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WTC1TK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1TK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A13Z&Signature=v6yd5IO/MOjonR9iJ1%2BrvtIF0WjOXz9LulBbnEYnuGs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VEC858
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:13Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VEC858&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A13Z&Signature=x0DC6gksNPTMxohyopTLwHLvNnkyfOzq8zdFCGmp7N4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZRQEAG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZRQEAG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A14Z&Signature=tES8xiNfZL9lN2kdyfgVgcgV0pf67ziU29yX8acAU1M%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:14Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A14Z&Signature=o3ulDesXdCN5Uqj/sEKZUp2FCDD1BGvR7mH49TJVuUo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:15Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A15Z&Signature=GM5TK3P9u02WUYom2ix%2BGH9xV8QHl8R33F8IVQooLnM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-02-27T14:07:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-02-27T14%3A07%3A16Z&Signature=tr4Gka0gegOZmkd8B/2SsxVoc8LzlxkJ0clSh1tycuQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-02-27T14:07:16Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-02-27T14%3A07%3A16Z&Signature=OB14atOcMiGRPv7T9azJR80IaVPYxZL1Y1kVOr3B8f4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-02-27T14:07:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-02-27T14%3A07%3A17Z&Signature=Q8TZ4qBE4Kq/xUqMRAshR1AnnoMFyGt085YIVjP8pp0%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-02-27T14:07:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-02-27T14%3A07%3A17Z&Signature=AO6NbI5ctxcfP2BdjZ6SJkmI9kVjHa2sDiA9KY86eds%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002YIHRKM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:19Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002YIHRKM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A19Z&Signature=ipOe/OHwoxfwRzw3mv1EGl9Uk3yZ87N2UtHx9tRuG10%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A20Z&Signature=tEJy9GFLd5/YO74SHt%2BoVr2aG3BH9CJtfwI96rvZJLY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A21Z&Signature=kMQvM1jBwNDqvgIGeqqsUEltvS8UUR60qejrYxKZeqg%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WC8XNK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-02-27T14:07:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WC8XNK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-02-27T14%3A07%3A21Z&Signature=hZINsA8tcNhMFci4LmdV35QM3n1OzXoyQugd47GqyIo%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002WC8XNK
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-02-27T14:07:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WC8XNK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-02-27T14%3A07%3A22Z&Signature=uJJV%2B7yzcQSlULzt1MecoKBe8ML7lrC0PXAmXfoeMYU%3D
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 15:09:49) [GET]
+  Parameters: {"product_idurl"=>"nokia_5235"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (9.8ms)
+Rendered home/_product_price (14.7ms)
+Rendered home/_product_tab_overview (2.9ms)
+Rendered home/_product_tabs (191.8ms)
+Completed in 1442ms (View: 321 | 200 OK [http://localhost/product/nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:09:55) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1127.8ms)
+Rendered home/_product_tabs (1158.5ms)
+Completed in 1716ms (View: 1164 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:10:31) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1045.6ms)
+Rendered home/_product_tabs (1059.3ms)
+Completed in 1478ms (View: 1064 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:10:36) [POST]
+  Parameters: {"new_tab"=>"overview", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_overview (200.3ms)
+Rendered home/_product_tabs (216.6ms)
+Completed in 705ms (View: 223 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=overview&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:10:37) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (937.6ms)
+Rendered home/_product_tabs (954.1ms)
+Completed in 1821ms (View: 959 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:11:19) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1079.0ms)
+Rendered home/_product_tabs (1101.2ms)
+Completed in 1715ms (View: 1107 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:13:33) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (66.3ms)
+Rendered reviews/_short (42.4ms)
+Rendered reviews/_short (24.8ms)
+Rendered reviews/_short (20.3ms)
+Rendered reviews/_short (20.6ms)
+Rendered reviews/_short (24.6ms)
+Rendered reviews/_short (19.5ms)
+Rendered reviews/_short (21.6ms)
+Rendered reviews/_short (20.8ms)
+Rendered reviews/_short (23.9ms)
+Rendered reviews/_short (51.6ms)
+Rendered reviews/_short (51.1ms)
+Rendered reviews/_short (19.8ms)
+Rendered reviews/_short (21.9ms)
+Rendered reviews/_short (35.6ms)
+Rendered reviews/_short (30.3ms)
+Rendered reviews/_short (30.8ms)
+Rendered home/_product_tab_reviews (915.7ms)
+Rendered home/_product_tabs (945.6ms)
+Completed in 1551ms (View: 963 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:13:36) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (58.7ms)
+Rendered reviews/_short (39.9ms)
+Rendered reviews/_short (24.7ms)
+Rendered reviews/_short (18.8ms)
+Rendered reviews/_short (21.7ms)
+Rendered reviews/_short (23.0ms)
+Rendered reviews/_short (20.2ms)
+Rendered reviews/_short (21.0ms)
+Rendered reviews/_short (19.7ms)
+Rendered reviews/_short (26.7ms)
+Rendered reviews/_short (55.1ms)
+Rendered reviews/_short (55.1ms)
+Rendered reviews/_short (21.0ms)
+Rendered reviews/_short (27.6ms)
+Rendered reviews/_short (37.8ms)
+Rendered reviews/_short (200.9ms)
+Rendered reviews/_short (31.8ms)
+Rendered home/_product_tab_reviews (839.5ms)
+Rendered home/_product_tabs (857.0ms)
+Completed in 1696ms (View: 881 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:13:39) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1203.3ms)
+Rendered home/_product_tabs (1224.1ms)
+Completed in 1907ms (View: 1229 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:14:55) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1161.8ms)
+Rendered home/_product_tabs (1188.9ms)
+Completed in 1756ms (View: 1194 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:16:56) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1166.7ms)
+Rendered home/_product_tabs (1187.4ms)
+Completed in 1827ms (View: 1194 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:17:20) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1187.2ms)
+Rendered home/_product_tabs (1209.0ms)
+Completed in 1814ms (View: 1215 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:17:22) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (436.9ms)
+Rendered home/_product_tabs (467.3ms)
+Completed in 1400ms (View: 484 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:17:25) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1229.2ms)
+Rendered home/_product_tabs (1251.5ms)
+Completed in 1977ms (View: 1257 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:17:53) [POST]
+  Parameters: {"new_tab"=>"overview", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_overview (263.8ms)
+Rendered home/_product_tabs (279.0ms)
+Completed in 855ms (View: 284 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=overview&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:17:56) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1216.9ms)
+Rendered home/_product_tabs (1232.3ms)
+Completed in 1821ms (View: 1237 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:18:13) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1227.0ms)
+Rendered home/_product_tabs (1256.6ms)
+Completed in 1850ms (View: 1262 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:18:40) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1187.4ms)
+Rendered home/_product_tabs (1207.2ms)
+Completed in 1728ms (View: 1212 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:18:48) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (568.7ms)
+Rendered home/_product_tabs (591.2ms)
+Completed in 1374ms (View: 612 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=nokia_5235]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 15:18:51) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5235", "authenticity_token"=>"21w1e3oKfPZWctbCFOyfFgJob2R5Hd2lfqIB+1R8BxE=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (60.5ms)
+Rendered reviews/_short (39.9ms)
+Rendered reviews/_short (311.2ms)
+Rendered reviews/_short (21.6ms)
+Rendered reviews/_short (20.6ms)
+Rendered reviews/_short (25.7ms)
+Rendered reviews/_short (21.4ms)
+Rendered reviews/_short (21.5ms)
+Rendered reviews/_short (20.7ms)
+Rendered reviews/_short (26.5ms)
+Rendered reviews/_short (53.9ms)
+Rendered reviews/_short (55.2ms)
+Rendered reviews/_short (21.4ms)
+Rendered reviews/_short (23.3ms)
+Rendered reviews/_short (36.5ms)
+Rendered reviews/_short (31.2ms)
+Rendered reviews/_short (30.6ms)
+Rendered home/_product_tab_reviews (982.1ms)
+Rendered home/_product_tabs (999.5ms)
+Completed in 1680ms (View: 1018 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]

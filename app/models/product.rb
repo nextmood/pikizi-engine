@@ -147,5 +147,20 @@ class Product < Root
     node_product
   end
 
+  def tips(mode)
 
+
+    unless @opinions
+      l = []
+      reviews.each { |r| r.paragraphs.each { |p| l.concat(p.opinions) } }
+      @opinions = Opinion.find(l.collect(&:id))
+    end
+    @opinions.select  do |o|
+      intensity = case mode
+        when :pro then o.intensity >= 0.0
+        when :con then o.intensity <= 0.0
+      end
+      o.is_a?(Tip) and intensity
+    end
+  end
 end

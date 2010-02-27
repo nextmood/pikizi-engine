@@ -6,7 +6,7 @@ class Paragraph
   key :content, String # full content
   key :ranking_number, Integer # the first, 2nd third paragraph etc...
 
-  many :opinions
+  many :opinions, :polymorphic => true
   
 
 end
