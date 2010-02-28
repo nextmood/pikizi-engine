@@ -7,10 +7,15 @@
 
     <% if hash_category_reviews and reviews = hash_category_reviews[category] %>
 
-        <div class="pkz_category_title" style="padding-left:0px;" ><%= category %></div>
+        <div class="pkz_category_title" style="padding-left:0px;" >
+          &nbsp;<%= pluralize(reviews.size, "review") %> in <%= category %>
+          &nbsp;<%= link_to_function("more...", "document.getElementById('reviews_#{category}').toggle();")   %>
+        </div>
+        <div id="reviews_<%= category %>" style="display:none;">
         <% for review in reviews %>
             <%= render(:partial => "/reviews/short", :locals => {:review => review } ) %>
         <% end %>
+        </div>
 
     <% end %>
 

@@ -31151,3 +31151,477 @@ Rendered reviews/_short (30.6ms)
 Rendered home/_product_tab_reviews (982.1ms)
 Rendered home/_product_tabs (999.5ms)
 Completed in 1680ms (View: 1018 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5235]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-02-27 20:12:11) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 120ms (View: 118 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-27 20:12:18) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1023ms (View: 23 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-27 20:12:24) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5504ms (View: 952 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 20:12:39) [GET]
+  Parameters: {"product_idurl"=>"htc_magic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (7.7ms)
+Rendered home/_product_price (13.0ms)
+Rendered home/_product_tab_overview (1.9ms)
+Rendered home/_product_tabs (26.7ms)
+Completed in 1208ms (View: 432 | 200 OK [http://localhost/product/htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:12:44) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1362.4ms)
+Rendered home/_product_tabs (1385.4ms)
+Completed in 2154ms (View: 1393 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:13:18) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (658.2ms)
+Rendered home/_product_tabs (682.1ms)
+Completed in 1600ms (View: 703 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:13:22) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (1378.1ms)
+Rendered home/_product_tabs (1410.4ms)
+Completed in 2223ms (View: 1427 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:13:27) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (62.2ms)
+Rendered reviews/_short (37.5ms)
+Rendered reviews/_short (24.6ms)
+Rendered reviews/_short (113.5ms)
+Rendered home/_product_tab_reviews (312.9ms)
+Rendered home/_product_tabs (350.6ms)
+Completed in 1166ms (View: 362 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:14:37) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (391.0ms)
+Rendered reviews/_short (39.0ms)
+Rendered reviews/_short (27.6ms)
+Rendered reviews/_short (113.1ms)
+Rendered home/_product_tab_reviews (629.8ms)
+Rendered home/_product_tabs (652.2ms)
+Completed in 1249ms (View: 661 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:14:50) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (165.2ms)
+Rendered home/_product_tabs (188.8ms)
+Completed in 958ms (View: 204 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:14:55) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (58.3ms)
+Rendered reviews/_short (35.3ms)
+Rendered reviews/_short (26.3ms)
+Rendered reviews/_short (114.4ms)
+Rendered home/_product_tab_reviews (760.2ms)
+Rendered home/_product_tabs (792.2ms)
+Completed in 1426ms (View: 803 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:17:33) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (64.5ms)
+Rendered reviews/_short (38.2ms)
+Rendered reviews/_short (27.1ms)
+Rendered reviews/_short (108.3ms)
+Rendered home/_product_tab_reviews (323.1ms)
+Rendered home/_product_tabs (362.2ms)
+Completed in 1349ms (View: 395 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:17:55) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (63.2ms)
+Rendered reviews/_short (39.1ms)
+Rendered reviews/_short (27.3ms)
+Rendered reviews/_short (114.2ms)
+Rendered home/_product_tab_reviews (753.1ms)
+Rendered home/_product_tabs (788.1ms)
+Completed in 1426ms (View: 798 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:19:38) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (559.7ms)
+Rendered home/_product_tabs (633.8ms)
+Completed in 2052ms (View: 670 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_magic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 20:19:40) [GET]
+  Parameters: {"product_idurl"=>"htc_magic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (8.6ms)
+Rendered home/_product_price (17.1ms)
+Rendered home/_product_tab_overview (2.8ms)
+Rendered home/_product_tabs (33.5ms)
+Completed in 1026ms (View: 262 | 200 OK [http://localhost/product/htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:19:45) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings (249.9ms)
+Rendered home/_product_tabs (271.6ms)
+Completed in 1156ms (View: 432 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:19:49) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (117.0ms)
+Rendered reviews/_short (34.3ms)
+Rendered reviews/_short (26.1ms)
+Rendered reviews/_short (257.7ms)
+Rendered home/_product_tab_reviews (530.3ms)
+Rendered home/_product_tabs (564.1ms)
+Completed in 1219ms (View: 580 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 20:20:03) [GET]
+  Parameters: {"id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (306.2ms)
+Rendered reviews/_paragraph (684.8ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (13.8ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (17.8ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (30.7ms)
+Rendered reviews/_paragraph (16.7ms)
+Rendered reviews/_paragraph (16.1ms)
+Rendered reviews/_paragraph (18.8ms)
+Rendered reviews/_paragraph (21.6ms)
+Rendered reviews/_paragraph (13.8ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (14.5ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (14.6ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (14.9ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (15.1ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (185.6ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (15.9ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.6ms)
+Completed in 3552ms (View: 2737 | 200 OK [http://localhost/reviews/show/4b89279cdb599507c6000291]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-02-27 20:20:12) [GET]
+  Parameters: {"review_id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 1271ms (View: 1082 | 200 OK [http://localhost/review_edit/4b89279cdb599507c6000291]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-02-27 20:21:20) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "review"=>{"rating"=>"0.0", "min_rating"=>"0.0", "category"=>"expert", "author"=>"ecrestan", "product_id"=>"4b892671db599507be0001bb", "max_rating"=>"0.0", "source_url"=>"eric crestan", "reputation"=>"0.0", "content"=>"<p>HTC Magic\r\n</p><p>( Redirected from Htc magic )\r\n</p><p>HTC My Touch 3G HT-03Aushiro.jpg Manufacturer HTC Type Candybar smartphone Release date April 27 ,  2009 ( Spain )\r\n</p><p>May 2009 ( Taiwan )\r\n</p><p>June 2 ,  2009 ( Canada )\r\n</p><p>June 2009 ( Singapore ,  Hong Kong ,  the Netherlands )\r\n</p><p>July 28 ,  2009 ( United States ) Operating system Android 1.6 ( Donut )  ( 1.5 ( Cupcake ) in Canada ) Power 3.7 V 1340 mAh\r\n</p><p>Internal rechargeable removable lithium-ion battery CPU 528 MHz Qualcomm MSM7201A ARM11 processor ( PV32B ) or 528 MHz Qualcomm MSM7200A ARM11 processor ( PVT32A ) Storage capacity Flash memory :  512 MB\r\n</p><p>microSD slot :  supports up to 16 GB Memory 192/288 MB RAM\r\n</p><p>512 MB ROM Display 320 x 480 px ,  3.2 in ( 81 mm ) ,  HVGA ,  65,536 color LCD at 180 pixels per inch ( ppi ) Input Multi-touch capacitive touchscreen display ,  volume controls ,  proximity and ambient light sensors ,  3-axis accelerometer Camera 3.2 megapixel with auto focus Connectivity Wi-Fi ( 802.11b/g ) ,  Bluetooth 2.0+EDR ,  ExtUSB ,  A-GPS\r\n</p><p>Quad band GSM 850 900 1800 1900 MHz GPRS/EDGE\r\n</p><p>Tri band UMTS 900 1700 2100 MHz HSDPA/HSUPA ( US/Europe )  ( 7.2/2 Mbit/s ) Dimensions 113 mm ( 4.4 in )  ( h )\r\n</p><p>55 mm ( 2.2 in )  ( w )\r\n</p><p>13.65 mm ( 0.537 in )  ( d ) Weight 116 g ( 4.1 oz ) Predecessor HTC Dream Successor HTC Hero\r\n</p><p>The HTC My Touch ( known as the T-Mobile myTouch 3G in the US ,  the Rogers HTC Magic in Canada ,  HTC Magic in Spain and the docomo HT-03A in Japan ) is a smartphone designed by HTC .  It is the second handset by HTC that uses the Android operating system ( the first being the HTC Dream ) .  It was unveiled by Vodafone on 17 February 2009 at the Mobile World Congress in Barcelona,[1] and went on sale in Spain on 27 April,[2] in the UK and Taiwan in May 2009,[3] and in Singapore ,  Hong Kong and The Netherlands in June 2009.[4] It will become more widely available to customers Germany ( Vodafone ) ,  France ( SFR ) ,  Philippines ( SMART Communications ) ,  India ( Airtel ) and non-exclusively in Italy and Sweden ,  with more countries to follow.[5]\r\n</p><p>The device was released in Canada by Rogers Wireless on 2 June 2009.[6][7] .\r\n</p><p>Preorders for the smartphone in the United States through T-Mobile began on July 8 ,  2009.[8] T-Mobile officially released on August 5 ,  2009.[9] In Russia ,  there was information that it will be available[10] via Russian HTC official online store for about 770 USD,[11] but soon HTC announced that it decided to sell another Android-powered device instead of HTC Magic.[12] According to media reports May 2009 the phone will be available in the Scandinavian countries “soon \"  ,  without giving any date.[13]\r\n</p><p>Vodafone has exclusive rights to sell the HTC Magic ,  but only in the markets they service .\r\n</p><p>Software\r\n</p><p>The HTC Magic runs the Android Operating System and comes pre-installed with a Webkit based browser .  Other pre-installed software enable access to various Google services ,  including Gmail ,  Google search ,  Google Maps ,  Google Talk and YouTube.[5]\r\n</p><p>Like the HTC Dream ,  the Android Market application ,  which allows users to download new software applications from third-party developers ,  as well as providing publicly-viewable ratings and comments ,  is also included with the device.[14] Indian versions of HTC Magic do not have Google apps and Android Market access.[15][16]\r\n</p><p>There also are several non-official versions of Android released for the Magic ,  such as the CyanogenMod firmware ,  which offers enhanced performance and additional features.[17]\r\n</p><p>Google Maps\r\n</p><p>The Google Maps application supports map ,  satellite ,  traffic ,  and street view .  Street View uses the accelerometer and digital compass to align the view on the screen with the actual orientation of the phone .  It also comes with Google latitude ,  a location based service that allows friends who also have Google maps to view your locale ,  add status updates ,  chat ,  etc .  Google maps has recently been updated to provide a more robust search experience .  Searching for a business would bring up the usual search criteria ,  as well as ratings ,  reviews ,  and if applicable ,  the website to the business .  Another addition to the update includes the ability to receive routes for different methods of transportation including walking ,  and public transit .  This update can be found in the Android market .  As of November 2009 ,  Google Maps offers free Google Maps Navigation ( turn by turn GPS with TTS ) for Android phones running with Android 1.6 or higher in the United States .\r\n</p><p>Location information\r\n</p><p>The HTC Magic offers two different sources of location information for applications such as Google Maps :  a GPS receiver built-in to the chipset ,  and radio-tower location based on a database of mobile phone tower locations .  In addition ,  the Magic includes a digital compass ;  it allows one to turn the phone showing the local map to orient it correctly ( the map is not turned on the screen ,  North is always up ) .\r\n</p><p>Hardware\r\n</p><p>* There exist two different versions of the HTC Magic/Sapphire ,  an HTC version ( PVT32A ) with a Qualcomm MSM7200A ARM11 processor ,  288 MB RAM ,  and HTC software additions such as Exchange support ,  PDF Viewer ,  and QuickOffice ,  and a Google version ( PVT32B ) with a Qualcomm MSM7201A ARM11 processor ,  192MB RAM and “Google \"  branding .  Because the hardware in each is slightly different ,  they require different boot images and wireless lan kernel modules .\r\n</p><p>* The HTC Magic lacks a headphone jack .  Headphones require a special adapter ( bundled with T-Mobile myTouch 3G ) .\r\n</p><p>* The HTC Magic only contains profiles for hands-free devices like car kits ,  and wireless stereo earphones .  The HTC Magic does not support phone-phone or phone-PC connectivity out of the box,[18] although this is present in the kernel but disabled .  Unofficial firmwares such as CyanogenMod have enabled Bluetooth OBEX.[19]\r\n</p><p>* This phone has a hearing aid compatibility rating of M4.[20]\r\n</p><p>* At 1.55 W/kg ,  the HTC Magic produces one of the highest levels of cell phone radiation specific absorption rate amongst commercially available mobile phones.[21]\r\n</p><p>* Display :  3.2 in ( 8.1 cm ) TFT-LCD flat glass touch-sensitive HVGA screen with 480 X 320 pixel resolution .  The capacitive touchscreen makes it impossible to use a standard stylus .  Users can interact to bring up or move content with a finger touch ,  tapping or touch-drag motion .  The touchscreen hardware is capable of multitouch gestures[22] ,  but official release of Android ( v1.0 to v1.6 ) available for the Magic have this functionality disabled at the kernel level .  Users can patch the supplied version of Android ,  download a hacked version or update to Android 2.0 or later to make use of the multi-touch screen .\r\n</p><p>* CPU :  The MSM7200A ( PVT32A ) or MSM7201A ( PVT32B ) is an ARM-based ,  dual-core CPU/GPU from Qualcomm and contains many built-in features ,  including 3G and a GPU capable of up to 4 million triangles/sec .  It has hardware acceleration for Java,[23] but this does not accelerate execution of Android applications ,  as they are targeted to the Dalvik VM ,  not the Java VM .\r\n</p><p>* Keyboard The HTC Magic does not have a physical keyboard .  Text input is done through an on-screen keyboard .  The keyboard can be set to provide haptic and sound feedback when keys are pressed .  The HTC Magic has a built in accelerometer which rotates the keyboard between portrait and landscape view automatically based on the orientation of the phone .  The HTC Magic also has a number of physical back-lit buttons :\r\n</p><p>o Send ( Green ) - Launches the dialer to call a number ,  or accepts an incoming call ,  or hold to launch the voice dialer .\r\n</p><p>o Home - Returns to the android Home Screen ,  or hold to open up a list of recently used applications .\r\n</p><p>o Menu - Opens up the menu of the active application ,  or hold to open up the keyboard .\r\n</p><p>o Back - Exits out of the keyboard ,  or goes back to the previous application ,  or goes back a page in the web browser .\r\n</p><p>o Search - Launches a search function in the active application ,  or hold to launch voice search .\r\n</p><p>o End ( Red ) - Ends a call if there is a call currently active ,  or puts the phone into sleep mode ,  or hold to Power off the phone .\r\n</p><p>o Trackball - Backlit Trackball navigates between menus or scroll through a line of text ,  press down to select the highlighted item .\r\n</p><p>o The HTC Magic also has an LED indicator which flashes for missed calls ,  text messages ,  or lights up orange when charging ,  or green when charging is 90% or higher .  There is also a Volume Rocker on the left side of the phone .  There is no physical dedicated camera button .\r\n</p><p>* Camera :  The HTC Magic has a 3.2-megapixel camera with autofocus functionality .\r\n</p><p>* Video :  The HTC Magic can play H.264 ,  streaming ,  3GPP ,  MPEG4 ,  and 3GP files.[24] There is no light ( “flash \"  ) for the camera in low light conditions .  Video recording and uploading to YouTube is available as of Android 1.5 .  Recording resolution 352x288 H.263 3GP Mono sound @ 8 kHz .\r\n</p><p>* Storage :  The HTC Magic has a microSD card slot and comes with a 4GB Class 2 SDHC memory card .  It has been confirmed to work with capacities up to 16GB ,  and may work with even larger cards .  When the USB cable is connected to a computer ,  this computer can access the card without removing it from the HTC Magic .  The phone can access media files arranged in folders ,  but the folders have to be created from a third-party file management application or from a computer .\r\n</p><p>* Battery :  The HTC Magic has a user-replaceable ,  3.7V ,  1340mAh rechargeable lithium ion battery ,  which is advertised to offer up to 600 hours of standby power .\r\n</p><p>* Location :  The HTC Magic has a built in GPS receiver for location functionality including free turn by turn GPS ( Google Maps Navigation ,  United States only ) .  It can also use cell towers and wifi hotspots to help determine its location .  The HTC Magic has a built in digital Compass to help determine its orientation .\r\n</p><p>* Case :  Three different colors are available for the myTouch 3G :  Black ( Gray Trim ) ,  Merlot ( Black Trim ) ,  and White ( Silver Trim ) .  The Google Ion version of the HTC Magic is black with a dark blue trim and silver buttons .  The Vodafone HTC Magic is white with a silver trim .\r\n</p><p>* Connectivity :  The HTC Magic supports WiFi ,  3G UMTS and HSPA ,  EDGE ,  and GPRS networks .  The myTouch 3G supports AT&T 's network but only on 2G/EDGE .\r\n</p><p>Package Contents\r\n</p><p>The T-Mobile myTouch 3G comes bundled with a pair of headphones ,  a extUSB headphone adapter ( which also serves as an in-line microphone ) ,  wall charger ,  USB Cable ,  Cloth Pouch ,  Screen Protector ,  and documentation ,  all inside a unique carrying case that also serves as the retail box .  The Phone itself also has a 4GB SanDisk Class 2 microSD Card ( SDHC ) inside .\r\n</p><p>The Vodafone HTC Magic comes bundled with a pair of headphones ,  wall charger ,  USB cable ,  leatherette pouch and documentation .  The phone comes with a 2GB microSD card .\r\n</p><p>The Vodafone Germany HTC Magic comes bundled with a pair of headphones ,  wall charger ,  USB cable ,  leatherette pouch and documentation .  The phone comes with a 8GB microSD card .\r\n</p>", "summary"=>"HTC Magic, review from wikipedia", "knowledge_idurl"=>"cell_phones", "source"=>"Wikipedia"}, "review_id"=>"4b89279cdb599507c6000291", "written_at"=>{"month"=>"2", "day"=>"27", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b89279cdb599507c6000291
+Completed in 137ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 20:21:20) [GET]
+  Parameters: {"id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (139.8ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (16.2ms)
+Rendered reviews/_paragraph (196.3ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (14.2ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (19.9ms)
+Rendered reviews/_paragraph (21.1ms)
+Rendered reviews/_paragraph (17.8ms)
+Rendered reviews/_paragraph (15.6ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (16.0ms)
+Rendered reviews/_paragraph (25.9ms)
+Rendered reviews/_paragraph (14.7ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (14.2ms)
+Rendered reviews/_paragraph (15.2ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (14.5ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (14.3ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (12.2ms)
+Completed in 2663ms (View: 1824 | 200 OK [http://localhost/reviews/show/4b89279cdb599507c6000291]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-27 20:21:42) [GET]
+  Parameters: {"product_idurl"=>"htc_magic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (14.1ms)
+Rendered home/_product_price (13.5ms)
+Rendered home/_product_tab_overview (1.8ms)
+Rendered home/_product_tabs (24.5ms)
+Completed in 836ms (View: 99 | 200 OK [http://localhost/product/htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-27 20:21:45) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (60.2ms)
+Rendered reviews/_short (37.2ms)
+Rendered reviews/_short (28.3ms)
+Rendered reviews/_short (110.1ms)
+Rendered home/_product_tab_reviews (314.8ms)
+Rendered home/_product_tabs (642.2ms)
+Completed in 1303ms (View: 654 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 20:21:51) [GET]
+  Parameters: {"id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (144.5ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.9ms)
+Rendered reviews/_paragraph (15.1ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (14.6ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (15.8ms)
+Rendered reviews/_paragraph (20.2ms)
+Rendered reviews/_paragraph (13.8ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (14.2ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (245.7ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (18.0ms)
+Rendered reviews/_paragraph (15.6ms)
+Rendered reviews/_paragraph (14.4ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (16.1ms)
+Rendered reviews/_paragraph (15.1ms)
+Rendered reviews/_paragraph (18.2ms)
+Rendered reviews/_paragraph (27.7ms)
+Rendered reviews/_paragraph (30.2ms)
+Rendered reviews/_paragraph (18.2ms)
+Rendered reviews/_paragraph (19.2ms)
+Rendered reviews/_paragraph (33.0ms)
+Rendered reviews/_paragraph (21.3ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (31.3ms)
+Rendered reviews/_paragraph (20.9ms)
+Completed in 3124ms (View: 2325 | 200 OK [http://localhost/reviews/show/4b89279cdb599507c6000291]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-02-27 20:33:30) [GET]
+  Parameters: {"mode"=>"p", "id"=>"4b89279cdb599507c6000291"}
+Redirected to http://localhost:3000/reviews/show/4b89279cdb599507c6000291
+Completed in 1035ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b89279cdb599507c6000291?mode=p]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 20:33:31) [GET]
+  Parameters: {"id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (133.2ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (13.8ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (16.6ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (13.2ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.4ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (15.9ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (13.7ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (13.4ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.7ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (17.3ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (14.9ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (12.3ms)
+Completed in 2888ms (View: 1980 | 200 OK [http://localhost/reviews/show/4b89279cdb599507c6000291]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-02-27 20:33:37) [GET]
+  Parameters: {"mode"=>"none", "id"=>"4b89279cdb599507c6000291"}
+Redirected to http://localhost:3000/reviews/show/4b89279cdb599507c6000291
+Completed in 501ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b89279cdb599507c6000291?mode=none]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-27 20:33:38) [GET]
+  Parameters: {"id"=>"4b89279cdb599507c6000291"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (71.1ms)
+Rendered reviews/_paragraph (13.7ms)
+Completed in 1721ms (View: 883 | 200 OK [http://localhost/reviews/show/4b89279cdb599507c6000291]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 11:53:32) [GET]
+  Parameters: {"product_idurl"=>"htc_magic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (15.6ms)
+Rendered home/_product_price (8.8ms)
+Rendered home/_product_tab_overview (1.7ms)
+Rendered home/_product_tabs (127.8ms)
+Completed in 1023ms (View: 213 | 200 OK [http://localhost/product/htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 11:53:45) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (38.1ms)
+Rendered reviews/_short (17.9ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (21.9ms)
+Rendered home/_product_tab_reviews (214.9ms)
+Rendered home/_product_tabs (229.3ms)
+Completed in 597ms (View: 234 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]

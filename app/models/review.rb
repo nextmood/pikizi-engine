@@ -7,8 +7,8 @@ class Review < Root
   include MongoMapper::Document
 
   # this is the global rating
-  key :min_rating, Float
-  key :max_rating, Float
+  key :min_rating, Float, :default => 1.0
+  key :max_rating, Float, :default => 5.0
   key :rating, Float
 
   key :author, String
@@ -53,7 +53,7 @@ class Review < Root
   def get_reputation() source == Review::FromAmazon.default_category ? reputation + 1.0 : 1.0 end
 
   # all categories of reviews and their weights
-  def self.categories() {"amazon" => 1.0, "user" => 2.0, "expert" => 10.0, "feature" => 1.0} end
+  def self.categories() {"expert" => 10.0, "amazon" => 1.0, "user" => 2.0,  "feature" => 1.0} end
   def self.categories_select() categories.collect {|k,v| [k,k] } end
 
   # destroy the record in mongo db, but first we need to remove all attached opinions
