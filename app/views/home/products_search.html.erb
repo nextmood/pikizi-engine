@@ -33,7 +33,7 @@
 
 <div class="boxLwr">
   <div class="box952">
-    <h1>Results for <%= @search_string.inspect %></h1>
+    <h1><%= @search_string ? "Results for #{@search_string.inspect}" : "First 20 products in database..." %></h1>
     <div class="spcr"></div>
 
       <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>

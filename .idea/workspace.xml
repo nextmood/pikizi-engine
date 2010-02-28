@@ -54,19 +54,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_search.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="products_search.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="58" selection-start="1397" selection-end="1420" vertical-scroll-proportion="-10.105263">
+            <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.39285713">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/product.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.5408451">
+            <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,9 +98,9 @@
         <option value="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/home/products_search.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/products_search.html.erb" />
       </list>
     </option>
   </component>
@@ -1030,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="58" selection-start="1397" selection-end="1420" vertical-scroll-proportion="-10.105263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="68" selection-start="2793" selection-end="2805" vertical-scroll-proportion="0.0">
@@ -1046,7 +1039,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.5408451">
+        <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.39285713">
           <folding />
         </state>
       </provider>

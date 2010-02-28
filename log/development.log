@@ -32934,3 +32934,17 @@ Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:47:40)
 Rendering template within layouts/application
 Rendering home/products_search
 Completed in 4927ms (View: 63 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:48:38) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4110ms (View: 139 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:50:43) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5175ms (View: 891 | 200 OK [http://localhost/products_search]
