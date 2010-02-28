@@ -30,7 +30,7 @@
       <file leaf-file-name="_short.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/reviews/_short.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="116" selection-start="711" selection-end="711" vertical-scroll-proportion="-7.5789475">
+            <state line="12" column="116" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -39,7 +39,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="65" selection-start="1813" selection-end="1813" vertical-scroll-proportion="-4.177778">
+            <state line="48" column="65" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,10 +54,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_search.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="products_search.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.39285713">
+            <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="-8.368421">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review_new.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reviews/review_new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="20" selection-start="254" selection-end="254" vertical-scroll-proportion="0.13930348">
               <folding />
             </state>
           </provider>
@@ -85,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/reviews/_paragraph.html.erb" />
         <option value="$PROJECT_DIR$/app/views/landing/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/login.html.erb" />
         <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
@@ -101,6 +109,7 @@
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/views/home/products_search.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/reviews/review_new.html.erb" />
       </list>
     </option>
   </component>
@@ -243,9 +252,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
-      <pane id="Favorites" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -556,15 +564,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Rails.Development">
     <configuration default="false" name="pikizi:recompute_ratings" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -895,16 +904,16 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375731" sideWeight="0.99333334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24936709" sideWeight="0.6461988" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24706867" sideWeight="0.6096491" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38011697" sideWeight="0.9989801" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38011697" sideWeight="0.9989801" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375731" sideWeight="0.99333334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -941,13 +950,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="321" column="311" selection-start="13034" selection-end="13034" vertical-scroll-proportion="0.03380282">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -955,98 +957,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/_product_tab_reviews.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="44" selection-start="216" selection-end="226" vertical-scroll-proportion="0.035714287">
-          <folding />
-        </state>
+        <state line="4" column="44" selection-start="216" selection-end="226" vertical-scroll-proportion="0.035714287" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="30" selection-start="223" selection-end="234" vertical-scroll-proportion="0.24678664">
-          <folding />
-        </state>
+        <state line="8" column="30" selection-start="223" selection-end="234" vertical-scroll-proportion="0.24678664" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/question.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.03208556">
-          <folding />
-        </state>
+        <state line="40" column="18" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.03208556" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.2857143">
-          <folding />
-        </state>
+        <state line="29" column="18" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.2857143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="48" selection-start="2514" selection-end="2514" vertical-scroll-proportion="0.5971831">
-          <folding />
-        </state>
+        <state line="95" column="48" selection-start="2514" selection-end="2514" vertical-scroll-proportion="0.5971831" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/_product_tab_pros_cons.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="344" selection-end="344" vertical-scroll-proportion="0.3243243">
-          <folding />
-        </state>
+        <state line="10" column="17" selection-start="344" selection-end="344" vertical-scroll-proportion="0.3243243" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.35026738">
-          <folding />
-        </state>
+        <state line="24" column="0" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.35026738" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.22727273">
-          <folding />
-        </state>
+        <state line="63" column="0" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.22727273" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="71" selection-start="346" selection-end="346" vertical-scroll-proportion="0.44919786">
-          <folding />
-        </state>
+        <state line="14" column="71" selection-start="346" selection-end="346" vertical-scroll-proportion="0.44919786" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/_short.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="116" selection-start="711" selection-end="711" vertical-scroll-proportion="-7.5789475">
+        <state line="12" column="116" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="65" selection-start="1813" selection-end="1813" vertical-scroll-proportion="-4.177778">
+        <state line="48" column="65" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="68" selection-start="2793" selection-end="2805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="82" column="68" selection-start="2793" selection-end="2805" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="29" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.39285713">
+        <state line="35" column="8" selection-start="1124" selection-end="1124" vertical-scroll-proportion="-8.368421">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/review_new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="254" selection-end="254" vertical-scroll-proportion="0.13930348">
           <folding />
         </state>
       </provider>
