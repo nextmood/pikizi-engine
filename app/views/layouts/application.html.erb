@@ -46,8 +46,8 @@
 
         <div id="search_box">
           <% form_tag '/products_search', :id => "search_form" do -%>
-              <input type="text" id="s" value="search products and advisors" class="swap_value" />
-        	<input type="image" src="/images/gene/trns.gif" width="22" height="22" id="go" alt="Search" title="Search">
+              <%= text_field_tag "s", Product.default_search_text, :class => "swap_value" %>
+        	  <input type="image" src="/images/gene/trns.gif" width="22" height="22" id="go" alt="Search" title="Search">
           <% end -%>
     	</div>
     </div>

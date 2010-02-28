@@ -19,6 +19,16 @@ class Product < Root
   
   timestamps!
 
+  def self.default_search_text() "search products and advisors" end
+
+  def match_search(search_string)
+    if search_string
+      label.downcase.include?(search_string)
+    else
+      true
+    end
+  end
+
   def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
 
   def self.is_main_document() true end

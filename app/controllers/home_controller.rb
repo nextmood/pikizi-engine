@@ -76,9 +76,12 @@ class HomeController < ApplicationController
   # GET /products_search
   # POST /products_search
   def products_search
+    puts "params=#{params.inspect}"
+    @search_string = (params["s"] == Product.default_search_text ? nil : params["s"])
     @knowledge = Knowledge.load_db("cell_phones")
-    search_string = params[:search_string]
-    hash_category_products = @knowledge.products.group_by {|product| product.get_value("phone_category") }
+
+    products_found = @knowledge.products.select { |p| p.match_search(@search_string) }.first(20)
+    hash_category_products = products_found.group_by {|product| product.get_value("phone_category") }
     @list_category_products = hash_category_products.collect { |categories, products| [categories.join(', '), products] }
     @last_category = @list_category_products.last.first
     @knowledge = Knowledge.load_db("cell_phones")

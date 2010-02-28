@@ -32733,3 +32733,204 @@ Rendered reviews/_paragraph (10.9ms)
 Rendered reviews/_paragraph (11.7ms)
 Rendered reviews/_paragraph (11.7ms)
 Completed in 2091ms (View: 1483 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=1]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-02-28 16:21:05) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 39ms (View: 37 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-28 16:21:52) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1055ms (View: 57 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-28 16:22:25) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 613ms (View: 15 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-02-28 16:22:49) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 966ms (View: 27 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:24:59) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"essai"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5579ms (View: 507 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:25:37) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5415ms (View: 506 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:27:30) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5592ms (View: 506 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:27:43) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 7106ms (View: 504 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:28:05) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 6126ms (View: 497 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:28:54) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5465ms (View: 1048 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:29:13) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 6159ms (View: 640 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:29:24) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 6167ms (View: 978 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:29:44) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5704ms (View: 515 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:29:59) [POST]
+  Parameters: {"x"=>"17", "y"=>"7", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU="}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5907ms (View: 513 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:33:04) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5223ms (View: 493 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:33:18) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4037ms (View: 360 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:33:32) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search prodttttttucts and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5074ms (View: 448 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:33:50) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU="}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5098ms (View: 499 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:35:00) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search products and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4645ms (View: 374 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:35:12) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU="}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5442ms (View: 446 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:35:23) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search producnokits and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5461ms (View: 889 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:36:17) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU="}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5297ms (View: 954 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:36:43) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"essai"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4523ms (View: 389 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:37:33) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"essai"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5089ms (View: 1049 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:37:45) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"search trucproducts and advisors"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4613ms (View: 440 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:37:56) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4373ms (View: 377 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:38:55) [POST]
+  Parameters: {"x"=>"14", "y"=>"15", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 5208ms (View: 428 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:45:52) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4501ms (View: 686 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:47:20) [POST]
+  Parameters: {"x"=>"9", "y"=>"17", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4722ms (View: 117 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-02-28 16:47:40) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "s"=>"iphone"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4927ms (View: 63 | 200 OK [http://localhost/products_search]
