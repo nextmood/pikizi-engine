@@ -63,10 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="review.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="review.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/review.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.03380282">
+            <state line="10" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="15" selection-start="293" selection-end="293" vertical-scroll-proportion="0.22712934">
               <folding />
             </state>
           </provider>
@@ -126,7 +135,6 @@
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/review_new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_paragraph.html.erb" />
@@ -137,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/views/home/_product_tab_pros_cons.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_product_tab_reviews.html.erb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -963,11 +972,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="819" selection-end="819" vertical-scroll-proportion="-2.8" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="211" column="24" selection-start="7988" selection-end="7997" vertical-scroll-proportion="0.0" />
@@ -1044,7 +1048,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.03380282">
+        <state line="10" column="39" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="15" selection-start="293" selection-end="293" vertical-scroll-proportion="0.22712934">
           <folding />
         </state>
       </provider>
