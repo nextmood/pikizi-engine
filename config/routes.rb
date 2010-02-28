@@ -22,7 +22,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/questions/:knowledge_idurl/:question_idurl', :controller => 'questions', :action => 'show'
   map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
 
-  map.connect '/review/:review_id', :controller => 'reviews', :action => 'show'
   map.connect '/reviews/:knowledge_idurl', :controller => 'reviews', :action => 'index'
   map.connect '/cut_paragraph/:review_id/:paragraph_id/:caret_position', :controller => 'reviews', :action => 'cut_paragraph'
   map.connect '/review_edit/:review_id', :controller => 'reviews', :action => 'review_new'

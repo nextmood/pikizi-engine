@@ -27,7 +27,7 @@ class Opinion < Root
 
   def self.is_main_document() true end
 
-  def to_html() "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} paragraph_ranking_number=#{paragraph.ranking_number}" end
+  def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} paragraph_ranking_number=#{paragraph.ranking_number}" end
 
 
   def self.generate_xml
@@ -48,7 +48,7 @@ class Rating < Opinion
 
   def is_valid?() min_rating and max_rating and rating end
 
-  def to_html() "#{rating} in [#{min_rating}, #{max_rating}] (#{feature_rating_idurl})" end
+  def to_html(options={}) "#{rating} in [#{min_rating}, #{max_rating}] (#{feature_rating_idurl})" end
 
   def rating_01() Root.rule3(rating, min_rating, max_rating) end
 
@@ -61,7 +61,7 @@ class Comparator < Opinion
   key :operator_type, String
   key :predicate, String
 
-  def to_html() "#{operator_type} than #{predicate} (#{feature_rating_idurl})" end
+  def to_html(options={}) "#{operator_type} than #{predicate} (#{feature_rating_idurl})" end
 
   def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
 
@@ -82,14 +82,23 @@ class Tip < Opinion
   key :intensity, Float
   key :is_mixed, Boolean, :default => false
   
-  def to_html()
+  def to_html(options={})
     if is_mixed
-      "mixed : #{usage} (#{feature_rating_idurl})"
+      s = "mixed : #{usage} (#{feature_rating_idurl})"
     else
       intensity_symbol = Tip.intensities.detect { |i| intensity == i.last }
       intensity_symbol = intensity_symbol ? intensity_symbol.first  : intensity
-      "#{intensity_symbol} : #{usage} (#{feature_rating_idurl})"
+      s = "#{intensity_symbol} : #{usage} (#{feature_rating_idurl})"
+
     end
+    if options[:origin]
+      p = paragraph
+      s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?p=#{paragraph.ranking_number}\" >#{review.source}"
+      s << "&nbsp;&para;#{paragraph.ranking_number}" if p
+      s << "</a></small>"
+    end
+
+    s
   end
 
   def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
@@ -110,7 +119,7 @@ class FeatureRelated < Opinion
 
   key :feature_related_idurl, String
 
-  def to_html() "related to feature #{feature_related_idurl}" end
+  def to_html(options={}) "related to feature #{feature_related_idurl}" end
 
   def is_valid?() true end
 

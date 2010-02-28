@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @knowledge = Knowledge.load_db(@review.knowledge_idurl)
+    @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
   end
 
   # this is a rjs

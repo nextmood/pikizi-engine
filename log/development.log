@@ -31625,3 +31625,1111 @@ Rendered reviews/_short (21.9ms)
 Rendered home/_product_tab_reviews (214.9ms)
 Rendered home/_product_tabs (229.3ms)
 Completed in 597ms (View: 234 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_magic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 12:39:46) [GET]
+  Parameters: {"product_idurl"=>"htc_magic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.2ms)
+Rendered home/_product_price (6.4ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (11.5ms)
+Completed in 424ms (View: 49 | 200 OK [http://localhost/product/htc_magic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:39:52) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_magic", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (224.4ms)
+Rendered home/_product_tabs (241.3ms)
+Completed in 648ms (View: 245 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_magic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 12:40:04) [GET]
+  Parameters: {"product_idurl"=>"blackberry_curve_8530_sprint"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.2ms)
+Rendered home/_product_price (5.7ms)
+Rendered home/_product_tab_overview (47.9ms)
+Rendered home/_product_tabs (59.3ms)
+Completed in 452ms (View: 88 | 200 OK [http://localhost/product/blackberry_curve_8530_sprint]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:40:07) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_curve_8530_sprint", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (20.3ms)
+Rendered home/_product_tab_reviews (27.7ms)
+Rendered home/_product_tabs (38.0ms)
+Completed in 413ms (View: 41 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_curve_8530_sprint]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:40:12) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"blackberry_curve_8530_sprint", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (22.7ms)
+Rendered home/_product_tabs (34.1ms)
+Completed in 522ms (View: 37 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=blackberry_curve_8530_sprint]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 12:40:19) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.4ms)
+Rendered home/_product_price (7.2ms)
+Rendered home/_product_tab_overview (42.0ms)
+Rendered home/_product_tabs (53.5ms)
+Completed in 471ms (View: 89 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:40:23) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+
+ActionView::TemplateError (undefined local variable or method `opinion' for #<Tip:0x103832710>) on line #11 of app/views/home/_product_tab_pros_cons.html.erb:
+8:   <tr>
+9:     <td valign="top">
+10:         <% for pro in product.tips(:pro) %>
+11:             <div><%= pro.to_html(:origin => true) %></div>
+12:         <% end %>
+13:     </td>
+14:     <td valign="top">
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/opinion.rb:92:in `to_html'
+    app/views/home/_product_tab_pros_cons.html.erb:11
+    app/views/home/_product_tab_pros_cons.html.erb:10:in `each'
+    app/views/home/_product_tab_pros_cons.html.erb:10
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:40:48) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (385.8ms)
+Rendered home/_product_tabs (405.7ms)
+Completed in 1116ms (View: 615 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:41:17) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2008.0ms)
+Rendered home/_product_tabs (2018.5ms)
+Completed in 2458ms (View: 2022 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:42:32) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1539.2ms)
+Rendered home/_product_tabs (1549.8ms)
+Completed in 1973ms (View: 1553 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:43:17) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+
+ActionView::TemplateError (undefined local variable or method `opinion' for #<Tip:0x1068007f8>) on line #11 of app/views/home/_product_tab_pros_cons.html.erb:
+8:   <tr>
+9:     <td valign="top">
+10:         <% for pro in product.tips(:pro) %>
+11:             <div><%= pro.to_html(:origin => true) %></div>
+12:         <% end %>
+13:     </td>
+14:     <td valign="top">
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/opinion.rb:92:in `to_html'
+    app/views/home/_product_tab_pros_cons.html.erb:11
+    app/views/home/_product_tab_pros_cons.html.erb:10:in `each'
+    app/views/home/_product_tab_pros_cons.html.erb:10
+    app/views/home/_product_tabs.html.erb:34
+    app/controllers/home_controller.rb:94:in `switch_product_tab'
+    app/controllers/home_controller.rb:93:in `switch_product_tab'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (289.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:43:27) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1859.8ms)
+Rendered home/_product_tabs (1870.4ms)
+Completed in 2505ms (View: 2060 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:44:18) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2343.9ms)
+Rendered home/_product_tabs (2364.9ms)
+Completed in 2869ms (View: 2369 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:44:55) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2640.3ms)
+Rendered home/_product_tabs (2658.9ms)
+Completed in 3124ms (View: 2663 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:46:33) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1462.8ms)
+Rendered home/_product_tabs (1473.4ms)
+Completed in 1928ms (View: 1477 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:46:54) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1482.4ms)
+Rendered home/_product_tabs (1498.5ms)
+Completed in 1961ms (View: 1502 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:48:48) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2251.4ms)
+Rendered home/_product_tabs (2261.9ms)
+Completed in 2729ms (View: 2265 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:50:56) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (3056.3ms)
+Rendered home/_product_tabs (3071.6ms)
+Completed in 3425ms (View: 3076 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:51:21) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1791.9ms)
+Rendered home/_product_tabs (1802.3ms)
+Completed in 2287ms (View: 1807 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:53:11) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2662.5ms)
+Rendered home/_product_tabs (2673.9ms)
+Completed in 3169ms (View: 2678 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 12:53:18) [GET]
+  Parameters: {"id"=>"4b89279bdb599507c6000248"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (52.7ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (14.3ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (14.5ms)
+Completed in 1333ms (View: 1070 | 200 OK [http://localhost/reviews/show/4b89279bdb599507c6000248]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:54:20) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (3037.0ms)
+Rendered home/_product_tabs (3052.6ms)
+Completed in 3425ms (View: 3057 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:54:48) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2946.1ms)
+Rendered home/_product_tabs (2961.6ms)
+Completed in 3502ms (View: 2967 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 12:54:53) [GET]
+  Parameters: {"id"=>"4b89279bdb599507c6000248&p=5"}
+
+Mongo::InvalidObjectID (illegal ObjectID format):
+  mongo (0.18.3) lib/./lib/mongo/types/objectid.rb:110:in `from_string'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/query.rb:69:in `to_criteria'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/query.rb:65:in `each_pair'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/query.rb:65:in `to_criteria'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/query.rb:18:in `criteria'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/query.rb:31:in `to_a'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/document.rb:348:in `to_query'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/document.rb:297:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/document.rb:57:in `find'
+  app/controllers/reviews_controller.rb:13:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (270.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 12:55:06) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (2788.9ms)
+Rendered home/_product_tabs (2809.6ms)
+Completed in 3633ms (View: 2816 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-28 12:55:10) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/show/4b89279bdb599507c6000248/9" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-28 15:38:17) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/show/4b89279bdb599507c6000248/9" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-28 15:38:19) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/show/4b89279bdb599507c6000248/9" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 15:39:02) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (180.3ms)
+Rendered home/_product_tabs (209.2ms)
+Completed in 977ms (View: 307 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 15:39:04) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1397.7ms)
+Rendered home/_product_tabs (1411.9ms)
+Completed in 1779ms (View: 1415 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 15:39:29) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (1397.9ms)
+Rendered home/_product_tabs (1408.0ms)
+Completed in 1783ms (View: 1411 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-28 15:39:33) [GET]
+
+ActionController::RoutingError (No route matches "/review/show/4b89279bdb599507c6000248/1" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:39:52) [GET]
+  Parameters: {"review_id"=>"show", "paragraph_number"=>"4b89279bdb599507c6000248"}
+
+NoMethodError (undefined method `knowledge_idurl' for nil:NilClass):
+  app/controllers/reviews_controller.rb:14:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (123.1ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-02-28 15:40:31) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering reviews/index
+Rendered knowledges/_select_all (1.4ms)
+Rendered knowledges/_products_selection (71.3ms)
+Completed in 20398ms (View: 18630 | 200 OK [http://localhost/reviews/cell_phones]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:40:58) [GET]
+  Parameters: {"id"=>"4b892674db599507be000278"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (21.5ms)
+Completed in 725ms (View: 373 | 200 OK [http://localhost/reviews/show/4b892674db599507be000278]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:41:30) [GET]
+  Parameters: {"review_id"=>"4b892674db599507be000278"}
+
+NoMethodError (undefined method `knowledge_idurl' for nil:NilClass):
+  app/controllers/reviews_controller.rb:14:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (36.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:42:09) [GET]
+  Parameters: {"id"=>"4b892674db599507be000278"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (138.9ms)
+Completed in 834ms (View: 475 | 200 OK [http://localhost/reviews/show/4b892674db599507be000278]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:42:40) [GET]
+  Parameters: {"id"=>"4b892674db599507be000278"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (20.8ms)
+Completed in 732ms (View: 373 | 200 OK [http://localhost/reviews/show/4b892674db599507be000278/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-28 15:42:45) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/show/4b892674db599507be000278/32" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:42:54) [GET]
+  Parameters: {"id"=>"4b892674db599507be000278", "p"=>"32"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (20.3ms)
+Completed in 796ms (View: 388 | 200 OK [http://localhost/reviews/show/4b892674db599507be000278?p=32]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:45:49) [GET]
+  Parameters: {"id"=>"4b8926efdb599507be001197"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (26.4ms)
+Rendered reviews/_paragraph (7.8ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (7.7ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.7ms)
+Completed in 991ms (View: 597 | 200 OK [http://localhost/reviews/show/4b8926efdb599507be001197]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 15:46:44) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.7ms)
+Rendered home/_product_price (8.7ms)
+Rendered home/_product_tab_overview (1.5ms)
+Rendered home/_product_tabs (16.8ms)
+Completed in 637ms (View: 211 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 15:46:47) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (3525.2ms)
+Rendered home/_product_tabs (3536.3ms)
+Completed in 4000ms (View: 3541 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:46:54) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (52.6ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.7ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.3ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (6.4ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (7.9ms)
+Rendered reviews/_paragraph (6.6ms)
+Rendered reviews/_paragraph (163.4ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.7ms)
+Rendered reviews/_paragraph (6.4ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.0ms)
+Completed in 1272ms (View: 853 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=2]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:53:55) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (51.8ms)
+
+ActionView::TemplateError (undefined method `ranking_numver' for #<Paragraph:0x106bea7b0>) on line #30 of app/views/reviews/show.html.erb:
+27:           <% end %>
+28: 
+29:           <% for paragraph in @review.paragraphs_sorted %>
+30:               <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:<%= @paragraph_selected_number == paragraph.ranking_numver ? 'pink' : 'white' %>;">
+31:                   <!-- the paragraph -->
+32:                   <div id="<%= "paragraph_#{paragraph.id}" %>" >
+33:                     <%= render(:partial => "/reviews/paragraph", :locals => { :review => @review, :paragraph => paragraph }) %>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/reviews/show.html.erb:30
+    app/views/reviews/show.html.erb:29:in `each'
+    app/views/reviews/show.html.erb:29
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:54:10) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (50.8ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.4ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.3ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.9ms)
+Completed in 1315ms (View: 876 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=2]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:54:59) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (51.2ms)
+Rendered reviews/_paragraph (6.3ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (184.3ms)
+Rendered reviews/_paragraph (6.4ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.6ms)
+Rendered reviews/_paragraph (6.3ms)
+Rendered reviews/_paragraph (6.0ms)
+Completed in 1317ms (View: 1052 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=2]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 15:55:33) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (75.4ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (10.1ms)
+Rendered reviews/_paragraph (9.0ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.2ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (10.2ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.5ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (238.1ms)
+Rendered reviews/_paragraph (9.0ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (9.7ms)
+Rendered reviews/_paragraph (9.0ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (8.4ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (8.8ms)
+Rendered reviews/_paragraph (8.2ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (9.3ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (8.8ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.5ms)
+Rendered reviews/_paragraph (8.6ms)
+Rendered reviews/_paragraph (8.8ms)
+Completed in 1840ms (View: 1237 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=2]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 16:00:12) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (5164.0ms)
+Rendered home/_product_tabs (5174.3ms)
+Completed in 5643ms (View: 5181 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 16:00:18) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.3ms)
+Rendered home/_product_price (9.4ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (15.1ms)
+Completed in 578ms (View: 53 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 16:00:21) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (5988.7ms)
+Rendered home/_product_tabs (5999.9ms)
+Completed in 6473ms (View: 6005 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:00:35) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"2"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (100.5ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (15.8ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (16.0ms)
+Rendered reviews/_paragraph (16.0ms)
+Rendered reviews/_paragraph (15.7ms)
+Rendered reviews/_paragraph (15.3ms)
+Rendered reviews/_paragraph (21.8ms)
+Rendered reviews/_paragraph (14.9ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (16.1ms)
+Rendered reviews/_paragraph (14.4ms)
+Rendered reviews/_paragraph (16.6ms)
+Rendered reviews/_paragraph (14.4ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (16.0ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (14.6ms)
+Rendered reviews/_paragraph (15.2ms)
+Rendered reviews/_paragraph (14.5ms)
+Rendered reviews/_paragraph (15.3ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (14.7ms)
+Rendered reviews/_paragraph (14.5ms)
+Rendered reviews/_paragraph (17.1ms)
+Rendered reviews/_paragraph (15.7ms)
+Rendered reviews/_paragraph (14.4ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (14.7ms)
+Rendered reviews/_paragraph (15.0ms)
+Completed in 2496ms (View: 1901 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=2]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:00:55) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"35"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (445.2ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (13.0ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (13.9ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.6ms)
+Completed in 2212ms (View: 1714 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=35]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 16:01:59) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.6ms)
+Rendered home/_product_price (9.6ms)
+Rendered home/_product_tab_overview (1.2ms)
+Rendered home/_product_tabs (16.6ms)
+Completed in 586ms (View: 288 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 16:02:03) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (6136.0ms)
+Rendered home/_product_tabs (6149.9ms)
+Completed in 6675ms (View: 6156 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:02:15) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"8"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (99.8ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (13.7ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (12.3ms)
+Rendered reviews/_paragraph (15.3ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (16.2ms)
+Rendered reviews/_paragraph (15.1ms)
+Rendered reviews/_paragraph (14.6ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (451.4ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (15.3ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (15.6ms)
+Completed in 2571ms (View: 1878 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=8]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-02-28 16:03:37) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (4.3ms)
+Rendered home/_product_price (9.1ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (15.4ms)
+Completed in 621ms (View: 52 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 16:03:41) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (6497.3ms)
+Rendered home/_product_tabs (6510.8ms)
+Completed in 7126ms (View: 6517 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-02-28 16:03:51) [GET]
+  Parameters: {"knowledge_idurl"=>"show"}
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (319.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-02-28 16:04:32) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"motorola_droid", "authenticity_token"=>"c3H6dzxA/Qb6lU2Ev5Q1WJEDmbMoJzO29XRnmCRgfTU=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (6605.3ms)
+Rendered home/_product_tabs (6626.5ms)
+Completed in 7403ms (View: 6634 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=motorola_droid]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:04:43) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"26"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (105.9ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (13.9ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (12.4ms)
+Completed in 1965ms (View: 1402 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=26]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:04:57) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"1"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (99.0ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.5ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (13.3ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (19.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (11.6ms)
+Completed in 2134ms (View: 1489 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=1]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-02-28 16:06:12) [GET]
+  Parameters: {"id"=>"4b892795db599507c6000001", "p"=>"1"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (103.1ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (19.3ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (13.2ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (12.2ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (12.7ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (15.3ms)
+Rendered reviews/_paragraph (13.2ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (14.9ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.7ms)
+Completed in 2091ms (View: 1483 | 200 OK [http://localhost/reviews/show/4b892795db599507c6000001?p=1]

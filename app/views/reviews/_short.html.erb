@@ -10,6 +10,6 @@
         reputation of source=<%= review.source %>, user's reputation=<%= review.reputation %>
     </div>
   <%= "<br/><i>#{review.summary}</i>"if review.summary %>
-    <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();") if review.content %>
+    <%= link_to_function("more...", "getElementById('full_label_#{review.id}').toggle();", :style => "font-size:80%;") if review.content %>
     <div id="full_label_<%= review.id %>" style="display:none; font-style:italic;"><%= review.content %></div>
 </div>

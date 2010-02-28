@@ -6,14 +6,14 @@
     <th align="center"><%= pluralize(product.tips(:pro).size, "Pro")%>: Do you agree?</th>
     <th align="center"><%= pluralize(product.tips(:con).size, "Con")%> Do you agree?</th></tr>
   <tr>
-    <td>
+    <td valign="top">
         <% for pro in product.tips(:pro) %>
-            <div><%= pro.to_html %></div>
+            <div><%= pro.to_html(:origin => true) %></div>
         <% end %>
     </td>
-    <td>
+    <td valign="top">
         <% for pro in product.tips(:con) %>
-            <div><%= pro.to_html %></div>
+            <div><%= pro.to_html(:origin => true) %></div>
         <% end %>
     </td>
   </tr>
