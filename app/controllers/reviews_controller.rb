@@ -210,16 +210,15 @@ class ReviewsController < ApplicationController
 
   # get /review_create
   def review_create
-    if params[:review_id]
+    @review = Review.find(params[:review_id]) if params[:review_id]
+    if @review
       # this is an update
-      @review = Review.find(params[:review_id])
       @review.update_attributes(params[:review])
     else
-      # this is a new product
+      # this is a new review
       @review = Review::Inpaper.new(params[:review])
       @review.written_at = params[:written_at]
       @review.user = get_logged_user
-
     end
 
     @knowledge = @review.knowledge
