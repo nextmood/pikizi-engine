@@ -33657,3 +33657,1523 @@ Rendering template within layouts/application
 Rendering reviews/show
 Rendered reviews/_short (67.7ms)
 Completed in 1787ms (View: 1108 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:25:49) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Oups I'can't find user with id=4b89266edb599507be000001
+
+Mongo::ConnectionFailure (Operation failed with the following exception: Broken pipe - send(2)):
+  mongo (0.18.3) lib/./lib/mongo/connection.rb:501:in `send_message_on_socket'
+  mongo (0.18.3) lib/./lib/mongo/connection.rb:287:in `receive_message'
+  mongo (0.18.3) lib/./lib/mongo/connection.rb:286:in `synchronize'
+  mongo (0.18.3) lib/./lib/mongo/connection.rb:286:in `receive_message'
+  mongo (0.18.3) lib/./lib/mongo/cursor.rb:339:in `send_initial_query'
+  mongo (0.18.3) lib/./lib/mongo/cursor.rb:316:in `refill_via_get_more'
+  mongo (0.18.3) lib/./lib/mongo/cursor.rb:304:in `num_remaining'
+  mongo (0.18.3) lib/./lib/mongo/cursor.rb:59:in `next_document'
+  mongo (0.18.3) lib/./lib/mongo/collection.rb:185:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/document.rb:298:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/document.rb:93:in `first'
+  app/models/root.rb:151:in `load_db'
+  app/controllers/application_controller.rb:58:in `log_as_developper'
+  app/controllers/application_controller.rb:51:in `check_user_authorization'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:26:07) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (56.0ms)
+Completed in 1237ms (View: 763 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:26:12) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (48.0ms)
+Completed in 1140ms (View: 713 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-13 14:26:25) [GET]
+  Parameters: {"review_id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 669ms (View: 618 | 200 OK [http://localhost/review_edit/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-13 14:28:43) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"juaDzN2sFv25wa1N+GgBgu1WkN6dxF1pB/6yE1hfiOw=", "review"=>{"rating"=>"3.5", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Kent German", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"http://reviews.cnet.com/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109.html", "reputation"=>"1.0", "content"=>"dfgdsfgdsfg", "summary"=>"dfgdfsg", "knowledge_idurl"=>"cell_phones", "source"=>"cnet"}, "review_id"=>"4b9b91a7db59950164000001", "written_at"=>{"month"=>"9", "day"=>"25", "year"=>"2009"}}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 303ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:28:44) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (53.4ms)
+Completed in 1465ms (View: 909 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:28:51) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (51.8ms)
+Completed in 1501ms (View: 825 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-13 14:28:58) [GET]
+  Parameters: {"review_id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 929ms (View: 832 | 200 OK [http://localhost/review_edit/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-13 14:30:17) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"juaDzN2sFv25wa1N+GgBgu1WkN6dxF1pB/6yE1hfiOw=", "review"=>{"rating"=>"3.5", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Kent German", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"http://reviews.cnet.com/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109.html", "reputation"=>"1.0", "content"=>"n the world of Nokia Xpress Music phones, we've seen a full range of models, from the high-end  to the rather weird. T-Mobile  is the only U.S. carrier to have offered Xpress Music phones. It started in 2006 with the 5300  and followed up two years later with the 5310 and 5610. Now the carrier offers a budget alternative, the Nokia 5130. Simple in both form and function, the 5130 is the lowest-end of all Xpress Music phones we've reviewed. The candy bar phone offers the normal music functions, but it goes easy on other features. Service is respectable, and the price--$29.99 with a rebate and a two-year service contract--is affordable.\r\n\r\nDesign\r\nThe 5130 Xpress Music somewhat resembles the earlier 5310. It also sports a slim candy bar design, though it's bit larger (4.23 inches by 1.83 inches by 0.58 inch; 3.10 ounces) and it features a glossier skin with a dotted pattern over its speaker on the rear side. The handset comes in two color schemes--aqua/silver and red/black. We tested the former, but the features are the same on both models. The 5130 has a comfortable feeling in the hand, and it travels well.\r\n\r\nThe 5130's two-inch display supports 256,000 colors. The resolution is decent (320x240 pixel), though some graphics, particularly the menu icons, weren't very sharp. On the upside, the Series 40 menus are intuitive, provided that you turn off the transition effects. You can adjust the standby font color and the font size.\r\n\r\nThe navigation array has a spacious, easy-to-use design. The square toggle is raised and shows a different color than the central OK button or the surrounding keys. The soft keys and Talk and End/power controls are flat, but they're quite large. You can set the toggle as a shortcut to user-defined features. The backlit keypad buttons are a mixed bag. Though they're sizable, they have a slippery, plastic feel. Dialing and texting takes some getting used to, and the numbers and letters are rather small.\r\n\r\nOn the rear side is the camera lens. The 5130 offers neither a flash nor a self-portrait mirror. On the left spine are the dedicated music controls, which you can use to activate the player and scan through your songs. On the right spine you'll find the large, accessible volume rocker and the microSD card slot. We were glad see a 3.5 millimeter headset jack on the top of the 5130. Next to it are the proprietary charger connection and the Micro-USB port.\r\n\r\nFeatures\r\nThe 5130's phone book size is limited by its shared memory (30MB). Each contact holds six phone number types, an e-mail address, a URL, a company name and job title, a formal name and nickname, a birthday, and notes. The SIM card holds an additional 250 contacts. You can organize friends into groups and pair them with a video/photo and one of 23 polyphonic ringtones.\r\n\r\nEssentials include a vibrate mode, text and multimedia messaging, an alarm clock, a calendar, a to-do list, a unit and currency converter, a world clock, a notepad, a calculator, a countdown timer, and a stopwatch. As for more advanced options, you'll find stereo Bluetooth, a voice recorder, USB transfer and mass storage, voice commands, PC syncing, instant messaging, and Web-based e-mail. The microSD slot can accommodate cards up to 2GB.\r\n\r\nThe 5130 offers the standard Nokia Xpress Music player. The interface is simple, but the controls are simple and intuitive, and the player supports album art. Features include an equalizer, shuffle and repeats modes, playlists, stereo widening, and an airplane mode for listening to tunes while you fly. The player supports a variety of file types, and you can use tracks as ringtones.\r\n\r\nYou can transfer music onto the phone via a USB cable or a microSD card. When using the former method, your computer should recognize the phone immediately; you then can drag and drop music back and forth. When listening to tracks, you can minimize the player so you can access other functions, and the player automatically pauses when you receive a call. If radio is your thing, the 5130 also offers an FM tuner with station presets. ", "summary"=>"Despite some minor complaints, the Nokia 5130 Xpress Music is an ideal choice for a budget music phone.", "knowledge_idurl"=>"cell_phones", "source"=>"cnet"}, "review_id"=>"4b9b91a7db59950164000001", "written_at"=>{"month"=>"3", "day"=>"13", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 81ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:30:18) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (48.7ms)
+Completed in 1546ms (View: 995 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:30:36) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (54.5ms)
+Completed in 1393ms (View: 794 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-13 14:30:47) [GET]
+  Parameters: {"mode"=>"p", "id"=>"4b9b91a7db59950164000001"}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 86ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b9b91a7db59950164000001?mode=p]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:30:47) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (329.6ms)
+Rendered reviews/_paragraph (53.1ms)
+Completed in 1883ms (View: 1133 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-13 14:30:56) [GET]
+  Parameters: {"mode"=>"br", "id"=>"4b9b91a7db59950164000001"}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 163ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b9b91a7db59950164000001?mode=br]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:30:57) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (61.6ms)
+Rendered reviews/_paragraph (13.4ms)
+Completed in 1644ms (View: 831 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-13 14:31:04) [GET]
+  Parameters: {"mode"=>"p_br", "id"=>"4b9b91a7db59950164000001"}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 251ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b9b91a7db59950164000001?mode=p_br]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:31:05) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (59.6ms)
+Rendered reviews/_paragraph (11.8ms)
+Completed in 1528ms (View: 848 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-13 14:31:13) [GET]
+  Parameters: {"review_id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 587ms (View: 371 | 200 OK [http://localhost/review_edit/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-13 14:35:25) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"juaDzN2sFv25wa1N+GgBgu1WkN6dxF1pB/6yE1hfiOw=", "review"=>{"rating"=>"3.5", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Kent German", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"http://reviews.cnet.com/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109.html", "reputation"=>"1.0", "content"=>"<p>\r\nIn the world of Nokia Xpress Music phones, we've seen a full range of models, from the <a linkindex=\"78\" href=\"/cell-phones/nokia-5800-xpress-music/4505-6454_7-33311818.html\">high-end</a> to the <a linkindex=\"79\" href=\"/cell-phones/nokia-xpress-music-5700/4505-6454_7-32469602.html\">rather weird</a>. <a linkindex=\"80\" href=\"/cell-phones/t-mobile/4505-6454_7-32137728.html\">T-Mobile</a> is the only U.S. carrier to have offered Xpress Music phones. It started in 2006 with the <a linkindex=\"81\" href=\"/cell-phones/nokia-xpress-music-5300/4505-6454_7-32416628.html\">5300</a> and followed up two years later with the <a linkindex=\"82\" href=\"/cell-phones/nokia-5310-xpress-music/4505-6454_7-33044308.html\">5310 and <cnet:link int=\"http://reviews.cnet.com/cell-phones/nokia-5610-xpress-music/4505-6454_7-33198661.html\">5610</cnet:link></a>. Now the carrier offers a budget alternative, the Nokia 5130. Simple in both form and function, the 5130 is the lowest-end of all Xpress Music phones we've reviewed. The candy bar phone offers the normal music functions, but it goes easy on other features. Service is respectable, and the price--$29.99 with a rebate and a two-year service contract--is affordable. </p><p>\r\n<b>Design</b><br>\r\nThe 5130 Xpress Music somewhat resembles the earlier 5310. It also sports a slim candy bar design, though it's bit larger (4.23 inches by 1.83 inches by 0.58 inch; 3.10 ounces) and it features a glossier skin with a dotted pattern over its speaker on the rear side. The handset comes in two color schemes--aqua/silver and red/black. We tested the former, but the features are the same on both models. The 5130 has a comfortable feeling in the hand, and it travels well.\r\n</p><p>\r\nThe 5130's two-inch display supports 256,000 colors. The resolution is decent (320x240 pixel), though some graphics, particularly the menu icons, weren't very sharp. On the upside, the Series 40 menus are intuitive, provided that you turn off the transition effects. You can adjust the standby font color and the font size.\r\n</p><p>\r\nThe navigation array has a spacious, easy-to-use design. The square toggle is raised and shows a different color than the central OK button or the surrounding keys. The soft keys and Talk and End/power controls are flat, but they're quite large. You can set the toggle as a shortcut to user-defined features. The backlit keypad buttons are a mixed bag. Though they're sizable, they have a slippery, plastic feel. Dialing and texting takes some getting used to, and the numbers and letters are rather small.\r\n</p><p>\r\nOn the rear side is the camera lens. The 5130 offers neither a flash nor a self-portrait mirror. On the left spine are the dedicated music controls, which you can use to activate the player and scan through your songs. On the right spine you'll find the large, accessible volume rocker and the microSD card slot. We were glad see a 3.5 millimeter headset jack on the top of the 5130. Next to it are the proprietary charger connection and the Micro-USB port.\r\n</p><p>\r\n<b>Features</b><br>\r\nThe 5130's phone book size is limited by its shared memory (30MB). Each contact holds six phone number types, an e-mail address, a URL, a company name and job title, a formal name and nickname, a birthday, and notes. The SIM card holds an additional 250 contacts. You can organize friends into groups and pair them with a video/photo and one of 23 polyphonic ringtones. </p><p>\r\nEssentials include a vibrate mode, text and multimedia messaging, an alarm clock, a calendar, a to-do list, a unit and currency converter, a world clock, a notepad, a calculator, a countdown timer, and a stopwatch. As for more advanced options, you'll find stereo Bluetooth, a voice recorder, USB transfer and mass storage, voice commands, PC syncing, instant messaging, and Web-based e-mail. The microSD slot can accommodate cards up to 2GB.\r\n</p><p>\r\nThe 5130 offers the standard Nokia Xpress Music player. The interface is simple, but the controls are simple and intuitive, and the player supports album art. Features include an equalizer, shuffle and repeats modes, playlists, stereo widening, and an airplane mode for listening to tunes while you fly. The player supports a variety of file types, and you can use tracks as ringtones.\r\n</p><p>\r\nYou can transfer music onto the phone via a USB cable or a microSD card. When using the former method, your computer should recognize the phone immediately; you then can drag and drop music back and forth. When listening to tracks, you can minimize the player so you can access other functions, and the player automatically pauses when you receive a call. If radio is your thing, the 5130 also offers an FM tuner with station presets. </p> <span class=\"continueText\" section=\"continue\"><a linkindex=\"83\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\" class=\"readMore\" title=\"Continue reading\">Continue reading</a></span> <div class=\"listNav lower\"> <ul class=\"pagination\" section=\"page\"> <li><a linkindex=\"84\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-1.html\" class=\"youAreHere\">1</a></li> <li><a linkindex=\"85\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\">2</a></li> <li><a linkindex=\"86\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\">next</a></li> </ul> </div> <!--set site specific variables--> <!--set product type specific variables--> <a name=\"rateit\"></a>\r\n<div id=\"userReviews\" section=\"uo\"> <h2><span>Most helpful user reviews</span></h2> <ul id=\"summaryRatings\"> <li class=\"userRate\"> <strong>Average user rating:</strong> <a linkindex=\"87\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"userRate0\"><span>0 stars</span></a> Not yet available <br><a linkindex=\"88\" href=\"/4505-6452_7-33771109.html\">Back to product review</a> </li> <li class=\"myRate\"> <strong>My rating:</strong> <a linkindex=\"89\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"userStars userRate0\"><span>0 stars</span></a> <a linkindex=\"90\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"flexButton\"><b>Write review</b></a> </li> </ul> <ul id=\"summaryList\"> <li class=\"first\" style=\"background: none repeat scroll 0% 0% transparent; padding: 10px 0pt 0pt;\"> <p>Showing 3 of 3 user reviews </p> </li> <li messageid=\"10067854\"> <p class=\"userRating\"><a linkindex=\"91\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-1.html\" class=\"userRateSm2h\"><span>2.5 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"92\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-1.html\">\"colour required\"</a></p> <p class=\"author\"> by <a linkindex=\"93\" href=\"/community/Ankita1089\">Ankita1089</a> on February 22, 2010 </p> <!--boo!--> </li> <li messageid=\"10064375\"> <p class=\"userRating\"><a linkindex=\"94\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-2.html\" class=\"userRateSm3h\"><span>3.5 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"95\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-2.html\">\"Great Budget Phone\"</a></p> <p class=\"author\"> by <a linkindex=\"96\" href=\"/community/BaberJaved\">BaberJaved</a> on January 21, 2010 </p> <!--boo!--> </li> <li messageid=\"10054813\"> <p class=\"userRating\"><a linkindex=\"97\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-3.html\" class=\"userRateSm4\"><span>4.0 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"98\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-3.html\">\"A good budget music phone!\"</a></p> <p class=\"author\"> by <a linkindex=\"99\" href=\"/community/debatra\">debatra</a> on November 7, 2009 </p> <!--boo!--> </li> <li class=\"seeAll\"> <a linkindex=\"100\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4852-6452_7-33771109.html\" class=\"readMore\">See all 3 user reviews</a> <a linkindex=\"101\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"flexButton lower\"><b>Write review</b></a> </li> </ul> </div> <!-- /userOpinions --> <div id=\"submitOrUpdateArea\"> <div id=\"thanks\" class=\"userReviewForm\" style=\"display: none;\"> <b>Thanks for your submission!</b> <p>Thank you for helping us maintain CNET's great community.</p> </div> <div id=\"submitReview\" class=\"userReviewForm\"> <h2><span>Submit your review</span></h2> <form class=\"submitReview\" name=\"prodSubmitReview\" id=\"prodSubmitReview\" action=\"/8660-6452_7-33771109.html\" method=\"post\"> <div class=\"status invite reg\"> <span class=\"message\"> <span class=\"cnetInvite\"> <p><a>Log in or create an account</a> to submit your review for:</p> <p><strong>Nokia 5130 XpressMusic - aqua/silver (T-Mobile)</strong></p> </span> <span style=\"top: 10px;\" class=\"or\">OR</span><span style=\"\" class=\"fbConnectInvite\"><a class=\"fbConnectLink\">Log in with your Facebook account</a></span> </span> </div> <div class=\"status loggedin\" style=\"display: none;\"> <p>You are logged in as <span class=\"cnetUserName\"></span>. Please submit your review for:</p> <p><strong>Nokia 5130 XpressMusic - aqua/silver (T-Mobile)</strong></p> </div> <dl> <dt><b>1. Rate this product:</b></dt> <dd> <a class=\"userStars userRate0\"><span></span></a> (Mouse over the stars to rate this product and click to set your rating.) <input value=\"-1\" class=\"starsvalidation\" name=\"rating\" id=\"rating\" type=\"hidden\"> </dd> <dt class=\"title\"><b>2. One-line summary:</b>(Summarize your review in one line. 10 characters minimum; required.)</dt> <dd class=\"title\"><b><span class=\"cnt\">0</span> of 55 characters</b><textarea name=\"shortSummary\" wrap=\"soft\" rows=\"1\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 55}\"></textarea></dd> <dt class=\"pros\"><b>3. Pros:</b>(Tell us what you like about this product. 10 characters minimum; required.)</dt> <dd class=\"pros\"><b><span class=\"cnt\">0</span> of 250 characters</b><textarea name=\"pros\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 250}\"></textarea></dd> <dt class=\"cons\"><b>4. Cons:</b>(Tell us what you don't like about this product. 10 characters minimum; required.)</dt> <dd class=\"cons\"><b><span class=\"cnt\">0</span> of 250 characters</b><textarea name=\"cons\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 250}\"></textarea></dd> <dt class=\"bottomline\"><b>Bottom-line summary:</b>(Explain to us in detail why you like or dislike the product, focusing your comments on the product's features and functionality, and your experience using the product. This field is optional.)</dt> <dd class=\"bottomline\"><b><span class=\"cnt\">0</span> of 5000 characters</b><textarea name=\"longSummary\" wrap=\"soft\" rows=\"4\" cols=\"42\" class=\"validate-opt-length\" validatorprops=\"{minLength: 0, maxLength: 5000}\"></textarea></dd> <p class=\"conduct\">The posting of advertisements, profanity, or personal attacks are prohibited.<br><a linkindex=\"102\" href=\"http://www.cnet.com/legal/terms-of-use/\" rel=\"nofollow\" target=\"_new\">Click here</a> to review our site terms of use.</p> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Submit</b></a></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> </div> <div id=\"replyReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>Submit your reply</span></h2> <form class=\"submitReview\" name=\"prodReplyReview\" id=\"prodReplyReview\" action=\"/8662-6452_7-33771109.html\" method=\"post\"> <dl> <dt class=\"bottomline\"><b>Summary:</b>(10 characters minimum; required)</dt> <dd class=\"bottomline\"> <b><span class=\"cnt\">0</span> of 1000 characters</b> <textarea name=\"body\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 1000}\"></textarea> </dd> <p class=\"conduct\">The posting of advertisements, profanity, or personal attacks are prohibited.<br><a linkindex=\"103\" href=\"http://www.cnet.com/legal/terms-of-use/\" rel=\"nofollow\" target=\"_new\">Click here</a> to review our site terms of use.</p> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Submit</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <div id=\"emailReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>E-mail this review</span></h2> <form class=\"submitReview reg\" name=\"prodEmailReview\" id=\"prodEmailReview\" action=\"/8665-6452_7-33771109.html\" method=\"post\"> <dl> <dt class=\"title\"><b>E-mail this to:</b></dt> <dd class=\"title\"><textarea name=\"emailTo\" wrap=\"soft\" rows=\"1\" cols=\"42\" class=\"required validate-email\"></textarea></dd> Enter the e-mail address of the recipient. <dt class=\"pros\"><b>Add your own personal message:</b>(1000 characters maximum)</dt> <dd class=\"pros\"><b><span class=\"cnt\">0</span> of 1000 characters</b><textarea name=\"userComment\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"maxLength\" validatorprops=\"{maxLength: 1000}\"></textarea></dd> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Send</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <div id=\"ropReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>Report offensive content</span></h2> <form class=\"submitReview\" name=\"prodRopReview\" id=\"prodRopReview\" action=\"/8664-6452_7-33771109.html\" method=\"post\"> <p>If you believe this comment is offensive or violates the <a linkindex=\"104\" href=\"http://www.cnet.com/legal/terms-of-use/\" target=\"_new\" rel=\"nofollow\">CNET's Site Terms of Use</a>, you can report it below (this will not automatically remove the comment). Once reported, our staff will be notified and the comment will be reviewed.</p> <dl> <dt class=\"title\"><b>Select type of offense:</b></dt> <dd class=\"title\"><input name=\"type\" value=\"offensive\" checked=\"checked\" type=\"radio\"> <b>Offensive:</b> Sexually explicit or offensive language</dd> <dd class=\"title\"><input name=\"type\" value=\"spam\" type=\"radio\"> <b>Spam:</b> Advertisements or commercial links</dd> <dd class=\"title\"><input name=\"type\" value=\"disruptive post\" type=\"radio\"> <b>Disruptive posting:</b> Flaming or offending other users</dd> <dd class=\"title\"><input name=\"type\" value=\"Illegal activities\" type=\"radio\"> <b>Illegal activities:</b> Promote cracked software, or other illegal content</dd> <dd class=\"title\"><b>Comments</b> (optional):</dd> <dd><textarea name=\"userComment\" id=\"offensiveBody\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 0, maxLength: 1000}\"></textarea></dd> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Report</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> <input name=\"productName\" value=\"Nokia 5130 XpressMusic - aqua/silver (T-Mobile)\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <!--cnettv video --> \r\n\r\n\r\n\r\n\r\n\r\n    \r\n    \r\n\r\n    <link type=\"text/css\" rel=\"stylesheet\" rev=\"stylesheet\" href=\"http://i.i.com.com/cnwk.1d/css/rb/tron/cnettv/relatedVideos.css\">\r\n<script type=\"text/javascript\" src=\"http://i.i.com.com/cnwk.1d/html/rb/js/ctv/relatedVideos.js\"></script>\r\n\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n\r\n\r\n\r\n\r\n\r\n", "summary"=>"Despite some minor complaints, the Nokia 5130 Xpress Music is an ideal choice for a budget music phone.", "knowledge_idurl"=>"cell_phones", "source"=>"cnet"}, "review_id"=>"4b9b91a7db59950164000001", "written_at"=>{"month"=>"3", "day"=>"13", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 326ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:35:25) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (61.9ms)
+Rendered reviews/_paragraph (12.5ms)
+Completed in 1748ms (View: 869 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-13 14:35:31) [GET]
+  Parameters: {"mode"=>"p", "id"=>"4b9b91a7db59950164000001"}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 525ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b9b91a7db59950164000001?mode=p]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:35:31) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (438.7ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (13.9ms)
+Rendered reviews/_paragraph (12.0ms)
+Rendered reviews/_paragraph (12.1ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.4ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.7ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (11.3ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (13.1ms)
+Rendered reviews/_paragraph (11.6ms)
+Rendered reviews/_paragraph (11.8ms)
+Rendered reviews/_paragraph (13.8ms)
+Completed in 2536ms (View: 1678 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-13 14:35:53) [GET]
+  Parameters: {"review_id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 1404ms (View: 1343 | 200 OK [http://localhost/review_edit/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-13 14:35:55) [GET]
+  Parameters: {"review_id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 1032ms (View: 893 | 200 OK [http://localhost/review_edit/4b9b91a7db59950164000001]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-13 14:36:11) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"juaDzN2sFv25wa1N+GgBgu1WkN6dxF1pB/6yE1hfiOw=", "review"=>{"rating"=>"3.5", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Kent German", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"http://reviews.cnet.com/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109.html", "reputation"=>"1.0", "content"=>"<p>\r\nIn the world of Nokia Xpress Music phones, we've seen a full range of models, from the <a linkindex=\"78\" href=\"/cell-phones/nokia-5800-xpress-music/4505-6454_7-33311818.html\">high-end</a> to the <a linkindex=\"79\" href=\"/cell-phones/nokia-xpress-music-5700/4505-6454_7-32469602.html\">rather weird</a>. <a linkindex=\"80\" href=\"/cell-phones/t-mobile/4505-6454_7-32137728.html\">T-Mobile</a> is the only U.S. carrier to have offered Xpress Music phones. It started in 2006 with the <a linkindex=\"81\" href=\"/cell-phones/nokia-xpress-music-5300/4505-6454_7-32416628.html\">5300</a> and followed up two years later with the <a linkindex=\"82\" href=\"/cell-phones/nokia-5310-xpress-music/4505-6454_7-33044308.html\">5310 and <cnet:link int=\"http://reviews.cnet.com/cell-phones/nokia-5610-xpress-music/4505-6454_7-33198661.html\">5610</cnet:link></a>. Now the carrier offers a budget alternative, the Nokia 5130. Simple in both form and function, the 5130 is the lowest-end of all Xpress Music phones we've reviewed. The candy bar phone offers the normal music functions, but it goes easy on other features. Service is respectable, and the price--$29.99 with a rebate and a two-year service contract--is affordable. </p><p>\r\n<b>Design</b><br>\r\nThe 5130 Xpress Music somewhat resembles the earlier 5310. It also sports a slim candy bar design, though it's bit larger (4.23 inches by 1.83 inches by 0.58 inch; 3.10 ounces) and it features a glossier skin with a dotted pattern over its speaker on the rear side. The handset comes in two color schemes--aqua/silver and red/black. We tested the former, but the features are the same on both models. The 5130 has a comfortable feeling in the hand, and it travels well.\r\n</p><p>\r\nThe 5130's two-inch display supports 256,000 colors. The resolution is decent (320x240 pixel), though some graphics, particularly the menu icons, weren't very sharp. On the upside, the Series 40 menus are intuitive, provided that you turn off the transition effects. You can adjust the standby font color and the font size.\r\n</p><p>\r\nThe navigation array has a spacious, easy-to-use design. The square toggle is raised and shows a different color than the central OK button or the surrounding keys. The soft keys and Talk and End/power controls are flat, but they're quite large. You can set the toggle as a shortcut to user-defined features. The backlit keypad buttons are a mixed bag. Though they're sizable, they have a slippery, plastic feel. Dialing and texting takes some getting used to, and the numbers and letters are rather small.\r\n</p><p>\r\nOn the rear side is the camera lens. The 5130 offers neither a flash nor a self-portrait mirror. On the left spine are the dedicated music controls, which you can use to activate the player and scan through your songs. On the right spine you'll find the large, accessible volume rocker and the microSD card slot. We were glad see a 3.5 millimeter headset jack on the top of the 5130. Next to it are the proprietary charger connection and the Micro-USB port.\r\n</p><p>\r\n<b>Features</b><br>\r\nThe 5130's phone book size is limited by its shared memory (30MB). Each contact holds six phone number types, an e-mail address, a URL, a company name and job title, a formal name and nickname, a birthday, and notes. The SIM card holds an additional 250 contacts. You can organize friends into groups and pair them with a video/photo and one of 23 polyphonic ringtones. </p><p>\r\nEssentials include a vibrate mode, text and multimedia messaging, an alarm clock, a calendar, a to-do list, a unit and currency converter, a world clock, a notepad, a calculator, a countdown timer, and a stopwatch. As for more advanced options, you'll find stereo Bluetooth, a voice recorder, USB transfer and mass storage, voice commands, PC syncing, instant messaging, and Web-based e-mail. The microSD slot can accommodate cards up to 2GB.\r\n</p><p>\r\nThe 5130 offers the standard Nokia Xpress Music player. The interface is simple, but the controls are simple and intuitive, and the player supports album art. Features include an equalizer, shuffle and repeats modes, playlists, stereo widening, and an airplane mode for listening to tunes while you fly. The player supports a variety of file types, and you can use tracks as ringtones.\r\n</p><p>\r\nYou can transfer music onto the phone via a USB cable or a microSD card. When using the former method, your computer should recognize the phone immediately; you then can drag and drop music back and forth. When listening to tracks, you can minimize the player so you can access other functions, and the player automatically pauses when you receive a call. If radio is your thing, the 5130 also offers an FM tuner with station presets. </p> <span class=\"continueText\" section=\"continue\"><a linkindex=\"83\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\" class=\"readMore\" title=\"Continue reading\">Continue reading</a></span> <div class=\"listNav lower\"> <ul class=\"pagination\" section=\"page\"> <li><a linkindex=\"84\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-1.html\" class=\"youAreHere\">1</a></li> <li><a linkindex=\"85\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\">2</a></li> <li><a linkindex=\"86\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4505-6452_7-33771109-2.html\">next</a></li> </ul> </div> <!--set site specific variables--> <!--set product type specific variables--> <a name=\"rateit\"></a>\r\n<div id=\"userReviews\" section=\"uo\"> <h2><span>Most helpful user reviews</span></h2> <ul id=\"summaryRatings\"> <li class=\"userRate\"> <strong>Average user rating:</strong> <a linkindex=\"87\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"userRate0\"><span>0 stars</span></a> Not yet available <br><a linkindex=\"88\" href=\"/4505-6452_7-33771109.html\">Back to product review</a> </li> <li class=\"myRate\"> <strong>My rating:</strong> <a linkindex=\"89\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"userStars userRate0\"><span>0 stars</span></a> <a linkindex=\"90\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"flexButton\"><b>Write review</b></a> </li> </ul> <ul id=\"summaryList\"> <li class=\"first\" style=\"background: none repeat scroll 0% 0% transparent; padding: 10px 0pt 0pt;\"> <p>Showing 3 of 3 user reviews </p> </li> <li messageid=\"10067854\"> <p class=\"userRating\"><a linkindex=\"91\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-1.html\" class=\"userRateSm2h\"><span>2.5 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"92\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-1.html\">\"colour required\"</a></p> <p class=\"author\"> by <a linkindex=\"93\" href=\"/community/Ankita1089\">Ankita1089</a> on February 22, 2010 </p> <!--boo!--> </li> <li messageid=\"10064375\"> <p class=\"userRating\"><a linkindex=\"94\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-2.html\" class=\"userRateSm3h\"><span>3.5 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"95\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-2.html\">\"Great Budget Phone\"</a></p> <p class=\"author\"> by <a linkindex=\"96\" href=\"/community/BaberJaved\">BaberJaved</a> on January 21, 2010 </p> <!--boo!--> </li> <li messageid=\"10054813\"> <p class=\"userRating\"><a linkindex=\"97\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-3.html\" class=\"userRateSm4\"><span>4.0 stars</span></a></p> <p class=\"userRate\"></p> <p class=\"title\"><a linkindex=\"98\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4864-6452_7-33771109-3.html\">\"A good budget music phone!\"</a></p> <p class=\"author\"> by <a linkindex=\"99\" href=\"/community/debatra\">debatra</a> on November 7, 2009 </p> <!--boo!--> </li> <li class=\"seeAll\"> <a linkindex=\"100\" href=\"/smartphones/nokia-5130-xpressmusic-aqua/4852-6452_7-33771109.html\" class=\"readMore\">See all 3 user reviews</a> <a linkindex=\"101\" href=\"#submitReview\" onclick=\"$('submitOrUpdateArea').reveal();new Fx.Scroll(window).toElement('submitOrUpdateArea');\" class=\"flexButton lower\"><b>Write review</b></a> </li> </ul> </div> <!-- /userOpinions --> <div id=\"submitOrUpdateArea\"> <div id=\"thanks\" class=\"userReviewForm\" style=\"display: none;\"> <b>Thanks for your submission!</b> <p>Thank you for helping us maintain CNET's great community.</p> </div> <div id=\"submitReview\" class=\"userReviewForm\"> <h2><span>Submit your review</span></h2> <form class=\"submitReview\" name=\"prodSubmitReview\" id=\"prodSubmitReview\" action=\"/8660-6452_7-33771109.html\" method=\"post\"> <div class=\"status invite reg\"> <span class=\"message\"> <span class=\"cnetInvite\"> <p><a>Log in or create an account</a> to submit your review for:</p> <p><strong>Nokia 5130 XpressMusic - aqua/silver (T-Mobile)</strong></p> </span> <span style=\"top: 10px;\" class=\"or\">OR</span><span style=\"\" class=\"fbConnectInvite\"><a class=\"fbConnectLink\">Log in with your Facebook account</a></span> </span> </div> <div class=\"status loggedin\" style=\"display: none;\"> <p>You are logged in as <span class=\"cnetUserName\"></span>. Please submit your review for:</p> <p><strong>Nokia 5130 XpressMusic - aqua/silver (T-Mobile)</strong></p> </div> <dl> <dt><b>1. Rate this product:</b></dt> <dd> <a class=\"userStars userRate0\"><span></span></a> (Mouse over the stars to rate this product and click to set your rating.) <input value=\"-1\" class=\"starsvalidation\" name=\"rating\" id=\"rating\" type=\"hidden\"> </dd> <dt class=\"title\"><b>2. One-line summary:</b>(Summarize your review in one line. 10 characters minimum; required.)</dt> <dd class=\"title\"><b><span class=\"cnt\">0</span> of 55 characters</b><textarea name=\"shortSummary\" wrap=\"soft\" rows=\"1\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 55}\"></textarea></dd> <dt class=\"pros\"><b>3. Pros:</b>(Tell us what you like about this product. 10 characters minimum; required.)</dt> <dd class=\"pros\"><b><span class=\"cnt\">0</span> of 250 characters</b><textarea name=\"pros\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 250}\"></textarea></dd> <dt class=\"cons\"><b>4. Cons:</b>(Tell us what you don't like about this product. 10 characters minimum; required.)</dt> <dd class=\"cons\"><b><span class=\"cnt\">0</span> of 250 characters</b><textarea name=\"cons\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 250}\"></textarea></dd> <dt class=\"bottomline\"><b>Bottom-line summary:</b>(Explain to us in detail why you like or dislike the product, focusing your comments on the product's features and functionality, and your experience using the product. This field is optional.)</dt> <dd class=\"bottomline\"><b><span class=\"cnt\">0</span> of 5000 characters</b><textarea name=\"longSummary\" wrap=\"soft\" rows=\"4\" cols=\"42\" class=\"validate-opt-length\" validatorprops=\"{minLength: 0, maxLength: 5000}\"></textarea></dd> <p class=\"conduct\">The posting of advertisements, profanity, or personal attacks are prohibited.<br><a linkindex=\"102\" href=\"http://www.cnet.com/legal/terms-of-use/\" rel=\"nofollow\" target=\"_new\">Click here</a> to review our site terms of use.</p> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Submit</b></a></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> </div> <div id=\"replyReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>Submit your reply</span></h2> <form class=\"submitReview\" name=\"prodReplyReview\" id=\"prodReplyReview\" action=\"/8662-6452_7-33771109.html\" method=\"post\"> <dl> <dt class=\"bottomline\"><b>Summary:</b>(10 characters minimum; required)</dt> <dd class=\"bottomline\"> <b><span class=\"cnt\">0</span> of 1000 characters</b> <textarea name=\"body\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 10, maxLength: 1000}\"></textarea> </dd> <p class=\"conduct\">The posting of advertisements, profanity, or personal attacks are prohibited.<br><a linkindex=\"103\" href=\"http://www.cnet.com/legal/terms-of-use/\" rel=\"nofollow\" target=\"_new\">Click here</a> to review our site terms of use.</p> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Submit</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <div id=\"emailReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>E-mail this review</span></h2> <form class=\"submitReview reg\" name=\"prodEmailReview\" id=\"prodEmailReview\" action=\"/8665-6452_7-33771109.html\" method=\"post\"> <dl> <dt class=\"title\"><b>E-mail this to:</b></dt> <dd class=\"title\"><textarea name=\"emailTo\" wrap=\"soft\" rows=\"1\" cols=\"42\" class=\"required validate-email\"></textarea></dd> Enter the e-mail address of the recipient. <dt class=\"pros\"><b>Add your own personal message:</b>(1000 characters maximum)</dt> <dd class=\"pros\"><b><span class=\"cnt\">0</span> of 1000 characters</b><textarea name=\"userComment\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"maxLength\" validatorprops=\"{maxLength: 1000}\"></textarea></dd> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Send</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <div id=\"ropReview\" class=\"userReviewForm\" style=\"display: none;\"> <h2><span>Report offensive content</span></h2> <form class=\"submitReview\" name=\"prodRopReview\" id=\"prodRopReview\" action=\"/8664-6452_7-33771109.html\" method=\"post\"> <p>If you believe this comment is offensive or violates the <a linkindex=\"104\" href=\"http://www.cnet.com/legal/terms-of-use/\" target=\"_new\" rel=\"nofollow\">CNET's Site Terms of Use</a>, you can report it below (this will not automatically remove the comment). Once reported, our staff will be notified and the comment will be reviewed.</p> <dl> <dt class=\"title\"><b>Select type of offense:</b></dt> <dd class=\"title\"><input name=\"type\" value=\"offensive\" checked=\"checked\" type=\"radio\"> <b>Offensive:</b> Sexually explicit or offensive language</dd> <dd class=\"title\"><input name=\"type\" value=\"spam\" type=\"radio\"> <b>Spam:</b> Advertisements or commercial links</dd> <dd class=\"title\"><input name=\"type\" value=\"disruptive post\" type=\"radio\"> <b>Disruptive posting:</b> Flaming or offending other users</dd> <dd class=\"title\"><input name=\"type\" value=\"Illegal activities\" type=\"radio\"> <b>Illegal activities:</b> Promote cracked software, or other illegal content</dd> <dd class=\"title\"><b>Comments</b> (optional):</dd> <dd><textarea name=\"userComment\" id=\"offensiveBody\" wrap=\"soft\" rows=\"3\" cols=\"42\" class=\"minLength maxLength\" validatorprops=\"{minLength: 0, maxLength: 1000}\"></textarea></dd> <dd class=\"submit\"><a class=\"flexButton submitButton\"><b>Report</b></a><span class=\"cancel\"><a>cancel</a></span></dd> <input name=\"productId\" value=\"33771109\" type=\"hidden\"> <input name=\"productName\" value=\"Nokia 5130 XpressMusic - aqua/silver (T-Mobile)\" type=\"hidden\"> </dl> </form> </div><!-- /submitReview --> <!--cnettv video --> \r\n\r\n\r\n\r\n\r\n\r\n    \r\n    \r\n\r\n    <link type=\"text/css\" rel=\"stylesheet\" rev=\"stylesheet\" href=\"http://i.i.com.com/cnwk.1d/css/rb/tron/cnettv/relatedVideos.css\">\r\n<script type=\"text/javascript\" src=\"http://i.i.com.com/cnwk.1d/html/rb/js/ctv/relatedVideos.js\"></script>\r\n\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n        \r\n        \r\n            \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                    \r\n                            \r\n                        \r\n                \r\n            \r\n        \r\n    \r\n\r\n\r\n\r\n\r\n\r\n", "summary"=>"Despite some minor complaints, the Nokia 5130 Xpress Music is an ideal choice for a budget music phone.", "knowledge_idurl"=>"cell_phones", "source"=>"cnet"}, "review_id"=>"4b9b91a7db59950164000001", "written_at"=>{"month"=>"3", "day"=>"13", "year"=>"2012"}}
+Redirected to http://localhost:3000/reviews/show/4b9b91a7db59950164000001
+Completed in 403ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-13 14:36:12) [GET]
+  Parameters: {"id"=>"4b9b91a7db59950164000001"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (119.6ms)
+Rendered reviews/_paragraph (12.6ms)
+Rendered reviews/_paragraph (14.1ms)
+Rendered reviews/_paragraph (344.5ms)
+Rendered reviews/_paragraph (14.9ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (13.2ms)
+Rendered reviews/_paragraph (13.8ms)
+Rendered reviews/_paragraph (13.5ms)
+Rendered reviews/_paragraph (13.9ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (16.3ms)
+Rendered reviews/_paragraph (15.4ms)
+Rendered reviews/_paragraph (15.0ms)
+Rendered reviews/_paragraph (14.7ms)
+Rendered reviews/_paragraph (14.8ms)
+Rendered reviews/_paragraph (15.7ms)
+Rendered reviews/_paragraph (15.8ms)
+Rendered reviews/_paragraph (14.0ms)
+Rendered reviews/_paragraph (16.2ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.5ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.9ms)
+Rendered reviews/_paragraph (12.8ms)
+Rendered reviews/_paragraph (11.4ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (11.1ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (11.2ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (11.0ms)
+Rendered reviews/_paragraph (10.9ms)
+Rendered reviews/_paragraph (12.9ms)
+Rendered reviews/_paragraph (11.1ms)
+Completed in 2665ms (View: 1793 | 200 OK [http://localhost/reviews/show/4b9b91a7db59950164000001]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-14 15:17:25) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 85ms (View: 83 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-14 15:17:33) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1651ms (View: 664 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-14 15:17:43) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "s"=>"search nokiaproducts and advisors"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.first):
+  app/controllers/home_controller.rb:86:in `products_search'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-14 15:18:01) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 2409ms (View: 211 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 15:18:16) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (16.0ms)
+Rendered home/_product_price (8.2ms)
+Rendered home/_product_tab_overview (2.1ms)
+Rendered home/_product_tabs (75.4ms)
+Completed in 564ms (View: 149 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 15:18:23) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (208.9ms)
+Rendered home/_product_tab_reviews (237.6ms)
+Rendered home/_product_tabs (251.8ms)
+Completed in 711ms (View: 299 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-14 15:18:30) [GET]
+  Parameters: {"product_id"=>"4b892671db599507be0001cb", "knowledge_id"=>"4b89266edb599507be00000a"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 737ms (View: 373 | 200 OK [http://localhost/review_new/4b89266edb599507be00000a/4b892671db599507be0001cb]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:19:26) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"4", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"This page is a combined schedule of major events applicable across GNOME, useful for GNOME contributors/developers. Please keep this page short with links to other pages for more info. Items may be removed if unrelated, too narrow in scope, or this page just plain gets too long. ", "summary"=>"mon test de review", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf036db599504d0000001", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9cf06edb599504d0000002
+Completed in 398ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-14 15:19:27) [GET]
+  Parameters: {"id"=>"4b9cf06edb599504d0000002"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (21.3ms)
+Completed in 766ms (View: 413 | 200 OK [http://localhost/reviews/show/4b9cf06edb599504d0000002]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 15:19:42) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.2ms)
+Rendered home/_product_price (5.5ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (12.1ms)
+Completed in 431ms (View: 41 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 15:19:48) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (22.3ms)
+Rendered home/_product_tab_reviews (29.0ms)
+Rendered home/_product_tabs (39.7ms)
+Completed in 475ms (View: 191 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:24:22) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"4", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"This page is a combined schedule of major events applicable across GNOME, useful for GNOME contributors/developers. Please keep this page short with links to other pages for more info. Items may be removed if unrelated, too narrow in scope, or this page just plain gets too long. ", "summary"=>"mon test de review", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf036db599504d0000001", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9cf196db599504d0000003
+Completed in 38ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-14 15:24:22) [GET]
+  Parameters: {"id"=>"4b9cf196db599504d0000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (23.6ms)
+Completed in 834ms (View: 435 | 200 OK [http://localhost/reviews/show/4b9cf196db599504d0000003]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:33:03) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"4", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"This page is a combined schedule of major events applicable across GNOME, useful for GNOME contributors/developers. Please keep this page short with links to other pages for more info. Items may be removed if unrelated, too narrow in scope, or this page just plain gets too long. ", "summary"=>"mon test de review", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf036db599504d0000001", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+RuntimeError (no product for key="4b892671db599507be0001cb"):
+  app/controllers/reviews_controller.rb:220:in `review_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (64.6ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#review_new (for 127.0.0.1 at 2010-03-14 15:33:16) [GET]
+  Parameters: {"product_id"=>"4b892671db599507be0001cb", "knowledge_id"=>"4b89266edb599507be00000a"}
+Rendering template within layouts/application
+Rendering reviews/review_new
+Completed in 1531ms (View: 487 | 200 OK [http://localhost/review_new/4b89266edb599507be00000a/4b892671db599507be0001cb]
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:33:31) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"3", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"lklkl;kl", "reputation"=>"1.0", "content"=>"jkhkjhj", "summary"=>"ghjghjkh", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf3addb599504d0000004", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+RuntimeError (no product for key="4b892671db599507be0001cb"):
+  app/controllers/reviews_controller.rb:220:in `review_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (211.0ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:38:37) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"3", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"lklkl;kl", "reputation"=>"1.0", "content"=>"jkhkjhj", "summary"=>"ghjghjkh", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf3addb599504d0000004", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+NameError (undefined local variable or method `producr' for #<ReviewsController:0x1067fe610>):
+  app/controllers/reviews_controller.rb:220:in `review_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#review_create (for 127.0.0.1 at 2010-03-14 15:38:51) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "review"=>{"rating"=>"3", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b892671db599507be0001cb", "max_rating"=>"5.0", "source_url"=>"lklkl;kl", "reputation"=>"1.0", "content"=>"jkhkjhj", "summary"=>"ghjghjkh", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "review_id"=>"4b9cf3addb599504d0000004", "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9cf4fcdb599504d0000005
+Completed in 213ms | 302 Found [http://localhost/review_create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-14 15:38:52) [GET]
+  Parameters: {"id"=>"4b9cf4fcdb599504d0000005"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (35.6ms)
+Completed in 911ms (View: 607 | 200 OK [http://localhost/reviews/show/4b9cf4fcdb599504d0000005]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 15:38:58) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.2ms)
+Rendered home/_product_price (7.1ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (12.3ms)
+Completed in 475ms (View: 43 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 15:39:06) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"p5TCFZgsHKMjn7+4gSsTv+mwK1IJRyOmxUbrMwhW8zU=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (187.0ms)
+Rendered home/_product_tab_reviews (195.3ms)
+Rendered home/_product_tabs (207.8ms)
+Completed in 497ms (View: 212 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 15:39:12) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.4ms)
+Rendered home/_product_price (5.8ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (11.7ms)
+Completed in 493ms (View: 205 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-14 18:36:51) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 88ms (View: 87 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-14 18:37:01) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 767ms (View: 285 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-14 18:37:10) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 1381ms (View: 37 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 18:37:15) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (124.9ms)
+Rendered home/_product_price (6.7ms)
+Rendered home/_product_tab_overview (1.6ms)
+Rendered home/_product_tabs (185.8ms)
+Completed in 650ms (View: 421 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 18:37:17) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (101.3ms)
+Rendered home/_product_tab_reviews (111.8ms)
+Rendered home/_product_tabs (121.0ms)
+Completed in 354ms (View: 123 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-14 18:37:21) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "knowledge_id"=>"4b84261be2c6d6013b00000a"}
+
+ActionController::RoutingError (No route matches "/review/new" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 18:38:29) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.0ms)
+Rendered home/_product_price (3.5ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.4ms)
+Completed in 265ms (View: 25 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 18:38:30) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (13.4ms)
+Rendered home/_product_tab_reviews (19.5ms)
+Rendered home/_product_tabs (97.4ms)
+Completed in 340ms (View: 99 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-14 18:38:33) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "knowledge_idurl"=>"new", "knowledge_id"=>"4b84261be2c6d6013b00000a"}
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.5ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 18:39:56) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.1ms)
+Rendered home/_product_price (3.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.8ms)
+Completed in 281ms (View: 27 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 18:39:59) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.4ms)
+Rendered home/_product_tab_reviews (16.9ms)
+Rendered home/_product_tabs (23.6ms)
+Completed in 268ms (View: 26 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-14 18:43:03) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.0ms)
+Rendered home/_product_price (3.5ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (9.0ms)
+Completed in 390ms (View: 127 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-14 18:43:05) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.1ms)
+Rendered home/_product_tab_reviews (17.8ms)
+Rendered home/_product_tabs (27.4ms)
+Completed in 304ms (View: 29 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-14 18:43:09) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+
+RuntimeError (params for new={"product_id"=>"4b84261ce2c6d6013b0001c9", "action"=>"new", "id"=>"4b84261be2c6d6013b00000a", "controller"=>"reviews"}):
+  app/controllers/reviews_controller.rb:186:in `new'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-14 18:43:30) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (18.1ms)
+Completed in 448ms (View: 260 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-14 18:43:39) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}, "knowledge_idurl"=>"create"}
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-14 18:45:28) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (17.3ms)
+Completed in 524ms (View: 270 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-14 18:48:12) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (16.8ms)
+Completed in 521ms (View: 268 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-14 18:48:33) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}, "knowledge_idurl"=>"create"}
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (128.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-14 23:22:33) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (16.6ms)
+Completed in 416ms (View: 258 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-14 23:22:36) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}, "knowledge_idurl"=>"create"}
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:04:32) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+RuntimeError (no knowledge for key="cell_phones"):
+  app/controllers/reviews_controller.rb:217:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 00:04:45) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (16.6ms)
+Completed in 641ms (View: 235 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:04:48) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+RuntimeError (no knowledge for key="cell_phones"):
+  app/controllers/reviews_controller.rb:217:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:06:09) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+
+RuntimeError (no knowledge for key="cell_phones"):
+  app/controllers/reviews_controller.rb:217:in `create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:07:07) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"2", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"asdadsdfasf", "reputation"=>"1.0", "content"=>"adsfasdfas", "summary"=>"sdafasdf", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"14", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9d6c1be2c6d601c0000002
+Completed in 341ms | 302 Found [http://localhost/reviews/create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 00:07:07) [GET]
+  Parameters: {"id"=>"4b9d6c1be2c6d601c0000002"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (14.6ms)
+Completed in 532ms (View: 302 | 200 OK [http://localhost/reviews/show/4b9d6c1be2c6d601c0000002]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 00:07:21) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.9ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (12.2ms)
+Completed in 356ms (View: 114 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 00:07:24) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (11.9ms)
+Rendered home/_product_tab_reviews (17.3ms)
+Rendered home/_product_tabs (26.3ms)
+Completed in 261ms (View: 28 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 00:07:31) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (17.5ms)
+Completed in 464ms (View: 231 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:07:47) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"3", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"sadfasdfsadf", "reputation"=>"1.0", "content"=>"asdfasdfasdf\r\nasdfsadfadsf\r\nasdfasdfasd", "summary"=>"adsfadsff\r\nasdfasdfsad", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9d6c43e2c6d601c0000004
+Completed in 169ms | 302 Found [http://localhost/reviews/create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 00:07:47) [GET]
+  Parameters: {"id"=>"4b9d6c43e2c6d601c0000004"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.5ms)
+Completed in 520ms (View: 352 | 200 OK [http://localhost/reviews/show/4b9d6c43e2c6d601c0000004]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 00:07:55) [GET]
+  Parameters: {"id"=>"4b9d6c43e2c6d601c0000004"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (16.8ms)
+Completed in 263ms (View: 244 | 200 OK [http://localhost/reviews/edit/4b9d6c43e2c6d601c0000004]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 00:08:01) [GET]
+  Parameters: {"id"=>"4b9d6c43e2c6d601c0000004"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.7ms)
+Completed in 525ms (View: 270 | 200 OK [http://localhost/reviews/show/4b9d6c43e2c6d601c0000004]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 00:08:07) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (3.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.8ms)
+Completed in 311ms (View: 128 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 00:08:09) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.1ms)
+Rendered home/_product_tab_reviews (16.4ms)
+Rendered home/_product_tabs (23.2ms)
+Completed in 306ms (View: 25 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 00:10:04) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "review"=>{"rating"=>"3", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"sadfasdfsadf", "reputation"=>"1.0", "content"=>"asdfasdfasdf\r\nasdfsadfadsf\r\nasdfasdfasd", "summary"=>"adsfadsff\r\nasdfasdfsad", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9d6ccde2c6d601c0000005
+Completed in 271ms | 302 Found [http://localhost/reviews/create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 00:10:05) [GET]
+  Parameters: {"id"=>"4b9d6ccde2c6d601c0000005"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (13.3ms)
+Completed in 549ms (View: 279 | 200 OK [http://localhost/reviews/show/4b9d6ccde2c6d601c0000005]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 00:10:09) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.1ms)
+Rendered home/_product_price (3.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.6ms)
+Completed in 316ms (View: 131 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 00:10:11) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"7IiTZpH472Aii0jQyB5WygHUjz+v+KGFPUyoHNRvf0g=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.8ms)
+Rendered home/_product_tab_reviews (17.7ms)
+Rendered home/_product_tabs (24.7ms)
+Completed in 342ms (View: 27 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 00:10:16) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (17.5ms)
+Completed in 551ms (View: 279 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-15 16:38:30) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 23ms (View: 22 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-15 16:38:37) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 368ms (View: 164 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-15 16:38:49) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 371ms (View: 36 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 16:38:52) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.9ms)
+Rendered home/_product_price (4.8ms)
+Rendered home/_product_tab_overview (1.0ms)
+Rendered home/_product_tabs (11.9ms)
+Completed in 218ms (View: 99 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 16:38:55) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (78.0ms)
+Rendered home/_product_tab_reviews (142.8ms)
+Rendered home/_product_tabs (151.3ms)
+Completed in 218ms (View: 153 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 16:39:11) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (8.8ms)
+Completed in 155ms (View: 109 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 17:08:23) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (7.8ms)
+Completed in 152ms (View: 103 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-15 17:13:26) [POST]
+  Parameters: {"commit"=>"Create review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "product_id"=>"4b84261ce2c6d6013b0001c9", "max_rating"=>"5.0", "source_url"=>"sadfasdf", "reputation"=>"1.0", "content"=>"asdfasdfsdf", "summary"=>"essain1", "knowledge_idurl"=>"cell_phones", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9e5ca6e2c6d6016b000003
+Completed in 151ms | 302 Found [http://localhost/reviews/create]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:13:26) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.6ms)
+Completed in 265ms (View: 124 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 17:14:29) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.1ms)
+Rendered home/_product_price (3.5ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.2ms)
+Completed in 167ms (View: 101 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 17:14:31) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (13.2ms)
+Rendered reviews/_short (5.1ms)
+Rendered home/_product_tab_reviews (22.8ms)
+Rendered home/_product_tabs (29.7ms)
+Completed in 179ms (View: 32 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 17:14:38) [GET]
+  Parameters: {"product_idurl"=>"sadfasdf"}
+Rendering template within layouts/application
+Rendering home/product
+
+ActionView::TemplateError (undefined method `get_value' for nil:NilClass) on line #1 of app/views/home/product.html.erb:
+1: <% url_image = @knowledge.get_feature_by_idurl("main_image").get_value(@product) %>
+2: 
+3: <div id="main">
+4:     <div class="box952">
+
+    app/models/knowledge.rb:458:in `get_value'
+    app/views/home/product.html.erb:1
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (29.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 17:16:36) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (3.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.2ms)
+Completed in 180ms (View: 26 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 17:16:39) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (4.5ms)
+Rendered home/_product_tab_reviews (20.8ms)
+Rendered home/_product_tabs (27.2ms)
+Completed in 177ms (View: 29 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:17:21) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.2ms)
+Completed in 278ms (View: 136 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:17:24) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (8.3ms)
+Completed in 153ms (View: 133 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:17:37) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+
+ActionController::UnknownAction (No action responded to update. Actions: add_opinion, create, create_opinion, cut_paragraph, delete_opinion, edit, edit_paragraph, edit_paragraph_cancel, feature_filter, get_logged_user, get_product_selected, index, new, open_opinion_editor, review_update, show, and split_in_paragraphs):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:18:03) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+
+NoMethodError (undefined method `update_attributes' for nil:NilClass):
+  app/controllers/reviews_controller.rb:237:in `update'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:18:14) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (7.7ms)
+Completed in 60ms (View: 40 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:18:20) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+
+NoMethodError (undefined method `update_attributes' for nil:NilClass):
+  app/controllers/reviews_controller.rb:237:in `update'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:19:39) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (7.5ms)
+Completed in 162ms (View: 144 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:19:42) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "id"=>"4b9e5ca6e2c6d6016b000003", "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9e5ca6e2c6d6016b000003
+Completed in 130ms | 302 Found [http://localhost/reviews/update/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:19:42) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (15.3ms)
+Completed in 206ms (View: 148 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:20:50) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (7.3ms)
+Completed in 61ms (View: 41 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:20:57) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"http://www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "id"=>"4b9e5ca6e2c6d6016b000003", "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9e5ca6e2c6d6016b000003
+Completed in 23ms | 302 Found [http://localhost/reviews/update/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:20:57) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.6ms)
+Completed in 211ms (View: 153 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:21:14) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (13.0ms)
+Completed in 214ms (View: 154 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-15 17:27:31) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "review"=>{"rating"=>"0.0", "min_rating"=>"1.0", "category"=>"expert", "author"=>"Franck PATTE", "max_rating"=>"5.0", "source_url"=>"http://www.lemonde.fr", "reputation"=>"1.0", "content"=>"mise a jour", "summary"=>"essain1", "source"=>"Franck PATTE"}, "id"=>"4b9e5ca6e2c6d6016b000003", "written_at"=>{"month"=>"3", "day"=>"15", "year"=>"2010"}}
+Redirected to http://localhost:3000/reviews/show/4b9e5ca6e2c6d6016b000003
+Completed in 130ms | 302 Found [http://localhost/reviews/update/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:27:32) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.6ms)
+Completed in 252ms (View: 192 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:27:34) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (8.5ms)
+Completed in 194ms (View: 175 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 17:27:43) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.1ms)
+Rendered home/_product_price (3.5ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.5ms)
+Completed in 224ms (View: 25 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 17:27:45) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (4.7ms)
+Rendered home/_product_tab_reviews (21.4ms)
+Rendered home/_product_tabs (28.0ms)
+Completed in 237ms (View: 30 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-15 17:34:41) [GET]
+  Parameters: {"product_id"=>"4b84261ce2c6d6013b0001c9", "id"=>"4b84261be2c6d6013b00000a"}
+Rendering template within layouts/application
+Rendering reviews/new
+Rendered reviews/_form (7.5ms)
+Completed in 223ms (View: 44 | 200 OK [http://localhost/reviews/new/4b84261be2c6d6013b00000a?product_id=4b84261ce2c6d6013b0001c9]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 17:34:48) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (12.8ms)
+Rendered reviews/_short (4.7ms)
+Rendered home/_product_tab_reviews (21.7ms)
+Rendered home/_product_tabs (28.7ms)
+Completed in 237ms (View: 31 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:34:56) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (11.7ms)
+Completed in 243ms (View: 47 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b0]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 17:34:59) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b0"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (7.9ms)
+Completed in 61ms (View: 41 | 200 OK [http://localhost/reviews/edit/4b84261ee2c6d6013b0002b0]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-15 17:35:12) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 458ms (View: 170 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 17:35:14) [GET]
+  Parameters: {"product_idurl"=>"nokia_6350"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.1ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.2ms)
+Completed in 241ms (View: 26 | 200 OK [http://localhost/product/nokia_6350]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 17:35:17) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_6350", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (13.3ms)
+Rendered reviews/_short (5.3ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (4.6ms)
+Rendered home/_product_tab_reviews (36.2ms)
+Rendered home/_product_tabs (42.6ms)
+Completed in 266ms (View: 45 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_6350]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:35:21) [GET]
+  Parameters: {"id"=>"4b84264de2c6d6013b000e1f"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_paragraph (4.6ms)
+Completed in 415ms (View: 206 | 200 OK [http://localhost/reviews/show/4b84264de2c6d6013b000e1f]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:35:41) [GET]
+  Parameters: {"id"=>"4b84264de2c6d6013b000e0e"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.4ms)
+Completed in 462ms (View: 251 | 200 OK [http://localhost/reviews/show/4b84264de2c6d6013b000e0e]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-15 17:35:52) [GET]
+  Parameters: {"mode"=>"p", "id"=>"4b84264de2c6d6013b000e0e"}
+Redirected to http://localhost:3000/reviews/show/4b84264de2c6d6013b000e0e
+Completed in 40ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b84264de2c6d6013b000e0e?mode=p]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:35:52) [GET]
+  Parameters: {"id"=>"4b84264de2c6d6013b000e0e"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Completed in 268ms (View: 54 | 200 OK [http://localhost/reviews/show/4b84264de2c6d6013b000e0e]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-15 17:35:55) [GET]
+  Parameters: {"mode"=>"br", "id"=>"4b84264de2c6d6013b000e0e"}
+Redirected to http://localhost:3000/reviews/show/4b84264de2c6d6013b000e0e
+Completed in 42ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b84264de2c6d6013b000e0e?mode=br]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:35:55) [GET]
+  Parameters: {"id"=>"4b84264de2c6d6013b000e0e"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (13.7ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.3ms)
+Completed in 476ms (View: 256 | 200 OK [http://localhost/reviews/show/4b84264de2c6d6013b000e0e]
+
+
+Processing ReviewsController#split_in_paragraphs (for 127.0.0.1 at 2010-03-15 17:35:58) [GET]
+  Parameters: {"mode"=>"p_br", "id"=>"4b84264de2c6d6013b000e0e"}
+Redirected to http://localhost:3000/reviews/show/4b84264de2c6d6013b000e0e
+Completed in 48ms | 302 Found [http://localhost/reviews/split_in_paragraphs/4b84264de2c6d6013b000e0e?mode=p_br]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 17:35:58) [GET]
+  Parameters: {"id"=>"4b84264de2c6d6013b000e0e"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (14.1ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (191.9ms)
+Completed in 513ms (View: 287 | 200 OK [http://localhost/reviews/show/4b84264de2c6d6013b000e0e]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-03-15 17:36:03) [POST]
+  Parameters: {"paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b84264de2c6d6013b000e0e"}
+Rendered reviews/_opinion_editor_bis (10.0ms)
+Completed in 75ms (View: 14 | 200 OK [http://localhost/reviews/open_opinion_editor/4b84264de2c6d6013b000e0e?paragraph_id=4b9e61eee2c6d6016b000014]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-15 17:36:04) [POST]
+  Parameters: {"paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b84264de2c6d6013b000e0e", "type_opinion"=>"tip"}
+Rendered reviews/_opinion_editor (20.5ms)
+Completed in 264ms (View: 26 | 200 OK [http://localhost/reviews/add_opinion/4b84264de2c6d6013b000e0e?paragraph_id=4b9e61eee2c6d6016b000014]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-15 17:36:12) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"battery_life_rating", "paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b84264de2c6d6013b000e0e", "type_opinion"=>"tip", "tip_intensity_or_neutral"=>"1.0", "tip_usage"=>"gfsgsfg"}
+Rendered reviews/_opinion_editor_bis (15.9ms)
+Completed in 264ms (View: 18 | 200 OK [http://localhost/reviews/create_opinion/4b84264de2c6d6013b000e0e]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-15 17:36:19) [POST]
+  Parameters: {"paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b84264de2c6d6013b000e0e", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_opinion_editor (18.9ms)
+Completed in 253ms (View: 21 | 200 OK [http://localhost/reviews/add_opinion/4b84264de2c6d6013b000e0e?paragraph_id=4b9e61eee2c6d6016b000014]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-03-15 17:36:24) [POST]
+  Parameters: {"paragraph_id"=>"4b9e61eee2c6d6016b000014", "feature_idurl"=>"carrier_compatibility", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b84264de2c6d6013b000e0e"}
+Rendered reviews/_filter_feature (1.9ms)
+Completed in 259ms (View: 6 | 200 OK [http://localhost/reviews/feature_filter/4b84264de2c6d6013b000e0e?paragraph_id=4b9e61eee2c6d6016b000014]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-15 17:36:28) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"camera_rating", "paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "comparator_operator"=>"better", "comparator_feature"=>"carrier_compatibility", "feature_filter_datas"=>["att"], "id"=>"4b84264de2c6d6013b000e0e", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_opinion_editor_bis (7.4ms)
+Completed in 80ms (View: 9 | 200 OK [http://localhost/reviews/create_opinion/4b84264de2c6d6013b000e0e]

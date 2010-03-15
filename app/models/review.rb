@@ -124,7 +124,7 @@ class FromAmazon < Review
     r = Review::FromAmazon.create(:knowledge_idurl => knowledge.idurl,
                                   :knowledge => knowledge,
                                   :product_idurl => product.idurl,
-                                  :product => product,
+                                  :product_id => product.id,
                                   :author => "amazon_customer_#{amazon_review[:customerid]}",
                                   :source => Review::FromAmazon.default_category,
                                   :source_url => amazon_url,

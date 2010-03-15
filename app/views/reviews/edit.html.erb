@@ -1,0 +1,14 @@
+<div class="pkz_box">
+
+    <%= model_selector(@knowledge, :reviews) %>
+
+    <% form_for :review, @review, :url => "/reviews/update/#{@review.id}" do |f| %>
+
+          <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
+
+          <p><%= submit_tag 'Update review' %></p>
+
+    <% end %>
+
+
+</div>

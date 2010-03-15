@@ -16,7 +16,7 @@
               </tr>
          </table>
 
-          <%= link_to("edit this review", "/review_edit/#{@review.id}") %>
+          <%= link_to("edit this review", "/reviews/edit/#{@review.id}") %>
           <% if @review.content %>
              or generate paragraphs by&nbsp;
              <%= link_to("none", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "none") %>,&nbsp;

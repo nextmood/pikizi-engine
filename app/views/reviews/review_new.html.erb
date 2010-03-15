@@ -2,7 +2,7 @@
 
     <%= model_selector(@knowledge, :reviews) %>
 
-    <% form_for :review, @review, :url => "/review_create" do |f| %>
+    <% form_for :review, @review, :url => "/reviews/create" do |f| %>
           <%= f.hidden_field :knowledge_idurl %>
           <%= f.hidden_field :product_id %>
           <%= hidden_field_tag :review_id, @review.id %>

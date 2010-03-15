@@ -1,0 +1,17 @@
+<div class="pkz_box">
+
+    <%= model_selector(@knowledge, :reviews) %>
+
+    <% form_for :review, @review, :url => { :action => "create" } do |f| %>
+
+          <%= f.text_field :knowledge_idurl %>
+          <%= f.text_field :product_id %>
+
+          <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
+
+          <p><%= submit_tag 'Create review' %></p>
+
+    <% end %>
+
+
+</div>

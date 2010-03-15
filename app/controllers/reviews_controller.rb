@@ -181,56 +181,69 @@ class ReviewsController < ApplicationController
   end
 
 
-  # get /review_new/:knowledge_id/:product_id
-  # get /review_edit/:review_id
-  def review_new
-    if params[:review_id]
-      # editing a given review
-      @review = Review.find(params[:review_id])
-      @knowledge = @review.knowledge
-    else
-      # a brand new review for a given product
-      @knowledge = Knowledge.first(:id => params[:knowledge_id])
-      product = Product.first(:id => params[:product_id])
-      user = get_logged_user
-      @review = Review.new(:knowledge_idurl => @knowledge.idurl,
-                           :knowledge_id => @knowledge.id,
-                           :product => product,
-                           :product_idurl => product.idurl,
-                           :author => user.rpx_name,
-                           :source => user.rpx_name,
-                           :user => user,
-                           :category => "expert",
-                           :written_at => Time.now,
-                           :reputation => 1,
-                           :min_rating => 1,
-                           :max_rating => 5)
-    end
+  # get /reviews/new/:knowledge_id/:product_id
+  def new
+    # a brand new review for a given product
+    @knowledge = Knowledge.first(:id => params[:id])
+    product = Product.first(:id => params[:product_id])
+    user = get_logged_user
+    @review = Review.new(:knowledge_idurl => @knowledge.idurl,
+                         :knowledge_id => @knowledge.id,
+                         :product => product,
+                         :product_idurl => product.idurl,
+                         :author => user.rpx_name,
+                         :source => user.rpx_name,
+                         :user => user,
+                         :category => "expert",
+                         :written_at => Time.now,
+                         :reputation => 1,
+                         :min_rating => 1,
+                         :max_rating => 5)
   end
 
-  # get /review_create
-  def review_create
-    @review = Review.find(params[:review_id]) if params[:review_id]
-    if @review
-      # this is an update
-      @review.update_attributes(params[:review])
-    else
-      # this is a new review
-      @review = Review::Inpaper.new(params[:review])
-      @review.written_at = params[:written_at]
-      @review.user = get_logged_user
-    end
-
+  # get /reviews/edit/:review_id
+  def edit
+    @review = Review.find(params[:id])
     @knowledge = @review.knowledge
+  end
+
+  # post /reviews/create
+  def create
+    # this is a new review
+    product = Product.find(params[:review][:product_id])
+    raise "no product for key=#{params[:review][:product_id].inspect}" unless product
+
+    @knowledge = Knowledge.first(:idurl => params[:review][:knowledge_idurl])
+    raise "no knowledge for key=#{params[:review][:knowledge_idurl].inspect}" unless @knowledge
+
+    @review = Review::Inpaper.new(params[:review])
+    @review.written_at = params[:written_at]
+    @review.user = get_logged_user
+    @review.product_idurl = product.idurl
+    @review.product_id = product.id
 
     if @review.save
       flash[:notice] = "Review sucessufuly created"
       redirect_to  "/reviews/show/#{@review.id}"
     else
       flash[:notice] = "ERROR Review was not created"
-      render(:action => "review_new")
+      render(:action => "new")
     end
   end
 
+  # post /reviews/update
+  def update
+    @review = Review.find(params[:id])
+    @review.update_attributes(params[:review])
+    @knowledge = @review.knowledge
+
+    if @review.save
+      flash[:notice] = "Review sucessufuly updated"
+      redirect_to  "/reviews/show/#{@review.id}"
+    else
+      flash[:notice] = "ERROR Review was not upodated"
+      render(:action => "edit")
+    end
+  end
 
 end
