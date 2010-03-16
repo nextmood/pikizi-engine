@@ -7,8 +7,6 @@ require 'review'
 class Availability
   include MongoMapper::EmbeddedDocument
 
-
-
   key :amount, Float
   key :merchant, String
   key :merchant_url, String
