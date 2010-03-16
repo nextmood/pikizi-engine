@@ -35177,3 +35177,1796 @@ Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-15 17:36:2
   Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"camera_rating", "paragraph_id"=>"4b9e61eee2c6d6016b000014", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "comparator_operator"=>"better", "comparator_feature"=>"carrier_compatibility", "feature_filter_datas"=>["att"], "id"=>"4b84264de2c6d6013b000e0e", "type_opinion"=>"comparator_feature"}
 Rendered reviews/_opinion_editor_bis (7.4ms)
 Completed in 80ms (View: 9 | 200 OK [http://localhost/reviews/create_opinion/4b84264de2c6d6013b000e0e]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-15 18:16:13) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 4ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-15 18:16:20) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 77ms (View: 13 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-15 18:16:29) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 541ms (View: 210 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 18:16:33) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.3ms)
+Rendered home/_product_price (3.6ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.8ms)
+Completed in 277ms (View: 212 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-15 18:16:36) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (208.8ms)
+Rendered reviews/_short (5.1ms)
+Rendered home/_product_tab_reviews (218.3ms)
+Rendered home/_product_tabs (225.1ms)
+Completed in 295ms (View: 228 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-15 18:16:42) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.7ms)
+Completed in 303ms (View: 241 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-15 18:59:15) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (7.7ms)
+Completed in 253ms (View: 233 | 200 OK [http://localhost/reviews/edit/4b9e5ca6e2c6d6016b000003]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-15 18:59:24) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 597ms (View: 247 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-15 18:59:28) [GET]
+  Parameters: {"product_idurl"=>"lg_chocolate_touch"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.3ms)
+Rendered home/_product_price (4.0ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (8.6ms)
+Completed in 289ms (View: 27 | 200 OK [http://localhost/product/lg_chocolate_touch]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-15 18:59:48) [GET]
+
+ActionController::RoutingError (No route matches "/product/lg_chocolate_touch.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-15 19:06:44) [GET]
+
+ActionView::MissingTemplate (Missing template products/index.erb in view path app/views:vendor/plugins/mongo_admin/app/views):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-15 19:10:37) [GET]
+
+ActionView::MissingTemplate (Missing template products/index.erb in view path app/views:vendor/plugins/mongo_admin/app/views):
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-15 19:11:02) [GET]
+  Parameters: {"product_idurl"=>"index"}
+
+ActionController::UnknownAction (No action responded to show. Actions: get_logged_user, get_product_selected, and index):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-15 19:11:47) [GET]
+
+ActionView::MissingTemplate (Missing template products/index.erb in view path app/views:vendor/plugins/mongo_admin/app/views):
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-15 19:12:00) [GET]
+
+ActionController::RoutingError (No route matches "/products.html" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:12:36) [GET]
+
+ActionView::MissingTemplate (Missing template products/index.erb in view path app/views:vendor/plugins/mongo_admin/app/views):
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:12:45) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/root.rb:141:in `generate_xml'
+  app/models/root.rb:141:in `to_xml'
+  app/controllers/products_controller.rb:8:in `index'
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (27.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:13:27) [GET]
+
+ActionView::MissingTemplate (Missing template products/index.erb in view path app/views:vendor/plugins/mongo_admin/app/views):
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:13:46) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 311ms (View: 8 | 200 OK [http://localhost/products.html]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:13:52) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/root.rb:141:in `generate_xml'
+  app/models/root.rb:141:in `to_xml'
+  app/controllers/products_controller.rb:8:in `index'
+  app/controllers/products_controller.rb:6:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:14:52) [GET]
+Rendering products/index
+Completed in 314ms (View: 6 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:15:13) [GET]
+Rendering products/index
+Completed in 311ms (View: 4 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:16:12) [GET]
+Rendering products/index
+Completed in 311ms (View: 5 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:16:56) [GET]
+Rendering products/index
+Completed in 311ms (View: 5 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:19:10) [GET]
+Rendering products/index
+Completed in 2245ms (View: 1939 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-15 19:20:13) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+
+ActionController::UnknownAction (No action responded to show. Actions: get_logged_user, get_product_selected, and index):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-15 19:22:37) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Completed in 31ms (View: 5 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-15 19:51:08) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (undefined method `described_by_knowledge' for #<Product:0x11084e390>) on line #3 of app/views/products/show.xml.erb:
+1: <product idurl="<%= @product.idurl %>">
+2: 
+3:     <% for knowledge in @product.described_by_knowledge %>
+4:     <% end %>
+5: </product>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/products/show.xml.erb:3
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (31.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:51:16) [GET]
+Rendering products/index
+Completed in 2303ms (View: 1974 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:51:21) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 2045ms (View: 1737 | 200 OK [http://localhost/products.html]
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:55:01) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 2067ms (View: 1757 | 200 OK [http://localhost/products.html]
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:55:31) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 2320ms (View: 1997 | 200 OK [http://localhost/products.html]
+
+
+Processing ProductsController#index to html (for 127.0.0.1 at 2010-03-15 19:55:47) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 2105ms (View: 1784 | 200 OK [http://localhost/products.html]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 19:56:21) [GET]
+Rendering products/index
+Completed in 2287ms (View: 1965 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 20:41:28) [GET]
+Rendering products/index
+Completed in 2036ms (View: 1958 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-15 20:41:58) [GET]
+Rendering products/index
+Completed in 2060ms (View: 1751 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-15 20:43:22) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (undefined method `described_by_knowledge' for #<Product:0x10fabb250>) on line #3 of app/views/products/show.xml.erb:
+1: <product idurl="<%= @product.idurl %>">
+2: 
+3:     <% for knowledge in @product.described_by_knowledge %>
+4:     <% end %>
+5: </product>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/products/show.xml.erb:3
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-15 20:44:14) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (undefined method `knowledge' for #<Product:0x10f6f2218>) on line #2 of app/views/products/show.xml.erb:
+1: <product idurl="<%= @product.idurl %>">
+2:     <%= @product.knowledge.idurl %>
+3: 
+4: </product>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/products/show.xml.erb:2
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (290.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-16 11:17:11) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 20ms (View: 19 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-16 11:17:15) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 367ms (View: 172 | 200 OK [http://localhost/home]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:19:35) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1204ms (View: 1035 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:22:20) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1177ms (View: 1054 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:23:17) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1474ms (View: 1349 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:23:57) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1145ms (View: 1015 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:24:22) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1182ms (View: 999 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:24:43) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1205ms (View: 1021 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:25:00) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1123ms (View: 984 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-16 11:25:16) [GET]
+Rendering template within layouts/application
+Rendering products/index
+Completed in 1129ms (View: 946 | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-16 11:26:35) [GET]
+Rendering products/index
+Completed in 1073ms (View: 948 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 11:27:16) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (undefined method `knowledge' for #<Product:0x1023e5d48>) on line #2 of app/views/products/show.xml.erb:
+1: <product idurl="<%= @product.idurl %>">
+2:     <%= @product.knowledge.idurl %>
+3: 
+4: </product>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/products/show.xml.erb:2
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-16 11:27:24) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering template within layouts/application
+Rendering products/show
+Completed in 34ms (View: 7 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-16 11:32:16) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering template within layouts/application
+Rendering products/show
+Completed in 125ms (View: 4 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-16 11:32:22) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering template within layouts/application
+Rendering products/show
+Completed in 31ms (View: 3 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 11:33:01) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Completed in 74ms (View: 46 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 11:33:29) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Completed in 127ms (View: 100 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 16:22:27) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Completed in 50ms (View: 21 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:03:57) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+
+NameError (uninitialized constant MongoMapper::EmmbeddedDocument):
+  app/models/availability.rb:23
+  app/models/product.rb:24
+  app/controllers/products_controller.rb:14:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:06:53) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (Missing template /features/_list.erb in view path app/views:vendor/plugins/mongo_admin/app/views) on line #4 of app/views/products/show.xml.erb:
+1: <product idurl="<%= @product.idurl %>" knowledge_idurl="<%= @product.knowledge.idurl %>" >
+2: 
+3:     <% for feature in @product.knowledge.features %>
+4:         <%= render(:partial => "/features/list", :local => {:feature => feature})  %>
+5:     <% end %>
+6:     
+7: </product>
+
+    app/views/products/show.xml.erb:4
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/views/products/show.xml.erb:3
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (130.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:08:03) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+
+ActionView::TemplateError (undefined local variable or method `feature' for #<ActionView::Base:0x105f7c550>) on line #1 of app/views/features/_list.xml.erb:
+1: <%= feature.label %>
+
+    app/views/features/_list.xml.erb:1
+    app/views/products/show.xml.erb:4
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/views/products/show.xml.erb:3
+    app/controllers/products_controller.rb:15:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (138.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:08:25) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.3ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.0ms)
+Completed in 65ms (View: 33 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:09:31) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Completed in 68ms (View: 36 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:10:00) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Completed in 158ms (View: 127 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:10:46) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Completed in 67ms (View: 35 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:11:04) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Completed in 180ms (View: 39 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-16 17:17:03) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 4ms (View: 3 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-16 17:17:08) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 187ms (View: 17 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-16 17:17:28) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "s"=>"nokia"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 404ms (View: 39 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-16 17:17:32) [GET]
+  Parameters: {"product_idurl"=>"nokia_6350"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.0ms)
+Rendered home/_product_price (5.3ms)
+Rendered home/_product_tab_overview (1.4ms)
+Rendered home/_product_tabs (12.7ms)
+Completed in 252ms (View: 57 | 200 OK [http://localhost/product/nokia_6350]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-16 17:17:35) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_6350", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (17.9ms)
+Rendered reviews/_short (5.3ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (4.6ms)
+Rendered home/_product_tab_reviews (47.2ms)
+Rendered home/_product_tabs (56.6ms)
+Completed in 262ms (View: 60 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_6350]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:17:39) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b1"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (12.3ms)
+Completed in 280ms (View: 216 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b1]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:17:46) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b1"}
+Rendering reviews/show
+Completed in 207ms (View: 6 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b1.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:18:18) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b1"}
+Rendering reviews/show
+Completed in 68ms (View: 6 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b1.xml]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-16 17:22:33) [GET]
+  Parameters: {"product_idurl"=>"nokia_6350"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.2ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.7ms)
+Completed in 246ms (View: 26 | 200 OK [http://localhost/product/nokia_6350]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 17:22:43) [GET]
+  Parameters: {"product_idurl"=>"nokia_6350"}
+Rendering products/show
+Rendered features/_list (0.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (2.3ms)
+Rendered features/_list (3.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (153.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (2.0ms)
+Rendered features/_list (3.8ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.8ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (3.8ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (167.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (3.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (8.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (2.8ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.8ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.1ms)
+Rendered features/_list (4.5ms)
+Completed in 256ms (View: 225 | 200 OK [http://localhost/products/nokia_6350.xml]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-16 17:26:08) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_6350", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (13.0ms)
+Rendered reviews/_short (5.6ms)
+Rendered reviews/_short (164.1ms)
+Rendered reviews/_short (4.9ms)
+Rendered home/_product_tab_reviews (194.2ms)
+Rendered home/_product_tabs (200.7ms)
+Completed in 279ms (View: 204 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_6350]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:26:13) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b1"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (160.8ms)
+Completed in 264ms (View: 202 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b1]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:26:24) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b1"}
+Rendering reviews/show
+Completed in 66ms (View: 3 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b1.xml]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-16 17:26:40) [GET]
+  Parameters: {"product_idurl"=>"nokia_5130_xpressmusic"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.1ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.6ms)
+Rendered home/_product_tabs (7.9ms)
+Completed in 256ms (View: 28 | 200 OK [http://localhost/product/nokia_5130_xpressmusic]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-16 17:26:42) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_5130_xpressmusic", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (181.1ms)
+Rendered reviews/_short (4.8ms)
+Rendered home/_product_tab_reviews (190.3ms)
+Rendered home/_product_tabs (197.1ms)
+Completed in 273ms (View: 199 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_5130_xpressmusic]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:26:48) [GET]
+  Parameters: {"id"=>"4b9e5ca6e2c6d6016b000003"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (174.9ms)
+Completed in 287ms (View: 220 | 200 OK [http://localhost/reviews/show/4b9e5ca6e2c6d6016b000003]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:26:56) [GET]
+  Parameters: {"id"=>"4b84261ee2c6d6013b0002b0"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (13.1ms)
+Completed in 275ms (View: 215 | 200 OK [http://localhost/reviews/show/4b84261ee2c6d6013b0002b0]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-16 17:27:04) [GET]
+  Parameters: {"product_idurl"=>"nokia_e71x"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.2ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.9ms)
+Completed in 268ms (View: 197 | 200 OK [http://localhost/product/nokia_e71x]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-16 17:27:07) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"nokia_e71x", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (14.6ms)
+Rendered reviews/_short (5.4ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (5.2ms)
+Rendered reviews/_short (7.8ms)
+Rendered reviews/_short (5.7ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (5.3ms)
+Rendered reviews/_short (7.7ms)
+Rendered reviews/_short (5.6ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (5.4ms)
+Rendered reviews/_short (10.2ms)
+Rendered reviews/_short (5.5ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (5.3ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (7.0ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (5.0ms)
+Rendered reviews/_short (5.3ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (5.8ms)
+Rendered reviews/_short (5.0ms)
+Rendered reviews/_short (5.1ms)
+Rendered reviews/_short (5.8ms)
+Rendered reviews/_short (5.6ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (8.3ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (5.4ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (4.8ms)
+Rendered home/_product_tab_reviews (512.9ms)
+Rendered home/_product_tabs (519.4ms)
+Completed in 786ms (View: 713 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=nokia_e71x]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:27:14) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (15.6ms)
+Rendered reviews/_paragraph (5.0ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.6ms)
+Completed in 325ms (View: 264 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:27:25) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 241ms (View: 3 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:29:32) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+
+ActionView::TemplateError (undefined method `paragraph' for nil:NilClass) on line #3 of app/views/reviews/show.xml.erb:
+1: <Review id="<%= @review.id %>" product_idurl="<%= @review.product.idurl %>">
+2:     <paragraphs>
+3:         <% for paragraph in @reviews.paragraph %>
+4:             <Paragraph><%= paragraph.content %></Paragraph>
+5:         <% end %>
+6:     </paragraphs>
+
+    app/views/reviews/show.xml.erb:3
+    app/controllers/reviews_controller.rb:16:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:29:43) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+
+ActionView::TemplateError (undefined method `paragraphs' for nil:NilClass) on line #3 of app/views/reviews/show.xml.erb:
+1: <Review id="<%= @review.id %>" product_idurl="<%= @review.product.idurl %>">
+2:     <paragraphs>
+3:         <% for paragraph in @reviews.paragraphs %>
+4:             <Paragraph><%= paragraph.content %></Paragraph>
+5:         <% end %>
+6:     </paragraphs>
+
+    app/views/reviews/show.xml.erb:3
+    app/controllers/reviews_controller.rb:16:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:29:51) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 69ms (View: 10 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ApplicationController#show to xml (for 127.0.0.1 at 2010-03-16 17:40:25) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+
+MissingSourceFile (no such file to load -- htmlentities):
+  app/controllers/reviews_controller.rb:1
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (215.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:40:52) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+
+ActionView::TemplateError (undefined method `coder' for #<HTMLEntities:0x10341e110 @flavor="xhtml1">) on line #5 of app/views/reviews/show.xml.erb:
+2:     <url></url>
+3:     <paragraphs>
+4:         <% for paragraph in @review.paragraphs %>
+5:             <Paragraph><%= @coder.coder.encode(paragraph.content) %></Paragraph>
+6:         <% end %>
+7:     </paragraphs>
+8: </Review>
+
+    app/views/reviews/show.xml.erb:5
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/show.xml.erb:4
+    app/controllers/reviews_controller.rb:19:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (94.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:41:03) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 149ms (View: 26 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:41:43) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 150ms (View: 25 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 17:42:12) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (18.6ms)
+Rendered reviews/_paragraph (4.8ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.2ms)
+Rendered reviews/_paragraph (3.1ms)
+Rendered reviews/_paragraph (3.1ms)
+Completed in 303ms (View: 174 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-03-16 17:42:22) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf"}
+Rendered reviews/_opinion_editor_bis (11.6ms)
+Completed in 173ms (View: 101 | 200 OK [http://localhost/reviews/open_opinion_editor/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 17:42:25) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"tip"}
+Rendered reviews/_opinion_editor (19.4ms)
+Completed in 173ms (View: 24 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 17:42:33) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"camera_rating", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"tip", "tip_intensity_or_neutral"=>"1.0", "tip_usage"=>"dsfsadf"}
+Rendered reviews/_opinion_editor_bis (5.3ms)
+Completed in 223ms (View: 7 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 17:42:38) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_editor (230.9ms)
+Completed in 388ms (View: 234 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 17:42:46) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"battery_life_rating", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "comparator_operator"=>"same", "id"=>"4b842654e2c6d6013b000fbf", "comparator_product"=>"blackberry_storm2_9550", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_editor_bis (6.7ms)
+Completed in 173ms (View: 8 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 17:42:48) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_opinion_editor (20.2ms)
+Completed in 182ms (View: 23 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#feature_filter (for 127.0.0.1 at 2010-03-16 17:42:51) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "feature_idurl"=>"carriers", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf"}
+Rendered reviews/_filter_feature (2.3ms)
+Completed in 84ms (View: 7 | 200 OK [http://localhost/reviews/feature_filter/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 17:42:58) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"gps_rating", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "comparator_operator"=>"better", "comparator_feature"=>"carriers", "feature_filter_datas"=>["att", "sprint"], "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"comparator_feature"}
+Rendered reviews/_opinion_editor_bis (7.6ms)
+Completed in 86ms (View: 9 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 17:43:10) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor (10.0ms)
+Completed in 87ms (View: 12 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 17:43:15) [POST]
+  Parameters: {"commit"=>"record opinion...", "feature_related"=>"touchscreen", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor_bis (9.6ms)
+Completed in 89ms (View: 11 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 17:43:21) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"tip"}
+Rendered reviews/_opinion_editor (111.5ms)
+Completed in 185ms (View: 113 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 17:43:29) [POST]
+  Parameters: {"commit"=>"record opinion...", "dimension_rating"=>"overall_rating", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"tip", "tip_intensity_or_neutral"=>"1.0", "tip_usage"=>"werwerweqrweqrweqrweqrweqr"}
+Rendered reviews/_opinion_editor_bis (11.9ms)
+Completed in 194ms (View: 14 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#delete_opinion (for 127.0.0.1 at 2010-03-16 17:43:31) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "opinion_id"=>"4b9fb531e2c6d60561000005"}
+Rendered reviews/_opinion_editor_bis (10.2ms)
+Completed in 198ms (View: 13 | 200 OK [http://localhost/reviews/delete_opinion/4b842654e2c6d6013b000fbf?opinion_id=4b9fb531e2c6d60561000005&paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:43:51) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 192ms (View: 126 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:45:36) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 213ms (View: 145 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:47:25) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 255ms (View: 186 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:58:37) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 236ms (View: 170 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 17:58:40) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 238ms (View: 170 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:01:50) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 247ms (View: 179 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:02:04) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 260ms (View: 189 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:03:54) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 251ms (View: 183 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:07:53) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 256ms (View: 186 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:08:38) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 257ms (View: 188 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:08:57) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 262ms (View: 193 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-16 18:11:18) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (174.9ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (4.2ms)
+Completed in 481ms (View: 412 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#open_opinion_editor (for 127.0.0.1 at 2010-03-16 18:11:23) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf"}
+Rendered reviews/_opinion_editor_bis (15.5ms)
+Completed in 249ms (View: 17 | 200 OK [http://localhost/reviews/open_opinion_editor/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#delete_opinion (for 127.0.0.1 at 2010-03-16 18:11:36) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "opinion_id"=>"4b9fb523e2c6d60561000004"}
+Rendered reviews/_opinion_editor_bis (8.5ms)
+Completed in 251ms (View: 10 | 200 OK [http://localhost/reviews/delete_opinion/4b842654e2c6d6013b000fbf?opinion_id=4b9fb523e2c6d60561000004&paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-16 18:11:40) [POST]
+  Parameters: {"paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor (176.1ms)
+Completed in 250ms (View: 178 | 200 OK [http://localhost/reviews/add_opinion/4b842654e2c6d6013b000fbf?paragraph_id=4b842654e2c6d6013b000fc2]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-16 18:11:49) [POST]
+  Parameters: {"commit"=>"record opinion...", "feature_related"=>"touchscreen", "paragraph_id"=>"4b842654e2c6d6013b000fc2", "authenticity_token"=>"qZ3WTuy/PhUe65tJlGXuWywR287uJQ8DpdVMaRc+B0M=", "id"=>"4b842654e2c6d6013b000fbf", "type_opinion"=>"feature_related"}
+Rendered reviews/_opinion_editor_bis (183.7ms)
+Completed in 270ms (View: 186 | 200 OK [http://localhost/reviews/create_opinion/4b842654e2c6d6013b000fbf]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:12:24) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 108ms (View: 40 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:13:30) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 112ms (View: 41 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:14:17) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 113ms (View: 43 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:14:24) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 115ms (View: 46 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:32:02) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 117ms (View: 43 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 18:58:44) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 313ms (View: 45 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 19:00:35) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 312ms (View: 43 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ReviewsController#show to xml (for 127.0.0.1 at 2010-03-16 19:01:33) [GET]
+  Parameters: {"id"=>"4b842654e2c6d6013b000fbf"}
+Rendering reviews/show
+Completed in 311ms (View: 42 | 200 OK [http://localhost/reviews/show/4b842654e2c6d6013b000fbf.xml]
+
+
+Processing ProductsController#index to xml (for 127.0.0.1 at 2010-03-16 19:03:29) [GET]
+Rendering products/index
+Completed in 2967ms (View: 2421 | 200 OK [http://localhost/products.xml]
+
+
+Processing ProductsController#show to xml (for 127.0.0.1 at 2010-03-16 19:03:47) [GET]
+  Parameters: {"product_idurl"=>"samsung_mythic_sgh_a897"}
+Rendering products/show
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.2ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (245.7ms)
+Rendered features/_list (246.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.5ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (2.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.7ms)
+Rendered features/_list (3.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (4.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.4ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.5ms)
+Rendered features/_list (17.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (4.2ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.6ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.0ms)
+Rendered features/_list (8.7ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.9ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (3.0ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.6ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (0.1ms)
+Rendered features/_list (1.2ms)
+Rendered features/_list (4.5ms)
+Completed in 357ms (View: 324 | 200 OK [http://localhost/products/samsung_mythic_sgh_a897.xml]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-16 19:04:21) [GET]
+
+NoMethodError (undefined method `products' for nil:NilClass):
+  app/controllers/application_controller.rb:35:in `get_product_selected'
+  app/controllers/reviews_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (268.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#ede (for 127.0.0.1 at 2010-03-16 19:04:28) [GET]
+
+ActionController::UnknownAction (No action responded to ede. Actions: add_opinion, create, create_opinion, cut_paragraph, delete_opinion, edit, edit_paragraph, edit_paragraph_cancel, feature_filter, get_logged_user, get_product_selected, index, new, open_opinion_editor, show, split_in_paragraphs, and update):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)

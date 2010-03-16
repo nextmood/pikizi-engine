@@ -3,19 +3,65 @@ require 'mongo_mapper'
 require 'amazon'
 require 'review'
 
+# Availability is a set of valid prices by merchant for this product
+class Availability
+  include MongoMapper::EmbeddedDocument
+
+
+
+  key :amount, Float
+  key :merchant, String
+  key :merchant_url, String
+  key :offer_url, String
+
+  key :product_id
+  belongs_to :product
+
+  many :prices
+
+end
+
+class Price
+
+  include MongoMapper::EmbeddedDocument  
+
+  key :amount, Float
+  key :merchant, String
+  key :merchant_url, String
+  key :offer_url, String
+  key :valid_from, Date
+  key :valid_until, Date
+
+end
+
+
 class Product < Root
 
   include MongoMapper::Document
 
   key :idurl, String # unique url
 
-  key :label, String # unique url
   key :knowledge_idurl, String
+  key :knowledge_id, Mongo::ObjectID
+  belongs_to :knowledge # described by only one knowledge/model (i thought a lot about that) 
 
-  # no backgrounds (handled by feature...)
+  # header of all products / whatever the model/knowledge associated
+  key :label, String # unique url
+  key :category, String # a sub categorization of product  (exemple camera phone)
+  key :overall_rating, Float
+  key :image_urls, Array #an array of images url
+  key :external_urls, Array #an array of images url
+  key :description_urls, Array # an array of description url?
 
+  # availability holds, price and merchants for this product
+  key :availability, Availability
+
+  # values of this product for all features in the knowledge/model
   key :hash_feature_idurl_value, Hash
 
+  
+  # to migrate database
+  # Product.all.each {|p| p.knowledge_id = Knowledge.first(:idurl => p.knowledge_idurl).id; p.save }; true
   
   timestamps!
 
@@ -158,8 +204,6 @@ class Product < Root
   end
 
   def tips(mode)
-
-
     unless @opinions
       l = []
       reviews.each { |r| r.paragraphs.each { |p| l.concat(p.opinions) } }
@@ -173,4 +217,9 @@ class Product < Root
       o.is_a?(Tip) and intensity
     end
   end
+
+  def to_api_xml
+        
+  end
+
 end

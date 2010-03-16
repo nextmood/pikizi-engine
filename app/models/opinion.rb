@@ -54,6 +54,8 @@ class Rating < Opinion
 
   def is_rating?() true end
 
+  def to_xml_api() "<Rating dimension=\"#{feature_rating_idurl}\" rating=\"#{rating}\" min=\"#{min_rating}\" max=\"#{max_rating}\" />" end
+
 end
 
 class Comparator < Opinion
@@ -72,6 +74,7 @@ class Comparator < Opinion
                                :label => xml_node.content.strip)
   end
   
+  def to_xml_api() "<Comparator dimension=\"#{feature_rating_idurl}\" operator=\"#{operator_type}\" predicate='#{predicate}' />" end
 
 end
 
@@ -101,7 +104,18 @@ class Tip < Opinion
     s
   end
 
+  def to_xml_api() "<Tip dimension=\"#{feature_rating_idurl}\" value=\"#{intensity_as_string}\" >#{usage}</Tip>" end
+
   def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
+
+  def intensity_as_string
+    if is_mixed
+      "mixed"
+    else
+      intensity_symbol = Tip.intensities.detect { |i| intensity == i.last }
+      intensity_symbol ? intensity_symbol.first  : intensity
+    end  
+  end
 
   def self.intensities
     [ ["very_high", 1.0 ],
@@ -122,6 +136,8 @@ class FeatureRelated < Opinion
   def to_html(options={}) "related to feature #{feature_related_idurl}" end
 
   def is_valid?() true end
+
+  def to_xml_api() "<FeatureRelated idurl=\"#{feature_related_idurl}\" />" end
 
 end
 

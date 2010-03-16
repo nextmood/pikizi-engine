@@ -1,0 +1,7 @@
+<product idurl="<%= @product.idurl %>" knowledge_idurl="<%= @product.knowledge.idurl %>" >
+
+    <% for feature in @product.knowledge.features %>
+        <%= render(:partial => "/features/list.xml.erb", :locals => {:feature => feature})  %>
+    <% end %>
+    
+</product>

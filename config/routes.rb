@@ -87,7 +87,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/my_results", :controller => 'home', :action => 'my_results'
   map.connect "/product/:product_idurl", :controller => 'home', :action => 'product'
   map.connect "/products_search", :controller => 'home', :action => 'products_search'
-
+  
+  map.connect "/products.:format", :controller => 'products', :action => 'index'
+  map.connect "/products/:product_idurl.:format", :controller => 'products', :action => 'show'
 
   map.root :controller => "landing"  # default
 

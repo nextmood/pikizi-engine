@@ -13,6 +13,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @knowledge = Knowledge.load_db(@review.knowledge_idurl)
     @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  # show.xml.erb
+    end
   end
 
   # this is a rjs
@@ -98,7 +103,7 @@ class ReviewsController < ApplicationController
         Opinion::Comparator.create(base_options.clone.merge(
                 :label => "product #{comparator_operator} #{comparator_product}",
                 :operator_type => comparator_operator,
-                :predicate =>  "productIs(:any => [#{comparator_product}])" ))
+                :predicate =>  "productIs(:any => [\"#{comparator_product}\"])" ))
 
 
       when "comparator_feature"

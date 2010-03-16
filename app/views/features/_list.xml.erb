@@ -1,0 +1,9 @@
+<<%= feature.class %> idurl="<%= feature.idurl %>" >
+<% if feature.features.size > 0 %>
+    <sub>
+        <% for sub_feature in feature.features %>
+            <%= render(:partial => "/features/list", :locals => { :feature => sub_feature }) %>
+        <% end %>
+    </sub>
+<% end %>
+</<%= feature.class %>>

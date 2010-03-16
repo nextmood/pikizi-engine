@@ -1,0 +1,10 @@
+<products>
+    <% for product in @products %>
+        <product idurl="<%= product.idurl %>" knowledge_idurl="<%= product.knowledge_idurl %>" >
+            <% for review in product.reviews %>
+
+                <review <%= "id=\"#{review.id}\" source=\"#{review.source}\" category=\"#{review.category}\"" %>></review>
+            <% end %>
+        </product>
+    <% end %>
+</products>

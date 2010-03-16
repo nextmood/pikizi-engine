@@ -1,0 +1,24 @@
+<h1><%= pluralize(@products.size, "product") %></h1>
+
+
+
+<table border=1>
+  <tr>
+    <th>product</th> <th>reviews</th>
+  </tr>
+
+    <% for product in @products %>
+      <tr>
+        <td valign="top"><%= product.knowledge_idurl %>/<%= product.idurl %></td>
+        <td valign="top">
+            <ul>
+              <% for review in product.reviews %>
+                <li><%= "#{review.category}/#{review.author} " %> </li>
+              <% end %>
+            </ul>
+        </td>
+
+       </tr>
+
+    <% end %>
+</table>

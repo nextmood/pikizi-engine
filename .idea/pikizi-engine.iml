@@ -18,6 +18,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="factory_girl" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="config/environment.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="gdata" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
@@ -27,6 +33,12 @@
         <dependency name="hpricot" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mocha" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="config/environment.rb" />
     </requirement>
     <requirement>
       <requirement>
@@ -48,6 +60,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="redgreen" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="config/environment.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rpx_now" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source from="config/environment.rb" />
@@ -57,6 +75,12 @@
         <dependency name="ruby-hmac" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="shoulda" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="config/environment.rb" />
     </requirement>
   </component>
   <component name="NewModuleRootManager">
@@ -83,6 +107,10 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo_mapper (v0.7.1, /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo (v0.19.1, /Library/Ruby/Gems/1.8/gems/mongo-0.19.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] jnunemaker-validatable (v1.8.3, /Library/Ruby/Gems/1.8/gems/jnunemaker-validatable-1.8.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl (v1.2.3, /Library/Ruby/Gems/1.8/gems/factory_girl-1.2.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] redgreen (v1.2.2, /Library/Ruby/Gems/1.8/gems/redgreen-1.2.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] shoulda (v2.10.3, /Library/Ruby/Gems/1.8/gems/shoulda-2.10.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mocha (v0.9.8, /Library/Ruby/Gems/1.8/gems/mocha-0.9.8)" level="application" />
   </component>
 </module>
 

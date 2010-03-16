@@ -22,6 +22,11 @@ end
 Rails::Initializer.run do |config|
   # see http://github.com/grosser/rpx_now
   config.gem "rpx_now"
+  
+  config.gem 'mocha'
+  config.gem 'factory_girl'
+  config.gem 'shoulda'
+  config.gem 'redgreen'
   config.gem 'mongo_mapper', :version => '>= 0.7.1'
   
   # Settings in config/environments/* take precedence over those specified here.
@@ -57,7 +62,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
-  config.cache_store = :mem_cache_store
+  #config.cache_store = :mem_cache_store
 
   config.after_initialize do
     RPXNow.api_key = "2dde4557bd28343f445032c774264a0b8cd8b29a"
@@ -67,4 +72,3 @@ Rails::Initializer.run do |config|
 end
 
 
-MongoMapper.database = "pikizi_mongodb_#{Rails.env}"
