@@ -2,21 +2,18 @@
 class ReviewsController < ApplicationController
 
 
-  # GET /reviews/knowledge_idurl
-  def index
-    get_product_selected(params)
-  end
+
 
 
   # GET /reviews/:review_id
   def show
     @review = Review.find(params[:id])
-    @knowledge = Knowledge.load_db(@review.knowledge_idurl)
+    @knowledge = @review.product.knowledge
     @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  # show.xml.erb
+      format.xml  { render(:xml => @review ) }
     end
   end
 

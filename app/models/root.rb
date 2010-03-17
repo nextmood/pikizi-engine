@@ -2,7 +2,6 @@
 
 require 'xml'
 require 'digest/md5'
-require 'htmlentities'
 
 
 # The root of all XML/objects of Pikizi (Feature, Question, Choice, User, Product, etc...)
@@ -13,8 +12,6 @@ class Root
   # utilities
 
 
-
-  def self.encoder_html(s) (@@encoder_html ||= HTMLEntities.new).encode(s) end
 
   # always return a value between 0.0 and 1.0 for a given x ranging from min to max
   def self.rule3(x, min, max)

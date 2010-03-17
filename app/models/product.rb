@@ -187,8 +187,9 @@ class Product < Root
   end
 
 
-  def generate_xml(knowledge, top_node)
+  def generate_xml(top_node)
     node_product = super(top_node)
+    node_product['knowledge_idurl'] = knowledge.idurl
     knowledge.each_feature do |feature|
       feature_idurl = feature.idurl
       if value = get_value(feature_idurl)
@@ -198,6 +199,42 @@ class Product < Root
         node_product << node_value
       end
     end
+    node_product
+  end
+
+  def to_xml()
+    doc = XML::Document.new
+    doc.root = to_xml_bis
+    doc.to_s(:indent => true)
+  end
+
+  def to_xml_bis
+    node_product = XML::Node.new("Product")
+    node_product['idurl'] = idurl
+    node_product['label'] = label
+
+
+    # reviews
+    node_product << node_reviews = XML::Node.new("reviews")
+    reviews.each do |review|
+      node_reviews << node_review = XML::Node.new(review.class.to_s)
+      node_review['id'] = review.id.to_s
+      nb_paragraphs, nb_opinions = review.nb_paragraphs_opinions
+      node_review['nb_paragraphs'] = nb_paragraphs.to_s
+      node_review['nb_opinions'] = nb_opinions.to_s
+    end
+
+    # features
+    node_product << node_values = XML::Node.new("features_values")
+    knowledge.each_feature do |feature|
+      feature_idurl = feature.idurl
+      if value = get_value(feature_idurl)
+        node_values << node_value = XML::Node.new("Value")
+        node_value['idurl'] = feature_idurl
+        node_value << feature.value2xml(value)
+      end
+    end
+
     node_product
   end
 
@@ -216,8 +253,5 @@ class Product < Root
     end
   end
 
-  def to_api_xml
-        
-  end
 
 end

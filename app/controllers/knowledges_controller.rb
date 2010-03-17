@@ -12,7 +12,11 @@ class KnowledgesController < ApplicationController
   def index
     knowledge = Knowledge.all( :order => "updated_at DESC").first
     raise "no knowledge, in database idurls=#{ Knowledge.all.collect(&:idurl).join(', ')} (#{ Knowledge.all.size})" unless knowledge and knowledge.idurl
-    redirect_to("/show/#{knowledge.idurl}")
+    respond_to do |format|
+      format.html { redirect_to("/show/#{knowledge.idurl}") }
+      format.xml  { render(:xml => Knowledge) }
+    end
+
   end
 
   def distance

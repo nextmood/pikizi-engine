@@ -29,6 +29,8 @@ class Knowledge < Root
   key :cache_nb_quizzes, Integer
   key :cache_nb_reviews, Integer
 
+  many :usages
+
   timestamps!
 
   def self.is_main_document() true end
@@ -153,6 +155,48 @@ class Knowledge < Root
     Knowledge.write_children_xml(self, question_idurls, domain_directory, "Question")
     Knowledge.write_children_xml(self, product_idurls, domain_directory, "Product")
     Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
+  end
+
+  def self.to_xml()
+    doc = XML::Document.new
+    doc.root = node_knowledges = XML::Node.new("knowledges")
+    Knowledge.all.each { |knowledge| node_knowledges << knowledge.to_xml_bis }
+    doc.to_s(:indent => true)    
+  end
+
+  def to_xml_bis
+    node_knowledge = XML::Node.new("Knowledge")
+    node_knowledge['idurl'] = idurl
+    node_knowledge['label'] = label
+
+    # products
+    node_knowledge << node_products = XML::Node.new("products")
+    products.each do |product|
+      node_products << node_product = XML::Node.new(product.class.to_s)
+      node_product['idurl'] = product.idurl
+    end
+
+    # questions
+    node_knowledge << node_questions = XML::Node.new("questions")
+    questions.each do |question|
+      node_questions << node_question = XML::Node.new(question.class.to_s)
+      node_question['idurl'] = question.idurl
+    end
+
+    # quizzes
+    node_knowledge << node_quizzes = XML::Node.new("quizzes")
+    quizzes.each do |quizze|
+      node_quizzes << node_quizze = XML::Node.new(quizze.class.to_s)
+      node_quizze['idurl'] = quizze.idurl
+    end
+
+    # features
+    node_knowledge << node_features = XML::Node.new("features")
+    features.each do |feature|
+      node_features << node_feature = feature.generate_xml(node_features)
+    end
+    
+    node_knowledge
   end
 
 

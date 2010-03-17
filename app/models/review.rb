@@ -49,6 +49,9 @@ class Review < Root
 
   def self.is_main_document() true end
 
+  def nb_paragraphs_opinions
+    [paragraphs.count, paragraphs.inject(0) {|s, p| s += p.opinions.count } ]  
+  end
 
   def get_reputation() source == Review::FromAmazon.default_category ? reputation + 1.0 : 1.0 end
 
@@ -107,6 +110,44 @@ class Review < Root
     end
     self.paragraphs = paragraphs_generated
     
+  end
+
+  def to_xml()
+    doc = XML::Document.new
+    doc.root = to_xml_bis
+    doc.to_s(:indent => true)
+  end
+
+  def to_xml_bis
+    node_review = XML::Node.new(self.class.to_s)
+    node_review['id'] = id.to_s
+    node_review['product_idurl'] = product.idurl
+    node_review['category'] = category
+    node_review['written_at'] = written_at.strftime(Root.default_date_format)
+
+    if rating
+      node_review << node_rating = XML::Node.new("Rating")
+      node_rating['value'] = rating.to_s
+      node_rating['min'] = min_rating.to_s
+      node_rating['max'] = max_rating.to_s
+    end
+
+    (node_review << node_user = XML::Node.new("user"); node_user << user.rpx_identifier) if user_id
+    (node_review << node_source = XML::Node.new("source"); node_source << source) if source
+    (node_review << node_author = XML::Node.new("author"); node_author << author) if author
+    (node_review << node_url = XML::Node.new("url"); node_url << source_url) if source_url
+    (node_review << node_summary = XML::Node.new("summary"); node_summary << summary) if summary
+
+    node_review << node_paragraphs = XML::Node.new("paragraphs")
+    paragraphs.each do |paragraph|
+      node_paragraphs << node_paragraph = XML::Node.new("Paragraph")
+      node_paragraph << paragraph.content
+      paragraph.opinions.each do |opinion|
+        node_paragraph << opinion.to_xml_bis
+      end
+    end
+
+    node_review
   end
 
 end
