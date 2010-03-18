@@ -361,8 +361,8 @@ namespace :pikizi do
 
   desc "resync database"
   task :resync_database => :environment do
-    Review.all.each { |r| (r.product.reviews << r; r.product.save) unless r.product.reviews.include?(r) }
-    Opinion.all.each { |o| (o.review.opinions << o; o.review.save) unless o.review.opinions.include?(o) }
+    Review.all.each { |r| (r.product.reviews << r; r.product.save; puts "update product=#{r.product.idurl}") unless r.product.reviews.include?(r) }
+    Opinion.all.each { |o| (o.review.opinions << o; o.review.save; puts "update review for product=#{o.review.product.idurl}/#{o.review.category}") unless o.review.opinions.include?(o) }
   end
 
 end

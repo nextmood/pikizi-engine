@@ -45,10 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="0" selection-start="8305" selection-end="8305" vertical-scroll-proportion="0.4265233">
+            <state line="187" column="62" selection-start="7014" selection-end="7014" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="364" column="135" selection-start="15068" selection-end="15068" vertical-scroll-proportion="0.8801956">
               <folding />
             </state>
           </provider>
@@ -91,7 +100,6 @@
         <option value="$PROJECT_DIR$/app/views/home/products_search.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/views/home/_product_tab_reviews.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/new.html.erb" />
@@ -101,6 +109,7 @@
         <option value="$PROJECT_DIR$/app/views/reviews/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/root.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
       </list>
     </option>
   </component>
@@ -726,7 +735,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Rails.Development">
+  <component name="RunManager" selected="Rake.pikizi:resync_database">
     <configuration default="false" name="pikizi:recompute_ratings" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="pikizi-engine" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -790,6 +799,24 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="pikizi:reviews_load_amazon" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="true" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pikizi:resync_database" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="pikizi-engine" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="pikizi:resync_database" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="true" />
@@ -945,7 +972,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="8">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Rake.pikizi:recompute_ratings" />
       <item index="1" class="java.lang.String" itemvalue="Rake.pikizi:recompute_counters" />
       <item index="2" class="java.lang.String" itemvalue="Rake.pikizi:reset_recommendations" />
@@ -954,6 +981,7 @@
       <item index="5" class="java.lang.String" itemvalue="Rails.Development" />
       <item index="6" class="java.lang.String" itemvalue="Rake.test" />
       <item index="7" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="8" class="java.lang.String" itemvalue="Rake.pikizi:resync_database" />
     </list>
     <configuration default="true" type="RailsRunConfigurationType" factoryName="Server">
       <predefined_log_file id="RAILS_SERVER" enabled="true" />
@@ -1146,13 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="305" column="73" selection-start="12186" selection-end="12186" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="43" selection-start="71" selection-end="71" vertical-scroll-proportion="-1.8947369">
@@ -1183,7 +1204,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="0" selection-start="8305" selection-end="8305" vertical-scroll-proportion="0.4265233">
+        <state line="187" column="62" selection-start="7014" selection-end="7014" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="135" selection-start="15068" selection-end="15068" vertical-scroll-proportion="0.8801956">
           <folding />
         </state>
       </provider>
