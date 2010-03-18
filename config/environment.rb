@@ -28,6 +28,10 @@ Rails::Initializer.run do |config|
   config.gem 'shoulda'
   config.gem 'redgreen'
   config.gem 'mongo_mapper', :version => '>= 0.7.1'
+  config.gem "carrierwave"
+
+
+
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

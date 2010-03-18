@@ -51,13 +51,15 @@ class Product < Root
   key :external_urls, Array #an array of images url
   key :description_urls, Array # an array of description url?
 
+  many :reviews
+  
   # availability holds, price and merchants for this product
   key :availability, Availability
 
   # values of this product for all features in the knowledge/model
   key :hash_feature_idurl_value, Hash
 
-  
+
   # to migrate database
   # Product.all.each {|p| p.knowledge_id = Knowledge.first(:idurl => p.knowledge_idurl).id; p.save }; true
   
@@ -73,7 +75,7 @@ class Product < Root
     end
   end
 
-  def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
+  #def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
 
   def self.is_main_document() true end
 

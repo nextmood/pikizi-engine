@@ -7,7 +7,7 @@
 
         <div style="margin-top:5px; padding-top:2px;">
             <% if type_opinion == "tip" %>
-                <%= select_tag("tip_intensity_or_neutral", options_for_select(Opinion::Tip.intensities) ) %>
+                <%= select_tag("tip_intensity_or_mixed", options_for_select(Opinion::Tip.intensities) ) %>
                 for usage <%= text_field_tag("tip_usage", nil, :size => 80 ) %>
 
             <% elsif type_opinion == "comparator_product" %>

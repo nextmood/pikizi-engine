@@ -248,3 +248,9 @@ class Array
 
 end
 
+# extended hash
+class Hash
+
+  def to_date() Date.new(self["year"].to_i, self["month"].to_i, self["day"].to_i)  end
+
+end

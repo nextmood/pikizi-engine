@@ -13,7 +13,7 @@
         </div>
         <div id="reviews_<%= category %>" style="display:none;">
         <% for review in reviews %>
-            <%= render(:partial => "/reviews/short", :locals => {:review => review } ) %>
+            <%= render( :partial => "/reviews/short", :locals => { :review => review } ) %>              
         <% end %>
         </div>
 

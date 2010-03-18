@@ -359,4 +359,10 @@ namespace :pikizi do
     true
   end
 
+  desc "resync database"
+  task :resync_database => :environment do
+    Review.all.each { |r| (r.product.reviews << r; r.product.save) unless r.product.reviews.include?(r) }
+    Opinion.all.each { |o| (o.review.opinions << o; o.review.save) unless o.review.opinions.include?(o) }
+  end
+
 end

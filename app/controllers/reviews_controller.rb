@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/:review_id
   def show
+    puts "id=" << params[:id]
     @review = Review.find(params[:id])
     @knowledge = @review.product.knowledge
     @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
@@ -86,12 +87,12 @@ class ReviewsController < ApplicationController
 
       when "tip"
         tip_usage = params[:tip_usage]
-        tip_intensity_or_neutral = params[:tip_intensity_or_neutral]
-        intensity = (tip_intensity_or_neutral == "neutral" ? 0.0 : Float(tip_intensity_or_neutral))
+        tip_intensity_or_mixed = params[:tip_intensity_or_mixed]
+        intensity = (tip_intensity_or_mixed == "mixed" ? 0.0 : Float(tip_intensity_or_mixed))
         Opinion::Tip.create(base_options.clone.merge(
-                :label => "#{tip_intensity_or_neutral}... for #{tip_usage.inspect}",
+                :label => "#{tip_intensity_or_mixed}... for #{tip_usage.inspect}",
                 :intensity => intensity,
-                :is_neutral => (tip_intensity_or_neutral == "neutral"),
+                :is_mixed => (tip_intensity_or_mixed == "mixed"),
                 :usage => tip_usage  ))
 
       when "comparator_product"
@@ -219,7 +220,7 @@ class ReviewsController < ApplicationController
     raise "no knowledge for key=#{params[:review][:knowledge_idurl].inspect}" unless @knowledge
 
     @review = Review::Inpaper.new(params[:review])
-    @review.written_at = params[:written_at]
+    @review.written_at = params[:written_at].to_date    
     @review.user = get_logged_user
     @review.product_idurl = product.idurl
     @review.product_id = product.id
@@ -237,6 +238,8 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update_attributes(params[:review])
+    
+    @review.written_at = params[:written_at].to_date
     @knowledge = @review.knowledge
 
     if @review.save
@@ -249,3 +252,4 @@ class ReviewsController < ApplicationController
   end
 
 end
+

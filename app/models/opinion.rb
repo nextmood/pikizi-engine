@@ -36,6 +36,14 @@ class Opinion < Root
 
   def is_rating?() false end
 
+  def to_xml_bis
+    node_opinion = XML::Node.new(self.class.to_s)
+    node_opinion['dimension'] = feature_rating_idurl if feature_rating_idurl
+    #node_opinion['review_id'] = review_id.to_s
+    #node_opinion['paragraph_id'] = paragraph_id.to_s
+    node_opinion
+  end
+
 end
 
 
@@ -54,7 +62,13 @@ class Rating < Opinion
 
   def is_rating?() true end
 
-  def to_xml_api() "<Rating dimension=\"#{feature_rating_idurl}\" rating=\"#{rating}\" min=\"#{min_rating}\" max=\"#{max_rating}\" />" end
+  def to_xml_bis
+    node_opinion = super
+    node_opinion['rating'] = rating.to_s
+    node_opinion['min'] = min_rating.to_s
+    node_opinion['max'] = max_rating.to_s
+    node_opinion
+  end
 
 end
 
@@ -73,8 +87,13 @@ class Comparator < Opinion
                                :predicate => xml_node["predicate"],
                                :label => xml_node.content.strip)
   end
-  
-  def to_xml_api() "<Comparator dimension=\"#{feature_rating_idurl}\" operator=\"#{operator_type}\" predicate='#{predicate}' />" end
+
+  def to_xml_bis
+    node_opinion = super
+    node_opinion['operator'] = operator_type
+    node_opinion['predicate'] = predicate
+    node_opinion
+  end
 
 end
 
@@ -104,7 +123,12 @@ class Tip < Opinion
     s
   end
 
-  def to_xml_api() "<Tip dimension=\"#{feature_rating_idurl}\" value=\"#{intensity_as_string}\" >#{usage}</Tip>" end
+  def to_xml_bis
+    node_opinion = super
+    node_opinion['value'] = intensity_as_string
+    node_opinion << usage
+    node_opinion
+  end
 
   def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
 
@@ -137,7 +161,11 @@ class FeatureRelated < Opinion
 
   def is_valid?() true end
 
-  def to_xml_api() "<FeatureRelated idurl=\"#{feature_related_idurl}\" />" end
+  def to_xml_bis
+    node_opinion = super
+    node_opinion['feature_idurl'] = feature_related_idurl
+    node_opinion
+  end
 
 end
 

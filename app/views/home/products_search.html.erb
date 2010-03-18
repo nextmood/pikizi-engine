@@ -33,31 +33,33 @@
 
 <div class="boxLwr">
   <div class="box952">
-    <h1><%= @search_string ? "Results for #{@search_string.inspect}" : "First 20 products in database..." %></h1>
+    <h1><%= @search_string ? "#{pluralize(@nb_results, 'result')} for #{@search_string.inspect}" : "First 20 products in database..." %></h1>
     <div class="spcr"></div>
 
-      <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
-      <% feature_overall_rating = @knowledge.get_feature_by_idurl("overall_rating") %>
-      <% for category, products in @list_category_products %>
-        <ul <%= "class=\"last\"" if category == @last_category %>>
-        <h3><%= category %></h3>
-        <% for product in products %>
-            <li>
+      <% if @nb_results > 0 %>
+          <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
+          <% feature_overall_rating = @knowledge.get_feature_by_idurl("overall_rating") %>
+          <% for category, products in @list_category_products %>
+            <ul <%= "class=\"last\"" if category == @last_category %>>
+            <h3><%= category %></h3>
+            <% for product in products %>
+                <li>
 
 
-              <img src="<%= @knowledge.clean_url(feature_image.get_value(product), product) %>" width="85" height="85" />
+                  <img src="<%= @knowledge.clean_url(feature_image.get_value(product), product) %>" width="85" height="85" />
 
-              <h4><a href="/product/<%= product.idurl %>"><%= product.label %></a></h4>
-              <% if rating_01 = feature_overall_rating.get_value(product) %>
-              <ul class='star-rating'>
-                  <li class='current-rating' title="rating=<%= rating_01 %>" style="<%= "width:#{(45 * rating_01).round}px;" %>" ></li>
-              </ul>
-              <% end %>
-              <%= @knowledge.get_price_min_max_html(product) %>
-            </li>
-        <% end %>
-        <div class="spcr"></div>
-        </ul>
+                  <h4><a href="/product/<%= product.idurl %>"><%= product.label %></a></h4>
+                  <% if rating_01 = feature_overall_rating.get_value(product) %>
+                  <ul class='star-rating'>
+                      <li class='current-rating' title="rating=<%= rating_01 %>" style="<%= "width:#{(45 * rating_01).round}px;" %>" ></li>
+                  </ul>
+                  <% end %>
+                  <%= @knowledge.get_price_min_max_html(product) %>
+                </li>
+            <% end %>
+            <div class="spcr"></div>
+            </ul>
+          <% end %>
       <% end %>
 
 
