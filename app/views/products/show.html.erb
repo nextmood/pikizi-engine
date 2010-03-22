@@ -13,7 +13,13 @@
     <% form_tag "/products/update_header/#{@product.id}", :multipart => true  do -%>
         <table>
           <tr></tr><td  align="right"><label>label</label></td><td><%= text_field_tag :label, @product.label, :size => 30, :class => "field" %></td></tr>
-          <tr><td align="right"><label>url</label></td><td><%= text_field_tag :url, @product.url, :size => 80, :class => "field" %></td></tr>
+          <tr>
+            <td align="right"><label>url</label></td>
+            <td>
+              <%= text_field_tag :url, @product.url, :size => 80, :class => "field" %>
+              <%= link_to('test...', @product.url, :style => "font-size:80%;") if @product.url %>
+            </td>
+          </tr>
           <% descripion_dom_id = "description_product_#{@product_id}" %>
           <tr>
             <td align="right"><label>description</label></td>

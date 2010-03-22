@@ -27,10 +27,10 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="60" selection-start="231" selection-end="231" vertical-scroll-proportion="-1.8947369">
+            <state line="19" column="34" selection-start="867" selection-end="867" vertical-scroll-proportion="0.35185185">
               <folding />
             </state>
           </provider>
@@ -72,10 +72,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="57" selection-start="2529" selection-end="2529" vertical-scroll-proportion="0.69598764">
+            <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="-4.1578946">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="24" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/app/views/medias/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/medias/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/medias/new.html.erb" />
@@ -131,12 +139,13 @@
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/media.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
-        <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/products/_similar_products.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb" />
+        <option value="$PROJECT_DIR$/doc/admin.txt" />
+        <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
       </list>
     </option>
   </component>
@@ -472,6 +481,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -999,13 +1022,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/products/_dimensions.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="94" selection-start="270" selection-end="354" vertical-scroll-proportion="-3.7894738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/medias_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="39" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
@@ -1044,13 +1060,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="57" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="60" selection-start="231" selection-end="231" vertical-scroll-proportion="-1.8947369">
           <folding />
         </state>
       </provider>
@@ -1106,7 +1115,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="57" selection-start="2529" selection-end="2529" vertical-scroll-proportion="0.69598764">
+        <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="-4.1578946">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="34" selection-start="867" selection-end="867" vertical-scroll-proportion="0.35185185">
           <folding />
         </state>
       </provider>
