@@ -12,7 +12,9 @@ class Knowledge < Root
   key :categories_map, Array # [[key_category_1, label_category_1], ... [key_category_n, label_category_n]]
 
   key :dimension_root, Dimension
-  
+  many :specifications
+  def specifications_root() specifications.select { |s| s.parent_id.nil? } end
+
   many :features, :polymorphic => true   # first level features
 
   key :question_idurls, Array
@@ -358,6 +360,29 @@ class Feature < Root
 
 
   attr_accessor :object_parent, :dom_id
+
+  def create_specification(knowledge_id, parent_id=nil)
+    specification_attributes = attributes.clone
+    if dimension_class = case specification_attributes.delete("_type")
+        when "FeatureTags" then SpecificationTags
+        when "FeatureNumeric" then SpecificationNumeric
+        when "FeatureDate" then SpecificationDate
+        when "FeatureInterval" then SpecificationInterval
+        when "FeatureHeader" then SpecificationHeader
+        when "FeatureCondition" then SpecificationCondition
+      end
+      specification_attributes.delete("features")
+      specification_attributes.delete("_id")
+      specification_attributes["parent_id"] = parent_id
+      specification_attributes["knowledge_id"] = knowledge_id
+      puts "creating specification=" << specification_attributes.inspect
+      dimension = dimension_class.create(specification_attributes)
+      features.each {|sub_feature| sub_feature.create_specification(knowledge_id, dimension.id) }
+    else
+      puts "#{self.class} #{idurl} is not a specification"
+    end
+
+  end
 
   def compute_dom_id(dom_id)
     self.dom_id = dom_id

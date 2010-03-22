@@ -73,6 +73,46 @@
 
 
 <hr/><h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
+
+<% for specification in @knowledge.specifications_root %>
+    <div class="pkz_specification_level_<%= specification.level %>">
+              <b><%= specification.get_feature_html %></b>
+              <%= specification.get_value_html(@product) %>
+
+              <span style="font-size:80%; margin-left:30px;">
+                <%= image_tag('icons/add.png', :border => 0, :title => "add a new child specification") %>
+                <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
+                <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
+                <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this specification (and all its children if any)") %>
+
+                edit
+                  <%= link_to_remote("value",
+                          :url => {  :controller => "products",
+                                     :action => "edit_value",
+                                     :id => @product.id,
+                                     :specification_idurl => specification.idurl  },
+                          :html => {  }) %>
+                  /
+                  <%= link_to_remote("spec",
+                          :url => {  :controller => "products",
+                                     :action => "edit_specification",
+                                     :id => @product.id,
+                                     :specification_idurl => specification.idurl  },
+                          :html => {  }) %>
+
+                  <%= specification.should_display?(@product) ? "(spec) " : "" %>
+              </span>
+
+              <div id="div_<%= specification.idurl %>">
+
+              </div>
+
+
+            </div>
+<% end %>
+
+<h2>old</h2>
+ <%= @knowledge.specifications_root.size %>
 <div class="">
     <% for feature in @knowledge.features_all %>
         <% if !feature.is_a?(FeatureRating) and !feature.is_a?(FeatureImage)  %>

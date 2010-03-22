@@ -7,6 +7,9 @@
           <%= link_to_remote("delete",
                              :url => {:controller => "reviews", :action => "delete_opinion", :id => review.id, :opinion_id => opinion.id, :paragraph_id => paragraph.id},
                              :html => {:style => "font-size:80%;"} ) %>
+          <% if opinion.extract %>
+            <br/><i><%= opinion.extract %></i>
+          <% end %>
          </li>
       <% end %>
        </ul>

@@ -368,7 +368,7 @@ namespace :pikizi do
   desc "update database"
   task :update_database => :environment do
 
-    knowledge = Knowledge.first
+    knowledge = Knowledge.first.link_back
     knowledge.categories_map = [["Cell Phone", "cell_phone"],
                                 ["Smartphone", "smartphone"],
                                 ["Messaging phone", "messaging_phone"],
@@ -378,19 +378,20 @@ namespace :pikizi do
     feature_category = knowledge.get_feature_by_idurl("phone_category")
     Product.all.each do |product|
       # 1) retrieve images...
-      product.fillup_image_ids
-      product.fillup_others
-      puts "#{product.image_ids.size} images for product #{product.idurl}"
+#      product.fillup_image_ids
+#      product.fillup_others
+#      puts "#{product.image_ids.size} images for product #{product.idurl}"
 
-      # 2) retrieve doc...
-      # TODO
 
-      # 3) categories
-      product.category = feature_category.get_value(product)
       product.save
 
       # 4) Creating Dimension Objects...
       Dimension.import
+
+      # 5) Creating Specification Objects...
+      Specification.delete_all;
+      knowledge.features.each {|f| f.create_specification(knowledge.id) }
+
     end
     true
   end

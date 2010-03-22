@@ -12,6 +12,7 @@ class Opinion < Root
   key :label, String # summary of the opinion
   key :_type, String # class management
   key :usage, String
+  key :extract, String
   
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review

@@ -93,7 +93,8 @@ class ReviewsController < ApplicationController
                 :label => "#{tip_intensity_or_mixed}... for #{tip_usage.inspect}",
                 :intensity => intensity,
                 :is_mixed => (tip_intensity_or_mixed == "mixed"),
-                :usage => tip_usage  ))
+                :usage => tip_usage,
+                :extract => params[:extract]  ))
 
       when "comparator_product"
         comparator_operator = params[:comparator_operator]
@@ -102,7 +103,8 @@ class ReviewsController < ApplicationController
                 :label => "product #{comparator_operator} #{comparator_product}",
                 :operator_type => comparator_operator,
                 :predicate =>  "productIs(:any => [\"#{comparator_product}\"])",
-                :usage => params[:usage] ))
+                :usage => params[:usage],
+                :extract => params[:extract] ))
 
 
       when "comparator_feature"
@@ -114,7 +116,8 @@ class ReviewsController < ApplicationController
                 :label => "feature #{comparator_feature} of product #{comparator_operator} #{predicate}",
                 :operator_type => comparator_operator,
                 :predicate =>  predicate,
-                :usage => params[:usage] ))
+                :usage => params[:usage],
+                :extract => params[:extract] ))
 
       when "rating"
         rating = params[:rating],
@@ -124,7 +127,8 @@ class ReviewsController < ApplicationController
                 :label => "rated #{rating} (min=#{min_rating}, max=#{max_rating})",
                 :rating => rating,
                 :min_rating => min_rating,
-                :max_rating => max_rating ))
+                :max_rating => max_rating,
+                :extract => params[:extract] ))
 
       when "feature_related"
         feature_related = params[:feature_related]

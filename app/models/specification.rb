@@ -25,15 +25,15 @@ class Specification
 
   def is_valid_value?(value) false end
 
-  def is_root?() feature_parent.nil? end
+  def is_root?() parent.nil? end
 
   def has_sub_features() features.size > 0 end
 
-  def label_full() is_root? ? label : "#{feature_parent.label_full}/#{label}" end
+  def label_full() is_root? ? label : "#{parent.label_full}/#{label}" end
 
   def label_select_tag(rec=nil)
     if rec
-      is_root? ? "" : "...#{feature_parent.label_select_tag(true)}"
+      is_root? ? "" : "...#{parent.label_select_tag(true)}"
     else
       "#{label_select_tag(true)}#{label}"
     end
@@ -125,25 +125,25 @@ class Specification
     if is_a?(SpecificationCondition)
       (value = get_value(product)).nil? or value
     else
-      feature_parent ? feature_parent.is_relevant(product) : true
+      parent ? parent.is_relevant(product) : true
     end
   end
 
   # this is related to display the specification
-  def should_display?(product) !should_display and (feature_parent ? feature_parent.should_display?(product) : true) end
+  def should_display?(product) !should_display and (parent ? parent.should_display?(product) : true) end
 
 
 
   # the depth level of a feature
-  def level() feature_parent ? 1 + feature_parent.level() : 1 end
+  def level() parent ? 1 + parent.level() : 1 end
 
   # ---------------------------------------------------------------------
 
-  def each_feature(&block)
+  def each_specification(&block)
     block.call(self)
-    features.each do |sub_feature|
-      raise "feature= #{self.inspect}" if sub_feature.is_a?(Knowledge)
-      sub_feature.each_feature(&block)
+    specifications.each do |sub_specification|
+      raise "specification= #{self.inspect}" if sub_specification.is_a?(Knowledge)
+      sub_specification.each_specification(&block)
     end
     nil
   end
@@ -153,7 +153,7 @@ class Specification
   def get_value(product) product.get_value(idurl) end
   def get_value_01(product) raise "error" end
 
- # define the distance between  2 products for this feature
+ # define the distance between  2 products for this specification
   def distance(product1, product2)
     begin
       distance_metric(product1, product2)
@@ -187,7 +187,7 @@ class Specification
 
 
   def idurl_h()
-    feature_parent ? "#{feature_parent.idurl_h}/#{idurl}" : idurl
+    parent ? "#{parent.idurl_h}/#{idurl}" : idurl
   end
 
 
@@ -195,7 +195,7 @@ end
 
 
 # =======================================================================================
-# Describe a hierarchy of features
+# Describe a hierarchy of specifications
 # =======================================================================================
 
 
@@ -220,17 +220,17 @@ class SpecificationTags < Specification
   many :tags
 
   def self.initialize_from_xml(xml_node)
-    feature_tags = super(xml_node)
-    feature_tags.is_exclusive = (xml_node['is_exclusive'] == "true" ? true : false)
-    feature_tags.read_xml_list(xml_node, "Tag", :container_tag => 'tags')
-    feature_tags
+    specification_tags = super(xml_node)
+    specification_tags.is_exclusive = (xml_node['is_exclusive'] == "true" ? true : false)
+    specification_tags.read_xml_list(xml_node, "Tag", :container_tag => 'tags')
+    specification_tags
   end
 
   def generate_xml(top_node)
-    node_feature_tag = super(top_node)
-    node_feature_tag['is_exclusive'] = is_exclusive.to_s
-    Root.write_xml_list(node_feature_tag, tags, 'tags')
-    node_feature_tag
+    node_specification_tag = super(top_node)
+    node_specification_tag['is_exclusive'] = is_exclusive.to_s
+    Root.write_xml_list(node_specification_tag, tags, 'tags')
+    node_specification_tag
   end
 
   def product_template_comment() "#{is_exclusive ? 'ONE tag' : 'MANY tags'} among: #{tags.collect(&:idurl).join('  ')}" end
@@ -257,14 +257,14 @@ class SpecificationTags < Specification
     type_button = is_exclusive ? 'radio' : 'checkbox'
     tag_idurls_ok = get_value(product) || []
     tags.inject("") do |s, tag|
-      s << "<input type='#{type_button}' name='feature_#{tag.idurl}' title='idurl=#{tag.idurl}' value='#{tag.idurl}' #{ tag_idurls_ok.include?(tag.idurl) ? 'checked' : nil} />#{tag.label}"
+      s << "<input type='#{type_button}' name='specification_#{tag.idurl}' title='idurl=#{tag.idurl}' value='#{tag.idurl}' #{ tag_idurls_ok.include?(tag.idurl) ? 'checked' : nil} />#{tag.label}"
     end
   end
 
-  def get_feature_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>#{feature_html_suffix}" end
+  def get_specification_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>#{specification_html_suffix}" end
 
   # this is included in a form
-  def get_feature_edit_html()
+  def get_specification_edit_html()
     super() << "<div class=\"field\">
                    <span>exclusive tag?</span>
                     <input type='checkbox' name='is_exclusive' value='1' #{ is_exclusive ? 'checked' : nil} />
@@ -273,7 +273,7 @@ class SpecificationTags < Specification
                 </div>"
   end
 
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string)
     content_string = content_string.strip
     has_space = content_string.include?(' ')
@@ -294,9 +294,9 @@ class SpecificationTags < Specification
   # ---------------------------------------------------------------------
 
 
-  # return 2 arrays of feature_tag_idurls used as minima, maxima in among products
-  # minima = intersection of all feature tag idurls
-  # maxima = union of all feature tag idurls
+  # return 2 arrays of specification_tag_idurls used as minima, maxima in among products
+  # minima = intersection of all specification tag idurls
+  # maxima = union of all specification tag idurls
   def range(among_products)
     all_tags_idurls = tags.collect(&:idurl)
     min, max = among_products.inject([Set.new(all_tags_idurls), Set.new]) do |sets, product|
@@ -313,16 +313,16 @@ class SpecificationTags < Specification
   # this function is overloaded by type
   # and define the kind of filtering operation that can be apply on the value
   # of this field
-  def operator_filtering(feature)
-    if feature.is_a?(SpecificationTags)
+  def operator_filtering(specification)
+    if specification.is_a?(SpecificationTags)
       if is_exclusive
-        [ { :key => "is_either", :gui => select_simple(feature.tags) },
-          { :key => "is_not", :gui => select_multiple(feature.tags) } ]
+        [ { :key => "is_either", :gui => select_simple(specification.tags) },
+          { :key => "is_not", :gui => select_multiple(specification.tags) } ]
       else
-        [ { :key => "include_or", :gui => select_simple(feature.tags) },
-          { :key => "are_neither", :gui => select_multiple(feature.tags) } ]
+        [ { :key => "include_or", :gui => select_simple(specification.tags) },
+          { :key => "are_neither", :gui => select_multiple(specification.tags) } ]
       end
-    elsif feature.is_a?(SpecificationNumeric)
+    elsif specification.is_a?(SpecificationNumeric)
 
     end
   end
@@ -332,7 +332,7 @@ class SpecificationTags < Specification
 end
 
 # define a rating value
-# aggregations objects are attached for each featureRating/Product
+# aggregations objects are attached for each specificationRating/Product
 # value is an Integer
 class SpecificationRating < Specification
 
@@ -341,24 +341,24 @@ class SpecificationRating < Specification
   key :user_category, String, :default => 'user'
 
   def self.initialize_from_xml(xml_node)
-    feature_rating = super(xml_node)
-    feature_rating.min_rating = Integer(xml_node['min_rating'])
-    feature_rating.max_rating = Integer(xml_node['max_rating'])
-    feature_rating.user_category = xml_node['user_category']
-    feature_rating
+    specification_rating = super(xml_node)
+    specification_rating.min_rating = Integer(xml_node['min_rating'])
+    specification_rating.max_rating = Integer(xml_node['max_rating'])
+    specification_rating.user_category = xml_node['user_category']
+    specification_rating
   end
 
   def generate_xml(top_node)
-    node_feature_rating = super(top_node)
-    node_feature_rating['min_rating'] = min_rating.to_s
-    node_feature_rating['max_rating'] = max_rating.to_s
-    node_feature_rating['user_category'] = user_category
-    node_feature_rating
+    node_specification_rating = super(top_node)
+    node_specification_rating['min_rating'] = min_rating.to_s
+    node_specification_rating['max_rating'] = max_rating.to_s
+    node_specification_rating['user_category'] = user_category
+    node_specification_rating
   end
 
   def product_template_comment() "a number between #{min_rating} and #{max_rating}" end
 
-  # define the distance between  2 products for this feature
+  # define the distance between  2 products for this specification
   def distance_metric(product1, product2) (get_value(product1) - get_value(product2)).abs end
 
   def get_value_01(product)
@@ -391,17 +391,17 @@ class SpecificationRating < Specification
   def get_value_edit_html(product)
     "<div class=\"field\">
       <span>rating (min=#{min_rating}, max=#{max_rating})</span>
-      <input type='text' name='feature_#{idurl}' value='#{get_value(product)}' />
+      <input type='text' name='specification_#{idurl}' value='#{get_value(product)}' />
     </div>"
   end
 
-  def get_feature_html()
-    suffix = "#{Root.icon_star}#{feature_html_suffix}"
+  def get_specification_html()
+    suffix = "#{Root.icon_star}#{specification_html_suffix}"
     "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label} #{suffix} </span>"
   end
 
   # this is included in a form
-  def get_feature_edit_html()
+  def get_specification_edit_html()
     super() << "<div class=\"field\">
                    min=<input name=\"min_rating\" type='text' value=\"#{min_rating}\" size=\"2\" />
                    max=<input name=\"max_rating\" type='text' value=\"#{max_rating}\" size=\"2\" />
@@ -409,7 +409,7 @@ class SpecificationRating < Specification
   end
 
 
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string) Float(content_string.strip) end
   def value2xml(value) value.to_s end
 
@@ -419,30 +419,30 @@ class SpecificationRating < Specification
 
 end
 
-# define 2 sub features of same type (subtype of continoueus)
-# first feature aggregated value < second feature aggregated value
+# define 2 sub specifications of same type (subtype of continoueus)
+# first specification aggregated value < second specification aggregated value
 class SpecificationInterval < Specification
 
   key :class_name, String
   many :interval, :class_name => "Specification", :polymorphic => true
 
-  def feature_min() interval.first end
-  def feature_max() interval.last end
+  def specification_min() interval.first end
+  def specification_max() interval.last end
 
   def self.initialize_from_xml(xml_node)
-    feature_interval = super(xml_node)
-    feature_interval.class_name = xml_node['class_name']
-    feature_interval.read_xml_list(xml_node, "Specification", :container_tag => 'ranges', :set_method_name => 'interval')
-    feature_interval.interval.size
-    raise "****** error #{xml_node.inspect}" unless feature_interval.interval.size == 2
-    feature_interval
+    specification_interval = super(xml_node)
+    specification_interval.class_name = xml_node['class_name']
+    specification_interval.read_xml_list(xml_node, "Specification", :container_tag => 'ranges', :set_method_name => 'interval')
+    specification_interval.interval.size
+    raise "****** error #{xml_node.inspect}" unless specification_interval.interval.size == 2
+    specification_interval
   end
 
   def generate_xml(top_node)
-    node_feature_interval = super(top_node)
-    node_feature_interval['class_name'] = class_name
+    node_specification_interval = super(top_node)
+    node_specification_interval['class_name'] = class_name
     Root.write_xml_list(xml_node, interval, 'ranges')
-    node_feature_interval
+    node_specification_interval
   end
 
   def get_value_01(product)
@@ -454,42 +454,42 @@ class SpecificationInterval < Specification
 
   # ---------------------------------------------------------------------
   # to display the matrix
-  # value is an array made of the value of min features float between 0 and 1
+  # value is an array made of the value of min specifications float between 0 and 1
   def get_value(product)
-    value_min = feature_min.get_value_html(product)
-    value_max = feature_max.get_value_html(product)
+    value_min = specification_min.get_value_html(product)
+    value_max = specification_max.get_value_html(product)
     [value_min, value_max] if value_min or value_max
   end
 
   def get_value_html(product)
     if get_value(product)
-      "#{feature_min.get_value_html(product)} #{feature_min.get_value_html(product)}"
+      "#{specification_min.get_value_html(product)} #{specification_min.get_value_html(product)}"
     end
   end
 
   # this is included in a form
   def get_value_edit_html(product)
-    feature_min.get_value_edit_html(product) << feature_max.get_value_edit_html(product)
+    specification_min.get_value_edit_html(product) << specification_max.get_value_edit_html(product)
   end
 
-  def get_feature_html() "<span title=\"interval of class#{class_name}\">#{label}</span>" end
+  def get_specification_html() "<span title=\"interval of class#{class_name}\">#{label}</span>" end
 
   # this is included in a form
-  def get_feature_edit_html()
+  def get_specification_edit_html()
     super()
   end
 
   SEPARATOR_INERVAL = '-@@-'
   def xml2value(content_string)
     content_string_min, content_string_max = content_string.split(SEPARATOR_INERVAL)
-    value_min = content_string_min ? feature_min.xml2value(content_string_min) : nil
-    value_max = content_string_max ? feature_max.xml2value(content_string_max) : nil
+    value_min = content_string_min ? specification_min.xml2value(content_string_min) : nil
+    value_max = content_string_max ? specification_max.xml2value(content_string_max) : nil
     [value_min, value_max]
   end
 
   def value2xml(value)
-    xml_min = value.first ? feature_min.value2xml(value.first) : nil
-    xml_max = value.last ? feature_max.value2xml(value.last) : nil
+    xml_min = value.first ? specification_min.value2xml(value.first) : nil
+    xml_max = value.last ? specification_max.value2xml(value.last) : nil
     "#{xml_min}#{SEPARATOR_INERVAL}#{xml_max}"
   end
   # ---------------------------------------------------------------------
@@ -512,28 +512,28 @@ class SpecificationContinous < Specification
 
   # ---------------------------------------------------------------------
   # to display the matrix
-  # value is an array made of the value of min features float between 0 and 1
+  # value is an array made of the value of min specifications float between 0 and 1
 
 
   def get_value_html(product)
     if get_value(product)
-      "#{format_value(get_value(product))}#{feature_html_suffix}"
+      "#{format_value(get_value(product))}#{specification_html_suffix}"
     end
   end
 
   # this is included in a form
   def get_value_edit_html(product)
-    feature_continous_value =  get_value(product)
-    feature_continous_value ||= ""
+    specification_continous_value =  get_value(product)
+    specification_continous_value ||= ""
     "<div class=\"field\">
-        <input type='text' name='feature_#{idurl}' value='#{feature_continous_value}' />
+        <input type='text' name='specification_#{idurl}' value='#{specification_continous_value}' />
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class}\">#{label}</span>#{feature_html_suffix}" end
+  def get_specification_html() "<span title=\"specification #{self.class}\">#{label}</span>#{specification_html_suffix}" end
 
   # this is included in a form
-  def get_feature_edit_html()
+  def get_specification_edit_html()
     super() << "<div class=\"field\">
                    format <input type='text' name='format' value='#{value_format}' />
                 </div>"
@@ -558,20 +558,20 @@ end
 class SpecificationNumeric < SpecificationContinous
 
   def self.initialize_from_xml(xml_node)
-    feature_numeric = super(xml_node)
-    feature_numeric.value_min = Float(xml_node['value_min'] || 0.0)
-    feature_numeric.value_max = Float(xml_node['value_max'] || 1000.0)
-    feature_numeric.value_format = xml_node.attributes['format'] || "%.2f"
-    feature_numeric
+    specification_numeric = super(xml_node)
+    specification_numeric.value_min = Float(xml_node['value_min'] || 0.0)
+    specification_numeric.value_max = Float(xml_node['value_max'] || 1000.0)
+    specification_numeric.value_format = xml_node.attributes['format'] || "%.2f"
+    specification_numeric
   end
 
   # self.initialize_from_xml(xml_node) is defined in sub classes
   def generate_xml(top_node)
-    node_feature_numeric = super(top_node)
-    node_feature_numeric['value_min'] = value_min.to_s
-    node_feature_numeric['value_max'] = value_max.to_s
-    node_feature_numeric['format'] = value_format
-    node_feature_numeric
+    node_specification_numeric = super(top_node)
+    node_specification_numeric['value_min'] = value_min.to_s
+    node_specification_numeric['value_max'] = value_max.to_s
+    node_specification_numeric['format'] = value_format
+    node_specification_numeric
   end
 
   def format_value(numeric_value)
@@ -588,7 +588,7 @@ class SpecificationNumeric < SpecificationContinous
     Root.rule3(value, value_min, value_max) if value
   end
 
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string) Float(content_string.strip) end
   def value2xml(value) value.to_s end
 
@@ -601,21 +601,21 @@ class SpecificationDate < SpecificationContinous
   YEAR_IN_SECONDS = 60 * 60 * 24 * 365
 
   def self.initialize_from_xml(xml_node)
-    feature_date = super(xml_node)
-    feature_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * YEAR_IN_SECONDS
-    feature_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * YEAR_IN_SECONDS
-    feature_date.value_format = xml_node['format'] || Root.default_date_format
-    feature_date
+    specification_date = super(xml_node)
+    specification_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * YEAR_IN_SECONDS
+    specification_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * YEAR_IN_SECONDS
+    specification_date.value_format = xml_node['format'] || Root.default_date_format
+    specification_date
   end
   def self.xml2date(date) Time.parse(date) end
 
   # self.initialize_from_xml(xml_node) is defined in sub classes
   def generate_xml(top_node)
-    node_feature_date = super(top_node)
-    node_feature_date['value_min'] = SpecificationDate.date2xml(value_min)
-    node_feature_date['value_max'] = SpecificationDate.date2xml(value_max)
-    node_feature_date['format'] = value_format
-    node_feature_date
+    node_specification_date = super(top_node)
+    node_specification_date['value_min'] = SpecificationDate.date2xml(value_min)
+    node_specification_date['value_max'] = SpecificationDate.date2xml(value_max)
+    node_specification_date['format'] = value_format
+    node_specification_date
   end
   def self.date2xml(x) x.strftime(Root.default_date_format) end
 
@@ -625,7 +625,7 @@ class SpecificationDate < SpecificationContinous
   def get_value_01(product) Root.rule3(get_value(product), value_min, value_max) end
 
 
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string) SpecificationDate.xml2date(content_string.strip) end
   def value2xml(value) SpecificationDate.date2xml(value) end
 
@@ -641,11 +641,11 @@ end
 class SpecificationCondition < Specification
 
   def self.initialize_from_xml(xml_node)
-    feature_condition = super(xml_node)
+    specification_condition = super(xml_node)
   end
 
   def generate_xml(top_node)
-    node_feature_condition = super(top_node)
+    node_specification_condition = super(top_node)
   end
 
   def get_value_01(product) get_value(product) ? 1.0 : 0.0 end
@@ -662,14 +662,14 @@ class SpecificationCondition < Specification
 
   # this is included in a form
   def get_value_edit_html(product)
-    "<input type='checkbox' name='feature_#{idurl}' title='idurl=#{idurl}' value='#{idurl}' #{ get_value(product) ? 'checked' : nil} />#{label}"
+    "<input type='checkbox' name='specification_#{idurl}' title='idurl=#{idurl}' value='#{idurl}' #{ get_value(product) ? 'checked' : nil} />#{label}"
   end
 
   def product_template_comment() "true or false" end
 
   # ---------------------------------------------------------------------
 
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string)
     content_string = content_string.strip
     content_string != "" and content_string.downcase != "false"
@@ -681,7 +681,7 @@ class SpecificationCondition < Specification
 end
 
 # ----------------------------------------------------------------------------------------
-# Computed (value comes for combination of other feature)
+# Computed (value comes for combination of other specification)
 # ----------------------------------------------------------------------------------------
 
 # value is the result of the formula !
@@ -690,16 +690,16 @@ class SpecificationComputed < Specification
   key :formula, String
 
   def self.initialize_from_xml(xml_node)
-    feature_computed = super(xml_node)
-    feature_computed.formula_string = xml_node['formula']
-    raise "error, no formula" unless feature_computed.formula_string
-    feature_computed
+    specification_computed = super(xml_node)
+    specification_computed.formula_string = xml_node['formula']
+    raise "error, no formula" unless specification_computed.formula_string
+    specification_computed
   end
 
   def generate_xml(top_node)
-    node_feature_computed = super(top_node)
-    node_feature_computed['formula'] = formula_string
-    node_feature_computed
+    node_specification_computed = super(top_node)
+    node_specification_computed['formula'] = formula_string
+    node_specification_computed
   end
 
   def get_value_01(product) 0.0 end
@@ -716,7 +716,7 @@ class SpecificationComputed < Specification
   end
 
   # ---------------------------------------------------------------------
-  # convert value to string (and reverse for dumping data product's feature value)
+  # convert value to string (and reverse for dumping data product's specification value)
   def xml2value(content_string) raise "oups" end
   def value2xml(value) raise "oups" end
 
@@ -731,8 +731,8 @@ class SpecificationComputed < Specification
     def eval(formula) self.eval_instance_eval(formula) end
 
     # language itself
-    def featureIs(idurl_feature)
-      @knowledge.get_feature_by_idurl(feature_idurl).get_value(product)
+    def specificationIs(idurl_specification)
+      @knowledge.get_specification_by_idurl(specification_idurl).get_value(product)
     end
 
   end
@@ -784,7 +784,7 @@ class SpecificationUrl < Specification
 
 end
   
-# define a feature with no value
+# define a specification with no value
 class SpecificationHeader < Specification
 
   def color_from_status(product) "lightblue" end
