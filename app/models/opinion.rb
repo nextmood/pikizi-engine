@@ -11,7 +11,8 @@ class Opinion < Root
   key :feature_rating_idurl, String # the reference to a feature rating in the model   (rating dimension)
   key :label, String # summary of the opinion
   key :_type, String # class management
-
+  key :usage, String
+  
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review
 
@@ -77,7 +78,7 @@ class Comparator < Opinion
   key :operator_type, String
   key :predicate, String
 
-  def to_html(options={}) "#{operator_type} than #{predicate} (#{feature_rating_idurl})" end
+  def to_html(options={}) "#{operator_type} than #{predicate} #{usage} (#{feature_rating_idurl})" end
 
   def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
 
@@ -100,7 +101,6 @@ end
 
 class Tip < Opinion
 
-  key :usage, String
   key :intensity, Float
   key :is_mixed, Boolean, :default => false
   

@@ -24,13 +24,6 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="carrierwave" version="0" bound="GREATER_OR_EQUAL" />
-      </requirement>
-      <source manual="true" />
-      <source from="config/environment.rb" />
-    </requirement>
-    <requirement>
-      <requirement>
         <dependency name="factory_girl" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source from="config/environment.rb" />
@@ -142,7 +135,6 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo (v0.19.1, /Library/Ruby/Gems/1.8/gems/mongo-0.19.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] jnunemaker-validatable (v1.8.3, /Library/Ruby/Gems/1.8/gems/jnunemaker-validatable-1.8.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rpx_now (v0.6.17, /Library/Ruby/Gems/1.8/gems/rpx_now-0.6.17)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] carrierwave (v0.4.5, /Library/Ruby/Gems/1.8/gems/carrierwave-0.4.5)" level="application" />
   </component>
 </module>
 

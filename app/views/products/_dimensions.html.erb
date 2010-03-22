@@ -1,0 +1,24 @@
+<div id="dimensions_<%= dimension_parent_id %>" >
+    <% for dimension in dimensions %>
+        <div class="pkz_specification_level_<%= dimension.level %>">
+          <b><%= dimension.get_feature_html %></b>
+          <%= dimension.get_value_html(product) %>
+
+          <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") %>
+          <% if dimension.parent_id %>
+              <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
+              <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
+              <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this rating (and all its children if any)") %>
+              <% dom_id = "div_dimension_#{dimension.id}" %>
+              <%= link_to_function("edit...", "document.getElementById('#{dom_id}').toggle();", :style => "font-size:80%;") %>
+              <div id="<%= dom_id %>" style="display:none;">
+                <p>change parent:</p>
+                <p>add related feature</p>
+              </div>
+
+          <% end %>
+
+        </div>
+        <%= render(:partial => "/products/dimensions", :locals => { :dimension_parent_id => dimension.id , :dimensions => dimension.children , :product => product}) %>
+    <% end %>
+</div>

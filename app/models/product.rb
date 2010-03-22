@@ -48,7 +48,12 @@ class Product < Root
   key :category, String # a sub categorization of product  (exemple camera phone)
   key :overall_rating, Float
   key :image_urls, Array #an array of images url
-  key :external_urls, Array #an array of images url
+
+  key :image_ids, Array # an array of Media ids
+  key :description_id, Media # a media id
+
+  key :url, String
+  
   key :description_urls, Array # an array of description url?
 
   many :reviews
@@ -59,11 +64,57 @@ class Product < Root
   # values of this product for all features in the knowledge/model
   key :hash_feature_idurl_value, Hash
 
-
+  # ordered list from the most similar to the less similar
+  key :similar_product_ids, Array, :default => []
+  def similar_products() Product.find(similar_product_ids) end
+  
   # to migrate database
   # Product.all.each {|p| p.knowledge_id = Knowledge.first(:idurl => p.knowledge_idurl).id; p.save }; true
   
   timestamps!
+
+  @@product_collection_html = nil
+  def self.product_collection_html(knowledge_id, options={})
+    if @@product_collection_html.nil? or options[:reset]
+      @@product_collection_html = Product.all(:knowledge_id => knowledge_id).collect {|p| [p.label, p.id]}
+    end
+    @@product_collection_html
+  end
+
+  def product_collection_html
+    (l = Product.product_collection_html(knowledge_id)).delete([label, id])
+    l
+  end
+
+  def fillup_image_ids
+    knowledge_idurl = knowledge.idurl
+    path = "public/domains/#{knowledge_idurl}/products/#{idurl}/images"
+    entries = Root.get_entries(path).collect { |entry| "#{path}/#{entry}"}
+    path = "public/domains/#{knowledge_idurl}/products/#{idurl}/gallery"
+    entries.concat(Root.get_entries(path).collect { |entry| "#{path}/#{entry}"})
+    self.image_ids = []
+    entries.each do |entry|
+      if Media::MediaImage.extension_valid?(entry)
+        media_ids = Media::MediaImage.create_from_path(entry)
+        self.image_ids << media_ids
+      else
+        puts "unknown extension for pidurl=#{idurl} entry #{entry}"
+      end
+    end
+    save
+    true
+  end
+
+  def fillup_others
+    knowledge_idurl = knowledge.idurl
+    path = "public/domains/#{knowledge_idurl}/products/#{idurl}/content"
+    if (entries = Root.get_entries(path).collect { |entry| "#{path}/#{entry}"}).first
+      self.description_id = Media.grid.put(File.new(entries.first).read, entries.first, :content_type => "text/html")
+    end
+    feature_url = knowledge.get_feature_by_idurl('main_url')
+    self.url = feature_url.get_value(self)
+    true
+  end
 
   def self.default_search_text() "search products and advisors" end
 

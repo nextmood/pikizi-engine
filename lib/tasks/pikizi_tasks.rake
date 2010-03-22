@@ -365,4 +365,34 @@ namespace :pikizi do
     Opinion.all.each { |o| (o.review.opinions << o; o.review.save; puts "update review for product=#{o.review.product.idurl}/#{o.review.category}") unless o.review.opinions.include?(o) }
   end
 
+  desc "update database"
+  task :update_database => :environment do
+
+    knowledge = Knowledge.first
+    knowledge.categories_map = [["Cell Phone", "cell_phone"],
+                                ["Smartphone", "smartphone"],
+                                ["Messaging phone", "messaging_phone"],
+                                ["Camera phone", "camera_phone"],
+                                ["Media phone", "media_phone"]]
+    knowledge.save
+    feature_category = knowledge.get_feature_by_idurl("phone_category")
+    Product.all.each do |product|
+      # 1) retrieve images...
+      product.fillup_image_ids
+      product.fillup_others
+      puts "#{product.image_ids.size} images for product #{product.idurl}"
+
+      # 2) retrieve doc...
+      # TODO
+
+      # 3) categories
+      product.category = feature_category.get_value(product)
+      product.save
+
+      # 4) Creating Dimension Objects...
+      Dimension.import
+    end
+    true
+  end
+
 end

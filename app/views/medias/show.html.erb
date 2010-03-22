@@ -1,0 +1,11 @@
+#<%= @media_id %><br/>
+class=<%= @datas.class %><br/>
+filename=<%= @datas.filename %><br/>
+content_type=<%= @datas.content_type %><br/>
+file_length=<%= @datas.file_length %><br/>
+upload_date=<%= @datas.upload_date %><br/>
+url = <%= url = "/medias/datas/#{@media_id}" %><br/>
+
+<img src="<%= url %>" />
+
+<img src="<%= url %>_normal" />

@@ -101,7 +101,8 @@ class ReviewsController < ApplicationController
         Opinion::Comparator.create(base_options.clone.merge(
                 :label => "product #{comparator_operator} #{comparator_product}",
                 :operator_type => comparator_operator,
-                :predicate =>  "productIs(:any => [\"#{comparator_product}\"])" ))
+                :predicate =>  "productIs(:any => [\"#{comparator_product}\"])",
+                :usage => params[:usage] ))
 
 
       when "comparator_feature"
@@ -112,7 +113,8 @@ class ReviewsController < ApplicationController
         Opinion::Comparator.create(base_options.clone.merge(
                 :label => "feature #{comparator_feature} of product #{comparator_operator} #{predicate}",
                 :operator_type => comparator_operator,
-                :predicate =>  predicate ))
+                :predicate =>  predicate,
+                :usage => params[:usage] ))
 
       when "rating"
         rating = params[:rating],
@@ -234,7 +236,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # post /reviews/update
+  # post /reviews/update/id
   def update
     @review = Review.find(params[:id])
     @review.update_attributes(params[:review])

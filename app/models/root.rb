@@ -197,7 +197,7 @@ class String
       [:twitter, String.is_not_empty(remove_prefix(prefix))]
     end
   end
-
+  
 end
 
 class Float

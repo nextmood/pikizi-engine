@@ -9,7 +9,8 @@
 
     <% for product in @products %>
       <tr>
-        <td valign="top"><%= product.knowledge_idurl %>/<%= product.idurl %></td>
+        <td valign="top">
+          <%= link_to("#{product.knowledge_idurl}/#{product.idurl}", "/products/#{product.idurl}") %></td>
         <td valign="top">
             <ul>
               <% for review in product.reviews %>

@@ -27,12 +27,9 @@ Rails::Initializer.run do |config|
   config.gem 'factory_girl'
   config.gem 'shoulda'
   config.gem 'redgreen'
-  config.gem 'mongo_mapper', :version => '>= 0.7.1'
-  config.gem "carrierwave"
-
-
-
   
+  config.gem 'mongo_mapper', :version => '>= 0.7.1'
+
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -74,5 +71,7 @@ Rails::Initializer.run do |config|
   end
   
 end
+
+
 
 

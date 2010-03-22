@@ -1,0 +1,5 @@
+<div><%= flash[:notice] %> </div>
+<% form_tag "/medias/create",  :multipart => true  do -%>
+    <%= file_field_tag :media_file %>
+    <p><%= submit_tag 'Create Media' %></p>
+<% end %>

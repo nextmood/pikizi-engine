@@ -14,7 +14,7 @@
                 <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
                 product
                 <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge)) ) %>
-
+                <p>details <%= text_field_tag("usage", nil, :size => 80 ) %></p>
             <% elsif type_opinion == "comparator_feature" %>
                 <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
                 products with feature
@@ -22,6 +22,7 @@
                     :onchange => remote_function(:url => { :action => "feature_filter", :id => review.id, :paragraph_id => paragraph.id },
                                                  :with => "'feature_idurl=' + document.getElementById('comparator_feature').value")) %>
                 <span id="filter_feature"></span>
+                <p>details <%= text_field_tag("usage", nil, :size => 80 ) %></p>
             <% elsif type_opinion == "rating" %>
                 <%= type_opinion %> <%= text_field_tag("rating", nil, :size => 2) %> min=<%= text_field_tag("rating_min", "1", :size => 2) %> max=<%= text_field_tag("raiting_max", "5", :size => 2) %>
 

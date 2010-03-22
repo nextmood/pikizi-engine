@@ -1,0 +1,118 @@
+<style type="text/css">
+    div.image { border:1px solid black; float:left; margin-left:5px; margin-bottom:5px; height:85px; width:110px; }
+    .clearBoth { clear:both; }
+    label { color:black; margin-right:5px; font-weight:bold;}
+    .field { color:blue; margin-right:15px; }
+    p { margin:0px;}
+</style>
+
+<h1>Editing product</h1>
+
+
+<hr/><h2><%= @product.knowledge.idurl %>/<%= @product.idurl %></h2>
+    <% form_tag "/products/update_header/#{@product.id}", :multipart => true  do -%>
+        <table>
+          <tr></tr><td  align="right"><label>label</label></td><td><%= text_field_tag :label, @product.label, :size => 30, :class => "field" %></td></tr>
+          <tr><td align="right"><label>url</label></td><td><%= text_field_tag :url, @product.url, :size => 80, :class => "field" %></td></tr>
+          <% descripion_dom_id = "description_product_#{@product_id}" %>
+          <tr>
+            <td align="right"><label>description</label></td>
+            <td>
+              <%= file_field_tag :media_file %>
+              <span style="font-size:80%; margin-left:20px;">
+                <%= @product.description_id ? link_to_function("see current...", "document.getElementById('#{descripion_dom_id}').toggle();") : 'no description yet' %>
+              </span>
+            </td>
+          </tr>
+          <tr id="<%= descripion_dom_id %>" style="display:none;">
+            <td colspan="2">
+                <%= Media.datas(@product.description_id).read if @product.description_id %>
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><label>similar products</label></td>
+            <td><%= render(:partial => "/products/similar_products", :locals => {:product => @product}) %></td>
+          </tr>
+          <tr><td colspan="2" align="center"><%= submit_tag 'Update', :style => "margin-top:5px;" %></td></tr>
+        </table>
+    <% end %>
+
+
+
+
+<hr/><h2>images</h2>
+    <div class="image" style="width:250px;">
+      <% form_tag "/products/add_image/#{@product.id}",  :style => "padding:5px;", :multipart => true  do -%>
+        Add a new image...<br/>
+        <%= file_field_tag :media_file %>
+        <br/>
+        <%= submit_tag 'ok', :style => "margin-left:110px; margin-top:10px;" %>
+      <% end %>
+    </div>
+<% for image_ids in @product.image_ids %>
+    <div class="image">
+      <img src="/medias/datas/<%= image_ids['thumb'] %>" />
+      <%= link_to(image_tag("icons/stop.png", :border => 0), :controller => "products", :action => "delete_main_image", :id => @product.id, :main_image_id => image_ids['main']) %>
+    </div>
+<% end %>
+
+<br class="clearBoth" />
+
+<hr/><h2>Dimensions</h2>
+<div class="">
+  <%= render(:partial => "/products/dimensions", :locals => { :dimensions => [@knowledge.dimension_root], :dimension_parent_id => nil, :product => @product}) %>
+</div>
+<hr/><h2>availability and merchants</h2>
+
+
+
+<hr/><h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
+<div class="">
+    <% for feature in @knowledge.features_all %>
+        <% if !feature.is_a?(FeatureRating) and !feature.is_a?(FeatureImage)  %>
+            <div class="pkz_specification_level_<%= feature.level %>">
+              <b><%= feature.get_feature_html %></b>
+              <%= feature.get_value_html(@product) %>
+
+              <span style="font-size:80%; margin-left:30px;">
+                <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") %>
+                <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
+                <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
+                <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this specification (and all its children if any)") %>
+
+                edit 
+                  <%= link_to_remote("value",
+                          :url => {  :controller => "products",
+                                     :action => "edit_value",
+                                     :id => @product.id,
+                                     :feature_idurl => feature.idurl  },
+                          :html => {  }) %>
+                  /
+                  <%= link_to_remote("spec",
+                          :url => {  :controller => "products",
+                                     :action => "edit_feature",
+                                     :id => @product.id,
+                                     :feature_idurl => feature.idurl  },
+                          :html => {  }) %>
+
+                  <%= feature.should_display?(@product) ? "(spec) " : "" %>
+              </span>
+
+              <div id="div_<%= feature.idurl %>">
+                  
+              </div>
+
+              
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+
+<hr/><h2>Create a new product</h2>
+<% form_tag "/products/create_new"  do -%>
+    <label>idurl</label>
+    <%= text_field_tag :pidurl, nil, :size => 20, :class => "field" %>
+    <%= submit_tag 'create new product' %>
+<% end %>
+

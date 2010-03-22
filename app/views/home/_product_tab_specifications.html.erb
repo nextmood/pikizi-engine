@@ -1,7 +1,7 @@
 
 <div class="pkz_specifications">
     <% for feature in knowledge.features_all %>
-        <% if feature.is_specification?(product) %>
+        <% if feature.should_display?(product) %>
             <div class="pkz_specification_level_<%= feature.level %>">
               <b><%= feature.get_feature_html %></b>
               <%= feature.get_value_html(product) %>

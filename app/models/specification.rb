@@ -1,379 +1,27 @@
-require 'xml'
 require 'mongo_mapper'
-require 'specification'
-#require 'graphviz'
 
-class Knowledge < Root
+# describe a Specification of the product
+# this is a hierarchy mechanism
+# see http://railstips.org/blog/archives/2010/02/21/mongomapper-07-identity-map/
+class Specification
 
   include MongoMapper::Document
+  plugin MongoMapper::Plugins::IdentityMap
 
   key :idurl, String # unique url
-  key :label, String 
-  key :categories_map, Array # [[key_category_1, label_category_1], ... [key_category_n, label_category_n]]
+  key :label, String
+  key :is_optional, Boolean, :default => false
+  key :should_display, Boolean, :default => true
 
-  key :dimension_root, Dimension
-  
-  many :features, :polymorphic => true   # first level features
+  # nested structure
+  key :parent_id # a Dimension object
+  belongs_to :parent, :class_name => "Dimension"
 
-  key :question_idurls, Array
-  def questions() @questions ||= Question.load_db(question_idurls)  end
-  def questions_sorted_by_desc_discrimination(pidurls, user=nil)
-    questions.sort { |q1, q2| q2.discrimination(user, pidurls) <=> q1.discrimination(user, pidurls) }
-  end
-
-  key :product_idurls, Array
-  def products() @products ||= Product.load_db(product_idurls) end
-
-  key :quizze_idurls, Array
-  def quizzes() @quizzes ||= Quizze.load_db(quizze_idurls) end
-
-  key :cache_nb_products, Integer
-  key :cache_nb_questions, Integer
-  key :cache_nb_quizzes, Integer
-  key :cache_nb_reviews, Integer
-
-  many :usages
+  # knowledge
+  key :knowledge_id
+  belongs_to :knowledge
 
   timestamps!
-
-  def self.is_main_document() true end
-
-  def each_feature(&block) features.each { |sub_feature| sub_feature.each_feature(&block) }; nil end
-  def each_feature_rating(&block) each_feature { |feature| block.call(feature) if feature.is_a?(FeatureRating) } ;nil end
-  def feature_ratings() l = []; each_feature_rating { |o| l << o }; l end
-
-  def each_feature_collect(&block) l = []; each_feature { |feature| l << block.call(feature) }; l end
-  def features_all() each_feature_collect { |o| o } end
-  def nb_features() nb = 0; each_feature { |f| nb += 1 }; nb end
-
-  def self.all_key_label(options={})
-    @@all_key_label ||= Knowledge.all.collect {|k| [k.idurl, k.label] }
-    if options[:only] == :idurl
-      @@all_key_label.collect { |idurl, label| idurl }
-    elsif options[:only] == :label
-      @@all_key_label.collect { |idurl, label| label }
-    else
-      @@all_key_label
-    end
-  end
-
-
-  def link_back() features.each { |sub_feature| sub_feature.link_back(self) }; self end
-
-  # read and create a domain (knowledge + questions, products and quizzes in the database)
-  # this could be called by a rast task
-  # return the newly created knowledge
-  def self.initialize_from_xml(knowledge_idurl)
-    #begin
-      domain_directory = "public/domains/#{knowledge_idurl}"
-      xml_node = open_xml_bis("#{domain_directory}/knowledge/knowledge.xml", knowledge_idurl)
-
-      knowledge = super(xml_node)
-      knowledge.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
-      knowledge.link_back
-      knowledge.save
-
-      knowledge.product_idurls = read_children_xml(knowledge, domain_directory, "Product")
-      knowledge.question_idurls = read_children_xml(knowledge, domain_directory, "Question")
-      knowledge.quizze_idurls = read_children_xml(knowledge, domain_directory, "Quizze")
-      knowledge.link_back
-      knowledge.save
-
-      knowledge
-    #rescue Exception => e
-    #  puts "Error #{e.message}"
-    #   puts "Error #{e.backtrace.inspect}"
-    #  nil
-    #end
-  end
-
-  # return a list of sub idurl
-  def self.read_children_xml(knowledge, domain_directory, tag)
-    tag_class = Kernel.const_get(tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
-    get_entries("#{domain_directory}/#{tag_downcase_plural}").inject([]) do |l, sub_idurl|
-      sub_node = open_xml(domain_directory, sub_idurl, tag)
-      tag_class.initialize_from_xml(knowledge, sub_node)
-      l << sub_idurl
-    end
-  end
-
-  def self.open_xml(domain_directory, idurl, tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
-    open_xml_bis("#{domain_directory}/#{tag_downcase_plural}/#{idurl}/#{tag_downcase}.xml", idurl)
-  end
-
-  def self.open_xml_bis(filename, idurl)
-    raise "I can't find: #{filename}" unless File.exist?(filename)
-    xml_node = XML::Document.file(filename).root
-    xml_node['idurl'] = idurl
-    xml_node
-  end
-
-  def get_price_min_html(product) get_price_min_max_html(product, :min) end
-  def get_price_min_max_html(product, mode = :minmax)
-    f_prices = ["unsubsidized_price", "subsidized_price", "special_carrier_promotion", "amazon_price", "bestbuy_price", "radioshack_price"]
-    prices = f_prices.collect { |feature_name| get_feature_by_idurl(feature_name).get_value(product) }.compact
-    if prices.size > 0
-      price_min = prices.min
-      price_max = prices.max
-      if mode == :minmax and price_min != price_max
-        "$ #{'%.2f' % price_min} to $ #{'%.2f' % price_max}"
-      else
-        "$ #{'%.2f' % price_min}"
-      end
-    else
-      "n/a"
-    end
-  end
-
-
-  # return a list of sub idurl
-  def self.write_children_xml(knowledge, object_idurls, domain_directory, tag)
-    tag_class = Kernel.const_get(tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
-
-    object_idurls.each do |object_idurl|
-      sub_doc = XML::Document.new
-      new_object = tag_class.load_db(object_idurl)
-      new_object.generate_xml(knowledge, sub_doc)
-      domain_tag_directory = "#{domain_directory}/#{tag_downcase_plural}/#{object_idurl}"
-      system("mkdir #{domain_tag_directory}") unless File.exist?(domain_tag_directory)
-      sub_doc.save("#{domain_tag_directory}/#{tag_downcase}.xml")
-    end
-
-  end
-
-  # this entry will update the whole xml directories/files
-  def generate_xml
-    domain_directory = "public/domains/#{idurl}"
-    doc = XML::Document.new
-    node_knowledge = super(doc)
-    Root.write_xml_list(node_knowledge, features, 'sub_features')
-    doc.save("#{domain_directory}/knowledge/knowledge.xml")
-
-    Knowledge.write_children_xml(self, question_idurls, domain_directory, "Question")
-    Knowledge.write_children_xml(self, product_idurls, domain_directory, "Product")
-    Knowledge.write_children_xml(self, quizze_idurls, domain_directory, "Quizze")
-  end
-
-  def self.to_xml()
-    doc = XML::Document.new
-    doc.root = node_knowledges = XML::Node.new("knowledges")
-    Knowledge.all.each { |knowledge| node_knowledges << knowledge.to_xml_bis }
-    doc.to_s(:indent => true)    
-  end
-
-  def to_xml_bis
-    node_knowledge = XML::Node.new("Knowledge")
-    node_knowledge['idurl'] = idurl
-    node_knowledge['label'] = label
-
-    # products
-    node_knowledge << node_products = XML::Node.new("products")
-    products.each do |product|
-      node_products << node_product = XML::Node.new(product.class.to_s)
-      node_product['idurl'] = product.idurl
-    end
-
-    # questions
-    node_knowledge << node_questions = XML::Node.new("questions")
-    questions.each do |question|
-      node_questions << node_question = XML::Node.new(question.class.to_s)
-      node_question['idurl'] = question.idurl
-    end
-
-    # quizzes
-    node_knowledge << node_quizzes = XML::Node.new("quizzes")
-    quizzes.each do |quizze|
-      node_quizzes << node_quizze = XML::Node.new(quizze.class.to_s)
-      node_quizze['idurl'] = quizze.idurl
-    end
-
-    # features
-    node_knowledge << node_features = XML::Node.new("features")
-    features.each do |feature|
-      node_features << node_feature = feature.generate_xml(node_features)
-    end
-    
-    node_knowledge
-  end
-
-
-  def generate_product_template(product=nil)
-    doc = XML::Document.new
-    doc.root =  (top_node = XML::Node.new("Product"))
-    top_node['label'] = product ? product.label : "Label..."
-    features.each { |feature| feature.generate_product_template(top_node, 0, product)  }
-    path = "public/domains/#{idurl}"
-    if product
-      path = "#{path}/products/#{product.idurl}"
-      system("mv #{path}/product.xml #{path}/product_ph.xml")
-      doc.save("#{path}/product.xml")
-    else
-      doc.save("#{path}/knowledge/product_template.xml")
-    end
-  end
-
-  def generate_reviews_template
-    raise "ne pas lancer"
-    doc = XML::Document.new
-    doc.root =  (top_node = XML::Node.new("Review"))
-    top_node['author'] = "ph"
-    top_node['product_idurl'] = "a product idurl"
-    top_node['date'] = FeatureDate.date2xml(Time.now)
-
-    each_feature_rating do |feature|
-      top_node << (node_feature_opinion = XML::Node.new("FeatureOpinion"))
-      node_feature_opinion["idurl"] = feature.idurl
-      node_feature_opinion << XML::Node.new_comment("<tip usage=\"take picture at night\" intensity=\"pro\" confidence=\"1.0\" >...</Tip>")
-      node_feature_opinion << XML::Node.new_comment("<better_than predicate=\"\" />")
-      node_feature_opinion << XML::Node.new_comment("<same_as predicate=\"\" />")
-      node_feature_opinion << XML::Node.new_comment("<worse_than predicate=\"\" />")
-      node_feature_opinion << XML::Node.new_comment("<rated min_rating=\"0\" max_rating=\"5\">3</Rated>")
-      node_feature_opinion << (node_rated = XML::Node.new("Rated"))
-      node_rated["min_rating"] = feature.min_rating.to_s
-      node_rated["max_rating"] = feature.max_rating.to_s
-      node_rated << XML::Node.new_comment("a value")
-    end
-    path = "public/domains/#{idurl}"
-    doc.save("#{path}/reviews/review_template.xml")
-  end
-
-  def compute_counters
-    nb_products(true)
-    nb_questions(true)
-    nb_quizzes(true)
-    nb_reviews(true)
-    save
-  end
-
-  # return the number of products handled by this model
-  def nb_products(reset_cache=false) default_counter(reset_cache, "cache_nb_products") { products.size } end
-
-  # return the number of questions handled by this model
-  def nb_questions(reset_cache=false) default_counter(reset_cache, "cache_nb_questions") { questions.size } end
-
-  # sort the questions by criterions
-  def questions_sorted(products, user) Question.sort_by_discrimination(questions, products.collect(&:idurl), user) end
-
-  # return the number of questions handled by this model
-  def nb_quizzes(reset_cache=false) default_counter(reset_cache, "cache_nb_quizzes") { quizzes.size } end
-
-  # return the number of reviews handled by this model
-  def nb_reviews(reset_cache=false) default_counter(reset_cache, "cache_nb_reviews") { products.inject(0) { |s,product| s + product.reviews.size } } end
-
-  # cancel the recommendations generated by a previous answer
-  def cancel_recommendations(question, last_answer, quizze_instance, products)
-    raise "i don't get it..."
-    propagate_recommendations(question, last_answer, quizze_instance.hash_pidurl_affinity, products, true)
-  end
-
-  # propagate the recommendations associated with the choices_ok
-  # update hash_pidurl_affinity ( a hash table between a product-idurl and and a user affinity)
-  def propagate_recommendations(question, answer, hash_pidurl_affinity, products, reverse_mode)
-    puts "filtering not implemented yet" if question.is_filter
-    question.delta_weight(answer).each do |product_idurl, weight|
-      hash_pidurl_affinity[product_idurl].add(weight * (reverse_mode ? -1.0 : 1.0), question.weight)
-    end
-  end
-
-  # return a new affinity list
-  def trigger_recommendations(quizze_instance, question, products, choices_ok, simulation)
-    choice_idurls_ok = choices_ok.collect(&:idurl)
-    answer = quizze_instance.record_answer(self.idurl, question.idurl, choice_idurls_ok)
-    hash_pidurl_affinity = quizze_instance.hash_pidurl_affinity
-    hash_pidurl_affinity = hash_pidurl_affinity.inject({}) { |h, (pidurl, a)| h[pidurl] = a.clone } if simulation
-    propagate_recommendations(question, answer, hash_pidurl_affinity, products, false)
-    quizze_instance.cancel_answer(answer) if simulation
-    hash_pidurl_affinity
-  end
-
-  def get_product_by_idurl(idurl)
-    @hash_idurl_product ||= products.inject({}) { |h, p| ensure_unique(h, p) }
-    @hash_idurl_product[idurl]
-  end
-
-  def get_question_by_idurl(idurl)
-    @hash_idurl_question ||= questions.inject({}) { |h, q| ensure_unique(h, q) }
-    @hash_idurl_question[idurl]
-  end
-
-  def get_feature_by_idurl(idurl)
-    @hash_idurl_feature ||= features_all.inject({}) { |h, f| ensure_unique(h, f) }
-    @hash_idurl_feature[idurl]
-  end
-
-
-  def ensure_unique(h, o)
-    raise "OUPS more than one idurl=#{o.idurl}" if h[o.idurl]
-    h[o.idurl] = o; h
-  end
-  # --------- Matrix Html ----------------------------------------------------------------
-
-  def compute_dom_id()
-    features.each_with_index { |feature, index| feature.compute_dom_id("thematrix_#{index}") }
-  end
-  # ---------------------------------------------------------------------------------------
-
-  def clean_url(url, product)
-    if url.has_prefix("http") or url.has_prefix("/")
-      url
-    else
-      # local url
-      "/domains/#{idurl}/products/#{product.idurl}/#{url}"
-    end
-  end
-
-  def default_counter(reset_cache, keyname)
-    if reset_cache or self.send(keyname).nil?
-      self.send("#{keyname}=", yield)
-    end
-    self.send(keyname)
-  end
-
-
-end
-
-
-# =======================================================================================
-# Describe a hierarchy of features
-# =======================================================================================
-
-class Feature < Root
-  # abstract class
-
-  include MongoMapper::EmbeddedDocument
-
-  key :idurl, String # unique url
-
-  key :label, String # text
-  key :is_optional, Boolean, :default => false
-  key :no_specification, Boolean, :default => false
-
-  many :features, :polymorphic => true # sub features
-
-
-  attr_accessor :object_parent, :dom_id
-
-  def compute_dom_id(dom_id)
-    self.dom_id = dom_id
-    features.each_with_index { |sub_feature, index| sub_feature.compute_dom_id("#{dom_id}_#{index}") }
-  end
-
-  def link_back(object_parent)
-    self.object_parent = object_parent
-    features.each { |sub_feature| sub_feature.link_back(self) }
-  end
-
-  def knowledge() object_parent.is_a?(Knowledge) ? object_parent : object_parent.knowledge end
-
-  # return nil for first level
-  def feature_parent() object_parent.is_a?(Knowledge) ? nil : object_parent end
-
 
   def is_valid_value?(value) false end
 
@@ -394,15 +42,15 @@ class Feature < Root
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
     feature.is_optional = xml_node['is_optional']
-    feature.no_specification = xml_node['no-spec'] ? true : false
-    feature.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
+    feature.should_display = xml_node['no-spec'] ? true : false
+    feature.read_xml_list(xml_node, "Specification", :container_tag => 'sub_features')
     feature
   end
 
   def generate_xml(top_node)
     node_feature = super(top_node)
     node_feature['is_optional'] = "true" if is_optional
-    node_feature['no-spec'] = "true" if no_specification
+    node_feature['no-spec'] = "true" if should_display
     Root.write_xml_list(node_feature, features, 'sub_features')
     node_feature
   end
@@ -410,12 +58,12 @@ class Feature < Root
   def generate_product_template(top_node, depth, product)
     tag_name = self.class.to_s
 
-    if tag_name == "FeatureHeader"
+    if tag_name == "SpecificationHeader"
       tabulation = "    " * (depth + 1)
       top_node << XML::Node.new_comment("#{tabulation}BEGIN #{label} ")
       features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
       top_node << XML::Node.new_comment("#{tabulation}END #{label} ")
-    elsif tag_name == "FeatureRating"
+    elsif tag_name == "SpecificationRating"
       features.each { |sub_feature| sub_feature.generate_product_template(top_node, depth + 1, product) } if features.size > 0
     else
       tabulation = "    " * depth
@@ -474,7 +122,7 @@ class Feature < Root
 
   # this is related to feature condition
   def is_relevant(product)
-    if is_a?(FeatureCondition)
+    if is_a?(SpecificationCondition)
       (value = get_value(product)).nil? or value
     else
       feature_parent ? feature_parent.is_relevant(product) : true
@@ -482,7 +130,7 @@ class Feature < Root
   end
 
   # this is related to display the specification
-  def should_display?(product) !no_specification and (feature_parent ? feature_parent.should_display?(product) : true) end
+  def should_display?(product) !should_display and (feature_parent ? feature_parent.should_display?(product) : true) end
 
 
 
@@ -501,7 +149,7 @@ class Feature < Root
   end
 
 
-  # return the  FeatureValue(s) for a product, nil if no value (==empty)
+  # return the  SpecificationValue(s) for a product, nil if no value (==empty)
   def get_value(product) product.get_value(idurl) end
   def get_value_01(product) raise "error" end
 
@@ -539,16 +187,33 @@ class Feature < Root
 
 
   def idurl_h()
-    feature_parent ? "#{feature_parent.idurl_h}/#{idurl}" : idurl   
+    feature_parent ? "#{feature_parent.idurl_h}/#{idurl}" : idurl
   end
+
 
 end
 
 
+# =======================================================================================
+# Describe a hierarchy of features
+# =======================================================================================
+
+
+
+
+
+# A tag is just a key and a label + backgrounds, i.e a root object
+class Tag < Root
+  include MongoMapper::EmbeddedDocument
+
+  key :idurl, String # unique url
+  key :label, String # text
+
+end
 
 # define a list of tags (exclusive or multiple)
 # value is a list of tags ok
-class FeatureTags < Feature
+class SpecificationTags < Specification
 
   key :is_exclusive, Boolean
 
@@ -649,7 +314,7 @@ class FeatureTags < Feature
   # and define the kind of filtering operation that can be apply on the value
   # of this field
   def operator_filtering(feature)
-    if feature.is_a?(FeatureTags)
+    if feature.is_a?(SpecificationTags)
       if is_exclusive
         [ { :key => "is_either", :gui => select_simple(feature.tags) },
           { :key => "is_not", :gui => select_multiple(feature.tags) } ]
@@ -657,7 +322,7 @@ class FeatureTags < Feature
         [ { :key => "include_or", :gui => select_simple(feature.tags) },
           { :key => "are_neither", :gui => select_multiple(feature.tags) } ]
       end
-    elsif feature.is_a?(FeatureNumeric)
+    elsif feature.is_a?(SpecificationNumeric)
 
     end
   end
@@ -669,7 +334,7 @@ end
 # define a rating value
 # aggregations objects are attached for each featureRating/Product
 # value is an Integer
-class FeatureRating < Feature
+class SpecificationRating < Specification
 
   key :min_rating, Integer, :default => 1
   key :max_rating, Integer, :default => 5
@@ -750,16 +415,16 @@ class FeatureRating < Feature
 
   # ---------------------------------------------------------------------
 
-  def is_specification?(product) false end
+  def should_display?(product) false end
 
 end
 
 # define 2 sub features of same type (subtype of continoueus)
 # first feature aggregated value < second feature aggregated value
-class FeatureInterval < Feature
+class SpecificationInterval < Specification
 
   key :class_name, String
-  many :interval, :class_name => "Feature", :polymorphic => true
+  many :interval, :class_name => "Specification", :polymorphic => true
 
   def feature_min() interval.first end
   def feature_max() interval.last end
@@ -767,7 +432,7 @@ class FeatureInterval < Feature
   def self.initialize_from_xml(xml_node)
     feature_interval = super(xml_node)
     feature_interval.class_name = xml_node['class_name']
-    feature_interval.read_xml_list(xml_node, "Feature", :container_tag => 'ranges', :set_method_name => 'interval')
+    feature_interval.read_xml_list(xml_node, "Specification", :container_tag => 'ranges', :set_method_name => 'interval')
     feature_interval.interval.size
     raise "****** error #{xml_node.inspect}" unless feature_interval.interval.size == 2
     feature_interval
@@ -837,7 +502,7 @@ end
 # Continous (Abstract)
 # ----------------------------------------------------------------------------------------
 
-class FeatureContinous < Feature
+class SpecificationContinous < Specification
 
   key :value_min, Object
   key :value_max, Object
@@ -890,7 +555,7 @@ class FeatureContinous < Feature
 
 end
 
-class FeatureNumeric < FeatureContinous
+class SpecificationNumeric < SpecificationContinous
 
   def self.initialize_from_xml(xml_node)
     feature_numeric = super(xml_node)
@@ -931,7 +596,7 @@ class FeatureNumeric < FeatureContinous
 
 end
 
-class FeatureDate < FeatureContinous
+class SpecificationDate < SpecificationContinous
 
   YEAR_IN_SECONDS = 60 * 60 * 24 * 365
 
@@ -947,8 +612,8 @@ class FeatureDate < FeatureContinous
   # self.initialize_from_xml(xml_node) is defined in sub classes
   def generate_xml(top_node)
     node_feature_date = super(top_node)
-    node_feature_date['value_min'] = FeatureDate.date2xml(value_min)
-    node_feature_date['value_max'] = FeatureDate.date2xml(value_max)
+    node_feature_date['value_min'] = SpecificationDate.date2xml(value_min)
+    node_feature_date['value_max'] = SpecificationDate.date2xml(value_max)
     node_feature_date['format'] = value_format
     node_feature_date
   end
@@ -961,8 +626,8 @@ class FeatureDate < FeatureContinous
 
 
   # convert value to string (and reverse for dumping data product's feature value)
-  def xml2value(content_string) FeatureDate.xml2date(content_string.strip) end
-  def value2xml(value) FeatureDate.date2xml(value) end
+  def xml2value(content_string) SpecificationDate.xml2date(content_string.strip) end
+  def value2xml(value) SpecificationDate.date2xml(value) end
 
   def product_template_comment() "a date between #{value2xml(value_min)} and #{value2xml(value_max)}" end
 
@@ -973,7 +638,7 @@ end
 # ----------------------------------------------------------------------------------------
 
 # value is a boolean
-class FeatureCondition < Feature
+class SpecificationCondition < Specification
 
   def self.initialize_from_xml(xml_node)
     feature_condition = super(xml_node)
@@ -1011,7 +676,7 @@ class FeatureCondition < Feature
   end
   def value2xml(value) value.to_s end
 
-  def is_specification?(product) super(product) and get_value(product) end
+  def should_display?(product) super(product) and get_value(product) end
 
 end
 
@@ -1020,7 +685,7 @@ end
 # ----------------------------------------------------------------------------------------
 
 # value is the result of the formula !
-class FeatureComputed < Feature
+class SpecificationComputed < Specification
 
   key :formula, String
 
@@ -1079,12 +744,12 @@ end
 # ----------------------------------------------------------------------------------------
 
 # value is line of text
-class FeatureText < Feature
+class SpecificationText < Specification
   def product_template_comment() "a string" end
 end
 
 # value is a URL
-class FeatureTextarea < Feature
+class SpecificationTextarea < Specification
   def get_value_html(product)
     if url = get_value(product)
       "<a href=\"#{knowledge.clean_url(url, product)}\">link</a>"
@@ -1095,7 +760,7 @@ class FeatureTextarea < Feature
 
 end
 
-class FeatureImage < Feature
+class SpecificationImage < Specification
 
   def get_value_html(product)
     if url = get_value(product)
@@ -1108,7 +773,7 @@ class FeatureImage < Feature
 
 end
 
-class FeatureUrl < Feature
+class SpecificationUrl < Specification
   def get_value_html(product)
     if url = get_value(product)
       "<a href=\"#{knowledge.clean_url(url, product)}\">link</a>"
@@ -1118,8 +783,9 @@ class FeatureUrl < Feature
   def product_template_comment() "an url, like <![CDATA[ http//amazon.com/iphone.html ]]>" end
 
 end
+  
 # define a feature with no value
-class FeatureHeader < Feature
+class SpecificationHeader < Specification
 
   def color_from_status(product) "lightblue" end
 
