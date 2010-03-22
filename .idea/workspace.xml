@@ -27,91 +27,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="34" selection-start="867" selection-end="867" vertical-scroll-proportion="0.35185185">
+            <state line="380" column="30" selection-start="15723" selection-end="15739" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="product.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/product.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="57" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="37" selection-start="4713" selection-end="4713" vertical-scroll-proportion="-23.653847">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_similar_products.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/products/_similar_products.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="348" selection-end="348" vertical-scroll-proportion="-6.3157897">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_opinion_editor_bis.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="750" selection-end="750" vertical-scroll-proportion="-8.842105">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="-4.1578946">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/admin.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="24" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_paragraph.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_paragraph.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="40" selection-start="4473" selection-end="4473" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="opinion.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="66" selection-start="2598" selection-end="2598" vertical-scroll-proportion="0.0">
+            <state line="115" column="53" selection-start="3343" selection-end="3343" vertical-scroll-proportion="0.4507846">
               <folding />
             </state>
           </provider>
@@ -138,7 +66,6 @@
         <option value="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/media.rb" />
-        <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/products/_similar_products.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
@@ -146,6 +73,7 @@
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb" />
         <option value="$PROJECT_DIR$/doc/admin.txt" />
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
       </list>
     </option>
   </component>
@@ -1036,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="26" selection-start="15766" selection-end="15766" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="35" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0">
@@ -1057,20 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="57" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="37" selection-start="4713" selection-end="4713" vertical-scroll-proportion="-23.653847">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/_product_tabs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="868" selection-end="1222" vertical-scroll-proportion="0.27530363">
@@ -1078,9 +985,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="37" selection-start="4713" selection-end="4713" vertical-scroll-proportion="0.9375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="84" selection-start="335" selection-end="335" vertical-scroll-proportion="0.16666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/_similar_products.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="348" selection-end="348" vertical-scroll-proportion="-6.3157897">
+        <state line="10" column="0" selection-start="348" selection-end="348" vertical-scroll-proportion="0.18099548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="750" selection-end="750" vertical-scroll-proportion="0.24633431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="0.11844078">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="254" selection-end="254" vertical-scroll-proportion="0.11982881">
           <folding />
         </state>
       </provider>
@@ -1092,44 +1034,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="750" selection-end="750" vertical-scroll-proportion="-8.842105">
+        <state line="116" column="40" selection-start="4473" selection-end="4473" vertical-scroll-proportion="0.58773184">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="66" selection-start="2598" selection-end="2598" vertical-scroll-proportion="0.0">
+        <state line="95" column="66" selection-start="2598" selection-end="2598" vertical-scroll-proportion="0.6804565">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="40" selection-start="4473" selection-end="4473" vertical-scroll-proportion="0.0">
+        <state line="380" column="30" selection-start="15723" selection-end="15739" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="241" selection-end="241" vertical-scroll-proportion="-4.1578946">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="24" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="867" selection-end="867" vertical-scroll-proportion="0.35185185">
+        <state line="115" column="53" selection-start="3343" selection-end="3343" vertical-scroll-proportion="0.4507846">
           <folding />
         </state>
       </provider>

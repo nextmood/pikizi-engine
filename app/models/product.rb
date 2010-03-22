@@ -107,9 +107,13 @@ class Product < Root
 
   def fillup_others
     knowledge_idurl = knowledge.idurl
-    path = "public/domains/#{knowledge_idurl}/products/#{idurl}/content"
-    if (entries = Root.get_entries(path).collect { |entry| "#{path}/#{entry}"}).first
-      self.description_id = Media.grid.put(File.new(entries.first).read, entries.first, :content_type => "text/html")
+    begin
+      path = "public/domains/#{knowledge_idurl}/products/#{idurl}/content"
+      if (entries = Root.get_entries(path).collect { |entry| "#{path}/#{entry}"}).first
+        self.description_id = Media.grid.put(File.new(entries.first).read, entries.first, :content_type => "text/html")
+      end
+    rescue
+      puts "oups with description for product=#{idurl}"
     end
     feature_url = knowledge.get_feature_by_idurl('main_url')
     self.url = feature_url.get_value(self)
