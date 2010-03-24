@@ -25,7 +25,6 @@ class Review < Root
   key :category, String # expert, :user etc... needed for weighted aggregation
   key :filename_xml, String
   key :knowledge_idurl, String
-  key :product_idurl, String
 
   key :_type, String # class management
 
@@ -35,8 +34,13 @@ class Review < Root
   key :knowledge_id, Mongo::ObjectID
   belongs_to :knowledge
 
+  key :product_idurl, String
   key :product_id, Mongo::ObjectID
   belongs_to :product
+
+  key :product_idurls, Array
+  key :product_ids, Array
+  many :products, :in => :product_ids 
 
   many :opinions, :polymorphic => true
 

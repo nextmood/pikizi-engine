@@ -106,17 +106,7 @@ end
 class Tip < Opinion
 
   key :intensity_symbol, String
-  key :intensity, Float
-  key :is_mixed, Boolean, :default => false
 
-  def self.convert
-    Tip.all.each do |tip|
-      tip.intensity_symbol =  tip.is_mixed ? "mixed" : intensities.detect { |k,v| v == tip.intensity }.first
-      tip.save
-    end
-    true
-  end
-  
   def to_html(options={})
     s = "#{intensity_as_label} : (#{feature_rating_idurl}#{value_oriented_html})"
     if options[:origin]
@@ -148,14 +138,6 @@ class Tip < Opinion
 
   def intensity_as_label() x = Tip.intensities_symbols.detect { |l,k| k == intensity_symbol }; x ? x.first : "?????" end
 
-  def self.intensities
-    [ ["very_high", 1.0 ],
-      ["high", 0.5],
-      ["neutral", 0.0],
-      ["low", -0.5],
-      ["very_low", -1.0 ],
-      ["mixed", "mixed"] ]
-  end
   
 end
 

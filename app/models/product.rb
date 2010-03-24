@@ -56,8 +56,9 @@ class Product < Root
   
   key :description_urls, Array # an array of description url?
 
-  many :reviews
-  
+  #many :reviews
+  def reviews() Review.all(:product_ids => self.id) end
+
   # availability holds, price and merchants for this product
   key :availability, Availability
 
@@ -309,3 +310,4 @@ class Product < Root
 
 
 end
+
