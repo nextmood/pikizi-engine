@@ -58,6 +58,7 @@ class Product < Root
 
   #many :reviews
   def reviews() Review.all(:product_ids => self.id) end
+  def reviews_count() Review.count(:product_ids => self.id) end
 
   # availability holds, price and merchants for this product
   key :availability, Availability
