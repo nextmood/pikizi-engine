@@ -8722,3 +8722,230 @@ Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-24 16:58:40) 
   Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b", "type_opinion"=>"tip"}
 Rendered reviews/_opinion_creator (452.5ms)
 Completed in 698ms (View: 455 | 200 OK [http://localhost/reviews/add_opinion/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-24 17:04:24) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 536ms (View: 323 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-24 17:04:31) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 345ms (View: 24 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 17:04:35) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.2ms)
+Rendered home/_product_price (5.5ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (12.7ms)
+Completed in 190ms (View: 47 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 17:04:37) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (80.6ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (10.0ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (7.7ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (9.4ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (7.6ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (72.5ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (9.6ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (9.5ms)
+Rendered home/_product_tab_reviews (501.5ms)
+Rendered home/_product_tabs (511.1ms)
+Completed in 662ms (View: 518 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 17:04:42) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (16.4ms)
+Completed in 292ms (View: 252 | 200 OK [http://localhost/reviews/show/4ba2cab843a76d56e400009b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 17:04:42) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 66ms (View: 30 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:04:44) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+
+RuntimeError (error no knowledge):
+  app/controllers/reviews_controller.rb:293:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:05:42) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+
+NameError (undefined local variable or method `review' for #<ReviewsController:0x10659d5b0>):
+  app/controllers/reviews_controller.rb:293:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (20.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:05:54) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+
+RuntimeError (error no knowledge  cell_phones):
+  app/controllers/reviews_controller.rb:293:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (242.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:09:56) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+
+RuntimeError (error no knowledge  cell_phones):
+  app/controllers/reviews_controller.rb:293:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (21.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 17:10:13) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (19.0ms)
+Completed in 580ms (View: 171 | 200 OK [http://localhost/reviews/show/4ba2cab843a76d56e400009b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 17:10:14) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 40ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:10:17) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+
+RuntimeError (error no knowledge  cell_phones):
+  app/controllers/reviews_controller.rb:293:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 17:11:19) [GET]
+  Parameters: {"id"=>"4ba2cab843a76d56e400009b"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_products_4_review (217.1ms)
+Rendered reviews/_form (9.6ms)
+Completed in 441ms (View: 327 | 200 OK [http://localhost/reviews/edit/4ba2cab843a76d56e400009b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 17:11:20) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 111ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]

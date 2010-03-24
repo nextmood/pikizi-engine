@@ -395,14 +395,26 @@ namespace :pikizi do
      
     end
 
-    Review.all.each do |review|
-      if review.product_ids.nil? or review.product_ids.size == 0
-        review.product_ids = [review.product_id]
+#    Review.all.each do |review|
+#      if review.product_ids.nil? or review.product_ids.size == 0
+#        review.product_ids = [review.product_id]
+#      end
+#      review.product_ids = review.product_ids.collect { |pid| pid.is_a?(String) ? Mongo::objectID.from_string(pid) : pid }
+#      review.save
+#      review.opinions.all.each { |o| o.product_ids = review.product_ids; o.save }
+#    end
+
+
+    Review.all.each do |r|
+      unless r.knowledge_id
+        k = Knowledge.first(:idurl => r.knowledge_idurl)
+        r.knowledge_id = k.id
+        r.knowledge
+        r.save
+        puts "updating..."
       end
-      review.product_ids = review.product_ids.collect { |pid| pid.is_a?(String) ? Mongo::objectID.from_string(pid) : pid }
-      review.save
-      review.opinions.all.each { |o| o.product_ids = review.product_ids; o.save }
     end
+
     true
   end
 

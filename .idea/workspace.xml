@@ -36,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="386" column="75" selection-start="15879" selection-end="15879" vertical-scroll-proportion="0.0">
+            <state line="412" column="9" selection-start="16683" selection-end="16683" vertical-scroll-proportion="0.88724834">
               <folding />
             </state>
           </provider>
@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opinion.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="opinion.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="59" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.51409394">
+            <state line="39" column="50" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="31" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
+            <state line="292" column="0" selection-start="10482" selection-end="10482" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,13 +103,13 @@
         <option value="$PROJECT_DIR$/app/views/reviews/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/reviews_helper.rb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_list.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_creator.html.erb" />
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
       </list>
     </option>
   </component>
@@ -824,7 +824,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="93" y="30" width="1472" height="1388" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -833,7 +833,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2569061" sideWeight="0.60896444" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38562596" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38562596" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -958,20 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="386" column="75" selection-start="15879" selection-end="15879" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="31" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_creator.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="98" selection-start="431" selection-end="449" vertical-scroll-proportion="-4.4210525">
@@ -981,7 +967,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="59" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.51409394">
+        <state line="39" column="50" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="0" selection-start="10482" selection-end="10482" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="412" column="9" selection-start="16683" selection-end="16683" vertical-scroll-proportion="0.88724834">
           <folding />
         </state>
       </provider>

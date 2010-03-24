@@ -290,7 +290,7 @@ class ReviewsController < ApplicationController
   def edit
     @review = Review.find(params[:id])
     @knowledge = @review.knowledge
-    raise "error no knowledge" unless @review.knowledge.id
+    raise "error no knowledge #{@review.knowledge_id} #{@review.knowledge_idurl}" unless @review.knowledge.id
   end
 
   # post /reviews/create
