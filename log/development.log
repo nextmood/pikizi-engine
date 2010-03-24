@@ -3520,3 +3520,183 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 12:06:12) [GET]
   Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
 Sending data 
 Completed in 49ms (View: 18 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 12:09:00) [GET]
+  Parameters: {"id"=>"4b892a7143a76d7c3f000294"}
+Rendering template within layouts/application
+Rendering reviews/edit
+
+ActionView::TemplateError (undefined method `product' for #<FileXml:0x10a7de8e8>) on line #2 of app/views/reviews/_form.html.erb:
+1: 
+2: <p>about <b><%= review.product.label  %></b></p>
+3: 
+4: <p>
+5:   written on <%= select_date review.written_at, :prefix => :written_at %> 
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/reviews/_form.html.erb:2
+    app/views/reviews/edit.html.erb:7
+    app/views/reviews/edit.html.erb:5
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (37.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 12:09:45) [GET]
+  Parameters: {"id"=>"4b892a7143a76d7c3f000294"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (23.9ms)
+Completed in 273ms (View: 253 | 200 OK [http://localhost/reviews/edit/4b892a7143a76d7c3f000294]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 12:10:05) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.3ms)
+Rendered home/_product_price (4.6ms)
+Rendered home/_product_tab_overview (0.8ms)
+Rendered home/_product_tabs (9.6ms)
+Completed in 257ms (View: 31 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 12:10:08) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (14.9ms)
+Rendered reviews/_short (8.2ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (7.8ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.9ms)
+Rendered reviews/_short (10.7ms)
+Rendered reviews/_short (9.1ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (7.8ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (6.7ms)
+Rendered reviews/_short (158.4ms)
+Rendered reviews/_short (10.7ms)
+Rendered home/_product_tab_reviews (631.4ms)
+Rendered home/_product_tabs (637.9ms)
+Completed in 877ms (View: 646 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 12:10:20) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (19.5ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (4.6ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (4.3ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (4.0ms)
+Rendered reviews/_paragraph (4.2ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.6ms)
+Completed in 366ms (View: 342 | 200 OK [http://localhost/reviews/show/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 12:10:21) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 31ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-03-24 12:10:25) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (9.8ms)
+Completed in 240ms (View: 213 | 200 OK [http://localhost/reviews/edit/4ba2cdf543a76d56e40000ab]
+
+
+Processing ReviewsController#update (for 127.0.0.1 at 2010-03-24 12:11:09) [POST]
+  Parameters: {"commit"=>"Update review", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "review"=>{"rating"=>"6.5", "min_rating"=>"1.0", "category"=>"expert", "author"=>"PC World staff", "max_rating"=>"10.0", "source_url"=>"http://www.infoworld.com/d/mobilize/test-center-review-htc-droid-eris-under-droid-654?page=0,1&source=fssr", "reputation"=>"1.0", "content"=>"<p><strong>Pieces parts<br /></strong> The Eris offers just about\r\neverything you&#8217;d expect in a modern smartphone: Bluetooth, 3G data,\r\n802.11 Wi-Fi, a touchscreen, GPS, a 5-megapixel camera with video\r\nrecording, a replaceable battery, and storage expansion with a\r\nmicroSD card. It lacks a physical keyboard, but that&#8217;s actually a\r\ndraw for me. I&#8217;ve disliked every physical keyboard I&#8217;ve ever used\r\non a smartphone, and the on-screen keyboards work just fine.</p>\r\n<p>The Eris wraps all these features into a very small, compact,\r\nand satisfyingly solid package. It feels good in your hand &#8212; not\r\ntoo heavy or bulky, yet not too light.</p>\r\n\r\n\r\n<p>I had no trouble whatsoever linking various Bluetooth devices to\r\nthe Eris, and connecting to Wi-Fi networks was similarly simple. In\r\nmy area, Verizon&#8217;s 3G coverage is fast and widespread, especially\r\nwhen compared to AT&amp;T&#8217;s complete lack of 3G and spotty\r\nreception in the more rural areas. There&#8217;s definitely some truth to\r\nVerizon&#8217;s &#8220;There&#8217;s a map for that&#8221; ads.</p>\r\n<p><strong>Applications<br /></strong> It&#8217;s no surprise that the\r\nAndroid Market is roughly where Apple&#8217;s App Store was in its\r\ninfancy. There aren&#8217;t a lot of apps, and they&#8217;re nowhere near as\r\npolished as their iPhone analogs. After using an iPhone for years,\r\nI found that many of my go-to apps, including SSH and Sonos\r\nclients, simply weren&#8217;t available. These will probably come in\r\ntime, but for the moment, the lack of certain applications is\r\nbothersome if you&#8217;ve become accustomed to using them on a\r\nconsistent basis.</p>\r\n<p>The built-in applications are well formed and fairly intuitive,\r\nand there&#8217;s certainly a focus on social networking; the Peep app\r\nfor Twitter is a standard install, for instance, and there&#8217;s a\r\nsetting header for social networks that shows your status on\r\nTwitter, Facebook, and Flickr, as well as any others you might add.\r\nCommunicating with these services is quick and simple, whether it&#8217;s\r\nuploading a photo or posting to Facebook.</p>\r\n<p>Connecting to an IMAP or POP server was straightforward, but\r\nconfusion is circling around Exchange support. I had no problem\r\nconnecting to a production Exchange server, but that appears to be\r\nhighly dependent on security policies in place for Exchange. This\r\nmeans that Exchange integration will be hit or miss for many. On\r\ntop of that, Verizon appears to be charging an extra $15 a month\r\nfor Exchange use on the Droid, but only if you happen to mention\r\nyou&#8217;re going to use that feature, or subsequently call in for\r\nsupport of that feature. No, I don&#8217;t get it either. Between that\r\nand the lack of central management features, the security of the\r\nDroid line might be best described as &#8220;minimal.&#8221;</p>\r\n<p><strong>Storage and compatibility<br /></strong> As standard,\r\nthe Eris comes with an 8GB microSD card, which is fairly large for\r\nan included flash memory card. It&#8217;s accessed from a PC or Mac as a\r\nremovable disk like any other flash drive, which is far simpler\r\nthan the iPhone&#8217;s reliance on iTunes for media updating. It&#8217;s a\r\nsomewhat cumbersome process to mount the microSD card on a system,\r\nhowever, requiring you to plug in the Eris, drop the notifications\r\nwindow from the status bar, click the notification that the USB\r\ncable is connected, then select Mount to present the microSD card\r\nto the system. But once that&#8217;s done, you can drag and drop music\r\nand videos to the card, and retrieve photos either manually or with\r\na photo management application.</p>\r\n<p>Due to the flash-disk-like nature of the storage, you can use a\r\nMac or PC to move content around, but the synchronization tools are\r\nPC-only, and do not function under Windows 7, requiring Vista or\r\nWindows XP. This is a bit of a problem for those who want to sync\r\ntheir address books with a Mac or with software other than\r\nMicrosoft Outlook or Outlook Express. I couldn&#8217;t find a method to\r\nimport standard contact lists in vCard format, for\r\ninstance,Â as the only app in the Android Market that\r\nsupposedly handles that crashed repeatedly when trying to import a\r\nfew hundred contacts.</p>\r\n<div>The <strong>HTC Droid\r\nEris</strong> packs lots of good stuff into a small, sleek package,\r\nbut it can&#8217;t run Android 2.0. It does make the most of Android 1.5,\r\nwith all the bells and whistles you&#8217;d expect from a modern\r\nsmartphone. It can&#8217;t compare with the iPhone 3G or 3G S in most\r\nways, but for our money it&#8217;s the better Droid.</div>\r\n</div>\r\n<p>It&#8217;s apparently not common knowledge that there are actually two\r\nDroids: <a href=\"http://www.infoworld.com/d/mobilize/surprise-droid-eris-better-smartphone-droid-440\">\r\nthe Motorola Droid and the HTC Droid Eris</a>. They&#8217;re both\r\n<a href=\"http://www.infoworld.com/t/google%20android\">Android</a>-based\r\nphones, but significantly different in form and firmware. The\r\nMotorola Droid is a slider phone with a large screen and a physical\r\nkeyboard that runs <a href=\"http://www.infoworld.com/d/mobilize/android-20-iphone-killer-last-985\">\r\nAndroid 2.0</a>. The Droid Eris is cheaper, with a slower CPU and\r\nno dedicated GPU, but it&#8217;s also far slicker than the Motorola\r\nDroid.</p>\r\n<p>I played with both Droids for a few minutes at my surprisingly\r\nuncrowded local Verizon store, and it quickly became clear that the\r\nHTC Droid Eris was the sleeker unit. AtÂ $199 with a\r\none-year contract and $100 mail-in rebate,Â it&#8217;s cheaper,\r\ntoo. In fact, it seemed that most of my fellow shoppers gravitated\r\nto the Eris over the Motorola, which feels and looks like a brick\r\nand sports a nearly unusable keyboard. So I picked the Eris.</p>\r\n<p><strong>[ <a href=\"http://www.infoworld.com/d/mobilize/android-20-iphone-killer-last-985?source=fssr\">\r\nIs Android 2.0 the iPhone killer at last?</a>Â | Video\r\npreview: <a href=\"http://www.infoworld.com/d/mobilize/video-first-smartphone-powered-android-20-940?source=fssr\">\r\nSee the Android 2.0 Droid in\r\naction</a>.Â </strong><strong>]</strong></p>\r\n<p>For a longtime <a href=\"http://www.infoworld.com/t/iphone\">iPhone</a> user, the Eris is at\r\nonce familiar and totally foreign. The touchscreen has similar\r\nfunctions such as simple scrolling and wiping to change screens,\r\nbut also includes four function buttons below the screen. These\r\nbuttons provide quick access to the home screen or a menu for the\r\ncurrent application; return you to the previous screen; and launch\r\na search function. Thus, to someone used to dealing with only a\r\ntouchscreen, the flow of application interaction is somewhat\r\nstilted, with commands and selections requiring taps to the screen\r\nintermingled with taps to one of these buttons.</p>\r\n<p>These buttons are in addition to the standard call answer/call\r\nhangup buttons and the inexplicable rollerball. For someone coming\r\nto a Droid from a mobile other than an iPhone, these interface\r\nelements are unlikely to be as noticeable, but when your reflexes\r\nare aligned to iPhone functions, they can be distracting.</p>\r\n<p><strong>Android inside<br /></strong> The initial layout of\r\nAndroid 1.5 on the Eris is quite pleasing. The home screen offers a\r\ncustomizable selection of application shortcuts and a heads-up\r\ndisplay with the current time and weather. Off to each side of this\r\nscreen are three &#8220;desktop&#8221; screens that can be populated with\r\nwidgets, application shortcuts, or any mixture of the two. The\r\nstandard widgets, including an e-mail quick-viewer and a text\r\nmessaging app, are extremely handy. The e-mail quick-viewer, for\r\nexample, shows the last received e-mail and lets you flip back in\r\nyour inbox easily, without opening the full e-mail client.</p>\r\n<p>On the other desktop screens, you can easily drop in launchers\r\nfor any application, additional widgets such as the one for Google\r\nsearch, and shortcuts to common tasks such as turning Wi-Fi and\r\nBluetooth on or off. Once you grok the concept of having multiple\r\nconfigurable screens rather than, say, the iPhone&#8217;s launcher-only\r\nscreens, you&#8217;ll appreciate the wealth of possibilities.</p>", "summary"=>"The Eris offers just about\r\neverything you&#8217;d expect in a modern smartphone: Bluetooth, 3G data,\r\n802.11 Wi-Fi, a touchscreen, GPS, a 5-megapixel camera with video", "source"=>"PC World"}, "id"=>"4ba2cdf543a76d56e40000ab", "written_at"=>{"month"=>"11", "day"=>"10", "year"=>"2009"}}
+Redirected to http://localhost:3000/reviews/show/4ba2cdf543a76d56e40000ab
+Completed in 30ms | 302 Found [http://localhost/reviews/update/4ba2cdf543a76d56e40000ab]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 12:11:09) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (18.8ms)
+Rendered reviews/_paragraph (4.2ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.6ms)
+Completed in 368ms (View: 340 | 200 OK [http://localhost/reviews/show/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-24 12:11:10) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 27ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
