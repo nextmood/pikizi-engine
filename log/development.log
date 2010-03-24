@@ -2063,3 +2063,355 @@ Processing ReviewsController#delete_opinion (for 127.0.0.1 at 2010-03-24 09:39:5
   Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4ba9c4f0e2c6d600bc000002"}
 Rendered reviews/_opinion_list (13.2ms)
 Completed in 57ms (View: 19 | 200 OK [http://localhost/reviews/delete_opinion/4ba9c4f0e2c6d600bc000002]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 10:13:06) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (25.1ms)
+Rendered reviews/_paragraph (4.8ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (4.0ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.3ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.5ms)
+Completed in 663ms (View: 311 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-24 10:13:19) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "s"=>"blackberry"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 363ms (View: 104 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 10:13:22) [GET]
+  Parameters: {"product_idurl"=>"blackberry_bold_9700_att"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.1ms)
+Rendered home/_product_price (6.1ms)
+Rendered home/_product_tab_overview (1.2ms)
+Rendered home/_product_tabs (21.6ms)
+Completed in 194ms (View: 57 | 200 OK [http://localhost/product/blackberry_bold_9700_att]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 10:13:24) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_bold_9700_att", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (20.1ms)
+Rendered reviews/_short (10.2ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (7.5ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (75.8ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (10.6ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (9.2ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.8ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (17.1ms)
+Rendered reviews/_short (97.5ms)
+Rendered home/_product_tab_reviews (525.0ms)
+Rendered home/_product_tabs (541.6ms)
+Completed in 688ms (View: 548 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_bold_9700_att]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 10:13:45) [GET]
+  Parameters: {"product_idurl"=>"blackberry_curve_8530_sprint"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.2ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (15.4ms)
+Completed in 192ms (View: 35 | 200 OK [http://localhost/product/blackberry_curve_8530_sprint]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 10:13:49) [GET]
+  Parameters: {"product_idurl"=>"blackberry_storm2_9550"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.6ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (15.6ms)
+Completed in 191ms (View: 35 | 200 OK [http://localhost/product/blackberry_storm2_9550]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 10:13:52) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_storm2_9550", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (93.4ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (7.5ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (7.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (10.6ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (14.4ms)
+Rendered reviews/_short (9.4ms)
+Rendered reviews/_short (9.2ms)
+Rendered home/_product_tab_reviews (307.6ms)
+Rendered home/_product_tabs (322.9ms)
+Completed in 567ms (View: 408 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_storm2_9550]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 10:14:01) [GET]
+  Parameters: {"product_idurl"=>"blackberry_bold_9700_tmobile"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (3.1ms)
+Rendered home/_product_price (4.9ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (20.6ms)
+Completed in 213ms (View: 133 | 200 OK [http://localhost/product/blackberry_bold_9700_tmobile]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 10:14:06) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"blackberry_bold_9700_tmobile", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (20.2ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (10.2ms)
+Rendered reviews/_short (6.8ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (6.0ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (14.0ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (92.7ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (9.6ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (13.6ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (6.2ms)
+Rendered home/_product_tab_reviews (259.8ms)
+Rendered home/_product_tabs (360.2ms)
+Completed in 447ms (View: 365 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=blackberry_bold_9700_tmobile]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-24 10:14:15) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 344ms (View: 18 | 200 OK [http://localhost/products_search]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-24 10:14:18) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (2.2ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (15.8ms)
+Completed in 207ms (View: 36 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-24 10:14:20) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (18.0ms)
+Rendered reviews/_short (98.3ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (8.2ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (6.5ms)
+Rendered reviews/_short (9.1ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (10.2ms)
+Rendered reviews/_short (7.2ms)
+Rendered reviews/_short (7.4ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (6.2ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (6.4ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (6.6ms)
+Rendered reviews/_short (10.4ms)
+Rendered reviews/_short (9.3ms)
+Rendered reviews/_short (7.1ms)
+Rendered reviews/_short (7.6ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (8.0ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_short (9.3ms)
+Rendered reviews/_short (6.3ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (107.2ms)
+Rendered home/_product_tab_reviews (526.0ms)
+Rendered home/_product_tabs (541.7ms)
+Completed in 729ms (View: 550 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-24 10:14:24) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (126.5ms)
+Rendered reviews/_paragraph (4.5ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.9ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.6ms)
+Rendered reviews/_paragraph (4.1ms)
+Rendered reviews/_paragraph (3.7ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.8ms)
+Rendered reviews/_paragraph (3.5ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.4ms)
+Rendered reviews/_paragraph (3.3ms)
+Completed in 414ms (View: 369 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing ReviewsController#open_opinion_creator (for 127.0.0.1 at 2010-03-24 10:14:27) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_opinion_list (14.4ms)
+Completed in 204ms (View: 19 | 200 OK [http://localhost/reviews/open_opinion_creator/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-24 10:14:31) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b", "type_opinion"=>"tip"}
+Rendered reviews/_opinion_creator (122.4ms)
+Completed in 310ms (View: 129 | 200 OK [http://localhost/reviews/add_opinion/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-24 10:14:38) [POST]
+  Parameters: {"usage"=>"ccccx", "commit"=>"record opinion...", "dimension_rating"=>"battery_life_rating", "paragraph_id"=>"4b892b7043a76d7c5d00013e", "extract"=>"cxcxcxcxcxcx", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "intensity_symbol"=>"very_high", "id"=>"4b892b7043a76d7c5d00013b", "type_opinion"=>"tip"}
+Rendered reviews/_opinion_list (8.5ms)
+Completed in 230ms (View: 10 | 200 OK [http://localhost/reviews/create_opinion/4b892b7043a76d7c5d00013b]
+
+
+Processing ReviewsController#add_opinion (for 127.0.0.1 at 2010-03-24 10:14:43) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_creator (231.4ms)
+Completed in 420ms (View: 234 | 200 OK [http://localhost/reviews/add_opinion/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing ReviewsController#create_opinion (for 127.0.0.1 at 2010-03-24 10:14:49) [POST]
+  Parameters: {"usage"=>"cxx", "commit"=>"record opinion...", "dimension_rating"=>"apps_rating", "paragraph_id"=>"4b892b7043a76d7c5d00013e", "extract"=>"xccxcx", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "comparator_operator"=>"better", "id"=>"4b892b7043a76d7c5d00013b", "comparator_product"=>"all_products", "type_opinion"=>"comparator_product"}
+Rendered reviews/_opinion_list (10.4ms)
+Completed in 98ms (View: 12 | 200 OK [http://localhost/reviews/create_opinion/4b892b7043a76d7c5d00013b]
+
+
+Processing ReviewsController#edit_opinion (for 127.0.0.1 at 2010-03-24 10:14:51) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e"}
+Rendered reviews/_opinion_editor (192.9ms)
+Completed in 239ms (View: 202 | 200 OK [http://localhost/reviews/edit_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#update_opinion (for 127.0.0.1 at 2010-03-24 10:14:57) [PUT]
+  Parameters: {"commit"=>"update opinion", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e", "tip"=>{"usage"=>"cxxzxzxczcxz", "extract"=>"ccxcxxz", "intensity_symbol"=>"high", "feature_rating_idurl"=>"overall_rating", "value_oriented"=>"1"}}
+Rendered reviews/_opinion_list (10.3ms)
+Completed in 53ms (View: 16 | 200 OK [http://localhost/reviews/update_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#open_opinion_creator (for 127.0.0.1 at 2010-03-24 10:15:10) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d000140", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_opinion_list (11.6ms)
+Completed in 231ms (View: 13 | 200 OK [http://localhost/reviews/open_opinion_creator/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d000140]
+
+
+Processing ReviewsController#edit_opinion (for 127.0.0.1 at 2010-03-24 10:15:22) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e"}
+Rendered reviews/_opinion_editor (58.7ms)
+Completed in 243ms (View: 66 | 200 OK [http://localhost/reviews/edit_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#update_opinion (for 127.0.0.1 at 2010-03-24 10:15:28) [PUT]
+  Parameters: {"commit"=>"update opinion", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e", "tip"=>{"usage"=>"", "extract"=>"", "intensity_symbol"=>"high", "feature_rating_idurl"=>"overall_rating", "value_oriented"=>"1"}}
+Rendered reviews/_opinion_list (9.7ms)
+Completed in 52ms (View: 16 | 200 OK [http://localhost/reviews/update_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#edit_opinion (for 127.0.0.1 at 2010-03-24 10:15:31) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e"}
+Rendered reviews/_opinion_editor (201.7ms)
+Completed in 241ms (View: 208 | 200 OK [http://localhost/reviews/edit_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#update_opinion (for 127.0.0.1 at 2010-03-24 10:15:34) [PUT]
+  Parameters: {"commit"=>"update opinion", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00014e", "tip"=>{"usage"=>"", "extract"=>"", "intensity_symbol"=>"high", "feature_rating_idurl"=>"overall_rating", "value_oriented"=>"0"}}
+Rendered reviews/_opinion_list (10.2ms)
+Completed in 197ms (View: 16 | 200 OK [http://localhost/reviews/update_opinion/4b892b7043a76d7c5d00014e]
+
+
+Processing ReviewsController#edit_opinion (for 127.0.0.1 at 2010-03-24 10:15:44) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4ba9d809e2c6d60145000002"}
+Rendered reviews/_opinion_editor (206.4ms)
+Completed in 248ms (View: 213 | 200 OK [http://localhost/reviews/edit_opinion/4ba9d809e2c6d60145000002]
+
+
+Processing ReviewsController#open_opinion_creator (for 127.0.0.1 at 2010-03-24 10:15:48) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_opinion_list (16.3ms)
+Completed in 251ms (View: 18 | 200 OK [http://localhost/reviews/open_opinion_creator/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing ReviewsController#delete_opinion (for 127.0.0.1 at 2010-03-24 10:15:51) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4ba9d809e2c6d60145000002"}
+Rendered reviews/_opinion_list (7.6ms)
+Completed in 48ms (View: 13 | 200 OK [http://localhost/reviews/delete_opinion/4ba9d809e2c6d60145000002]
+
+
+Processing ReviewsController#delete_opinion (for 127.0.0.1 at 2010-03-24 10:15:52) [POST]
+  Parameters: {"authenticity_token"=>"E/6Kb5ZdDL9sJ7T+N6JxJkiq4QYwpsWdmiGXlF+UwVA=", "id"=>"4ba9d7fee2c6d60145000001"}
+Rendered reviews/_opinion_list (6.3ms)
+Completed in 209ms (View: 13 | 200 OK [http://localhost/reviews/delete_opinion/4ba9d7fee2c6d60145000001]

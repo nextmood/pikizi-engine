@@ -27,73 +27,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="review.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="150" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.0">
+            <state line="395" column="6" selection-start="16141" selection-end="16141" vertical-scroll-proportion="0.76367617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opinion.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="61" selection-start="3985" selection-end="3985" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_opinion_editor.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="91" selection-start="289" selection-end="289" vertical-scroll-proportion="-3.1578948">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="8" selection-start="3600" selection-end="3601" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/admin.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="149" selection-end="149" vertical-scroll-proportion="0.06477733">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_opinion_list.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_list.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="-1.8947369">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_opinion_creator.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_creator.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="121" selection-start="965" selection-end="965" vertical-scroll-proportion="-10.736842">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="6" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
+            <state line="9" column="19" selection-start="264" selection-end="371" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,7 +59,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/models/product.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/specification.rb" />
@@ -128,6 +73,7 @@
         <option value="$PROJECT_DIR$/app/helpers/reviews_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/doc/admin.txt" />
+        <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
       </list>
     </option>
   </component>
@@ -483,7 +429,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Rails.Development">
+  <component name="RunManager" selected="Rake.pikizi:update_database">
     <configuration default="false" name="pikizi:recompute_counters" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="pikizi-engine" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -724,12 +670,12 @@
       <item index="0" class="java.lang.String" itemvalue="Rake.pikizi:recompute_counters" />
       <item index="1" class="java.lang.String" itemvalue="Rake.pikizi:reset_recommendations" />
       <item index="2" class="java.lang.String" itemvalue="Rake.pikizi:reviews_load_amazon" />
-      <item index="3" class="java.lang.String" itemvalue="Rake.pikizi:resync_database" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.pikizi:update_database" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.pikizi:reset_db" />
-      <item index="6" class="java.lang.String" itemvalue="Rails.Development" />
-      <item index="7" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="8" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.pikizi:reset_db" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Development" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="7" class="java.lang.String" itemvalue="Rake.pikizi:resync_database" />
+      <item index="8" class="java.lang.String" itemvalue="Rake.pikizi:update_database" />
     </list>
     <configuration default="true" type="RailsRunConfigurationType" factoryName="Server">
       <predefined_log_file id="RAILS_SERVER" enabled="true" />
@@ -809,17 +755,17 @@
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
-    <frame x="124" y="30" width="1678" height="1377" extended-state="0" />
+    <frame x="95" y="33" width="1395" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38035855" sideWeight="0.99752325" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38035855" sideWeight="0.99752325" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958263" sideWeight="0.6461988" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2255139" sideWeight="0.6141855" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27206418" sideWeight="0.7288652" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2720187" sideWeight="0.9993958" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26580352" sideWeight="0.9993958" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -885,11 +831,6 @@
         <state line="115" column="53" selection-start="3343" selection-end="3343" vertical-scroll-proportion="0.013348165" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="392" column="68" selection-start="16090" selection-end="16090" vertical-scroll-proportion="0.8235294" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/development.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -902,56 +843,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="91" selection-start="289" selection-end="289" vertical-scroll-proportion="-3.1578948">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_list.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="-1.8947369">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="61" selection-start="3985" selection-end="3985" vertical-scroll-proportion="0.0">
+        <state line="111" column="18" selection-start="2949" selection-end="2956" vertical-scroll-proportion="0.45209175">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="150" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="6" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
+        <state line="72" column="150" selection-start="2131" selection-end="2131" vertical-scroll-proportion="1.1900827">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_creator.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_editor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="121" selection-start="965" selection-end="965" vertical-scroll-proportion="-10.736842">
+        <state line="5" column="91" selection-start="289" selection-end="289" vertical-scroll-proportion="0.08486563">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="8" selection-start="3600" selection-end="3601" vertical-scroll-proportion="0.0">
+        <state line="109" column="8" selection-start="3600" selection-end="3601" vertical-scroll-proportion="0.18421052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_list.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.048582997">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_opinion_creator.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="121" selection-start="965" selection-end="965" vertical-scroll-proportion="0.28099173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/reviews_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="6" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.55263156">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/admin.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="149" selection-end="149" vertical-scroll-proportion="0.06477733">
+        <state line="9" column="19" selection-start="264" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="395" column="6" selection-start="16141" selection-end="16141" vertical-scroll-proportion="0.76367617">
           <folding />
         </state>
       </provider>

@@ -389,14 +389,17 @@ namespace :pikizi do
       #Dimension.import
 
       # 5) Creating Specification Objects...
-      #Specification.delete_all;
-      #knowledge.features.each {|f| f.create_specification(knowledge.id) }
+      Specification.delete_all;
+      knowledge.features.each {|f| f.create_specification(knowledge.id) }
 
+      #retrieve the intensity symbol
+      Opinion::Tip.convert
+      
       # 6) ensure all reviews, ok
-      rs = Review.all(:product_idurl => product.idurl)
-      rs.each {|r| r.product_id = product.id; r.save }
-      product.reviews = rs
-      product.save
+      #rs = Review.all(:product_idurl => product.idurl)
+      #rs.each {|r| r.product_id = product.id; r.save }
+      #product.reviews = rs
+      #product.save
     end
     true
   end
