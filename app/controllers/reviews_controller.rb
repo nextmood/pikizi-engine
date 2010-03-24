@@ -9,7 +9,8 @@ class ReviewsController < ApplicationController
   def show
     puts "id=" << params[:id]
     @review = Review.find(params[:id])
-    @knowledge = @review.product.knowledge
+    @products = @review.products
+    @knowledge = @products.first.knowledge
     @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
 
     respond_to do |format|
@@ -267,8 +268,8 @@ class ReviewsController < ApplicationController
     @review = Review::Inpaper.new(params[:review])
     @review.written_at = params[:written_at].to_date    
     @review.user = get_logged_user
-    @review.product_idurl = product.idurl
-    @review.product_id = product.id
+    @review.product_idurls = [product.idurl]
+    @review.product_ids = [product.id]
 
     if @review.save
       flash[:notice] = "Review sucessufuly created"

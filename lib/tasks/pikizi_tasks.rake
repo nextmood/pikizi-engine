@@ -378,7 +378,7 @@ namespace :pikizi do
     feature_category = knowledge.get_feature_by_idurl("phone_category")
     Product.all.each do |product|
       # 1) retrieve images...
-#      product.fillup_image_ids
+      product.fillup_image_ids
 #      product.fillup_others
 #      puts "#{product.image_ids.size} images for product #{product.idurl}"
 
@@ -386,22 +386,20 @@ namespace :pikizi do
       #product.save
 
       # 4) Creating Dimension Objects...
-      #Dimension.import
+      Dimension.import
 
       # 5) Creating Specification Objects...
       #Specification.delete_all;
       #knowledge.features.each {|f| f.create_specification(knowledge.id) }
 
-      #retrieve the intensity symbol
-      #Opinion::Tip.convert
      
     end
 
-    Review.all.each do |review|
-      review.product_ids = [review.product_id]
-      review.product_idurls = [review.product_idurl]
-      review.save
-    end
+#    Review.all.each do |review|
+#      review.product_ids = [review.product_id]
+#      review.product_idurls = [review.product_idurl]
+#      review.save
+#    end
     true
   end
 

@@ -34,10 +34,6 @@ class Review < Root
   key :knowledge_id, Mongo::ObjectID
   belongs_to :knowledge
 
-  key :product_idurl, String
-  key :product_id, Mongo::ObjectID
-  belongs_to :product
-
   key :product_idurls, Array
   key :product_ids, Array
   many :products, :in => :product_ids 
