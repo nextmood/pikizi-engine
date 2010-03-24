@@ -4,7 +4,7 @@
             { :key => "pros_cons", :label => "Pros &amp; Cons" },
             { :key => "specifications", :label => "Specifications" },
             { :key => "ratings", :label => "Ratings" },
-            { :key => "reviews", :label => "Review<div style=\"font-size:60%;\">#{Review.count(:product_idurl => product.idurl)}</div>", :classname => "last" }  ] %>
+            { :key => "reviews", :label => "Review<div style=\"font-size:60%;\">#{product.reviews.count}</div>", :classname => "last" }  ] %>
 
 <div class="boxLwr" id="product_tabs">
 

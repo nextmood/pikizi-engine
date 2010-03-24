@@ -14,8 +14,8 @@ class Specification
   key :should_display, Boolean, :default => true
 
   # nested structure
-  key :parent_id # a Dimension object
-  belongs_to :parent, :class_name => "Dimension"
+  key :parent_id # a Specification object
+  belongs_to :parent, :class_name => "Specification"
 
   # knowledge
   key :knowledge_id
@@ -135,7 +135,9 @@ class Specification
 
 
   # the depth level of a feature
-  def level() parent ? 1 + parent.level() : 1 end
+  def level() parent.nil? ? 1 : 1 + parent.level() end
+
+
 
   # ---------------------------------------------------------------------
 

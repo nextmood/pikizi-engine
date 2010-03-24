@@ -1,55 +1,47 @@
-<% unless type_opinion == "none" %>
 
-    <% form_remote_tag :url => "/reviews/create_opinion/#{review.id}" do -%>
-
-        <%= hidden_field_tag "paragraph_id", paragraph.id %>
-        <%= hidden_field_tag "type_opinion", type_opinion %>
+    <% remote_form_for(opinion, :url => "/reviews/update_opinion/#{opinion.id}") do |f| -%>
 
         <div style="margin-top:5px; padding-top:2px;">
-            <% if type_opinion == "tip" %>
-                <%= select_tag("tip_intensity_or_mixed", options_for_select(Opinion::Tip.intensities) ) %>
-                for usage (XXX)<%= text_field_tag("tip_usage", nil, :size => 40 ) %>
-              <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
+            <% if opinion.is_a?(Opinion::Tip) %>
+                <%= f.collection_select(:intensity_symbol, Opinion::Tip.intensities_symbols, :last, :first) %>
+                for usage (XXX)<%= f.text_field(:usage, :size => 40) %>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
 
-            <% elsif type_opinion == "comparator_product" %>
-                <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
-                product
-                <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge)) ) %>
-                <p>usage (XXX)<%= text_field_tag("usage", nil, :size => 40 ) %></p>
-                <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
+            <% elsif opinion.is_a?(Opinion::Comparator) %>
+                <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]], opinion.operator_type)) %>
+                predicate<%= f.text_field(:predicate, :size => 80 ) %>
+                <p>usage (XXX)<%= f.text_field(:usage, :size => 40) %></p>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
 
-            <% elsif type_opinion == "comparator_feature" %>
-                <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
-                products with feature
-                <%= select_tag("comparator_feature", options_for_select(dimension_feature(knowledge, :comparator)),
-                    :onchange => remote_function(:url => { :action => "feature_filter", :id => review.id, :paragraph_id => paragraph.id },
-                                                 :with => "'feature_idurl=' + document.getElementById('comparator_feature').value")) %>
-                <span id="filter_feature"></span>
-                <p>usage(XXX) <%= text_field_tag("usage", nil, :size => 40 ) %></p>
-                <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
+            <% elsif opinion.is_a?(Opinion::Rating) %>
+                rating <%= f.text_field(:rating, :size => 2) %> min=<%= f.text_field(:min_rating, :size => 2) %> max=<%= f.text_field(:max_rating, :size => 2) %>
+                <p>usage (XXX)<%= f.text_field(:usage, :size => 40) %></p>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
 
-            <% elsif type_opinion == "rating" %>
-                <%= type_opinion %> <%= text_field_tag("rating", nil, :size => 2) %> min=<%= text_field_tag("rating_min", "1", :size => 2) %> max=<%= text_field_tag("raiting_max", "5", :size => 2) %>
-
-            <% elsif type_opinion == "feature_related" %>
-                related to feature<%= dimension_feature_related(knowledge, review.id, paragraph) %>
+            <% elsif opinion.is_a?(Opinion::FeatureRelated) %>
+              related to feature <%= f.collection_select(:feature_related_idurl, dimension_feature(knowledge, :related), :last, :first) %>
 
             <% else %>
-                type d'opinion inconnu <%= type_opinion %>
+                type d'opinion inconnu <%= opinion.class %>
             <% end %>
-            <% unless ["feature_related"].include?(type_opinion) %>
+
+            <% unless opinion.is_a?(Opinion::FeatureRelated) %>
               <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;" >
-                 dimension of rating&nbsp;<%= dimension_rating(knowledge, review.id, paragraph) %>
+                 dimension of rating&nbsp;
+                <%= f.collection_select(:feature_rating_idurl, dimension_rating(knowledge, review.id, paragraph), :last, :first) %>
+                value oriented<%= f.check_box :value_oriented %>
               </div>
             <% end %>
+
         </div>
         <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;">
-            <%= submit_tag 'record opinion...' %>
+            <%= submit_tag 'update opinion' %>
             &nbsp;or&nbsp;
-            <%= link_to_function("cancel", "document.getElementById('p#{paragraph.id}').innerHTML =''") %>
+
+            <%= link_to_remote("cancel", :url => { :controllers => "reviews", :action => "edit_opinion_cancel", :id => opinion.id }) %>
         </div>
 
     <% end -%>
-<% end %>
 
 
+    

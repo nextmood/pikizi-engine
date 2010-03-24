@@ -169,13 +169,10 @@ class Product < Root
   # h[feature_idurl][category][:review_ids]
   #
   def get_ratings_group_by_feature_and_category
-
     hash_fidurl_category_opinions = {}
     Review.all( :product_idurl => idurl).each do |review|
       review.opinions.each do |opinion|
-        puts "opinion class=#{opinion.class}"
         if opinion.is_rating?
-          puts "opinion rating"
           tupple = [opinion, review]
           ((hash_fidurl_category_opinions[opinion.feature_rating_idurl] ||= {})[review.category] ||= []) <<  tupple
         end

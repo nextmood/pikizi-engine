@@ -19,13 +19,13 @@ class ReviewsController < ApplicationController
   end
 
   # this is a rjs
-  def open_opinion_editor
+  def open_opinion_creator
     review = Review.find(params[:id])
     knowledge = Knowledge.load_db(review.knowledge_idurl)
     paragraph = Paragraph.find(params[:paragraph_id])
     render :update do |page|
       page.replace_html("p#{paragraph.id}",
-         :partial => "/reviews/opinion_editor_bis",
+         :partial => "/reviews/opinion_list",
          :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
   end
@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
     type_opinion = params[:type_opinion]
     render :update do |page|
       page.replace_html("opinion_#{paragraph.id}_form",
-         :partial => "/reviews/opinion_editor",
+         :partial => "/reviews/opinion_creator",
          :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph, :type_opinion => type_opinion } )
     end
   end
@@ -59,17 +59,42 @@ class ReviewsController < ApplicationController
 
   # this is a rjs
   def delete_opinion
-    review = Review.find(params[:id])
-    knowledge = Knowledge.load_db(review.knowledge_idurl)
-    paragraph = Paragraph.find(params[:paragraph_id])
-    opinion = Opinion.find(params[:opinion_id])
+    opinion = Opinion.find(params[:id])
+    paragraph = opinion.paragraph
+    review = opinion.review
+    knowledge = review.knowledge    
     opinion.destroy
     render :update do |page|
       page.replace_html("p#{paragraph.id}",
-         :partial => "/reviews/opinion_editor_bis",
+         :partial => "/reviews/opinion_list",
          :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
 
+  end
+
+  # this is a rjs
+  def edit_opinion
+    opinion = Opinion.find(params[:id])
+    paragraph = opinion.paragraph
+    review = opinion.review
+    knowledge = review.knowledge
+    render :update do |page|
+      page.replace_html("p#{paragraph.id}",
+         :partial => "/reviews/opinion_editor",
+         :locals => { :opinion => opinion, :review => review, :knowledge => knowledge, :paragraph => paragraph } )
+    end
+  end
+
+  def edit_opinion_cancel
+    opinion = Opinion.find(params[:id])
+    paragraph = opinion.paragraph
+    review = opinion.review
+    knowledge = review.knowledge
+    render :update do |page|
+      page.replace_html("p#{paragraph.id}",
+         :partial => "/reviews/opinion_list",
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
+    end
   end
 
   # this a form submit (post)
@@ -81,19 +106,18 @@ class ReviewsController < ApplicationController
     base_options = { :review_id => review.id,
                      :user_id => (get_logged_user ? get_logged_user.id : nil),
                      :feature_rating_idurl => params[:dimension_rating],
+                     :value_oriented => params[:value_oriented],
                      :paragraph => paragraph }
 
     opinion = case type_opinion = params[:type_opinion]
 
       when "tip"
-        tip_usage = params[:tip_usage]
-        tip_intensity_or_mixed = params[:tip_intensity_or_mixed]
-        intensity = (tip_intensity_or_mixed == "mixed" ? 0.0 : Float(tip_intensity_or_mixed))
+        usage = params[:usage]
+        intensity_symbol = params[:intensity_symbol]
         Opinion::Tip.create(base_options.clone.merge(
-                :label => "#{tip_intensity_or_mixed}... for #{tip_usage.inspect}",
-                :intensity => intensity,
-                :is_mixed => (tip_intensity_or_mixed == "mixed"),
-                :usage => tip_usage,
+                :label => "#{intensity_symbol}... for #{usage.inspect}",
+                :intensity_symbol => intensity_symbol,
+                :usage => usage,
                 :extract => params[:extract]  ))
 
       when "comparator_product"
@@ -102,7 +126,7 @@ class ReviewsController < ApplicationController
         Opinion::Comparator.create(base_options.clone.merge(
                 :label => "product #{comparator_operator} #{comparator_product}",
                 :operator_type => comparator_operator,
-                :predicate =>  "productIs(:any => [\"#{comparator_product}\"])",
+                :predicate =>  "productIs(:#{comparator_product})",
                 :usage => params[:usage],
                 :extract => params[:extract] ))
 
@@ -120,14 +144,15 @@ class ReviewsController < ApplicationController
                 :extract => params[:extract] ))
 
       when "rating"
-        rating = params[:rating],
-        min_rating = params[:rating_min],
-        max_rating = params[:rating_max]
+        rating = params[:rating].to_f
+        min_rating = params[:rating_min].to_f
+        max_rating = params[:rating_max].to_f
         Opinion::Rating.create(base_options.clone.merge(
                 :label => "rated #{rating} (min=#{min_rating}, max=#{max_rating})",
                 :rating => rating,
                 :min_rating => min_rating,
                 :max_rating => max_rating,
+                :usage => params[:usage],
                 :extract => params[:extract] ))
 
       when "feature_related"
@@ -142,7 +167,21 @@ class ReviewsController < ApplicationController
 
     render :update do |page|
       page.replace_html("p#{paragraph.id}",
-         :partial => "/reviews/opinion_editor_bis",
+         :partial => "/reviews/opinion_list",
+         :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
+    end
+  end
+
+  def update_opinion
+    opinion = Opinion.find(params[:id])
+    paragraph = opinion.paragraph
+    review = opinion.review
+    knowledge = review.knowledge
+    new_values = params[[:tip, :comparator, :feature_related, :rating].detect { |x| params[x] }]
+    opinion.update_attributes(new_values)
+    render :update do |page|
+      page.replace_html("p#{paragraph.id}",
+         :partial => "/reviews/opinion_list",
          :locals => { :review => review, :knowledge => knowledge, :paragraph => paragraph } )
     end
   end

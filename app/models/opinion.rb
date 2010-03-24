@@ -13,6 +13,7 @@ class Opinion < Root
   key :_type, String # class management
   key :usage, String
   key :extract, String
+  key :value_oriented, Boolean
   
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review
@@ -46,19 +47,21 @@ class Opinion < Root
     node_opinion
   end
 
+  def value_oriented_html() "<b>&nbsp;$</b>" if value_oriented end
+  
 end
 
 
 class Rating < Opinion
 
 
-  key :min_rating, Float
-  key :max_rating, Float
-  key :rating, Float
+  key :min_rating, Float, :default => 1
+  key :max_rating, Float, :default => 5
+  key :rating, Float, :default => 3
 
   def is_valid?() min_rating and max_rating and rating end
 
-  def to_html(options={}) "#{rating} in [#{min_rating}, #{max_rating}] (#{feature_rating_idurl})" end
+  def to_html(options={}) "#{rating} in [#{min_rating}, #{max_rating}] (#{feature_rating_idurl}#{value_oriented_html})" end
 
   def rating_01() Root.rule3(rating, min_rating, max_rating) end
 
@@ -79,7 +82,7 @@ class Comparator < Opinion
   key :operator_type, String
   key :predicate, String
 
-  def to_html(options={}) "#{operator_type} than #{predicate} #{usage} (#{feature_rating_idurl})" end
+  def to_html(options={}) "#{operator_type} than #{predicate} (#{feature_rating_idurl}#{value_oriented_html})" end
 
   def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
 
@@ -102,45 +105,48 @@ end
 
 class Tip < Opinion
 
+  key :intensity_symbol, String
   key :intensity, Float
   key :is_mixed, Boolean, :default => false
+
+  def self.convert
+    Tip.all.each do |tip|
+      tip.intensity_symbol =  tip.is_mixed ? "mixed" : intensities.detect { |k,v| v == tip.intensity }.first
+      tip.save
+    end
+    true
+  end
   
   def to_html(options={})
-    if is_mixed
-      s = "mixed : #{usage} (#{feature_rating_idurl})"
-    else
-      intensity_symbol = Tip.intensities.detect { |i| intensity == i.last }
-      intensity_symbol = intensity_symbol ? intensity_symbol.first  : intensity
-      s = "#{intensity_symbol} : #{usage} (#{feature_rating_idurl})"
-
-    end
+    s = "#{intensity_as_label} : (#{feature_rating_idurl}#{value_oriented_html})"
     if options[:origin]
       p = paragraph
       s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?p=#{paragraph.ranking_number}\" >#{review.source}"
       s << "&nbsp;&para;#{paragraph.ranking_number}" if p
       s << "</a></small>"
     end
-
     s
   end
 
   def to_xml_bis
     node_opinion = super
-    node_opinion['value'] = intensity_as_string
+    node_opinion['value'] = intensity_symbol
     node_opinion << usage
     node_opinion
   end
 
   def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
 
-  def intensity_as_string
-    if is_mixed
-      "mixed"
-    else
-      intensity_symbol = Tip.intensities.detect { |i| intensity == i.last }
-      intensity_symbol ? intensity_symbol.first  : intensity
-    end  
+  def self.intensities_symbols
+    [ ["very high", "very_high" ],
+      ["high", "high"],
+      ["neutral", "neutral"],
+      ["low", "low"],
+      ["very low", "very_low" ],
+      ["mixed", "mixed"] ]
   end
+
+  def intensity_as_label() x = Tip.intensities_symbols.detect { |l,k| k == intensity_symbol }; x ? x.first : "?????" end
 
   def self.intensities
     [ ["very_high", 1.0 ],

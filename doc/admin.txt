@@ -1,5 +1,7 @@
 on server (main account) , results goes in dump directory
 /opt/mongodb/bin/mongodump -d pikizi_mongodb_production 
+tar cvf dump.tar dump/
+rm -r dump
 
 on development
 /Applications/mongodb-osx-x86_64-1.2.2/bin/mongo pikizi_mongodb_development

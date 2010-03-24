@@ -374,7 +374,7 @@ namespace :pikizi do
                                 ["Messaging phone", "messaging_phone"],
                                 ["Camera phone", "camera_phone"],
                                 ["Media phone", "media_phone"]]
-    knowledge.save
+    #knowledge.save
     feature_category = knowledge.get_feature_by_idurl("phone_category")
     Product.all.each do |product|
       # 1) retrieve images...
@@ -383,15 +383,20 @@ namespace :pikizi do
 #      puts "#{product.image_ids.size} images for product #{product.idurl}"
 
 
-      product.save
+      #product.save
 
       # 4) Creating Dimension Objects...
-      Dimension.import
+      #Dimension.import
 
       # 5) Creating Specification Objects...
-      Specification.delete_all;
-      knowledge.features.each {|f| f.create_specification(knowledge.id) }
+      #Specification.delete_all;
+      #knowledge.features.each {|f| f.create_specification(knowledge.id) }
 
+      # 6) ensure all reviews, ok
+      rs = Review.all(:product_idurl => product.idurl)
+      rs.each {|r| r.product_id = product.id; r.save }
+      product.reviews = rs
+      product.save
     end
     true
   end

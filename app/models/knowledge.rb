@@ -370,6 +370,9 @@ class Feature < Root
         when "FeatureInterval" then SpecificationInterval
         when "FeatureHeader" then SpecificationHeader
         when "FeatureCondition" then SpecificationCondition
+        when "FeatureText" then SpecificationText
+        when "FeatureTextarea" then SpecificationTextarea
+        when "FeatureUrl" then SpecificationUrl
       end
       specification_attributes.delete("features")
       specification_attributes.delete("_id")
