@@ -378,7 +378,7 @@ namespace :pikizi do
     feature_category = knowledge.get_feature_by_idurl("phone_category")
     Product.all.each do |product|
       # 1) retrieve images...
-      product.fillup_image_ids
+      #product.fillup_image_ids
 #      product.fillup_others
 #      puts "#{product.image_ids.size} images for product #{product.idurl}"
 
@@ -386,7 +386,7 @@ namespace :pikizi do
       #product.save
 
       # 4) Creating Dimension Objects...
-      Dimension.import
+      #Dimension.import
 
       # 5) Creating Specification Objects...
       #Specification.delete_all;
@@ -395,11 +395,14 @@ namespace :pikizi do
      
     end
 
-#    Review.all.each do |review|
-#      review.product_ids = [review.product_id]
-#      review.product_idurls = [review.product_idurl]
-#      review.save
-#    end
+    Review.all.each do |review|
+      if review.product_ids.nil? or review.product_ids.size == 0
+        review.product_ids = [review.product_id]
+      end
+      review.product_ids = review.product_ids.collect { |pid| pid.is_a?(String) ? Mongo::objectID.from_string(pid) : pid }
+      review.save
+      review.opinions.all.each { |o| o.product_ids = review.product_ids; o.save }
+    end
     true
   end
 

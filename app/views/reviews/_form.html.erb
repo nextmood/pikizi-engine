@@ -1,5 +1,4 @@
 
-<p>about <b><%= review.products.collect(&:label).join(', ')  %></b></p>
 
 <p>
   written on <%= select_date review.written_at, :prefix => :written_at %> 

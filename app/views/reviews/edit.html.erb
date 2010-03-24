@@ -2,6 +2,8 @@
 
     <%= model_selector(@knowledge, :reviews) %>
 
+    <%= render(:partial => "products_4_review", :locals => {:review => @review, :knowledge => @knowledge}) %>
+    <hr/>
     <% form_for :review, @review, :url => "/reviews/update/#{@review.id}" do |f| %>
 
           <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>

@@ -34,8 +34,10 @@ class Review < Root
   key :knowledge_id, Mongo::ObjectID
   belongs_to :knowledge
 
+  key :product_id, Mongo::ObjectID
+
   key :product_idurls, Array
-  key :product_ids, Array
+  key :product_ids, Array   # an array of Mongo::ObjectID
   many :products, :in => :product_ids 
 
   many :opinions, :polymorphic => true

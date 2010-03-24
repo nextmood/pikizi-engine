@@ -2,12 +2,14 @@
 
     <%= model_selector(@knowledge, :reviews) %>
 
+
+  
     <% form_for :review, @review, :url => { :action => "create" } do |f| %>
 
           <%= f.hidden_field :knowledge_idurl %>
-          <%= f.hidden_field :product_id %>
+          <%= text_field_tag :product_id, @product.id %>
 
-          <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
+          <%= render(:partial => "/reviews/form", :locals => {:knowledge => @knowledge, :review => @review, :f => f }) %>
 
           <p><%= submit_tag 'Create review' %></p>
 

@@ -23,6 +23,9 @@ class Opinion < Root
 
   key :paragraph_id, Mongo::ObjectID # from which paragraph (if any) this opinion was extracted
   belongs_to :paragraph
+
+  key :product_ids, Array # an Array pg Mongo Object Id defining the products for this opinion
+  many :products, :in => :product_ids
   
   timestamps!
 
@@ -48,7 +51,20 @@ class Opinion < Root
   end
 
   def value_oriented_html() "<b>&nbsp;$</b>" if value_oriented end
-  
+
+
+  def self.product_ids_origin(knowledge, review)
+    l_select = review.products.collect { |p| [p.label, p.id] }
+    header = []
+    header << [l_select.collect(&:first).join(' & '), l_select.collect(&:last).join('-')] if l_select.size > 1
+
+    knowledge.products.each do |p|
+      l_select << [p.label, p.id] unless l_select.any? { |l,i| i == p.id }  
+    end
+    header.concat(l_select)
+    header
+  end
+
 end
 
 

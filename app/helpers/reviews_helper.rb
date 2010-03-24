@@ -9,31 +9,40 @@ module ReviewsHelper
     s
   end
 
-  def dimension_feature_related(knowledge, review_id, paragraph_number, feature_related_selected=nil)
-    select_tag("feature_related", options_for_select(dimension_feature(knowledge, :related), feature_related_selected))
+  def dimension_feature_related(a_knowledge, review_id, paragraph_number, feature_related_selected=nil)
+    select_tag("feature_related", options_for_select(dimension_feature(a_knowledge, :related), feature_related_selected))
   end
 
   #mode is either :comparator or :related
-  def dimension_feature(knowledge, mode)
+  def dimension_feature(a_knowledge, mode)
     l = (mode == :comparator ? [["",""]] : [])
-    knowledge.each_feature do |feature|
+    a_knowledge.each_feature do |feature|
       l << [feature.label_select_tag, feature.idurl] if feature.is_compatible_grammar(mode)
     end
     l
   end
 
-  def dimension_rating(knowledge, review_id, paragraph)
+  def dimension_rating(a_knowledge, review_id, paragraph)
     key_overall_rating = "overall_rating"
-    options = knowledge.feature_ratings.collect {|f| [f.label.gsub("Rating", ""), f.idurl]}
+    options = a_knowledge.feature_ratings.collect {|f| [f.label.gsub("Rating", ""), f.idurl]}
     options.sort! { |f1, f2| f1.first <=> f2.first }
     overall = options.detect {|f| f.last == key_overall_rating }
     options.delete(overall)
     options = [["Overall", key_overall_rating]].concat(options)
   end
 
-  def dimension_product(knowledge, except_pidurl=nil)
-    [["all products", "all_products"]].concat(
-      knowledge.products.collect {|p| [p.label, p.idurl] }.select { |plabel, pidurl| pidurl != except_pidurl }.sort {|o1,o2| o1.first <=> o2.first })
+  def dimension_product(a_knowledge, options = {})
+    raise "error bad a_knowledge " unless a_knowledge.id
+    except_pids = (options[:minus] || [])
+    except_pids = [except_pids] unless except_pids.is_a?(Array)
+    l_products = a_knowledge.products
+    l_products.delete_if { |p| except_pids.include?(p.id) }
+    l_products_tupple = l_products.collect {|p| [p.label, p.id] }.sort {|o1,o2| o1.first <=> o2.first }
+    header = []
+    header << [options[:title], "default_title"] if options[:title]    
+    header << ["all products", "all_products"] if options[:extra]
+    header.concat(l_products_tupple)
+    header
   end
 
 end

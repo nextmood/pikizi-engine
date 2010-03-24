@@ -2,10 +2,16 @@
 
     <% form_remote_tag :url => "/reviews/create_opinion/#{review.id}" do -%>
 
-        <%= hidden_field_tag "paragraph_id", paragraph.id %>
-        <%= hidden_field_tag "type_opinion", type_opinion %>
+        <div style="border-bottom:1px dashed black; margin-bottom:3px; padding-top:2px; padding-bottom:4px;">
+          <%= hidden_field_tag "paragraph_id", paragraph.id %>
+          <%= hidden_field_tag "type_opinion", type_opinion %>
+          related to <%= select_tag("products_mask", options_for_select(Opinion.product_ids_origin(knowledge, review)) ) %>
+        </div>
 
         <div style="margin-top:5px; padding-top:2px;">
+
+
+          
             <% if type_opinion == "tip" %>
                 <%= select_tag("intensity_symbol", options_for_select(Opinion::Tip.intensities_symbols) ) %>
                 for usage (XXX)<%= text_field_tag("usage", nil, :size => 40 ) %>
@@ -15,7 +21,7 @@
             <% elsif type_opinion == "comparator_product" %>
                 <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
                 product
-                <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge, review.product.idurl)) ) %>
+                <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge, :minus => review.product_ids, :extra => true)) ) %>
                 <p>usage (XXX)<%= text_field_tag("usage", nil, :size => 40 ) %></p>
                 <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
 

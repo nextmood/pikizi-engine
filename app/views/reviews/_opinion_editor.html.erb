@@ -1,7 +1,11 @@
 
     <% remote_form_for(opinion, :url => "/reviews/update_opinion/#{opinion.id}") do |f| -%>
 
-        <div style="margin-top:5px; padding-top:2px;">
+        <div style="border-top:1px dashed black; padding-top:2px; margin-top:5px; ">
+          related to product(s):<%= opinion.products.collect(&:label).join(', ') %>
+        </div>
+
+        <div style="margin-top:5px; padding-top:2px; border-top:1px dashed black; ">
             <% if opinion.is_a?(Opinion::Tip) %>
                 <%= f.collection_select(:intensity_symbol, Opinion::Tip.intensities_symbols, :last, :first) %>
                 for usage (XXX)<%= f.text_field(:usage, :size => 40) %>

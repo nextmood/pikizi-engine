@@ -110,6 +110,13 @@ class ReviewsController < ApplicationController
                      :value_oriented => params[:value_oriented],
                      :paragraph => paragraph }
 
+    # left operator (the product concerned)
+    base_options[:product_ids] = case params[:products_mask]
+      when "" then []
+      when "all_in_review" then review.product_ids
+      else [Product.find(params[:products_mask]).id]
+    end
+
     opinion = case type_opinion = params[:type_opinion]
 
       when "tip"
@@ -234,12 +241,10 @@ class ReviewsController < ApplicationController
   def new
     # a brand new review for a given product
     @knowledge = Knowledge.first(:id => params[:id])
-    product = Product.first(:id => params[:product_id])
+    @product = Product.first(:id => params[:product_id])
     user = get_logged_user
     @review = Review.new(:knowledge_idurl => @knowledge.idurl,
                          :knowledge_id => @knowledge.id,
-                         :product => product,
-                         :product_idurl => product.idurl,
                          :author => user.rpx_name,
                          :source => user.rpx_name,
                          :user => user,
@@ -250,18 +255,49 @@ class ReviewsController < ApplicationController
                          :max_rating => 5)
   end
 
+  # this is a rjs
+  def add_product_2_review
+    review = Review.find(params[:id])
+    knowledge = review.knowledge
+    product = Product.find(params[:product_id])
+    review.product_ids << product.id
+    review.product_idurls << product.idurl
+    review.save
+    render :update do |page|
+      page.replace("products_4_review",
+         :partial => "/reviews/products_4_review",
+         :locals => { :review => review, :knowledge => knowledge } )
+    end
+  end
+
+  # this is a rjs
+  def delete_product_2_review
+    review = Review.find(params[:id])
+    knowledge = review.knowledge
+    product = Product.find(params[:product_id])
+    review.product_ids.delete(product.id)
+    review.product_idurls.delete(product.idurl) 
+    review.save
+    render :update do |page|
+      page.replace("products_4_review",
+         :partial => "/reviews/products_4_review",
+         :locals => { :review => review, :knowledge => knowledge } )
+    end
+  end
+
+
   # get /reviews/edit/:review_id
   def edit
     @review = Review.find(params[:id])
     @knowledge = @review.knowledge
+    raise "error no knowledge" unless @review.knowledge.id
   end
 
   # post /reviews/create
   def create
     # this is a new review
-    product = Product.find(params[:review][:product_id])
-    raise "no product for key=#{params[:review][:product_id].inspect}" unless product
-
+    product = Product.find(params[:product_id])
+    raise "no product #{params[:product_id].inspect} #{params.inspect}" unless product
     @knowledge = Knowledge.first(:idurl => params[:review][:knowledge_idurl])
     raise "no knowledge for key=#{params[:review][:knowledge_idurl].inspect}" unless @knowledge
 
@@ -270,6 +306,9 @@ class ReviewsController < ApplicationController
     @review.user = get_logged_user
     @review.product_idurls = [product.idurl]
     @review.product_ids = [product.id]
+    @review.knowledge_id = @knowledge.id
+    @review.knowledge_idurl = @knowledge.idurl
+    puts "***************** #{@review.product_ids.inspect}"
 
     if @review.save
       flash[:notice] = "Review sucessufuly created"
@@ -287,7 +326,7 @@ class ReviewsController < ApplicationController
     
     @review.written_at = params[:written_at].to_date
     @knowledge = @review.knowledge
-
+    
     if @review.save
       flash[:notice] = "Review sucessufuly updated"
       redirect_to  "/reviews/show/#{@review.id}"

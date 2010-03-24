@@ -6,7 +6,7 @@
     <div class="pkz_item_list">
          <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
               <tr>
-                <td valign="top" width=80>
+                <td valign="top" width="80" >
                 <% for product in @products %>
                     <%= link_to(image_tag("/medias/datas/#{product.image_ids.first['thumb']}", :border => 0), "/product/#{product.idurl}") %>
                 <% end %>
