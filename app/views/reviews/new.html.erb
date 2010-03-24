@@ -7,7 +7,7 @@
     <% form_for :review, @review, :url => { :action => "create" } do |f| %>
 
           <%= f.hidden_field :knowledge_idurl %>
-          <%= text_field_tag :product_id, @product.id %>
+          <%= hidden_field_tag :product_id, @product.id %>
 
           <%= render(:partial => "/reviews/form", :locals => {:knowledge => @knowledge, :review => @review, :f => f }) %>
 
