@@ -405,16 +405,18 @@ namespace :pikizi do
 #    end
 
 
-    Review.all.each do |r|
-      unless r.knowledge_id
-        k = Knowledge.first(:idurl => r.knowledge_idurl)
-        r.knowledge_id = k.id
-        r.knowledge
-        r.save
-        puts "updating..."
-      end
-    end
+#    Review.all.each do |r|
+#      unless r.knowledge_id
+#        k = Knowledge.first(:idurl => r.knowledge_idurl)
+#        r.knowledge_id = k.id
+#        r.knowledge
+#        r.save
+#        puts "updating..."
+#      end
+#    end
 
+     Offer.import_all
+    
     true
   end
 

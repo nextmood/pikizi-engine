@@ -37,7 +37,7 @@ module ReviewsHelper
     except_pids = [except_pids] unless except_pids.is_a?(Array)
     l_products = a_knowledge.products
     l_products.delete_if { |p| except_pids.include?(p.id) }
-    l_products_tupple = l_products.collect {|p| [p.label, p.id] }.sort {|o1,o2| o1.first <=> o2.first }
+    l_products_tupple = l_products.collect {|p| [p.label, (options[:key_idurl] ? p.idurl : p.id)] }.sort {|o1,o2| o1.first <=> o2.first }
     header = []
     header << [options[:title], "default_title"] if options[:title]    
     header << ["all products", "all_products"] if options[:extra]

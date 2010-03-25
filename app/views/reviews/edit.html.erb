@@ -2,8 +2,7 @@
 
     <%= model_selector(@knowledge, :reviews) %>
 
-    <%= render(:partial => "products_4_review", :locals => {:review => @review, :knowledge => @knowledge}) %>
-    <hr/>
+    <div style="border:1px solid black; padding:5px; background-color:white;">
     <% form_for :review, @review, :url => "/reviews/update/#{@review.id}" do |f| %>
 
           <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
@@ -11,6 +10,10 @@
           <p><%= submit_tag 'Update review' %></p>
 
     <% end %>
+    </div>
 
+    <div style="border:1px solid black; margin-top:10px;  background-color:white;" >
+    <%= render(:partial => "products_4_review", :locals => {:review => @review, :knowledge => @knowledge}) %>
+    </div>
 
 </div>

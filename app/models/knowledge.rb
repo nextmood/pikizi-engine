@@ -14,7 +14,7 @@ class Knowledge < Root
   key :dimension_root, Dimension
   many :specifications
   def specifications_root() specifications.select { |s| s.parent_id.nil? } end
-
+  
   many :features, :polymorphic => true   # first level features
 
   key :question_idurls, Array

@@ -3,34 +3,6 @@ require 'mongo_mapper'
 require 'amazon'
 require 'review'
 
-# Availability is a set of valid prices by merchant for this product
-class Availability
-  include MongoMapper::EmbeddedDocument
-
-  key :amount, Float
-  key :merchant, String
-  key :merchant_url, String
-  key :offer_url, String
-
-  key :product_id
-  belongs_to :product
-
-  many :prices
-
-end
-
-class Price
-
-  include MongoMapper::EmbeddedDocument  
-
-  key :amount, Float
-  key :merchant, String
-  key :merchant_url, String
-  key :offer_url, String
-  key :valid_from, Date
-  key :valid_until, Date
-
-end
 
 
 class Product < Root
@@ -60,8 +32,10 @@ class Product < Root
   def reviews() Review.all(:product_ids => self.id) end
   def reviews_count() Review.count(:product_ids => self.id) end
 
-  # availability holds, price and merchants for this product
-  key :availability, Availability
+  # offers holds, price and merchants for this product
+  def offers() Offer.all(:product_ids => self.id) end
+  def offer_count() Offer.count(:product_ids => self.id) end
+
 
   # values of this product for all features in the knowledge/model
   key :hash_feature_idurl_value, Hash
@@ -296,9 +270,10 @@ class Product < Root
 
   def tips(mode)
     unless @opinions
-      l = []
-      reviews.each { |r| r.paragraphs.each { |p| l.concat(p.opinions) } }
-      @opinions = Opinion.find(l.collect(&:id))
+      @opinions = Opinion::Tip.all(:product_ids => self.id)
+#      l = []
+#      reviews.each { |r| r.paragraphs.each { |p| l.concat(p.opinions) } }
+#      @opinions = Opinion.find(l.collect(&:id))
     end
     @opinions.select  do |o|
       intensity = case mode

@@ -124,7 +124,7 @@ class Tip < Opinion
   key :intensity_symbol, String
 
   def to_html(options={})
-    s = "#{intensity_as_label} : (#{feature_rating_idurl}#{value_oriented_html})"
+    s = "#{intensity_as_label} (#{feature_rating_idurl}#{value_oriented_html})"
     if options[:origin]
       p = paragraph
       s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?p=#{paragraph.ranking_number}\" >#{review.source}"
@@ -152,8 +152,19 @@ class Tip < Opinion
       ["mixed", "mixed"] ]
   end
 
+  def self.intensities_value
+    { "very_high" => 1.0, "high" => 0.5, "neutral" => 0.0, "mixed" => 0.0, "low" => -0.5, "very_low" => -1.0 }
+  end
+
   def intensity_as_label() x = Tip.intensities_symbols.detect { |l,k| k == intensity_symbol }; x ? x.first : "?????" end
 
+  def intensity()
+    x = Tip.intensities_value[intensity_symbol]
+    puts "********** intensity #{x} for symbol #{intensity_symbol}"
+    x
+  end
+
+  def is_mixed() intensity_symbol == "mixed" end
   
 end
 

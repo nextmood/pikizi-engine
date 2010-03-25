@@ -1,3 +1,8 @@
+<style type="text/css">
+    div.image { float:left; margin-left:5px; margin-bottom:5px; height:85px; width:85px; }
+    .clearBoth { clear:both; }
+</style>
+
 <div class="pkz_box">
 
     <%= model_selector(@knowledge, :reviews) %>
@@ -6,10 +11,12 @@
     <div class="pkz_item_list">
          <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
               <tr>
-                <td valign="top" width="80" >
+                <td valign="top" width="<%= 95 * @products.size %>">
+
                 <% for product in @products %>
-                    <%= link_to(image_tag("/medias/datas/#{product.image_ids.first['thumb']}", :border => 0), "/product/#{product.idurl}") %>
+                      <div class="image"><%= link_to(product_image(product), "/product/#{product.idurl}") %></div>
                 <% end %>
+                  <br class="clearBoth" />
                 </td>
                 <td valign="top">
                     <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>

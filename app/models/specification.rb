@@ -13,13 +13,19 @@ class Specification
   key :is_optional, Boolean, :default => false
   key :should_display, Boolean, :default => true
 
-  # nested structure
-  key :parent_id # a Specification object
-  belongs_to :parent, :class_name => "Specification"
 
   # knowledge
   key :knowledge_id
   belongs_to :knowledge
+
+  
+  # nested structure
+  key :parent_id # a Specification object
+  belongs_to :parent, :class_name => "Specification"
+  # return all children
+  def children() @children ||= Specification.all(:knowledge_id => knowledge_id, :parent_id => id) end
+  def destroy() children.each(&:destroy); super() end #recursive destroy
+
 
   timestamps!
 

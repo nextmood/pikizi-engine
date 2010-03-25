@@ -45,8 +45,7 @@
             <% for product in products %>
                 <li>
 
-
-                  <img src="<%= @knowledge.clean_url(feature_image.get_value(product), product) %>" width="85" height="85" />
+                  <%= product_image(product) %>
 
                   <h4><a href="/product/<%= product.idurl %>"><%= product.label %></a></h4>
                   <% if rating_01 = feature_overall_rating.get_value(product) %>

@@ -1,0 +1,40 @@
+<div class="pkz_specification_level_<%= specification.level %>">
+      <b><%= specification.get_feature_html %></b>
+      <%= specification.get_value_html(product) %>
+
+      <span style="font-size:80%; margin-left:30px;">
+        <%= image_tag('icons/add.png', :border => 0, :title => "add a new child specification") %>
+        <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
+        <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
+        <%= link_to_remote(image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this specification (and all its children if any)"),
+                           :url => {  :controller => "specifications",
+                             :action => "delete",
+                             :id => specification.id,
+                             :product_id => product.id  },
+                           :confirm => "remove the specification and all it's children?") %>
+
+        edit
+          <%= link_to_remote("value",
+                  :url => {  :controller => "products",
+                             :action => "edit_value",
+                             :id => product.id,
+                             :specification_idurl => specification.idurl  },
+                  :html => {  }) %>
+          /
+          <%= link_to_remote("spec",
+                  :url => {  :controller => "products",
+                             :action => "edit_specification",
+                             :id => product.id,
+                             :specification_idurl => specification.idurl  },
+                  :html => {  }) %>
+
+          <%= specification.should_display?(product) ? "(spec) " : "" %>
+      </span>
+
+      <div id="div_<%= specification.idurl %>"></div>
+
+</div>
+
+<% for sub_specification in specification.children %>
+    <%= render(:partial => "/specifications/header", :locals => {:specification => sub_specification, :product => product}) %>
+<% end %>

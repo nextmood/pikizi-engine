@@ -1,10 +1,8 @@
 
 class ReviewsController < ApplicationController
 
-
-
-
-
+  require 'opinion'
+  
   # GET /reviews/:review_id
   def show
     puts "id=" << params[:id]
@@ -114,7 +112,9 @@ class ReviewsController < ApplicationController
     base_options[:product_ids] = case params[:products_mask]
       when "" then []
       when "all_in_review" then review.product_ids
-      else [Product.find(params[:products_mask]).id]
+      else
+        l = params[:products_mask].split('-').collect { |pid| Mongo::ObjectID.from_string(pid) }
+        Product.find(l).collect(&:id)
     end
 
     opinion = case type_opinion = params[:type_opinion]
@@ -122,7 +122,7 @@ class ReviewsController < ApplicationController
       when "tip"
         usage = params[:usage]
         intensity_symbol = params[:intensity_symbol]
-        Opinion::Tip.create(base_options.clone.merge(
+        Tip.create(base_options.clone.merge(
                 :label => "#{intensity_symbol}... for #{usage.inspect}",
                 :intensity_symbol => intensity_symbol,
                 :usage => usage,
@@ -131,7 +131,7 @@ class ReviewsController < ApplicationController
       when "comparator_product"
         comparator_operator = params[:comparator_operator]
         comparator_product = params[:comparator_product]
-        Opinion::Comparator.create(base_options.clone.merge(
+        Comparator.create(base_options.clone.merge(
                 :label => "product #{comparator_operator} #{comparator_product}",
                 :operator_type => comparator_operator,
                 :predicate =>  "productIs(:#{comparator_product})",
@@ -144,7 +144,7 @@ class ReviewsController < ApplicationController
         comparator_feature = params[:comparator_feature]
         feature_filter_datas = params[:feature_filter_datas]
         predicate = "featureIs(:#{comparator_feature}, :any => #{feature_filter_datas.inspect})"
-        Opinion::Comparator.create(base_options.clone.merge(
+        Comparator.create(base_options.clone.merge(
                 :label => "feature #{comparator_feature} of product #{comparator_operator} #{predicate}",
                 :operator_type => comparator_operator,
                 :predicate =>  predicate,
@@ -155,7 +155,7 @@ class ReviewsController < ApplicationController
         rating = params[:rating].to_f
         min_rating = params[:rating_min].to_f
         max_rating = params[:rating_max].to_f
-        Opinion::Rating.create(base_options.clone.merge(
+        Rating.create(base_options.clone.merge(
                 :label => "rated #{rating} (min=#{min_rating}, max=#{max_rating})",
                 :rating => rating,
                 :min_rating => min_rating,
@@ -165,7 +165,7 @@ class ReviewsController < ApplicationController
 
       when "feature_related"
         feature_related = params[:feature_related]
-        Opinion::FeatureRelated.create(base_options.clone.merge(
+        FeatureRelated.create(base_options.clone.merge(
                 :label => "related to feature #{feature_related}",
                 :feature_related_idurl => feature_related ))
 

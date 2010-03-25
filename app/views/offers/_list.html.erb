@@ -1,0 +1,54 @@
+
+<table id="price_table" class="price_table" cellpadding="5" cellspacing="0">
+  <tr>
+    <th colspan="2">
+      offer
+      <%= link_to_function(image_tag('icons/add.png', :border => 0, :title => "create an offer"),
+                           "document.getElementById('form_new_offer').toggle();") %>
+    </th>
+    <th>from</th><th>until</th><th>conditions</th></tr>
+<% for offer in product.offers %>
+  <tr>
+    <td  valign="top" width="180">
+      <%= link_to_remote(image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this offer"),
+                           :url => {  :controller => "offers",
+                             :action => "delete",
+                             :id => offer.id,
+                             :product_id => product.id  },
+                           :confirm => "remove the offer?") %>
+      <%= offer_title(offer) %>
+    </td>
+    <td valign="top"  align="right" width="70">$&nbsp;<%= '%.2f' % offer.amount %></td>
+    <td valign="top" ><%= offer.valid_from %></td>
+    <td valign="top" ><%= offer.valid_until %></td>
+    <td valign="top" ><%= offer.conditions %></td>
+  </tr>
+<% end %>
+</table>
+
+<div id="form_new_offer" style="display:none;">
+
+    <% form_remote_tag :url => "/offers/create/#{product.id}" do -%>
+
+        <div style="margin-top:10px;">
+            <div style="font-weight:bold;">create a new offer</div>
+            <p>
+              merchant <%= select_tag("merchant_id", options_for_select(Merchant.all.collect {|m| [m.label, m.id]})) %>
+              price $<%= text_field_tag(:amount, "0.00", :size => 10) %>
+              valid from <%= select_date(Date.current, {:prefix => 'valid_from'}) %>
+              until <%= select_date(Date.current + 90, {:prefix => 'valid_from'}) %>
+            </p>
+            <p>conditions <%= text_field_tag(:amount, "", :size => 90) %></p>                              
+
+        </div>
+
+        <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;">
+            <%= submit_tag 'create offer' %>
+            &nbsp;or&nbsp;
+
+          <%= link_to_function("cancel", "document.getElementById('form_new_offer').toggle();") %>
+        </div>
+
+    <% end -%>
+
+</div>

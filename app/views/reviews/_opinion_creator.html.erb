@@ -13,7 +13,7 @@
 
           
             <% if type_opinion == "tip" %>
-                <%= select_tag("intensity_symbol", options_for_select(Opinion::Tip.intensities_symbols) ) %>
+                <%= select_tag("intensity_symbol", options_for_select(Tip.intensities_symbols) ) %>
                 for usage (XXX)<%= text_field_tag("usage", nil, :size => 40 ) %>
 
                 <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
@@ -21,7 +21,7 @@
             <% elsif type_opinion == "comparator_product" %>
                 <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]])) %>
                 product
-                <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge, :minus => review.product_ids, :extra => true)) ) %>
+                <%= select_tag("comparator_product", options_for_select(dimension_product(knowledge, :minus => (review.product_ids.size == 1 ? review.product_ids : nil), :extra => true, :key_idurl => true)) ) %>
                 <p>usage (XXX)<%= text_field_tag("usage", nil, :size => 40 ) %></p>
                 <p>extract<%= text_field_tag("extract", nil, :size => 80 ) %></p>
 

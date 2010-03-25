@@ -1,0 +1,5 @@
+<div id="list_specifications">
+<% for specification in knowledge.specifications_root %>
+    <%= render(:partial => "/specifications/header", :locals => {:specification => specification, :product => product}) %>
+<% end %>
+</div>

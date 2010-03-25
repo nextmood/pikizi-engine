@@ -4,6 +4,8 @@
     label { color:black; margin-right:5px; font-weight:bold;}
     .field { color:blue; margin-right:15px; }
     p { margin:0px;}
+    .price_table tr th { background-color:lightgray; }
+    .price_table tr td { border-bottom:1px solid black; }
 </style>
 
 <h1>Editing product</h1>
@@ -57,10 +59,11 @@
     </div>
 <% for image_ids in @product.image_ids %>
     <div class="image">
-      <img src="/medias/datas/<%= image_ids['thumb'] %>" />
+      <%= product_image(@product, 'thumb', image_ids) %>
       <%= link_to(image_tag("icons/stop.png", :border => 0), :controller => "products", :action => "delete_main_image", :id => @product.id, :main_image_id => image_ids['main']) %>
     </div>
 <% end %>
+
 
 <br class="clearBoth" />
 
@@ -70,50 +73,15 @@
 </div>
 <hr/><h2>availability and merchants</h2>
 
-
+<%= render(:partial => "/offers/list", :locals => {:product => @product}) %>
 
 <hr/><h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
-
-<% for specification in @knowledge.specifications_root %>
-    <div class="pkz_specification_level_<%= specification.level %>">
-              <b><%= specification.get_feature_html %></b>
-              <%= specification.get_value_html(@product) %>
-
-              <span style="font-size:80%; margin-left:30px;">
-                <%= image_tag('icons/add.png', :border => 0, :title => "add a new child specification") %>
-                <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
-                <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
-                <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this specification (and all its children if any)") %>
-
-                edit
-                  <%= link_to_remote("value",
-                          :url => {  :controller => "products",
-                                     :action => "edit_value",
-                                     :id => @product.id,
-                                     :specification_idurl => specification.idurl  },
-                          :html => {  }) %>
-                  /
-                  <%= link_to_remote("spec",
-                          :url => {  :controller => "products",
-                                     :action => "edit_specification",
-                                     :id => @product.id,
-                                     :specification_idurl => specification.idurl  },
-                          :html => {  }) %>
-
-                  <%= specification.should_display?(@product) ? "(spec) " : "" %>
-              </span>
-
-              <div id="div_<%= specification.idurl %>">
-
-              </div>
+<%= render(:partial => "/specifications/list", :locals => {:knowledge => @knowledge, :product => @product}) %>
 
 
-            </div>
-<% end %>
 
-<h2>old</h2>
- <%= @knowledge.specifications_root.size %>
-<div class="">
+<h2><%= link_to_function("old features...", "document.getElementById('old_features').toggle();") %></h2>
+<div id="old_features" style="display:none;">
     <% for feature in @knowledge.features_all %>
         <% if !feature.is_a?(FeatureRating) and !feature.is_a?(FeatureImage)  %>
             <div class="pkz_specification_level_<%= feature.level %>">

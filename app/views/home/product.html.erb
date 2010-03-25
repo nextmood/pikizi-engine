@@ -1,4 +1,3 @@
-<% url_image = @knowledge.get_feature_by_idurl("main_image").get_value(@product) %>
 
 <div id="main">
     <div class="box952">
@@ -11,9 +10,7 @@
         <div id="search_boxBg">
             <div class="spcr"></div>
         <ul class="one">
-            <li class="img">
-                <img src="<%= @knowledge.clean_url(url_image, @product) %>" width="220" height="220" />
-            </li>
+            <li class="img"><%= product_image(@product, 'main') %></li>
 
             <li class="details  blank">
               <%= render(:partial => "/home/product_details", :locals => {:knowledge => @knowledge, :product => @product}) %>
@@ -28,9 +25,11 @@
         </ul>
         <ul class="gallery">
           <li class="gallRd"><a href="#"><img src="/images/gene/galleryArwRw.png" /></a></li>
-          <% for image_url in @product.gallery_image_urls %>
-            <li><a href="#"><img src="<%= image_url %>" width="64" height="64" /></a></li>
+
+          <% for image_ids in @product.image_ids.first(3) %>
+            <li><a href="#"><%= product_image(@product, 'gallery', image_ids) %></a></li>
           <% end %>
+
           <li class="gallFd"><a href="#"><img src="/images/gene/galleryArwFd.png" /></a></li>
         </ul>
         <%= render(:partial => "/home/product_price", :locals => {:knowledge => @knowledge, :product => @product}) %>
