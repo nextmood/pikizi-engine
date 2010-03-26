@@ -33,7 +33,7 @@ class Opinion < Root
 
   def self.is_main_document() true end
 
-  def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} paragraph_ranking_number=#{paragraph.ranking_number}" end
+  def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} " end
 
 
   def self.generate_xml
@@ -127,8 +127,7 @@ class Tip < Opinion
     s = "#{intensity_as_label} (#{feature_rating_idurl}#{value_oriented_html})"
     if options[:origin]
       p = paragraph
-      s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?p=#{paragraph.ranking_number}\" >#{review.source}"
-      s << "&nbsp;&para;#{paragraph.ranking_number}" if p
+      s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?opinion_id=#{self.id}\" >#{review.source}"
       s << "</a></small>"
     end
     s

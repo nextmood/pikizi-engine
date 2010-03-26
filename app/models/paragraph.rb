@@ -4,11 +4,13 @@ class Paragraph
   include MongoMapper::Document
 
   key :content, String # full content
-  key :ranking_number, Integer # the first, 2nd third paragraph etc...
+
+  key :review_id, Mongo::ObjectID
+  belongs_to :review
+
+  key :ranking_number, Integer, :default => 0
 
   many :opinions, :polymorphic => true
-  
-  #key :review_id
-  #belongs_to :review
+
   
 end

@@ -42,8 +42,20 @@ class Review < Root
 
   key :paragraph_sorted_ids, Array
   many :paragraphs_sorted, :in => :paragraph_sorted_ids, :class_name => "Paragraph"
-  
-  many :paragraphs
+
+  def self.compute_ranking_all() Review.all.each(&:compute_ranking) end
+  def compute_ranking
+    counter = 0
+    paragraphs_sorted.each do |par|
+      par.ranking_number = counter
+      par.review_id = id
+      par.save
+      counter += 1
+    end
+    paragraph_sorted_ids = paragraphs_sorted.collect(&:id)
+    save
+  end
+  #many :paragraphs
 
   timestamps!
 
@@ -66,10 +78,6 @@ class Review < Root
     Review.delete_all(find_options)
   end
 
-
-  #def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
-
-
   def self.opinion_types
     [["", ""], ["pro/cons", "tip"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
   end
@@ -79,11 +87,9 @@ class Review < Root
     if caret_position > 0 or caret_position < max_size
       p1_content = paragraph.content[0 .. caret_position-1].strip
       p2_content = paragraph.content[caret_position .. max_size].strip
-      p2_ranking_number = paragraph.ranking_number + 1
       if p1_content.size > 0 and p2_content.size > 0
         paragraph.content = p1_content
-        paragraphs.each {|p| p.ranking_number += 1 if p.ranking_number >= p2_ranking_number }
-        paragraphs << Paragraph.create(:ranking_number => p2_ranking_number, :content => p2_content)
+        self.paragraph_ids.insert_at(Paragraph.create(:content => p2_content), paragraph.ranking_number)  
         save
       end
     end
@@ -102,14 +108,14 @@ class Review < Root
       content.split(pattern).each do |paragraph_content|
         paragraph_content.strip!
         if paragraph_content != ""
-          paragraphs_generated << Paragraph.create(:ranking_number => paragraphs_generated.size + 1, :content => paragraph_content)
+          paragraphs_generated << Paragraph.create(:content => paragraph_content)
         end
       end
     else
       # 1 paragraph == whole content
-      paragraphs_generated << Paragraph.create(:ranking_number => 1, :content => content)
+      paragraphs_generated << Paragraph.create(:content => content)
     end
-    self.paragraphs = paragraphs_generated
+    self.paragraph_sorted_ids = paragraphs_generated.collect(&:id)
     
   end
 

@@ -4,7 +4,7 @@ tar cvf dump.tar dump/
 rm -r dump
 
 on development
-/Applications/mongodb-osx-x86_64-1.2.2/bin/mongo pikizi_mongodb_development
+mongo pikizi_mongodb_development
 db.dropDatabase()
 exit
-/Applications/mongodb-osx-x86_64-1.2.2/bin/mongorestore -d pikizi_mongodb_development /Users/fpatte/Desktop/dump/pikizi_mongodb_production
+mongorestore -d pikizi_mongodb_development /Users/fpatte/Desktop/dump/pikizi_mongodb_production

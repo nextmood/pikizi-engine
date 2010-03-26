@@ -25,7 +25,7 @@
                         <%= origin_review(review) %>
                         <%= "<br/><i>#{review.summary}</i>"if review.summary %>
                         <div style="font-size:80%; margin-top:3px;">
-                           <%= link_to("#{pluralize(review.paragraphs.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}", "/reviews/show/#{review.id}") %>
+                           <%= link_to("#{pluralize(review.paragraph_ids.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}", "/reviews/show/#{review.id}") %>
                            <br/>rated <%= review.rating %> (min=<%= review.min_rating %>, max=<%= review.max_rating %>)
                         </div>
                     </td>

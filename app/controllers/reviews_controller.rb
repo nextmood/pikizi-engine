@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @products = @review.products
     @knowledge = @products.first.knowledge
-    @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
     @opinion_selected = Opinion.find(params[:opinion_id]) if params[:opinion_id]
     respond_to do |format|
       format.html # show.html.erb

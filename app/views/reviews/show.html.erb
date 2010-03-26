@@ -35,7 +35,7 @@
           <% end %>
 
           <% for paragraph in @review.paragraphs_sorted %>
-              <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:<%= @paragraph_selected_number == paragraph.ranking_number ? 'pink' : 'white' %>;">
+              <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
                   <!-- the paragraph -->
                   <div id="<%= "paragraph_#{paragraph.id}" %>" >
                     <%= render(:partial => "/reviews/paragraph", :locals => { :review => @review, :paragraph => paragraph }) %>

@@ -323,10 +323,10 @@ namespace :pikizi do
 
             # create the paragraphs
             paragraphs_generated = []
-            paragraphs.each_with_index do |p, count|
-              paragraphs_generated << Paragraph.create(:ranking_number => count, :content => p, :review_id => review.id)
+            paragraphs.each do |p|
+              paragraphs_generated << Paragraph.create(:content => p, :review_id => review.id)
             end
-            review.paragraphs = paragraphs_generated
+            review.paragraph_ids = paragraphs_generated.collect(&:id)
 
             file = File.new("#{path}/#{file_opinions}", "r")
             while (line = file.gets)
@@ -416,7 +416,9 @@ namespace :pikizi do
 #    end
 
      #Offer.import_all
-     Review.all.each {|r| r.paragraph_sorted_ids = r.paragraphs.collect(&:id); r.save }; true
+     #Review.all.each {|r| r.paragraph_sorted_ids = r.paragraphs.collect(&:id); r.save }; true
+
+    Review.compute_ranking_all
     
     true
   end
