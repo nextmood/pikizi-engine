@@ -40,11 +40,12 @@ class Review < Root
 
   many :opinions, :polymorphic => true
 
-  key :paragraph_number, Integer, :default => 1 # the index for the paragraph
+  key :paragraph_sorted_ids, Array
+  many :paragraphs_sorted, :in => :paragraph_sorted_ids, :class_name => "Paragraph"
+  
   many :paragraphs
 
   timestamps!
-
 
 
   def self.is_main_document() true end
@@ -66,7 +67,7 @@ class Review < Root
   end
 
 
-  def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
+  #def paragraphs_sorted() paragraphs.sort {|p1, p2| p1.ranking_number <=> p2.ranking_number } end
 
 
   def self.opinion_types

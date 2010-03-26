@@ -43,6 +43,10 @@
 
                   <!-- the opinion editor -->
                   <div id="p<%= paragraph.id %>" style="background-color:white;" >
+                    <% if @opinion_selected and @opinion_selected.paragraph_id == paragraph.id %>
+                        <%= render(:partial => "/reviews/opinion_list",
+                                   :locals => {:review => @review, :knowledge => @knowledge, :paragraph => paragraph, :opinion_selected => @opinion_selected }) %>
+                    <% end %>
                   </div>
               </div>
          <% end %>

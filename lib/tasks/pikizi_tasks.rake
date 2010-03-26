@@ -415,7 +415,8 @@ namespace :pikizi do
 #      end
 #    end
 
-     Offer.import_all
+     #Offer.import_all
+     Review.all.each {|r| r.paragraph_sorted_ids = r.paragraphs.collect(&:id); r.save }; true
     
     true
   end

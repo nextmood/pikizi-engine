@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
-  
+
+
   def show
     @product = Product.first(:idurl => params[:product_idurl])
     @knowledge = @product.knowledge.link_back

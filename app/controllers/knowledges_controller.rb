@@ -33,6 +33,10 @@ class KnowledgesController < ApplicationController
     @features = @knowledge.each_feature_collect { |feature| feature }.flatten
   end
 
+  def list_opinions
+    @knowledge, @products, @products_selected = get_products_selected(params)    
+  end
+
   def get_products_selected(params)
     knowledge =  Knowledge.load_db(params[:knowledge_idurl])
     products = knowledge.products.sort! { |p1, p2| p1.idurl <=> p2.idurl }

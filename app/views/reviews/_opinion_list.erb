@@ -1,8 +1,9 @@
+<% opinion_selected_id = defined?(opinion_selected) ? opinion_selected.id : nil %>
  <!-- the recording opinions -->
  <div style="margin-top:5px; padding-top:2px; border-bottom:1px dashed black;">
    <ul style="list-style-type: square; margin-left:-15px; margin-top:0px;">
       <% for opinion in paragraph.opinions %>
-        <li>
+        <li style="<%= "background-color:yellow;" if opinion.id == opinion_selected_id %>">
           <span style="font-family:Courier New;"><%= opinion.products.collect(&:label).join(', ') %></span> :
           <span style="font-family:Courier New;"><%= opinion.to_html %></span>
           <span style="font-size:80%;">

@@ -87,7 +87,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/my_results", :controller => 'home', :action => 'my_results'
   map.connect "/product/:product_idurl", :controller => 'home', :action => 'product'
   map.connect "/products_search", :controller => 'home', :action => 'products_search'
-  
+
+  map.connect "/products_opinions/:knowledge_idurl", :controller => 'knowledges', :action => 'list_opinions'  
   map.connect "/products.:format", :controller => 'products', :action => 'index'
   map.connect "/products/:product_idurl.:format", :controller => 'products', :action => 'show'
 

@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @products = @review.products
     @knowledge = @products.first.knowledge
     @paragraph_selected_number = params[:p] ? Integer(params[:p]) : nil
-
+    @opinion_selected = Opinion.find(params[:opinion_id]) if params[:opinion_id]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render(:xml => @review ) }

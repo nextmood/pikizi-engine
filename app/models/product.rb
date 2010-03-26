@@ -36,7 +36,15 @@ class Product < Root
   def offers() Offer.all(:product_ids => self.id) end
   def offer_count() Offer.count(:product_ids => self.id) end
 
-
+  # opinions
+  def opinions(options={})
+    except_review_categories = options[:except_review_category]
+    except_review_categories = [except_review_categories] unless except_review_categories.nil? or except_review_categories.is_a?(Array)
+    Opinion.all(:product_ids => self.id).select do |o|
+      except_review_categories ? !except_review_categories.include?(o.review.category) : true  
+    end
+  end
+  
   # values of this product for all features in the knowledge/model
   key :hash_feature_idurl_value, Hash
 

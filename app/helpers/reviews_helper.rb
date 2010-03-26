@@ -1,15 +1,20 @@
 module ReviewsHelper
 
-  def origin_review(review)
+  def origin_review(review, options={})
     l = []
     l << "by #{review.author}" if review.author
     l << "from #{review.source}" if review.source
     s = l.join(' ')
-    s = link_to(s, review.source_url) if review.source_url
+    if options[:opinion]
+      s = link_to(s, :controller => "reviews", :action => "show", :id => review.id, :opinion_id => options[:opinion].id)
+    else
+      s = link_to(s, review.source_url) if review.source_url
+    end
+    s = "<span style=\"#{options[:style]}\">#{s}</span>" if options[:style]
     s
   end
 
-  def dimension_feature_related(a_knowledge, review_id, paragraph_number, feature_related_selected=nil)
+  def dimension_feature_related(a_knowledge, review_id, feature_related_selected=nil)
     select_tag("feature_related", options_for_select(dimension_feature(a_knowledge, :related), feature_related_selected))
   end
 

@@ -8,5 +8,7 @@ class Paragraph
 
   many :opinions, :polymorphic => true
   
-
+  #key :review_id
+  #belongs_to :review
+  
 end
