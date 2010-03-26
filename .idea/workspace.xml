@@ -8,23 +8,19 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/availability.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" afterPath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/show.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/index.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/products.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/admin.txt" afterPath="$PROJECT_DIR$/doc/admin.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/backgrounds.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/_short.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/show.xml.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/grand.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/users.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/config/database.yml.mongo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaders/media_uploader.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paragraph.rb" afterPath="$PROJECT_DIR$/app/models/paragraph.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/petit.rb" afterPath="" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +44,44 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="review.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="22" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.2669903">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="48" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-22.736841">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pikizi_tasks.rake" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="328" column="0" selection-start="13265" selection-end="13265" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -72,11 +105,11 @@
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_paragraph.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
+        <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
-        <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
-        <option value="$PROJECT_DIR$/log/development.log" />
       </list>
     </option>
   </component>
@@ -585,7 +618,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Rake.pikizi:update_database">
+  <component name="RunManager" selected="Rails.Development">
     <configuration default="false" name="pikizi:recompute_counters" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="pikizi-engine" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -1002,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="130" column="0" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.0">
@@ -1023,27 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="19" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.6644951">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="421" column="4" selection-start="16871" selection-end="16871" vertical-scroll-proportion="0.78640777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="8" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.5067568">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.26540285">
@@ -1054,6 +1059,34 @@
     <entry file="file://$PROJECT_DIR$/app/views/reviews/_paragraph.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="48" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-22.736841">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="328" column="0" selection-start="13265" selection-end="13265" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="22" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.2669903">
           <folding />
         </state>
       </provider>

@@ -34,7 +34,7 @@
              &nbsp, this will remove all opinions !
           <% end %>
 
-          <% for paragraph in @review.paragraphs_sorted %>
+          <% for paragraph in @review.paragraphs %>
               <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
                   <!-- the paragraph -->
                   <div id="<%= "paragraph_#{paragraph.id}" %>" >

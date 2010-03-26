@@ -40,9 +40,11 @@ class Review < Root
 
   many :opinions, :polymorphic => true
 
-  key :paragraph_sorted_ids, Array
-  many :paragraphs_sorted, :in => :paragraph_sorted_ids, :class_name => "Paragraph"
+  #key :paragraph_sorted_ids, Array
+  #many :paragraphs_sorted, :in => :paragraph_sorted_ids, :class_name => "Paragraph"
 
+  many :paragraphs, :order => :ranking_number.asc
+  
   def self.compute_ranking_all() Review.all.each(&:compute_ranking) end
   def compute_ranking
     counter = 0
@@ -89,8 +91,12 @@ class Review < Root
       p2_content = paragraph.content[caret_position .. max_size].strip
       if p1_content.size > 0 and p2_content.size > 0
         paragraph.content = p1_content
-        self.paragraph_ids.insert_at(Paragraph.create(:content => p2_content), paragraph.ranking_number)  
-        save
+        paragraph.save
+        new_ranking_number = paragraph.ranking_number + 1
+        # recompute ranking numbers of next paragraphs
+        paragraphs.select { |p| p.ranking_number >= new_ranking_number }.each {|p| p.ranking_number += 1; p.save }
+        # new paragraph
+        self.paragraphs.create(:content => p2_content, :ranking_number => new_ranking_number)
       end
     end
   end
@@ -98,25 +104,22 @@ class Review < Root
   # break the content in paragraphs
   def split_in_paragraphs(mode)
     paragraphs.each(&:destroy) # delete paragraphs (should delete associated opinions)
-    paragraphs_generated = []
     pattern = case mode
                     when "br" then /<br \/>|<br\/>|<br>/
                     when "p_br" then /<br \/>|<br\/>|<br>|<p>|<\/p>/
                     when "p" then /<p>|<\/p>/
                   end
     if pattern
-      content.split(pattern).each do |paragraph_content|
+      content.split(pattern).each_with_index do |paragraph_content, counter|
         paragraph_content.strip!
         if paragraph_content != ""
-          paragraphs_generated << Paragraph.create(:content => paragraph_content)
+          self.paragraphs.create(:ranking_number => counter, :content => paragraph_content)
         end
       end
     else
       # 1 paragraph == whole content
-      paragraphs_generated << Paragraph.create(:content => content)
-    end
-    self.paragraph_sorted_ids = paragraphs_generated.collect(&:id)
-    
+      self.paragraphs.create(:ranking_number => 0, :content => content)
+    end    
   end
 
   def to_xml()

@@ -1,0 +1,371 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-03-26 18:32:56) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 325ms (View: 71 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-03-26 18:33:02) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"hsY/g+X2TrwyIBnGb6foayiarubqyB9pAq3vSSS5v+w=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 587ms (View: 54 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:03) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 79ms (View: 28 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:03) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 58ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-03-26 18:33:05) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (34.2ms)
+Rendered home/_product_price (11.2ms)
+Rendered home/_product_tab_overview (46.5ms)
+Rendered home/_product_tabs (252.8ms)
+Completed in 624ms (View: 344 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:06) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 60ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:06) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 56ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:06) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 65ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:06) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 54ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-03-26 18:33:09) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"hsY/g+X2TrwyIBnGb6foayiarubqyB9pAq3vSSS5v+w=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (9.4ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (9.6ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (8.3ms)
+Rendered reviews/_short (146.8ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (9.0ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (9.2ms)
+Rendered reviews/_short (8.8ms)
+Rendered reviews/_short (8.7ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (9.5ms)
+Rendered reviews/_short (8.5ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (8.9ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (8.6ms)
+Rendered reviews/_short (7.9ms)
+Rendered reviews/_short (10.7ms)
+Rendered reviews/_short (8.4ms)
+Rendered reviews/_short (8.1ms)
+Rendered reviews/_short (8.5ms)
+Rendered home/_product_tab_reviews (583.1ms)
+Rendered home/_product_tabs (615.1ms)
+Completed in 1050ms (View: 769 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:33:14) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (4.7ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.6ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (8.2ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.8ms)
+Completed in 736ms (View: 655 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:15) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 262ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:33:16) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 90ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:34:12) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (7.3ms)
+Rendered reviews/_paragraph (10.6ms)
+Rendered reviews/_paragraph (20.8ms)
+Rendered reviews/_paragraph (8.9ms)
+Rendered reviews/_paragraph (31.4ms)
+Rendered reviews/_paragraph (8.2ms)
+Rendered reviews/_paragraph (9.2ms)
+Rendered reviews/_paragraph (9.4ms)
+Rendered reviews/_paragraph (7.8ms)
+Rendered reviews/_paragraph (8.8ms)
+Rendered reviews/_paragraph (8.1ms)
+Rendered reviews/_paragraph (9.7ms)
+Rendered reviews/_paragraph (8.3ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (9.2ms)
+Rendered reviews/_paragraph (10.4ms)
+Rendered reviews/_paragraph (8.7ms)
+Rendered reviews/_paragraph (8.8ms)
+Completed in 1254ms (View: 1027 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:34:14) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 50ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:34:14) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 48ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing ReviewsController#edit_paragraph (for 127.0.0.1 at 2010-03-26 18:47:34) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "authenticity_token"=>"hsY/g+X2TrwyIBnGb6foayiarubqyB9pAq3vSSS5v+w=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_paragraph_editor (21.4ms)
+Completed in 346ms (View: 30 | 200 OK [http://localhost/reviews/edit_paragraph/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013e]
+
+
+Processing ReviewsController#cut_paragraph (for 127.0.0.1 at 2010-03-26 18:47:43) [GET]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013e", "caret_position"=>"258", "review_id"=>"4b892b7043a76d7c5d00013b"}
+Redirected to http://localhost:3000/reviews/show/4b892b7043a76d7c5d00013b
+Completed in 347ms | 302 Found [http://localhost/cut_paragraph/4b892b7043a76d7c5d00013b/4b892b7043a76d7c5d00013e/258]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:47:44) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.2ms)
+Completed in 543ms (View: 461 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:47:45) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 257ms (View: 14 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:47:45) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 50ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing ReviewsController#edit_paragraph (for 127.0.0.1 at 2010-03-26 18:48:02) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013d", "authenticity_token"=>"hsY/g+X2TrwyIBnGb6foayiarubqyB9pAq3vSSS5v+w=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_paragraph_editor (4.7ms)
+Completed in 319ms (View: 8 | 200 OK [http://localhost/reviews/edit_paragraph/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013d]
+
+
+Processing ReviewsController#cut_paragraph (for 127.0.0.1 at 2010-03-26 18:48:08) [GET]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013d", "caret_position"=>"79", "review_id"=>"4b892b7043a76d7c5d00013b"}
+Redirected to http://localhost:3000/reviews/show/4b892b7043a76d7c5d00013b
+Completed in 182ms | 302 Found [http://localhost/cut_paragraph/4b892b7043a76d7c5d00013b/4b892b7043a76d7c5d00013d/79]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:48:09) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (6.1ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.8ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.6ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.9ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (6.9ms)
+Completed in 580ms (View: 495 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:48:10) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 46ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:48:10) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 258ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:49:32) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (4.9ms)
+Rendered reviews/_paragraph (8.3ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (6.9ms)
+Completed in 563ms (View: 485 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:49:33) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 303ms (View: 19 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:49:33) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 49ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing ReviewsController#edit_paragraph (for 127.0.0.1 at 2010-03-26 18:49:41) [POST]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013d", "authenticity_token"=>"hsY/g+X2TrwyIBnGb6foayiarubqyB9pAq3vSSS5v+w=", "id"=>"4b892b7043a76d7c5d00013b"}
+Rendered reviews/_paragraph_editor (4.5ms)
+Completed in 353ms (View: 7 | 200 OK [http://localhost/reviews/edit_paragraph/4b892b7043a76d7c5d00013b?paragraph_id=4b892b7043a76d7c5d00013d]
+
+
+Processing ReviewsController#cut_paragraph (for 127.0.0.1 at 2010-03-26 18:49:46) [GET]
+  Parameters: {"paragraph_id"=>"4b892b7043a76d7c5d00013d", "caret_position"=>"80", "review_id"=>"4b892b7043a76d7c5d00013b"}
+Redirected to http://localhost:3000/reviews/show/4b892b7043a76d7c5d00013b
+Completed in 183ms | 302 Found [http://localhost/cut_paragraph/4b892b7043a76d7c5d00013b/4b892b7043a76d7c5d00013d/80]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-26 18:49:47) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (4.8ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (8.0ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.2ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Completed in 592ms (View: 510 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:49:48) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 45ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-26 18:49:48) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 54ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
