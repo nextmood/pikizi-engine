@@ -1,0 +1,217 @@
+
+grammar OpinionGrammar
+
+  rule opinion
+    dimension products_selector space+ comparator:(tip / comparing / rating / ranking) {
+        def tom() comparator.tom(dimension.tom, products_selector.tom); end
+    }
+  end
+
+  rule dimension
+    d:('hardware' / 'communication' / 'style' / 'camera') space+ 'of' space+  { def tom() ":#{d.text_value}"; end }
+    /
+    '' { def tom() "nil"; end }
+  end
+
+  rule tip
+    tip_prefix space+ v:(tip_very_high / tip_high / tip_neutral / tip_mixed / tip_low / tip_very_low)  { def tom(d,x) "tip(#{d}, #{x}, #{v.tom})"; end }
+  end
+
+  rule tip_prefix
+      'is' / 'are'
+  end
+
+  rule tip_very_high
+    ('very_high' / 'very high' / 'really good' / 'very good')   { def tom() ":very_high"; end }
+  end
+
+  rule tip_high
+    ('high' / 'good')   { def tom() ":high"; end }
+  end
+
+  rule tip_neutral
+    ('neutral' / 'average' / 'same')   { def tom() ":neutral"; end }
+  end
+
+  rule tip_mixed
+    ('mixed' / 'bad and good' / 'good and bad')   { def tom() ":mixed"; end }
+  end
+
+  rule tip_low
+    ('low' / 'bad')   { def tom() ":low"; end }
+  end
+
+  rule tip_very_low
+    ('very_low' / 'very low' / 'really bad' / 'very bad')   { def tom() ":very_low"; end }
+  end
+
+  rule comparing
+    c:(better_than / same_as / worse_than) space+ ps:products_selector { def tom(d,x) "#{c.tom}(#{d}, #{x}, #{ps.tom})"; end }
+  end
+
+  rule better_than
+    ('better' space+ 'than' / 'better_than' / 'better') { def tom() "better"; end }
+  end
+
+  rule same_as
+    ('same' space+ 'as' / 'same_as' / 'same') { def tom() "same"; end }
+  end
+
+  rule worse_than
+    ('worse' space+ 'than' / 'worse_than' / 'worse') { def tom() "worse"; end }
+  end
+
+
+  rule rating
+    'rated' space v:number space 'between' space+ min:number space+ 'and' space+ max:number { def tom(d,x) "rated(#{d}, #{x}, #{v.text_value}, #{min.text_value}, #{max.text_value})"; end }
+  end
+
+  rule ranking
+    'ranked' space+ ranking_value { def tom(d,x) "ranked(#{d}, #{x}, :#{ranking_value.text_value})"; end }
+  end
+
+  rule ranking_value
+    ('best' / 'first' / '2nd' / 'third' / number)
+  end
+
+  rule products_selector
+    all_products
+    /
+    products_descriptor_list 
+  end
+
+  rule all_products
+    ('all_products' / 'all products') { def tom() "all_products()"; end }
+  end
+
+  rule products_descriptor_list
+    first_pd:products_descriptor rest_pds:(space+ 'and' space+ pd:products_descriptor)*  {
+        def pds() [first_pd] + rest_pds; end  # return a list of product descriptors
+        def rest_pds
+            node = super
+            if node.is_a?(Treetop::Runtime::SyntaxNode) and node.text_value == ""
+                []
+            else
+                node.elements.map { |and_pd| and_pd.pd }
+            end
+        end
+        def tom() "[#{pds.collect(&:tom).join(', ')}]"; end
+    }
+  end
+
+
+  rule products_descriptor
+    product_name / products_with_feature / products_similar_to
+  end
+
+  rule products_similar_to
+    'similar_to' space+ product_name  { def tom() "similar_to(#{product_name.tom})"; end }
+  end
+
+  rule products_with_feature
+    brand / compatible_with_carriers / camera_nb_pixel
+  end
+
+  # ===============================================================================
+  # automatic per feature/generation
+  # -------------------------------------------------------------------------------
+
+  rule brand
+    'products_with_brand' space+ brand_values { def tom() "feature_value_in(\"brand\", #{brand_values.tom})"; end }
+  end
+
+  rule brand_values
+    '(' space* brand_values space* ')' { def tom() "parenthesis(#{brand_values.tom})"; end }
+    /
+    brand_value space+ 'or' space+ brand_values  { def tom() "OR(#{brand_value.tom}, #{brand_values.tom})"; end }
+    /
+    brand_value
+  end
+
+  rule brand_value
+    'apple' { def tom() "\"apple\""; end }
+    /
+    'blackberry'  { def tom() "\"blackberry\""; end }
+    /
+    'nokia'  { def tom() "\"nokia\""; end }
+  end
+
+  rule compatible_with_carriers
+    products_compatible_with_carriers space+ compatible_with_carriers_values { def tom() "feature_value(\"carriers\"), #{compatible_with_carriers_values.tom})"; end }
+  end
+
+  rule products_compatible_with_carriers
+    'products_compatible_with_carriers' / 'products compatible with carriers' / 'products with carriers'
+  end
+
+  rule compatible_with_carriers_values
+    '(' space* compatible_with_carriers_values space* ')'  { def tom() "parenthesis{compatible_with_carriers_values.tom}"; end }
+    /
+    compatible_with_carriers_value space+ logical_comparator space+ compatible_with_carriers_values  { def tom() "#{logical_comparator.tom}(#{compatible_with_carriers_value.tom}, #{compatible_with_carriers_values.tom})"; end }
+    /
+    compatible_with_carriers_value
+  end
+
+  rule logical_comparator
+    'or' { def tom() "or"; end }
+    /
+    'and' { def tom() "and"; end }
+  end
+
+  rule compatible_with_carriers_value
+    'att' { def tom() "\"att\""; end }
+    /
+    'sprint' { def tom() "\"sprint\""; end }
+  end
+
+  rule camera_nb_pixel
+    products_with_camera_nb_pixel space+ numeric_comparator space+ camera_nb_pixel_value  { def tom() "#{numeric_comparator.tom}(feature_value(\"camera_nb_pixel\"), #{camera_nb_pixel_value.tom})"; end }
+  end
+
+  rule products_with_camera_nb_pixel
+    'products_with_camera_nb_pixel' / 'products with nb pixel of camera'
+  end
+
+  rule numeric_comparator
+    ('>' / 'greater') { def tom() "greater"; end }
+    /
+    ('<' / 'less') { def tom() "less"; end }
+  end
+
+  rule camera_nb_pixel_value
+    number 'mpx' { def tom() "#{number.tom}"; end }
+  end
+
+  # ===============================================================================
+  # automatic per product generation and synonyms
+  # -------------------------------------------------------------------------------
+
+  rule product_name
+    iphone / nexus / droid
+  end
+
+  rule iphone
+    ('iphone' / 'Iphone') { def tom() "\"iphone\""; end }
+  end
+
+  rule droid
+    ('droid' / 'Droid') { def tom() "\"droid\""; end }
+  end
+
+  rule nexus
+    ('nexus' / 'Nexus') { def tom() "\"nexus\""; end }
+  end
+
+  # ===============================================================================
+  # utilities
+  # -------------------------------------------------------------------------------
+
+  rule number
+    [0-9]+ '.'? [0-9]*    { def tom() text_value; end }
+  end
+
+  rule space
+    ' '
+  end
+  
+end

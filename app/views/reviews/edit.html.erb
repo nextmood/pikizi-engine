@@ -3,17 +3,29 @@
     <%= model_selector(@knowledge, :reviews) %>
 
     <div style="border:1px solid black; padding:5px; background-color:white;">
-    <% form_for :review, @review, :url => "/reviews/update/#{@review.id}" do |f| %>
+        <% form_for :review, @review, :url => "/reviews/update/#{@review.id}" do |f| %>
 
-          <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
+              <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
 
-          <p><%= submit_tag 'Update review' %></p>
+              <p><%= submit_tag 'Update review' %></p>
 
-    <% end %>
+        <% end %>
     </div>
 
+
+    <% if @review.content %>
     <div style="border:1px solid black; margin-top:10px;  background-color:white;" >
-    <%= render(:partial => "products_4_review", :locals => {:review => @review, :knowledge => @knowledge}) %>
+         <p>generate paragraphs from content</p>
+         <%= link_to("none", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "none") %>,&nbsp;
+         <%= link_to("&lt;P&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "p") %>,&nbsp;
+         <%= link_to("&lt;BR&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "br") %>,&nbsp;
+         <%= link_to("&lt;P&gt;&amp;&lt;BR&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "p_br") %>
+         &nbsp, this will remove all opinions !      
+    </div>
+    <% end %>
+
+    <div style="border:1px solid black; margin-top:10px;  background-color:white;" >
+        <%= render(:partial => "products_4_review", :locals => {:review => @review, :knowledge => @knowledge}) %>
     </div>
 
 </div>

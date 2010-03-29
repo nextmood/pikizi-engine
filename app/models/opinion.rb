@@ -1,4 +1,5 @@
 require 'mongo_mapper'
+require 'treetop'
 
 # describe an opinion of a user for a given product/feature
 # with associated backgrounds
@@ -29,7 +30,30 @@ class Opinion < Root
   
   timestamps!
 
-
+  def self.parse
+    Treetop.load "./app/models/opinion"
+    parser = OpinionGrammarParser.new
+    [ "iphone is very good",
+      "all products are mixed",
+      "products with nb pixel of camera > 3mpx are very good" ,
+      "hardware of iphone is mixed",
+      "droid worse than iphone",
+      "droid and nexus are very bad" ,
+      "droid and nexus and iphone are same",
+      "iphone ranked first",
+      "nexus rated 4 between 0 and 5",
+      "droid better than all products",
+      "camera of iphone and droid worse than products with camera nb pixel > 3mpx and products compatible with carriers att and sprint" ,
+      "iphone and similar_to iphone same as products compatible with carriers att or sprint and products with brand apple"
+    ].each do |expression|
+      if result = parser.parse(expression)
+        puts "#{expression.inspect} --> #{result.tom}"
+      else
+        puts "******* failure  parsing #{expression.inspect}"
+      end
+    end
+    true
+  end
 
   def self.is_main_document() true end
 

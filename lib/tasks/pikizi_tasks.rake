@@ -417,7 +417,6 @@ namespace :pikizi do
      #Offer.import_all
      #Review.all.each {|r| r.paragraph_sorted_ids = r.paragraphs.collect(&:id); r.save }; true
 
-    #Review.compute_ranking_all
     
     true
   end

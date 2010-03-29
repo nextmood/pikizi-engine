@@ -40,24 +40,8 @@ class Review < Root
 
   many :opinions, :polymorphic => true
 
-  #key :paragraph_sorted_ids, Array
-  #many :paragraphs_sorted, :in => :paragraph_sorted_ids, :class_name => "Paragraph"
-
   many :paragraphs, :order => :ranking_number.asc
   
-  def self.compute_ranking_all() Review.all.each(&:compute_ranking) end
-  def compute_ranking
-    counter = 0
-    paragraphs_sorted.each do |par|
-      par.ranking_number = counter
-      par.review_id = id
-      par.save
-      counter += 1
-    end
-    paragraph_sorted_ids = paragraphs_sorted.collect(&:id)
-    save
-  end
-  #many :paragraphs
 
   timestamps!
 

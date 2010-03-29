@@ -25,14 +25,7 @@
          </table>
 
           <%= link_to("edit this review", "/reviews/edit/#{@review.id}") %>
-          <% if @review.content %>
-             or generate paragraphs by&nbsp;
-             <%= link_to("none", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "none") %>,&nbsp;
-             <%= link_to("&lt;P&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "p") %>,&nbsp;
-             <%= link_to("&lt;BR&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "br") %>,&nbsp;
-             <%= link_to("&lt;P&gt;&amp;&lt;BR&gt;", :controller => "reviews", :action => "split_in_paragraphs", :id => @review.id, :mode => "p_br") %>
-             &nbsp, this will remove all opinions !
-          <% end %>
+          
 
           <% for paragraph in @review.paragraphs %>
               <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
