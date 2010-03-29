@@ -45,10 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="review.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="review.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/review.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="2" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.3008739">
+            <state line="40" column="21" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_short.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reviews/_short.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="56" selection-start="388" selection-end="388" vertical-scroll-proportion="0.075282305">
               <folding />
             </state>
           </provider>
@@ -85,13 +94,13 @@
         <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/_opinion_list.erb" />
         <option value="$PROJECT_DIR$/app/helpers/reviews_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/models/opinion.treetop" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
+        <option value="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
       </list>
     </option>
   </component>
@@ -1050,11 +1059,6 @@
         <state line="33" column="20" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.56011313" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/_short.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="60" selection-start="392" selection-end="392" vertical-scroll-proportion="0.048701297" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reviews/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="71" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.26298702" />
@@ -1103,7 +1107,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="2" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.3008739">
+        <state line="40" column="21" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/_short.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="56" selection-start="388" selection-end="388" vertical-scroll-proportion="0.075282305">
           <folding />
         </state>
       </provider>
