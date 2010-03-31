@@ -1,0 +1,12 @@
+<style type="text/css">
+    .list div { border:1px solid black; float:left; margin-left:5px; margin-bottom:5px;  }
+    .clearBoth { clear:both; }
+    .autocomplete_select { display:none; }
+</style>
+
+<div id="<%= name %>_extra" >
+  <%= render(:partial => "products_selector_bis", :locals => { :name => name, :key_selector => :by_label }) %>
+</div>
+<hr/>
+<div id="<%= name %>_list" class="list"></div>
+<br class="clearBoth" />

@@ -12,7 +12,9 @@ class Knowledge < Root
   key :categories_map, Array # [[key_category_1, label_category_1], ... [key_category_n, label_category_n]]
 
   key :dimension_root, Dimension
-  many :specifications
+  many :dimensions, :polymorphic => true
+
+  many :specifications, :polymorphic => true
   def specifications_root() specifications.select { |s| s.parent_id.nil? } end
   
   many :features, :polymorphic => true   # first level features
@@ -23,8 +25,9 @@ class Knowledge < Root
     questions.sort { |q1, q2| q2.discrimination(user, pidurls) <=> q1.discrimination(user, pidurls) }
   end
 
-  key :product_idurls, Array
-  def products() @products ||= Product.load_db(product_idurls) end
+  #key :product_idurls, Array
+  #def products() @products ||= Product.load_db(product_idurls) end
+  many :products
 
   key :quizze_idurls, Array
   def quizzes() @quizzes ||= Quizze.load_db(quizze_idurls) end
@@ -370,17 +373,17 @@ class Feature < Root
         when "FeatureInterval" then SpecificationInterval
         when "FeatureHeader" then SpecificationHeader
         when "FeatureCondition" then SpecificationCondition
-        when "FeatureText" then SpecificationText
-        when "FeatureTextarea" then SpecificationTextarea
-        when "FeatureUrl" then SpecificationUrl
+        else nil
       end
       specification_attributes.delete("features")
       specification_attributes.delete("_id")
+      specification_attributes.delete("_type")
       specification_attributes["parent_id"] = parent_id
       specification_attributes["knowledge_id"] = knowledge_id
-      puts "creating specification=" << specification_attributes.inspect
-      dimension = dimension_class.create(specification_attributes)
-      features.each {|sub_feature| sub_feature.create_specification(knowledge_id, dimension.id) }
+      #puts "creating specification=" << specification_attributes.inspect
+      specification = dimension_class.create(specification_attributes)
+      puts "creating specification #{idurl} class=#{specification.class}"
+      features.each {|sub_feature| sub_feature.create_specification(knowledge_id, specification.id) }
     else
       puts "#{self.class} #{idurl} is not a specification"
     end

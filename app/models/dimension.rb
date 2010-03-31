@@ -12,7 +12,8 @@ class Dimension
   key :label, String
   key :min_rating, Integer, :default => 1
   key :max_rating, Integer, :default => 5
-
+  key :_type, String # class management
+  
   # nested structure
   key :parent_id # a Dimension object
   belongs_to :parent, :class_name => "Dimension"
@@ -107,8 +108,8 @@ class Dimension
     </div>"
   end
 
-  def get_feature_html()
-    suffix = "#{feature_html_suffix}"
+  def get_specification_html()
+    suffix = "#{specification_html_suffix}"
     "<span title=\"rating (min=#{min_rating}, max=#{max_rating})\">#{label} #{suffix} </span>"
   end
 
@@ -125,7 +126,7 @@ class Dimension
   def xml2value(content_string) Float(content_string.strip) end
   def value2xml(value) value.to_s end
 
-  def feature_html_suffix() "" end
+  def specification_html_suffix() "" end
 
 
   # ---------------------------------------------------------------------

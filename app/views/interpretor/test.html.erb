@@ -1,0 +1,34 @@
+<style type="text/css">
+    label { color:gray; }
+    field { color:darkgray; }
+</style>
+
+<h1>Interpretor for <%= @knowledge.label %> / opinion_id=<%= @opinion.id %></h1>
+
+<table border=1 cellpadding=5>
+  <tr>
+    <td align="right" colspan="2" valign="top">which product(s)?</td>
+    <td colspan="2"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent" }) %></td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>which dimensions are involved?</b>
+      <br/>
+      <%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @knowledge} ) %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      this paragraph describes  
+      <%= radio_buttons("comparator", [ ["a tip", "comparator_tip"],["a comparaison", "comparator_comparaison"], ["a rating", "comparator_rating"], ["a ranking", "comparator_ranking"] ], "tip") %></td>
+  </tr>
+
+  <tr><td colspan="4" id="div_comparator"><%= render(:partial => "comparator_tip") %> </td></tr>
+
+  <tr>
+    
+  </tr>
+
+</table>
+
+<h2>grammar</h2>

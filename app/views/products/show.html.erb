@@ -8,13 +8,29 @@
     .price_table tr td { border-bottom:1px solid black; }
 </style>
 
+
+
 <h1>Editing product</h1>
 
+   <div style="">
+    create a new product with idurl=
+    <%= text_field_tag :new_product_idurl, nil, :size => 20 %>
+        <%= link_to_function("create...", "window.location = '/products/create_byidurl/#{@knowledge.idurl}?product_id=#{@product.id}&new_idurl=' +  document.getElementById('new_product_idurl').value;") %>
+        <span id="create_new_product_message"><%= @messages_creating_product_by_idurl %></span>
+  </div>
+<hr/>
 
-<hr/><h2><%= @product.knowledge.idurl %>/<%= @product.idurl %></h2>
+<h2><%= @knowledge.idurl %>/<%= @product.idurl %></h2>
+
+
     <% form_tag "/products/update_header/#{@product.id}", :multipart => true  do -%>
         <table>
-          <tr></tr><td  align="right"><label>label</label></td><td><%= text_field_tag :label, @product.label, :size => 30, :class => "field" %></td></tr>
+          <tr>
+            <td  align="right"><label>label</label></td>
+            <td>
+              <%= text_field_tag :label, @product.label, :size => 30, :class => "field" %>
+            </td>
+          </tr>
           <tr>
             <td align="right"><label>url</label></td>
             <td>
@@ -41,7 +57,13 @@
             <td align="right"><label>similar products</label></td>
             <td><%= render(:partial => "/products/similar_products", :locals => {:product => @product}) %></td>
           </tr>
-          <tr><td colspan="2" align="center"><%= submit_tag 'Update', :style => "margin-top:5px;" %></td></tr>
+          <tr><td colspan="2" align="center">
+                <%= submit_tag "Update #{@product.label}", :style => "margin-top:5px;" %>
+                <span style="margin-left:30px; margin-top:5px;">
+
+                    <%= submit_tag "Create a new product" %>
+                </span>
+          </td></tr>
         </table>
     <% end %>
 
@@ -75,7 +97,7 @@
 
 <%= render(:partial => "/offers/list", :locals => {:product => @product}) %>
 
-<hr/><h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
+<h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
 <%= render(:partial => "/specifications/list", :locals => {:knowledge => @knowledge, :product => @product}) %>
 
 

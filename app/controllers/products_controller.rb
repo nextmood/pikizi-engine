@@ -14,6 +14,26 @@ class ProductsController < ApplicationController
     end
   end
 
+  # get /products/create_byidurl/knowledge_idurl
+  def create_byidurl
+    @messages_creating_product_by_idurl = nil
+    @product = nil
+    @knowledge = Knowledge.first(:idurl => params[:id])
+    if new_idurl = params[:new_idurl] and new_idurl.size > 7
+
+      if Product.first(:idurl => new_idurl)
+        @messages_creating_product_by_idurl = "<span style=\"color:red;\">#{new_idurl} already exists</span>"
+      else
+        @product = @knowledge.products.create(:idurl => new_idurl, :label => new_idurl)
+        @messages_creating_product_by_idurl = "<span style=\"color:green;\">product with idurl=#{new_idurl.inspect} created, please edit below</span>"
+      end
+    else
+      @messages_creating_product_by_idurl = "<span style=\"color:red;\">idurl=#{new_idurl.inspect} is wrong</span>"
+    end
+    @product ||= Product.find(params[:product_id])
+    render(:action => "show")
+  end
+
   # post /products/update/id
   def update
     @product = Product.find(params[:id])

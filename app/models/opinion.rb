@@ -1,6 +1,36 @@
 require 'mongo_mapper'
 require 'treetop'
 
+
+class RelatedTo
+  include MongoMapper::EmbeddedDocument
+end
+
+class RelatedToSpecification < RelatedTo
+  key :specification_id, Mongo::ObjectID
+end
+
+class RelatedToSpecificationTag < RelatedToSpecification
+  key :tag_idurl, String
+end
+
+class RelatedToDimension < RelatedTo
+  key :dimension_id, Mongo::ObjectID
+end
+
+class ProductsFilter
+  include MongoMapper::EmbeddedDocument  
+end
+
+class ProductByLabel < ProductsFilter
+  key :product_id, Mongo::ObjectID
+end
+
+class ProductsBySpec < ProductsFilter
+  key :specification_id, Mongo::ObjectID
+  key :list_or_filters, Array, :default =>[] # list of filter for the spec   if a or/and expression
+end
+
 # describe an opinion of a user for a given product/feature
 # with associated backgrounds
 # rating in between ).0 and 1.0
@@ -15,7 +45,8 @@ class Opinion < Root
   key :usage, String
   key :extract, String
   key :value_oriented, Boolean
-  
+  key :validated_by_creator, Boolean, :default => false
+
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review
 
@@ -25,9 +56,12 @@ class Opinion < Root
   key :paragraph_id, Mongo::ObjectID # from which paragraph (if any) this opinion was extracted
   belongs_to :paragraph
 
-  key :product_ids, Array # an Array pg Mongo Object Id defining the products for this opinion
+  key :product_ids, Array # an Array pg Mongo Object Id defining the products related to this opinion
   many :products, :in => :product_ids
-  
+
+  key :conjonction_product_referent, Array, :default => [] # an array of ProductsFilter
+  key :conjonction_features_related, Array, :default => [] # an array of RelatedTo
+
   timestamps!
 
   def self.parse

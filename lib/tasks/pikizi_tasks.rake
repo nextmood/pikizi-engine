@@ -384,15 +384,18 @@ namespace :pikizi do
 
       #product.save
 
-      # 4) Creating Dimension Objects...
-      #Dimension.import
 
-      # 5) Creating Specification Objects...
-      #Specification.delete_all;
-      #knowledge.features.each {|f| f.create_specification(knowledge.id) }
 
      
     end
+
+    # 4) Creating Dimension Objects...
+      #Dimension.import
+
+    # 5) Creating Specification Objects...
+    Specification.delete_all;
+    knowledge.features.each {|f| f.create_specification(knowledge.id) }
+
 
 #    Review.all.each do |review|
 #      if review.product_ids.nil? or review.product_ids.size == 0

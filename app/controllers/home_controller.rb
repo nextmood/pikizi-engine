@@ -83,7 +83,7 @@ class HomeController < ApplicationController
     products_found = @knowledge.products.select { |p| p.match_search(@search_string) }.first(20)
     @nb_results = products_found.size
     if products_found.size > 0
-      hash_category_products = products_found.group_by {|product| product.get_value("phone_category") }
+      hash_category_products = products_found.group_by {|product| product.get_value("phone_category") || ["unknown"]}
       @list_category_products = hash_category_products.collect { |categories, products| [categories.join(', '), products] }
       @last_category = @list_category_products.last.first
     else

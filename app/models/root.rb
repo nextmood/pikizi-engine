@@ -197,7 +197,16 @@ class String
       [:twitter, String.is_not_empty(remove_prefix(prefix))]
     end
   end
-  
+
+  def ensure_size(s)
+    if size < s
+      self << " " * (s - size)
+      # complete with xxx
+    else
+      self[0, s]  
+    end
+  end
+
 end
 
 class Float

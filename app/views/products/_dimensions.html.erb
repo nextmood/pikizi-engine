@@ -1,7 +1,7 @@
 <div id="dimensions_<%= dimension_parent_id %>" >
     <% for dimension in dimensions %>
         <div class="pkz_specification_level_<%= dimension.level %>">
-          <b><%= dimension.get_feature_html %></b>
+          <b><%= dimension.get_specification_html %></b>
           <%= dimension.get_value_html(product) %>
 
           <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") %>

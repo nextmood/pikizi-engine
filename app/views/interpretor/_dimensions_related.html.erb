@@ -1,0 +1,38 @@
+
+<% form_remote_tag :url => "/interpretor/add_feature_related" do -%>
+    <% dimension_root = knowledge.dimension_root %>
+    <% dimensions_l1 = dimension_root.children %>
+    <table border=1>
+
+      <tr>
+            <td  valign="top">Overall</td>
+            <% for dimension in dimensions_l1 %>
+                <td  valign="top"><%= check_box_tag "value_oriented" %><span title="idurl=<%= dimension.idurl %>"><%= dimension.label %><span></td>
+            <% end %>
+      </tr>
+
+      <tr>
+        <td valign="top">
+          <%= check_box_tag "value_oriented" %><span title="idurl=<%= dimension_root.idurl %>"> overall spec<span><br/>
+          <%= check_box_tag "value_oriented" %><span style="margin-left:30px;"> good for value</span>
+        </td>
+          <% for dimension in knowledge.dimension_root.children %>
+              <td valign="top">
+                <% for dimension in dimension.children %>
+                    <%= check_box_tag "value_oriented" %><span title="idurl=<%= dimension.idurl %>"><%= dimension.label %><span><br/>
+                <% end %>
+              </td>
+          <% end %>
+      </tr>
+
+    </table>
+
+
+<% end -%>
+
+
+
+
+
+
+        

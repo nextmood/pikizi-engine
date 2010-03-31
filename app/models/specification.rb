@@ -1,4 +1,5 @@
 require 'mongo_mapper'
+require 'text'
 
 # describe a Specification of the product
 # this is a hierarchy mechanism
@@ -12,7 +13,8 @@ class Specification
   key :label, String
   key :is_optional, Boolean, :default => false
   key :should_display, Boolean, :default => true
-
+  key :_type, String # class management
+  
 
   # knowledge
   key :knowledge_id
@@ -37,12 +39,27 @@ class Specification
 
   def label_full() is_root? ? label : "#{parent.label_full}/#{label}" end
 
-  def label_select_tag(rec=nil)
+  def label_select_tag(rec=nil, full = nil)
     if rec
-      is_root? ? "" : "...#{parent.label_select_tag(true)}"
+      is_root? ? "" : "#{full ? label << ':' : '...'}#{parent.label_select_tag(true, full)}"
     else
-      "#{label_select_tag(true)}#{label}"
+      "#{label_select_tag(true, full)}#{label}"
     end
+  end
+
+  def self.most_common() @@most_common ||= Specification.first(:idurl => "brand"); end
+  
+  # return a list of secification labe simialr to input
+  def self.similar_to(input, reset=nil)
+    @@specification_labels = nil if reset
+    @@specification_labels ||= Specification.all.collect { |s| [s.label_select_tag(nil), s.label.ensure_size(50), s.id] }
+    if input and input != ""
+      specification_labels_sorted = @@specification_labels.collect { |lf, l, sid|   [lf, l, sid, Text::Levenshtein.distance(l, input)] }
+      specification_labels_sorted.sort! { |l1, l2| l1.last <=> l2.last }
+      specification_labels_sorted
+    else
+      @@specification_labels
+    end.collect { |lf, l, sid, d| [l, sid] }.first(20)
   end
 
   def self.initialize_from_xml(xml_node)
@@ -99,8 +116,8 @@ class Specification
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{feature_html_suffix}" end
-  def feature_html_suffix()
+  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{specification_html_suffix}" end
+  def specification_html_suffix()
     "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" unless is_optional
   end
   # this is included in a form

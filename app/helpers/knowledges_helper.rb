@@ -8,7 +8,8 @@ module KnowledgesHelper
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.idurl}") ],
       [ :quizzes , link_to(pluralize(knowledge.nb_quizzes, "quizze"), "/quizzes/#{knowledge.idurl}")   ] ,
       [ :users , link_to("users", "/users")   ],
-      [ :usage , link_to(pluralize(Opinion.count, "opinions"), "/products_opinions/#{knowledge.idurl}")   ]
+      [ :usage , link_to(pluralize(Opinion.count, "opinions"), "/products_opinions/#{knowledge.idurl}")   ],
+      [ :interpretor , "interpretor", "/interpretor/show/#{knowledge.idurl}"   ]
     ]
   end
 

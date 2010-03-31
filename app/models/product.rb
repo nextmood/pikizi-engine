@@ -70,6 +70,13 @@ class Product < Root
     l
   end
 
+  # return a list of secification labe simialr to input
+  def self.similar_to(input, reset=nil)
+    @@product_labels = nil if reset
+    @@product_labels ||= Product.all.collect(&:label)
+  end
+
+
   def fillup_image_ids
     knowledge_idurl = knowledge.idurl
     path = "public/domains/#{knowledge_idurl}/products/#{idurl}/images"

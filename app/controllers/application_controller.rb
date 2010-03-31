@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
   def get_logged_user()
     if session[:logged_user_id]
       begin
-        @current_user ||= User.load_db(session[:logged_user_id])
+        @current_knowledge = Knowledge.first
+        @current_user ||= User.load_db(session[:logged_user_id])        
       rescue
         logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
         nil

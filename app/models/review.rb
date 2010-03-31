@@ -115,7 +115,7 @@ class Review < Root
   def to_xml_bis
     node_review = XML::Node.new(self.class.to_s)
     node_review['id'] = id.to_s
-    node_review['product_idurl'] = product.idurl
+    node_review['product_idurls'] = products.collect(&:idurl).join(", ")
     node_review['category'] = category
     node_review['written_at'] = written_at.strftime(Root.default_date_format)
 
