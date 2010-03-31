@@ -26,7 +26,26 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="specification.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/specification.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="426" column="67" selection-start="14271" selection-end="14271" vertical-scroll-proportion="6.3979974">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="knowledge.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="515" column="6" selection-start="18911" selection-end="18917" vertical-scroll-proportion="-237.6923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -47,7 +66,6 @@
         <option value="$PROJECT_DIR$/app/views/interpretor/_products_selector_by_specification.html.erb" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/dimension.rb" />
-        <option value="$PROJECT_DIR$/app/models/specification.rb" />
         <option value="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" />
         <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
@@ -55,6 +73,7 @@
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/products_helper.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/models/specification.rb" />
       </list>
     </option>
   </component>
@@ -603,7 +622,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="101" y="26" width="2012" height="1407" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -612,7 +631,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20321931" sideWeight="0.64965725" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3450114" sideWeight="0.998994" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3450114" sideWeight="0.998994" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -681,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/specification.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="31" selection-start="4346" selection-end="4346" vertical-scroll-proportion="-10.038462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/_dimensions.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="44" selection-start="201" selection-end="201" vertical-scroll-proportion="-1.8947369">
@@ -751,16 +763,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/dimension.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="3" selection-start="880" selection-end="880" vertical-scroll-proportion="0.43021768">
+        <state line="128" column="24" selection-start="4557" selection-end="4575" vertical-scroll-proportion="0.997351">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dimension.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="24" selection-start="4557" selection-end="4575" vertical-scroll-proportion="0.997351">
+        <state line="515" column="6" selection-start="18911" selection-end="18917" vertical-scroll-proportion="-237.6923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/specification.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="426" column="67" selection-start="14271" selection-end="14271" vertical-scroll-proportion="6.3979974">
           <folding />
         </state>
       </provider>

@@ -12,7 +12,7 @@ class Specification
   key :idurl, String # unique url
   key :label, String
   key :is_optional, Boolean, :default => false
-  key :should_display, Boolean, :default => true
+  key :display_flag, Boolean, :default => true
   key :_type, String # class management
   
 
@@ -65,7 +65,7 @@ class Specification
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
     feature.is_optional = xml_node['is_optional']
-    feature.should_display = xml_node['no-spec'] ? true : false
+    feature.display_flag = xml_node['no-spec'] ? true : false
     feature.read_xml_list(xml_node, "Specification", :container_tag => 'sub_features')
     feature
   end
@@ -73,7 +73,7 @@ class Specification
   def generate_xml(top_node)
     node_feature = super(top_node)
     node_feature['is_optional'] = "true" if is_optional
-    node_feature['no-spec'] = "true" if should_display
+    node_feature['no-spec'] = "true" if display_flag
     Root.write_xml_list(node_feature, features, 'sub_features')
     node_feature
   end
@@ -153,7 +153,7 @@ class Specification
   end
 
   # this is related to display the specification
-  def should_display?(product) !should_display and (parent ? parent.should_display?(product) : true) end
+  def should_display?(product) !display_flag and (parent ? parent.should_display?(product) : true) end
 
 
 
