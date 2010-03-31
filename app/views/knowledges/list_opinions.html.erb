@@ -12,7 +12,32 @@
   <%= render(:partial => "/knowledges/products_selection",
         :locals => { :page_url => "/products_opinions/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
 
+  <h2>stats</h2>
+    <table border=1 cellpadding=2>
+      <tr><th></th><th>nb reviews</th><th>nb opinions</th><th>Tip</th><th>Rating</th><th>Comparator</th></tr>
+      <tr><th>Source / Total</th>
+        <th align="right"><%= Review.count %></th>
+        <th align="right"><%= Opinion.count %></th>
+        <th align="right"><%= Opinion::Tip.count %></th>
+        <th align="right"><%= Opinion::Rating.count %></th>
+        <th align="right"><%= Opinion::Comparator.count %></th>
+      </tr>
+      <%= by_source = Review.all.group_by { |r| r.source }.collect { |source, reviews| [source, reviews] }
+          by_source.sort! { |o1, o2| o2.last.size <=> o1.last.size }
+          by_source.collect do |source, reviews|
+        "<tr>
+            <td>#{source.inspect}</td>
+            <td align=\"right\">#{reviews.size}</td>
+            <td align=\"right\">#{Opinion.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Opinion::Tip.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Opinion::Rating.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Opinion::Comparator.count(:review_id => reviews.collect(&:id))}</td>
+        </tr>"
+        end.join %>
+    </table>
 
+  <hr/>
+  
     <table border=1>
       <tr><th>product</th> <th>opinions</th></tr>
 

@@ -288,3 +288,686 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:16:51) [GET]
   Parameters: {"id"=>"4ba78e5f43a76d710b000b1e"}
 Sending data 
 Completed in 157ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5f43a76d710b000b1e]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:26:48) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (1.1ms)
+Rendered knowledges/_products_selection (26.3ms)
+Completed in 1574ms (View: 1174 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:26:50) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 124ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:26:50) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:26:50) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 216ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:27:53) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (22.0ms)
+Completed in 1370ms (View: 984 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:27:54) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 217ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:27:54) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 65ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:27:55) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 178ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:29:55) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.9ms)
+Completed in 1504ms (View: 947 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:29:57) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 238ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:29:57) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:29:57) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 207ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:32:52) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+ERROR: compiling _run_erb_app47views47knowledges47list_opinions46html46erb RAISED compile error
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:17: syntax error, unexpected ')'
+... }.each do |source, reviews| ).to_s)
+                              ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:52: syntax error, unexpected kENSURE, expecting ')'
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:54: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47knowledges47list_opinions46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n\n\n<div class=\"pkz_box\">\n\n  "
+
+
+
+
+; @output_buffer.concat(( model_selector(@knowledge, :matrix) ).to_s); @output_buffer.concat "\n\n  <div>\n    "
+
+
+; @output_buffer.concat(( link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") ).to_s); @output_buffer.concat "\n  </div>\n\n  "
+
+
+; @output_buffer.concat(( render(:partial => "/knowledges/products_selection",
+        :locals => { :page_url => "/products_opinions/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) ).to_s); @output_buffer.concat "\n\n  <h2>stats</h2>\n    <table>\n      "
+
+
+
+; @output_buffer.concat(( Opinion.all.group_by { |o| o.review.source }.each do |source, reviews| ).to_s)
+@output_buffer.concat "\n        <tr><td>"
+; @output_buffer.concat(( source ).to_s); @output_buffer.concat "</td><td>"; @output_buffer.concat(( reviews.size ).to_s); @output_buffer.concat "</td></tr>\n      "
+;  end 
+@output_buffer.concat "      <tr><th>Total</th><th>"; @output_buffer.concat(( Opinion.count ).to_s); @output_buffer.concat "</th></tr>\n    </table>\n\n  <hr/>\n  \n    <table border=1>\n      <tr><th>product</th> <th>opinions</th></tr>\n\n        "
+
+
+
+
+
+
+
+;  for product in @products_selected ; @output_buffer.concat "\n          <tr>\n            <td valign=\"top\">\n              "
+
+
+; @output_buffer.concat(( link_to("#{product_image(product)}<br/>#{product.label}", "/products/#{product.idurl}") ).to_s); @output_buffer.concat "\n            </td>\n            <td valign=\"top\">\n                <ul>\n                  "
+
+
+
+;  for opinion in product.opinions(:except_review_category => "amazon") ; @output_buffer.concat "\n                    <li>"
+; @output_buffer.concat(( opinion.to_html ).to_s); @output_buffer.concat " "; @output_buffer.concat(( origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") ).to_s); @output_buffer.concat "\n                      </li>\n                  "
+
+;  end ; @output_buffer.concat "\n                </ul>\n            </td>\n\n           </tr>\n\n        "
+
+
+
+
+
+;  end ; @output_buffer.concat "\n    </table>\n\n</div>\n\n\n"
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:54:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/script/server:3
+-e:1:in `load'
+-e:1
+
+ActionView::TemplateError (compile error
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:17: syntax error, unexpected ')'
+... }.each do |source, reviews| ).to_s)
+                              ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:52: syntax error, unexpected kENSURE, expecting ')'
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/views/knowledges/list_opinions.html.erb:54: syntax error, unexpected kEND, expecting ')') on line #17 of app/views/knowledges/list_opinions.html.erb:
+14: 
+15:   <h2>stats</h2>
+16:     <table>
+17:       <%= Opinion.all.group_by { |o| o.review.source }.each do |source, reviews| -%>
+18: 
+19:         <tr><td><%= source %></td><td><%= reviews.size %></td></tr>
+20:       <% end -%>
+
+    app/views/knowledges/list_opinions.html.erb:54:in `compile!'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (28.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:34:22) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.7ms)
+Completed in 13118ms (View: 12780 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:34:35) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:34:35) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 111ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:34:35) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 92ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:38:20) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.4ms)
+Completed in 2893ms (View: 2464 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:38:23) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 79ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:38:24) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 69ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:38:24) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 276ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:40:54) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (22.0ms)
+Completed in 2891ms (View: 2543 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:40:57) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 90ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:40:57) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 71ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:40:57) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 261ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:41:25) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.6ms)
+Completed in 2856ms (View: 2494 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:41:28) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 307ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:41:28) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:41:28) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:44:37) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.4ms)
+Completed in 2964ms (View: 2578 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:44:40) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 110ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:44:40) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 441ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:44:41) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 65ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:46:09) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (22.3ms)
+Completed in 3293ms (View: 2864 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:46:13) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 77ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:46:13) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 63ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:46:13) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 364ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:47:05) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (23.1ms)
+Completed in 3162ms (View: 2937 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:47:09) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 371ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:47:09) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 69ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:47:09) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 67ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:48:46) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.8ms)
+Completed in 3447ms (View: 2972 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:48:50) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 88ms (View: 12 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:48:50) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:48:50) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:49:50) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (22.1ms)
+Completed in 3662ms (View: 3027 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:49:54) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 91ms (View: 13 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:49:55) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 64ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:49:55) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 70ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:50:58) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.4ms)
+Completed in 3770ms (View: 3282 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:02) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 72ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:02) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 67ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:02) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:51:20) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (28.8ms)
+Completed in 3792ms (View: 3263 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:24) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 90ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:24) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 397ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:24) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 66ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:51:31) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.0ms)
+Completed in 3412ms (View: 2917 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:36) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 89ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:36) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 68ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:51:36) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 95ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:52:12) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.4ms)
+Completed in 3945ms (View: 3422 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:16) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 122ms (View: 15 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:16) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 63ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:16) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 449ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:52:30) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (21.6ms)
+Completed in 3696ms (View: 3515 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:34) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 88ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:34) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 69ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:52:34) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 67ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:55:22) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (23.8ms)
+Completed in 3836ms (View: 3657 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:26) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 81ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:26) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 65ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:26) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 468ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing KnowledgesController#list_opinions (for 127.0.0.1 at 2010-03-31 17:55:41) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/list_opinions
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (22.3ms)
+Completed in 3659ms (View: 3472 | 200 OK [http://localhost/products_opinions/cell_phones]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:45) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 93ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:46) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 77ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-03-31 17:55:46) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 87ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
