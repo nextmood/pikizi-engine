@@ -86,8 +86,8 @@
 <br class="clearBoth" />
 
 <hr/><h2>Dimensions</h2>
-<div class="">
-  <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @knowledge, :dimensions => [@knowledge.dimension_root], :dimension_parent_id => nil, :product => @product}) %>
+<div id="list_specifications" class="">
+  <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @knowledge, :dimensions => [@knowledge.dimension_root], :product => @product}) %>
 </div>
 <hr/><h2>availability and merchants</h2>
 

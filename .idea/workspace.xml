@@ -5,54 +5,42 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/knowledges/list_opinions.html.erb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" afterPath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" afterPath="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/helpers/interpretor_helper_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/functional/interpretor_controller_test.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/root.rb" afterPath="$PROJECT_DIR$/app/models/root.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/show.html.erb" afterPath="$PROJECT_DIR$/app/views/products/show.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/init.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/test/auto_complete_test.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dimension.rb" afterPath="$PROJECT_DIR$/app/models/dimension.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/show.xml.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/grand.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/Rakefile" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/home_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/home_helper.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/lib/auto_complete_macros_helper.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/lib/auto_complete.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_by_specification.html.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/database.yml.mongo" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/show.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_dimensions_related.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_comparaison.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/specification.rb" afterPath="$PROJECT_DIR$/app/models/specification.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_product_label.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/interpretor_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_tip.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/petit.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_ranking.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" afterPath="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" afterPath="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/root.rb" afterPath="$PROJECT_DIR$/app/models/root.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/init.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/_product_tab_ratings_bis.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/test/auto_complete_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/grand.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/Rakefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/show.xml.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/database.yml.mongo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_bis.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/availability.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/opinion.treetop" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/products.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/backgrounds.yml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/specification.rb" afterPath="$PROJECT_DIR$/app/models/specification.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/products/_dimension_edit.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/spinner.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/users.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/interpretor_helper.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/test.html.erb" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/interpretor/_related.html.erb" afterPath="$PROJECT_DIR$/app/views/products/_dimension_create.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaders/media_uploader.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_product_tab_ratings.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_product_tab_ratings.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_rating.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/knowledge.rb" afterPath="$PROJECT_DIR$/app/models/knowledge.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/petit.rb" afterPath="" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="pikizi-engine.iws" />
@@ -76,19 +64,37 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+      <file leaf-file-name="_dimension_edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/_dimension_edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="221" selection-end="316" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opinion.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+      <file leaf-file-name="_dimensions.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/_dimensions.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.14457831">
+            <state line="14" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="-3.7333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="28" selection-start="3445" selection-end="3464" vertical-scroll-proportion="-5.6842103">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="125" column="60" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.44215938">
               <folding />
             </state>
           </provider>
@@ -107,10 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" />
-        <option value="$PROJECT_DIR$/lib/gmail_extract.rb" />
-        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/models/opinion.treetop" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_related.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/interpretor_helper.rb" />
@@ -118,11 +120,15 @@
         <option value="$PROJECT_DIR$/app/views/interpretor/test.html.erb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_products_selector_bis.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/dimension.rb" />
         <option value="$PROJECT_DIR$/app/views/home/_product_tab_ratings.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_product_tab_ratings_bis.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/dimensions/_edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/products/_dimension_edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/products/_dimensions.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
       </list>
     </option>
   </component>
@@ -322,6 +328,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="products" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -728,9 +760,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38011697" sideWeight="0.99752325" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958263" sideWeight="0.6461988" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29396984" sideWeight="0.66959065" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2118928" sideWeight="0.66959065" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32017544" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32017544" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -771,16 +803,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/home/products_search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="9" selection-start="414" selection-end="431" vertical-scroll-proportion="0.32142857" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_list.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="11" selection-start="1198" selection-end="1267" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/_similar_products.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="405" selection-end="820" vertical-scroll-proportion="0.64285713" />
@@ -821,27 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.1818182">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="31" selection-start="4381" selection-end="4381" vertical-scroll-proportion="0.3180723">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/_dimensions.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.030303031">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/_product_tab_ratings_bis.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="26" selection-start="120" selection-end="120" vertical-scroll-proportion="0.08759124">
@@ -872,7 +873,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.14457831">
+        <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/_dimension_create.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="28" selection-start="3445" selection-end="3464" vertical-scroll-proportion="-5.6842103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/_dimension_edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/_dimensions.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="-3.7333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="60" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.44215938">
           <folding />
         </state>
       </provider>

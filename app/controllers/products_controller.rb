@@ -119,8 +119,20 @@ class ProductsController < ApplicationController
     params[:dimension][:parent_id] = Mongo::ObjectID.from_string(params[:dimension][:parent_id])
     dimension.update_attributes(params[:dimension])
     render :update do |page|
-      page.replace("dimensions_", :partial => "dimensions",
-         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :dimension_parent_id => nil, :product => product })
+      page.replace_html("list_specifications", :partial => "dimensions",
+         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
+    end
+  end
+
+  # this si a rjs
+  def edit_dimension_open
+    dimension_id = Mongo::ObjectID.from_string(params[:id])
+    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
+    product = Product.find(params[:product_id])
+
+    render :update do |page|    
+      page.replace_html("div_dimension_extra_#{dimension.id}", :partial => "/products/dimension_edit",
+         :locals => { :knowledge => @current_knowledge, :dimension => dimension, :product => product })
     end
   end
 
