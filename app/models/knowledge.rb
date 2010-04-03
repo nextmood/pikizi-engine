@@ -366,7 +366,7 @@ class Feature < Root
 
   def create_specification(knowledge_id, parent_id=nil)
     specification_attributes = attributes.clone
-    if dimension_class = case specification_attributes.delete("_type")
+    if specification_class = case specification_attributes.delete("_type")
         when "FeatureTags" then SpecificationTags
         when "FeatureNumeric" then SpecificationNumeric
         when "FeatureDate" then SpecificationDate
@@ -381,7 +381,7 @@ class Feature < Root
       specification_attributes["parent_id"] = parent_id
       specification_attributes["knowledge_id"] = knowledge_id
       #puts "creating specification=" << specification_attributes.inspect
-      specification = dimension_class.create(specification_attributes)
+      specification = specification_class.create(specification_attributes)
       puts "creating specification #{idurl} class=#{specification.class}"
       features.each {|sub_feature| sub_feature.create_specification(knowledge_id, specification.id) }
     else

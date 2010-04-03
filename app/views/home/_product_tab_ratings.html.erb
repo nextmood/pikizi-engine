@@ -1,29 +1,7 @@
 <br/>
-<% hash_fidurl_category_opinions = product.get_ratings_group_by_feature_and_category %>
+<div style="border-bottom:1px solid black;">
+  <%= render(:partial => "product_tab_ratings_bis",
+             :locals => { :dimension => @current_knowledge.dimension_root, :level => 0, :product => product}) %>
+</div>
 
-<% for feature_rating in knowledge.feature_ratings %>
-    <% hash_category_opinions = hash_fidurl_category_opinions[feature_rating.idurl] %>
-    <div style="border-bottom:1px solid black;">
-      <%= feature_rating.get_value_html(product) %>
-      <%= simpler_rating_label(feature_rating.label) %>
-      <% if hash_category_opinions and hash_category_opinions.size > 0 %>
-        <%= link_to_function("details", "document.getElementById('details_#{feature_rating.idurl}').toggle();", :style => "font-size:80%;") %>
 
-        <div id="details_<%= feature_rating.idurl %>" style="display:none;">
-           <% for category, weight in Review.categories %>
-             <% if hash_opinions = hash_category_opinions[category] and hash_opinions[:weighted_avg_01] %>
-                 <div>
-                    <%= feature_rating.stars_html(hash_opinions[:weighted_avg_01]) %>
-                   in category <span title="category=<%= category %> weight=<%= weight %>"><%= category %></span>,
-                   through <%= pluralize(hash_opinions[:reviews].size, "review") %>
-                 </div>
-             <% end %>
-            <% end %>
-          </table>
-        </div>
-      <% else %>
-        <span style="font-size:80%;">no reviews yet <%= feature_rating.idurl %></span>
-      <% end %>
-
-    </div>
-<% end %>

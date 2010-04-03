@@ -1,35 +1,9 @@
 require 'mongo_mapper'
 require 'treetop'
 
-
-class RelatedTo
-  include MongoMapper::EmbeddedDocument
-end
-
-class RelatedToSpecification < RelatedTo
-  key :specification_id, Mongo::ObjectID
-end
-
-class RelatedToSpecificationTag < RelatedToSpecification
-  key :tag_idurl, String
-end
-
-class RelatedToDimension < RelatedTo
-  key :dimension_id, Mongo::ObjectID
-end
-
-class ProductsFilter
-  include MongoMapper::EmbeddedDocument  
-end
-
-class ProductByLabel < ProductsFilter
-  key :product_id, Mongo::ObjectID
-end
-
-class ProductsBySpec < ProductsFilter
-  key :specification_id, Mongo::ObjectID
-  key :list_or_filters, Array, :default =>[] # list of filter for the spec   if a or/and expression
-end
+# UPDATE Production
+# kid = Knowledge.first.id; Dimension.all.each { |d| d.knowledge_id = kid; d.save; }; true
+# Opinion.update2_opinion
 
 # describe an opinion of a user for a given product/feature
 # with associated backgrounds
@@ -59,10 +33,24 @@ class Opinion < Root
   key :product_ids, Array # an Array pg Mongo Object Id defining the products related to this opinion
   many :products, :in => :product_ids
 
-  key :conjonction_product_referent, Array, :default => [] # an array of ProductsFilter
-  key :conjonction_features_related, Array, :default => [] # an array of RelatedTo
+  many :products_filters, :polymorphic => true
+  def products_filters_for(name) products_filters.select { |pf| pf.products_selector_dom_name == name } end
+
+  key :dimension_ids, Array, :default => [] # an Array pg Mongo Object Id defining the dimensions related to this opinion  
+  many :dimensions, :polymorphic => true, :in => :dimension_ids
 
   timestamps!
+
+  def self.update2_opinion
+    Opinion.all.each_with_index do |o, i|
+      if d = Dimension.first(:idurl => o.feature_rating_idurl)
+        o.update_attributes(:dimension_ids => [d.id])
+      else
+        puts "#{i}= #{o.id} no dimension #{o.feature_rating_idurl.inspect}"
+      end
+    end
+    true
+  end
 
   def self.parse
     Treetop.load "./app/models/opinion"
@@ -121,6 +109,17 @@ class Opinion < Root
     end
     header.concat(l_select)
     header
+  end
+
+  def self.create_products_filters
+    Opinion.all.each do |o|
+      o.products_filters ||= []
+      o.products.collect do |p|
+        o.products_filters << ProductByLabel.create(:opinion_id => o.id, :products_selector_dom_name => "referent", :display_as => p.label, :product_id => p.id )
+      end
+      o.save
+    end
+    true
   end
 
 end
@@ -182,7 +181,7 @@ class Tip < Opinion
   key :intensity_symbol, String
 
   def to_html(options={})
-    s = "#{intensity_as_label} (#{feature_rating_idurl}#{value_oriented_html})"
+    s = products_filters_for("referent").collect(&:display_as).join(', ') << " is #{intensity_as_label} (#{feature_rating_idurl}#{value_oriented_html})"
     if options[:origin]
       p = paragraph
       s << "&nbsp;<small><a href=\"/reviews/show/#{review.id}?opinion_id=#{self.id}\" >#{review.source}"

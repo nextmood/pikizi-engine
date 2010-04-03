@@ -1,0 +1,18 @@
+
+
+
+
+
+<table width="100%">
+  <tr>
+    <td width="320"  valign="top"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent", :opinion => @current_opinion }) %></td>
+    <td   class="comparator_operator" align="center"  valign="top">
+          <%= radio_button_tag("comparator_operator", "comparator_better", true) %>better than<br/>
+          <%= radio_button_tag("comparator_operator", "comparator_same") %>same as<br/>
+          <%= radio_button_tag("comparator_operator", "comparator_worse") %>worse than<br/>
+          <%= check_box_value("comparator", "font-size:80%; font-weight:normal; margin-top:5px;") %>
+    </td>
+    <td width="320"  valign="top" ><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "compare_with", :opinion => @current_opinion }) %></td>
+  </tr>
+
+</table>

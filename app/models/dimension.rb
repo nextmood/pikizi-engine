@@ -13,11 +13,14 @@ class Dimension
   key :min_rating, Integer, :default => 1
   key :max_rating, Integer, :default => 5
   key :_type, String # class management
+  key :ranking_number, Integer, :default => 0
+  key :is_aggregate, Boolean, :default => false
   
   # nested structure
   key :parent_id # a Dimension object
   belongs_to :parent, :class_name => "Dimension"
-  
+  many :children_db, :class_name => "Dimension", :foreign_key => "parent_id", :order => "ranking_number"
+
   # knowledge
   key :knowledge_id
   belongs_to :knowledge
@@ -39,7 +42,7 @@ class Dimension
     ["hardware_rating", "communication_rating", "overall_functionality_performance_rating", "apps_rating", "overall_value", "overall_spec"].each do |feature_idurl|
       unless get_dimension_by_idurl(feature_idurl)
         # create the dimension
-        Dimension.create(:idurl => feature_idurl, :label => feature_idurl, :min_rating => 0, :max_rating => 10, :parent_id => dimension_root.id)
+        Dimension.create(:idurl => feature_idurl, :label => feature_idurl, :min_rating => 0, :max_rating => 10, :parent_id => dimension_root.id, :knowledge_id => knowledge.id)
       end
     end
 
@@ -69,7 +72,7 @@ class Dimension
   def self.get_dimension_by_idurl(idurl) Dimension.first(:idurl => idurl) end
 
   # return all children
-  def children() @children ||= Dimension.all(:knowledge_id => knowledge_id, :parent_id => id) end
+  def children() @children ||= children_db end
 
   def product_template_comment() "a number between #{min_rating} and #{max_rating}" end
 

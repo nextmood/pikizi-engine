@@ -49,18 +49,6 @@ class Specification
 
   def self.most_common() @@most_common ||= Specification.first(:idurl => "brand"); end
   
-  # return a list of secification labe simialr to input
-  def self.similar_to(input, reset=nil)
-    @@specification_labels = nil if reset
-    @@specification_labels ||= Specification.all.collect { |s| [s.label_select_tag(nil), s.label.ensure_size(50), s.id] }
-    if input and input != ""
-      specification_labels_sorted = @@specification_labels.collect { |lf, l, sid|   [lf, l, sid, Text::Levenshtein.distance(l, input)] }
-      specification_labels_sorted.sort! { |l1, l2| l1.last <=> l2.last }
-      specification_labels_sorted
-    else
-      @@specification_labels
-    end.collect { |lf, l, sid, d| [l, sid] }.first(20)
-  end
 
   def self.initialize_from_xml(xml_node)
     feature = super(xml_node)
@@ -272,11 +260,14 @@ class SpecificationTags < Specification
   end
 
   def get_value_html(product)
-    if idurls_ok = get_value(product)
-      tags.select { |t| idurls_ok.include?(t.idurl) }.collect {|t| "#{t.label}" }.join(', ')
+    if tag_idurls_ok = get_value(product)
+      tags.select { |t| tag_idurls_ok.include?(t.idurl) }.collect {|t| "#{t.label}" }.join(', ')
     end
+
   end
 
+  def lookup_tag_by_idurl(tag_idurl) tags.detect { |t| t.idurl == tag_idurl } end
+  
   # this is included in a form
   def get_value_edit_html(product)
     type_button = is_exclusive ? 'radio' : 'checkbox'

@@ -1,0 +1,12 @@
+<div style="margin-bottom:4px;">
+    <%= '&nbsp;&nbsp;' * level %>
+    <%= dimension.label %>
+    <%= '&nbsp;&nbsp;' * (5 - level) %>
+    <%= dimension.get_value_html(product) %>
+
+</div>
+<% for sub_dimension in dimension.children %>
+    <%= render(:partial => "product_tab_ratings_bis",
+               :locals => { :dimension => sub_dimension, :level => level + 1, :product => product}) %>
+
+<% end %>

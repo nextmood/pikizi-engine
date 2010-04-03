@@ -1,34 +1,57 @@
 <style type="text/css">
     label { color:gray; }
     field { color:darkgray; }
+    .list { border-bottom:1px solid black; padding-bottom:2px;}
+    .list div { margin-bottom:2px;""}
+    .clearBoth { clear:both; margin-top:2px;}
+    .autocomplete_select { display:none; }
+    .comparator_operator { font-size:120%; font-weight:bold; margin-top:5px;}
 </style>
 
-<h1>Interpretor for <%= @knowledge.label %> / opinion_id=<%= @opinion.id %></h1>
+<h2>in review <%= @review.products.collect(&:label).join(', ') %> </h2>
+ review_id=<%= @review.id %>, opinion_id=<%= @current_opinion.id %>
+<hr/>
+<div style="max-height:250px; overflow:auto;">
+  <% for current_index in 0..@paragraphs_size-1 %>
 
-<table border=1 cellpadding=5>
-  <tr>
-    <td align="right" colspan="2" valign="top">which product(s)?</td>
-    <td colspan="2"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent" }) %></td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <b>which dimensions are involved?</b>
-      <br/>
-      <%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @knowledge} ) %>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      this paragraph describes  
-      <%= radio_buttons("comparator", [ ["a tip", "comparator_tip"],["a comparaison", "comparator_comparaison"], ["a rating", "comparator_rating"], ["a ranking", "comparator_ranking"] ], "tip") %></td>
-  </tr>
+    <% if current_index == @paragraph_index %>
+       <div style="margin-bottom:5px; padding:2px; background-color:lightgray;">
+      <a name="current_paragraph"><%= @paragraphs[current_index].content %></a>
+    </div>
+    <% else %>
+      <div style="margin-bottom:5px; padding:2px;">
+      <%= @paragraphs[current_index].content %>
+    </div>
+    <% end %>
 
-  <tr><td colspan="4" id="div_comparator"><%= render(:partial => "comparator_tip") %> </td></tr>
+  <% end %>    
+</div>
+ <hr/>
+<% if (opinions = @review.opinions).size > 0 %>
+    <h2><%= pluralize(opinions.size, "opinions") %> so far</h2>
+    <% for opinion in opinions %>
+        <div><%= opinion.to_html %></div>
+    <% end %>
+<% end %>
 
-  <tr>
-    
-  </tr>
+<h2>
+  in paragraph 
+  <%= link_to(image_tag("icons/backward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index - 1, :anchor => "current_paragraph") unless @is_first_paragraph %>
+  <%= link_to(image_tag("icons/foward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index + 1, :anchor => "current_paragraph") unless @is_last_paragraph %>
+  <%= @paragraph_index + 1 %>/<%= @paragraphs_size %>
+  &nbsp;which dimensions are involved?
+</h2>
 
-</table>
+<%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @knowledge, :opinion => @current_opinion} ) %>
 
-<h2>grammar</h2>
+
+
+<h2>
+  this paragraph describes
+  <%= radio_buttons("opinion_selector", [ ["a tip ", "opinion_selector_tip"],["a comparaison ", "opinion_selector_comparator"], ["a rating ", "opinion_selector_rating"], ["a ranking", "opinion_selector_ranking"] ], "opinion_selector_tip") %>
+</h2>
+<h2>for usage <%= text_field_tag(:usage, "", :size => "100") %><%= submit_tag "create opinion", :style => "margin-left:20px;" %></h2>
+
+<div id="div_opinion_selector" style="height:300px;"><%= render(:partial => "opinion_selector_tip") %></div>
+
+

@@ -4,21 +4,32 @@
           <b><%= dimension.get_specification_html %></b>
           <%= dimension.get_value_html(product) %>
 
-          <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") %>
+          <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") if dimension.level <= 1%>
           <% if dimension.parent_id %>
-              <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
-              <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
-              <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this rating (and all its children if any)") %>
               <% dom_id = "div_dimension_#{dimension.id}" %>
               <%= link_to_function("edit...", "document.getElementById('#{dom_id}').toggle();", :style => "font-size:80%;") %>
-              <div id="<%= dom_id %>" style="display:none;">
-                <p>change parent:</p>
-                <p>add related feature</p>
-              </div>
 
+              <% remote_form_for(dimension, :url => {:action => "edit_dimension", :id => dimension.id, :product_id => product.id },
+                         :html => {:id => dom_id, :style =>"display:none; background-color:pink; padding:5px;" }) do |f| -%>
+                  <p>
+                    label <%= f.text_field :label %>
+                    &nbsp;ranking number <%= f.text_field :ranking_number, :size => 2 %>
+                    &nbsp;is an aggregate <%= f.check_box :is_aggregate %>
+                  </p>
+                  <p>
+                    min_rating <%= f.text_field :min_rating, :size => 2 %>
+                    max_rating <%= f.text_field :max_rating, :size => 2 %>
+                  </p>
+
+
+
+                  <p>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(knowledge, :selected => dimension.parent_id, :max_level => 1)) %></p>
+                  <hr/>
+                  <%= submit_tag "update #{dimension.idurl}" %>&nbsp;<%= link_to("destroy", "") %>
+              <% end -%>
           <% end %>
 
         </div>
-        <%= render(:partial => "/products/dimensions", :locals => { :dimension_parent_id => dimension.id , :dimensions => dimension.children , :product => product}) %>
+        <%= render(:partial => "/products/dimensions", :locals => { :knowledge => knowledge, :dimension_parent_id => dimension.id , :dimensions => dimension.children , :product => product}) %>
     <% end %>
 </div>

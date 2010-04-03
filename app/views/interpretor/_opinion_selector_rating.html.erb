@@ -1,0 +1,12 @@
+
+<table  width="100%">
+  <tr>
+    <td width="320"  valign="top"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent", :opinion => @current_opinion }) %></td>
+    <td  align="center" valign="top" class="comparator_operator">is rated</td>
+    <td width="320" valign="top">
+        <%= text_field_tag :rating, nil, :size => 3 %> min=<%= text_field_tag :rating, "1", :size => 3 %> max=<%= text_field_tag :rating, "5", :size => 3 %>
+        <br/><%= check_box_value("rating", "margin-top:5px;") %>
+    </td>
+  </tr>
+
+</table>

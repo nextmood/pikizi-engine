@@ -1,12 +1,19 @@
-<style type="text/css">
-    .list div { border:1px solid black; float:left; margin-left:5px; margin-bottom:5px;  }
-    .clearBoth { clear:both; }
-    .autocomplete_select { display:none; }
-</style>
+<div id="ps_<%= name %>" style="background-color:lightgray; width:350px; padding:5px; border:1px solid black;">
 
-<div id="<%= name %>_extra" >
-  <%= render(:partial => "products_selector_bis", :locals => { :name => name, :key_selector => :by_label }) %>
+    <div id="<%= name %>_list" class="list">
+        <%= render(:partial => "products_selector_filters", :locals => { :opinion => @current_opinion, :name => name }) %>
+    </div>
+    <div class="clearBoth"></div>
+
+    <div id="<%= name %>_extra" >
+          <span style="font-size:80%;">
+            add product(s)
+            <%= link_to_remote("<b>by name</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_label" }) %>
+            or
+            <%= link_to_remote("<b>by specification</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_specification" }) %>
+            or
+            <%= link_to_remote("<b>by shortcut</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_shortcut" }) %>
+          </span>
+    </div>
+
 </div>
-<hr/>
-<div id="<%= name %>_list" class="list"></div>
-<br class="clearBoth" />

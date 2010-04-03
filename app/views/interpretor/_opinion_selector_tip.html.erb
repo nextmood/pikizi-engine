@@ -1,0 +1,28 @@
+
+
+
+
+<table width="100%">
+  <tr>
+    <td width="320"  valign="top"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent", :opinion => @current_opinion }) %></td>
+    <td   align="center" valign="top" class="comparator_operator">
+      is
+    </td>
+    <td  width="320"  valign="top">
+      <table><tr>
+        <td>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_very_good", true) %>very good<br/>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_good") %>good<br/>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_neutral") %>neutral<br/>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_mixed") %>mixed<br/>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_bad") %>bad<br/>
+            <%= radio_button_tag("tip_intensity", "tip_intensity_very_bad") %>very bad
+        </td>
+        <td><%= check_box_value("tip") %></td>
+      </tr></table>
+
+    </td>
+  </tr>
+
+</table>
+

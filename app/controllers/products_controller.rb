@@ -110,6 +110,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  # editing the dimension
+  # this isa remote form
+  def edit_dimension
+    dimension_id = Mongo::ObjectID.from_string(params[:id])
+    product = Product.find(params[:product_id])
+    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
+    params[:dimension][:parent_id] = Mongo::ObjectID.from_string(params[:dimension][:parent_id])
+    dimension.update_attributes(params[:dimension])
+    render :update do |page|
+      page.replace("dimensions_", :partial => "dimensions",
+         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :dimension_parent_id => nil, :product => product })
+    end
+  end
+
   # -------------------------------------------------------------------
   # handling the product header
 

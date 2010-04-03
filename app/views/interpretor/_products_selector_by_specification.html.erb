@@ -1,6 +1,22 @@
+<% selected_specification ||= Specification.most_common %>
 
-<% if specification.is_compatible_grammar(:comparator) %>
-    <%= specification.tags.collect { |t| "#{check_box_tag("specification_filter_datas[]", t.idurl )} #{t.label}" }.join(', ') %>
-<% else %>
-    unknown filter <%= "#{specification.is_compatible_grammar(:comparator).inspect}    #{specification.label} class=#{specification.class} #{specification.id} " %>
-<% end %>
+
+<% form_remote_tag :url => "/interpretor/add_product_by_specification" do -%>
+    <%= hidden_field_tag("name", name) %>
+    specification
+    <%= select_tag("specification_selected", options_for_specifications(@current_knowledge, selected_specification.id),
+                :onchange => remote_function(:url => { :action => "specification_selected", :id => name  },
+                                             :with => "'specification_selected_id=' + document.getElementById('specification_selected').value")) %>
+    <div id="specification_editor_<%= name %>">
+        <%= render(:partial => "products_selector_by_specification_tags", :locals => { :specification => selected_specification, :opinion => @current_opinion }) %>
+    </div>
+
+    <%= submit_tag "add all products matching ONE tag"  %>
+    <% if true or !selected_specification.is_exclusive  %>
+        <%= submit_tag "matching ALL tags" %><br/>
+    <% end %>
+    &nbsp;<%= link_to_remote("or cancel", :url => { :action => "cancel_product_selector", :id => name }, :html => {:style => "font-size:80%;"}) %>
+<% end -%>
+
+
+

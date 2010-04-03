@@ -155,50 +155,6 @@ class Product < Root
     end
   end
 
-  # return a hash
-  # h[feature_idurl][category][:weighted_avg_01]
-  # h[feature_idurl][category][:review_ids]
-  #
-  def get_ratings_group_by_feature_and_category
-    hash_fidurl_category_opinions = {}
-    Review.all( :product_idurl => idurl).each do |review|
-      review.opinions.each do |opinion|
-        if opinion.is_rating?
-          tupple = [opinion, review]
-          ((hash_fidurl_category_opinions[opinion.feature_rating_idurl] ||= {})[review.category] ||= []) <<  tupple
-        end
-      end
-    end
-
-
-    # compute the average rating for each category
-    hash_fidurl_category_opinions.each do |feature_idurl, hash_category_opinions|
-
-      # Begin for a given feature
-      hash_category_opinions.each do |category, opinions_reviews|
-
-        # Begin for a given category
-        sum_reputation = 0.0; sum_weighted = 0.0; reviews = []
-
-        opinions_reviews.each do |opinion, review|
-          review.reputation ||= 1.0
-          sum_reputation += review.reputation
-          sum_weighted += review.reputation * opinion.rating_01
-          reviews << review unless reviews.include?(review)
-        end
-
-        hash_category_opinions[category] = { :weighted_avg_01 => sum_weighted / sum_reputation, :reviews => reviews } if sum_reputation > 0.0
-
-        # End for a given feature
-
-      end
-      # End for a given feature
-
-    end
-    puts "hash_fidurl_category_opinions=#{hash_fidurl_category_opinions.inspect}"
-    hash_fidurl_category_opinions
-  end
-
   def gallery_image_urls
     path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"
     Root.get_entries("public/#{path}").collect { |entry| "#{path}/#{entry}"}.first(3)
