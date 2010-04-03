@@ -12,9 +12,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dimension.rb" afterPath="$PROJECT_DIR$/app/models/dimension.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/home_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/home_helper.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/lib/auto_complete_macros_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_by_specification.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/lib/auto_complete.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_by_specification.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/show.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/show.html.erb" />
@@ -32,14 +31,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/root.rb" afterPath="$PROJECT_DIR$/app/models/root.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/init.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/_product_tab_ratings_bis.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/_product_tab_ratings_bis.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/test/auto_complete_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/show.xml.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/Rakefile" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/grand.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/auto_complete/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/show.xml.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/config/database.yml.mongo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/_opinion_editor_bis.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_bis.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/availability.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/opinion.treetop" afterPath="" />
@@ -51,8 +50,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/test.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaders/media_uploader.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_product_tab_ratings.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_product_tab_ratings.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_rating.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/interpretor/_comparator_rating.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/knowledge.rb" afterPath="$PROJECT_DIR$/app/models/knowledge.rb" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -77,10 +76,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/admin.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="221" selection-end="316" vertical-scroll-proportion="0.2511628">
+            <state line="9" column="0" selection-start="221" selection-end="316" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="opinion.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.14457831">
               <folding />
             </state>
           </provider>
@@ -855,16 +863,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.14457831">
+        <state line="9" column="0" selection-start="221" selection-end="316" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="221" selection-end="316" vertical-scroll-proportion="0.2511628">
+        <state line="5" column="25" selection-start="155" selection-end="178" vertical-scroll-proportion="0.14457831">
           <folding />
         </state>
       </provider>
