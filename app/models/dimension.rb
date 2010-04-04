@@ -6,7 +6,7 @@ require 'mongo_mapper'
 class Dimension
 
   include MongoMapper::Document
-  plugin MongoMapper::Plugins::IdentityMap
+  #plugin MongoMapper::Plugins::IdentityMap
   
   key :idurl, String # unique url
   key :label, String
