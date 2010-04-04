@@ -1,14 +1,21 @@
 <% for dimension in dimensions %>
-    <div class="pkz_specification_level_<%= dimension.level %>">
-      <b><%= dimension.get_specification_html %></b>
+
+    <% raise "no dimension" unless dimension.is_a?(Dimension) %>
+    
+      <div class="pkz_dimension_level_<%= dimension.level %>" style=" " >
+        <b><%= dimension.get_specification_html %></b>
+        <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open", :id => product.id } ) if dimension.level <= 1 %>
+      </div>
+
       <%= dimension.get_value_html(product) %>
 
-      <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") if dimension.level <= 1%>
       <% if dimension.parent_id %>
           <%= link_to_remote("edit...", :url => {:action => "edit_dimension_open", :id => dimension.id, :product_id => product.id } , :style => "font-size:80%;") %>
           <div id="div_dimension_extra_<%= dimension.id %>"></div>
+      <% else %>
+          <div id="editor_create_dimension"></div>
       <% end %>
+      <div class="clearBoth"></div>
 
-    </div>
     <%= render(:partial => "/products/dimensions", :locals => { :knowledge => knowledge, :dimensions => dimension.children , :product => product}) %>
 <% end %>

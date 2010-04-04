@@ -41,10 +41,17 @@ class Opinion < Root
 
   timestamps!
 
-  def self.update2_opinion
+  def self.update2_opinion()
     Opinion.all.each_with_index do |o, i|
-      if d = Dimension.first(:idurl => o.feature_rating_idurl)
-        o.update_attributes(:dimension_ids => [d.id])
+      fidurl = o.feature_rating_idurl
+      if fidurl == "functionality & performance"
+        fidurl = "functionality_performance_rating"
+        o.feature_rating_idurl = fidurl
+      end
+
+      if d = Dimension.first(:idurl => fidurl)
+        o.dimension_ids = [d.id]
+        o.save
       else
         puts "#{i}= #{o.id} no dimension #{o.feature_rating_idurl.inspect}"
       end

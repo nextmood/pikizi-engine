@@ -36,34 +36,13 @@ class Dimension
     Dimension.delete_all
     knowledge = Knowledge.first.link_back
     knowledge.each_feature do |feature|
-      Dimension.create(:idurl => feature.idurl, :label => feature.label, :min_rating => 0, :max_rating => 10) if feature.is_a?(FeatureRating)
+      Dimension.create(:idurl => feature.idurl, :label => feature.label, :min_rating => 0, :max_rating => 10, :knowledge_id => knowledge.id) if feature.is_a?(FeatureRating)
     end
     dimension_root = get_dimension_by_idurl("overall_rating")
-    ["hardware_rating", "communication_rating", "overall_functionality_performance_rating", "apps_rating", "overall_value", "overall_spec"].each do |feature_idurl|
-      unless get_dimension_by_idurl(feature_idurl)
-        # create the dimension
-        Dimension.create(:idurl => feature_idurl, :label => feature_idurl, :min_rating => 0, :max_rating => 10, :parent_id => dimension_root.id, :knowledge_id => knowledge.id)
-      end
-    end
-
-    knowledge.each_feature { |feature|
-      if feature.is_a?(FeatureRating)
-        dimension_parent = case feature.idurl_h.split('/').first
-          when "hardware" then get_dimension_by_idurl("hardware_rating")
-          when "communication" then get_dimension_by_idurl("communication_rating")
-          when "overall_functionality_performance" then get_dimension_by_idurl("overall_functionality_performance_rating")
-          when "apps_productivity" then get_dimension_by_idurl("apps_rating")
-          when "media" then get_dimension_by_idurl("media_rating")
-          else dimension_root
-        end
-        raise "error no dimension parent for #{feature.idurl_h}" unless dimension_parent
-        dimension = get_dimension_by_idurl(feature.idurl)
-        dimension.parent_id = dimension_parent.id unless dimension.id == dimension_parent.id 
-        dimension.save
-      end
-    }
+    Dimension.all.each {|d| (d.parent_id = dimension_root.id; d.save) unless d.id == dimension_root.id }
     knowledge.dimension_root = dimension_root
     knowledge.save
+    Opinion.update2_opinion
     true
   end
 

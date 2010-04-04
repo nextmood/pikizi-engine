@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  # -------------------------------------------------------------------------------------------
+  # Creating / edting product header
+  # -------------------------------------------------------------------------------------------
+
   # get /products/create_byidurl/knowledge_idurl
   def create_byidurl
     @messages_creating_product_by_idurl = nil
@@ -49,6 +53,60 @@ class ProductsController < ApplicationController
       render(:action => "edit")
     end
   end
+
+    # -------------------------------------------------------------------------------------------
+  # handling the product header
+  # -------------------------------------------------------------------------------------------
+
+  def update_header
+    product = Product.find(params[:id])
+    product.label = params[:label] if params[:label] != ""
+    product.url = params[:url] if params[:url] != ""
+    media_file = params[:media_file] == "" ? nil : params[:media_file]
+    puts "media_file.content_type=#{media_file.content_type}" if media_file
+    # 2 mega max
+    if media_file and Media::MediaText.mime_type_valid?(media_file.content_type) and media_file.length < 2000000
+      Media.delete(media_id) if product.description_id # delete previous one if needed
+      product.description_id = Media::MediaText.create(media_file)
+    end
+    product.save
+    redirect_to  "/products/#{product.idurl}"
+  end
+
+  # -------------------------------------------------------------------------------------------
+  # Similar products.......
+  # -------------------------------------------------------------------------------------------
+
+  # this is a rjs
+  def add_similar_product
+    product = Product.find(params[:id])
+    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
+    product.similar_product_ids ||= []
+    unless product.similar_product_ids.include?(similar_product_id)
+      product.similar_product_ids = (product.similar_product_ids << similar_product_id)
+      product.save
+    end
+    render :update do |page|
+      page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
+    end
+  end
+
+  def delete_similar_product
+    product = Product.find(params[:id])
+    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
+    product.similar_product_ids ||= []
+    if product.similar_product_ids.include?(similar_product_id)
+      product.similar_product_ids.delete(similar_product_id)
+      product.save
+    end
+    render :update do |page|
+      page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
+    end
+  end
+  
+  # -------------------------------------------------------------------------------------------
+  # Image management
+  # -------------------------------------------------------------------------------------------
 
   def delete_main_image
     product = Product.find(params[:id])
@@ -110,6 +168,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  # -------------------------------------------------------------------------------------------
+  # Dimension management
+  # -------------------------------------------------------------------------------------------
+
   # editing the dimension
   # this isa remote form
   def edit_dimension
@@ -127,7 +189,12 @@ class ProductsController < ApplicationController
   # this si a rjs
   def edit_dimension_open
     dimension_id = Mongo::ObjectID.from_string(params[:id])
-    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
+    puts "nb dimensions=#{@current_knowledge.dimensions.count}"
+    dimension = @current_knowledge.dimensions.detect { |d|
+      puts "#{d.id.inspect} == #{dimension_id.inspect} --> #{d.id == dimension_id}"
+      d.id == dimension_id
+    }
+    raise "***** error #{dimension_id.inspect} == #{dimension.inspect}" unless dimension
     product = Product.find(params[:product_id])
 
     render :update do |page|    
@@ -136,49 +203,36 @@ class ProductsController < ApplicationController
     end
   end
 
-  # -------------------------------------------------------------------
-  # handling the product header
-
-  def update_header
-    product = Product.find(params[:id])
-    product.label = params[:label] if params[:label] != ""
-    product.url = params[:url] if params[:url] != ""
-    media_file = params[:media_file] == "" ? nil : params[:media_file]
-    puts "media_file.content_type=#{media_file.content_type}" if media_file
-    # 2 mega max
-    if media_file and Media::MediaText.mime_type_valid?(media_file.content_type) and media_file.length < 2000000
-      Media.delete(media_id) if product.description_id # delete previous one if needed
-      product.description_id = Media::MediaText.create(media_file)
-    end
-    product.save
-    redirect_to  "/products/#{product.idurl}"
-  end
-
   # this is a rjs
-  def add_similar_product
+  def create_dimension_open
+    dimension = Dimension.new(:parent_id => @current_knowledge.dimension_root.id)
     product = Product.find(params[:id])
-    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
-    product.similar_product_ids ||= []
-    unless product.similar_product_ids.include?(similar_product_id)
-      product.similar_product_ids = (product.similar_product_ids << similar_product_id)
-      product.save
-    end
     render :update do |page|
-      page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
+      page.replace_html("editor_create_dimension", :partial => "/products/dimension_create",
+         :locals => { :dimension => dimension, :product => product, :knowledge => @current_knowledge})
     end
   end
 
-  def delete_similar_product
+  # this a rjs
+  def create_dimension
     product = Product.find(params[:id])
-    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
-    product.similar_product_ids ||= []
-    if product.similar_product_ids.include?(similar_product_id)
-      product.similar_product_ids.delete(similar_product_id)
-      product.save
-    end
+    params[:dimension][:parent_id] = Mongo::ObjectID.from_string(params[:dimension][:parent_id])
+    new_dimension = @current_knowledge.dimensions.create(params[:dimension])
+    puts "adding dimension id=#{new_dimension.id}"
     render :update do |page|
-      page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
+      page.replace_html("list_specifications", :partial => "dimensions",
+         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
     end
   end
-  # -------------------------------------------------------------------
+  
+  # this a rjs  (for cancel)
+  def redisplay_dimension
+    product = Product.find(params[:id])
+    render :update do |page|
+      page.replace_html("list_specifications", :partial => "dimensions",
+         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
+    end
+  end
+
+  # -------------------------------------------------------------------------------------------
 end

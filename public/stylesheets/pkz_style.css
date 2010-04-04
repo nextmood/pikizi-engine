@@ -99,6 +99,30 @@
    -moz-column-rule: 1px dashed;
 }
 
+.pkz_dimension_level_1 {
+    margin-top:5px;
+    background-color:lightgray;
+    margin-left:10px;
+    width:390px;
+    float:left;
+}
+
+.pkz_dimension_level_2 {
+    margin-left:30px;
+    margin-top:5px;
+    width:370px;
+    border-bottom:1px solid black;
+    float:left;
+}
+
+.pkz_dimension_level_3 {
+    margin-left:50px;
+    width:350px;
+    border-bottom:1px dashed black;
+    margin-top:2px;
+    float:left;
+}
+
 .pkz_specification_level_1 {
     margin-top:5px;
     background-color:lightgray;
@@ -107,10 +131,12 @@
 
 .pkz_specification_level_2 {
     margin-left:30px;
+    margin-top:5px;
 }
 
 .pkz_specification_level_3 {
     margin-left:50px;
+    margin-top:2px;
 }
 
 .pkz_specification_level_4 {

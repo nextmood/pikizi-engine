@@ -25,7 +25,7 @@
          </table>
 
           <%= link_to("edit this review", "/reviews/edit/#{@review.id}") %>
-      &nbsp; <%= link_to("edit this review (2)", "/interpretor/test/#{@review.id}") %>
+      <%= link_to("debug", "/interpretor/test/#{@review.id}", :style => "margin-left:100px; font-size:80%;") %>
           
 
           <% for paragraph in @review.paragraphs %>
