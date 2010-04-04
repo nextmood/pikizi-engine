@@ -157,3 +157,272 @@ ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if 
 Rendered rescues/_trace (42.8ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-04-04 13:12:56) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 926ms (View: 511 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-04-04 13:13:01) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"lvbnwAar/hhf6G8Onq2L/p1BAXfdqUN7Q05nnzrwTzY=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 672ms (View: 65 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:02) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 223ms (View: 26 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:02) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 219ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-04 13:13:05) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (150.4ms)
+Rendered home/_product_price (11.6ms)
+Rendered home/_product_tab_overview (31.2ms)
+Rendered home/_product_tabs (47.1ms)
+Completed in 537ms (View: 291 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:05) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 131ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:06) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 115ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:06) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 98ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:06) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 95ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-04 13:13:09) [POST]
+  Parameters: {"new_tab"=>"overview", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"lvbnwAar/hhf6G8Onq2L/p1BAXfdqUN7Q05nnzrwTzY=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_overview (20.8ms)
+Rendered home/_product_tabs (30.7ms)
+Completed in 303ms (View: 34 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=overview&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-04-04 13:13:13) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (251.9ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.6ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (4.6ms)
+Rendered products/_dimensions (84.3ms)
+Rendered products/_dimensions (228.3ms)
+Rendered offers/_list (131.3ms)
+Rendered specifications/_header (18.8ms)
+Rendered specifications/_header (13.6ms)
+Rendered specifications/_header (8.7ms)
+Rendered specifications/_header (9.0ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (9.1ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (8.3ms)
+Rendered specifications/_header (54.4ms)
+Rendered specifications/_header (63.2ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (9.2ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (8.7ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (45.6ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (163.2ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (9.0ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (46.7ms)
+Rendered specifications/_header (238.6ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (17.8ms)
+Rendered specifications/_header (9.2ms)
+Rendered specifications/_header (17.9ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (8.1ms)
+Rendered specifications/_header (9.3ms)
+Rendered specifications/_header (27.2ms)
+Rendered specifications/_header (8.7ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (88.5ms)
+Rendered specifications/_header (8.7ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (27.6ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (9.7ms)
+Rendered specifications/_header (28.9ms)
+Rendered specifications/_header (476.1ms)
+Rendered specifications/_header (9.7ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (8.7ms)
+Rendered specifications/_header (37.1ms)
+Rendered specifications/_header (9.8ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (9.6ms)
+Rendered specifications/_header (38.6ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (9.1ms)
+Rendered specifications/_header (236.9ms)
+Rendered specifications/_header (8.1ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (18.0ms)
+Rendered specifications/_header (309.9ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (18.8ms)
+Rendered specifications/_header (9.0ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (25.7ms)
+Rendered specifications/_header (9.5ms)
+Rendered specifications/_header (18.2ms)
+Rendered specifications/_header (9.0ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (27.3ms)
+Rendered specifications/_header (54.5ms)
+Rendered specifications/_header (8.9ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (10.5ms)
+Rendered specifications/_header (9.5ms)
+Rendered specifications/_header (8.3ms)
+Rendered specifications/_header (38.5ms)
+Rendered specifications/_header (10.0ms)
+Rendered specifications/_header (10.0ms)
+Rendered specifications/_header (189.7ms)
+Rendered specifications/_header (255.7ms)
+Rendered specifications/_list (1615.1ms)
+Completed in 3507ms (View: 3215 | 200 OK [http://localhost/products/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:17) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b001029"}
+Sending data 
+Completed in 313ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b001029]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:18) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001032"}
+Sending data 
+Completed in 312ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001032]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:18) [GET]
+  Parameters: {"id"=>"4ba78eef43a76d710b00103c"}
+Sending data 
+Completed in 297ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eef43a76d710b00103c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:18) [GET]
+  Parameters: {"id"=>"4ba78ef043a76d710b001045"}
+Sending data 
+Completed in 271ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef043a76d710b001045]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:19) [GET]
+  Parameters: {"id"=>"4ba78ef143a76d710b00104e"}
+Sending data 
+Completed in 249ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef143a76d710b00104e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:19) [GET]
+  Parameters: {"id"=>"4ba78ef343a76d710b001058"}
+Sending data 
+Completed in 247ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef343a76d710b001058]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:13:19) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 246ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ProductsController#create_dimension_open (for 127.0.0.1 at 2010-04-04 13:13:27) [POST]
+  Parameters: {"authenticity_token"=>"lvbnwAar/hhf6G8Onq2L/p1BAXfdqUN7Q05nnzrwTzY=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_create (24.6ms)
+Completed in 291ms (View: 32 | 200 OK [http://localhost/products/create_dimension_open/4b892a6f43a76d7c3f0001d3]
+
+
+Processing ProductsController#create_dimension (for 127.0.0.1 at 2010-04-04 13:14:02) [POST]
+  Parameters: {"commit"=>"create new dimension", "authenticity_token"=>"lvbnwAar/hhf6G8Onq2L/p1BAXfdqUN7Q05nnzrwTzY=", "id"=>"4b892a6f43a76d7c3f0001d3", "dimension"=>{"label"=>"Software", "idurl"=>"software_rating_aggregate", "min_rating"=>"1", "is_aggregate"=>"0", "max_rating"=>"10", "parent_id"=>"4bb86c82db599501ae000001", "ranking_number"=>"0"}}
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (4.6ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (86.7ms)
+Rendered products/_dimensions (101.7ms)
+Completed in 384ms (View: 112 | 200 OK [http://localhost/products/create_dimension/4b892a6f43a76d7c3f0001d3]
