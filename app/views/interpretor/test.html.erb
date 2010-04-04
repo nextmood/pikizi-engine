@@ -17,16 +17,17 @@ opinion_id=<%= @current_opinion.id %>
 
     <% if current_index == @paragraph_index %>
        <div style="margin-bottom:5px; padding:2px; background-color:lightgray;">
-      <a name="current_paragraph"><%= @paragraphs[current_index].content %></a>
+      <a name="current_paragraph"><%=h @paragraphs[current_index].content %></a>
     </div>
     <% else %>
       <div style="margin-bottom:5px; padding:2px;">
-      <%= @paragraphs[current_index].content %>
+      <%=h @paragraphs[current_index].content %>
     </div>
     <% end %>
 
   <% end %>    
 </div>
+<hr/>
  <hr/>
 <% if (opinions = @review.opinions).size > 0 %>
     <h2><%= pluralize(opinions.size, "opinions") %> so far</h2>

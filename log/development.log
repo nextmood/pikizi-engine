@@ -1090,3 +1090,129 @@ Rendered interpretor/_products_selector_filters (10.5ms)
 Rendered interpretor/_products_selector (20.8ms)
 Rendered interpretor/_opinion_selector_tip (46.2ms)
 Completed in 1425ms (View: 305 | 200 OK [http://localhost/interpretor/test/4b892b7043a76d7c5d00013b]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:54:28) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (52.3ms)
+Rendered interpretor/_products_selector_filters (8.2ms)
+Rendered interpretor/_products_selector (12.4ms)
+Rendered interpretor/_opinion_selector_tip (112.6ms)
+Completed in 509ms (View: 275 | 200 OK [http://localhost/interpretor/test/4b892b7043a76d7c5d00013b]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-04-04 13:54:43) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (23.7ms)
+Rendered reviews/_paragraph (9.6ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.7ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.5ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.7ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (9.0ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.7ms)
+Rendered reviews/_paragraph (7.3ms)
+Rendered reviews/_paragraph (7.6ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.0ms)
+Completed in 678ms (View: 554 | 200 OK [http://localhost/reviews/show/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:54:45) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 217ms (View: 114 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:54:47) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (52.0ms)
+Rendered interpretor/_products_selector_filters (10.5ms)
+Rendered interpretor/_products_selector (14.6ms)
+Rendered interpretor/_opinion_selector_tip (17.4ms)
+Completed in 508ms (View: 257 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-04-04 13:55:24) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_form (20.1ms)
+Rendered reviews/_products_4_review (409.6ms)
+Completed in 927ms (View: 687 | 200 OK [http://localhost/reviews/edit/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:55:25) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 253ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:55:52) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (54.4ms)
+Rendered interpretor/_products_selector_filters (8.3ms)
+Rendered interpretor/_products_selector (14.3ms)
+Rendered interpretor/_opinion_selector_tip (17.7ms)
+Completed in 578ms (View: 312 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:57:11) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (81.4ms)
+Rendered interpretor/_products_selector_filters (10.5ms)
+Rendered interpretor/_products_selector (15.1ms)
+Rendered interpretor/_opinion_selector_tip (18.0ms)
+Completed in 688ms (View: 319 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:57:43) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (379.6ms)
+Rendered interpretor/_products_selector_filters (36.5ms)
+Rendered interpretor/_products_selector (49.9ms)
+Rendered interpretor/_opinion_selector_tip (64.5ms)
+Completed in 2022ms (View: 628 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 14:01:09) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (172.3ms)
+Rendered interpretor/_products_selector_filters (25.2ms)
+Rendered interpretor/_products_selector (34.5ms)
+Rendered interpretor/_opinion_selector_tip (41.8ms)
+Completed in 1241ms (View: 789 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 14:01:45) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (295.9ms)
+Rendered interpretor/_products_selector_filters (19.0ms)
+Rendered interpretor/_products_selector (35.1ms)
+Rendered interpretor/_opinion_selector_tip (44.1ms)
+Completed in 1866ms (View: 949 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
