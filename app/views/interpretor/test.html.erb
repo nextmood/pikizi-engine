@@ -9,7 +9,8 @@
 </style>
 
 <h2>in review <%= @review.products.collect(&:label).join(', ') %> </h2>
- review_id=<%= @review.id %>, opinion_id=<%= @current_opinion.id %>
+ review_id=<%= @review.id %>,
+opinion_id=<%= @current_opinion.id %>
 <hr/>
 <div style="max-height:250px; overflow:auto;">
   <% for current_index in 0..@paragraphs_size-1 %>

@@ -762,3 +762,331 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:32:04) [GET]
   Parameters: {"id"=>"4ba78ef343a76d710b001058"}
 Sending data 
 Completed in 235ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef343a76d710b001058]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-04-04 13:34:03) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (356.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (6.9ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (113.2ms)
+Rendered products/_dimensions (128.4ms)
+Rendered offers/_list (52.1ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (158.3ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (8.2ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (48.4ms)
+Rendered specifications/_header (56.1ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (38.0ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (6.8ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (6.8ms)
+Rendered specifications/_header (39.7ms)
+Rendered specifications/_header (68.4ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (14.8ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (14.3ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (6.9ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (23.1ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (6.8ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (76.5ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (23.5ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (198.3ms)
+Rendered specifications/_header (443.6ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (6.9ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (29.5ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (30.8ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (60.4ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (14.2ms)
+Rendered specifications/_header (119.4ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (14.2ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (22.9ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (14.5ms)
+Rendered specifications/_header (6.8ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (22.6ms)
+Rendered specifications/_header (44.6ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (8.3ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (30.7ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (21.7ms)
+Rendered specifications/_header (75.5ms)
+Rendered specifications/_list (1055.0ms)
+Completed in 2827ms (View: 2556 | 200 OK [http://localhost/products/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:07) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 123ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:07) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b001029"}
+Sending data 
+Completed in 235ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b001029]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:07) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001032"}
+Sending data 
+Completed in 260ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001032]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:07) [GET]
+  Parameters: {"id"=>"4ba78eef43a76d710b00103c"}
+Sending data 
+Completed in 301ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eef43a76d710b00103c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:08) [GET]
+  Parameters: {"id"=>"4ba78ef043a76d710b001045"}
+Sending data 
+Completed in 108ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef043a76d710b001045]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:08) [GET]
+  Parameters: {"id"=>"4ba78ef143a76d710b00104e"}
+Sending data 
+Completed in 245ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef143a76d710b00104e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:34:08) [GET]
+  Parameters: {"id"=>"4ba78ef343a76d710b001058"}
+Sending data 
+Completed in 236ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef343a76d710b001058]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-04 13:45:37) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"lvbnwAar/hhf6G8Onq2L/p1BAXfdqUN7Q05nnzrwTzY=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (1158.5ms)
+Rendered reviews/_short (16.9ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.7ms)
+Rendered reviews/_short (16.3ms)
+Rendered reviews/_short (17.0ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.3ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.7ms)
+Rendered reviews/_short (16.2ms)
+Rendered reviews/_short (16.8ms)
+Rendered reviews/_short (16.8ms)
+Rendered reviews/_short (16.5ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.5ms)
+Rendered reviews/_short (16.4ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.9ms)
+Rendered reviews/_short (16.9ms)
+Rendered reviews/_short (16.8ms)
+Rendered reviews/_short (16.7ms)
+Rendered reviews/_short (16.5ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.6ms)
+Rendered reviews/_short (16.9ms)
+Rendered reviews/_short (16.7ms)
+Rendered reviews/_short (17.4ms)
+Rendered reviews/_short (17.4ms)
+Rendered reviews/_short (187.5ms)
+Rendered reviews/_short (17.5ms)
+Rendered reviews/_short (17.3ms)
+Rendered reviews/_short (17.6ms)
+Rendered reviews/_short (19.3ms)
+Rendered reviews/_short (21.5ms)
+Rendered reviews/_short (19.7ms)
+Rendered reviews/_short (18.8ms)
+Rendered reviews/_short (18.6ms)
+Rendered reviews/_short (19.0ms)
+Rendered home/_product_tab_reviews (2056.7ms)
+Rendered home/_product_tabs (2073.0ms)
+Completed in 2389ms (View: 2093 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-04-04 13:45:44) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (15.6ms)
+Rendered reviews/_paragraph (9.0ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.6ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (7.4ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (7.7ms)
+Rendered reviews/_paragraph (8.0ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (7.1ms)
+Rendered reviews/_paragraph (7.0ms)
+Rendered reviews/_paragraph (6.8ms)
+Rendered reviews/_paragraph (7.1ms)
+Completed in 689ms (View: 448 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:45:45) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 115ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-04 13:45:45) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 102ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:45:48) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering interpretor/test
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #12 of app/views/interpretor/test.html.erb:
+9: </style>
+10: 
+11: <h2>in review <%= @review.products.collect(&:label).join(', ') %> </h2>
+12:  review_id=<%= @review.id %>, opinion_id=<%= @current_opinion.id %>
+13: <hr/>
+14: <div style="max-height:250px; overflow:auto;">
+15:   <% for current_index in 0..@paragraphs_size-1 %>
+
+    app/views/interpretor/test.html.erb:12
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (45.4ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:48:10) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering interpretor/test
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #13 of app/views/interpretor/test.html.erb:
+10: 
+11: <h2>in review <%= @review.products.collect(&:label).join(', ') %> </h2>
+12:  review_id=<%= @review.id %>,
+13: opinion_id=<%= @current_opinion.id %>
+14: <hr/>
+15: <div style="max-height:250px; overflow:auto;">
+16:   <% for current_index in 0..@paragraphs_size-1 %>
+
+    app/views/interpretor/test.html.erb:13
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-04 13:49:58) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered interpretor/_dimensions_related (157.5ms)
+Rendered interpretor/_products_selector_filters (10.5ms)
+Rendered interpretor/_products_selector (20.8ms)
+Rendered interpretor/_opinion_selector_tip (46.2ms)
+Completed in 1425ms (View: 305 | 200 OK [http://localhost/interpretor/test/4b892b7043a76d7c5d00013b]

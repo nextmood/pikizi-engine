@@ -21,6 +21,7 @@ class InterpretorController < ApplicationController
     @knowledge = @review.knowledge
     #session[:opinion_id_in_creation] = nil
     get_current_opinion(@review) # new opinion
+    puts "curren_opinion=#{@current_opinion.inspect}"
   end
 
 
@@ -29,9 +30,7 @@ class InterpretorController < ApplicationController
   # return the opinion we are working on / editing 
   def get_current_opinion(review=nil)
     unless @current_opinion
-      if opinion_id = session[:opinion_id_in_creation]
-        @current_opinion = Opinion.find(opinion_id)
-      else
+      unless opinion_id = session[:opinion_id_in_creation] and @current_opinion = Opinion.find(opinion_id)
         puts "creation....#{review.products.count}"
         @current_opinion = Opinion.create
         review.products.each do |p|
