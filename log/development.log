@@ -1,0 +1,525 @@
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:04:20) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+ActionView::TemplateError (undefined method `reviews' for #<Knowledge:0x1034bb8e8>) on line #3 of app/views/reviews/eric.html.erb:
+1: <!-- interface eric -->
+2: 
+3: <% for review in @current_knowledge.reviews %>
+4:     <% for paragraph in review.paragraphs %>
+5:         <% for opinion in paragraph.opinions %>
+6:             <%= opinion.to_html2 %><br/>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/reviews/eric.html.erb:3
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (85.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:06:01) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x102cb8ab0>) on line #6 of app/views/reviews/eric.html.erb:
+3: <% for review in @current_knowledge.reviews %>
+4:     <% for paragraph in review.paragraphs %>
+5:         <% for opinion in paragraph.opinions %>
+6:             <%= opinion.to_html2 %><br/>
+7:         <% end %>
+8:     <% end %>
+9: <% end %>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/opinion.rb:88:in `to_html2_suffix'
+    app/models/opinion.rb:317:in `to_html2'
+    app/views/reviews/eric.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:5
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:4
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:3
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (136.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:06:22) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x1072027d8>) on line #6 of app/views/reviews/eric.html.erb:
+3: <% for review in @current_knowledge.reviews %>
+4:     <% for paragraph in review.paragraphs %>
+5:         <% for opinion in paragraph.opinions %>
+6:             <%= opinion.to_html2 %><br/>
+7:         <% end %>
+8:     <% end %>
+9: <% end %>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/opinion.rb:88:in `to_html2_suffix'
+    app/models/opinion.rb:317:in `to_html2'
+    app/views/reviews/eric.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:5
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:4
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:3
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (39.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:08:35) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x102cba310>) on line #6 of app/views/reviews/eric.html.erb:
+3: <% for review in @current_knowledge.reviews %>
+4:     <% for paragraph in review.paragraphs %>
+5:         <% for opinion in paragraph.opinions %>
+6:             <%= opinion.to_html2 %><br/>
+7:         <% end %>
+8:     <% end %>
+9: <% end %>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/opinion.rb:88:in `to_html2_suffix'
+    app/models/opinion.rb:317:in `to_html2'
+    app/views/reviews/eric.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:5
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:4
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:3
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (133.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:10:34) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 53648ms (View: 53493 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:13:25) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 62461ms (View: 62404 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:16:05) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 63416ms (View: 63356 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:19:38) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 62797ms (View: 62397 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:21:54) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 66281ms (View: 66219 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:24:06) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 53002ms (View: 52942 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:25:37) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:26:29) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 52327ms (View: 52173 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:31:56) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 51359ms (View: 51202 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:34:37) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 40130ms (View: 40075 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:37:27) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 42773ms (View: 42716 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:39:03) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 47409ms (View: 47352 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:39:50) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 51754ms (View: 51696 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:41:47) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 53066ms (View: 52418 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:47:45) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 59436ms (View: 59367 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:51:53) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 59254ms (View: 59187 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:53:28) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 33928ms (View: 33678 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:03:49) [GET]
+Completed in 244ms (View: 3 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:03:56) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+ActionView::TemplateError (wrong argument type String (expected Proc)) on line #10 of app/views/reviews/eric.html.erb:
+7:             <div style="border-top:1px solid black; margin-bottom:10px;">
+8:                 <small title="#<%=h paragraph.id %>">&para;</small>&nbsp;<%=h paragraph.content %>
+9:                 <% for opinion in paragraph.opinions %>
+10:                     <div style="color:blue; border-top:1px dashed black; margin-top:3px;"><%= opinion.to_html2 %></div>
+11:                 <% end %>
+12:             </div>
+13:         <% end %>
+
+    app/models/opinion.rb:89:in `to_html2_suffix'
+    app/models/opinion.rb:318:in `to_html2'
+    app/views/reviews/eric.html.erb:10
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:9
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/eric.html.erb:3
+    app/controllers/reviews_controller.rb:9:in `eric'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (172.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:05:34) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 37430ms (View: 37181 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:06:28) [GET]
+Completed in 221ms (View: 1 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:08:36) [GET]
+Completed in 65ms (View: 1 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:10:12) [GET]
+Completed in 249ms (View: 3 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:11:01) [GET]
+Completed in 19328ms (View: 19211 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:14:32) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 35677ms (View: 35436 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:16:57) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 40774ms (View: 40710 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:21:30) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 46063ms (View: 45997 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:22:34) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 36947ms (View: 36702 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:40:50) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 36322ms (View: 36066 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:43:02) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 45315ms (View: 45251 | 200 OK [http://localhost/eric.html]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:45:29) [GET]
+Completed in 27442ms (View: 27201 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:47:19) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:47:50) [GET]
+Completed in 28026ms (View: 27787 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:49:58) [GET]
+
+NoMethodError (undefined method `compare_to' for #<ProductByLabel:0x1071f4ed0>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/keys.rb:75:in `to_proc'
+  app/models/opinion.rb:247:in `collect'
+  app/models/opinion.rb:247:in `to_xml_bis'
+  app/models/review.rb:149:in `to_xml_bis'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/models/review.rb:148:in `to_xml_bis'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/models/review.rb:145:in `to_xml_bis'
+  app/models/review.rb:113:in `to_xml'
+  app/models/review.rb:112:in `each'
+  app/models/review.rb:112:in `to_xml'
+  app/controllers/reviews_controller.rb:11:in `eric'
+  app/controllers/reviews_controller.rb:9:in `eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:50:29) [GET]
+
+NoMethodError (undefined method `compare_to' for #<ProductsFilter:0x106ce9be8>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/models/opinion.rb:247:in `collect'
+  app/models/opinion.rb:247:in `to_xml_bis'
+  app/models/review.rb:149:in `to_xml_bis'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/models/review.rb:148:in `to_xml_bis'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/models/review.rb:145:in `to_xml_bis'
+  app/models/review.rb:113:in `to_xml'
+  app/models/review.rb:112:in `each'
+  app/models/review.rb:112:in `to_xml'
+  app/controllers/reviews_controller.rb:11:in `eric'
+  app/controllers/reviews_controller.rb:9:in `eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:53:10) [GET]
+Completed in 29834ms (View: 29583 | 200 OK [http://localhost/eric.xml]

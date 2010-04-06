@@ -93,6 +93,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/products/:product_idurl.:format", :controller => 'products', :action => 'show'
   map.connect "/usages", :controller => 'products', :action => 'usages'
 
+  map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
+
   map.root :controller => "landing"  # default
 
   # See how all your routes lay out with "rake routes"

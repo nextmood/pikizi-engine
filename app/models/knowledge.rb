@@ -38,7 +38,8 @@ class Knowledge < Root
   key :cache_nb_reviews, Integer
 
   many :usages
-
+  many :reviews
+  
   timestamps!
 
   def self.is_main_document() true end

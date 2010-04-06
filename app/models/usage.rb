@@ -22,6 +22,7 @@ class Usage
   
   timestamps!
 
+  def display_as() label.gsub(' ', '_').downcase[0.80] end
 
 end
 

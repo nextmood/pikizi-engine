@@ -140,7 +140,7 @@ namespace :pikizi do
   task :compute_aggregation => :environment do
 
     # cleanup opinion (to be remove later...)
-    Opinion.generate_all_products_filters
+    #Opinion.generate_all_products_filters
     all_products = Knowledge.first(:idurl => "cell_phones").products
     
     # for each dimension... and usages
@@ -148,6 +148,7 @@ namespace :pikizi do
     Dimension.all.each  do |dimension_or_usage|
 
       puts "computing aggregation for #{dimension_or_usage.class} #{dimension_or_usage.label}"
+      explanation_aggregation = ""
 
       # ratings is a list of opinion_ratings (tip or rating)
       # comparaison is a list of opinions comparaisons (comparator or ranking)
@@ -167,8 +168,8 @@ namespace :pikizi do
       # avg_rating = weight sum by category of ratings
       hash_pid_weights_and_ratings01 = ratings.inject({}) do |h, opinion_rating|
         # generate_ratings yield with pid, weight, rating_01
-        opinion_rating.for_each_rating(all_products)  do |pid, weight, rating01|
-          (h[pid] ||= []) << [weight, rating01]
+        opinion_rating.for_each_rating(all_products)  do |p, weight, rating01|
+          (h[p.id] ||= []) << [weight, rating01]
         end
         h
       end
@@ -183,8 +184,8 @@ namespace :pikizi do
       comparaisons.each do |opinion_comparaison|
         # generate_comparaisons yield with [weight, operator_type, :pid1, :pid2]
         # operator_type = "best", "worse", "same"
-        opinion_comparaison.for_each_comparaison(all_products) do |weight, operator_type, pid1, pid2|
-          elo.update_elo(pid1, operator_type, pid2, Integer(weight))
+        opinion_comparaison.for_each_comparaison(all_products) do |weight, operator_type, p1, p2|
+          elo.update_elo(p1.id, operator_type, p2.id, Integer(weight))
         end
       end
 

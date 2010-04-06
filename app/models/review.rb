@@ -106,6 +106,15 @@ class Review < Root
     end    
   end
 
+  def self.to_xml
+    doc = XML::Document.new
+    doc.root = node_root = XML::Node.new("reviews")
+    Review.all.each do |review|
+      node_root << review.to_xml_bis if review.paragraphs.count > 0 and review.category != "amazon" and review.opinions.count > 0
+    end
+    doc.to_s(:indent => true)
+  end
+
   def to_xml()
     doc = XML::Document.new
     doc.root = to_xml_bis

@@ -15,6 +15,7 @@ class Dimension
   key :_type, String # class management
   key :ranking_number, Integer, :default => 0
   key :is_aggregate, Boolean, :default => false
+  key :explanation_aggregation, String
   
   # nested structure
   key :parent_id # a Dimension object

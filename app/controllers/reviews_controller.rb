@@ -2,7 +2,16 @@
 class ReviewsController < ApplicationController
 
   require 'opinion'
-  
+
+  # api for eric
+  def eric
+    @reviews = @current_knowledge.reviews
+    respond_to do |format|
+      format.html # eric.html.erb
+      format.xml  { render(:xml => Review ) }
+    end
+  end
+
   # GET /reviews/:review_id
   def show
     puts "id=" << params[:id]

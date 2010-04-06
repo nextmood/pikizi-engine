@@ -37,15 +37,15 @@ class Opinion < Root
 
   many :products_filters, :polymorphic => true
   def products_filters_for(name) products_filters.select { |pf| pf.products_selector_dom_name == name } end
-  def products_ids_for(name, all_products)
+  def products_for(name, all_products)
     products_filters_for(name).inject([]) do |l, product_filter|
-      product_filter.generate_pids(all_products).each { |pid| l << pid unless l.include?(pid) }
+      product_filter.generate_matching_products(all_products).each { |p| l << p unless l.include?(p) }
       l
     end
   end
 
   key :dimension_ids, Array, :default => [] # an Array pg Mongo Object Id defining the dimensions related to this opinion  
-  many :dimensions, :polymorphic => true, :in => :dimension_ids
+  def dimensions() Dimension.find(dimension_ids) end
 
   timestamps!
 
@@ -83,11 +83,12 @@ class Opinion < Root
   end
 
   def to_html2_suffix
-    s = dimensions.collect(&:label).join(', ')
-    s << " " << dimension_ids.join(', ')
-    (s << " : " << usages.collect(&:label).join(', ')) if usage_id
+    #s = dimensions.collect(&:label).join(', ')
+    s = dimensions.collect(&:idurl).join(', ')   
+    #s << " " << dimension_ids.join(', ')
+    (s << " : " << usages.collect { |u| u.label.inspect }.join(', ')) if usages and usages.size > 0
     s << " #{value_oriented_html}"
-    "(#{s})"
+    " (#{s})"
   end
 
   def self.generate_xml
@@ -98,7 +99,8 @@ class Opinion < Root
 
   def to_xml_bis
     node_opinion = XML::Node.new(self.class.to_s)
-    node_opinion['dimension'] = feature_rating_idurl if feature_rating_idurl
+    node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
+    node_opinion['product_selector_1'] = products_filters_for("referent").collect(&:short_label).join(', ')
     #node_opinion['review_id'] = review_id.to_s
     #node_opinion['paragraph_id'] = paragraph_id.to_s
     node_opinion
@@ -214,7 +216,7 @@ class Rating < Opinion
   # generate_ratings returns a hash { :pid => [weight, rating_01], ... }
   def for_each_rating(all_products)
     v = rating_01;
-    products_ids_for("referent", all_products).each { |pid| yield(pid, weight, v) }
+    products_for("referent", all_products).each { |p| yield(p, weight, v) }
   end
 
 end
@@ -242,7 +244,7 @@ class Comparator < Opinion
   def to_xml_bis
     node_opinion = super
     node_opinion['operator'] = operator_type
-    node_opinion['predicate'] = predicate
+    node_opinion['product_selector_2'] = products_filters_for("compare_to").collect(&:short_label).join(', ')
     node_opinion
   end
 
@@ -293,9 +295,9 @@ class Comparator < Opinion
   # generate_comparaisons yield with [weight, operator_type, pid1, pid2]
   # operator_type = "best", "worse", "same"
   def for_each_comparaison(all_products)
-    pids1 = products_ids_for("referent", all_products)
-    pids2 = products_ids_for("compare_to", all_products)
-    pids1.each { |pid1| pids2.each { |pid2| yield(weight, operator_type, pid1, pid2) unless pid1 == pid2 } }
+    ps1 = products_for("referent", all_products)
+    ps2 = products_for("compare_to", all_products)
+    ps1.each { |p1| ps2.each { |p2| yield(weight, operator_type, p1, p2) unless p1.id == p2.id } }
   end
 end
 
@@ -351,7 +353,7 @@ class Tip < Opinion
   def generate_rating?() true end
   def for_each_rating(all_products)
     v = Tip.intensities_value[intensity_symbol] / 2 + 0.5
-    products_ids_for("referent", all_products).each { |pid| yield(pid, weight, v) }
+    products_for("referent", all_products).each { |p| yield(p, weight, v) }
   end
 
 end
