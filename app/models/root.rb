@@ -210,6 +210,15 @@ class String
     end
   end
 
+  def find_between(c1, c2)
+    l = []; x = 0
+    while x < size and ic1 = index(c1, x) and ic2 = index(c2, ic1 + 1)
+      l << self[ic1+1, ic2 - ic1 - 1]
+      x = ic2 + 1
+    end
+    l
+  end
+
 end
 
 class Float

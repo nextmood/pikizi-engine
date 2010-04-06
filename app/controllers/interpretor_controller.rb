@@ -6,7 +6,9 @@ class InterpretorController < ApplicationController
 
   def test
     @review = Review.find(params[:id])
+    @products4review = @review.products
     @paragraph_index = Integer(params[:paragraph_index] || 0)
+
     opinion_id = params[:opinion_id] # for editing opinion
 
 
@@ -18,13 +20,9 @@ class InterpretorController < ApplicationController
     @is_last_paragraph = (@paragraph_index == @paragraphs_size - 1)
     @is_first_paragraph = (@paragraph_index == 0)
 
-    @knowledge = @review.knowledge
     #session[:opinion_id_in_creation] = nil
     get_current_opinion(@review) # new opinion
-    puts "curren_opinion=#{@current_opinion.inspect}"
   end
-
-
 
 
   # return the opinion we are working on / editing 

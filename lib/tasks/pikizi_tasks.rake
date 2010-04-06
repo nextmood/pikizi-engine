@@ -135,6 +135,93 @@ namespace :pikizi do
 
   end
 
+  
+  desc "compute aggregation of dimension and usage from opinions"
+  task :compute_aggregation => :environment do
+
+    # cleanup opinion (to be remove later...)
+    Opinion.generate_all_products_filters
+    all_products = Knowledge.first(:idurl => "cell_phones").products
+    
+    # for each dimension... and usages
+    # Dimension.all.concat(Usage.all).each
+    Dimension.all.each  do |dimension_or_usage|
+
+      puts "computing aggregation for #{dimension_or_usage.class} #{dimension_or_usage.label}"
+
+      # ratings is a list of opinion_ratings (tip or rating)
+      # comparaison is a list of opinions comparaisons (comparator or ranking)
+
+      ratings, comparaisons = dimension_or_usage.opinions.inject([[], []]) do |(l_ratings, l_comparaisons), opinion|
+        if opinion.generate_rating?
+          l_ratings << opinion
+        elsif opinion.generate_comparaison?
+          l_comparaisons << opinion
+        else
+          raise "unknown opinion"
+        end
+        [l_ratings, l_comparaisons]
+      end
+
+      # compute average of ratings
+      # avg_rating = weight sum by category of ratings
+      hash_pid_weights_and_ratings01 = ratings.inject({}) do |h, opinion_rating|
+        # generate_ratings yield with pid, weight, rating_01
+        opinion_rating.for_each_rating(all_products)  do |pid, weight, rating01|
+          (h[pid] ||= []) << [weight, rating01]
+        end
+        h
+      end
+      hash_pid_rating01 = hash_pid_weights_and_ratings01.inject({}) do |h, (pid, weights_and_ratings01)|
+        sum_weight, sum_rating01 = weights_and_ratings01.inject([0.0,0.0]) { |(sw, so1), (weight, rating01)| [sw += weight, so1 += rating01] }  
+        h[pid] = sum_rating01 / sum_weight
+        h
+      end
+
+      # compute ratings through Elo for comparaisons
+      elo = Elo.new
+      comparaisons.each do |opinion_comparaison|
+        # generate_comparaisons yield with [weight, operator_type, :pid1, :pid2]
+        # operator_type = "best", "worse", "same"
+        opinion_comparaison.for_each_comparaison(all_products) do |weight, operator_type, pid1, pid2|
+          elo.update_elo(pid1, operator_type, pid2, Integer(weight))
+        end
+      end
+
+
+      # mix ratings and comparaison      
+      elo.for_each_p_elo01 do |pid, comparaison_rating01|
+        hash_pid_rating01[pid] =  if hash_pid_rating01[pid]
+                                    hash_pid_rating01[pid] * 0.5 + comparaison_rating01 * 0.5
+                                  else
+                                    comparaison_rating01
+                                  end
+      end
+
+
+      # erase all products values...
+      
+      # save the results for each products
+      hash_pid_rating01.each do |pid, rating_01|
+        if dimension_or_usage.is_a?(Dimension)
+          product = Product.find(pid)
+          product.set_value(dimension_or_usage.idurl, rating_01)
+          product.save
+        end
+      end
+
+      # compute the aggregation in the tree (recursive)
+      # ...
+
+      # compute the global (mix of aggregation and simple)
+      # ...
+
+      # save the results...
+
+
+    end
+
+  end
 
   # ========================================================================================
 
@@ -396,7 +483,6 @@ namespace :pikizi do
     #Specification.delete_all;
     #knowledge.features.each {|f| f.create_specification(knowledge.id) }
 
-    Opinion.create_products_filters
 
 #    Review.all.each do |review|
 #      if review.product_ids.nil? or review.product_ids.size == 0

@@ -25,6 +25,9 @@ class Dimension
   key :knowledge_id
   belongs_to :knowledge
 
+  # opinions
+  many :opinions, :class_name => "Opinion", :polymorphic => true, :foreign_key => :dimension_ids
+  
   # related specifications (Hard features)
   many :specifications
 

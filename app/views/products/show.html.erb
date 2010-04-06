@@ -15,12 +15,12 @@
    <div style="">
     create a new product with idurl=
     <%= text_field_tag :new_product_idurl, nil, :size => 20 %>
-        <%= link_to_function("create...", "window.location = '/products/create_byidurl/#{@knowledge.idurl}?product_id=#{@product.id}&new_idurl=' +  document.getElementById('new_product_idurl').value;") %>
+        <%= link_to_function("create...", "window.location = '/products/create_byidurl/#{@current_knowledge.idurl}?product_id=#{@product.id}&new_idurl=' +  document.getElementById('new_product_idurl').value;") %>
         <span id="create_new_product_message"><%= @messages_creating_product_by_idurl %></span>
   </div>
 <hr/>
 
-<h2><%= @knowledge.idurl %>/<%= @product.idurl %></h2>
+<h2><%= @current_knowledge.idurl %>/<%= @product.idurl %></h2>
 
 
     <% form_tag "/products/update_header/#{@product.id}", :multipart => true  do -%>
@@ -87,20 +87,20 @@
 
 <hr/><h2>Dimensions</h2>
 <div id="list_specifications" class="">
-  <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @knowledge, :dimensions => [@knowledge.dimension_root], :product => @product}) %>
+  <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => @product}) %>
 </div>
 <hr/><h2>availability and merchants</h2>
 
 <%= render(:partial => "/offers/list", :locals => {:product => @product}) %>
 
 <h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
-<%= render(:partial => "/specifications/list", :locals => {:knowledge => @knowledge, :product => @product}) %>
+<%= render(:partial => "/specifications/list", :locals => {:knowledge => @current_knowledge, :product => @product}) %>
 
 
 
 <h2><%= link_to_function("old features...", "document.getElementById('old_features').toggle();") %></h2>
 <div id="old_features" style="display:none;">
-    <% for feature in @knowledge.features_all %>
+    <% for feature in @current_knowledge.features_all %>
         <% if !feature.is_a?(FeatureRating) and !feature.is_a?(FeatureImage)  %>
             <div class="pkz_specification_level_<%= feature.level %>">
               <b><%= feature.get_feature_html %></b>
@@ -141,10 +141,4 @@
 </div>
 
 
-<hr/><h2>Create a new product</h2>
-<% form_tag "/products/create_new"  do -%>
-    <label>idurl</label>
-    <%= text_field_tag :pidurl, nil, :size => 20, :class => "field" %>
-    <%= submit_tag 'create new product' %>
-<% end %>
 

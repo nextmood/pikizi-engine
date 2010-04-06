@@ -17,10 +17,12 @@ class Opinion < Root
   key :label, String # summary of the opinion
   key :_type, String # class management
   key :usage, String
+  key :usage_ids, Array, :default => []
+  many :usages, :in => :usage_ids
   key :extract, String
   key :value_oriented, Boolean
   key :validated_by_creator, Boolean, :default => false
-
+  key :weight, Float
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review
 
@@ -35,29 +37,17 @@ class Opinion < Root
 
   many :products_filters, :polymorphic => true
   def products_filters_for(name) products_filters.select { |pf| pf.products_selector_dom_name == name } end
+  def products_ids_for(name, all_products)
+    products_filters_for(name).inject([]) do |l, product_filter|
+      product_filter.generate_pids(all_products).each { |pid| l << pid unless l.include?(pid) }
+      l
+    end
+  end
 
   key :dimension_ids, Array, :default => [] # an Array pg Mongo Object Id defining the dimensions related to this opinion  
   many :dimensions, :polymorphic => true, :in => :dimension_ids
 
   timestamps!
-
-  def self.update2_opinion()
-    Opinion.all.each_with_index do |o, i|
-      fidurl = o.feature_rating_idurl
-      if fidurl == "functionality & performance"
-        fidurl = "functionality_performance_rating"
-        o.feature_rating_idurl = fidurl
-      end
-
-      if d = Dimension.first(:idurl => fidurl)
-        o.dimension_ids = [d.id]
-        o.save
-      else
-        puts "#{i}= #{o.id} no dimension #{o.feature_rating_idurl.inspect}"
-      end
-    end
-    true
-  end
 
   def self.parse
     Treetop.load "./app/models/opinion"
@@ -88,6 +78,17 @@ class Opinion < Root
 
   def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} " end
 
+  def to_html2_prefix
+    "#{products_filters_for("referent").collect(&:display_as).join(', ')} "
+  end
+
+  def to_html2_suffix
+    s = dimensions.collect(&:label).join(', ')
+    s << " " << dimension_ids.join(', ')
+    (s << " : " << usages.collect(&:label).join(', ')) if usage_id
+    s << " #{value_oriented_html}"
+    "(#{s})"
+  end
 
   def self.generate_xml
 
@@ -118,16 +119,68 @@ class Opinion < Root
     header
   end
 
-  def self.create_products_filters
-    Opinion.all.each do |o|
-      o.products_filters ||= []
-      o.products.collect do |p|
-        o.products_filters << ProductByLabel.create(:opinion_id => o.id, :products_selector_dom_name => "referent", :display_as => p.label, :product_id => p.id )
-      end
-      o.save
+  def self.generate_all_products_filters
+    ProductsFilter.delete_all
+    knowledge = Knowledge.first
+    
+    # clean up opinions...
+    Opinion.delete_all(:review_id => nil)
+    Review.all.each do |r|
+      r.opinions = Opinion.all(:review_id => r.id)
+      r.save
+      r.opinions.each { |o| o.update_attributes(:weight => Review.categories[r.category]) }
+    end
+
+    # generate product filters
+    Opinion.all.each { |o| o.generate_products_filters(knowledge); o.save }
+    true
+  end
+
+  # generate the product filters for field referent
+  # ensure dimensions_ids correct and usage_id too
+  def generate_products_filters(knowledge)
+    ld = []
+    fidurl = feature_rating_idurl
+    if fidurl == "functionality & performance"
+      fidurl = "functionality_performance_rating"
+      update_attribute(:feature_rating_idurl => fidurl)
+    end
+    if d = Dimension.first(:idurl => fidurl)
+      ld << d
+    else
+      puts "opinion= #{id} no dimension #{fidurl.inspect}"
+    end
+    self.dimensions = ld
+
+    ls = []
+    if usage and usage != ""
+      usage_o = Usage.first(:label => usage)
+      usage_o ||= Usage.create(:label => usage, :knowledge_id => knowledge.id)
+      ls << usage_o
+    end
+    self.usages = ls
+
+    lpf = []
+    products.collect do |p|
+      lpf << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "referent", :display_as => p.label, :product_id => p.id )
+    end
+    self.products_filters = lpf
+
+  end
+
+  def generate_rating?() nil end
+  def generate_comparaison?() nil end
+
+
+  def self.create_usages
+    k = Knowledge.first
+    Usage.delete_all
+    Opinion.all.each do |opinion|
+      opinion.save
     end
     true
   end
+
 
 end
 
@@ -143,6 +196,8 @@ class Rating < Opinion
 
   def to_html(options={}) "#{rating} in [#{min_rating}, #{max_rating}] (#{feature_rating_idurl}#{value_oriented_html})" end
 
+  def to_html2() to_html2_prefix << "<b>rated</b> #{rating} in [#{min_rating}, #{max_rating}]" << to_html2_suffix end
+
   def rating_01() Root.rule3(rating, min_rating, max_rating) end
 
   def is_rating?() true end
@@ -155,6 +210,13 @@ class Rating < Opinion
     node_opinion
   end
 
+  def generate_rating?() true end
+  # generate_ratings returns a hash { :pid => [weight, rating_01], ... }
+  def for_each_rating(all_products)
+    v = rating_01;
+    products_ids_for("referent", all_products).each { |pid| yield(pid, weight, v) }
+  end
+
 end
 
 class Comparator < Opinion
@@ -164,6 +226,10 @@ class Comparator < Opinion
 
   def to_html(options={}) "#{operator_type} than #{predicate} (#{feature_rating_idurl}#{value_oriented_html})" end
 
+  def to_html2
+    to_html2_prefix << " <b>is #{operator_type}</b> " << products_filters_for("compare_to").collect(&:display_as).join(', ') << to_html2_suffix
+  end
+         
   def is_valid?() ["best", "worse", "same"].include?(operator_type) and !Root.is_empty(predicate)  end
 
   def self.create_from_xml(feature_idurl, operator_type, xml_node)
@@ -180,6 +246,57 @@ class Comparator < Opinion
     node_opinion
   end
 
+
+  def generate_products_filters(knowledge)
+    super(knowledge) # generate the product filters for field referent
+
+    # generate the product filters for field compare_to
+    if (predicate =~ /productIs\(:any => \["[a-z_0-9A-Z\-]*"\]\)/ and pidurl = predicate.find_between("\"", "\"").first) or
+       (predicate =~ /productIs\(:[a-z_0-9A-Z\-]*\)/ and pidurl = predicate.find_between(":", ")").first)
+      # translate a product...
+      begin
+        if ["all_products"].include?(pidurl)
+          products_filters << ProductByShortcut.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :display_as => pidurl, :shortcut_selector => pidurl )
+        else
+          product = Product.first(:idurl => pidurl)
+          product ||= Product.find(pidurl)
+          products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :display_as => product.label, :product_id => product.id ) if product
+        end
+      rescue
+        product = nil
+      end
+      puts "no definition for predicate=#{predicate} and pidurl=#{pidurl}" unless product or pidurl == "all_products"
+
+    elsif predicate =~ /featureIs\(:[a-z_0-9A-Z\-]*, :any => \["[a-z_0-9A-Z\-]*"(, "[a-z_0-9A-Z\-]*")*\]\)/
+      # translate a feature is...
+      sidurl = predicate.find_between(":", ",").first
+      tag_idurls_ok = predicate.find_between("\"", "\"")
+      if specification = Specification.first(:idurl => sidurl)
+        hash_tag_idurl_tag = specification.tags.inject({}) { |h,t| h[t.idurl] = t; h }
+        if tag_idurls_ok.all? {|tidurl| hash_tag_idurl_tag[tidurl] }
+          products_filters << ProductsBySpec.create(:opinion_id => id, :products_selector_dom_name => "compare_to",
+              :display_as => "#{specification.label} = " << tag_idurls_ok.collect { |t_ok_idurl| hash_tag_idurl_tag[t_ok_idurl].label }.join(' or '),
+              :specification_id => specification.id, :expressions => tag_idurls_ok )
+        else
+          puts "no tags for specification #{sidurl}=(#{}) in predicate #{predicate}"
+        end
+      else
+        puts "no specification #{sidurl} in predicate #{predicate}"
+      end
+    else
+      raise "error unmatching predicate #{predicate}"
+    end
+
+  end
+
+  def generate_comparaison?() true end
+  # generate_comparaisons yield with [weight, operator_type, pid1, pid2]
+  # operator_type = "best", "worse", "same"
+  def for_each_comparaison(all_products)
+    pids1 = products_ids_for("referent", all_products)
+    pids2 = products_ids_for("compare_to", all_products)
+    pids1.each { |pid1| pids2.each { |pid2| yield(weight, operator_type, pid1, pid2) unless pid1 == pid2 } }
+  end
 end
 
 
@@ -196,6 +313,8 @@ class Tip < Opinion
     end
     s
   end
+
+  def to_html2() to_html2_prefix << "<b>is tipped</b> #{intensity_symbol}" << to_html2_suffix end
 
   def to_xml_bis
     node_opinion = super
@@ -228,7 +347,20 @@ class Tip < Opinion
   end
 
   def is_mixed() intensity_symbol == "mixed" end
-  
+
+  def generate_rating?() true end
+  def for_each_rating(all_products)
+    v = Tip.intensities_value[intensity_symbol] / 2 + 0.5
+    products_ids_for("referent", all_products).each { |pid| yield(pid, weight, v) }
+  end
+
+end
+
+class Ranking < Opinion
+
+
+  def generate_comparaison?() true end
+
 end
 
 

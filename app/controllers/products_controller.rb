@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.first(:idurl => params[:product_idurl])
-    @knowledge = @product.knowledge.link_back
+    @current_knowledge.link_back
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render(:xml => @product) }
@@ -235,4 +235,10 @@ class ProductsController < ApplicationController
   end
 
   # -------------------------------------------------------------------------------------------
+  # Usages
+  # -------------------------------------------------------------------------------------------
+
+  def usages
+
+  end
 end

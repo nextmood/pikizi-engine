@@ -91,6 +91,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/products_opinions/:knowledge_idurl", :controller => 'knowledges', :action => 'list_opinions'  
   map.connect "/products.:format", :controller => 'products', :action => 'index'
   map.connect "/products/:product_idurl.:format", :controller => 'products', :action => 'show'
+  map.connect "/usages", :controller => 'products', :action => 'usages'
 
   map.root :controller => "landing"  # default
 

@@ -1,0 +1,14 @@
+<h2><%= @current_knowledge.dimensions.count %> dimensions</h2>
+<%= render(:partial => "usages_bis", :locals => {:dimension => @current_knowledge.dimension_root, :level => 0 }) %>
+
+<h2><%= @current_knowledge.usages.count %> usages</h2>
+<% for usage in @current_knowledge.usages %>
+    <div style="border-bottom:1px solid black; margin-top:2px;">
+      <%= usage.label %>
+      <div style="font-size:80%; margin-left:20px;">
+        <% for opinion in usage.opinions %>
+            <%= opinion.to_html2 %><br/> 
+        <% end %>
+      </div>
+    </div>
+<% end %>

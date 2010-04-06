@@ -1,0 +1,17 @@
+
+<div style="border-bottom:1px solid black; margin-top:2px;">
+  <%= "." * 3 * level %><%= dimension.label %>
+  <div style="font-size:80%; margin-left:20px;">
+    <% for a_class, opinions in dimension.opinions.group_by(&:class) %>
+        <div>
+            <% for opinion in opinions %>
+                <%= opinion.to_html2 %>&nbsp;<%= opinion.review.category %><br/>
+            <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<% for sub_dimension in dimension.children %>
+    <%= render(:partial => "usages_bis", :locals => {:dimension => sub_dimension, :level => level + 1}) %>    
+<% end %>

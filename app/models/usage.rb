@@ -11,15 +11,15 @@ class Usage
   # refers to one or more hard-feature
 
   key :label, String
-  key :dimension_rating_weight, Array #  [ [feature_rating_url, 0.5], [feature_rating_url, 0.2], ... [] ]
-  key :feature_urls, Array
 
-  key :user_id, Mongo::ObjectID # the user who recorded this opinion
+  key :user_id, Mongo::ObjectID # the user who recorded first this  usage
   belongs_to :user
 
-  key :knowledge_id, Mongo::ObjectID # the user who recorded this opinion
+  key :knowledge_id, Mongo::ObjectID
   belongs_to :knowlege
 
+  many :opinions
+  
   timestamps!
 
 
