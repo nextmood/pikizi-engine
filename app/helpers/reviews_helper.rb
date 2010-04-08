@@ -6,9 +6,9 @@ module ReviewsHelper
     l << "from #{review.source}" if review.source
     s = l.join(' ')
     if options[:opinion]
-      s = link_to(s, :controller => "reviews", :action => "show", :id => review.id, :opinion_id => options[:opinion].id)
+      s = link_to(s, {:controller => "reviews", :action => "show", :id => review.id, :opinion_id => options[:opinion].id}, :style => "color:#00c0ff")
     else
-      s = link_to(s, review.source_url) if review.source_url
+      s = link_to(s, review.source_url, :style => "color:#00c0ff" ) if review.source_url
     end
     s = "<span style=\"#{options[:style]}\">#{s}</span>" if options[:style]
     s

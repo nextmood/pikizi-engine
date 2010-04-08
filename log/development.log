@@ -1,0 +1,1091 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-04-08 16:32:49) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 546ms (View: 248 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-04-08 16:32:54) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 451ms (View: 91 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:54) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 142ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:55) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 154ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:32:57) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (92.5ms)
+Rendered home/_product_price (6.1ms)
+Rendered home/_product_tab_overview (1.1ms)
+Rendered home/_product_tabs (11.7ms)
+Completed in 318ms (View: 136 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:57) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 174ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:57) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 155ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:58) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 152ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:32:58) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 191ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:32:59) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (24.8ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (18.3ms)
+Rendered home/_product_tab_ratings_bis (93.1ms)
+Rendered home/_product_tab_ratings_bis (3.3ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (1.5ms)
+Rendered home/_product_tab_ratings_bis (110.2ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (11.9ms)
+Rendered home/_product_tab_ratings_bis (171.6ms)
+Rendered home/_product_tab_ratings (176.0ms)
+Rendered home/_product_tabs (185.2ms)
+Completed in 385ms (View: 194 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:33:06) [POST]
+  Parameters: {"new_tab"=>"overview", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_overview (98.0ms)
+Rendered home/_product_tabs (104.6ms)
+Completed in 302ms (View: 107 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=overview&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:33:37) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (448.8ms)
+Rendered home/_product_tabs (457.9ms)
+Completed in 660ms (View: 460 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:34:15) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (161.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (105.0ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (12.0ms)
+Rendered home/_product_tab_reviews (773.0ms)
+Rendered home/_product_tabs (782.9ms)
+Completed in 1074ms (View: 792 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:34:38) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (23.1ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (109.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (13.1ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (109.7ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.3ms)
+Rendered home/_product_tab_reviews (723.3ms)
+Rendered home/_product_tabs (733.3ms)
+Completed in 1042ms (View: 742 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:35:10) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (110.2ms)
+Rendered home/_product_price (4.9ms)
+Rendered home/_product_tab_overview (1.2ms)
+Rendered home/_product_tabs (11.3ms)
+Completed in 352ms (View: 141 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:10) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 271ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:11) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 206ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:11) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 182ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:11) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 182ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:35:13) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (131.3ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (13.6ms)
+Rendered reviews/_short (13.2ms)
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (159.0ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (13.7ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (12.8ms)
+Rendered home/_product_tab_reviews (775.9ms)
+Rendered home/_product_tabs (782.4ms)
+Completed in 1005ms (View: 791 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:35:53) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (144.6ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.9ms)
+Rendered home/_product_tabs (8.1ms)
+Completed in 418ms (View: 172 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:54) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 297ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:54) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 229ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:54) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 212ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:35:55) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 70ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:35:56) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (23.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (13.2ms)
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_short (14.3ms)
+Rendered reviews/_short (14.3ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (13.8ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_short (153.4ms)
+Rendered reviews/_short (12.8ms)
+Rendered home/_product_tab_reviews (806.8ms)
+Rendered home/_product_tabs (817.0ms)
+Completed in 1072ms (View: 826 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:36:08) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (13.5ms)
+Rendered home/_product_price (5.6ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.7ms)
+Completed in 299ms (View: 41 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:09) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 255ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:09) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 92ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:10) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 255ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:10) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 232ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:36:11) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (171.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (165.8ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.8ms)
+Rendered reviews/_short (13.1ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.6ms)
+Rendered home/_product_tab_reviews (818.5ms)
+Rendered home/_product_tabs (827.5ms)
+Completed in 1092ms (View: 836 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:36:27) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.0ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.4ms)
+Completed in 303ms (View: 38 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:28) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 91ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:28) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 91ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:28) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 243ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:28) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 237ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:36:30) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (23.2ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (173.8ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (13.7ms)
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_short (12.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (12.5ms)
+Rendered home/_product_tab_reviews (675.3ms)
+Rendered home/_product_tabs (685.4ms)
+Completed in 965ms (View: 694 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:36:58) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (177.3ms)
+Rendered home/_product_price (4.8ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (8.1ms)
+Completed in 312ms (View: 205 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:58) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 313ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:58) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 270ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:59) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:36:59) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 298ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:37:00) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (25.4ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (183.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered home/_product_tab_reviews (687.1ms)
+Rendered home/_product_tabs (696.4ms)
+Completed in 1168ms (View: 888 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:37:14) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (23.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (187.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (14.0ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (12.2ms)
+Rendered home/_product_tab_reviews (695.7ms)
+Rendered home/_product_tabs (885.1ms)
+Completed in 998ms (View: 893 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:37:32) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.2ms)
+Rendered home/_product_price (4.6ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.4ms)
+Completed in 335ms (View: 40 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:37:33) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 98ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:37:33) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 93ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:37:33) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 265ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:37:34) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 72ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:37:34) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (210.7ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.8ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.6ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (206.5ms)
+Rendered home/_product_tab_reviews (896.6ms)
+Rendered home/_product_tabs (905.8ms)
+Completed in 1216ms (View: 915 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:38:26) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (283.1ms)
+Rendered home/_product_price (4.9ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.8ms)
+Completed in 418ms (View: 310 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:26) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 387ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:27) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 88ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:27) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 377ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:27) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 310ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:38:28) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (24.7ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (248.2ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.7ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.1ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.6ms)
+Rendered home/_product_tab_reviews (1023.1ms)
+Rendered home/_product_tabs (1032.3ms)
+Completed in 1156ms (View: 1041 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:38:51) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (11.4ms)
+Rendered home/_product_price (4.9ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.2ms)
+Completed in 392ms (View: 38 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:51) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 400ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:52) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 370ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:52) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 72ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:38:52) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 322ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:38:54) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (27.6ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (14.1ms)
+Rendered reviews/_short (13.2ms)
+Rendered reviews/_short (13.6ms)
+Rendered reviews/_short (13.8ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.8ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (12.3ms)
+Rendered home/_product_tab_reviews (789.1ms)
+Rendered home/_product_tabs (799.9ms)
+Completed in 1180ms (View: 809 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:40:04) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.1ms)
+Rendered home/_product_price (4.8ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.5ms)
+Completed in 409ms (View: 38 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:40:05) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 90ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:40:05) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 377ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:40:06) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:40:06) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 378ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:40:06) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (24.5ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (272.1ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.3ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (13.4ms)
+Rendered reviews/_short (14.1ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (13.0ms)
+Rendered reviews/_short (12.9ms)
+Rendered reviews/_short (12.6ms)
+Rendered home/_product_tab_reviews (795.0ms)
+Rendered home/_product_tabs (801.6ms)
+Completed in 1184ms (View: 811 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 16:41:07) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (13.0ms)
+Rendered home/_product_price (4.6ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.4ms)
+Completed in 413ms (View: 39 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:08) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 99ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:08) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 370ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:08) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:08) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 343ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 16:41:10) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (24.0ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (14.6ms)
+Rendered reviews/_short (13.5ms)
+Rendered reviews/_short (13.0ms)
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (283.8ms)
+Rendered reviews/_short (12.6ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.7ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.4ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.1ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (12.9ms)
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (13.1ms)
+Rendered reviews/_short (13.0ms)
+Rendered reviews/_short (12.3ms)
+Rendered home/_product_tab_reviews (810.5ms)
+Rendered home/_product_tabs (818.8ms)
+Completed in 1208ms (View: 828 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-04-08 16:41:14) [GET]
+  Parameters: {"id"=>"4b892b7043a76d7c5d00013b"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.5ms)
+Rendered reviews/_paragraph (37.6ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.8ms)
+Completed in 899ms (View: 543 | 200 OK [http://localhost/reviews/show/4b892b7043a76d7c5d00013b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:15) [GET]
+  Parameters: {"id"=>"4ba78efc43a76d710b0010df"}
+Sending data 
+Completed in 87ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78efc43a76d710b0010df]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 16:41:16) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 362ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]

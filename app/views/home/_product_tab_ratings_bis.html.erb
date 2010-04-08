@@ -1,7 +1,7 @@
 <div style="margin-top:<%= 9 - 3 * level %>px;">
 
     <div style="margin-left:<%= level * 10 %>px; width:<%= 350 - level * 10 %>px; float:left; border-bottom:1px dashed black;">
-      <%= link_to(dimension.label, "/ranking/#{dimension.idurl}") %>
+      <%= link_to(dimension.label, "/ranking/#{dimension.idurl}", :style => "color:#00c0ff") %>
     </div>
     <span style="">
       <% if product.get_value(dimension.idurl) %>

@@ -1,4 +1,4 @@
-<div><%= link_to("edit...", "/products/#{product.idurl}") %></div>
+<div><%= link_to("edit...", "/products/#{product.idurl}", :style => "color:#00c0ff") %></div>
   <%= begin
         feature_description = knowledge.get_feature_by_idurl("description").get_value(product)
         File.read("public/domains/#{knowledge.idurl}/products/#{product.idurl}/#{feature_description}")
