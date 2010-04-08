@@ -155,14 +155,19 @@
 }
 
 .pkz_dimension_explanation {
-    background-color:pink;
+    background-color: #efefef;
     margin-bottom:5px;
+    border:1px solid black;
 }
 
 .pkz_dimension_explanation tr th {
-    text-align:center;    
+    text-align:center;
+    border-bottom:1px solid gray;
+    border-right:1px solid gray;
 }
 
 .pkz_dimension_explanation tr td {
     text-align:center;
+    border-bottom:1px dashed gray;
+    border-right:1px solid gray;
 }

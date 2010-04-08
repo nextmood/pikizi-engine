@@ -1,9 +1,9 @@
 <% hash_category_ratings = ratings.group_by(&:category) %>
 <% hash_category_comparaisons = comparaisons.group_by(&:category) %>
 
-<table class="pkz_dimension_explanation" border="1">
+<table class="pkz_dimension_explanation" cellspacing="0" cellpadding="5" >
     <tr>
-      <td><%= link_to_remote("close explanation", :url => "/products/dimension_explanation_close/#{dimension.id}", :html => {:style => "font-size:80%;"}) %></td>
+      <td style="border-bottom:1px solid gray;"><%= link_to_remote("close explanation", :url => "/products/dimension_explanation_close/#{dimension.id}", :html => {:style => "font-size:80%;"}) %></td>
       <th colspan="2">
         <%= (x = hash_pid_2_average_mixed[product.id]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %>
       </th>
@@ -16,11 +16,11 @@
     </tr>
     <% if true or ratings.size > 0 %>
     <tr>
-      <th style="text-align:left;">
+      <th style="text-align:left;  border-bottom:1px dashed gray;">
         <%= ratings.size %> tips & ratings
       </th>
 
-      <td>rating=<%= (Dimension.line_2_weight[:rating] * 100).round %>%</td>
+      <td><%= (Dimension.line_2_weight[:rating] * 100).round %>%</td>
       <td><%= (x = hash_product_2_average_rating01[product]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %></td>
       <% for category, weight in Review.categories %>
         <td>
@@ -44,8 +44,8 @@
 
     <% if true or comparaisons.size > 0 %>
     <tr>
-      <th style="text-align:left;"><%= comparaisons.size %> comparaisons & rankings</th>
-      <td>elo=<%= (Dimension.line_2_weight[:comparaison] *100).round %>%</td>
+      <th style="text-align:left; border-bottom:1px dashed gray;"><%= comparaisons.size %> comparaisons & rankings (elo)</th>
+      <td><%= (Dimension.line_2_weight[:comparaison] *100).round %>%</td>
       <td><%= (x = elo.get_elo01(product.id)) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %></td>
       <% for category, weight in Review.categories %>
         <td>

@@ -160,9 +160,8 @@ namespace :pikizi do
         product = all_products.detect { |p| p.id == product_id }
         product.set_value(dimension_or_usage.idurl, rating_01)
         product.save
-        puts "aggregation computed for dimension #{dimension_or_usage.idurl}=#{rating_01}" if product.idurl == "htc_droid_eris"
     end
-    #puts "aggregation computed for dimension #{dimension_or_usage.idurl}"
+    puts "aggregation computed for dimension #{dimension_or_usage.idurl}"
   end
 
   # ========================================================================================
