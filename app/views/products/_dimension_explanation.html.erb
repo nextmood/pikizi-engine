@@ -1,0 +1,91 @@
+<% hash_category_ratings = ratings.group_by(&:category) %>
+<% hash_category_comparaisons = comparaisons.group_by(&:category) %>
+
+<table class="pkz_dimension_explanation" border="1">
+    <tr>
+      <td><%= link_to_remote("close explanation", :url => "/products/dimension_explanation_close/#{dimension.id}", :html => {:style => "font-size:80%;"}) %></td>
+      <th colspan="2">
+        <%= (x = hash_pid_2_average_mixed[product.id]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %>
+      </th>
+      <% for category, weight in Review.categories_as_percentage %>
+        <th>
+          <% hash_category_ratings[category] ||= []; hash_category_comparaisons[category] ||= [] %>
+          <%= category %><small>&nbsp;<%= weight %>%</small>
+        </th>
+      <% end %>
+    </tr>
+    <% if true or ratings.size > 0 %>
+    <tr>
+      <th style="text-align:left;">
+        <%= ratings.size %> tips & ratings
+      </th>
+
+      <td>rating=<%= (Dimension.line_2_weight[:rating] * 100).round %>%</td>
+      <td><%= (x = hash_product_2_average_rating01[product]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %></td>
+      <% for category, weight in Review.categories %>
+        <td>
+          <% if hash_category_ratings[category] and hash_category_ratings[category].size > 0 %>
+              <%= (x = hash_product_2_category_average_rating01[product][category]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %>
+              <%= link_to_function("for #{pluralize(hash_category_ratings[category].size, 'opinions')}", 
+                                   "document.getElementById('list_ratings_dimension_#{dimension.id}_#{category}').toggle();",
+                                   :style => "font-size:80%; margin-left:5px;") %>
+          <div id="list_ratings_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%; display:none;">
+          <% for rating in hash_category_ratings[category] %>
+              <div><%= rating.to_html2 %></div>
+          <% end %>
+          </div>
+          <% else %>
+            <small>N/A</small>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+    <% end %>
+
+    <% if true or comparaisons.size > 0 %>
+    <tr>
+      <th style="text-align:left;"><%= comparaisons.size %> comparaisons & rankings</th>
+      <td>elo=<%= (Dimension.line_2_weight[:comparaison] *100).round %>%</td>
+      <td><%= (x = elo.get_elo01(product.id)) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %></td>
+      <% for category, weight in Review.categories %>
+        <td>
+          <% if hash_category_comparaisons[category] and hash_category_comparaisons[category].size > 0 %>
+          <%= link_to_function("for #{pluralize(hash_category_comparaisons[category].size, 'opinions')}",
+                                   "document.getElementById('list_comparaisons_dimension_#{dimension.id}_#{category}').toggle();",
+                                   :style => "font-size:80%; margin-left:5px;") %>
+          <div id="list_comparaisons_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%; display:none;">
+          <% for comparaison in hash_category_comparaisons[category] %>
+              <div><%= comparaison.to_html2 %></div>
+          <% end %>
+          </div>
+          <% else %>
+              <small>N/A</small>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+    <% end %>
+  
+  <!--
+    <tr>
+      <th style="text-align:left;">automatic ratings from related features</th>
+      <td>0%</td>
+      <td>xxx</td>
+      <td style="text-align:left;" colspan="<%= Review.categories.size %>">
+        avg=yyy for xxx feature(s)
+      </td>
+    </tr>
+    -->
+    <% if dimension.children.count > 0 %>
+    <tr>
+      <th style="text-align:left;">aggregation of sub-dimension(s)</th>
+      <td><%= (Dimension.line_2_weight[:sub_dimensions] *100).round %>%</td>
+      <td><%= (x = hash_product_2_average_sub_dimensions[product]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %></td>
+      <td style="text-align:left;" colspan="<%= Review.categories.size %>">
+
+        for <%= dimension.children.collect { |sub_d| "#{sub_d.label} (#{sub_d.get_value_in_min_max_rating_html(product)})" }.join(', ') %>
+      </td>
+    </tr>
+    <% end %>
+</table>
+

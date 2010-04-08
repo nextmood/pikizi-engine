@@ -55,7 +55,15 @@ class Review < Root
   def get_reputation() source == Review::FromAmazon.default_category ? reputation + 1.0 : 1.0 end
 
   # all categories of reviews and their weights
-  def self.categories() {"expert" => 10.0, "amazon" => 1.0, "user" => 2.0,  "feature" => 1.0} end
+  def self.categories() {"expert" => 10.0, "amazon" => 1.0, "user" => 2.0 } end
+  def self.categories_as_percentage
+    unless defined?(@@categories_as_percentage)
+      sum_weight = self.categories.inject(0.0) { |s, (c, w)| s += w }
+      @@categories_as_percentage = self.categories.inject({}) { |h, (c, w)| h[c] = (Float(w) * 100 / sum_weight).round; h }
+    end
+    @@categories_as_percentage
+  end
+
   def self.categories_select() categories.collect {|k,v| [k,k] } end
 
   # destroy the record in mongo db, but first we need to remove all attached opinions
@@ -144,7 +152,7 @@ class Review < Root
     node_review << node_paragraphs = XML::Node.new("paragraphs")
     paragraphs.each do |paragraph|
       node_paragraphs << node_paragraph = XML::Node.new("Paragraph")
-      node_paragraph << paragraph.content
+      node_paragraph << paragraph.content_without_html
       paragraph.opinions.each do |opinion|
         node_paragraph << opinion.to_xml_bis
       end

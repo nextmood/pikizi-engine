@@ -19,15 +19,17 @@ class ProductByLabel < ProductsFilter
     self.short_label = p ? p.idurl : "???"
   end
 
+  def concern?(product) product.id ==  product_id end
+
 end
 
 class ProductsBySpec < ProductsFilter
   key :mode_selection_tag, String, :default => "or"
   key :specification_id, Mongo::ObjectID
+  key :specification_idurl, String, :default => nil
   key :expressions, Array, :default =>[] # list of filter for the spec   if a or/and expression
 
   def generate_matching_products(all_products)
-    specification_idurl = Specification.find(specification_id).idurl
     all_products.select do |product|
       values = product.get_value(specification_idurl)
       case mode_selection_tag
@@ -41,6 +43,14 @@ class ProductsBySpec < ProductsFilter
     s = Specification.find(specification_id)
     self.display_as = "#{s.label} = " << expressions.join(" #{mode_selection_tag} ")
     self.short_label = "#{s.idurl} = " << expressions.join(" #{mode_selection_tag} ")
+  end
+
+  def concern?(product)
+    values = product.get_value(specification_idurl)
+    case mode_selection_tag
+      when "or" then values and values.any? { |value| expressions.include?(value) }
+      when "and" then values and values.all? { |value| expressions.include?(value) }
+    end
   end
 
 end
@@ -61,6 +71,8 @@ class ProductsByShortcut < ProductsFilter
     self.display_as = shortcut_selector
     self.short_label = shortcut_selector
   end
+
+  def concern?(product) shortcut_selector ==  "all_products" end
 
 end
 

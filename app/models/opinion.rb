@@ -22,7 +22,9 @@ class Opinion < Root
   key :extract, String
   key :value_oriented, Boolean
   key :validated_by_creator, Boolean, :default => false
-  key :weight, Float
+  key :category, String
+  def weight() Review.categories[category] end
+  
   key :review_id, Mongo::ObjectID # the review where this opinion was extracted
   belongs_to :review
 
@@ -101,6 +103,8 @@ class Opinion < Root
     node_opinion = XML::Node.new(self.class.to_s)
     node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
     node_opinion['product_selector_1'] = products_filters_for("referent").collect(&:short_label).join(', ')
+    usages.collect { |usage| node_opinion << node_usage = XML::Node.new("xxx"); node_usage << usage.label } if usages.size > 0
+    (node_opinion << node_extract = XML::Node.new("extract"); node_extract << extract) if extract and extract != ""
     #node_opinion['review_id'] = review_id.to_s
     #node_opinion['paragraph_id'] = paragraph_id.to_s
     node_opinion
@@ -122,6 +126,7 @@ class Opinion < Root
   end
 
   def self.generate_all_products_filters
+    puts "generating products filters for all opinions"
     ProductsFilter.delete_all
     knowledge = Knowledge.first
     
@@ -130,7 +135,7 @@ class Opinion < Root
     Review.all.each do |r|
       r.opinions = Opinion.all(:review_id => r.id)
       r.save
-      r.opinions.each { |o| o.update_attributes(:weight => Review.categories[r.category]) }
+      r.opinions.each { |o| o.update_attributes(:category => r.category) }
     end
 
     # generate product filters
@@ -152,7 +157,7 @@ class Opinion < Root
     else
       puts "opinion= #{id} no dimension #{fidurl.inspect}"
     end
-    self.dimensions = ld
+    self.dimension_ids = ld.collect(&:id)
 
     ls = []
     if usage and usage != ""
@@ -183,7 +188,8 @@ class Opinion < Root
     true
   end
 
-
+  def concern?(product) products_filters_for("referent").any? { |pf| pf.concern?(product) } end
+  
 end
 
 
@@ -216,8 +222,9 @@ class Rating < Opinion
   # generate_ratings returns a hash { :pid => [weight, rating_01], ... }
   def for_each_rating(all_products)
     v = rating_01;
-    products_for("referent", all_products).each { |p| yield(p, weight, v) }
+    products_for("referent", all_products).each { |p| yield(p, category, v) }
   end
+
 
 end
 
@@ -299,6 +306,12 @@ class Comparator < Opinion
     ps2 = products_for("compare_to", all_products)
     ps1.each { |p1| ps2.each { |p2| yield(weight, operator_type, p1, p2) unless p1.id == p2.id } }
   end
+
+
+  def concern?(product)
+    super(product) or products_filters_for("compare_to").any? { |pf| pf.concern?(product) }
+  end
+
 end
 
 
@@ -321,7 +334,6 @@ class Tip < Opinion
   def to_xml_bis
     node_opinion = super
     node_opinion['value'] = intensity_symbol
-    node_opinion << usage
     node_opinion
   end
 
@@ -342,18 +354,15 @@ class Tip < Opinion
 
   def intensity_as_label() x = Tip.intensities_symbols.detect { |l,k| k == intensity_symbol }; x ? x.first : "?????" end
 
-  def intensity()
-    x = Tip.intensities_value[intensity_symbol]
-    puts "********** intensity #{x} for symbol #{intensity_symbol}"
-    x
-  end
+  def intensity() Tip.intensities_value[intensity_symbol] end
 
   def is_mixed() intensity_symbol == "mixed" end
 
   def generate_rating?() true end
+  
   def for_each_rating(all_products)
     v = Tip.intensities_value[intensity_symbol] / 2 + 0.5
-    products_for("referent", all_products).each { |p| yield(p, weight, v) }
+    products_for("referent", all_products).each { |p| yield(p, category, v) }
   end
 
 end

@@ -1,3 +1,5 @@
+require 'htmlentities'
+
 # a sub-division of the content of a review
 class Paragraph
 
@@ -12,5 +14,6 @@ class Paragraph
 
   many :opinions, :polymorphic => true
 
+  def content_without_html() @content_without_html ||= HTMLEntities.new.decode(content) end
   
 end

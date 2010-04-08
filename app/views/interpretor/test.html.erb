@@ -30,15 +30,15 @@
     <% for current_index in 0..@paragraphs_size-1 %>
         <% if current_index == @paragraph_index - 1 %>
           <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
-              <a name="previous_paragraph"><%=h @paragraphs[current_index].content %></a>
+              <a name="previous_paragraph"><%=h @paragraphs[current_index].content_without_html %></a>
           </div>
         <% elsif current_index == @paragraph_index %>
             <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:lightgray;">
-                <a <%= "name=\"previous_paragraph\"" if current_index==0 %>name="current_paragraph"><%=h @paragraphs[current_index].content %></a>
+                <a <%= "name=\"previous_paragraph\"" if current_index==0 %>name="current_paragraph"><%=h @paragraphs[current_index].content_without_html %></a>
             </div>
         <% else %>
             <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
-                <%=h @paragraphs[current_index].content %>
+                <%=h @paragraphs[current_index].content_without_html %>
             </div>
         <% end %>
     <% end %>

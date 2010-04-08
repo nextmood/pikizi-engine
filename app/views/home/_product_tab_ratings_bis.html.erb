@@ -1,9 +1,18 @@
-<div style="margin-bottom:4px;">
-    <%= '&nbsp;&nbsp;' * level %>
-    <%= dimension.label %>
-    <%= '&nbsp;&nbsp;' * (5 - level) %>
-    <%= dimension.get_value_html(product) %>
+<div style="margin-top:<%= 9 - 3 * level %>px;">
 
+    <div style="margin-left:<%= level * 10 %>px; width:<%= 350 - level * 10 %>px; float:left; border-bottom:1px dashed black;"><%= dimension.label %></div>
+    <span style="">
+      <% if product.get_value(dimension.idurl) %>
+        <%= link_to_remote(dimension.get_value_html(product),
+                         :url => { :controller => "products", :action => "dimension_explanation",
+                                   :id => product.id, :dimension_id => dimension.id }) %>
+      <% else %>
+        n/a
+      <% end %>
+    </span>
+
+
+    <div id="div_explanation_dimension_<%= dimension.id %>" style="clear:both; margin-left:<%= level * 10 %>px; "></div>
 </div>
 <% for sub_dimension in dimension.children %>
     <%= render(:partial => "product_tab_ratings_bis",

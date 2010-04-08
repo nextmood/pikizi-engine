@@ -11,7 +11,7 @@ class Elo
   end
 
   # return a ranking between 0.0 and 1.0 for a given product
-  def get_elo01(p) (get_elo(p) - @min_elo) / (@max_elo - @min_elo) end 
+  def get_elo01(p) (x = get_elo(p) and @min_elo and @max_elo) ? (x - @min_elo) / (@max_elo - @min_elo) : nil end 
 
   def for_each_p_elo01() @elos.each { |p, e| yield(p, get_elo01(p)) } end
 

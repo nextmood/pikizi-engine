@@ -6,9 +6,12 @@
         <% nb_reviews += 1 %>
         <% for paragraph in review.paragraphs %>
             <div style="border-top:1px solid black; margin-bottom:10px;">
-                <small title="#<%=h paragraph.id %>">&para;</small>&nbsp;<%=h paragraph.content %>
+                <%=h paragraph.content_without_html %>
                 <% for opinion in paragraph.opinions %>
-                    <div style="color:blue; border-top:1px dashed black; margin-top:3px;"><%= opinion.to_html2 %></div>
+                    <div style="color:blue; border-top:1px dashed black; margin-top:3px;">
+                      <%= opinion.to_html2 %>
+                      <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
+                    </div>
                     <% nb_opinions += 1 %>
                 <% end %>
             </div>

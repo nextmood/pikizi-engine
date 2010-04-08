@@ -234,6 +234,39 @@ class ProductsController < ApplicationController
     end
   end
 
+  # this is a rjs, gave explanation about how a dimension is computed
+  def dimension_explanation
+    weight_elo = 0.5; weight_rating = 0.5
+
+    all_products = @current_knowledge.products
+    product = all_products.detect { |p| p.id.to_s == params[:id] }
+    raise "no product" unless product
+    dimension = Dimension.find(params[:dimension_id])
+
+    ratings, comparaisons = dimension.compute_aggregation_ratings_comparaisons(product)
+    hash_product_2_category_average_rating01 = dimension.compute_hash_product_2_category_average_rating01(ratings, all_products, product)
+    hash_product_2_average_rating01 = dimension.compute_hash_product_2_average_rating01(hash_product_2_category_average_rating01, product)
+    elo = dimension.compute_elo(comparaisons, all_products)
+    hash_product_2_average_sub_dimensions = dimension.compute_hash_product_2_average_sub_dimensions(all_products, product)
+    hash_pid_2_average_mixed = dimension.combine_rating_elo_sub_automatic(hash_product_2_average_rating01, elo, hash_product_2_average_sub_dimensions, product)
+    render :update do |page|
+      page.replace_html("div_explanation_dimension_#{dimension.id}", :partial => "/products/dimension_explanation",
+         :locals => { :dimension => dimension, :product => product, :ratings => ratings, :comparaisons =>  comparaisons,
+                      :hash_product_2_category_average_rating01 => hash_product_2_category_average_rating01,
+                      :hash_product_2_average_rating01 => hash_product_2_average_rating01,
+                      :elo => elo,
+                      :hash_pid_2_average_mixed => hash_pid_2_average_mixed,
+                      :hash_product_2_average_sub_dimensions => hash_product_2_average_sub_dimensions })
+    end
+  end
+
+  def dimension_explanation_close
+    render :update do |page|
+      page.replace_html("div_explanation_dimension_#{params[:id]}", "")
+    end
+  end
+
+
   # -------------------------------------------------------------------------------------------
   # Usages
   # -------------------------------------------------------------------------------------------

@@ -1,325 +1,2223 @@
 
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:04:20) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 08:43:39) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (24.0ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (15.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (16.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (11.1ms)
+Rendered home/_product_tab_ratings_bis (113.4ms)
+Rendered home/_product_tab_ratings (184.3ms)
+Rendered home/_product_tabs (298.4ms)
+Completed in 1781ms (View: 343 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
 
-ActionView::TemplateError (undefined method `reviews' for #<Knowledge:0x1034bb8e8>) on line #3 of app/views/reviews/eric.html.erb:
-1: <!-- interface eric -->
-2: 
-3: <% for review in @current_knowledge.reviews %>
-4:     <% for paragraph in review.paragraphs %>
-5:         <% for opinion in paragraph.opinions %>
-6:             <%= opinion.to_html2 %><br/>
 
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/views/reviews/eric.html.erb:3
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:43:42) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
 
-Rendered rescues/_trace (85.1ms)
-Rendered rescues/_request_and_response (0.9ms)
-Rendering rescues/layout (internal_server_error)
+NoMethodError (undefined method `combine_ratings_and_elo' for #<Dimension:0x103670c60>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/controllers/products_controller.rb:251:in `dimension_explanation'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
 
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:06:01) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-
-ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x102cb8ab0>) on line #6 of app/views/reviews/eric.html.erb:
-3: <% for review in @current_knowledge.reviews %>
-4:     <% for paragraph in review.paragraphs %>
-5:         <% for opinion in paragraph.opinions %>
-6:             <%= opinion.to_html2 %><br/>
-7:         <% end %>
-8:     <% end %>
-9: <% end %>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/models/opinion.rb:88:in `to_html2_suffix'
-    app/models/opinion.rb:317:in `to_html2'
-    app/views/reviews/eric.html.erb:6
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:5
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:4
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:3
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (136.2ms)
+Rendered rescues/_trace (153.0ms)
 Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:06:22) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-
-ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x1072027d8>) on line #6 of app/views/reviews/eric.html.erb:
-3: <% for review in @current_knowledge.reviews %>
-4:     <% for paragraph in review.paragraphs %>
-5:         <% for opinion in paragraph.opinions %>
-6:             <%= opinion.to_html2 %><br/>
-7:         <% end %>
-8:     <% end %>
-9: <% end %>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/models/opinion.rb:88:in `to_html2_suffix'
-    app/models/opinion.rb:317:in `to_html2'
-    app/views/reviews/eric.html.erb:6
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:5
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:4
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:3
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (39.4ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (internal_server_error)
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 08:46:31) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (24.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (3.3ms)
+Rendered home/_product_tab_ratings_bis (18.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (19.0ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (10.9ms)
+Rendered home/_product_tab_ratings_bis (80.1ms)
+Rendered home/_product_tab_ratings (136.5ms)
+Rendered home/_product_tabs (155.1ms)
+Completed in 600ms (View: 169 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
 
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:08:35) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:46:33) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
 
-ActionView::TemplateError (undefined local variable or method `usage_id' for #<Tip:0x102cba310>) on line #6 of app/views/reviews/eric.html.erb:
-3: <% for review in @current_knowledge.reviews %>
-4:     <% for paragraph in review.paragraphs %>
-5:         <% for opinion in paragraph.opinions %>
-6:             <%= opinion.to_html2 %><br/>
-7:         <% end %>
-8:     <% end %>
-9: <% end %>
+ArgumentError (wrong number of arguments (3 for 4)):
+  app/controllers/products_controller.rb:251:in `combine_rating_elo_sub_automatic'
+  app/controllers/products_controller.rb:251:in `dimension_explanation'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
 
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/models/opinion.rb:88:in `to_html2_suffix'
-    app/models/opinion.rb:317:in `to_html2'
-    app/views/reviews/eric.html.erb:6
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:5
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:4
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:3
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (133.4ms)
+Rendered rescues/_trace (23.4ms)
 Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:10:34) [GET]
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 08:48:26) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (24.2ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (16.6ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (16.3ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (11.9ms)
+Rendered home/_product_tab_ratings_bis (75.9ms)
+Rendered home/_product_tab_ratings (133.6ms)
+Rendered home/_product_tabs (152.6ms)
+Completed in 602ms (View: 167 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:48:28) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+
+NameError (undefined local variable or method `product_id' for #<Dimension:0x10366f540>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/models/dimension.rb:227:in `combine_rating_elo_sub_automatic'
+  app/models/dimension.rb:226:in `each'
+  app/models/dimension.rb:226:in `combine_rating_elo_sub_automatic'
+  app/controllers/products_controller.rb:251:in `dimension_explanation'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (143.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:50:32) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+
+ActionView::TemplateError (undefined method `[]' for 0.637622375759147:Float) on line #9 of app/views/products/_dimension_explanation.html.erb:
+6:     <tr>
+7:       <td><%= link_to_remote("close explanation", :url => "/products/dimension_explanation_close/#{dimension.id}", :html => {:style => "font-size:80%;"}) %></td>
+8:       <th colspan="2">
+9:         <%= (x = hash_pid_2_average_mixed[product.id]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %>
+10:       </th>
+11:       <% for category, weight in Review.categories_as_percentage %>
+12:         <th>
+
+    app/views/products/_dimension_explanation.html.erb:9
+    app/controllers/products_controller.rb:253:in `dimension_explanation'
+    app/controllers/products_controller.rb:252:in `dimension_explanation'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:52:11) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+
+ActionView::TemplateError (undefined method `[]' for 0.637622375759147:Float) on line #9 of app/views/products/_dimension_explanation.html.erb:
+6:     <tr>
+7:       <td><%= link_to_remote("close explanation", :url => "/products/dimension_explanation_close/#{dimension.id}", :html => {:style => "font-size:80%;"}) %></td>
+8:       <th colspan="2">
+9:         <%= (x = hash_pid_2_average_mixed[product.id]) ? dimension.get_value01_in_min_max_rating_html(x) : 'n/a' %>
+10:       </th>
+11:       <% for category, weight in Review.categories_as_percentage %>
+12:         <th>
+
+    app/views/products/_dimension_explanation.html.erb:9
+    app/controllers/products_controller.rb:253:in `dimension_explanation'
+    app/controllers/products_controller.rb:252:in `dimension_explanation'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:55:10) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (228.2ms)
+Completed in 4603ms (View: 236 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 08:56:15) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (204.0ms)
+Completed in 4427ms (View: 209 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 09:05:12) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (213.6ms)
+Completed in 4550ms (View: 219 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-04-08 09:59:55) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 457ms (View: 169 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#start_quiz (for 127.0.0.1 at 2010-04-08 10:00:07) [GET]
+  Parameters: {"quizze_id"=>"4b892a7043a76d7c3f000277"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 567ms | 302 Found [http://localhost/start_quiz/4b892a7043a76d7c3f000277]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-04-08 10:00:08) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 1106ms (View: 892 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-04-08 10:00:17) [POST]
+  Parameters: {"quizze_idurl"=>"smart_phone_advisor", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "choices_idurls_ok"=>["maybe"], "question_idurl"=>"q18_physical_keyboard", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 548ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-04-08 10:00:17) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 1122ms (View: 903 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-04-08 10:00:23) [POST]
+  Parameters: {"quizze_idurl"=>"smart_phone_advisor", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "choices_idurls_ok"=>["blackberry", "nokia"], "question_idurl"=>"q6_favorite_brand", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 580ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-04-08 10:00:24) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 1119ms (View: 775 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-04-08 10:00:29) [POST]
+  Parameters: {"quizze_idurl"=>"smart_phone_advisor", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "choices_idurls_ok"=>["authentication", "remote_wipe"], "question_idurl"=>"q25_security_features", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 684ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-04-08 10:00:30) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 1079ms (View: 814 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-04-08 10:00:35) [POST]
+  Parameters: {"quizze_idurl"=>"smart_phone_advisor", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "choices_idurls_ok"=>["location_based_services", "familymap"], "question_idurl"=>"q24_gps_services", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 689ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-04-08 10:00:36) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 1096ms (View: 818 | 200 OK [http://localhost/my_quiz]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 10:00:37) [GET]
+
+ActionController::RoutingError (No route matches "/domains/cell_phones/questions/q12_apps/images/youtube.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#my_results (for 127.0.0.1 at 2010-04-08 10:00:40) [GET]
+Rendering template within layouts/application
+Rendering home/my_results
+Rendered home/_my_product_fit (274.3ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.1ms)
+Rendered home/_my_product_fit (0.2ms)
+Rendered home/_my_product_fit (0.2ms)
+Completed in 1522ms (View: 970 | 200 OK [http://localhost/my_results]
+
+
+Processing HomeController#my_product (for 127.0.0.1 at 2010-04-08 10:01:09) [GET]
+  Parameters: {"product_idurl"=>"blackberry_tour_9630_sprint_no_camera"}
+Rendering template within layouts/application
+Rendering home/my_product
+Rendered home/_product_details (26.7ms)
+Rendered home/_my_product_fit (250.8ms)
+Rendered home/_product_price (5.6ms)
+Rendered home/_product_tab_overview (15.0ms)
+Rendered home/_product_tabs (25.4ms)
+Completed in 1233ms (View: 510 | 200 OK [http://localhost/my_product/blackberry_tour_9630_sprint_no_camera]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:01:10) [GET]
+  Parameters: {"id"=>"4ba78d5d43a76d710b000101"}
+Sending data 
+Completed in 348ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d5d43a76d710b000101]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:01:11) [GET]
+  Parameters: {"id"=>"4ba78d5d43a76d710b0000ff"}
+Sending data 
+Completed in 268ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d5d43a76d710b0000ff]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:01:11) [GET]
+  Parameters: {"id"=>"4ba78d5e43a76d710b000109"}
+Sending data 
+Completed in 248ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d5e43a76d710b000109]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:01:11) [GET]
+  Parameters: {"id"=>"4ba78d5f43a76d710b000111"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d5f43a76d710b000111]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:01:24) [POST]
+  Parameters: {"new_tab"=>"pros_cons", "product_idurl"=>"blackberry_tour_9630_sprint_no_camera", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_pros_cons (31.5ms)
+Rendered home/_product_tabs (41.7ms)
+Completed in 331ms (View: 44 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=pros_cons&product_idurl=blackberry_tour_9630_sprint_no_camera]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:01:25) [POST]
+  Parameters: {"new_tab"=>"specifications", "product_idurl"=>"blackberry_tour_9630_sprint_no_camera", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_specifications (248.1ms)
+Rendered home/_product_tabs (257.7ms)
+Completed in 751ms (View: 458 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=specifications&product_idurl=blackberry_tour_9630_sprint_no_camera]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:01:31) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"blackberry_tour_9630_sprint_no_camera", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (26.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (17.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (18.4ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (12.2ms)
+Rendered home/_product_tab_ratings_bis (80.7ms)
+Rendered home/_product_tab_ratings (84.3ms)
+Rendered home/_product_tabs (93.7ms)
+Completed in 401ms (View: 102 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=blackberry_tour_9630_sprint_no_camera]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:01:52) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001da"}
+Rendered products/_dimension_explanation (16.7ms)
+Completed in 4831ms (View: 25 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001da?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-04-08 10:02:16) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 858ms (View: 236 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:17) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 323ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:18) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 286ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 10:02:19) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (11.7ms)
+Rendered home/_product_price (5.2ms)
+Rendered home/_product_tab_overview (16.2ms)
+Rendered home/_product_tabs (23.3ms)
+Completed in 388ms (View: 77 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:20) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 78ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:20) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 290ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:21) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 293ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:21) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 92ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:02:23) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (204.5ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (227.1ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (19.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (18.6ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (12.3ms)
+Rendered home/_product_tab_ratings_bis (283.0ms)
+Rendered home/_product_tab_ratings (283.6ms)
+Rendered home/_product_tabs (290.2ms)
+Completed in 659ms (View: 299 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:02:25) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (81.9ms)
+Completed in 5201ms (View: 85 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:02:37) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (14.9ms)
+Completed in 1466ms (View: 17 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:02:46) [POST]
+  Parameters: {"new_tab"=>"reviews", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered reviews/_short (168.0ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.9ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.1ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.6ms)
+Rendered reviews/_short (11.0ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.2ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.1ms)
+Rendered reviews/_short (11.3ms)
+Rendered reviews/_short (11.0ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.1ms)
+Rendered reviews/_short (261.7ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.4ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.8ms)
+Rendered reviews/_short (11.7ms)
+Rendered reviews/_short (12.9ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (11.5ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (14.0ms)
+Rendered reviews/_short (12.0ms)
+Rendered reviews/_short (12.2ms)
+Rendered reviews/_short (12.5ms)
+Rendered reviews/_short (12.6ms)
+Rendered home/_product_tab_reviews (1171.6ms)
+Rendered home/_product_tabs (1180.6ms)
+Completed in 1572ms (View: 1189 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=reviews&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-04-08 10:02:53) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering reviews/show
+Rendered reviews/_short (10.4ms)
+Rendered reviews/_paragraph (16.9ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.5ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (6.2ms)
+Rendered reviews/_paragraph (5.8ms)
+Rendered reviews/_paragraph (5.9ms)
+Rendered reviews/_paragraph (6.1ms)
+Rendered reviews/_paragraph (6.0ms)
+Rendered reviews/_paragraph (6.9ms)
+Rendered reviews/_paragraph (5.7ms)
+Rendered reviews/_paragraph (5.6ms)
+Completed in 855ms (View: 516 | 200 OK [http://localhost/reviews/show/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:54) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 344ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-08 10:02:58) [GET]
+  Parameters: {"id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered reviews/_short (10.5ms)
+Rendered interpretor/_dimensions_related (31.3ms)
+Rendered interpretor/_products_selector_filters (13.5ms)
+Rendered interpretor/_products_selector (30.0ms)
+Rendered interpretor/_opinion_selector_tip (308.2ms)
+Completed in 541ms (View: 463 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:02:59) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 350ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-08 10:03:17) [GET]
+  Parameters: {"paragraph_index"=>"1", "id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered reviews/_short (10.2ms)
+Rendered interpretor/_dimensions_related (18.6ms)
+Rendered interpretor/_products_selector_filters (4.8ms)
+Rendered interpretor/_products_selector (8.1ms)
+Rendered interpretor/_opinion_selector_tip (271.0ms)
+Completed in 467ms (View: 390 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab?paragraph_index=1]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:03:17) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 344ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-08 10:03:20) [GET]
+  Parameters: {"paragraph_index"=>"2", "id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered reviews/_short (12.5ms)
+Rendered interpretor/_dimensions_related (19.9ms)
+Rendered interpretor/_products_selector_filters (4.7ms)
+Rendered interpretor/_products_selector (7.4ms)
+Rendered interpretor/_opinion_selector_tip (9.3ms)
+Completed in 482ms (View: 403 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab?paragraph_index=2]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:03:21) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 73ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#test (for 127.0.0.1 at 2010-04-08 10:03:22) [GET]
+  Parameters: {"paragraph_index"=>"3", "id"=>"4ba2cdf543a76d56e40000ab"}
+Rendering template within layouts/application
+Rendering interpretor/test
+Rendered reviews/_short (10.7ms)
+Rendered interpretor/_dimensions_related (19.6ms)
+Rendered interpretor/_products_selector_filters (4.6ms)
+Rendered interpretor/_products_selector (7.3ms)
+Rendered interpretor/_opinion_selector_tip (9.2ms)
+Completed in 488ms (View: 129 | 200 OK [http://localhost/interpretor/test/4ba2cdf543a76d56e40000ab?paragraph_index=3]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:03:23) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing InterpretorController#choice_selected (for 127.0.0.1 at 2010-04-08 10:03:29) [POST]
+  Parameters: {"name"=>"opinion_selector", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"opinion_selector_comparator"}
+Rendered interpretor/_products_selector_filters (5.2ms)
+Rendered interpretor/_products_selector (8.5ms)
+Rendered interpretor/_products_selector_filters (0.2ms)
+Rendered interpretor/_products_selector (3.0ms)
+Rendered interpretor/_opinion_selector_comparator (31.0ms)
+Completed in 385ms (View: 37 | 200 OK [http://localhost/interpretor/choice_selected/opinion_selector_comparator?name=opinion_selector]
+
+
+Processing InterpretorController#toggle_product_selector (for 127.0.0.1 at 2010-04-08 10:03:35) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"compare_with", "key_selector"=>"by_label"}
+Rendered interpretor/_products_selector_by_label (17.9ms)
+Completed in 88ms (View: 22 | 200 OK [http://localhost/interpretor/toggle_product_selector/compare_with?key_selector=by_label]
+
+
+Processing InterpretorController#auto_complete_for_product_compare_with_label (for 127.0.0.1 at 2010-04-08 10:03:37) [GET]
+  Parameters: {"product_compare_with"=>{"label"=>"i"}}
+Completed in 455ms (View: 21 | 200 OK [http://localhost/interpretor/auto_complete_for_product_compare_with_label?product_compare_with%5Blabel%5D=i]
+
+
+Processing InterpretorController#auto_complete_for_product_compare_with_label (for 127.0.0.1 at 2010-04-08 10:03:39) [GET]
+  Parameters: {"product_compare_with"=>{"label"=>"iphone"}}
+Completed in 734ms (View: 2 | 200 OK [http://localhost/interpretor/auto_complete_for_product_compare_with_label?product_compare_with%5Blabel%5D=iphone]
+
+
+Processing InterpretorController#add_product_by_label (for 127.0.0.1 at 2010-04-08 10:03:40) [POST]
+  Parameters: {"commit"=>"add", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "product_compare_with"=>{"label"=>"iphone"}}
+Rendered interpretor/_products_selector_filters (3.0ms)
+Rendered interpretor/_products_selector (6.0ms)
+Completed in 84ms (View: 8 | 200 OK [http://localhost/interpretor/add_product_by_label]
+
+
+Processing InterpretorController#toggle_product_selector (for 127.0.0.1 at 2010-04-08 10:03:42) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"compare_with", "key_selector"=>"by_label"}
+Rendered interpretor/_products_selector_by_label (3.4ms)
+Completed in 376ms (View: 5 | 200 OK [http://localhost/interpretor/toggle_product_selector/compare_with?key_selector=by_label]
+
+
+Processing InterpretorController#auto_complete_for_product_compare_with_label (for 127.0.0.1 at 2010-04-08 10:03:44) [GET]
+  Parameters: {"product_compare_with"=>{"label"=>"ip"}}
+Completed in 456ms (View: 2 | 200 OK [http://localhost/interpretor/auto_complete_for_product_compare_with_label?product_compare_with%5Blabel%5D=ip]
+
+
+Processing InterpretorController#auto_complete_for_product_compare_with_label (for 127.0.0.1 at 2010-04-08 10:03:46) [GET]
+  Parameters: {"product_compare_with"=>{"label"=>"ipho"}}
+Completed in 746ms (View: 2 | 200 OK [http://localhost/interpretor/auto_complete_for_product_compare_with_label?product_compare_with%5Blabel%5D=ipho]
+
+
+Processing InterpretorController#add_product_by_label (for 127.0.0.1 at 2010-04-08 10:03:49) [POST]
+  Parameters: {"commit"=>"add", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "product_compare_with"=>{"label"=>"Nokia E72"}}
+Rendered interpretor/_products_selector_filters (24.4ms)
+Rendered interpretor/_products_selector (27.1ms)
+Completed in 109ms (View: 29 | 200 OK [http://localhost/interpretor/add_product_by_label]
+
+
+Processing InterpretorController#choice_selected (for 127.0.0.1 at 2010-04-08 10:04:08) [POST]
+  Parameters: {"name"=>"opinion_selector", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"opinion_selector_rating"}
+Rendered interpretor/_products_selector_filters (5.5ms)
+Rendered interpretor/_products_selector (8.2ms)
+Rendered interpretor/_opinion_selector_rating (23.9ms)
+Completed in 406ms (View: 29 | 200 OK [http://localhost/interpretor/choice_selected/opinion_selector_rating?name=opinion_selector]
+
+
+Processing InterpretorController#choice_selected (for 127.0.0.1 at 2010-04-08 10:04:11) [POST]
+  Parameters: {"name"=>"opinion_selector", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"opinion_selector_ranking"}
+Rendered interpretor/_products_selector_filters (5.0ms)
+Rendered interpretor/_products_selector (7.7ms)
+Rendered interpretor/_products_selector_filters (305.2ms)
+Rendered interpretor/_products_selector (308.8ms)
+Rendered interpretor/_opinion_selector_ranking (334.6ms)
+Completed in 407ms (View: 339 | 200 OK [http://localhost/interpretor/choice_selected/opinion_selector_ranking?name=opinion_selector]
+
+
+Processing InterpretorController#opinion_ranking_changed (for 127.0.0.1 at 2010-04-08 10:04:15) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"2"}
+Rendered interpretor/_products_selector_filters (3.5ms)
+Rendered interpretor/_products_selector (6.4ms)
+Completed in 79ms (View: 8 | 200 OK [http://localhost/interpretor/opinion_ranking_changed/2]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 10:06:55) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.6ms)
+Rendered home/_product_price (4.8ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (9.0ms)
+Completed in 460ms (View: 41 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:06:56) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 82ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:06:56) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 392ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:06:57) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:06:57) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 407ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-04-08 10:06:59) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (421.5ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (335.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (25.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (24.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (14.1ms)
+Rendered products/_dimensions (423.1ms)
+Rendered products/_dimensions (437.2ms)
+Rendered offers/_list (103.8ms)
+Rendered specifications/_header (16.4ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (47.2ms)
+Rendered specifications/_header (53.1ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (6.2ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (338.6ms)
+Rendered specifications/_header (9.1ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (373.6ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (44.4ms)
+Rendered specifications/_header (76.8ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (14.7ms)
+Rendered specifications/_header (8.2ms)
+Rendered specifications/_header (15.2ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (24.2ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (77.3ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (22.4ms)
+Rendered specifications/_header (8.2ms)
+Rendered specifications/_header (8.1ms)
+Rendered specifications/_header (24.0ms)
+Rendered specifications/_header (613.0ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (29.8ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (34.5ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (66.1ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (350.0ms)
+Rendered specifications/_header (356.9ms)
+Rendered specifications/_header (466.8ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (14.8ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (6.4ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (6.9ms)
+Rendered specifications/_header (21.9ms)
+Rendered specifications/_header (8.1ms)
+Rendered specifications/_header (15.9ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (23.3ms)
+Rendered specifications/_header (46.0ms)
+Rendered specifications/_header (6.6ms)
+Rendered specifications/_header (6.5ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (31.6ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (8.6ms)
+Rendered specifications/_header (24.2ms)
+Rendered specifications/_header (76.8ms)
+Rendered specifications/_list (1434.0ms)
+Completed in 3291ms (View: 3191 | 200 OK [http://localhost/products/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:02) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b001029"}
+Sending data 
+Completed in 540ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b001029]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:03) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001032"}
+Sending data 
+Completed in 112ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001032]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:04) [GET]
+  Parameters: {"id"=>"4ba78eef43a76d710b00103c"}
+Sending data 
+Completed in 129ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eef43a76d710b00103c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:04) [GET]
+  Parameters: {"id"=>"4ba78ef043a76d710b001045"}
+Sending data 
+Completed in 403ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef043a76d710b001045]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:04) [GET]
+  Parameters: {"id"=>"4ba78ef143a76d710b00104e"}
+Sending data 
+Completed in 88ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef143a76d710b00104e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:04) [GET]
+  Parameters: {"id"=>"4ba78ef343a76d710b001058"}
+Sending data 
+Completed in 410ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef343a76d710b001058]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:07:05) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing ProductsController#edit_specification (for 127.0.0.1 at 2010-04-08 10:07:14) [POST]
+  Parameters: {"specification_idurl"=>"brand", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+
+ActionController::UnknownAction (No action responded to edit_specification. Actions: add_image, add_similar_product, cancel_feature, create_byidurl, create_dimension, create_dimension_open, delete_main_image, delete_similar_product, dimension_explanation, dimension_explanation_close, edit_dimension, edit_dimension_open, edit_feature, edit_value, get_logged_user, get_product_selected, index, redisplay_dimension, show, update, update_header, and usages):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#edit_value (for 127.0.0.1 at 2010-04-08 10:07:20) [POST]
+  Parameters: {"specification_idurl"=>"phone_category", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+
+NoMethodError (undefined method `idurl' for nil:NilClass):
+  app/controllers/products_controller.rb:157:in `edit_value'
+  app/controllers/products_controller.rb:156:in `edit_value'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit_dimension_open (for 127.0.0.1 at 2010-04-08 10:29:13) [POST]
+  Parameters: {"product_id"=>"4b892a6f43a76d7c3f0001d3", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8714c43a76d3d03000002"}
+Rendered products/_dimension_edit (24.7ms)
+Completed in 116ms (View: 29 | 200 OK [http://localhost/products/edit_dimension_open/4bb8714c43a76d3d03000002?product_id=4b892a6f43a76d7c3f0001d3]
+
+
+Processing ProductsController#redisplay_dimension (for 127.0.0.1 at 2010-04-08 10:29:17) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (33.6ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (21.8ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (23.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (12.5ms)
+Rendered products/_dimensions (114.1ms)
+Rendered products/_dimensions (118.7ms)
+Completed in 546ms (View: 127 | 200 OK [http://localhost/products/redisplay_dimension/4b892a6f43a76d7c3f0001d3]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-04-08 10:37:34) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (420.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.3ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (32.7ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (21.6ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (22.7ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (0.2ms)
+Rendered products/_dimensions (13.8ms)
+Rendered products/_dimensions (113.4ms)
+Rendered products/_dimensions (117.8ms)
+Rendered offers/_list (35.0ms)
+Rendered specifications/_header (6.2ms)
+Rendered specifications/_header (6.2ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (5.9ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (47.6ms)
+Rendered specifications/_header (54.0ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (5.9ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (11.1ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (365.2ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (400.9ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (41.7ms)
+Rendered specifications/_header (74.1ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (14.1ms)
+Rendered specifications/_header (7.7ms)
+Rendered specifications/_header (14.8ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (8.8ms)
+Rendered specifications/_header (25.1ms)
+Rendered specifications/_header (7.9ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (7.1ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (80.6ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.8ms)
+Rendered specifications/_header (22.9ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (23.6ms)
+Rendered specifications/_header (640.2ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (6.9ms)
+Rendered specifications/_header (29.2ms)
+Rendered specifications/_header (8.5ms)
+Rendered specifications/_header (7.4ms)
+Rendered specifications/_header (8.3ms)
+Rendered specifications/_header (34.1ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (7.2ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (64.0ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (7.5ms)
+Rendered specifications/_header (14.2ms)
+Rendered specifications/_header (120.6ms)
+Rendered specifications/_header (7.0ms)
+Rendered specifications/_header (13.1ms)
+Rendered specifications/_header (5.9ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (6.3ms)
+Rendered specifications/_header (18.8ms)
+Rendered specifications/_header (9.4ms)
+Rendered specifications/_header (379.9ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (8.0ms)
+Rendered specifications/_header (24.2ms)
+Rendered specifications/_header (410.6ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (7.3ms)
+Rendered specifications/_header (9.1ms)
+Rendered specifications/_header (8.4ms)
+Rendered specifications/_header (7.6ms)
+Rendered specifications/_header (34.8ms)
+Rendered specifications/_header (8.2ms)
+Rendered specifications/_header (8.1ms)
+Rendered specifications/_header (24.2ms)
+Rendered specifications/_header (82.1ms)
+Rendered specifications/_list (1458.1ms)
+Completed in 3252ms (View: 2802 | 200 OK [http://localhost/products/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:37) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 96ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:38) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b001029"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b001029]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:38) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001032"}
+Sending data 
+Completed in 437ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001032]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:38) [GET]
+  Parameters: {"id"=>"4ba78eef43a76d710b00103c"}
+Sending data 
+Completed in 114ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eef43a76d710b00103c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:39) [GET]
+  Parameters: {"id"=>"4ba78ef043a76d710b001045"}
+Sending data 
+Completed in 468ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef043a76d710b001045]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:39) [GET]
+  Parameters: {"id"=>"4ba78ef143a76d710b00104e"}
+Sending data 
+Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef143a76d710b00104e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:39) [GET]
+  Parameters: {"id"=>"4ba78ef343a76d710b001058"}
+Sending data 
+Completed in 422ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ef343a76d710b001058]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-04-08 10:37:52) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "s"=>"droid"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 913ms (View: 361 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:53) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 91ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:53) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 441ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 10:37:55) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.8ms)
+Rendered home/_product_price (4.4ms)
+Rendered home/_product_tab_overview (0.8ms)
+Rendered home/_product_tabs (7.5ms)
+Completed in 510ms (View: 401 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:55) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 83ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:56) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 447ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:56) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 77ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:37:56) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 71ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:37:57) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (25.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (19.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (17.1ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (11.6ms)
+Rendered home/_product_tab_ratings_bis (78.6ms)
+Rendered home/_product_tab_ratings (79.4ms)
+Rendered home/_product_tabs (86.1ms)
+Completed in 218ms (View: 94 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:37:59) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (105.9ms)
+Completed in 5652ms (View: 112 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:41:44) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (6.5ms)
+Completed in 1538ms (View: 8 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:42:03) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (4.9ms)
+Completed in 630ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 10:56:35) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (10.6ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (7.8ms)
+Completed in 581ms (View: 36 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:56:36) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 117ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:56:36) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 92ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:56:37) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 117ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 10:56:37) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 69ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 10:56:38) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (26.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (17.9ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (17.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (11.0ms)
+Rendered home/_product_tab_ratings_bis (77.3ms)
+Rendered home/_product_tab_ratings (78.0ms)
+Rendered home/_product_tabs (84.6ms)
+Completed in 208ms (View: 93 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:56:48) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000006", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.0ms)
+Completed in 1246ms (View: 10 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000006]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:57:11) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.1ms)
+Completed in 629ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:58:27) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (9.2ms)
+Completed in 1481ms (View: 12 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 10:58:38) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (569.3ms)
+Completed in 5663ms (View: 572 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:02:25) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (25.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (20.1ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (17.6ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (506.5ms)
+Rendered home/_product_tab_ratings_bis (515.8ms)
+Rendered home/_product_tab_ratings_bis (583.2ms)
+Rendered home/_product_tab_ratings (583.9ms)
+Rendered home/_product_tabs (591.2ms)
+Completed in 713ms (View: 601 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:02:36) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000012", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (9.8ms)
+Completed in 837ms (View: 12 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000012]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:03:27) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000c", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.0ms)
+Completed in 1408ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000c]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:05:11) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (4.0ms)
+Rendered home/_product_tab_ratings_bis (4.1ms)
+Rendered home/_product_tab_ratings_bis (4.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (35.4ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (19.8ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (18.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (542.5ms)
+Rendered home/_product_tab_ratings_bis (552.7ms)
+Rendered home/_product_tab_ratings_bis (631.7ms)
+Rendered home/_product_tab_ratings (632.5ms)
+Rendered home/_product_tabs (640.2ms)
+Completed in 771ms (View: 651 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:05:23) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (22.9ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (16.7ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (16.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (11.7ms)
+Rendered home/_product_tab_ratings_bis (72.3ms)
+Rendered home/_product_tab_ratings (72.9ms)
+Rendered home/_product_tabs (79.5ms)
+Completed in 666ms (View: 554 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:05:28) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000006", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (2.4ms)
+Completed in 834ms (View: 4 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000006]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 11:13:07) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (12.0ms)
+Rendered home/_product_price (5.2ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (8.0ms)
+Completed in 613ms (View: 40 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:13:08) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 572ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:13:08) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 99ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:13:08) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 562ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:13:09) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:13:09) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (26.7ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (19.5ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (20.0ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (12.2ms)
+Rendered home/_product_tab_ratings_bis (84.2ms)
+Rendered home/_product_tab_ratings (84.9ms)
+Rendered home/_product_tabs (93.0ms)
+Completed in 681ms (View: 102 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:13:19) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.7ms)
+Completed in 661ms (View: 8 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:17:49) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (26.3ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (17.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (17.7ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (12.0ms)
+Rendered home/_product_tab_ratings_bis (78.4ms)
+Rendered home/_product_tab_ratings (79.1ms)
+Rendered home/_product_tabs (86.3ms)
+Completed in 665ms (View: 95 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:17:58) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.2ms)
+Completed in 678ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:18:03) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.0ms)
+Completed in 647ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:18:05) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.2ms)
+Completed in 647ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 11:18:08) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (11.1ms)
+Rendered home/_product_price (4.7ms)
+Rendered home/_product_tab_overview (0.8ms)
+Rendered home/_product_tabs (7.3ms)
+Completed in 629ms (View: 522 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:18:09) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 101ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:18:09) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 582ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:18:10) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 81ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:18:10) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:18:12) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (24.3ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (18.2ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (17.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (11.7ms)
+Rendered home/_product_tab_ratings_bis (76.8ms)
+Rendered home/_product_tab_ratings (77.5ms)
+Rendered home/_product_tabs (84.6ms)
+Completed in 210ms (View: 93 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:19:21) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (27.7ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (20.0ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (19.2ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (13.2ms)
+Rendered home/_product_tab_ratings_bis (86.3ms)
+Rendered home/_product_tab_ratings (90.2ms)
+Rendered home/_product_tabs (97.4ms)
+Completed in 705ms (View: 106 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:19:41) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.1ms)
+Completed in 688ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:21:47) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.3ms)
+Completed in 1128ms (View: 8 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:21:52) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (22.4ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (17.7ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (17.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (11.3ms)
+Rendered home/_product_tab_ratings_bis (75.1ms)
+Rendered home/_product_tab_ratings (78.7ms)
+Rendered home/_product_tabs (85.6ms)
+Completed in 199ms (View: 93 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:22:10) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.5ms)
+Completed in 665ms (View: 8 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:25:34) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (8.2ms)
+Completed in 672ms (View: 14 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:25:43) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (1.4ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (1.4ms)
+Rendered home/_product_tab_ratings_bis (24.8ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (1.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (19.0ms)
+Rendered home/_product_tab_ratings_bis (3.3ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (1.7ms)
+Rendered home/_product_tab_ratings_bis (20.0ms)
+Rendered home/_product_tab_ratings_bis (3.5ms)
+Rendered home/_product_tab_ratings_bis (1.7ms)
+Rendered home/_product_tab_ratings_bis (3.8ms)
+Rendered home/_product_tab_ratings_bis (525.6ms)
+Rendered home/_product_tab_ratings_bis (595.6ms)
+Rendered home/_product_tab_ratings (599.0ms)
+Rendered home/_product_tabs (605.3ms)
+Completed in 720ms (View: 614 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:28:42) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (1.4ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (1.6ms)
+Rendered home/_product_tab_ratings_bis (26.3ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (1.4ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (19.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (1.5ms)
+Rendered home/_product_tab_ratings_bis (19.5ms)
+Rendered home/_product_tab_ratings_bis (3.3ms)
+Rendered home/_product_tab_ratings_bis (1.4ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (12.5ms)
+Rendered home/_product_tab_ratings_bis (84.0ms)
+Rendered home/_product_tab_ratings (87.3ms)
+Rendered home/_product_tabs (94.1ms)
+Completed in 210ms (View: 101 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:29:07) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (22.9ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (17.3ms)
+Rendered home/_product_tab_ratings_bis (3.3ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (19.4ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (11.3ms)
+Rendered home/_product_tab_ratings_bis (76.9ms)
+Rendered home/_product_tab_ratings (80.2ms)
+Rendered home/_product_tabs (86.4ms)
+Completed in 203ms (View: 94 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:29:18) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (4.7ms)
+Completed in 695ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:29:24) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.2ms)
+Completed in 674ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:30:07) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.6ms)
+Completed in 678ms (View: 8 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:30:10) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8722543a76d3d2d000002"}
+Completed in 66ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:30:42) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000f", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (6.9ms)
+Completed in 797ms (View: 9 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000f]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:31:34) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8714c43a76d3d0300000f"}
+Completed in 563ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8714c43a76d3d0300000f]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:33:10) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.3ms)
+Completed in 705ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:33:31) [POST]
+  Parameters: {"dimension_id"=>"4bb8722543a76d3d2d000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (5.1ms)
+Completed in 690ms (View: 7 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:33:33) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8722543a76d3d2d000002"}
+Completed in 65ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8722543a76d3d2d000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:33:36) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000d", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (11.9ms)
+Completed in 1841ms (View: 14 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000d]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:34:15) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8714c43a76d3d0300000d"}
+Completed in 65ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8714c43a76d3d0300000d]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:34:16) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000d", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (14.6ms)
+Completed in 1871ms (View: 20 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000d]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:34:36) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000002", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (8.3ms)
+Completed in 1107ms (View: 10 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000002]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:34:45) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000f", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (7.0ms)
+Completed in 779ms (View: 9 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000f]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:34:52) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000012", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (10.1ms)
+Completed in 903ms (View: 12 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000012]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:34:58) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000007", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (7.8ms)
+Completed in 1055ms (View: 10 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000007]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:35:02) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (7.1ms)
+Completed in 1716ms (View: 9 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:36:31) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8714c43a76d3d03000005"}
+Completed in 64ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8714c43a76d3d03000005]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:36:34) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (10.2ms)
+Completed in 1746ms (View: 16 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:37:37) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (10.2ms)
+Completed in 1200ms (View: 15 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 11:38:41) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (13.3ms)
+Rendered home/_product_price (5.3ms)
+Rendered home/_product_tab_overview (0.7ms)
+Rendered home/_product_tabs (8.2ms)
+Completed in 712ms (View: 42 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:38:42) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 96ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:38:42) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 130ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:38:42) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 82ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 11:38:42) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 629ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 11:38:44) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (3.0ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (24.5ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (18.9ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (18.8ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (11.8ms)
+Rendered home/_product_tab_ratings_bis (79.6ms)
+Rendered home/_product_tab_ratings (80.3ms)
+Rendered home/_product_tabs (87.2ms)
+Completed in 208ms (View: 95 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:38:52) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d0300000e", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (21.3ms)
+Completed in 1131ms (View: 23 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d0300000e]
+
+
+Processing ProductsController#dimension_explanation_close (for 127.0.0.1 at 2010-04-08 11:38:58) [POST]
+  Parameters: {"authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4bb8714c43a76d3d0300000e"}
+Completed in 63ms (View: 1 | 200 OK [http://localhost/products/dimension_explanation_close/4bb8714c43a76d3d0300000e]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:39:01) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000005", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (7.1ms)
+Completed in 1770ms (View: 9 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000005]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-04-08 11:39:37) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000007", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "id"=>"4b892a6f43a76d7c3f0001d3"}
+Rendered products/_dimension_explanation (7.8ms)
+Completed in 1071ms (View: 10 | 200 OK [http://localhost/products/dimension_explanation/4b892a6f43a76d7c3f0001d3?dimension_id=4bb8714c43a76d3d03000007]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-04-08 12:25:19) [GET]
+  Parameters: {"product_idurl"=>"htc_droid_eris"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (81.3ms)
+Rendered home/_product_price (6.6ms)
+Rendered home/_product_tab_overview (25.5ms)
+Rendered home/_product_tabs (38.6ms)
+Completed in 702ms (View: 256 | 200 OK [http://localhost/product/htc_droid_eris]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 12:25:20) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001023"}
+Sending data 
+Completed in 179ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001023]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 12:25:20) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b001021"}
+Sending data 
+Completed in 133ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b001021]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 12:25:20) [GET]
+  Parameters: {"id"=>"4ba78eec43a76d710b00102b"}
+Sending data 
+Completed in 122ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eec43a76d710b00102b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-04-08 12:25:20) [GET]
+  Parameters: {"id"=>"4ba78eee43a76d710b001034"}
+Sending data 
+Completed in 118ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eee43a76d710b001034]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-04-08 12:25:22) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"htc_droid_eris", "authenticity_token"=>"2BzVIpxyQuNjysWa/uHW45l040otTOkoQZIuJt+IOmQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (3.1ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (24.5ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (3.2ms)
+Rendered home/_product_tab_ratings_bis (80.9ms)
+Rendered home/_product_tab_ratings_bis (1.3ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (97.1ms)
+Rendered home/_product_tab_ratings_bis (2.9ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (1.1ms)
+Rendered home/_product_tab_ratings_bis (17.5ms)
+Rendered home/_product_tab_ratings_bis (2.8ms)
+Rendered home/_product_tab_ratings_bis (1.2ms)
+Rendered home/_product_tab_ratings_bis (2.7ms)
+Rendered home/_product_tab_ratings_bis (12.9ms)
+Rendered home/_product_tab_ratings_bis (158.9ms)
+Rendered home/_product_tab_ratings (162.5ms)
+Rendered home/_product_tabs (171.4ms)
+Completed in 357ms (View: 179 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=htc_droid_eris]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:28:53) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
-Completed in 53648ms (View: 53493 | 200 OK [http://localhost/eric]
+Completed in 36474ms (View: 36355 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:13:25) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 62461ms (View: 62404 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:16:05) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 63416ms (View: 63356 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:19:38) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 62797ms (View: 62397 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:21:54) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 66281ms (View: 66219 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:24:06) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 53002ms (View: 52942 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:25:37) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:32:09) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
 
+ActionView::TemplateError (undefined method `sentence' for #<Tip:0x10e434220>) on line #14 of app/views/reviews/eric.html.erb:
+11:                     <div style="color:blue; border-top:1px dashed black; margin-top:3px;">
+12:                       <%= opinion.to_html2 %>
+13:                       <div>usage=<%= opinion.usage.inspect %></div>
+14:                       <div>sentence=<%= opinion.sentence.inspect %></div>
+15:                     </div>
+16:                     <% nb_opinions += 1 %>
+17:                 <% end %>
 
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:26:29) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 52327ms (View: 52173 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:31:56) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 51359ms (View: 51202 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:34:37) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 40130ms (View: 40075 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:37:27) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 42773ms (View: 42716 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:39:03) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 47409ms (View: 47352 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:39:50) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 51754ms (View: 51696 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:41:47) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 53066ms (View: 52418 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:47:45) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 59436ms (View: 59367 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:51:53) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 59254ms (View: 59187 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-06 14:53:28) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 33928ms (View: 33678 | 200 OK [http://localhost/eric]
-
-
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:03:49) [GET]
-Completed in 244ms (View: 3 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:03:56) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-
-ActionView::TemplateError (wrong argument type String (expected Proc)) on line #10 of app/views/reviews/eric.html.erb:
-7:             <div style="border-top:1px solid black; margin-bottom:10px;">
-8:                 <small title="#<%=h paragraph.id %>">&para;</small>&nbsp;<%=h paragraph.content %>
-9:                 <% for opinion in paragraph.opinions %>
-10:                     <div style="color:blue; border-top:1px dashed black; margin-top:3px;"><%= opinion.to_html2 %></div>
-11:                 <% end %>
-12:             </div>
-13:         <% end %>
-
-    app/models/opinion.rb:89:in `to_html2_suffix'
-    app/models/opinion.rb:318:in `to_html2'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/reviews/eric.html.erb:14
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
     app/views/reviews/eric.html.erb:10
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
@@ -327,14 +2225,7 @@ ActionView::TemplateError (wrong argument type String (expected Proc)) on line #
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:9
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-    app/views/reviews/eric.html.erb:6
+    app/views/reviews/eric.html.erb:7
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
     /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
@@ -356,107 +2247,70 @@ ActionView::TemplateError (wrong argument type String (expected Proc)) on line #
     -e:1:in `load'
     -e:1
 
-Rendered rescues/_trace (172.7ms)
+Rendered rescues/_trace (44.8ms)
 Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:05:34) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:33:08) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
-Completed in 37430ms (View: 37181 | 200 OK [http://localhost/eric.html]
+Completed in 44758ms (View: 44462 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:06:28) [GET]
-Completed in 221ms (View: 1 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:08:36) [GET]
-Completed in 65ms (View: 1 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:10:12) [GET]
-Completed in 249ms (View: 3 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:11:01) [GET]
-Completed in 19328ms (View: 19211 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:14:32) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:38:06) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
-Completed in 35677ms (View: 35436 | 200 OK [http://localhost/eric.html]
+Completed in 46513ms (View: 46456 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:16:57) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:42:58) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
-Completed in 40774ms (View: 40710 | 200 OK [http://localhost/eric.html]
+Completed in 56790ms (View: 56730 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:21:30) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:47:49) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
-Completed in 46063ms (View: 45997 | 200 OK [http://localhost/eric.html]
+Completed in 53541ms (View: 53483 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:22:34) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 36947ms (View: 36702 | 200 OK [http://localhost/eric.html]
-
-
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:40:50) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 36322ms (View: 36066 | 200 OK [http://localhost/eric.html]
-
-
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:43:02) [GET]
-Rendering template within layouts/application
-Rendering reviews/eric
-Completed in 45315ms (View: 45251 | 200 OK [http://localhost/eric.html]
-
-
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:45:29) [GET]
-Completed in 27442ms (View: 27201 | 200 OK [http://localhost/eric.xml]
-
-
-Processing ReviewsController#eric to html (for 127.0.0.1 at 2010-04-06 15:47:19) [GET]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:48:43) [GET]
 Rendering template within layouts/application
 Rendering reviews/eric
 
 
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:47:50) [GET]
-Completed in 28026ms (View: 27787 | 200 OK [http://localhost/eric.xml]
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 12:50:59) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 34988ms (View: 34745 | 200 OK [http://localhost/eric]
 
 
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:49:58) [GET]
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 12:54:19) [GET]
 
-NoMethodError (undefined method `compare_to' for #<ProductByLabel:0x1071f4ed0>):
+NameError (undefined local variable or method `opinion' for #<Tip:0x106320d78>):
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/keys.rb:75:in `to_proc'
-  app/models/opinion.rb:247:in `collect'
-  app/models/opinion.rb:247:in `to_xml_bis'
-  app/models/review.rb:149:in `to_xml_bis'
+  app/models/opinion.rb:106:in `to_xml_bis'
+  app/models/opinion.rb:335:in `to_xml_bis'
+  app/models/review.rb:157:in `to_xml_bis'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-  app/models/review.rb:148:in `to_xml_bis'
+  app/models/review.rb:156:in `to_xml_bis'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-  app/models/review.rb:145:in `to_xml_bis'
-  app/models/review.rb:113:in `to_xml'
-  app/models/review.rb:112:in `each'
-  app/models/review.rb:112:in `to_xml'
+  app/models/review.rb:153:in `to_xml_bis'
+  app/models/review.rb:121:in `to_xml'
+  app/models/review.rb:120:in `each'
+  app/models/review.rb:120:in `to_xml'
   app/controllers/reviews_controller.rb:11:in `eric'
   app/controllers/reviews_controller.rb:9:in `eric'
   /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
@@ -472,35 +2326,35 @@ NoMethodError (undefined method `compare_to' for #<ProductByLabel:0x1071f4ed0>):
   -e:1:in `load'
   -e:1
 
-Rendered rescues/_trace (37.2ms)
-Rendered rescues/_request_and_response (0.9ms)
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:50:29) [GET]
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 12:54:56) [GET]
 
-NoMethodError (undefined method `compare_to' for #<ProductsFilter:0x106ce9be8>):
+NameError (undefined local variable or method `opinion' for #<Tip:0x1068523c8>):
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-  app/models/opinion.rb:247:in `collect'
-  app/models/opinion.rb:247:in `to_xml_bis'
-  app/models/review.rb:149:in `to_xml_bis'
+  app/models/opinion.rb:106:in `to_xml_bis'
+  app/models/opinion.rb:335:in `to_xml_bis'
+  app/models/review.rb:157:in `to_xml_bis'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-  app/models/review.rb:148:in `to_xml_bis'
+  app/models/review.rb:156:in `to_xml_bis'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
   /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
-  app/models/review.rb:145:in `to_xml_bis'
-  app/models/review.rb:113:in `to_xml'
-  app/models/review.rb:112:in `each'
-  app/models/review.rb:112:in `to_xml'
+  app/models/review.rb:153:in `to_xml_bis'
+  app/models/review.rb:121:in `to_xml'
+  app/models/review.rb:120:in `each'
+  app/models/review.rb:120:in `to_xml'
   app/controllers/reviews_controller.rb:11:in `eric'
   app/controllers/reviews_controller.rb:9:in `eric'
   /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
@@ -516,10 +2370,69 @@ NoMethodError (undefined method `compare_to' for #<ProductsFilter:0x106ce9be8>):
   -e:1:in `load'
   -e:1
 
-Rendered rescues/_trace (42.3ms)
+Rendered rescues/_trace (36.5ms)
 Rendered rescues/_request_and_response (0.2ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-06 15:53:10) [GET]
-Completed in 29834ms (View: 29583 | 200 OK [http://localhost/eric.xml]
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 12:55:36) [GET]
+Completed in 29387ms (View: 29149 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 12:57:39) [GET]
+Completed in 31509ms (View: 31157 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 12:58:21) [GET]
+Completed in 28895ms (View: 28660 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 13:02:02) [GET]
+
+NameError (undefined local variable or method `content_without_html' for #<Inpaper:0x106e6f008>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/models/review.rb:155:in `to_xml_bis'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.1/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/models/review.rb:153:in `to_xml_bis'
+  app/models/review.rb:121:in `to_xml'
+  app/models/review.rb:120:in `each'
+  app/models/review.rb:120:in `to_xml'
+  app/controllers/reviews_controller.rb:11:in `eric'
+  app/controllers/reviews_controller.rb:9:in `eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#eric to xml (for 127.0.0.1 at 2010-04-08 13:02:46) [GET]
+Completed in 31211ms (View: 31149 | 200 OK [http://localhost/eric.xml]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 13:03:33) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 35365ms (View: 35303 | 200 OK [http://localhost/eric]
+
+
+Processing ReviewsController#eric (for 127.0.0.1 at 2010-04-08 13:05:24) [GET]
+Rendering template within layouts/application
+Rendering reviews/eric
+Completed in 39567ms (View: 39502 | 200 OK [http://localhost/eric]

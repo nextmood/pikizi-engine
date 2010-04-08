@@ -167,7 +167,7 @@ class Root
     "<span title=\"rated #{ '%2.1f' % value } out of #{max_rating}\">#{s}</span>"
   end
 
-  def self.icon_star(full=true) "<img src=\"/images/icons/star#{'_empty' unless full}.png\" />" end
+  def self.icon_star(full=true) "<img src=\"/images/icons/star#{'_empty' unless full}.png\" border=\"0\" />" end
 
   def self.duration(nb=1)
     t = Time.now

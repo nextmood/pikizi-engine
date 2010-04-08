@@ -6,7 +6,7 @@
 
     <table border=1>
       <% width_column = 100 / dimensions_l1.size %>
-      <tr><th colspan="<%= dimensions_l1.size %>" align="left"><span style="margin-left:150px;">Overall rating <%= check_box_tag "value_oriented" %></span></th></tr>
+      <tr><th colspan="<%= dimensions_l1.size %>" align="left"><span style="margin-left:150px;"><%= check_box_tag "value_oriented" %>Overall rating </span></th></tr>
       <tr>
             <% for dimension in dimensions_l1 %>
                 <th valign="top"  width="<%= width_column %>%"><%= dimension.label %></th>

@@ -62,13 +62,13 @@ class Dimension
   # define the distance between  2 products for this feature
   def distance_metric(product1, product2) (get_value(product1) - get_value(product2)).abs end
 
-  def get_value_01(product) product.get_value(idurl).to_f end
+  def get_value_01(product) (x = product.get_value(idurl)) ? x.to_f : nil end
 
   def get_value_in_min_max_rating(product) get_value_in_min_max_rating_bis(get_value_01(product)) end
+  def get_value_in_min_max_rating_html(product) get_value01_in_min_max_rating_html(get_value_01(product)) end
+  def get_value01_in_min_max_rating_html(value01) value01 ? "#{'%.1f' % get_value_in_min_max_rating_bis(value01)}" : 'n/a' end
 
-  def get_value_in_min_max_rating_bis(value_01)
-    value_01 * (max_rating - min_rating) + min_rating
-  end
+  def get_value_in_min_max_rating_bis(value_01) value_01 * (max_rating - min_rating) + min_rating end
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -116,6 +116,136 @@ class Dimension
 
 
   # ---------------------------------------------------------------------
+  # Compute aggreagtion
+  # ---------------------------------------------------------------------
+
+  def compute_aggregation(all_products, only_product=nil)
+    ratings, comparaisons = compute_aggregation_ratings_comparaisons(only_product)
+    hash_product_2_category_average_rating01 = compute_hash_product_2_category_average_rating01(ratings, all_products, only_product)
+    hash_product_2_average_rating01 = compute_hash_product_2_average_rating01(hash_product_2_category_average_rating01, only_product)
+    hash_product_2_average_sub_dimensions = compute_hash_product_2_average_sub_dimensions(all_products, only_product)
+    elo = compute_elo(comparaisons, all_products)
+    hash_pid_2_average_mixed = combine_rating_elo_sub_automatic(hash_product_2_average_rating01, elo, hash_product_2_average_sub_dimensions, only_product)
+  end
+
+  def compute_aggregation_ratings_comparaisons(only_product)
+    opinions.inject([[], []]) do |(l_ratings, l_comparaisons), opinion|
+      if only_product.nil? or opinion.concern?(only_product)
+        if opinion.generate_rating?
+          l_ratings << opinion
+        elsif opinion.generate_comparaison?
+          l_comparaisons << opinion
+        else
+          raise "unknown opinion"
+        end
+      end
+      [l_ratings, l_comparaisons]
+    end
+  end
+
+
+  def compute_hash_product_2_category_average_rating01(ratings, all_products, only_product)
+    hash_product_2_list_of_category_average_rating01 = ratings.inject({}) do |h, opinion_rating|
+      # generate_ratings yield with pid, weight, rating_01
+      opinion_rating.for_each_rating(all_products)  do |p, category, rating01|
+        ((h[p] ||= []) << [category, rating01]) if only_product.nil? or only_product.id == p.id 
+      end
+      h
+    end
+    hash_product_2_list_of_category_average_rating01.inject({}) do |h, (p, l_category_rating01)|
+        l_category_rating01.group_by(&:first).each do |category, l2|
+          ((h[p] ||= {})[category] = (l2.inject(0.0) { |s, (c, r)| s += r }) / l2.size) if (only_product.nil? or only_product.id == p.id) and l2.size
+        end if l_category_rating01
+      h
+    end
+  end
+
+  def compute_hash_product_2_average_rating01(hash_product_2_category_average_rating01, only_product)
+    hash_product_2_category_average_rating01.inject({}) do |h, (p, hash_category_rating01)|
+      if only_product.nil? or only_product.id == p.id
+        sum_weight, sum_rating01 = hash_category_rating01.inject([0.0,0.0]) do |(sw, so1), (category, rating01)|
+          [sw += Review.categories[category], so1 += rating01 * Review.categories[category]]
+        end
+        h[p] = sum_rating01 / sum_weight
+      end
+      h
+    end
+  end
+
+  def compute_elo(comparaisons, all_products)
+    elo = Elo.new
+    comparaisons.each do |opinion_comparaison|
+      # generate_comparaisons yield with [weight, operator_type, :pid1, :pid2]
+      # operator_type = "best", "worse", "same"
+      opinion_comparaison.for_each_comparaison(all_products) do |weight, operator_type, p1, p2|
+        elo.update_elo(p1.id, operator_type, p2.id, Integer(weight))
+      end
+    end
+    elo
+  end
+
+  def compute_hash_product_2_average_sub_dimensions(all_products, only_product)
+    sub_dimensions = children
+    if sub_dimensions.size == 0
+      {}
+    else
+      all_products.inject({}) do |h, product|
+        if only_product.nil? or only_product.id == product.id
+          sum_weight, sum_nb = sub_dimensions.inject([0.0, 0.0]) do |(s, nb), sub_dimension|
+            if x = sub_dimension.get_value_01(product)
+              [s + x, nb + 1.0]
+            else
+              [s, nb]
+            end
+          end
+          (h[product] = sum_weight / sum_nb) if sum_nb > 0.0
+        end
+        h
+      end
+    end
+  end
+
+  # final aggregation
+  def combine_rating_elo_sub_automatic(hash_product_2_average_rating01, elo, hash_product_2_average_sub_dimensions, only_product)
+
+    # rating...
+    hash_pid_2_average_mixed = hash_product_2_average_rating01.inject({}) do |h, (p, r)|
+      (h[p.id] = {:rating => r}) if only_product.nil? or only_product.id ==p.id
+      h
+    end
+
+    # elo ...
+    elo.for_each_p_elo01 do |product_id, comparaison_rating01|
+      ((hash_pid_2_average_mixed[product_id] ||= {})[:comparaison] = comparaison_rating01) if only_product.nil? or only_product.id ==product_id
+    end
+
+    # sub dimensions
+    hash_product_2_average_sub_dimensions.each do |product, weight_sub_dimension|
+      ((hash_pid_2_average_mixed[product.id] ||= {})[:sub_dimensions] = weight_sub_dimension) if only_product.nil? or only_product.id ==product.id    
+    end
+
+    # automatic
+    # to be written...
+    
+    # mixin...
+    hash_pid_2_average_mixed.inject({}) do |h, (product_id, hash_line_2_value)|
+      sum_value, sum_weight = hash_line_2_value.inject([0.0, 0.0]) do |(s1, s2), (line, value)|
+        if value
+          [s1 + value * Dimension.line_2_weight[line], s2 + Dimension.line_2_weight[line]]
+        else
+          [s1, s2]
+        end
+      end
+      h[product_id] = sum_value /  sum_weight
+      h
+    end
+  end
+
+  def self.line_2_weight() { :rating => 0.4, :comparaison => 0.4, :sub_dimensions => 0.2 } end
+
+  # ---------------------------------------------------------------------
+
+
 
 
 end
