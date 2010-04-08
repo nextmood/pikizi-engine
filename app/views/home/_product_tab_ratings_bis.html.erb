@@ -1,6 +1,8 @@
 <div style="margin-top:<%= 9 - 3 * level %>px;">
 
-    <div style="margin-left:<%= level * 10 %>px; width:<%= 350 - level * 10 %>px; float:left; border-bottom:1px dashed black;"><%= dimension.label %></div>
+    <div style="margin-left:<%= level * 10 %>px; width:<%= 350 - level * 10 %>px; float:left; border-bottom:1px dashed black;">
+      <%= link_to(dimension.label, "/ranking/#{dimension.idurl}") %>
+    </div>
     <span style="">
       <% if product.get_value(dimension.idurl) %>
         <%= link_to_remote(dimension.get_value_html(product),

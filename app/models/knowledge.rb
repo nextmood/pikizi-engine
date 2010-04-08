@@ -326,7 +326,7 @@ class Knowledge < Root
   # ---------------------------------------------------------------------------------------
 
   def clean_url(url, product)
-    if url.has_prefix("http") or url.has_prefix("/")
+    if url and (url.has_prefix("http") or url.has_prefix("/"))
       url
     else
       # local url

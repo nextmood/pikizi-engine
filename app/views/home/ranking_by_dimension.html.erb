@@ -1,42 +1,40 @@
-<div id="main">
-    <div class="box952">
 
-        <h1>Results</h1>
+
+
+
+<div id="main">
+    <div class="box952" >
+
+        <h1><%= @dimension.parent_id ? "Ranking by #{@dimension.label}" : "Overall ranking" %></h1>
         <ul class="bugRt">
             <li><a href="#">save</a></li>
             <li><a href="#">| share</a></li>
             <li class="iconBtn"><a href="#"><img src="/images/gene/twitTxt.jpg" /></a></li>
             <li class="iconBtn"><a href="#"><img src="/images/gene/faceBkTxt.jpg" /></a></li>
-            <li><%= link_to("...", "/my_quizze_results", :style => "font-size:60%; margin-left:5px;") if @current_user.role = "admin" %></li>
-            <li class="backAd"><a href="/my_quiz">back to advisor</a></li>
-            <li class="answers"><%= @quizze_instance.nb_products_ranked_at_most %></li>
+            <li style="margin-right:200px;">&nbsp;</li>
         </ul>
-        <div id="search_boxBg">
-            <div class="spcr"></div>
+        <div id="search_boxBg"><div class="spcr"></div>
 
-        <% for affinity in @sorted_affinities %>
-            <% if affinity.ranking <= 3 %>
-                <% product = affinity.product(@knowledge) %>
-                <ul class="<%= { 1 => "one", 2 => "two", 3 => "three" }[affinity.ranking] %>"
-                    <h3><%= product.label %></h3>
+        <% for product, ranking in @sorted_products_ranking %>
+            <% if ranking <= 3 %>
+                <ul class="<%= { 1 => "one", 2 => "two", 3 => "three" }[ranking] %>">
+                    <h3 title="<%= product.get_value(@dimension.idurl) %>"><%= product.label %></h3>
                     <li class="img">
-
-                      <%= product_image(product, 'main') %>
-
+                      <%= link_to(product_image(product, 'main'), "/product/#{product.idurl}") %>
                     </li>
                                <li class="details">
                 <table>
                     <tr>
                         <td>Model:</td>
-                        <td class="lft"><strong><%= affinity.product(@knowledge).label %></strong></td>
+                        <td class="lft"><strong><%= product.label %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("brand") %>
-                        <td><%= feature.label %></td>    
+                        <% feature = @current_knowledge.get_feature_by_idurl("brand") %>
+                        <td><%= feature.label %></td>
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("carriers") %>
+                        <% feature = @current_knowledge.get_feature_by_idurl("carriers") %>
                         <td><%= feature.label %></td>
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>
@@ -44,7 +42,7 @@
                     <tr>
                         <td>Rating:</td>
                         <td class="lft">
-                          <% if feature_rating = @knowledge.get_feature_by_idurl("overall_rating").get_value(product) %>
+                          <% if feature_rating = @current_knowledge.get_feature_by_idurl(@dimension.idurl).get_value(product) %>
                             <ul class='star-rating'>
                                 <li title="rating=<%= feature_rating %>" class='current-rating' style="<%= "width:#{(70 * feature_rating).round }px;" %>"></li>
                             </ul>
@@ -54,7 +52,7 @@
                     <tr>
                         <td>Best Price:</td>
 
-                        <td class="lft blue"><strong><%= @knowledge.get_price_min_html(product) %></strong></td>
+                        <td class="lft blue"><strong><%= @current_knowledge.get_price_min_html(product) %></strong></td>
                     </tr>
                 </table>
                 <ul class="icons">
@@ -67,18 +65,27 @@
                     <li><a href="#"><img src="/images/gene/iconTwit.png"</a></li>
                     <div class="spcr"></div>
                 </ul>
-                <a href="/my_product/<%= product.idurl %>">Product Details</a>
             </li>
-            <li class="fit">
-                <%= render(:partial => "/home/my_product_fit", :locals => {:quizze => @quizze, :explanations => @explanations[product.idurl] }) %>
-            </li>
+            
             <div class="spcr"></div>
                 </ul>
             <% end %>
         <% end %>
-
+            <div style="text-align:left; padding:20px;">
+                <% for product, ranking in @sorted_products_ranking %>
+                  <% if ranking > 3 %>
+                    <span style="margin-left:20px;" title="<%= product.get_value(@dimension.idurl) %>">
+                        <%= ranking %>
+                        <span style="font-size:xx-small; vertical-align:top;">rd</span>
+                        <%= product.label %>
+                     <span>
+                  <% end %>
+                <% end %>
+            </div>
 
          </div>
          <div class="spcr"></div>
     </div>
 </div>
+
+
