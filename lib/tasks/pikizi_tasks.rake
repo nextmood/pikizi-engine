@@ -138,30 +138,59 @@ namespace :pikizi do
   
   desc "compute aggregation of dimension and usage from opinions"
   task :compute_aggregation => :environment do
-
     # cleanup opinion (to be remove later...)
-    Opinion.generate_all_products_filters
-    knowledge = Knowledge.first(:idurl => "cell_phones")
+    Knowledge.first(:idurl => "cell_phones").compute_aggregation
+  end
+
+  desc "maj db"
+  task :maj_db => :environment do
+    # cleanup opinion (to be remove later...)
+    knowledge = get_knowledge
     all_products = knowledge.products
-    puts "initializing..."
-    knowledge.dimensions.each { |dimension| all_products.each { |product| product.set_value(dimension.idurl, nil); product.save } }
-    compute_aggregation_recursive(knowledge.dimension_root, all_products)
-    # for each dimension... and usages
-    # Dimension.all.concat(Usage.all).each
-  end
 
-  def compute_aggregation_recursive(dimension, all_products)
-    dimension.children.each { |sub_dimension| compute_aggregation_recursive(sub_dimension, all_products) }
-    compute_aggregation_bis(dimension, all_products)
-  end
 
-  def compute_aggregation_bis(dimension_or_usage, all_products)
-    dimension_or_usage.compute_aggregation(all_products).each do |product_id, rating_01|
-        product = all_products.detect { |p| p.id == product_id }
-        product.set_value(dimension_or_usage.idurl, rating_01)
-        product.save
+    # recompute similarities...
+    puts "recompute similarities..."
+    all_products.each do |p|
+      p.similar_product_ids.each do |pid|
+        Product.find(p.id).add_similar_product(Product.find(pid))
+      end
     end
-    puts "aggregation computed for dimension #{dimension_or_usage.idurl}"
+
+
+    f = knowledge.features_all.detect {|f| f.idurl == "description" }
+    knowledge.products.each do |product|
+        if url = f.get_value(product)
+          file_name = "/domains/#{knowledge.idurl}/products/#{product.idurl}/#{url}"
+          begin
+            File.open(file_name, "r") do |aFile|
+              # ... process the file
+              media = Media::MediaImage.create(aFile.read, filename, mime_type_from_extension(filename))
+              product.update_attributes(:description_id => media.id) 
+            end
+          rescue
+            puts "no such file #{file_name}"
+          end
+        end
+    end
+    true
+
+    puts "setting opinion category..."
+    Opinion.all(:category => nil).each {|o| o.update_attributes(:category => o.review.category) }
+
+    puts "generating product filters..."
+    ProductsFilter.delete_all
+    Opinion.all.each {|opinion| opinion.generate_products_filters(knowledge) ; opinion.save }
+
+    puts "x=#{Opinion.all.inject(0) { |s, opinion| s +=  opinion.products_for('referent', all_products).size > 0 ? 0 : 1}}"
+    
+    puts "updating product filters..."
+    ProductsFilter.all.each { |pf| pf.update_labels }
+    
+    puts "recomputing all dimensions..."
+    knowledge.compute_aggregation
+    
+    true
   end
 
   # ========================================================================================
@@ -172,80 +201,6 @@ namespace :pikizi do
     Knowledge.load_db(knowledge_idurl)
   end
 
-  # recompute all rating and update distributions
-  def compute_ratings(knowledge)
-    # read reviews in database and compute aggregated rating
-    # hash_p_f_c_aggregation[product_idurl][feature_idurl][category] -> [nb_weighted, sum_weighted]
-
-    # initialize for each ratable features
-    # hash_p_f_c_aggregation[product_idurl][feature_idurl][category]  -> [0.0, 0.0]
-    puts "initialization... for model #{knowledge.label}"
-    hash_p_f_c_aggregation = knowledge.products.inject({}) do |h, product|
-      h[product.idurl] = knowledge.feature_ratings.inject({}) do |h1, feature_rating|
-        h1[feature_rating.idurl] = Review.categories.inject({}) { |h2, (category, weight)| h2[category] = [0.0, 0.0]; h2 }
-        h1
-      end
-      h
-    end
-
-    # process each review objects
-    puts "processing reviews..."
-    Review.all.each do |review|
-      if review.knowledge_idurl == knowledge.idurl
-        p_idurl = review.product_idurl
-        review.opinions.each do |opinion|
-          feature_rating_idurl = opinion.feature_rating_idurl
-          nb_weighted, sum_weighted = hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.category]
-          raise "error unknown dimension_rating=#{feature_rating_idurl} for product=#{p_idurl} and category=#{review.category}" unless nb_weighted and sum_weighted
-
-          rating_01 = Root.rule3(opinion.rating, opinion.min_rating, opinion.max_rating)
-          nb_weighted += review.get_reputation
-          sum_weighted += (review.get_reputation * rating_01)
-
-          hash_p_f_c_aggregation[p_idurl][feature_rating_idurl][review.category] = [nb_weighted, sum_weighted]
-        end
-      end
-    end
-
-    # write the result for each  and products
-    puts "computing and writing results..."
-    knowledge.products.each do |product|
-      knowledge.each_feature_rating do |feature_rating|
-
-        # compute the average rating for each product/feature/category
-        Review.categories.each do |category, weight|
-          raise "error no product #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl]
-          raise "error no feature #{feature_rating.idurl} for product  #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl][feature_rating.idurl]
-          raise "error no category #{category} for feature #{feature_rating.idurl} for product  #{product.idurl}" unless hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
-
-          nb_weighted, sum_weighted = hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
-          average_rating = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
-          hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category] = average_rating
-        end
-
-        # compute the global rating for this product/feature (weighted average of category rating)
-        sum_weighted, nb_weighted = Review.categories.inject([0.0, 0.0]) do |(sw, nw), (category, category_weight)|
-          if rating = hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][category]
-            [sw + rating * category_weight, nw + category_weight]
-          else
-            [sw, nw]
-          end
-        end
-        average_rating_global = (nb_weighted == 0.0 ? nil : sum_weighted / nb_weighted)
-        hash_p_f_c_aggregation[product.idurl][feature_rating.idurl][:global_rating] = average_rating_global
-
-        # save the average rating for each category for this product
-        product.set_value(feature_rating.idurl, average_rating_global)
-        puts "#{product.idurl}/#{feature_rating.idurl}=#{average_rating_global}" if average_rating_global
-
-      end
-
-      product.save
-    end
-
-    # recompute weights...
-    compute_weights(knowledge)
-  end
 
   # recompute all vertors pidurl -> weight per question/choice
   def compute_weights(knowledge)
@@ -261,195 +216,6 @@ namespace :pikizi do
     knowledge.compute_counters
   end
 
-  # ==============================================================================================
-  desc "recompute category for reviews"
-  task :recompute_category => :environment do
-    Review.all.each {|r| r.category = r.class.default_category; r.save }
-    true
-  end
 
-  desc "clean up eric cretan reiews"
-  task :eric_cretan => :environment do
-
-    path = "public/domains/cell_phones/reviews/paragraph_eric"
-    file_names = Root.get_entries(path).inject({}) do |h, entry|
-      l = entry.split(".")
-      product_name, source_name = l.first.split('-')
-      h[product_name] ||= {}
-      h[product_name][source_name] ||= [nil, nil]
-      raise "error #{l.inspect}" unless l[1] == "txt"
-      raise "error" if h[product_name][source_name][l.size-2]
-      h[product_name][source_name][l.size-2] = entry
-      h
-    end
-
-    # not referenced= nexus_one, nokia_E72, htc_magic, nokia_5235
-
-    eric2product_idurl = { "Motorola_Droid" => "motorola_droid",
-                             "Palm_Pre_Plus" => "palm_pre",
-                             "Nexus_One" => "nexus_one",
-                             "Droid_Eris" => "htc_droid_eris",
-                             "Nokia_E72" => "nokia_e72",
-                             "HTC_Magic" => "htc_magic",
-                             "Nokia_5235" => "nokia_5235" }
-
-    # un-used rating dimension
-    # ["contacts_rating", "", "functionality_performance_rating", "", "security_management_rating", "storage_syncing_rating", "",  "music_rating", ""]
-
-    eric2feature_idurl = {
-             "overall" => "overall_rating",
-             "functionality & performance" => "functionality & performance",
-             "design & construction" => "design_construction_rating",
-             "screen" => "screen_rating",
-             "user interface" => "user_interface_rating",
-             "keyboard & input" => "keyboard_input_rating",
-             "controls & navigation" => "controls_navigation_rating",
-             "camera" => "camera_rating",
-             "video" => "video_rating",
-             "battery life" => "battery_life_rating",
-             "connectivity & internet experience" => "connectivity_internet_rating",
-             "gps" => "gps_rating",
-             "apps" => "apps_rating",
-             "value" => nil,
-             "messaging & emails & social networking" => "messaging_rating",
-             "call functionality & quality" => "call_rating",
-             "media" => "media_rating",
-             "productivity" => "productivity_rating" }
-
-    ericvalue2intensity = {
-            "very positive" => {:intensity => 1.0, :is_mixed => false },
-            "positive" => {:intensity => 0.5, :is_mixed => false} ,
-            "neutral" => {:intensity => 0.0, :is_mixed => false} ,
-            "negative" => {:intensity => -0.5, :is_mixed => false} ,
-            "very negative" => {:intensity => -1.0, :is_mixed => false} ,
-            "mixed" => {:intensity => 0.0, :is_mixed => true}
-            }
-
-    knowledge = Knowledge.first(:idurl => "cell_phones")
-    # do the job for each complete review/analysis
-    file_names.each do |product_name, sources|
-      if product_idurl = eric2product_idurl[product_name]
-        product = Product.first(:idurl => product_idurl)
-        
-        sources.each do | source_name, (file_review, file_opinions)|
-          if file_review and file_opinions
-
-
-            puts "processing review for #{product_name} source=#{source_name} file_review=#{file_review}  file_opinions=#{file_opinions}"
-
-            file = File.new("#{path}/#{file_review}", "r")
-            paragraphs = []
-            while (line = file.gets)
-              i = line.index("]\t")
-              paragraphs <<  line[i+2..10000]
-            end
-            file.close
-            content = paragraphs.collect { |p| "<p>#{p}</p>"}.join
-
-            # create the review object
-            review = Review::Inpaper.create(:product => product, :category => "expert", :product_idurl => product.idurl, :source => source_name, :written_at => Time.now, :knowledge_idurl => knowledge.idurl, :knowledge => knowledge, :summary => "#{content[0..40]} ..." , :content => content, :author => "ecrestan")
-
-            # create the paragraphs
-            paragraphs_generated = []
-            paragraphs.each_with_index do |p, counter|
-              review.paragraphs.create(:ranking_number => counter, :content => p)
-            end
-
-            file = File.new("#{path}/#{file_opinions}", "r")
-            while (line = file.gets)
-              # "positive", "negative", "very positive", "neutral", "mixed", "very negative"
-
-              opinion = line.strip.split("\t")
-              index_paragraph = Integer(opinion[0])
-              paragraph =  paragraphs_generated[index_paragraph]
-
-              dimension_idurl_1 = eric2feature_idurl[opinion[1]]
-              value_1 = opinion[3]
-              if dimension_idurl_1  and value_1 and value_1 != ""
-                Opinion::Tip.create({:paragraph => paragraph, :review => review, :feature_rating_idurl => dimension_idurl_1}.merge(ericvalue2intensity[value_1]))
-                puts "opinion p#{index_paragraph} #{dimension_idurl_1}=#{value_1}"  if dimension_idurl_1
-              end
-
-              dimension_idurl_2 = eric2feature_idurl[opinion[2]]
-              value_2 = opinion[4]
-              if dimension_idurl_2 and  value_2 and value_2 != ""
-                Opinion::Tip.create({:paragraph => paragraph, :review => review, :feature_rating_idurl => dimension_idurl_2 }.merge(ericvalue2intensity[value_2]))
-                puts "opinion p#{index_paragraph} #{dimension_idurl_2}=#{value_2}"  if dimension_idurl_2
-              end
-
-            end
-            file.close
-          end
-        end
-      end
-    end
-    true
-  end
-
-  desc "resync database"
-  task :resync_database => :environment do
-    Review.all.each { |r| (r.product.reviews << r; r.product.save; puts "update product=#{r.product.idurl}") unless r.product.reviews.include?(r) }
-    Opinion.all.each { |o| (o.review.opinions << o; o.review.save; puts "update review for product=#{o.review.product.idurl}/#{o.review.category}") unless o.review.opinions.include?(o) }
-  end
-
-  desc "update database"
-  task :update_database => :environment do
-
-    knowledge = Knowledge.first.link_back
-    knowledge.categories_map = [["Cell Phone", "cell_phone"],
-                                ["Smartphone", "smartphone"],
-                                ["Messaging phone", "messaging_phone"],
-                                ["Camera phone", "camera_phone"],
-                                ["Media phone", "media_phone"]]
-    #knowledge.save
-    feature_category = knowledge.get_feature_by_idurl("phone_category")
-    Product.all.each do |product|
-      # 1) retrieve images...
-      #product.fillup_image_ids
-#      product.fillup_others
-#      puts "#{product.image_ids.size} images for product #{product.idurl}"
-
-
-      #product.save
-
-
-
-     
-    end
-
-    # 4) Creating Dimension Objects...
-      #Dimension.import
-
-    # 5) Creating Specification Objects...
-    #Specification.delete_all;
-    #knowledge.features.each {|f| f.create_specification(knowledge.id) }
-
-
-#    Review.all.each do |review|
-#      if review.product_ids.nil? or review.product_ids.size == 0
-#        review.product_ids = [review.product_id]
-#      end
-#      review.product_ids = review.product_ids.collect { |pid| pid.is_a?(String) ? Mongo::objectID.from_string(pid) : pid }
-#      review.save
-#      review.opinions.all.each { |o| o.product_ids = review.product_ids; o.save }
-#    end
-
-
-#    Review.all.each do |r|
-#      unless r.knowledge_id
-#        k = Knowledge.first(:idurl => r.knowledge_idurl)
-#        r.knowledge_id = k.id
-#        r.knowledge
-#        r.save
-#        puts "updating..."
-#      end
-#    end
-
-     #Offer.import_all
-     #Review.all.each {|r| r.paragraph_sorted_ids = r.paragraphs.collect(&:id); r.save }; true
-
-    
-    true
-  end
 
 end

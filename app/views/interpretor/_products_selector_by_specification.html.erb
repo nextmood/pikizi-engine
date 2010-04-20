@@ -8,7 +8,7 @@
                 :onchange => remote_function(:url => { :action => "specification_selected", :id => name  },
                                              :with => "'specification_selected_id=' + document.getElementById('specification_selected').value")) %>
     <div id="specification_editor_<%= name %>">
-        <%= render(:partial => "products_selector_by_specification_tags", :locals => { :specification => selected_specification, :opinion => @current_opinion }) %>
+        <%= render(:partial => "products_selector_by_specification_tags", :locals => { :specification => selected_specification, :opinion => @opinion }) %>
     </div>
 
     <%= submit_tag "add all products matching ONE tag"  %>

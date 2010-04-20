@@ -108,8 +108,9 @@ class Specification
   def specification_html_suffix()
     "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" unless is_optional
   end
+
   # this is included in a form
-  def get_feature_edit_html()
+  def get_edit_html()
     "<div class=\"field\" title=\"edit feature #{self.class}\">
         <div style='font-weight:normal; font-size:90%;'>#{self.class} : #{idurl}</div>
         <div>mandatory<input type='checkbox' #{'checked' unless is_optional}/></div>
@@ -280,12 +281,12 @@ class SpecificationTags < Specification
   def get_specification_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>#{specification_html_suffix}" end
 
   # this is included in a form
-  def get_specification_edit_html()
+  def get_edit_html()
     super() << "<div class=\"field\">
                    <span>exclusive tag?</span>
                     <input type='checkbox' name='is_exclusive' value='1' #{ is_exclusive ? 'checked' : nil} />
                    <br/>
-                   <input type='text' style=\"width:95%;\" value='" << tags.collect(&:label).join(', ') << "' />
+                   <input type='text' style=\"width:95%;\" value='" << tags.collect { |t| "#{t.idurl}:#{t.label.inspect}" }.join(', ') << "' />
                 </div>"
   end
 
@@ -417,7 +418,7 @@ class SpecificationRating < Specification
   end
 
   # this is included in a form
-  def get_specification_edit_html()
+  def get_edit_html()
     super() << "<div class=\"field\">
                    min=<input name=\"min_rating\" type='text' value=\"#{min_rating}\" size=\"2\" />
                    max=<input name=\"max_rating\" type='text' value=\"#{max_rating}\" size=\"2\" />
@@ -491,13 +492,13 @@ class SpecificationInterval < Specification
   def get_specification_html() "<span title=\"interval of class#{class_name}\">#{label}</span>" end
 
   # this is included in a form
-  def get_specification_edit_html()
+  def get_edit_html()
     super()
   end
 
-  SEPARATOR_INERVAL = '-@@-'
+  def self.separator_interval() '-@@-' end
   def xml2value(content_string)
-    content_string_min, content_string_max = content_string.split(SEPARATOR_INERVAL)
+    content_string_min, content_string_max = content_string.split(SpecificationInterval.separator_interval)
     value_min = content_string_min ? specification_min.xml2value(content_string_min) : nil
     value_max = content_string_max ? specification_max.xml2value(content_string_max) : nil
     [value_min, value_max]
@@ -506,7 +507,7 @@ class SpecificationInterval < Specification
   def value2xml(value)
     xml_min = value.first ? specification_min.value2xml(value.first) : nil
     xml_max = value.last ? specification_max.value2xml(value.last) : nil
-    "#{xml_min}#{SEPARATOR_INERVAL}#{xml_max}"
+    "#{xml_min}#{SpecificationInterval.separator_interval}#{xml_max}"
   end
   # ---------------------------------------------------------------------
 
@@ -549,7 +550,7 @@ class SpecificationContinous < Specification
   def get_specification_html() "<span title=\"specification #{self.class}\">#{label}</span>#{specification_html_suffix}" end
 
   # this is included in a form
-  def get_specification_edit_html()
+  def get_edit_html()
     super() << "<div class=\"field\">
                    format <input type='text' name='format' value='#{value_format}' />
                 </div>"
@@ -614,12 +615,11 @@ end
 
 class SpecificationDate < SpecificationContinous
 
-  YEAR_IN_SECONDS = 60 * 60 * 24 * 365
-
+  def self.year_in_seconds() 31536000  end # 60 * 60 * 24 * 365
   def self.initialize_from_xml(xml_node)
     specification_date = super(xml_node)
-    specification_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * YEAR_IN_SECONDS
-    specification_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * YEAR_IN_SECONDS
+    specification_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * SpecificationDate.year_in_seconds
+    specification_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * SpecificationDate.year_in_seconds
     specification_date.value_format = xml_node['format'] || Root.default_date_format
     specification_date
   end

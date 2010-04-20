@@ -10,7 +10,7 @@
         <div id="search_boxBg">
             <div class="spcr"></div>
         <ul class="one">
-            <li class="img"><%= product_image(@product, 'main') %></li>
+            <li class="img"><%= link_to(product_image(@product, 'main'), "/products/#{@product.idurl}") %></li>
 
             <li class="details  blank">
               <%= render(:partial => "/home/product_details", :locals => {:knowledge => @knowledge, :product => @product}) %>

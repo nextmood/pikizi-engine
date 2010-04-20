@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
     puts "media_file.content_type=#{media_file.content_type}" if media_file
     # 2 mega max
     if media_file and Media::MediaText.mime_type_valid?(media_file.content_type) and media_file.length < 2000000
-      Media.delete(media_id) if product.description_id # delete previous one if needed
+      Media.delete(product.description_id) if product.description_id # delete previous one if needed
       product.description_id = Media::MediaText.create(media_file)
     end
     product.save
@@ -79,31 +79,26 @@ class ProductsController < ApplicationController
 
   # this is a rjs
   def add_similar_product
-    product = Product.find(params[:id])
-    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
-    product.similar_product_ids ||= []
-    unless product.similar_product_ids.include?(similar_product_id)
-      product.similar_product_ids = (product.similar_product_ids << similar_product_id)
-      product.save
-    end
+    product  = Product.find(params[:id])
+    similar_product  = Product.find(params[:similar_product_id])
+    product.add_similar_product(similar_product)
     render :update do |page|
       page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
     end
   end
 
   def delete_similar_product
-    product = Product.find(params[:id])
-    similar_product_id = Mongo::ObjectID.from_string(params[:similar_product_id])
-    product.similar_product_ids ||= []
-    if product.similar_product_ids.include?(similar_product_id)
-      product.similar_product_ids.delete(similar_product_id)
-      product.save
-    end
+    puts "****** " << params.inspect
+    product  = Product.find(params[:id])
+    similar_product  = Product.find(params[:similar_product_id])
+    product.delete_similar_product(similar_product)
     render :update do |page|
       page.replace("similar_products_#{product.id}", :partial => "/products/similar_products", :locals => { :product => product })
     end
   end
-  
+
+
+
   # -------------------------------------------------------------------------------------------
   # Image management
   # -------------------------------------------------------------------------------------------
@@ -135,37 +130,47 @@ class ProductsController < ApplicationController
 
   end
 
+
+  # -------------------------------------------------------------------------------------------
+  # Specification
+  # -------------------------------------------------------------------------------------------
+
+
   # this is a rjs
   # return the form to edit a feature
-  def edit_feature
+  def edit_specification
     product = Product.find(params[:id])
-    knowledge = product.knowledge
-    feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
+    specification = Specification.find(params[:specification_id])
     render :update do |page|
-      page.replace_html("div_#{feature.idurl}", :partial => "/products/edit_feature",
-                  :locals => { :product => product, :knowledge => knowledge, :feature => feature })
+      page.replace_html("div_specification_#{specification.id}", :partial => "/specifications/edit",
+                  :locals => { :product => product, :specification => specification })
     end
   end
 
     # this is a rjs
   # return the form to edit a feature's value
-  def edit_value
+  def edit_specification_value
     product = Product.find(params[:id])
-    knowledge = product.knowledge
-    feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
+    specification = Specification.find(params[:specification_id])
     render :update do |page|
-      page.replace_html("div_#{feature.idurl}", :partial => "/products/edit_value",
-                  :locals => { :product => product, :knowledge => knowledge, :feature => feature })
+      page.replace_html("div_specification_#{specification.id}", :partial => "/specifications/edit_value",
+                  :locals => { :product => product, :specification => specification })
     end
   end
 
-  def cancel_feature
+  def cancel_specification
     product = Product.find(params[:id])
-    knowledge = product.knowledge
-    feature = knowledge.get_feature_by_idurl(params[:feature_idurl])
+    specification = Specification.find(params[:specification_id])
     render :update do |page|
-      page.replace_html("div_#{feature.idurl}", "")
+      page.replace_html("div_specification_#{specification.id}", "")
     end
+  end
+
+  def delete_specification
+    product = Product.find(params[:id])
+    specification = Specification.find(params[:specification_id])
+    specification.destroy
+    redirect_to "/products/#{product.idurl}"
   end
 
   # -------------------------------------------------------------------------------------------
@@ -189,11 +194,7 @@ class ProductsController < ApplicationController
   # this si a rjs
   def edit_dimension_open
     dimension_id = Mongo::ObjectID.from_string(params[:id])
-    puts "nb dimensions=#{@current_knowledge.dimensions.count}"
-    dimension = @current_knowledge.dimensions.detect { |d|
-      puts "#{d.id.inspect} == #{dimension_id.inspect} --> #{d.id == dimension_id}"
-      d.id == dimension_id
-    }
+    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
     raise "***** error #{dimension_id.inspect} == #{dimension.inspect}" unless dimension
     product = Product.find(params[:product_id])
 
@@ -266,7 +267,12 @@ class ProductsController < ApplicationController
     end
   end
 
-
+  def compute_aggregation
+    product = Product.find(params[:id])
+    product.knowledge.compute_aggregation
+    redirect_to("/products/#{product.idurl}")
+  end
+  
   # -------------------------------------------------------------------------------------------
   # Usages
   # -------------------------------------------------------------------------------------------

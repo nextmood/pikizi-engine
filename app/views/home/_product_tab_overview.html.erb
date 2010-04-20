@@ -1,8 +1,6 @@
-<div><%= link_to("edit...", "/products/#{product.idurl}", :style => "color:#00c0ff") %></div>
-  <%= begin
-        feature_description = knowledge.get_feature_by_idurl("description").get_value(product)
-        File.read("public/domains/#{knowledge.idurl}/products/#{product.idurl}/#{feature_description}")
-      rescue
-        "No file... public/domains/#{knowledge.idurl}/products/#{product.idurl}/#{feature_description}"
-      end
-  %>
+<br/>
+<% if product.description_id %>    
+    <%= Media.datas(product.description_id).read %>
+<% else %>
+    no description yet
+<% end %>

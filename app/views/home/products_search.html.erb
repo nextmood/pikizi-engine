@@ -37,8 +37,7 @@
     <div class="spcr"></div>
 
       <% if @nb_results > 0 %>
-          <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
-          <% feature_overall_rating = @knowledge.get_feature_by_idurl("overall_rating") %>
+          <% dimension_root = @knowledge.dimension_root %>
           <% for category, products in @list_category_products %>
             <ul <%= "class=\"last\"" if category == @last_category %>>
             <h3><%= category %></h3>
@@ -48,7 +47,7 @@
                   <%= product_image(product) %>
 
                   <h4><a href="/product/<%= product.idurl %>"><%= product.label %></a></h4>
-                  <% if rating_01 = feature_overall_rating.get_value(product) %>
+                  <% if rating_01 = dimension_root.get_value(product) %>
                   <ul class='star-rating'>
                       <li class='current-rating' title="rating=<%= rating_01 %>" style="<%= "width:#{(45 * rating_01).round}px;" %>" ></li>
                   </ul>

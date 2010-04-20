@@ -119,6 +119,9 @@ class Dimension
   # Compute aggreagtion
   # ---------------------------------------------------------------------
 
+
+  
+
   def compute_aggregation(all_products, only_product=nil)
     ratings, comparaisons = compute_aggregation_ratings_comparaisons(only_product)
     hash_product_2_category_average_rating01 = compute_hash_product_2_category_average_rating01(ratings, all_products, only_product)
@@ -164,6 +167,7 @@ class Dimension
     hash_product_2_category_average_rating01.inject({}) do |h, (p, hash_category_rating01)|
       if only_product.nil? or only_product.id == p.id
         sum_weight, sum_rating01 = hash_category_rating01.inject([0.0,0.0]) do |(sw, so1), (category, rating01)|
+          puts "category=#{category} rating01=#{rating01}"
           [sw += Review.categories[category], so1 += rating01 * Review.categories[category]]
         end
         h[p] = sum_rating01 / sum_weight

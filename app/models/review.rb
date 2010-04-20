@@ -72,9 +72,7 @@ class Review < Root
     Review.delete_all(find_options)
   end
 
-  def self.opinion_types
-    [["", ""], ["pro/cons", "tip"], ["compare with product", "comparator_product"], ["compare with feature", "comparator_feature"], ["rating", "rating"], ["related to feature", "feature_related"] ]
-  end
+
 
   def cut_paragraph_at(paragraph, caret_position)
     max_size = paragraph.content.size - 1

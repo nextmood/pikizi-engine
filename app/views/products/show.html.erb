@@ -1,8 +1,5 @@
 <style type="text/css">
     div.image { border:1px solid black; float:left; margin-left:5px; margin-bottom:5px; height:85px; width:110px; }
-    .clearBoth { clear:both; }
-    label { color:black; margin-right:5px; font-weight:bold;}
-    .field { color:blue; margin-right:15px; }
     p { margin:0px;}
     .price_table tr th { background-color:lightgray; }
     .price_table tr td { border-bottom:1px solid black; }
@@ -20,7 +17,7 @@
   </div>
 <hr/>
 
-<h2><%= @current_knowledge.idurl %>/<%= @product.idurl %></h2>
+<h2><%= @current_knowledge.idurl %>/<%= @product.idurl %>:<%= link_to(@product.label, "/product/#{@product.idurl}") %></h2>
 
 
     <% form_tag "/products/update_header/#{@product.id}", :multipart => true  do -%>
@@ -83,9 +80,15 @@
 <% end %>
 
 
-<br class="clearBoth" />
+<br class="pkz_clearBoth" />
 
-<hr/><h2>Dimensions</h2>
+<hr/>
+<h2>Dimensions
+  <span style="font-size:60%; margin-left:50px;">
+    last computed @ <%= @current_knowledge.last_aggregation_timestamp %> <%= link_to("recompute...", "/products/compute_aggregation/#{@product.id}") %>
+  </span>
+</h2>
+
 <div id="list_specifications" class="">
   <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => @product}) %>
 </div>
@@ -96,7 +99,7 @@
 <h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
 <%= render(:partial => "/specifications/list", :locals => {:knowledge => @current_knowledge, :product => @product}) %>
 
-
+<!--
 
 <h2><%= link_to_function("old features...", "document.getElementById('old_features').toggle();") %></h2>
 <div id="old_features" style="display:none;">
@@ -107,10 +110,6 @@
               <%= feature.get_value_html(@product) %>
 
               <span style="font-size:80%; margin-left:30px;">
-                <%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature") %>
-                <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
-                <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
-                <%= image_tag('icons/status_icon_delete.png', :border => 0, :title => "delete this specification (and all its children if any)") %>
 
                 edit 
                   <%= link_to_remote("value",
@@ -140,5 +139,5 @@
     <% end %>
 </div>
 
-
+-->
 

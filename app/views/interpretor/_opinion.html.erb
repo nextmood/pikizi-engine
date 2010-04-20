@@ -1,0 +1,20 @@
+<div id="existing_opinion_<%= existing_opinion.id %>" style="margin-top:5px;" >
+    <%= link_to(image_tag("icons/status_icon_delete.png", :border => 0), "/interpretor/remove_opinion_from_review/#{existing_opinion.id}") %>
+
+
+    <% if opinion and existing_opinion.id == opinion.id %>
+        <span style="background-color:pink;">
+            <%= existing_opinion.to_html2 %>
+        </span>
+        <%= link_to_function("set selection",
+         "document.getElementById('new_extract').value = get_selection_plain('opinion_#{opinion.id}_content_fck_editor');
+          var form = document.getElementById('form_opinion');
+          if(form.onsubmit()){
+            form.submit();
+          }",
+         :style => "margin-left:10px; color:orange;")  %>
+    <% else %>
+        <%= link_to(existing_opinion.to_html2, "/edit_review/#{existing_opinion.review_id}/#{existing_opinion.paragraph_id}/#{existing_opinion.id}", :style => "margin-left:10px;") %>
+    <% end %>
+
+</div>

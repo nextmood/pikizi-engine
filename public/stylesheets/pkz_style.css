@@ -156,7 +156,7 @@
 
 .pkz_dimension_explanation {
     margin-bottom:5px;
-    width:700px;
+    width:900px;
 }
 .pkz_dimension_explanation a {
     color:#00c0ff
@@ -172,3 +172,13 @@
 .pkz_dimension_explanation tr td {
     text-align:center;
 }
+
+.pkz_label { color:gray; }
+.pkz_field { color:darkgray; }
+.pkz_list { border-bottom:1px solid black; padding-bottom:2px;}
+.pkz_list div { margin-bottom:2px;""}
+.pkz_clearBoth { clear:both; margin-top:2px;}
+.pkz_autocomplete_select { display:none; }
+.pkz_comparator_operator_type { font-size:120%; font-weight:bold; margin-top:5px;}
+
+

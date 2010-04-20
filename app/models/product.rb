@@ -57,23 +57,54 @@ class Product < Root
   
   timestamps!
 
-  @@product_collection_html = nil
+  @@product_collection_html = {}
   def self.product_collection_html(knowledge_id, options={})
-    if @@product_collection_html.nil? or options[:reset]
-      @@product_collection_html = Product.all(:knowledge_id => knowledge_id).collect {|p| [p.label, p.id]}
+    if @@product_collection_html[knowledge_id].nil? or options[:reset]
+      @@product_collection_html[knowledge_id] = Product.all(:knowledge_id => knowledge_id).collect {|p| [p.label, p.id]}.sort {|x,y| x.first.downcase <=> y.first.downcase }
     end
-    @@product_collection_html
+    @@product_collection_html[knowledge_id]
   end
 
   def product_collection_html
-    (l = Product.product_collection_html(knowledge_id)).delete([label, id])
+    exclude_ids = ((self.similar_product_ids || []) << id)
+    (l = Product.product_collection_html(knowledge_id)).delete_if { |label, id | exclude_ids.include?(id) }
     l
   end
 
-  # return a list of secification labe simialr to input
+  # return a list of products similar
   def self.similar_to(input, reset=nil)
+    input = input.downcase
     @@product_labels = nil if reset
-    @@product_labels ||= Product.all.collect(&:label)
+    @@product_labels ||= Product.all(:order => "label").collect(&:label)
+    @@product_labels.select { |l| l.downcase.index(input) }
+  end
+
+
+
+  def add_similar_product(similar_product)
+    add_similar_product_bis(similar_product)
+    similar_product.add_similar_product_bis(self)
+  end
+
+  def add_similar_product_bis(similar_product)
+    self.similar_product_ids ||= []
+    unless similar_product_ids.include?(similar_product.id)
+      self.similar_product_ids << similar_product.id
+      save
+    end
+  end
+
+  def delete_similar_product(similar_product)
+    delete_similar_product_bis(similar_product)
+    similar_product.delete_similar_product_bis(self)
+  end
+
+  def delete_similar_product_bis(similar_product)
+    self.similar_product_ids ||= []
+    if similar_product_ids.include?(similar_product.id)
+      self.similar_product_ids.delete(similar_product.id)
+      save
+    end
   end
 
 

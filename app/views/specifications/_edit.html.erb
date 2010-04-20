@@ -1,0 +1,15 @@
+<% form_tag "/products/update_specification", :style => "border:1px solid black; padding:2px; background-color:pink;"  do -%>
+    <%= hidden_field_tag "product_id", product.id %>
+    <%= hidden_field_tag "specification_id", specification.id %>
+    <%= specification.get_edit_html %>
+    <hr/>
+    <%= submit_tag "validate" %>
+    <%= link_to_remote("cancel",
+                          :url => {  :controller => "products",
+                                     :action => "cancel_specification",
+                                     :id => product.id,
+                                     :specification_id => specification.id  },
+                          :html => { :style => "font-size:80%; margin-left:10px;" }) %>
+    <%= link_to("destroy", {:action => "delete_specification", :id => product.id, :specification_id => specification.id}, :style => "font-size:80%; margin-left:50px;") %>
+
+<% end -%>

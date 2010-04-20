@@ -8,8 +8,7 @@
                      :similar_product_id => p.id },
           :html => {}) %>
 
-
-   <span class="field"><%= p.label %></span>
+     <%= link_to(p.label, "/products/#{p.idurl}", :class => "field") %>
 <% end %>
 
 <%= select_tag("similar_product_new_id",

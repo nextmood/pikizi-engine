@@ -1,5 +1,5 @@
-<% feature_brand = knowledge.get_feature_by_idurl("brand").get_value_html(product) %>
-<% feature_carrier = knowledge.get_feature_by_idurl("carriers").get_value_html(product) %>
+<% specification_brand = knowledge.get_specification_by_idurl("brand").get_value_html(product) %>
+<% specification_carrier = knowledge.get_specification_by_idurl("carriers").get_value_html(product) %>
 
 <table>
     <tr>
@@ -9,18 +9,18 @@
     <tr>
         <td>Manufacturer</td>
 
-        <td class="lft"><strong><%= feature_brand %></strong></td>
+        <td class="lft"><strong><%= specification_brand %></strong></td>
     </tr>
     <tr>
         <td>Carrier:</td>
-        <td class="lft"><strong><%= feature_carrier %></strong></td>
+        <td class="lft"><strong><%= specification_carrier %></strong></td>
     </tr>
     <tr>
         <td>Rating:</td>
         <td class="lft">
-          <% if feature_rating = knowledge.get_feature_by_idurl("overall_rating").get_value(product) %>
+          <% if product_rating_value = knowledge.dimension_root.get_value(product) %>
             <ul class='star-rating'>
-                <li title="rating=<%= feature_rating %>" class='current-rating' style="<%= "width:#{(70 * feature_rating).round }px;" %>"></li>
+                <li title="rating=<%= product_rating_value %>" class='current-rating' style="<%= "width:#{(70 * product_rating_value).round }px;" %>"></li>
             </ul>
           <% end %>
         </td>

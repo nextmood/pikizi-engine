@@ -31,9 +31,9 @@
               <%= link_to_function("for #{pluralize(hash_category_ratings[category].size, 'opinions')}", 
                                    "document.getElementById('list_ratings_dimension_#{dimension.id}_#{category}').toggle();",
                                    :style => "font-size:80%; margin-left:5px;") %>
-          <div id="list_ratings_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%; display:none;">
+          <div id="list_ratings_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%;  text-align:left; display:none;">
           <% for rating in hash_category_ratings[category] %>
-              <div><%= rating.to_html2 %></div>
+              <div>-&nbsp;<%= link_to(rating.to_html2, "/edit_review/#{rating.review_id}/#{rating.paragraph_id}/#{rating.id}") %></div>
           <% end %>
           </div>
           <% else %>
@@ -55,10 +55,10 @@
           <%= link_to_function("for #{pluralize(hash_category_comparaisons[category].size, 'opinions')}",
                                    "document.getElementById('list_comparaisons_dimension_#{dimension.id}_#{category}').toggle();",
                                    :style => "font-size:80%; margin-left:5px;") %>
-          <div id="list_comparaisons_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%; display:none;">
-          <% for comparaison in hash_category_comparaisons[category] %>
-              <div><%= comparaison.to_html2 %></div>
-          <% end %>
+          <div id="list_comparaisons_dimension_<%= dimension.id %>_<%= category %>" style="font-size:80%; text-align:left; display:none;">
+              <% for comparaison in hash_category_comparaisons[category] %>
+                  <div>-&nbsp;<%= link_to(comparaison.to_html2, "/edit_review/#{comparaison.review_id}/#{comparaison.paragraph_id}/#{comparaison.id}") %></div>
+              <% end %>
           </div>
           <% else %>
               <small>N/A</small>

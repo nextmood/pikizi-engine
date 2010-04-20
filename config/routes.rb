@@ -23,7 +23,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/questions/:knowledge_idurl', :controller => 'questions', :action => 'index'
 
   map.connect '/reviews_for_knowledge/:knowledge_idurl', :controller => 'reviews', :action => 'index'
-  map.connect '/cut_paragraph/:review_id/:paragraph_id/:caret_position', :controller => 'reviews', :action => 'cut_paragraph'
 
   map.connect '/home' , :controller => 'home', :action => 'quizzes'
   map.connect '/test_results', :controller => 'home', :action => 'test_results'
@@ -93,7 +92,12 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/products/:product_idurl.:format", :controller => 'products', :action => 'show'
   map.connect "/usages", :controller => 'products', :action => 'usages'
   map.connect "/ranking/:dimension_idurl", :controller => 'home', :action => 'ranking_by_dimension'
-  
+
+  map.connect "/edit_review/:id/:paragraph_id/:opinion_id", :controller => 'interpretor', :action => 'edit_review'
+  map.connect "/edit_review/:id/:paragraph_id", :controller => 'interpretor', :action => 'edit_review'
+  map.connect "/edit_review/:id", :controller => 'interpretor', :action => 'edit_review'
+  map.connect '/cut_paragraph/:paragraph_id/:caret_position', :controller => 'interpretor', :action => 'cut_paragraph'
+
   map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
 
   map.root :controller => "landing"  # default

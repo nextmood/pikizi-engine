@@ -3,6 +3,7 @@
       <%= specification.get_value_html(product) %>
 
       <span style="font-size:80%; margin-left:30px;">
+        <!--
         <%= image_tag('icons/add.png', :border => 0, :title => "add a new child specification") %>
         <%= image_tag('icons/arrow_up.gif', :border => 0, :title => "move up") %>
         <%= image_tag('icons/arrow_down.gif', :border => 0, :title => "move down") %>
@@ -12,26 +13,26 @@
                              :id => specification.id,
                              :product_id => product.id  },
                            :confirm => "remove the specification and all it's children?") %>
-
+        -->
         edit
           <%= link_to_remote("value",
                   :url => {  :controller => "products",
-                             :action => "edit_value",
+                             :action => "edit_specification_value",
                              :id => product.id,
-                             :specification_idurl => specification.idurl  },
+                             :specification_id => specification.id  },
                   :html => {  }) %>
           /
           <%= link_to_remote("spec",
                   :url => {  :controller => "products",
                              :action => "edit_specification",
                              :id => product.id,
-                             :specification_idurl => specification.idurl  },
+                             :specification_id => specification.id  },
                   :html => {  }) %>
 
           <%= specification.should_display?(product) ? "(spec) " : "" %>
       </span>
 
-      <div id="div_<%= specification.idurl %>"></div>
+      <div id="div_specification_<%= specification.id %>"></div>
 
 </div>
 

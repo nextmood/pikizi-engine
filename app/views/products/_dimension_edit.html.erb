@@ -11,8 +11,10 @@
       </p>
       <p>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(knowledge, :selected => dimension.parent_id, :max_level => 1)) %></p>
       <hr/>
-      <%= submit_tag "update #{dimension.idurl}" %>&nbsp;<%= link_to("destroy", "") %>
-    <%= link_to_remote("cancel",
+      <%= submit_tag "update #{dimension.idurl}" %>
+      <%= link_to_remote("cancel",
             :url => {:action => "redisplay_dimension", :id => product.id},
-            :html => { :style => "font-size:80%;" }) %>
+            :html => { :style => "font-size:80%; margin-left:10px;" }) %>
+      <%= link_to("destroy", {:action => "delete_dimension", :id => product.id, :dimension_id => dimension.id}, :style => "font-size:80%; margin-left:50px;") %>
+
   <% end -%>

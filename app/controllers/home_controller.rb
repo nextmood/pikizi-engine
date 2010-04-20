@@ -76,7 +76,6 @@ class HomeController < ApplicationController
   # GET /products_search
   # POST /products_search
   def products_search
-    puts "params=#{params.inspect}"
     @search_string = (params["s"] == Product.default_search_text ? nil : params["s"])
     @knowledge = Knowledge.load_db("cell_phones")
 

@@ -1,9 +1,9 @@
 <div id="ps_<%= name %>" style="background-color:lightgray; width:350px; padding:5px; border:1px solid black;">
 
-    <div id="<%= name %>_list" class="list">
-        <%= render(:partial => "products_selector_filters", :locals => { :opinion => @current_opinion, :name => name }) %>
+    <div id="<%= name %>_list" class="pkz_list">
+        <%= render(:partial => "products_selector_filters", :locals => { :opinion => opinion, :name => name }) %>
     </div>
-    <div class="clearBoth"></div>
+    <div class="pkz_clearBoth"></div>
 
     <div id="<%= name %>_extra" >
           <span style="font-size:80%;">

@@ -1,37 +1,26 @@
-<% feature_unsubsidized_price = knowledge.get_feature_by_idurl("unsubsidized_price").get_value_html(product) %>
-<% feature_subsidized_price = knowledge.get_feature_by_idurl("subsidized_price").get_value_html(product) %>
-<% feature_special_carrier_promotion = knowledge.get_feature_by_idurl("special_carrier_promotion").get_value_html(product) %>
-<% feature_amazon_price = knowledge.get_feature_by_idurl("amazon_price").get_value_html(product) %>
-<% feature_amazon_url = knowledge.get_feature_by_idurl("amazon_url").get_value(product) %>
-<% feature_bestbuy_price = knowledge.get_feature_by_idurl("bestbuy_price").get_value_html(product) %>
-<% feature_bestbuy_url = knowledge.get_feature_by_idurl("bestbuy_url").get_value(product) %>
-<% feature_radioshack_price = knowledge.get_feature_by_idurl("radioshack_price").get_value_html(product) %>
-<% feature_radioshack_url = knowledge.get_feature_by_idurl("radioshack_url").get_value(product) %>
+
 
 <ul class="buy">
     <li>
-        <h3>Buy</h3>
+        <h3>Buy / Typical price</h3>
 
         <table>
-            <tr>
-                <td class="src"><a href="<%= feature_amazon_url %>">Amazon.com</a></td>
-                <td class="prc"><%= feature_amazon_price %></td>
-            </tr>
-            <tr>
-                <td class="src"><a href="<%= feature_bestbuy_url %>">BestBuy</a></td>
-                <td class="prc"><%= feature_bestbuy_price %></td>
-            </tr>
-            <tr>
-                <td class="src"><a href="<%= feature_radioshack_url %>">RadioShack</a></td>
-                <td class="prc"><%= feature_radioshack_price %></td>
-            </tr>
+            <% for offer in product.offers %>
+              <tr>
+                <td class="src" title="<%= offer.conditions %>">
+                  <%= offer_title(offer) %>
+                  <%= " *" if offer.conditions %>
+                </td>
+                <td class="prc"><%= '$ %.2f' % offer.amount %></td>
+              </tr>
+            <% end %>
+
         </table>
     </li>
-    <li>
-    <h3>Typical price</h3>
-
-    <p>With plan: <%= feature_subsidized_price %></p>
-    <p>Unlocked: <%= feature_unsubsidized_price %></p>
-    <p>Promotion: <%= feature_special_carrier_promotion %></p>
-    </li>
+  <li>
+    <h3>otto</h3>
+    <p>With plan: $ 199 to $ 299</p>
+  </li>
 </ul>
+
+

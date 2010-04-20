@@ -14,9 +14,6 @@ module ReviewsHelper
     s
   end
 
-  def dimension_feature_related(a_knowledge, review_id, feature_related_selected=nil)
-    select_tag("feature_related", options_for_select(dimension_feature(a_knowledge, :related), feature_related_selected))
-  end
 
   #mode is either :comparator or :related
   def dimension_feature(a_knowledge, mode)

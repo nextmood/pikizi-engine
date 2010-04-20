@@ -1,6 +1,8 @@
 require 'xml'
 require 'mongo_mapper'
 require 'specification'
+require 'offer'
+
 #require 'graphviz'
 
 class Knowledge < Root
@@ -8,7 +10,9 @@ class Knowledge < Root
   include MongoMapper::Document
 
   key :idurl, String # unique url
-  key :label, String 
+  key :label, String
+  key :last_aggregation_timestamp, Time
+
   key :categories_map, Array # [[key_category_1, label_category_1], ... [key_category_n, label_category_n]]
 
   key :dimension_root, Dimension
@@ -120,11 +124,8 @@ class Knowledge < Root
 
   def get_price_min_html(product) get_price_min_max_html(product, :min) end
   def get_price_min_max_html(product, mode = :minmax)
-    f_prices = ["unsubsidized_price", "subsidized_price", "special_carrier_promotion", "amazon_price", "bestbuy_price", "radioshack_price"]
-    prices = f_prices.collect { |feature_name| get_feature_by_idurl(feature_name).get_value(product) }.compact
-    if prices.size > 0
-      price_min = prices.min
-      price_max = prices.max
+    price_min, price_max = Price.min_max(product.id)
+    if price_min and price_max
       if mode == :minmax and price_min != price_max
         "$ #{'%.2f' % price_min} to $ #{'%.2f' % price_max}"
       else
@@ -308,11 +309,15 @@ class Knowledge < Root
     @hash_idurl_question[idurl]
   end
 
-  def get_feature_by_idurl(idurl)
-    @hash_idurl_feature ||= features_all.inject({}) { |h, f| ensure_unique(h, f) }
-    @hash_idurl_feature[idurl]
+  def get_dimension_by_idurl(idurl)
+    @hash_idurl_dimension ||= dimensions.inject({}) { |h, d| ensure_unique(h, d) }
+    @hash_idurl_dimension[idurl]
   end
 
+  def get_specification_by_idurl(idurl)
+    @hash_idurl_specification ||= specifications.inject({}) { |h, s| ensure_unique(h, s) }
+    @hash_idurl_specification[idurl]
+  end
 
   def ensure_unique(h, o)
     raise "OUPS more than one idurl=#{o.idurl}" if h[o.idurl]
@@ -340,6 +345,36 @@ class Knowledge < Root
     end
     self.send(keyname)
   end
+
+  # ---------------------------------------------------------------------
+  # Compute aggreagtion
+  # ---------------------------------------------------------------------
+  
+  def compute_aggregation
+    all_products = products
+    puts "computing dimension aggergation for #{all_products.size} products of #{label}"
+    dimensions.each { |dimension| all_products.each { |product| product.set_value(dimension.idurl, nil); product.save } }
+    compute_aggregation_recursive(dimension_root, all_products)
+    self.update_attributes("last_aggregation_timestamp" => Time.now)
+    # for each dimension... and usages
+    # Dimension.all.concat(Usage.all).each
+  end
+
+  def compute_aggregation_recursive(dimension, all_products)
+    dimension.children.each { |sub_dimension| compute_aggregation_recursive(sub_dimension, all_products) }
+    compute_aggregation_bis(dimension, all_products)
+  end
+
+  def compute_aggregation_bis(dimension_or_usage, all_products)
+    dimension_or_usage.compute_aggregation(all_products).each do |product_id, rating_01|
+        product = all_products.detect { |p| p.id == product_id }
+        product.set_value(dimension_or_usage.idurl, rating_01)
+        product.save
+    end
+    puts "aggregation computed for dimension #{dimension_or_usage.idurl}"
+  end
+
+
 
 
 end

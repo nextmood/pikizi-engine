@@ -8,8 +8,8 @@
             <div style="border-top:1px solid black; margin-bottom:10px;">
                 <%=h paragraph.content_without_html %>
                 <% for opinion in paragraph.opinions %>
-                    <div style="color:blue; border-top:1px dashed black; margin-top:3px;">
-                      <%= opinion.to_html2 %>
+                    <div style="border-top:1px dashed black; margin-top:3px;">
+                      <%= link_to(opinion.to_html2, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
                       <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
                     </div>
                     <% nb_opinions += 1 %>

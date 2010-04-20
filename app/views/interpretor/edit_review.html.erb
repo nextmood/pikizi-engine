@@ -1,0 +1,77 @@
+ <%= javascript_include_tag :fckeditor %>
+ <script>
+
+   function get_selection_plain(instance_name) {
+
+     var oFCKeditor = FCKeditorAPI.GetInstance(instance_name);
+     var selection = (oFCKeditor.EditorWindow.getSelection ? oFCKeditor.EditorWindow.getSelection() : oFCKeditor.EditorDocument.selection);
+
+     if(selection.createRange) {
+         var text = selection.createRange().text;
+     }
+     else {
+         var text = selection;
+     }
+
+     return text;
+    };
+
+    function get_selection_range(instance_name) {
+        var oFCKeditor = FCKeditorAPI.GetInstance(instance_name);
+        var selection = (oFCKeditor.EditorWindow.getSelection ? oFCKeditor.EditorWindow.getSelection() : oFCKeditor.EditorDocument.selection);
+        return selection.createRange();
+    };
+
+ </script>
+
+ 
+<!-- header -->
+<table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
+    <tr>
+      <% for product in @products4review %>
+        <td valign="top" width="80">
+                  <%= link_to(product_image(product), "/product/#{product.idurl}") %>
+
+        </td>
+              <% end %>
+        <td valign="top">
+            <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
+        </td>
+    </tr>
+
+
+  <tr>
+    <td colspan="<%= @products4review.size + 1 %>">
+        <%= link_to("edit review <small>source=#{@review.source} category=#{@review.category}</small>", "/reviews/edit/#{@review.id}", :style => "color:orange; font-weight:bold;") %>
+    </td>
+  </tr>
+</table>
+
+
+<!-- paragraphs -->
+<div style="background-color:white; border:2px solid orange; padding:5px;">
+    <div id="div_paragraph_editor">
+      <%= render(:partial => "paragraph_editor", :locals => { :opinion => @opinion, :paragraph_index => @paragraph_index, :paragraphs_size =>  @paragraphs_size, :paragraphs => @paragraphs, :existing_opinions => @existing_opinions }) %>
+    </div>
+
+    <!-- editing the opinion -->
+    <% if @opinion %>
+        <h2>Dimensions involved</h2>
+
+        <%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @current_knowledge, :opinion => @opinion} ) %>
+
+         <%= render(:partial => "/interpretor/usages_related", :locals => {:opinion => @opinion} ) %>
+
+
+        <div id="div_opinion_selector" style="margin-top:10px;">
+          <% if ["Tip", "Comparator", "Ranking", "Rating"].include?(@opinion.class.to_s) %>
+            <%= render(:partial => "opinion_selector_#{@opinion.class.to_s.downcase}", :locals => {:opinion => @opinion}) %>
+          <% else %>
+            class???<%= @opinion.class %>
+          <% end %>
+        </div>
+    <% end %>
+</div>
+ <hr/>
+ <!-- the review itself (list of paragraphs) -->
+ <%= render(:partial => "review_paragraphs", :locals => { :paragraphs => @paragraphs, :current_paragraph => @paragraphs[@paragraph_index], :review => @review }) %>

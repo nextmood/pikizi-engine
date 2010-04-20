@@ -24,5 +24,10 @@ class Usage
 
   def display_as() label.gsub(' ', '_').downcase[0.80] end
 
+  def self.similar_to(input)
+    input = input.downcase
+    Usage.all(:order => "label").select { |u| u.label.downcase.index(input) }.collect(&:label)  
+  end
+
 end
 

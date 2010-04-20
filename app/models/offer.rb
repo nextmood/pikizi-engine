@@ -5,6 +5,8 @@
 class Offer
   include MongoMapper::Document
 
+  key :_type, String # class management
+  
   key :product_ids, Array # an array of products Ids
   belongs_to :product
 
@@ -90,7 +92,7 @@ class Price < Offer
 
   # return the min,max price for a product
   def self.min_max(product_id)
-    #amounts = self.all(:product_ids => product_id, :valid_from.gt(), :valid_until.lt()).collect(&:amount)
+    amounts = self.all(:product_ids => product_id).collect(&:amount)
     [amounts.min, amounts.max]
   end
 

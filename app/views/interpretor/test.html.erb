@@ -1,12 +1,4 @@
-<style type="text/css">
-    label { color:gray; }
-    field { color:darkgray; }
-    .list { border-bottom:1px solid black; padding-bottom:2px;}
-    .list div { margin-bottom:2px;""}
-    .clearBoth { clear:both; margin-top:2px;}
-    .autocomplete_select { display:none; }
-    .comparator_operator { font-size:120%; font-weight:bold; margin-top:5px;}
-</style>
+
 
 
 <!-- header -->
@@ -16,7 +8,7 @@
             <% for product in @products4review %>
                   <div class="image"><%= link_to(product_image(product), "/product/#{product.idurl}") %></div>
             <% end %>
-            <br class="clearBoth" />
+            <br class="pkz_clearBoth" />
         </td>
         <td valign="top">
             <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
@@ -54,7 +46,7 @@
   &nbsp;which dimensions are involved?
 </h2>
 
-<%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @current_knowledge, :opinion => @current_opinion} ) %>
+<%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @current_knowledge, :opinion => @opinion} ) %>
 
 
 
@@ -64,7 +56,7 @@
 </h2>
 <h2>for usage <%= text_field_tag(:usage, "", :size => "100") %><%= submit_tag "create opinion", :style => "margin-left:20px;" %></h2>
 
-<div id="div_opinion_selector" style="height:300px;"><%= render(:partial => "opinion_selector_tip") %></div>
+<div id="div_opinion_selector" style="height:300px;"><%= render(:partial => "opinion_selector_tip", :locals => { :opinion => @opinion} ) %></div>
 
 
 <hr/>

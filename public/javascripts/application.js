@@ -187,3 +187,21 @@ function GetCaretPosition(control) {
 
     return (CaretPos);
 }
+
+
+
+
+
+function ensure_edit_paragraph_visible() {
+  var all = document.all ? document.all : document.getElementsByTagName('*');
+  var total_height = -50;
+  for (var e = 0; e < all.length; e++) {
+    if (all[e].className == "paragraph_in_scroller_before") {
+      total_height = total_height + all[e].scrollHeight;
+    }
+  }
+  document.getElementById('paragraphs_scroller').scrollTop = total_height;
+  return total_height;
+}
+
+

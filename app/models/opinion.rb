@@ -1,5 +1,6 @@
 require 'mongo_mapper'
 require 'treetop'
+require "products_filter"
 
 # UPDATE Production
 # kid = Knowledge.first.id; Dimension.all.each { |d| d.knowledge_id = kid; d.save; }; true
@@ -16,9 +17,13 @@ class Opinion < Root
   key :feature_rating_idurl, String # the reference to a feature rating in the model   (rating dimension)
   key :label, String # summary of the opinion
   key :_type, String # class management
-  key :usage, String
+
+
+  #key :usage, String
   key :usage_ids, Array, :default => []
   many :usages, :in => :usage_ids
+  def new_usage() nil end
+
   key :extract, String
   key :value_oriented, Boolean
   key :validated_by_creator, Boolean, :default => false
@@ -30,6 +35,7 @@ class Opinion < Root
 
   key :user_id, Mongo::ObjectID # the user who recorded this opinion
   belongs_to :user
+  key :author_name, String # a name for the source of this opinion  (if user == user.screename)
 
   key :paragraph_id, Mongo::ObjectID # from which paragraph (if any) this opinion was extracted
   belongs_to :paragraph
@@ -84,13 +90,15 @@ class Opinion < Root
     "#{products_filters_for("referent").collect(&:display_as).join(', ')} "
   end
 
+  def to_html2() " Opinion=#{self.class}???" end
+  
   def to_html2_suffix
     #s = dimensions.collect(&:label).join(', ')
-    s = dimensions.collect(&:idurl).join(', ')   
-    #s << " " << dimension_ids.join(', ')
-    (s << " : " << usages.collect { |u| u.label.inspect }.join(', ')) if usages and usages.size > 0
-    s << " #{value_oriented_html}"
-    " (#{s})"
+    l = []
+    l << "<b>$</b>" if value_oriented
+    dimensions.each {|d| l << d.label.inspect }
+    usages.each { |u| l << u.label.inspect } if usages
+    "&nbsp;<i>#{l.join(', ')}</i>"
   end
 
   def self.generate_xml
@@ -125,23 +133,7 @@ class Opinion < Root
     header
   end
 
-  def self.generate_all_products_filters
-    puts "generating products filters for all opinions"
-    ProductsFilter.delete_all
-    knowledge = Knowledge.first
-    
-    # clean up opinions...
-    Opinion.delete_all(:review_id => nil)
-    Review.all.each do |r|
-      r.opinions = Opinion.all(:review_id => r.id)
-      r.save
-      r.opinions.each { |o| o.update_attributes(:category => r.category) }
-    end
 
-    # generate product filters
-    Opinion.all.each { |o| o.generate_products_filters(knowledge); o.save }
-    true
-  end
 
   # generate the product filters for field referent
   # ensure dimensions_ids correct and usage_id too
@@ -168,8 +160,10 @@ class Opinion < Root
     self.usages = ls
 
     lpf = []
-    products.collect do |p|
-      lpf << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "referent", :display_as => p.label, :product_id => p.id )
+    products_for_opinion = products
+    products_for_opinion = review.products if products_for_opinion.size == 0
+    products_for_opinion.collect do |p|
+      lpf << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "referent", :product_id => p.id )
     end
     self.products_filters = lpf
 
@@ -189,7 +183,19 @@ class Opinion < Root
   end
 
   def concern?(product) products_filters_for("referent").any? { |pf| pf.concern?(product) } end
-  
+
+  def content_fck
+    unless @content_fck
+      s = paragraph.content_without_html
+      if extract and extract.size > 0 and i = s.index(extract)
+        @content_fck = "#{s[0, i]}<b>#{s[i, extract.size]}</b>#{s[i + extract.size, 10000]}"
+      else
+        @content_fck = "<b>#{s}</b>"
+      end
+    end
+    @content_fck
+  end
+
 end
 
 
@@ -269,7 +275,7 @@ class Comparator < Opinion
         else
           product = Product.first(:idurl => pidurl)
           product ||= Product.find(pidurl)
-          products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :display_as => product.label, :product_id => product.id ) if product
+          products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :product_id => product.id ) if product
         end
       rescue
         product = nil
@@ -329,7 +335,7 @@ class Tip < Opinion
     s
   end
 
-  def to_html2() to_html2_prefix << "<b>is tipped</b> #{intensity_symbol}" << to_html2_suffix end
+  def to_html2() to_html2_prefix << "<b>is tipped #{intensity_as_label}</b>" << to_html2_suffix end
 
   def to_xml_bis
     node_opinion = super
@@ -340,11 +346,11 @@ class Tip < Opinion
   def is_valid?() !Root.is_empty(usage) and !Root.is_empty(intensity) end
 
   def self.intensities_symbols
-    [ ["very high", "very_high" ],
-      ["high", "high"],
+    [ ["very good", "very_high" ],
+      ["good", "high"],
       ["neutral", "neutral"],
-      ["low", "low"],
-      ["very low", "very_low" ],
+      ["bad", "low"],
+      ["very bad", "very_low" ],
       ["mixed", "mixed"] ]
   end
 
@@ -369,25 +375,36 @@ end
 
 class Ranking < Opinion
 
+  key :order_number, Integer, :default => 1
 
   def generate_comparaison?() true end
 
-end
+  def to_html2() "among " << products_filters_for("scope_ranking").collect(&:display_as).join(', ') << "; " << to_html2_prefix << "<b>is ranked #{order_number_2_label}</b>" << to_html2_suffix end
 
+  def order_number_2_label() Ranking.order_number_2_label(order_number) end
+  def self.order_number_2_label(on) ["first/best", "second", "third"][on - 1] end
 
-class FeatureRelated < Opinion
+  #  scope_ranking
+  #referent
+  #ranking_first
+  #ranking_second
 
-  key :feature_related_idurl, String
+  def for_each_comparaison(all_products)
+    ps0 = products_for("scope_ranking", all_products)
 
-  def to_html(options={}) "related to feature #{feature_related_idurl}" end
-
-  def is_valid?() true end
-
-  def to_xml_bis
-    node_opinion = super
-    node_opinion['feature_idurl'] = feature_related_idurl
-    node_opinion
+    ps1 = products_for("referent", all_products)
+    ps2 = products_for("compare_to", all_products)
+    ps1.each { |p1| ps2.each { |p2| yield(weight, operator_type, p1, p2) unless p1.id == p2.id } }
   end
 
+
+  def concern?(product)
+    super(product) or products_filters_for("compare_to").any? { |pf| pf.concern?(product) }
+  end
+
+
 end
+
+
+
 

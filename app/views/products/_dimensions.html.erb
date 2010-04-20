@@ -10,12 +10,12 @@
       <%= dimension.get_value_html(product) %>
 
       <% if dimension.parent_id %>
-          <%= link_to_remote("edit...", :url => {:action => "edit_dimension_open", :id => dimension.id, :product_id => product.id } , :style => "font-size:80%;") %>
+          <%= link_to_remote("edit...", :url => {:action => "edit_dimension_open", :id => dimension.id, :product_id => product.id } , :html => { :style => "font-size:80%;" } ) %>
           <div id="div_dimension_extra_<%= dimension.id %>"></div>
       <% else %>
           <div id="editor_create_dimension"></div>
       <% end %>
-      <div class="clearBoth"></div>
+      <div class="pkz_clearBoth"></div>
 
     <%= render(:partial => "/products/dimensions", :locals => { :knowledge => knowledge, :dimensions => dimension.children , :product => product}) %>
 <% end %>
