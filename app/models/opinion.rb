@@ -109,6 +109,7 @@ class Opinion < Root
 
   def to_xml_bis
     node_opinion = XML::Node.new(self.class.to_s)
+    node_opinion['by'] = (user_id ? user.rpx_username : "???")
     node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
     node_opinion['product_selector_1'] = products_filters_for("referent").collect(&:short_label).join(', ')
     usages.collect { |usage| node_opinion << node_usage = XML::Node.new("xxx"); node_usage << usage.label } if usages.size > 0
@@ -203,8 +204,8 @@ class Rating < Opinion
 
 
   key :min_rating, Float, :default => 1
-  key :max_rating, Float, :default => 5
-  key :rating, Float, :default => 3
+  key :max_rating, Float, :default => 10
+  key :rating, Float, :default => 5
 
   def is_valid?() min_rating and max_rating and rating end
 

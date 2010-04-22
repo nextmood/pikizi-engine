@@ -11,6 +11,8 @@ class Review < Root
   key :max_rating, Float, :default => 5.0
   key :rating, Float
 
+  key :status, String, :default => "new_review"
+  
   key :author, String
   key :source, String # amazon, user, expert, etc...
   key :source_url, String # external url for the review
@@ -66,6 +68,12 @@ class Review < Root
 
   def self.categories_select() categories.collect {|k,v| [k,k] } end
 
+
+  # status management
+  def self.statuses() {"new_review" => "New Review", "reviewed" => "reviewed" } end
+  def self.statuses_select() statuses.collect {|k,v| [v,k] } end
+  def status_label() Review.statuses[status] || "??????" end
+  
   # destroy the record in mongo db, but first we need to remove all attached opinions
   def self.delete_with_opinions(find_options)
     Review.all(find_options).each { |review| Opinion.delete_all(:review_id => review.id) }
@@ -101,14 +109,14 @@ class Review < Root
                   end
     if pattern
       content.split(pattern).each_with_index do |paragraph_content, counter|
-        paragraph_content.strip!
+        paragraph_content = HTMLEntities.new.decode(paragraph_content).strip.remove_tags_html.remove_double_space.strip
         if paragraph_content != ""
-          self.paragraphs.create(:ranking_number => counter, :content => paragraph_content)
+          self.paragraphs.create(:ranking_number => counter, :content => paragraph_content, :review_id => self.id)
         end
       end
     else
       # 1 paragraph == whole content
-      self.paragraphs.create(:ranking_number => 0, :content => content)
+      self.paragraphs.create(:ranking_number => 0, :content => HTMLEntities.new.decode(content).strip.remove_tags_html.remove_double_space.strip)
     end    
   end
 
@@ -116,7 +124,7 @@ class Review < Root
     doc = XML::Document.new
     doc.root = node_root = XML::Node.new("reviews")
     Review.all.each do |review|
-      node_root << review.to_xml_bis if review.paragraphs.count > 0 and review.category != "amazon" and review.opinions.count > 0
+      node_root << review.to_xml_bis if review.paragraphs.count > 0
     end
     doc.to_s(:indent => true)
   end
@@ -132,6 +140,7 @@ class Review < Root
     node_review['id'] = id.to_s
     node_review['product_idurls'] = products.collect(&:idurl).join(", ")
     node_review['category'] = category
+    node_review['status'] = status
     node_review['written_at'] = written_at.strftime(Root.default_date_format)
 
     if rating

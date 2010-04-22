@@ -18,9 +18,9 @@
       <tr><th>Source / Total</th>
         <th align="right"><%= Review.count %></th>
         <th align="right"><%= Opinion.count %></th>
-        <th align="right"><%= Opinion::Tip.count %></th>
-        <th align="right"><%= Opinion::Rating.count %></th>
-        <th align="right"><%= Opinion::Comparator.count %></th>
+        <th align="right"><%= Tip.count %></th>
+        <th align="right"><%= Rating.count %></th>
+        <th align="right"><%= Comparator.count %></th>
       </tr>
       <%= by_source = Review.all.group_by { |r| r.source }.collect { |source, reviews| [source, reviews] }
           by_source.sort! { |o1, o2| o2.last.size <=> o1.last.size }
@@ -29,9 +29,9 @@
             <td>#{source.inspect}</td>
             <td align=\"right\">#{reviews.size}</td>
             <td align=\"right\">#{Opinion.count(:review_id => reviews.collect(&:id))}</td>
-            <td align=\"right\">#{Opinion::Tip.count(:review_id => reviews.collect(&:id))}</td>
-            <td align=\"right\">#{Opinion::Rating.count(:review_id => reviews.collect(&:id))}</td>
-            <td align=\"right\">#{Opinion::Comparator.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Tip.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Rating.count(:review_id => reviews.collect(&:id))}</td>
+            <td align=\"right\">#{Comparator.count(:review_id => reviews.collect(&:id))}</td>
         </tr>"
         end.join %>
     </table>
@@ -49,7 +49,7 @@
             <td valign="top">
                 <ul>
                   <% for opinion in product.opinions(:except_review_category => "amazon") %>
-                    <li><%= opinion.to_html %> <%= origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") %>
+                    <li><%= opinion.to_html2 %> <%= origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") %>
                       </li>
                   <% end %>
                 </ul>

@@ -1,0 +1,21 @@
+<!-- header -->
+<table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
+    <tr>
+      <% for product in products4review %>
+        <td valign="top" width="80">
+                  <%= link_to(product_image(product), "/product/#{product.idurl}") %>
+
+        </td>
+              <% end %>
+        <td valign="top">
+            <%= render(:partial => "/reviews/short", :locals => {:review => review } ) %>
+        </td>
+    </tr>
+
+
+  <tr>
+    <td colspan="<%= products4review.size + 1 %>">
+        <%= link_to("edit review <small>#{review.source}/#{review.category}/#{review.status_label}</small>", "/reviews/edit/#{review.id}", :style => "color:orange; font-weight:bold;") %>
+    </td>
+  </tr>
+</table>

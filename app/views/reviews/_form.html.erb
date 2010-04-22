@@ -1,5 +1,5 @@
 
-
+<%= link_to("see original review", "/reviews/show/#{review.id}", :style => "color:orange;") %>
 <p>
   written on <%= select_date review.written_at, :prefix => :written_at %> 
   by <%= f.text_field :author, :size => 50 %>
@@ -7,12 +7,14 @@
 
 <p>
   source<%= f.text_field :source, :size => 60 %>
-  <%= f.select(:category, Review.categories_select)  %>
   reputation=<%= f.text_field :reputation, :size => 2 %>
+  <%= f.select(:category, Review.categories_select, :style => "margin-left:50px;")  %>
 </p>
 
 <p>source url <small>http://...</small><br/><%= f.text_field :source_url, :style => "width:700px;" %> </p>
-<p>rating=<%= f.text_field :rating, :size => 2 %> (min<%= f.text_field :min_rating, :size => 2 %>  max<%= f.text_field :max_rating, :size => 2 %>)</p>
+<p>rating=<%= f.text_field :rating, :size => 2 %> (min<%= f.text_field :min_rating, :size => 2 %>  max<%= f.text_field :max_rating, :size => 2 %>)
+  <span style="margin-left:50px;">status=<%= f.select(:status, Review.statuses_select)  %> </span>   
+</p>
 
 
 <p>summary<br/><%= f.text_area :summary, :style => "width:700px; ; height:35px;" %><br/></p>

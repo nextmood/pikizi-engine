@@ -1,49 +1,5 @@
-<style type="text/css">
-    div.image { float:left; margin-left:5px; margin-bottom:5px; height:85px; width:85px; }
-    .clearBoth { clear:both; }
-</style>
-
-<div class="pkz_box">
-
-    <%= model_selector(@knowledge, :reviews) %>
 
 
-    <div class="pkz_item_list">
-         <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
-              <tr>
-                <td valign="top" width="<%= 95 * @products.size %>">
+<%= render(:partial => "header", :locals => { :review => @review, :products4review => @products4review }) %>
 
-                <% for product in @products %>
-                      <div class="image"><%= link_to(product_image(product), "/product/#{product.idurl}") %></div>
-                <% end %>
-                  <br class="clearBoth" />
-                </td>
-                <td valign="top">
-                    <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
-                </td>
-              </tr>
-         </table>
-
-          <%= link_to("edit this review", "/reviews/edit/#{@review.id}") %>
-      <%= link_to("debug", "/interpretor/test/#{@review.id}", :style => "margin-left:100px; font-size:80%;") %>
-          
-
-          <% for paragraph in @review.paragraphs %>
-              <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
-                  <!-- the paragraph -->
-                  <div id="<%= "paragraph_#{paragraph.id}" %>" >
-                    <%= render(:partial => "/reviews/paragraph", :locals => { :review => @review, :paragraph => paragraph }) %>
-                  </div>
-
-                  <!-- the opinion editor -->
-                  <div id="p<%= paragraph.id %>" style="background-color:white;" >
-                    <% if @opinion_selected and @opinion_selected.paragraph_id == paragraph.id %>
-                        <%= render(:partial => "/reviews/opinion_list",
-                                   :locals => {:review => @review, :knowledge => @knowledge, :paragraph => paragraph, :opinion_selected => @opinion_selected }) %>
-                    <% end %>
-                  </div>
-              </div>
-         <% end %>
-
-    </div>
-</div>
+<%= @review.content %>

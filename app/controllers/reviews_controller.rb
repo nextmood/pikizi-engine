@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   # api for eric
   def eric
     @reviews = @current_knowledge.reviews
+    # @reviews = @reviews[0..10]
     respond_to do |format|
       format.html # eric.html.erb
       format.xml  { render(:xml => Review ) }
@@ -14,14 +15,11 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/:review_id
   def show
-    puts "id=" << params[:id]
     @review = Review.find(params[:id])
-    @products = @review.products
-    @knowledge = @products.first.knowledge
-    @opinion_selected = Opinion.find(params[:opinion_id]) if params[:opinion_id]
+    @products4review = @review.products
+
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render(:xml => @review ) }
     end
   end
 
@@ -90,7 +88,7 @@ class ReviewsController < ApplicationController
     @knowledge = Knowledge.first(:idurl => params[:review][:knowledge_idurl])
     raise "no knowledge for key=#{params[:review][:knowledge_idurl].inspect}" unless @knowledge
 
-    @review = Review::Inpaper.new(params[:review])
+    @review = Inpaper.new(params[:review])
     @review.written_at = params[:written_at].to_date    
     @review.user = get_logged_user
     @review.product_idurls = [product.idurl]
@@ -123,6 +121,12 @@ class ReviewsController < ApplicationController
       flash[:notice] = "ERROR Review was not upodated"
       render(:action => "edit")
     end
+  end
+
+  def split_in_paragraphs
+    review = Review.find(params[:id])
+    review.split_in_paragraphs(params[:mode])
+    redirect_to  "/edit_review/#{review.id}"
   end
 
 end

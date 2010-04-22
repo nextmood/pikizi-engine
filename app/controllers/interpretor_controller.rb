@@ -35,7 +35,7 @@ class InterpretorController < ApplicationController
     in_paragraph = Paragraph.find(params[:id])
     in_review = in_paragraph.review
     products4review = in_review.products
-    opinion = Opinion.const_get(params[:opinion_class]).create(:review_id => in_review.id, :paragraph_id => in_paragraph.id)
+    opinion = Opinion.const_get(params[:opinion_class]).create(:review_id => in_review.id, :paragraph_id => in_paragraph.id, :user_id => @current_user.id)
     # add default products filter
 
     if opinion.is_a?(Tip)

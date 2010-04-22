@@ -1,8 +1,15 @@
 <!-- interface eric -->
 <% nb_reviews, nb_opinions = 0, 0 %>
 <% for review in @reviews %>
-    <% if (paragraphs = review.paragraphs).size > 0 and review.category != "amazon" and review.opinions.size > 0 %>
-        <h2>review #<%= review.id %> source=<%= review.source %> category=<%= review.category %></h2>
+    <% if (paragraphs = review.paragraphs).size > 0 and review.category != "amazon" and review.opinions.size >= 0 %>
+        <h2><%= review.source %>
+            <%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}") }.join(', ') %>
+            <small>
+                <%= review.written_at %>&nbsp;&nbsp;
+                <%= review.category %>&nbsp;&nbsp;
+                <%= review.status_label %>/#<%= review.id %>
+            </small>
+        </h2>
         <% nb_reviews += 1 %>
         <% for paragraph in review.paragraphs %>
             <div style="border-top:1px solid black; margin-bottom:10px;">
@@ -10,6 +17,7 @@
                 <% for opinion in paragraph.opinions %>
                     <div style="border-top:1px dashed black; margin-top:3px;">
                       <%= link_to(opinion.to_html2, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
+                      &nbsp;by&nbsp;<%= opinion.user_id ? opinion.user.rpx_username : "????" %>
                       <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
                     </div>
                     <% nb_opinions += 1 %>

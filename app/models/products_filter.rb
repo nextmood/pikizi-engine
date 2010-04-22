@@ -54,9 +54,13 @@ class ProductsByShortcut < ProductsFilter
   key :shortcut_selector, String
 
   def self.shortcuts() { "all_products" => "all products",
+                         "all_android" => "all Android phones",
+                         "all_windows" => "all Windows phones",
+                         "all_blackberry" => "all Blackberry phones",
+                         "all_feature_phones" => "all feature-phones",
                          "all_smartphones" => "all smartphones",
-                         "all_camera_phones" => "all camera phones",
-                         "all_android" => "all android" } end
+                          } end
+
 
   def update_labels
     self.update_attributes(:display_as => ProductsByShortcut.shortcuts[shortcut_selector], :short_label => shortcut_selector)
@@ -65,13 +69,16 @@ class ProductsByShortcut < ProductsFilter
   def concern?(product)
     case shortcut_selector
       when "all_products" then true
-      when "all_smartphones" then ["smartphone"].include?(product.get_value("phone_category"))
-      when "all_camera_phones" then ["camera_phone"].include?(product.get_value("phone_category"))
       when "all_android" then ["android_15", "android_16", "android_2", "android_21", "android"].include?(product.get_value("operating_system"))
+      when "all_windows" then ["Blackberry", "blackberry_5"].include?(product.get_value("operating_system"))
+      when "all_blackberry" then ["windows_mobile_61", "windows_mobile"].include?(product.get_value("operating_system"))
+      when "all_feature_phones" then ["featurephone"].include?(product.get_value("phone_category"))
+      when "all_smartphones" then ["smartphone"].include?(product.get_value("phone_category"))      
       else
         raise "no shortcut selector for #{shortcut_selector}"
     end
   end
+
 
 end
 
