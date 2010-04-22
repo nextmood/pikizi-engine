@@ -149,48 +149,6 @@ namespace :pikizi do
     all_products = knowledge.products
 
 
-    # recompute similarities...
-    puts "recompute similarities..."
-    all_products.each do |p|
-      p.similar_product_ids.each do |pid|
-        Product.find(p.id).add_similar_product(Product.find(pid))
-      end
-    end
-
-
-    f = knowledge.features_all.detect {|f| f.idurl == "description" }
-    knowledge.products.each do |product|
-        if url = f.get_value(product)
-          file_name = "/domains/#{knowledge.idurl}/products/#{product.idurl}/#{url}"
-          begin
-            File.open(file_name, "r") do |aFile|
-              # ... process the file
-              media = Media::MediaImage.create(aFile.read, filename, mime_type_from_extension(filename))
-              product.update_attributes(:description_id => media.id) 
-            end
-          rescue
-            puts "no such file #{file_name}"
-          end
-        end
-    end
-    true
-
-    puts "setting opinion category..."
-    Opinion.all(:category => nil).each {|o| o.update_attributes(:category => o.review.category) }
-
-    puts "generating product filters..."
-    ProductsFilter.delete_all
-    Opinion.all.each {|opinion| opinion.generate_products_filters(knowledge) ; opinion.save }
-
-    puts "x=#{Opinion.all.inject(0) { |s, opinion| s +=  opinion.products_for('referent', all_products).size > 0 ? 0 : 1}}"
-    
-    puts "updating product filters..."
-    ProductsFilter.all.each { |pf| pf.update_labels }
-    
-    puts "recomputing all dimensions..."
-    knowledge.compute_aggregation
-    
-    true
   end
 
   # ========================================================================================

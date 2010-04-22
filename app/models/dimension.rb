@@ -167,7 +167,7 @@ class Dimension
     hash_product_2_category_average_rating01.inject({}) do |h, (p, hash_category_rating01)|
       if only_product.nil? or only_product.id == p.id
         sum_weight, sum_rating01 = hash_category_rating01.inject([0.0,0.0]) do |(sw, so1), (category, rating01)|
-          puts "category=#{category} rating01=#{rating01}"
+          puts "category=#{category.inspect} rating01=#{rating01}"
           [sw += Review.categories[category], so1 += rating01 * Review.categories[category]]
         end
         h[p] = sum_rating01 / sum_weight
@@ -246,6 +246,37 @@ class Dimension
   end
 
   def self.line_2_weight() { :rating => 0.4, :comparaison => 0.4, :sub_dimensions => 0.2 } end
+
+  # measure how a dimension value is safe enough (in terms of number of data)
+  def confidence(product)
+    unless @confidence and @confidence[product.id]
+      (@confidence ||= {})[product.id] = if product.get_value(idurl)
+                                            product.opinions.inject(0.0) do |s, opinion|
+                                              s += (opinion.dimension_ids.include?(id) ? Review.categories[opinion.category] : 0.0)
+                                            end
+                                          else
+                                            0.0
+                                          end
+    end
+    @confidence[product.id]
+  end
+
+  def list_with_ranking(products, ranking_max)
+    current_ranking = 0
+    previous_rating = nil
+    products.collect do |product|
+      product_rating = product.get_value(self.idurl)
+      current_ranking += 1 if product_rating != previous_rating
+      previous_rating = product_rating
+      [current_ranking, product]
+    end.inject([]) do |l, (ranking, product)|
+      if ranking <= ranking_max
+        l << ["#{ranking}<sup>#{ranking == 1 ? 'st' : ranking == 2 ? 'nd' : 'rd'}</sup>&nbsp;", product]
+      else
+        l
+      end
+    end
+  end
 
   # ---------------------------------------------------------------------
 

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   # return all available quizzes for all knowledges
   def quizzes
     @knowledge = Knowledge.load_db("cell_phones")
-    @quizzes = @knowledge.quizzes    
+    @quizzes = @current_knowledge.quizzes    
   end
 
   # GET /start_quiz/:quizze_id
@@ -76,10 +76,16 @@ class HomeController < ApplicationController
   # GET /products_search
   # POST /products_search
   def products_search
-    @search_string = (params["s"] == Product.default_search_text ? nil : params["s"])
-    @knowledge = Knowledge.load_db("cell_phones")
+    if @search_string = (params["s"] == Product.default_search_text ? nil : params["s"])
+      if @search_string.has_prefix(prefix = "c=")
+        @threshold_confidence = Float(@search_string.remove_prefix(prefix))
+        @search_string = nil
+      end
+    end
+    @threshold_confidence ||= 50.0
+    
 
-    products_found = @knowledge.products.select { |p| p.match_search(@search_string) }.first(20)
+    products_found = @current_knowledge.products.select { |p| p.match_search(@search_string) }.first(20)
     @nb_results = products_found.size
     if products_found.size > 0
       hash_category_products = products_found.group_by {|product| product.get_value("phone_category") || ["unknown"]}
@@ -88,7 +94,7 @@ class HomeController < ApplicationController
     else
 
     end
-    @quizzes = @knowledge.quizzes 
+    @quizzes = @current_knowledge.quizzes
 
   end
 

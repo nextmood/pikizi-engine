@@ -57,6 +57,7 @@ class Opinion < Root
 
   timestamps!
 
+  # testing a formal grammar parser ... interersting
   def self.parse
     Treetop.load "./app/models/opinion"
     parser = OpinionGrammarParser.new
@@ -122,54 +123,6 @@ class Opinion < Root
   def value_oriented_html() "<b>&nbsp;$</b>" if value_oriented end
 
 
-  def self.product_ids_origin(knowledge, review)
-    l_select = review.products.collect { |p| [p.label, p.id] }
-    header = []
-    header << [l_select.collect(&:first).join(' & '), l_select.collect(&:last).join('-')] if l_select.size > 1
-
-    knowledge.products.each do |p|
-      l_select << [p.label, p.id] unless l_select.any? { |l,i| i == p.id }  
-    end
-    header.concat(l_select)
-    header
-  end
-
-
-
-  # generate the product filters for field referent
-  # ensure dimensions_ids correct and usage_id too
-  def generate_products_filters(knowledge)
-    ld = []
-    fidurl = feature_rating_idurl
-    if fidurl == "functionality & performance"
-      fidurl = "functionality_performance_rating"
-      update_attribute(:feature_rating_idurl => fidurl)
-    end
-    if d = Dimension.first(:idurl => fidurl)
-      ld << d
-    else
-      puts "opinion= #{id} no dimension #{fidurl.inspect}"
-    end
-    self.dimension_ids = ld.collect(&:id)
-
-    ls = []
-    if usage and usage != ""
-      usage_o = Usage.first(:label => usage)
-      usage_o ||= Usage.create(:label => usage, :knowledge_id => knowledge.id)
-      ls << usage_o
-    end
-    self.usages = ls
-
-    lpf = []
-    products_for_opinion = products
-    products_for_opinion = review.products if products_for_opinion.size == 0
-    products_for_opinion.collect do |p|
-      lpf << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "referent", :product_id => p.id )
-    end
-    self.products_filters = lpf
-
-  end
-
   def generate_rating?() nil end
   def generate_comparaison?() nil end
 
@@ -195,6 +148,19 @@ class Opinion < Root
       end
     end
     @content_fck
+  end
+
+  def compute_product_ids_related
+    all_products = products
+    Opinion.all do |opinion|
+      x = opinion.product_filters.inject([]) do |l, pf|
+            pf.generate_matching_products(all_products).each do |matching_product|
+              l << matching_product.id unless l.include?(matching_product.id)
+            end
+            l
+          end
+      opinion.update_attributes(:product_ids, x)
+    end
   end
 
 end
@@ -263,47 +229,7 @@ class Comparator < Opinion
   end
 
 
-  def generate_products_filters(knowledge)
-    super(knowledge) # generate the product filters for field referent
 
-    # generate the product filters for field compare_to
-    if (predicate =~ /productIs\(:any => \["[a-z_0-9A-Z\-]*"\]\)/ and pidurl = predicate.find_between("\"", "\"").first) or
-       (predicate =~ /productIs\(:[a-z_0-9A-Z\-]*\)/ and pidurl = predicate.find_between(":", ")").first)
-      # translate a product...
-      begin
-        if ["all_products"].include?(pidurl)
-          products_filters << ProductByShortcut.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :display_as => pidurl, :shortcut_selector => pidurl )
-        else
-          product = Product.first(:idurl => pidurl)
-          product ||= Product.find(pidurl)
-          products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => "compare_to", :product_id => product.id ) if product
-        end
-      rescue
-        product = nil
-      end
-      puts "no definition for predicate=#{predicate} and pidurl=#{pidurl}" unless product or pidurl == "all_products"
-
-    elsif predicate =~ /featureIs\(:[a-z_0-9A-Z\-]*, :any => \["[a-z_0-9A-Z\-]*"(, "[a-z_0-9A-Z\-]*")*\]\)/
-      # translate a feature is...
-      sidurl = predicate.find_between(":", ",").first
-      tag_idurls_ok = predicate.find_between("\"", "\"")
-      if specification = Specification.first(:idurl => sidurl)
-        hash_tag_idurl_tag = specification.tags.inject({}) { |h,t| h[t.idurl] = t; h }
-        if tag_idurls_ok.all? {|tidurl| hash_tag_idurl_tag[tidurl] }
-          products_filters << ProductsBySpec.create(:opinion_id => id, :products_selector_dom_name => "compare_to",
-              :display_as => "#{specification.label} = " << tag_idurls_ok.collect { |t_ok_idurl| hash_tag_idurl_tag[t_ok_idurl].label }.join(' or '),
-              :specification_id => specification.id, :expressions => tag_idurls_ok )
-        else
-          puts "no tags for specification #{sidurl}=(#{}) in predicate #{predicate}"
-        end
-      else
-        puts "no specification #{sidurl} in predicate #{predicate}"
-      end
-    else
-      raise "error unmatching predicate #{predicate}"
-    end
-
-  end
 
   def generate_comparaison?() true end
   # generate_comparaisons yield with [weight, operator_type, pid1, pid2]

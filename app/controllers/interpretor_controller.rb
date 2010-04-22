@@ -35,7 +35,7 @@ class InterpretorController < ApplicationController
     in_paragraph = Paragraph.find(params[:id])
     in_review = in_paragraph.review
     products4review = in_review.products
-    opinion = Opinion.const_get(params[:opinion_class]).create(:review_id => in_review.id, :paragraph_id => in_paragraph.id, :user_id => @current_user.id)
+    opinion = Opinion.const_get(params[:opinion_class]).create(:review_id => in_review.id, :paragraph_id => in_paragraph.id, :user_id => @current_user.id, :category => review.category)
     # add default products filter
 
     if opinion.is_a?(Tip)
@@ -192,7 +192,7 @@ class InterpretorController < ApplicationController
     name = params[:name]
     shortcut_key = params["#{name}_shortcut"]
     shortcuts = ProductsByShortcut.shortcuts 
-    @opinion.products_filters << (pf = ProductsByShortcut.create(:opinion_id => @opinion.id, :shortcut_selector => shortcut_key, :products_selector_dom_name => name, :display_as => shortcuts[shortcut_key] ))
+    @opinion.products_filters << (pf = ProductsByShortcut.create(:opinion_id => @opinion.id, :shortcut_selector => shortcut_key, :products_selector_dom_name => name))
     pf.update_labels
     render :update do |page|
       page.replace("ps_#{name}", :partial => "products_selector", :locals => {:opinion => @opinion, :name => name })

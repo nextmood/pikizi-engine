@@ -287,5 +287,6 @@ class Product < Root
   end
 
 
+
 end
 

@@ -53,29 +53,41 @@ end
 class ProductsByShortcut < ProductsFilter
   key :shortcut_selector, String
 
-  def self.shortcuts() { "all_products" => "all products",
-                         "all_android" => "all Android phones",
-                         "all_windows" => "all Windows phones",
-                         "all_blackberry" => "all Blackberry phones",
-                         "all_feature_phones" => "all feature-phones",
-                         "all_smartphones" => "all smartphones",
-                          } end
+  def self.shortcuts() [ ["all_products", "all products"],
+                         ["all_android", "all Android phones"],
+                         ["all_windows", "all Windows phones"],
+                         ["all_blackberry", "all Blackberry phones"],
+                         ["all_feature_phones", "all feature-phones"],
+                         ["all_smartphones", "all smartphones"],
+                          ] end
 
+  def shortcut_label
+    shortcut, shortcut_label = ProductsByShortcut.shortcuts.detect {|s| s.first == shortcut_selector }
+    shortcut_label
+  end
 
   def update_labels
-    self.update_attributes(:display_as => ProductsByShortcut.shortcuts[shortcut_selector], :short_label => shortcut_selector)
+    self.update_attributes(:display_as => shortcut_label, :short_label => shortcut_selector)
   end
 
   def concern?(product)
     case shortcut_selector
       when "all_products" then true
-      when "all_android" then ["android_15", "android_16", "android_2", "android_21", "android"].include?(product.get_value("operating_system"))
-      when "all_windows" then ["Blackberry", "blackberry_5"].include?(product.get_value("operating_system"))
-      when "all_blackberry" then ["windows_mobile_61", "windows_mobile"].include?(product.get_value("operating_system"))
-      when "all_feature_phones" then ["featurephone"].include?(product.get_value("phone_category"))
-      when "all_smartphones" then ["smartphone"].include?(product.get_value("phone_category"))      
+      when "all_android"
+        os = product.get_value("operating_system")
+        ["android_15", "android_16", "android_2", "android_21", "android"].include?(os.first) if os
+      when "all_windows"
+        os = product.get_value("operating_system")
+        os.first.downcase.include?("window") if os
+      when "all_blackberry"
+        os = product.get_value("operating_system")
+        os.first.downcase.include?("blackberry") if os
+      when "all_feature_phones" then true
+      when "all_smartphones"
+        category = product.get_value("phone_category")
+        category.first.downcase.include?("smartphone") if category
       else
-        raise "no shortcut selector for #{shortcut_selector}"
+        raise "no shortcut selector for #{shortcut_selector.inspect}.........."
     end
   end
 

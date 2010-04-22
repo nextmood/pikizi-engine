@@ -2,6 +2,7 @@ require 'xml'
 require 'mongo_mapper'
 require 'specification'
 require 'offer'
+require 'products_filter'
 
 #require 'graphviz'
 
@@ -355,10 +356,28 @@ class Knowledge < Root
     puts "computing dimension aggergation for #{all_products.size} products of #{label}"
     dimensions.each { |dimension| all_products.each { |product| product.set_value(dimension.idurl, nil); product.save } }
     compute_aggregation_recursive(dimension_root, all_products)
+
+    all_products.each { |product| product.update_attributes(:overall_rating => product.get_value(dimension_root.idurl)) }
+    compute_product_ids_related(all_products)
     self.update_attributes("last_aggregation_timestamp" => Time.now)
+
     # for each dimension... and usages
     # Dimension.all.concat(Usage.all).each
   end
+
+  def compute_product_ids_related(all_products)
+    Opinion.all do |opinion|
+      pids = opinion.product_filters.inject([]) do |l, pf|
+            pf.generate_matching_products(all_products).each do |matching_product|
+              l << matching_product.id unless l.include?(matching_product.id)
+            end
+            l
+          end
+      opinion.update_attributes(:product_ids, pids)
+    end
+  end
+
+
 
   def compute_aggregation_recursive(dimension, all_products)
     dimension.children.each { |sub_dimension| compute_aggregation_recursive(sub_dimension, all_products) }
@@ -374,6 +393,20 @@ class Knowledge < Root
     puts "aggregation computed for dimension #{dimension_or_usage.idurl}"
   end
 
+    # differents kind of ranking of prodsucts
+  def ranking_categories(ranking_threshold, dimension_idurl=nil)
+    dimension = dimension_idurl ? get_dimension_by_idurl(dimension_idurl) : dimension_root
+    raise "dimension_idurl=#{dimension_idurl}" unless dimension
+    all_products = products.select { |p| dimension.confidence(p) > ranking_threshold }
+
+    all_products.sort! {|p1, p2| p2.get_value(dimension.idurl) <=> p1.get_value(dimension.idurl) }
+    ProductsByShortcut.shortcuts.inject([]) do |l, (shortcut, shortcut_label)|
+      pf = ProductsByShortcut.new(:shortcut_selector => shortcut)
+      sub_products = pf.generate_matching_products(all_products)
+      l <<  [shortcut, shortcut_label, sub_products]
+      l
+    end
+  end
 
 
 

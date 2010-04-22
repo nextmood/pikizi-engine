@@ -33,11 +33,36 @@
 
 <div class="boxLwr">
   <div class="box952">
-    <h1><%= @search_string ? "#{pluralize(@nb_results, 'result')} for #{@search_string.inspect}" : "First 20 products in database..." %></h1>
+    <h1><%= @search_string ? "#{pluralize(@nb_results, 'result')} for #{@search_string.inspect}" : "products ranking" %></h1>
     <div class="spcr"></div>
+    <% dimension_root = @current_knowledge.dimension_root %>
+      <% if @search_string.nil? %>
+         <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+         <% last_ranking_category = products_by_ranking_categories.last.first %>
+         <% for ranking_category, label, products in products_by_ranking_categories %>
+            <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+            <h3><%= label %></h3>
+            <% for ranking_html, product in @current_knowledge.dimension_root.list_with_ranking(products, 3) %>
+                <li>
 
-      <% if @nb_results > 0 %>
-          <% dimension_root = @knowledge.dimension_root %>
+                  <%= product_image(product) %>
+
+                  <h4><%= ranking_html %><a href="/product/<%= product.idurl %>"><%= product.label %></a></h4>
+                  <% if rating_01 = dimension_root.get_value(product) %>
+                      <ul class='star-rating'>
+                          <li class='current-rating' title="rating=<%= rating_01 %> confidence=<%= @current_knowledge.dimension_root.confidence(product) %>" style="<%= "width:#{(45 * rating_01).round}px;" %>" ></li>
+                      </ul>
+                  <% end %>
+                  <%= @current_knowledge.get_price_min_max_html(product) %>
+                  <small>confidence=<%= @current_knowledge.dimension_root.confidence(product) %></small>
+                </li>
+            <% end %>
+            <div class="spcr"></div>
+            </ul>
+         <% end %>
+
+      <% elsif @nb_results > 0 %>
+
           <% for category, products in @list_category_products %>
             <ul <%= "class=\"last\"" if category == @last_category %>>
             <h3><%= category %></h3>
@@ -52,7 +77,7 @@
                       <li class='current-rating' title="rating=<%= rating_01 %>" style="<%= "width:#{(45 * rating_01).round}px;" %>" ></li>
                   </ul>
                   <% end %>
-                  <%= @knowledge.get_price_min_max_html(product) %>
+                  <%= @current_knowledge.get_price_min_max_html(product) %>
                 </li>
             <% end %>
             <div class="spcr"></div>
