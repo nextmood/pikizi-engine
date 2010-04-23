@@ -4,7 +4,7 @@
 
     <% if opinion and existing_opinion.id == opinion.id %>
         <span style="background-color:pink;" title="product_ids=<%= existing_opinion.products.collect(&:label).join(', ') %>">
-            <%= existing_opinion.to_html2 %>  <%= existing_opinion.id %>
+            <%= existing_opinion.to_html2 %>
         </span>
         <%= link_to_function("set selection",
          "document.getElementById('new_extract').value = get_selection_plain('opinion_#{opinion.id}_content_fck_editor');

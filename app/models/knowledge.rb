@@ -353,7 +353,7 @@ class Knowledge < Root
   
   def compute_aggregation
     all_products = products
-    Opinion.all do |opinion| opinion.compute_product_ids_related(all_products) end
+    Opinion.all.each { |o| o.compute_product_ids_related(all_products) }
     puts "computing dimension aggergation for #{all_products.size} products of #{label}"
     dimensions.each { |dimension| all_products.each { |product| product.set_value(dimension.idurl, nil); product.save } }
     compute_aggregation_recursive(dimension_root, all_products)
