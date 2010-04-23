@@ -2,16 +2,16 @@
 
 <div class="pkz_box">
 
-  <%= model_selector(@knowledge, :distance) %>
+  <%= model_selector(@current_knowledge, :distance) %>
 
   <div>
-    Feature<%= feature_selector(@knowledge, @feature.idurl) %>
+    Feature<%= feature_selector(@current_knowledge, @feature.idurl) %>
     &nbsp;
     <%= link_to_function("filter products...", "document.getElementById('select_products').toggle();") %>
-  <div>
+  </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/distance/#{@knowledge.idurl}/#{@feature.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+        :locals => { :page_url => "/distance/#{@current_knowledge.idurl}/#{@feature.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
 
   
   <div class="pkz_main"  >
@@ -31,7 +31,6 @@
     </table>
   </div>
 
-  <div class="pkz_main"  >
-    un beau dessin...
-  </div>
+  <div class="pkz_main"  >un beau dessin...</div>
+    
 </div>

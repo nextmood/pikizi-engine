@@ -20,8 +20,8 @@ class KnowledgesController < ApplicationController
   end
 
   def distance
-    @knowledge, @products, @products_selected = get_products_selected(params)
-    @feature = params[:feature_idurl] ? @knowledge.get_feature_by_idurl(params[:feature_idurl]) : @knowledge.features.first
+    @products, @products_selected = get_products_selected(params)
+    @feature = params[:feature_idurl] ? @current_knowledge.get_feature_by_idurl(params[:feature_idurl]) : @current_knowledge.features.first
     # compute graph
     @feature.distance_graph(@products_selected)
     
@@ -29,22 +29,22 @@ class KnowledgesController < ApplicationController
 
 
   def show
-    @knowledge, @products, @products_selected = get_products_selected(params)
-    @features = @knowledge.each_feature_collect { |feature| feature }.flatten
+    @current_knowledge.link_back
+    @products, @products_selected = get_products_selected(params)
+    @features = @current_knowledge.each_feature_collect { |feature| feature }.flatten
   end
 
   def list_opinions
-    @knowledge, @products, @products_selected = get_products_selected(params)    
+    @products, @products_selected = get_products_selected(params)    
   end
 
   def get_products_selected(params)
-    knowledge =  Knowledge.load_db(params[:knowledge_idurl])
-    products = knowledge.products.sort! { |p1, p2| p1.idurl <=> p2.idurl }
+    products = @current_knowledge.products.sort! { |p1, p2| p1.idurl <=> p2.idurl }
     pidurls_selected = params[:select_product_idurls]
     pidurls_selected ||= session[:pidurls_selected]
     pidurls_selected ||= products.collect(&:idurl).first(3)
     session[:pidurls_selected] = pidurls_selected
-    [knowledge, products, products.select { |p| pidurls_selected.include?(p.idurl) }]
+    [products, products.select { |p| pidurls_selected.include?(p.idurl) }]
   end
 
 

@@ -3,7 +3,7 @@
     <tr>
       <% for product in products4review %>
         <td valign="top" width="80">
-                  <%= link_to(product_image(product), "/product/#{product.idurl}") %>
+                  <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
 
         </td>
               <% end %>

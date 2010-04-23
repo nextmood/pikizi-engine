@@ -3,14 +3,14 @@
 
 <div class="pkz_box">
 
-  <%= model_selector(@knowledge, :matrix) %>
+  <%= model_selector(@current_knowledge, :matrix) %>
 
   <div>
     <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/products_opinions/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+        :locals => { :page_url => "/products_opinions/#{@current_knowledge.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
 
   <h2>stats</h2>
     <table border=1 cellpadding=2>
@@ -49,8 +49,7 @@
             <td valign="top">
                 <ul>
                   <% for opinion in product.opinions(:except_review_category => "amazon") %>
-                    <li><%= opinion.to_html2 %> <%= origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") %>
-                      </li>
+                    <li><%= opinion.to_html2 %> <%= origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") %></li>
                   <% end %>
                 </ul>
             </td>

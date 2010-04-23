@@ -3,7 +3,7 @@
 
 <div class="pkz_box">
 
-  <%= model_selector(@knowledge, :matrix) %>
+  <%= model_selector(@current_knowledge, :matrix) %>
 
   <div>
     <%= link_to_function("Expand all", "treetable_expandAll('thematrix');") %>
@@ -14,11 +14,11 @@
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/show/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+        :locals => { :page_url => "/show/#{@current_knowledge.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
 
 
     <%= render(:partial => "/knowledges/show",
-            :locals => {:selected_products => @products_selected, :knowledge => @knowledge }) %>
+            :locals => {:selected_products => @products_selected, :knowledge => @current_knowledge }) %>
 
 </div>
 

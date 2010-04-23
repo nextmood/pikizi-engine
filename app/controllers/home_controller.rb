@@ -4,8 +4,9 @@ class HomeController < ApplicationController
   # GET /quizzes
   # return all available quizzes for all knowledges
   def quizzes
-    @knowledge = Knowledge.load_db("cell_phones")
-    @quizzes = @current_knowledge.quizzes    
+    
+    #@knowledge = Knowledge.load_db("cell_phones")
+    @quizzes = @current_knowledge.quizzes
   end
 
   # GET /start_quiz/:quizze_id

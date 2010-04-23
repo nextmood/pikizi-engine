@@ -85,7 +85,7 @@ class Opinion < Root
 
   def self.is_main_document() true end
 
-  def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label=#{label}, class=#{_type} " end
+  def to_html(options={}) "feature_rating_idurl=#{feature_rating_idurl} label, class=#{_type} " end
 
   def to_html2_prefix
     "#{products_filters_for("referent").collect(&:display_as).join(', ')} "
@@ -150,17 +150,13 @@ class Opinion < Root
     @content_fck
   end
 
-  def compute_product_ids_related
-    all_products = products
-    Opinion.all do |opinion|
-      x = opinion.product_filters.inject([]) do |l, pf|
-            pf.generate_matching_products(all_products).each do |matching_product|
-              l << matching_product.id unless l.include?(matching_product.id)
-            end
-            l
-          end
-      opinion.update_attributes(:product_ids, x)
-    end
+  def compute_product_ids_related(all_products)
+    update_attributes(:product_ids => compute_product_ids_related_bis(all_products).inject([]) { |l, p| l.include?(p.id) ? l : l << p.id })    
+  end
+
+  def compute_product_ids_related_bis(all_products)
+    referent = products_filters_for("referent").first
+    referent ? referent.generate_matching_products(all_products) : (puts "no referent for opinion=#{self.id}";[])
   end
 
 end
@@ -243,6 +239,15 @@ class Comparator < Opinion
 
   def concern?(product)
     super(product) or products_filters_for("compare_to").any? { |pf| pf.concern?(product) }
+  end
+
+  def compute_product_ids_related_bis(all_products)
+    if compare_to = products_filters_for("compare_to").first
+      super(all_products).concat(compare_to.generate_matching_products(all_products))
+    else
+      puts "no compare_to for opinion #{id}"
+      super(all_products)
+    end
   end
 
 end
@@ -329,6 +334,14 @@ class Ranking < Opinion
     super(product) or products_filters_for("compare_to").any? { |pf| pf.concern?(product) }
   end
 
+  def compute_product_ids_related_bis(all_products)
+    if scope_ranking = products_filters_for("scope_ranking").first
+      super(all_products).concat(scope_ranking.generate_matching_products(all_products))
+    else
+      puts "no scope ranking for opiniuon #{id}"
+      super(all_products)
+    end
+  end
 
 end
 

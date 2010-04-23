@@ -353,30 +353,18 @@ class Knowledge < Root
   
   def compute_aggregation
     all_products = products
+    Opinion.all do |opinion| opinion.compute_product_ids_related(all_products) end
     puts "computing dimension aggergation for #{all_products.size} products of #{label}"
     dimensions.each { |dimension| all_products.each { |product| product.set_value(dimension.idurl, nil); product.save } }
     compute_aggregation_recursive(dimension_root, all_products)
 
     all_products.each { |product| product.update_attributes(:overall_rating => product.get_value(dimension_root.idurl)) }
-    compute_product_ids_related(all_products)
+
     self.update_attributes("last_aggregation_timestamp" => Time.now)
 
     # for each dimension... and usages
     # Dimension.all.concat(Usage.all).each
   end
-
-  def compute_product_ids_related(all_products)
-    Opinion.all do |opinion|
-      pids = opinion.product_filters.inject([]) do |l, pf|
-            pf.generate_matching_products(all_products).each do |matching_product|
-              l << matching_product.id unless l.include?(matching_product.id)
-            end
-            l
-          end
-      opinion.update_attributes(:product_ids, pids)
-    end
-  end
-
 
 
   def compute_aggregation_recursive(dimension, all_products)

@@ -148,6 +148,22 @@ namespace :pikizi do
     knowledge = get_knowledge
     all_products = knowledge.products
 
+    Opinion.all(:paragraph_id => nil).each { |o| o.update_attributes(:paragraph_id => o.review.paragraphs.first.id) if o.paragraph_id.nil? and o.review.paragraphs.size > 0 }
+
+
+    Comparator.all.each do  |c|
+      unless compare_to = c.products_filters_for("compare_to").first
+        if  c.predicate == "productIs(:all_products)"
+          pf = ProductsByShortcut.create(:shortcut_selector => "all_products", :opinion_id => c.id, :products_selector_dom_name => "compare_to")
+          c.products_filters << pf; c.save
+        end
+      end
+      compare_to.update_labels  if compare_to    
+    end
+
+    Opinion.all.each {|o| o.compute_product_ids_related(all_products) }
+
+    puts "done..."
 
   end
 

@@ -1,0 +1,35 @@
+<% if key_selector == :by_label %>
+    <% form_remote_tag :url => "/interpretor/add_product_by_label" do -%>
+        select products by name
+        <%= text_field_with_auto_complete "product_#{name}", "label", {}, {:method => :get} %>
+        <%= submit_tag "add" %>
+        <%= link_to_remote("or select products based on specifications", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_specification" }, :html => {:style => "font-size:80%;"}) %>
+    <% end -%>
+
+
+<% elsif key_selector == :by_specification %>
+
+    <% selected_specification = Specification.most_common if defined?(selected_specification) %>
+    
+    <% form_remote_tag :url => "/interpretor/add_product_by_specification" do -%>       
+        all products with specification
+        <%= select_tag("specification_selected", options_for_specifications(@current_knowledge, selected_specification.id),
+                    :onchange => remote_function(:url => { :action => "specification_selected", :id => name  },
+                                                 :with => "'specification_selected_id=' + document.getElementById('specification_selected').value")) %>
+                <span id="filter_feature"></span>
+
+        <div id="specification_editor_<%= name %>">
+            <%= render(:partial => "products_selector_by_specification", :locals => { :specification => selected_specification }) %>
+        </div>
+
+        <hr/>
+        <%= submit_tag "add" %>
+        <%= link_to_remote("or select products by name", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_label" }, :html => {:style => "font-size:80%;"}) %>
+
+    <% end -%>
+
+<% else %>
+    <h2> wrong mode <%= mode %></h2>
+<% end %>
+
+

@@ -5,8 +5,8 @@ module ReviewsHelper
     l << "by #{review.author}" if review.author
     l << "from #{review.source}" if review.source
     s = l.join(' ')
-    if options[:opinion]
-      s = link_to(s, {:controller => "reviews", :action => "show", :id => review.id, :opinion_id => options[:opinion].id}, :style => "color:#00c0ff")
+    if opinion = options[:opinion]
+      s = link_to(s, "/edit_review/#{review.id}/#{opinion.paragraph_id}/#{opinion.id}", :style => "color:#00c0ff")
     else
       s = link_to(s, review.source_url, :style => "color:#00c0ff" ) if review.source_url
     end

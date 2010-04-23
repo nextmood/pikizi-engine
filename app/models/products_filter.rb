@@ -14,16 +14,17 @@ end
 class ProductByLabel < ProductsFilter
   key :product_id, Mongo::ObjectID
   key :and_similar, Boolean, :default => true
-  key :similar_product_ids, Array, :default => []
 
   def update_labels(p=nil)
     p ||= Product.find(product_id)
     self.update_attributes(:display_as => p ? "#{p.label}#{' and similar(s)' if and_similar}" : "???",
-                           :short_label => p ? p.idurl : "???",
-                           :similar_product_ids => p.similar_product_ids)
+                           :short_label => p ? p.idurl : "???")
   end
 
-  def concern?(product) similar_product_ids.include?(product.id) or product_id == product.id end
+
+  def concern?(product)
+    (@truc ||= (Product.find(product_id).similar_product_ids << product_id)).include?(product.id)
+  end
 
 end
 
