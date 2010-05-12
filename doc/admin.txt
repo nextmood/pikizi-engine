@@ -8,3 +8,11 @@ mongo pikizi_mongodb_development
 db.dropDatabase()
 exit
 mongorestore -d pikizi_mongodb_development /Users/fpatte/Desktop/dump/pikizi_mongodb_production
+
+
+# stop mongo on dedibox
+/opt/mongodb/bin/mongo admin
+db.shutdownServer()
+
+# start
+/opt/mongodb/bin/mongod --fork --logpath /var/rails/pk_engine/shared/log --logappend
