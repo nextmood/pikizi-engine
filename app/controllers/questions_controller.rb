@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/knowledge_idurl
   def index
-    get_product_selected(params)
+    get_products_selected # initialize @products and @products_selected
   end
 
 
@@ -17,8 +17,8 @@ class QuestionsController < ApplicationController
 
   # GET /questions/knowledge_idurl/question_idurl
   def show
-    get_product_selected(params)
-    @question = @knowledge.get_question_by_idurl(params[:question_idurl])
+    get_products_selected  # initialize @products and @products_selected
+    @question = @current_knowledge.get_question_by_idurl(params[:question_idurl])
     @products_distribution = @question.distribution_avg_weight
   end
 

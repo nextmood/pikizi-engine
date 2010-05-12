@@ -5,13 +5,6 @@ require 'hpricot'
 class Review < Root
 
   include MongoMapper::Document
-
-  # this is the global rating
-  key :min_rating, Float, :default => 1.0
-  key :max_rating, Float, :default => 5.0
-  key :rating, Float
-
-  key :status, String, :default => "new_review"
   
   key :author, String
   key :source, String # amazon, user, expert, etc...
@@ -30,26 +23,94 @@ class Review < Root
 
   key :_type, String # class management
 
-  key :user_id, Mongo::ObjectID # the user who recorded this opinion
+  key :user_id, BSON::ObjectID # the user who recorded this opinion
   belongs_to :user
 
-  key :knowledge_id, Mongo::ObjectID
+  key :knowledge_id, BSON::ObjectID
   belongs_to :knowledge
 
   key :product_idurls, Array
-  key :product_ids, Array   # an array of Mongo::ObjectID
+  key :product_ids, Array   # an array of BSON::ObjectID
   many :products, :in => :product_ids 
 
-  many :opinions, :polymorphic => true
+  many :opinions, :polymorphic => true, :order => :created_at.asc
 
   many :paragraphs, :order => :ranking_number.asc
   
+  def opinions_through_paragraphs() paragraphs.inject([]) { |l, p| l.concat(p.opinions) } end
+
+  def self.build_relational_links_debug
+    hash_review_paragraph_opinions = Opinion.all.group_by { |o| o.review_id }.inject({}) do |h, (review_id, opinions)|
+
+    end
+  end
 
   timestamps!
 
+  # -----------------------------------------------------------------
+  # state machine
+  
 
-  def self.is_main_document() true end
+  state_machine :initial => :empty do
 
+
+    state :empty do
+      def state_color() "blue" end
+      def state_label() "No opinions" end
+    end
+
+    state :to_review do
+      def state_color() "orange" end
+      def state_label() "opinion(s) are waiting to be reviewed" end
+    end
+
+    state :opinionated do
+      def state_color() "green" end
+      def state_label() "has at least one opinion valid" end
+    end
+
+    state :error do
+      def state_color() "red" end
+      def state_label() "at least one opinion is unvalid" end
+    end
+
+    event :is_empty do
+      transition all => :empty
+    end
+
+    event :has_opinions_reviewed_ok do
+      transition all => :opinionated
+    end
+
+    event :has_opinions_to_review do
+      transition all => :to_review
+    end
+
+    event :has_opinions_in_error do
+      transition all => :error
+    end
+
+  end
+
+  # to upate the status of a paragraph
+  def check_status
+    if opinions.any?(&:error?)
+      has_opinions_in_error!
+    elsif opinions.any?(&:to_review?)
+      has_opinions_to_review!
+    elsif opinions.any?(&:reviewed_ok?)
+      has_opinions_reviewed_ok!
+    else
+      is_empty!
+    end
+  end
+
+  def self.list_states() Review.state_machines[:state].states.collect { |s| s.name.to_s } end
+
+  # -----------------------------------------------------------------
+ 
+
+  
   def nb_paragraphs_opinions
     [paragraphs.count, paragraphs.inject(0) {|s, p| s += p.opinions.count } ]  
   end
@@ -68,11 +129,6 @@ class Review < Root
 
   def self.categories_select() categories.collect {|k,v| [k,k] } end
 
-
-  # status management
-  def self.statuses() {"new_review" => "New Review", "reviewed" => "reviewed" } end
-  def self.statuses_select() statuses.collect {|k,v| [v,k] } end
-  def status_label() Review.statuses[status] || "??????" end
   
   # destroy the record in mongo db, but first we need to remove all attached opinions
   def self.delete_with_opinions(find_options)
@@ -141,14 +197,8 @@ class Review < Root
     node_review['product_idurls'] = products.collect(&:idurl).join(", ")
     node_review['category'] = category
     node_review['status'] = status
-    node_review['written_at'] = written_at.strftime(Root.default_date_format)
+    node_review['written_at'] = written_at.strftime(Root.default_datetime_format)
 
-    if rating
-      node_review << node_rating = XML::Node.new("Rating")
-      node_rating['value'] = rating.to_s
-      node_rating['min'] = min_rating.to_s
-      node_rating['max'] = max_rating.to_s
-    end
 
     (node_review << node_user = XML::Node.new("user"); node_user << user.rpx_identifier) if user_id
     (node_review << node_source = XML::Node.new("source"); node_source << source) if source
@@ -166,6 +216,20 @@ class Review < Root
     end
 
     node_review
+  end
+
+  def origin(options={})
+    l = []
+    l << "by #{author}" if author
+    l << "from #{source}" if source
+    s = l.join(' ')
+    if opinion = options[:opinion]
+      s = "<a href='/edit_review/#{id}/#{opinion.paragraph_id}/#{opinion.id}' style='color:#00c0ff;' >#{s}</a>"
+    else
+      s = "<a href='#{source_url}' style='color:#00c0ff;' >#{s}</a>" if source_url
+    end
+    s = "<span style=\"#{options[:style]}\">#{s}</span>" if options[:style]
+    s
   end
 
 end
@@ -189,20 +253,16 @@ class FromAmazon < Review
                                   :source_url => amazon_url,
                                   :category => "amazon",
                                   :written_at => DateTime.parse(amazon_review[:date]),
-                                  :feature_idurl => "overall_rating",
                                   :summary => amazon_review[:summary],
                                   :content => amazon_review[:content],
-                                  :reputation => Float(amazon_review[:totalvotes]),
-                                  :min_rating => 1,
-                                  :max_rating => 5,
-                                  :rating => Float(amazon_review[:rating]) )
-    r.generate_opinions
+                                  :reputation => Float(amazon_review[:totalvotes])  )
+    r.generate_opinions(Float(amazon_review[:rating]))
   end
 
-  def generate_opinions
+  def generate_opinions(rating)
     self.opinions << Opinion::Rating.create(:feature_rating_idurl => "overall_rating",
-                           :min_rating => 1,
-                           :max_rating => 5,
+                           :min_rating => 1.0,
+                           :max_rating => 5.0,
                            :rating => rating)
     split_in_paragraphs("p_br")
   end
@@ -256,7 +316,7 @@ class FileXml < Review
                            :category => Review::FileXml.default_category,
                            :source => xml_node['source'],
                            :source_url => xml_node['url'],
-                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Time.now,
+                           :written_at => xml_node['date'] ? FeatureDate.xml2date(xml_node['date']) : Date.today,
                            :reputation => 1)
         r.generate_opinions(xml_node)
       end
@@ -278,12 +338,6 @@ class FileXml < Review
                                            :max_rating => Float(node_rating["max_rating"] || 10),
                                            :rating => Float(node_content))
           self.opinions << opinion
-          if feature_rating_idurl == "overall_rating"
-            self.min_rating = opinion.min_rating
-            self.max_rating = opinion.max_rating
-            self.rating = opinion.rating
-            save
-          end
         end
       end
 

@@ -3,7 +3,7 @@
   <div class="pkz_item_list"
        answered="<%= answered_choice_idurls ? 'true' : 'false' %>">
 
-    <%= link_to("#{question.label} <small>#{question.is_choice_exclusive ? 'one' : 'many'}</small>", "/questions/#{knowledge.idurl}/#{question.idurl}") %>
+    <%= link_to("#{question.label} <small>#{question.is_choice_exclusive ? 'one' : 'many'}</small>", "/questions/#{@current_knowledge.idurl}/#{question.idurl}") %>
 
     <div style="font-size:80%;">
         presentation=<%= question.nb_presentation.round %>
@@ -15,7 +15,7 @@
 
 
     <div>
-        <%= question.choices.collect do |c|
+        <%= question.all_choices.collect do |c|
             action_icon = "<img src='/images/icons/play.png' onmouseover=\"#{c.generate_javascript_weights(quizze.products)}\" onmouseout=\"clean_up_arrows();\" />"
             choice_text = "#{action_icon} #{c.label} <small>(#{number_to_percentage(c.proba_ok * 100, :precision => 0)} #{number_to_percentage(c.confidence * 100, :precision => 0)})</small>"
             choice_text = "<span style='background-color:grey;'>#{choice_text}</span>" if answered_choice_idurls and answered_choice_idurls.include?(c.idurl)

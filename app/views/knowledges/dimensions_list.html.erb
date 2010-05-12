@@ -1,0 +1,25 @@
+
+
+<div class="pkz_box">
+
+  <%= model_selector(@current_knowledge, :dimensions) %>
+
+
+  <div istyle="margin-bottom:10px;" >
+    <h2>
+        Dimensions
+        <span style="font-size:60%; margin-left:50px;">
+            last computed @ <%= @current_knowledge.last_aggregation_timestamp %> <%= link_to("recompute...", "/products/compute_aggregation") %>
+        </span>
+    </h2>
+
+    <div id="list_dimensions" class="">
+      <%= render(:partial => "/knowledges/dimensions", :locals => {  :dimensions => [@dimension_root]}) %>
+    </div>
+
+
+  </div>
+
+</div>
+
+

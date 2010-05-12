@@ -12,12 +12,13 @@ class Product < Root
   key :idurl, String # unique url
 
   key :knowledge_idurl, String
-  key :knowledge_id, Mongo::ObjectID
+  key :knowledge_id, BSON::ObjectID
   belongs_to :knowledge # described by only one knowledge/model (i thought a lot about that) 
 
   # header of all products / whatever the model/knowledge associated
   key :label, String # unique url
   key :category, String # a sub categorization of product  (exemple camera phone)
+  key :release_date, Date # date when this product is on the market
   key :overall_rating, Float
   key :image_urls, Array #an array of images url
 
@@ -52,9 +53,10 @@ class Product < Root
   key :similar_product_ids, Array, :default => []
   def similar_products() Product.find(similar_product_ids) end
   
-  # to migrate database
-  # Product.all.each {|p| p.knowledge_id = Knowledge.first(:idurl => p.knowledge_idurl).id; p.save }; true
-  
+  # cache/explnantion
+  key :explanation_rating, Hash, :default => {}
+  key :search_data, String # compilation of brand, price, catageory for search speed (this is a cache)
+
   timestamps!
 
   @@product_collection_html = {}
@@ -154,9 +156,7 @@ class Product < Root
 
   #def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
 
-  def self.is_main_document() true end
 
-  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
 
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
 
@@ -270,19 +270,17 @@ class Product < Root
     node_product
   end
 
+  # return s all opinions of type Tip
+  #base on mode either positif or negative
   def tips(mode)
     unless @opinions
       @opinions = Opinion::Tip.all(:product_ids => self.id)
-#      l = []
-#      reviews.each { |r| r.paragraphs.each { |p| l.concat(p.opinions) } }
-#      @opinions = Opinion.find(l.collect(&:id))
     end
     @opinions.select  do |o|
-      intensity = case mode
+      case mode
         when :pro then o.intensity >= 0.0
         when :con then o.intensity <= 0.0
       end
-      o.is_a?(Tip) and intensity
     end
   end
 

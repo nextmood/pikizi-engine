@@ -1,0 +1,11 @@
+<% for specification in specifications %>
+    <% if true or specification.should_display?(product) %>
+        <div class="pkz_specification_level_<%= specification.level %>">
+          <b><%= specification.get_specification_html %></b>
+          <%= specification.get_value_html(product) %>
+        </div>
+        <%= render(:partial => "/home/product_tab_specifications_bis", :locals => {:specifications => specification.children, :product => product }) %>
+    <% end %>
+<% end %>
+
+

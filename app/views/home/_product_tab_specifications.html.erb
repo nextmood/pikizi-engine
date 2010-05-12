@@ -1,13 +1,5 @@
-
 <div class="pkz_specifications">
-    <% for specification in knowledge.specifications %>
-        <% if true or specification.should_display?(product) %>
-            <div class="pkz_specification_level_<%= specification.level %>">
-              <b><%= specification.get_feature_html %></b>
-              <%= specification.get_value_html(product) %>
-            </div>
-        <% end %>
-    <% end %>
+  <%= render(:partial => "/home/product_tab_specifications_bis", :locals => {:specifications => @current_knowledge.specification_roots, :product => product }) %>
 </div>
 
 

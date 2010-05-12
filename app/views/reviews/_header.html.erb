@@ -1,7 +1,7 @@
 <!-- header -->
 <table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
     <tr>
-      <% for product in products4review %>
+      <% for product in review.products %>
         <td valign="top" width="80">
                   <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
 
@@ -14,8 +14,8 @@
 
 
   <tr>
-    <td colspan="<%= products4review.size + 1 %>">
-        <%= link_to("edit review <small>#{review.source}/#{review.category}/#{review.status_label}</small>", "/reviews/edit/#{review.id}", :style => "color:orange; font-weight:bold;") %>
+    <td colspan="<%= review.products.count + 1 %>">
+        <%= link_to("edit review <small>#{review.source}/#{review.category}/#{review.state}</small>", "/reviews/edit/#{review.id}", :style => "color:orange; font-weight:bold;") %>
     </td>
   </tr>
 </table>

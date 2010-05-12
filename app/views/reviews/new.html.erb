@@ -1,19 +1,20 @@
 <div class="pkz_box">
 
-    <%= model_selector(@knowledge, :reviews) %>
+    <%= model_selector(@current_knowledge, :reviews) %>
 
+    <div style="border:1px solid black; padding:5px;  margin-top:10px;  background-color:white;">
+      <h1>Add a new review for <%= @product.label %></h1>
+      <% form_for :review, @review, :url => "/reviews/create/#{@product.id}" do |f| %>
 
-  
-    <% form_for :review, @review, :url => { :action => "create" } do |f| %>
+            <%= render(:partial => "/reviews/form", :locals => {:review => @review, :f => f }) %>
 
-          <%= f.hidden_field :knowledge_idurl %>
-          <%= hidden_field_tag :product_id, @product.id %>
+            <p>
+              <%= submit_tag "Create review for #{@product.label}" %>
+            </p>
 
-          <%= render(:partial => "/reviews/form", :locals => {:knowledge => @knowledge, :review => @review, :f => f }) %>
-
-          <p><%= submit_tag 'Create review' %></p>
-
-    <% end %>
+      <% end %>
+    </div>
+    
 
 
 </div>

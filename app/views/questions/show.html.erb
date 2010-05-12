@@ -8,7 +8,7 @@
 
 
 <div class="pkz_box">
-  <%= model_selector(@knowledge, :questions) %>
+  <%= model_selector(@current_knowledge, :questions) %>
 
 
     <div class="pkz_main">
@@ -45,19 +45,19 @@
             <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
           </div>
           <table border=1 width=100%><tr>
-          <% for choice in @question.choices %>
+          <% for choice in @question.all_choices %>
             <td style="background-color:lightblue;" valign="top" >
                 <div style="width:100%; text-align:center; font-weight:bold; border-bottom:1px solid black;" title="<%= choice.idurl %>">
                     <%= @question.is_choice_exclusive ? "<input type='radio'>" : "<input type='checkbox'>" %>
                     <% if choice.url_description %>
-                        <%= link_to(choice.label, "/domains/#{@knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_description}") %>
+                        <%= link_to(choice.label, "/domains/#{@current_knowledge.idurl}/questions/#{@question.idurl}/#{choice.url_description}") %>
                     <% else %>
                         <%= choice.label %>
                     <% end %>
                 </div>
                 <table><tr>
                   <td>
-                    <img src="<%= choice.path_image(@knowledge.idurl, @question.idurl) %>" width="80" height=80 />
+                    <img src="<%= choice.path_image(@current_knowledge.idurl, @question.idurl) %>" width="80" height=80 />
                   </td>
                   <td valign="top">
                     <div  style="font-size:90%;">
@@ -87,7 +87,7 @@
                :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
         <% end %>
         <%= render(:partial => "/knowledges/products_selection",
-               :locals => { :page_url => "/questions/#{@knowledge.idurl}/#{@question.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+               :locals => { :page_url => "/questions/#{@current_knowledge.idurl}/#{@question.idurl}", :products => @products, :products_selected => @products_selected }) %>
 
       </div>
 

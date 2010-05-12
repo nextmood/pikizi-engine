@@ -1,6 +1,6 @@
 <% hash_category_reviews = product.reviews.group_by(&:category) %>
 <br/><%= link_to("create a new review for #{product.label} ...",
-                 {:controller => "reviews", :action => "new", :id => knowledge.id, :product_id => product.id},
+                 {:controller => "reviews", :action => "new", :id => @current_knowledge.id, :product_id => product.id},
                  :style => "color:#00c0ff;") %>
 
 <% for category, weight in Review.categories %>
@@ -11,7 +11,7 @@
           &nbsp;<%= pluralize(reviews.size, "review") %> in <%= category %>
           &nbsp;<%= link_to_function("more...", "document.getElementById('reviews_#{category}').toggle();", :style => "color:#00c0ff;")   %>
         </div>
-        <div id="reviews_<%= category %>" style="display:none;">
+        <div id="reviews_<%= category %>" style='<%= "display:none;" if category == "amazon" %>'>
         <% for review in reviews %>
             <%= render( :partial => "/reviews/short", :locals => { :review => review } ) %>              
         <% end %>

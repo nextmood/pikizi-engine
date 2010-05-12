@@ -14,7 +14,7 @@ grammar OpinionGrammar
   end
 
   rule tip
-    tip_prefix space+ v:(tip_very_high / tip_high / tip_neutral / tip_mixed / tip_low / tip_very_low)  { def tom(d,x) "tip(#{d}, #{x}, #{v.tom})"; end }
+    tip_prefix space+ v:(tip_very_high / tip_high / tip_mixed / tip_low / tip_very_low)  { def tom(d,x) "tip(#{d}, #{x}, #{v.tom})"; end }
   end
 
   rule tip_prefix
@@ -27,10 +27,6 @@ grammar OpinionGrammar
 
   rule tip_high
     ('high' / 'good')   { def tom() ":high"; end }
-  end
-
-  rule tip_neutral
-    ('neutral' / 'average' / 'same')   { def tom() ":neutral"; end }
   end
 
   rule tip_mixed

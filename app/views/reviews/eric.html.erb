@@ -7,7 +7,7 @@
             <small>
                 <%= review.written_at %>&nbsp;&nbsp;
                 <%= review.category %>&nbsp;&nbsp;
-                <%= review.status_label %>/#<%= review.id %>
+                <%= review.state %>/#<%= review.id %>
             </small>
         </h2>
         <% nb_reviews += 1 %>
@@ -16,7 +16,7 @@
                 <%=h paragraph.content_without_html %>
                 <% for opinion in paragraph.opinions %>
                     <div style="border-top:1px dashed black; margin-top:3px;">
-                      <%= link_to(opinion.to_html2, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
+                      <%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
                       &nbsp;by&nbsp;<%= opinion.user_id ? opinion.user.rpx_username : "????" %>
                       <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
                     </div>

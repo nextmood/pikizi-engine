@@ -19,8 +19,11 @@ class Question < Root
 
 
   key :idurl, String # unique url
-
   key :label, String, :required => true  # text
+
+
+  key :knowledge_id, BSON::ObjectID
+  
   key :knowledge_idurl, String
 
 
@@ -39,15 +42,14 @@ class Question < Root
   key :distribution_deviation, Hash
 
   many :choices, :polymorphic => true
-
+  def all_choices() @all_choices ||= (choices.collect { |c| c.question = self; c }) end
+  
   timestamps!
 
-  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
 
   # load a question object from an idurl  or a mongo db_id
   def link_back() choices.each { |choice| choice.link_back(self) } end
 
-  def self.is_main_document() true end
 
   # read and create question objects from xml
   def self.initialize_from_xml(knowledge, xml_node)

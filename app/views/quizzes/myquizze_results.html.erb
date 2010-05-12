@@ -1,5 +1,5 @@
 
-      <%= link_to("back to quiz", "/myquizze/#{@knowledge.idurl}/#{@quizze.idurl}")   %>
+      <%= link_to("back to quiz", "/myquizze/#{@current_knowledge.idurl}/#{@quizze.idurl}")   %>
 
       <table border=1>
           <tr>
@@ -9,7 +9,7 @@
                   <div style="width:80px; overflow:hidden;">
                   #<%= affinity.ranking %>
                   <div style="font-size:80%">
-                    <%= @knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
+                    <%= @current_knowledge.get_product_by_idurl(affinity.product_idurl).label %></div>
                   </div>
                 </th>
             <% end %>
@@ -46,7 +46,7 @@
               </tr>
               <% for answer in answers %>
                 <% if answer.has_opinion? %>
-                    <% question = @knowledge.get_question_by_idurl(answer.question_idurl) %>
+                    <% question = @current_knowledge.get_question_by_idurl(answer.question_idurl) %>
                     <% choices_ok = question.get_choice_ok_from_idurls(answer.choice_idurls_ok) %>
                     <tr>
                         <td>

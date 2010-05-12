@@ -1,9 +1,9 @@
 
 <div class="pkz_box">
 
-    <%= model_selector(@knowledge, :quizzes) %>
+    <%= model_selector(@current_knowledge, :quizzes) %>
     <div class="pkz_main">
-        <% form_tag "/quizzes/#{@knowledge.idurl}/#{@quizze.idurl}/edit", :id => "select_products" do -%>
+        <% form_tag "/quizzes/#{@current_knowledge.idurl}/#{@quizze.idurl}/edit", :id => "select_products" do -%>
             <table border=1 width="100%">
               <tr>
                 <th><%= @quizze.label %></th>
@@ -13,12 +13,12 @@
               <tr><td colspan="3" align="center"><%= submit_tag 'Update...' %></td></tr>
               <tr>
                 <td valign="top" align="center">
-                    <%= image_tag("/domains/#{@knowledge.idurl}/quizzes/#{@quizze.idurl}/images/main_image.png") %>
+                    <%= image_tag("/domains/#{@current_knowledge.idurl}/quizzes/#{@quizze.idurl}/images/main_image.png") %>
                 </td>
                 <td valign="top">
 
                     <ul>
-                        <% for product in @knowledge.products %>
+                        <% for product in @current_knowledge.products %>
                             <li><%= check_box_tag("select_product_idurls[]", product.idurl, @quizze.product_idurls.include?(product.idurl))  %><%= product.label %></li>
                         <% end %>
                     </ul>
@@ -26,10 +26,10 @@
                 <td valign="top">
 
                     <ul>
-                        <% for question in @knowledge.questions %>
+                        <% for question in @current_knowledge.questions %>
                             <li>
                               <%= check_box_tag("select_question_idurls[]", question.idurl, @quizze.question_idurls.include?(question.idurl))  %>
-                              <%= render(:partial => "questions/short", :locals => {:knowledge => @knowledge, :question => question }) %>
+                              <%= render(:partial => "questions/short", :locals => { :question => question }) %>
                              </li>
                         <% end %>
                     </ul>

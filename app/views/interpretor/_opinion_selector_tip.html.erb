@@ -11,14 +11,13 @@
     <td  width="320"  valign="top">
       <table><tr>
         <td>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "very_high", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "very_high" }) ) %>very good<br/>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "high", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "high" }) ) %>good<br/>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "neutral", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "neutral" }) ) %>neutral<br/>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "mixed", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "mixed" }) ) %>mixed<br/>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "low", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "low" }) ) %>bad<br/>
-            <%= radio_button_tag("tip_intensity", nil, opinion.intensity_symbol == "very_low", :onchange => remote_function(:url => { :action => "tip_intensity_toggle", :id => opinion.id, :intensity_symbol => "very_low" }) ) %>very bad
+            <%= opinion_form.radio_button(:intensity_symbol, "very_high") %>very good<br/>
+            <%= opinion_form.radio_button(:intensity_symbol, "high") %>good<br/>
+            <%= opinion_form.radio_button(:intensity_symbol, "mixed") %>mixed<br/>
+            <%= opinion_form.radio_button(:intensity_symbol, "low") %>bad<br/>
+            <%= opinion_form.radio_button(:intensity_symbol, "very_low") %>very bad
         </td>
-        <td><%= check_box_value_oriented(opinion) %></td>
+        <td><%= check_box_value_oriented(opinion_form) %></td>
       </tr></table>
 
     </td>

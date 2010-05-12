@@ -12,13 +12,16 @@ class Usage
 
   key :label, String
 
-  key :user_id, Mongo::ObjectID # the user who recorded first this  usage
+  key :user_id, BSON::ObjectID # the user who recorded first this  usage
   belongs_to :user
 
-  key :knowledge_id, Mongo::ObjectID
+  key :knowledge_id, BSON::ObjectID
   belongs_to :knowlege
 
-  many :opinions
+  key :nb_opinions, Integer, :default => 0
+  def self.compute_nb_opinions() Usage.all.each(&:compute_nb_opinions) end
+  def compute_nb_opinions() update_attributes(:nb_opinions => Opinion.count(:usage_ids => id)) end
+  def opinions() Opinion.all(:usage_ids => id) end
   
   timestamps!
 

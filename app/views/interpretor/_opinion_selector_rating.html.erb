@@ -5,10 +5,10 @@
     <td  align="center" valign="top" class="pkz_comparator_operator_type">is rated</td>
     <td width="320" valign="top">
 
-        <%= text_field_tag :rating, opinion.rating, :size => 3, :onchange => remote_function(:url => {:action => "rating_toggle", :id => opinion.id, :field_name => "rating" }, :with => "'&value=' + this.value ") %>
-        min=<%= text_field_tag :rating, opinion.min_rating, :size => 3, :onchange => remote_function(:url => {:action => "rating_toggle", :id => opinion.id, :field_name => "min_rating" }, :with => "'&value=' + this.value ") %>
-        max=<%= text_field_tag :rating, opinion.max_rating, :size => 3, :onchange => remote_function(:url => {:action => "rating_toggle", :id => opinion.id, :field_name => "max_rating" }, :with => "'&value=' + this.value ") %>
-        <br/><%= check_box_value_oriented(opinion, "margin-top:5px;") %>
+        <%= opinion_form.text_field :rating, :size => 3 %>
+        min=<%= opinion_form.text_field :min_rating, :size => 3 %>
+        max=<%= opinion_form.text_field :max_rating, :size => 3 %>
+        <br/><%= check_box_value_oriented(opinion_form, "margin-top:5px;") %>
     </td>
   </tr>
 

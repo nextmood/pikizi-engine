@@ -25,10 +25,10 @@
       </div>
     </td>
     <td class="pkz_comparator_operator_type" valign="top">
-        <div><%= radio_button_tag("ranked_number", "ranked_number_first", opinion.order_number == 1, :onchange => remote_function(:url => { :action => "opinion_ranking_changed", :id  => 1 })) %>is best or 1st</div>
-        <div><%= radio_button_tag("ranked_number", "ranked_number_second", opinion.order_number == 2, :onchange => remote_function(:url => { :action => "opinion_ranking_changed", :id  => 2 }) ) %>is 2nd</div>
-        <div><%= radio_button_tag("ranked_number", "ranked_number_third", opinion.order_number == 3, :onchange => remote_function(:url => { :action => "opinion_ranking_changed", :id  => 3 }) ) %>is 3rd</div>
-        <%= check_box_value_oriented(opinion, "font-size:80%; font-weight:normal; margin-top:5px;") %>
+        <div><%= opinion_form.radio_button("order_number", "1") %>is best or 1st</div>
+        <div><%= opinion_form.radio_button("order_number", "2") %>is 2nd</div>
+        <div><%= opinion_form.radio_button("order_number", "3") %>is 3rd</div>
+        <%= check_box_value_oriented(opinion_form, "font-size:80%; font-weight:normal; margin-top:5px;") %>
     </td>
   </tr>
 

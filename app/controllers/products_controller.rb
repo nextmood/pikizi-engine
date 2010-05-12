@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.first(:idurl => params[:product_idurl])
-    @current_knowledge.link_back
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render(:xml => @product) }
@@ -22,13 +21,12 @@ class ProductsController < ApplicationController
   def create_byidurl
     @messages_creating_product_by_idurl = nil
     @product = nil
-    @knowledge = Knowledge.first(:idurl => params[:id])
     if new_idurl = params[:new_idurl] and new_idurl.size > 7
 
       if Product.first(:idurl => new_idurl)
         @messages_creating_product_by_idurl = "<span style=\"color:red;\">#{new_idurl} already exists</span>"
       else
-        @product = @knowledge.products.create(:idurl => new_idurl, :label => new_idurl)
+        @product = @current_knowledge.products.create(:idurl => new_idurl, :label => new_idurl)
         @messages_creating_product_by_idurl = "<span style=\"color:green;\">product with idurl=#{new_idurl.inspect} created, please edit below</span>"
       end
     else
@@ -43,7 +41,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     raise "error no product #{params[:id]}" unless @product
     @product.update_attributes(params[:product])
-    @knowledge = @product.knowledge
 
     if @product.save
       flash[:notice] = "Product sucessufuly updated"
@@ -62,8 +59,11 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.label = params[:label] if params[:label] != ""
     product.url = params[:url] if params[:url] != ""
+
+    product.release_date = Date.civil(params[:release_date][:year].to_i, params[:release_date][:month].to_i, params[:release_date][:day].to_i)
+
     media_file = params[:media_file] == "" ? nil : params[:media_file]
-    puts "media_file.content_type=#{media_file.content_type}" if media_file
+    # puts "media_file.content_type=#{media_file.content_type}" if media_file
     # 2 mega max
     if media_file and Media::MediaText.mime_type_valid?(media_file.content_type) and media_file.length < 2000000
       Media.delete(product.description_id) if product.description_id # delete previous one if needed
@@ -180,27 +180,27 @@ class ProductsController < ApplicationController
   # editing the dimension
   # this isa remote form
   def edit_dimension
-    dimension_id = Mongo::ObjectID.from_string(params[:id])
+    dimension_id = BSON::ObjectID.from_string(params[:id])
     product = Product.find(params[:product_id])
-    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
-    params[:dimension][:parent_id] = Mongo::ObjectID.from_string(params[:dimension][:parent_id])
+    dimension = @current_knowledge.get_dimension_by_id(dimension_id)
+    params[:dimension][:parent_id] = BSON::ObjectID.from_string(params[:dimension][:parent_id])
     dimension.update_attributes(params[:dimension])
     render :update do |page|
       page.replace_html("list_specifications", :partial => "dimensions",
-         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
+         :locals => {  :dimensions => [@current_knowledge.dimension_root], :product => product })
     end
   end
 
   # this si a rjs
   def edit_dimension_open
-    dimension_id = Mongo::ObjectID.from_string(params[:id])
-    dimension = @current_knowledge.dimensions.detect { |d| d.id == dimension_id }
+    dimension_id = BSON::ObjectID.from_string(params[:id])
+    dimension = @current_knowledge.get_dimension_by_id(dimension_id)
     raise "***** error #{dimension_id.inspect} == #{dimension.inspect}" unless dimension
     product = Product.find(params[:product_id])
 
     render :update do |page|    
       page.replace_html("div_dimension_extra_#{dimension.id}", :partial => "/products/dimension_edit",
-         :locals => { :knowledge => @current_knowledge, :dimension => dimension, :product => product })
+         :locals => {  :dimension => dimension, :product => product })
     end
   end
 
@@ -210,19 +210,19 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     render :update do |page|
       page.replace_html("editor_create_dimension", :partial => "/products/dimension_create",
-         :locals => { :dimension => dimension, :product => product, :knowledge => @current_knowledge})
+         :locals => { :dimension => dimension, :product => product })
     end
   end
 
   # this a rjs
   def create_dimension
     product = Product.find(params[:id])
-    params[:dimension][:parent_id] = Mongo::ObjectID.from_string(params[:dimension][:parent_id])
+    params[:dimension][:parent_id] = BSON::ObjectID.from_string(params[:dimension][:parent_id])
     new_dimension = @current_knowledge.dimensions.create(params[:dimension])
     puts "adding dimension id=#{new_dimension.id}"
     render :update do |page|
       page.replace_html("list_specifications", :partial => "dimensions",
-         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
+         :locals => {  :dimensions => [@current_knowledge.dimension_root], :product => product })
     end
   end
   
@@ -231,33 +231,29 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     render :update do |page|
       page.replace_html("list_specifications", :partial => "dimensions",
-         :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => product })
+         :locals => {  :dimensions => [@current_knowledge.dimension_root], :product => product })
     end
   end
 
   # this is a rjs, gave explanation about how a dimension is computed
   def dimension_explanation
-    weight_elo = 0.5; weight_rating = 0.5
 
-    all_products = @current_knowledge.products
-    product = all_products.detect { |p| p.id.to_s == params[:id] }
-    raise "no product" unless product
-    dimension = Dimension.find(params[:dimension_id])
+    product = @current_knowledge.get_product_by_id(params[:id])
+    dimension = @current_knowledge.get_dimension_by_id(params[:dimension_id])
+    trux = product.explanation_rating[dimension.id.to_s]
+    average_rating01, hash_category_rating01 = (trux[:rating] || [nil, nil])
+    nb_rating = hash_category_rating01.inject(0) { |s,(k,v)| s += v.last.size }
+    average_elo01, hash_category_elo01 = (trux[:elo] || [nil, nil])
+    nb_elo = hash_category_elo01.inject(0) { |s,(k,v)| s += v.size }
 
-    ratings, comparaisons = dimension.compute_aggregation_ratings_comparaisons(product)
-    hash_product_2_category_average_rating01 = dimension.compute_hash_product_2_category_average_rating01(ratings, all_products, product)
-    hash_product_2_average_rating01 = dimension.compute_hash_product_2_average_rating01(hash_product_2_category_average_rating01, product)
-    elo = dimension.compute_elo(comparaisons, all_products)
-    hash_product_2_average_sub_dimensions = dimension.compute_hash_product_2_average_sub_dimensions(all_products, product)
-    hash_pid_2_average_mixed = dimension.combine_rating_elo_sub_automatic(hash_product_2_average_rating01, elo, hash_product_2_average_sub_dimensions, product)
+    average_sub01, hash_sub_01 = (trux[:sub] || nil)
     render :update do |page|
       page.replace_html("div_explanation_dimension_#{dimension.id}", :partial => "/products/dimension_explanation",
-         :locals => { :dimension => dimension, :product => product, :ratings => ratings, :comparaisons =>  comparaisons,
-                      :hash_product_2_category_average_rating01 => hash_product_2_category_average_rating01,
-                      :hash_product_2_average_rating01 => hash_product_2_average_rating01,
-                      :elo => elo,
-                      :hash_pid_2_average_mixed => hash_pid_2_average_mixed,
-                      :hash_product_2_average_sub_dimensions => hash_product_2_average_sub_dimensions })
+         :locals => { :dimension => dimension, :product => product,
+                      :nb_rating => nb_rating, :average_rating01 => average_rating01, :hash_category_rating01 => hash_category_rating01,
+                      :nb_elo => nb_elo, :average_elo01 => average_elo01, :hash_category_elo01 => hash_category_elo01,
+                      :average_sub01 => average_sub01, :hash_sub_01 => hash_sub_01
+                      })
     end
   end
 
@@ -269,7 +265,7 @@ class ProductsController < ApplicationController
 
   def compute_aggregation
     product = Product.find(params[:id])
-    product.knowledge.compute_aggregation
+    @current_knowledge.compute_aggregation
     redirect_to("/products/#{product.idurl}")
   end
   

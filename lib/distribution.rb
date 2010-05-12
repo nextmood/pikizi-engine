@@ -39,7 +39,7 @@ class ProductsDistribution
 
 
   def initialize_inclusive
-    ProductsDistribution.combinatorial_weight(question.choices) do |selected_choices, hash_product_idurl_2_weight, choice_probability|
+    ProductsDistribution.combinatorial_weight(question.all_choices) do |selected_choices, hash_product_idurl_2_weight, choice_probability|
       hash_product_idurl_2_weight.each do |pidurl, weight|
         distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)
         distribution.add(weight, choice_probability)
@@ -48,7 +48,7 @@ class ProductsDistribution
   end
 
   def initialize_exclusive
-    question.choices.each do |choice|
+    question.all_choices.each do |choice|
       choice_probability = choice.proba_ok
       choice.hash_product_idurl_2_weight.each do |pidurl, weight|
         distribution = (hash_pidurl_distribution[pidurl] ||= Distribution.new)

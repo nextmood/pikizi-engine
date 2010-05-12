@@ -23,7 +23,7 @@ class Offer
   include MongoMapper::Document  
   belongs_to :announce
   
-  key :announce_id, ObjectId
+  key :announce_id, BSON::ObjectID
   key :price, Float
 end
 

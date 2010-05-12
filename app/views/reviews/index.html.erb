@@ -1,40 +1,47 @@
 <div class="pkz_box">
-  <%= model_selector(@knowledge, :reviews) %>
-  <div>
-    <%= pluralize(Review.count(:product_idurl => @pidurls_selected), "review") %> for 
-    <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
-  </div>
+    <%= model_selector(@current_knowledge, :reviews) %>
 
-  <%= render(:partial => "/knowledges/products_selection",
-         :locals => { :page_url => "/reviews/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+    <table style="width:100%;">
+        <tr><td colspan="4">
+            <% form_tag "/reviews/index" do -%>
+                reviews&nbsp;
+                <%= link_to(image_tag("icons/backward.png", :border => 0), "/reviews?page=#{@reviews.prev.number}") if @reviews.prev? %>
+                <%= (@reviews.number - 1) * @nb_reviews_per_page + 1 %> - <%= @reviews.number * @nb_reviews_per_page - 1 %> / <%= @nb_reviews %>
+                <%= link_to(image_tag("icons/foward.png", :border => 0), "/reviews?page=#{@reviews.next.number}") if @reviews.next? %>
+                <span style="margin-left:30px;  font-weight:bold;">in categories</span>
+                    <% for category, weight in Review.categories %>
+                <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+                <% end %>
+                <span style="margin-left:5px; font-weight:bold;">in state</span>
+                <% for state_name in Review.list_states %>
+                    <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %><%= state_name %>
+                <% end %>
+                <%= submit_tag "filter", :style => "margin-left:30px;" %>
+            <% end -%>
+            <hr/>
+        </td></tr>
 
-  
-  <% feature_image = @knowledge.get_feature_by_idurl("main_image") %>
-  <% for product in @products_selected %>
-     <div style="margin-top:10px; border:1px solid black; ">
-          <% reviews = product.reviews
-             image_url = image_tag(@knowledge.clean_url(feature_image.get_value(product), product), :width => 80, :height => 80, :align => "top", :border => 0) %>
-          <h2><%= pluralize(reviews.size, "review") %> for <%= product.label %></h2>
-          <% for review in reviews %>
-            <div class="pkz_item_list" style="background-color:lightgray;">
-                <table>
-                  <tr>
-                    <td valign="top"><%= link_to(image_url, "/product/#{product.idurl}") %></td>
-                    <td valign="top">
-                        on <%= review.written_at %>
-                        <%= origin_review(review) %>
-                        <%= "<br/><i>#{review.summary}</i>"if review.summary %>
-                        <div style="font-size:80%; margin-top:3px;">
-                           <%= link_to("#{pluralize(review.paragraph_ids.size, 'paragraph')}, #{pluralize(review.opinions.size, 'opinion')}", "/reviews/show/#{review.id}") %>
-                           <br/>rated <%= review.rating %> (min=<%= review.min_rating %>, max=<%= review.max_rating %>)
-                        </div>
-                    </td>
-                  </tr>
-                </table>
+        <tr>
+            <th>status</th>
+            <th>written</th>
+            <th>products</th>
+            <th>origin</th>
+        </tr>
+        <% for review in @reviews %>
+            <tr>
+                <td>
+                    <%= object_state(review) %>
+                    <span style="font-size:80%; margin-top:3px;">
+                        <%= link_to("#{pluralize(review.paragraphs.count, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
+                                    "/edit_review/#{review.id}", :style => "color:orange;") %>
+                    </span>
+                </td>
+                <td><%= review.written_at %></td>
+                <td><%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :style => "color:#00c0ff;")}.join(', ') %></td>
+                <td><%= review.origin %></td>
+            </tr>
+        <% end %>
+    </table>
 
 
-            </div>
-          <% end %>
-     </div>
-   <% end %>
 </div>

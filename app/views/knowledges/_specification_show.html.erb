@@ -1,0 +1,8 @@
+<div id="cell_<%= specification.id %>" style="margin-left:<%= specification.level * 10 %>px;" >
+    <% if specification.has_children  %>
+       <%= link_to_function(image_tag("/images/open_close.gif", :border => 0), "treetable_toggleRow('the_matrix_#{specification.id}');") %>
+    <% end %>
+    <span style="margin-left:<%= 5 + (specification.has_children ? 0 : 36) %>px;" >
+      <%= specification.get_specification_html %>
+    </span>
+</div>

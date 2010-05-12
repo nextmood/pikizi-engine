@@ -7,7 +7,7 @@
       <% if product.get_value(dimension.idurl) %>
         <%= link_to_remote(dimension.get_value_html(product),
                          :url => { :controller => "products", :action => "dimension_explanation",
-                                   :id => product.id, :dimension_id => dimension.id }) %>
+                                   :id => product.id.to_s, :dimension_id => dimension.id }) %>
       <% else %>
         n/a
       <% end %>

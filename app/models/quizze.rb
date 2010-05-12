@@ -6,9 +6,12 @@ class Quizze < Root
   include MongoMapper::Document
 
   key :idurl, String # unique url
+  key :label, String # unique url
+  
+  key :knowledge_id, BSON::ObjectID
+
   key :knowledge_idurl, String
 
-  key :label, String # unique url
   key :main_image_url, String
   key :description_url, String
 
@@ -16,10 +19,6 @@ class Quizze < Root
   key :product_idurls, Array
 
   timestamps!
-
-  def get_knowledge() @knowledge ||= Knowledge.load_db(knowledge_idurl) end
-
-  def self.is_main_document() true end
 
   def questions() @questions ||= Question.load_db(question_idurls) end
   def products() @products ||= Product.load_db(product_idurls) end

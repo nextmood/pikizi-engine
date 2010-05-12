@@ -1,24 +1,19 @@
-
-<tr id="<%= feature.dom_id %>">
+<tr id="thematrix_<%= specification.level %>" >
   <td class="feature_header">
-     
-       <%= render(:partial => "/knowledges/feature_show",
-                  :locals => { :knowledge => knowledge, :feature => feature }) %>
-     </div>
+       <%= render(:partial => "/knowledges/specification_show", :locals => { :specification => specification }) %>
    </td>
    <% for product in products %>
-        <td style="background-color:<%= feature.color_from_status(product) %>;" >
-              <%= render(:partial => "/knowledges/feature_value_show",
-                         :locals => { :knowledge => knowledge, :feature => feature, :product => product }) %>
+        <td style="background-color:<%= specification.color_from_status(product) %>;" >
+              <%= render(:partial => "/knowledges/specification_value_show",
+                         :locals => { :specification => specification, :product => product }) %>
 
         </td>
    <% end %>
 </tr>
 
-<% for sub_feature in feature.features %>
+<% for sub_specification in specification.children %>
     <%= render(:partial => "/knowledges/show_bis",
-                       :locals => { :knowledge => knowledge,
-                                    :feature => sub_feature,
+                       :locals => { :specification => sub_specification,
                                     :products => products,
                                     :padding_right_px_step => padding_right_px_step,
                                     :padding_right_px_current => padding_right_px_step }) %>

@@ -1,57 +1,76 @@
- <%= javascript_include_tag :fckeditor %>
- <script>
 
-   function get_selection_plain(instance_name) {
-
-     var oFCKeditor = FCKeditorAPI.GetInstance(instance_name);
-     var selection = (oFCKeditor.EditorWindow.getSelection ? oFCKeditor.EditorWindow.getSelection() : oFCKeditor.EditorDocument.selection);
-
-     if(selection.createRange) {
-         var text = selection.createRange().text;
-     }
-     else {
-         var text = selection;
-     }
-
-     return text;
-    };
-
-    function get_selection_range(instance_name) {
-        var oFCKeditor = FCKeditorAPI.GetInstance(instance_name);
-        var selection = (oFCKeditor.EditorWindow.getSelection ? oFCKeditor.EditorWindow.getSelection() : oFCKeditor.EditorDocument.selection);
-        return selection.createRange();
-    };
-
- </script>
 
  
-<%= render(:partial => "/reviews/header", :locals => { :review => @review, :products4review => @products4review }) %>
+<%= render(:partial => "/reviews/header", :locals => { :review => @review }) %>
 
 
-<!-- paragraphs -->
-<div style="background-color:white; border:2px solid orange; padding:5px;">
-    <div id="div_paragraph_editor">
-      <%= render(:partial => "paragraph_editor", :locals => { :opinion => @opinion, :paragraph_index => @paragraph_index, :paragraphs_size =>  @paragraphs_size, :paragraphs => @paragraphs, :existing_opinions => @existing_opinions }) %>
-    </div>
-
-    <!-- editing the opinion -->
-    <% if @opinion %>
-        <h2>Dimensions involved</h2>
-
-        <%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @current_knowledge, :opinion => @opinion} ) %>
-
-         <%= render(:partial => "/interpretor/usages_related", :locals => {:opinion => @opinion} ) %>
 
 
-        <div id="div_opinion_selector" style="margin-top:10px;">
-          <% if ["Tip", "Comparator", "Ranking", "Rating"].include?(@opinion.class.to_s) %>
-            <%= render(:partial => "opinion_selector_#{@opinion.class.to_s.downcase}", :locals => {:opinion => @opinion}) %>
-          <% else %>
-            class???<%= @opinion.class %>
-          <% end %>
+
+<% for paragraph in @paragraphs %>
+    <% if paragraph.id == @paragraph_id %>
+        <!-- editing the current paragraph -->
+
+
+        <div id="div_paragraph_editor" style="margin-bottom:10px; background-color:white; border:2px solid orange; padding:5px;">
+
+            <!-- content of the paragraph -->
+            <div id="div_paragraph_editor_bis">
+                <%= paragraph.content_without_html %>
+            </div>
+
+            <% if @existing_opinions.size > 0 %>
+                <!-- existing opinions for this paragraph -->
+                <hr/>
+                <% for existing_opinion in @existing_opinions %>
+                  <%= render(:partial => "/interpretor/opinion", :locals => {:opinion => @opinion, :existing_opinion => existing_opinion}) %>
+                <% end %>
+            <% end %>
+            <hr/>
+            <% if @opinion %>
+                <%= render(:partial => "paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => nil } ) %>
+
+
+            <% else %>
+
+                <%= link_to(image_tag("icons/backward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_previous_id}") if @paragraph_previous_id %>
+                <%= link_to(image_tag("icons/foward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_next_id}", :style => "margin-right:30px;") if @paragraph_next_id %>
+
+                <% if @existing_opinions.size == 0 %>
+                    <!-- neutral paragraph -->
+                    <span style="margin-right:50px;">
+                        neutral paragraph<%= check_box_tag("neutral", nil, paragraph.is_neutral,
+                                             :onchange => remote_function(:url => { :action => "neutral_paragraph_toggle", :id => paragraph.id},
+                                                                          :with => "'?is_neutral='+ this.checked" ) ) %>
+                    </span>
+                <% end %>
+
+              <%= render(:partial => "opinion_selector_type", :locals => { :paragraph => paragraph }) %>
+
+
+
+            <% end %>
+
+
+
+        </div>
+
+
+    <% else %>
+        <!-- a paragraph -->
+        <div style="background-color:white; border:1px solid black) %>; margin-top:5px; margin-bottom:5px; padding:3px;"
+             onclick="window.location = '/edit_review/<%= @review.id %>/<%= paragraph.id %>'">
+            <%= object_state paragraph %>
+            <%= paragraph.content_without_html %>
         </div>
     <% end %>
-</div>
- <hr/>
- <!-- the review itself (list of paragraphs) -->
- <%= render(:partial => "review_paragraphs", :locals => { :paragraphs => @paragraphs, :current_paragraph => @paragraphs[@paragraph_index], :review => @review }) %>
+
+    
+
+<% end %>
+
+<!-- scroll the page to the current paragraph -->
+<script>
+  
+    self.scroll(0, (document.getElementById('div_paragraph_editor').offsetTop - 400) )
+</script>

@@ -11,9 +11,8 @@
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/distance/#{@current_knowledge.idurl}/#{@feature.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
-
-  
+        :locals => { :page_url => "/distance/#{@current_knowledge.idurl}/#{@feature.idurl}",  :products => @products, :products_selected => @products_selected }) %>
+ 
   <div class="pkz_main"  >
     <table border=1 style="background-color:white;">
       <tr>

@@ -10,7 +10,7 @@
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/products_opinions/#{@current_knowledge.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
+        :locals => { :page_url => "/products_opinions/#{@current_knowledge.idurl}",  :products => @products, :products_selected => @products_selected }) %>
 
   <h2>stats</h2>
     <table border=1 cellpadding=2>
@@ -49,7 +49,7 @@
             <td valign="top">
                 <ul>
                   <% for opinion in product.opinions(:except_review_category => "amazon") %>
-                    <li><%= opinion.to_html2 %> <%= origin_review(opinion.review, :opinion => opinion, :style => "font-size:80%;") %></li>
+                    <li><%= opinion.to_html %> <%= opinion.review.origin(:opinion => opinion, :style => "font-size:80%;") %></li>
                   <% end %>
                 </ul>
             </td>

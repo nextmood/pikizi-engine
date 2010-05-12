@@ -1,0 +1,3 @@
+<%= radio_buttons("comparator", [["better than", "better"], ["same as", "same"], ["worse than", "worse"]], "better") %>
+      <hr/>
+      <%= render(:partial => "/interpretor/products_selector", :locals => { :name => "compare" }) %>

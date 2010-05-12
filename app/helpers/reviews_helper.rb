@@ -1,28 +1,7 @@
 module ReviewsHelper
 
-  def origin_review(review, options={})
-    l = []
-    l << "by #{review.author}" if review.author
-    l << "from #{review.source}" if review.source
-    s = l.join(' ')
-    if opinion = options[:opinion]
-      s = link_to(s, "/edit_review/#{review.id}/#{opinion.paragraph_id}/#{opinion.id}", :style => "color:#00c0ff")
-    else
-      s = link_to(s, review.source_url, :style => "color:#00c0ff" ) if review.source_url
-    end
-    s = "<span style=\"#{options[:style]}\">#{s}</span>" if options[:style]
-    s
-  end
 
 
-  #mode is either :comparator or :related
-  def dimension_feature(a_knowledge, mode)
-    l = (mode == :comparator ? [["",""]] : [])
-    a_knowledge.each_feature do |feature|
-      l << [feature.label_select_tag, feature.idurl] if feature.is_compatible_grammar(mode)
-    end
-    l
-  end
 
   def dimension_rating(a_knowledge, review_id, paragraph)
     key_overall_rating = "overall_rating"

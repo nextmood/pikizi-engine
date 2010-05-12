@@ -1,9 +1,9 @@
  <div class="pkz_box">
-   <%= model_selector(@knowledge, :questions) %>
+   <%= model_selector(@current_knowledge, :questions) %>
      <div class="pkz_main">
-       <% for quizze in @knowledge.quizzes %>
+       <% for quizze in @current_knowledge.quizzes %>
          <div class="pkz_item_list">
-               <%= link_to(quizze.label, "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
+               <%= link_to(quizze.label, "/quizzes/#{@current_knowledge.idurl}/#{quizze.idurl}") %>
          </div>
        <% end %>
      </div>

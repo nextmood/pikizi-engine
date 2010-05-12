@@ -4,10 +4,10 @@
   <tr>
     <td width="320"  valign="top"><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "referent", :opinion => opinion }) %></td>
     <td   class="pkz_comparator_operator_type" align="center"  valign="top">
-          <%= radio_button_tag("operator_type", nil, ["best", "better"].include?(opinion.operator_type), :onchange => remote_function(:url => { :action => "comparator_operator_type_toggle", :id => opinion.id, :operator_type => "better" }) ) %>better than<br/>
-          <%= radio_button_tag("operator_type", nil, opinion.operator_type == "same", :onchange => remote_function(:url => { :action => "comparator_operator_type_toggle", :id => opinion.id, :operator_type => "same" })) %>same as<br/>
-          <%= radio_button_tag("operator_type", nil, opinion.operator_type == "worse", :onchange => remote_function(:url => { :action => "comparator_operator_type_toggle", :id => opinion.id, :operator_type => "worse" })) %>worse than<br/>
-          <%= check_box_value_oriented(opinion, "font-size:80%; font-weight:normal; margin-top:5px;") %>
+        <% for key, label in Comparator.hash_operator_type_2_label %>
+            <%= opinion_form.radio_button(:operator_type, key) %><%= label %><br/>
+        <% end %>
+        <%= check_box_value_oriented(opinion_form, "font-size:80%; font-weight:normal; margin-top:5px;") %>
     </td>
     <td width="320"  valign="top" ><%= render(:partial => "/interpretor/products_selector", :locals => { :name => "compare_to", :opinion => opinion }) %></td>
   </tr>

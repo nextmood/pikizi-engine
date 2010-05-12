@@ -1,0 +1,51 @@
+<div id="<%= dom_id = "#{name}_#{products_filter.id || Time.now.to_i }" %>"
+     style="margin:1px; border-bottom:1px dashed black; margin-bottom:2px;">
+
+    <% fields_for "products_filter_#{name}[]", products_filter do |products_filter_fields| -%>
+
+            <%= products_filter_fields.hidden_field "_type" %>
+
+            <% unless is_first_product_filter %>
+                <%= products_filter_fields.collection_select(:preceding_operator, [["and", "and"], ["or", "or"]], :first, :last) %>
+            <% end %>
+
+            <!----------------------------- ProductByLabel ----------------------------->
+            <% if products_filter.is_a?(ProductByLabel) %>
+
+                <%= products_filter_fields.text_field_with_auto_complete :label, {:size => 25}, {:method => :get } %>
+                <small>+similar</small>
+                <%= products_filter_fields.check_box "and_similar" %>
+                <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
+
+            <!----------------------------- ProductsBySpec ----------------------------->
+            <% elsif products_filter.is_a?(ProductsBySpec) %>
+                <!-- specification selector -->
+                <%= products_filter_fields.collection_select(:specification_id, options_for_specifications_bis([], @current_knowledge.specification_roots, 0), :last, :first, {:prompt => "choose a feature..."},
+                                                             :onchange => remote_function(:url => { :action => "specification_selected", :id => dom_id, :name => name, :is_first_product_filter => is_first_product_filter },
+                                                                            :with => "'specification_selected_id=' + this.value") ) %>
+                <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
+                <!-- list of tags -->
+                <div>
+                    <%= products_filter.specification.tags.collect { |t| "#{products_filter_fields.check_box("expressions",
+                                                                                                             {:name => "products_filter_#{name}[#{products_filter.id}][expressions][]"},
+                                                                                                             t.idurl, nil)} #{t.label}" }.join(', ') %>
+                    <span style="font-size:80%; margin-left:10px;">
+                        [<%= products_filter_fields.radio_button("mode_selection_tag", :all) %>all tags
+                        <%= products_filter_fields.radio_button("mode_selection_tag", :any) %>any tags ]
+                    </span>
+                </div>
+            <!----------------------------- ProductsByShortcut ----------------------------->
+            <% elsif products_filter.is_a?(ProductsByShortcut) %>
+                  <%= products_filter_fields.collection_select(:shortcut_selector, ProductsByShortcut.shortcuts, :first, :last) %>
+                  <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
+          
+            <!----------------------------- common to all types ----------------------------->
+            <% else %>
+                <div>unknown product filter <%= products_filter.class %></div>
+            <% end %>
+
+
+                                             
+
+    <% end -%>
+</div>

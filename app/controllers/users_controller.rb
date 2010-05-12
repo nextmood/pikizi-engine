@@ -104,5 +104,12 @@ class UsersController < ApplicationController
   def login
 
   end
+
+  # update selection of products for current_user
+  def update_selection
+    session[:product_ids_selected] = params[:product_ids_selected].collect { |pid_select| BSON::ObjectID.from_string(pid_select) }
+    puts "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
+    redirect_to(params[:url_redirect])
+  end
   
 end

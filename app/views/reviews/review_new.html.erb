@@ -1,6 +1,6 @@
 <div class="pkz_box">
 
-    <%= model_selector(@knowledge, :reviews) %>
+    <%= model_selector(@current_knowledge, :reviews) %>
 
     <% form_for :review, @review, :url => "/reviews/create" do |f| %>
           <%= f.hidden_field :knowledge_idurl %>

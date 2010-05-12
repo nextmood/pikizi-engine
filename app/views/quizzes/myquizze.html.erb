@@ -10,26 +10,26 @@
 
 <div class="pkz_box">
 
-    <%= model_selector(@knowledge, :quizzes) %>
+    <%= model_selector(@current_knowledge, :quizzes) %>
 
     <div class="pkz_main">
 
-      <% if next_question = @current_user.get_next_question(@knowledge, @quizze) %>
+      <% if next_question = @current_user.get_next_question(@current_knowledge, @quizze) %>
 
         <!-- the form -->
         <% type_selector = next_question.is_choice_exclusive ? "radio" : "checkbox" %>
         <% form_tag "/answer", :style => "margin-bottom:10px;", :style => "text-align:center;" do -%>
           <%= hidden_field_tag "user_idurl", @current_user.idurl %>
-          <%= hidden_field_tag "knowledge_idurl", @knowledge.idurl %>
+          <%= hidden_field_tag "knowledge_idurl", @current_knowledge.idurl %>
           <%= hidden_field_tag "quizze_idurl", @quizze.idurl %>
           <%= hidden_field_tag "question_idurl", next_question.idurl %>
 
           <div style="font-size:120%; margin:5px;">
-            <%= link_to(next_question.label, "/questions/#{@knowledge.idurl}/#{next_question.idurl}") %>
+            <%= link_to(next_question.label, "/questions/#{@current_knowledge.idurl}/#{next_question.idurl}") %>
           </div>
 
           <div style="margin-bottom:10px;">
-              <% for choice in next_question.choices %>
+              <% for choice in next_question.all_choices %>
                   <% if next_question.is_choice_exclusive %>
                     <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
                   <% else %>
@@ -52,7 +52,7 @@
 
       <div style="border-top:1px dashed black; padding-left:5px; margin-top:10px; font-size:80%;">
         <%= pluralize(@quizze_instance.nb_answers, "answer") %> so far
-        <%= link_to("details results...", "/myquizze_results/#{@knowledge.idurl}/#{@quizze.idurl}", :style => "margin-left:30px;") %>
+        <%= link_to("details results...", "/myquizze_results/#{@current_knowledge.idurl}/#{@quizze.idurl}", :style => "margin-left:30px;") %>
         <%= link_to_function("end quizze & record feedback...", "document.getElementById('form_feedback').submit();", :style => "margin-left:580px;") %>
       </div>
       
@@ -63,7 +63,7 @@
         <tr>
           <td width="50%" valign="top">
             <% form_tag "/end_quizze", :id => "form_feedback" do -%>
-              <%= hidden_field_tag("knowledge_idurl", @knowledge.idurl)%>
+              <%= hidden_field_tag("knowledge_idurl", @current_knowledge.idurl)%>
               <%= hidden_field_tag("quizze_idurl", @quizze.idurl)%>
               <ul style="margin-left:-35px;">
                   <li style="font-size:80%">
@@ -86,24 +86,22 @@
           </td>
 
           <td width="50%" valign="top">
-              <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
+              <% for question in @current_knowledge.questions_sorted(@quizze.products, @current_user) %>
                   <% if answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
                       <%= render(:partial => "quizzes/question",
                                  :locals => { :answered_choice_idurls => answered_choice_idurls,
                                               :current_ar_user => @current_user,
                                               :quizze => @quizze,
-                                              :knowledge => @knowledge,
                                               :question => question })%>
                   <% end %>
               <% end %>
 
-              <% for question in @knowledge.questions_sorted(@quizze.products, @current_user) %>
+              <% for question in @current_knowledge.questions_sorted(@quizze.products, @current_user) %>
                   <% unless answered_choice_idurls = @quizze_instance.user_last_answer_choice_idurls_ok(question.idurl) %>
                       <%= render(:partial => "quizzes/question",
                                  :locals => { :answered_choice_idurls => answered_choice_idurls,
                                               :current_ar_user => @current_user,
                                               :quizze => @quizze,
-                                              :knowledge => @knowledge,
                                               :question => question })%>
                   <% end %>
               <% end %>

@@ -99,7 +99,7 @@ namespace :pikizi do
     questions.each do |question|
       hash_q_counter_presentation[question.idurl] = {:presentation => 0, :oo => 0}
       hash_q_c_counter_ok[question.idurl] = {}
-      question.choices.each do |choice|
+      question.all_choices.each do |choice|
         hash_q_c_counter_ok[question.idurl][choice.idurl] = 0
       end
     end
@@ -146,25 +146,60 @@ namespace :pikizi do
   task :maj_db => :environment do
     # cleanup opinion (to be remove later...)
     knowledge = get_knowledge
-    all_products = knowledge.products
-
-    Opinion.all(:paragraph_id => nil).each { |o| o.update_attributes(:paragraph_id => o.review.paragraphs.first.id) if o.paragraph_id.nil? and o.review.paragraphs.size > 0 }
 
 
-    Comparator.all.each do  |c|
-      unless compare_to = c.products_filters_for("compare_to").first
-        if  c.predicate == "productIs(:all_products)"
-          pf = ProductsByShortcut.create(:shortcut_selector => "all_products", :opinion_id => c.id, :products_selector_dom_name => "compare_to")
-          c.products_filters << pf; c.save
-        end
-      end
-      compare_to.update_labels  if compare_to    
+    puts "2) update reviews state to empty ..."
+    Review.all.each { |r| check_update(r, r.update_attributes(:state => "empty", :written_at => (r.written_at || (Date.today - 900))))  }
+    puts "3) update products release date..."
+    Product.all.each { |p| check_update(p, p.update_attributes(:knowledge_id => knowledge.id,
+                                               :release_date => (p.get_value("release_date") || (Date.today - 1000)))) }
+    puts "4) create neutral tips..."
+    Neutral.create_from_neutral_tips
+    puts "5) update opinions state to draft..."
+
+    Opinion.all.each { |o| check_update(o, o.update_attributes(:state => "draft", :written_at => o.review.written_at)) }
+
+    puts "6) update misc..."
+
+    Quizze.all.each { |q| check_update(q, q.update_attributes(:knowledge_id => knowledge.id))  unless q.knowledge_id == knowledge.id}
+    Question.all.each { |q| check_update(q, q.update_attributes(:knowledge_id => knowledge.id)) unless q.knowledge_id == knowledge.id}
+
+    puts "7) update paragraphs state to empty..."
+
+    Paragraph.all.each { |p| check_update(p, p.update_attributes(:state => "empty", :is_neutral => (p.opinions.count == 0))) }
+
+
+
+    puts "7-a) update reviews opinions vs paragraph opinions ..."
+    Review.all.each do |r|
+      r.update_attributes(:opinions => r.opinions_through_paragraphs)
     end
 
-    Opinion.all.each {|o| o.compute_product_ids_related(all_products) }
+    
+    puts "8) update products filter..."
 
-    puts "done..."
+    # recompute labels of products filters
+    ProductsFilter.all.each { |pf| pf.preceding_operator = "or"; pf.update_labels_debug; pf.save; }
 
+    all_products = knowledge.get_products
+    puts "9) update opinions state final..."
+
+    Opinion.all.each { |o| o.correct!; o.check_status(all_products) }
+    Opinion.all.each { |o| begin o.accept!; rescue ; end }
+
+    puts "10) update paragraphs state final..."
+
+    Paragraph.all.each { |p| p.check_status }
+
+    puts "11) update reviews state final..."    
+
+    Review.all.each { |r| r.check_status }
+
+    true
+  end
+
+  def check_update(o, x)
+    raise "wrong update #{o.errors.inspect}" unless x
   end
 
   # ========================================================================================
@@ -183,11 +218,10 @@ namespace :pikizi do
       # recompute weights, compute distribution and save the question
       question.generate_choices_pidurl2weight(knowledge)
       # quality check
-      question.choices.each { |choice| choice.pidurl2weight.check_01 }
+      question.all_choices.each { |choice| choice.pidurl2weight.check_01 }
     end
 
     # pre compute number of questions, reviews, quizzes, products etc... and save the knowledge
-    knowledge.compute_counters
   end
 
 

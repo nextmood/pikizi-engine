@@ -1,5 +1,5 @@
 <div id="list_specifications">
-<% for specification in knowledge.specifications_root %>
+<% for specification in @current_knowledge.specification_roots %>
     <%= render(:partial => "/specifications/header", :locals => {:specification => specification, :product => product}) %>
 <% end %>
 </div>

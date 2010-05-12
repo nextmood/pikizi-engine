@@ -35,6 +35,12 @@
               <%= link_to('test...', @product.url, :style => "font-size:80%;") if @product.url %>
             </td>
           </tr>
+          <tr>
+            <td align="right"><label>release date</label></td>
+            <td>
+              <%= select_date @product.release_date, :prefix => :release_date %>
+            </td>
+          </tr>
           <% descripion_dom_id = "description_product_#{@product_id}" %>
           <tr>
             <td align="right"><label>description</label></td>
@@ -90,54 +96,12 @@
 </h2>
 
 <div id="list_specifications" class="">
-  <%= render(:partial => "/products/dimensions", :locals => { :knowledge => @current_knowledge, :dimensions => [@current_knowledge.dimension_root], :product => @product}) %>
+  <%= render(:partial => "/products/dimensions", :locals => {  :dimensions => [@current_knowledge.dimension_root], :product => @product}) %>
 </div>
 <hr/><h2>availability and merchants</h2>
 
 <%= render(:partial => "/offers/list", :locals => {:product => @product}) %>
 
 <h2>Specifications<%= image_tag('icons/add.png', :border => 0, :title => "add a new child feature", :style => "margin-left:30px;") %></h2>
-<%= render(:partial => "/specifications/list", :locals => {:knowledge => @current_knowledge, :product => @product}) %>
-
-<!--
-
-<h2><%= link_to_function("old features...", "document.getElementById('old_features').toggle();") %></h2>
-<div id="old_features" style="display:none;">
-    <% for feature in @current_knowledge.features_all %>
-        <% if !feature.is_a?(FeatureRating) and !feature.is_a?(FeatureImage)  %>
-            <div class="pkz_specification_level_<%= feature.level %>">
-              <b><%= feature.get_feature_html %></b>
-              <%= feature.get_value_html(@product) %>
-
-              <span style="font-size:80%; margin-left:30px;">
-
-                edit 
-                  <%= link_to_remote("value",
-                          :url => {  :controller => "products",
-                                     :action => "edit_value",
-                                     :id => @product.id,
-                                     :feature_idurl => feature.idurl  },
-                          :html => {  }) %>
-                  /
-                  <%= link_to_remote("spec",
-                          :url => {  :controller => "products",
-                                     :action => "edit_feature",
-                                     :id => @product.id,
-                                     :feature_idurl => feature.idurl  },
-                          :html => {  }) %>
-
-                  <%= feature.should_display?(@product) ? "(spec) " : "" %>
-              </span>
-
-              <div id="div_<%= feature.idurl %>">
-                  
-              </div>
-
-              
-            </div>
-        <% end %>
-    <% end %>
-</div>
-
--->
+<%= render(:partial => "/specifications/list", :locals => { :product => @product}) %>
 

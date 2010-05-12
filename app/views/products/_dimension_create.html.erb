@@ -11,7 +11,7 @@
         min_rating <%= f.text_field :min_rating, :size => 2 %>
         max_rating <%= f.text_field :max_rating, :size => 2 %>
       </p>
-      <p>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(knowledge, :selected => dimension.parent_id, :max_level => 1)) %></p>
+      <p>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(@current_knowledge, :selected => dimension.parent_id, :max_level => 1)) %></p>
       <hr/>
       <%= submit_tag "create new dimension" %>
       <%= link_to_remote("cancel",

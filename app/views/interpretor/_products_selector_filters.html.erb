@@ -1,20 +1,17 @@
 
 <% if opinion.products_filters_for(name).size > 0 %>
     <% is_first_product_filter = true %>
-    <% for products_filter in opinion.products_filters_for(name) %>
-        <div>
-          <%= link_to_remote(products_filter.preceding_operator,
-                    :url => {  :action => "toggle_preceding_operator", :id => products_filter.id, :name => name },
-                    :html => {})  unless is_first_product_filter %>
-          <%= products_filter.display_as %>
-          <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0),
-                    :url => {  :action => "delete_products_filter", :id => products_filter.id, :name => name },
-                    :html => {}) %>
-        </div>
-        <% is_first_product_filter = false %>        
-    <% end %>
+    <% opinion.products_filters_for(name).each do |products_filter| -%>
+        <%= render(:partial => "products_selector_filter",
+                   :locals => { :is_first_product_filter => is_first_product_filter,
+                                :products_filter => products_filter,
+                                :name => name }) %>
+        
+        <% is_first_product_filter = false %> 
+    <% end -%>
+    
 <% else %>
-    no products selected yet
+    no products filters yet
 <% end %>
 
 

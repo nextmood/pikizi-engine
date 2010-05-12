@@ -4,14 +4,12 @@ class HomeController < ApplicationController
   # GET /quizzes
   # return all available quizzes for all knowledges
   def quizzes
-    
-    #@knowledge = Knowledge.load_db("cell_phones")
     @quizzes = @current_knowledge.quizzes
   end
 
   # GET /start_quiz/:quizze_id
   # create a new quiz for the current user
-  def start_quiz
+  def start_quizze
     quizze = Quizze.find(params[:quizze_id])
     get_logged_user.create_quizze_instance(quizze)
     redirect_to "/my_quiz"
@@ -23,7 +21,6 @@ class HomeController < ApplicationController
     @current_user = get_logged_user
     if @quizze_instance = @current_user.get_latest_quizze_instance
       @quizze = @quizze_instance.get_quizze
-      @knowledge = @quizze.get_knowledge
     else
       redirect_to("/quizzes") # select a quizz first !
     end
@@ -34,9 +31,8 @@ class HomeController < ApplicationController
     @current_user = get_logged_user
     if @quizze_instance = @current_user.get_latest_quizze_instance
       @quizze = @quizze_instance.get_quizze
-      @knowledge = @quizze.get_knowledge
       @sorted_affinities = @quizze_instance.sorted_affinities
-      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@current_knowledge, @sorted_affinities)
     else
       redirect_to("/quizzes") # select a quizz first !
     end    
@@ -58,9 +54,8 @@ class HomeController < ApplicationController
       product_idurl = params[:product_idurl]
       @product = Product.load_db(product_idurl)
       @quizze = @quizze_instance.get_quizze
-      @knowledge = @quizze.get_knowledge
       @sorted_affinities = @quizze_instance.sorted_affinities
-      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@current_knowledge, @sorted_affinities)
     else
       redirect_to("/quizzes") # select a quizz first !
     end
@@ -71,7 +66,6 @@ class HomeController < ApplicationController
   def product
     product_idurl = params[:product_idurl]
     @product = Product.load_db(product_idurl)
-    @knowledge = Knowledge.load_db("cell_phones")
   end
 
   # GET /products_search
@@ -106,7 +100,7 @@ class HomeController < ApplicationController
     selected_key = params[:new_tab]
     render :update do |page|
       page.replace("product_tabs", :partial => "/home/product_tabs", 
-                  :locals => { :selected_key => selected_key, :knowledge => knowledge, :product => product })
+                  :locals => { :selected_key => selected_key, :product => product })
     end
   end
 

@@ -1,0 +1,24 @@
+<% remote_form_for(usage, :url => {:action => "update_usage", :id => usage.id },
+             :html => {:style =>"background-color:pink; padding:5px;" }) do |f| -%>
+    <p>
+        label <%= f.text_field :label, :size => 80 %>
+        <%= submit_tag "update" %>
+
+
+    <%= link_to_remote("cancel",
+            :url => {:action => "remove_usage_editor", :id => usage.id },
+            :html => { :style => "font-size:80%; margin-left:30px;" }) %>
+    <%= link_to("destroy", {:action => "delete_usage", :id => usage.id}, :style => "font-size:80%; margin-left:50px;") %>
+    </p>
+    <hr/>
+    This XXX is used in <%= pluralize((opinions_for_usage = usage.opinions).size, "opinion") %>
+    <br/>
+    <b>in <%= pluralize((reviews_for_usage = Opinion.related_reviews_for(opinions_for_usage)).size, "review") %></b>
+    <%= reviews_for_usage.collect(&:origin).join(', ') %>
+    <br/>
+    <b>for <%= pluralize((products_for_usage = Opinion.related_products_for(opinions_for_usage)).size, "product") %> </b>
+    <%= products_for_usage.collect { |p| link_to(p.label, "/product/#{p.idurl}") }.join(', ') %>
+
+
+
+<% end -%>

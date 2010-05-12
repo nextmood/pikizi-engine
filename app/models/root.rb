@@ -29,7 +29,6 @@ class Root
 
   # ---------------------------------------------------
 
-  def self.is_main_document() false end
 
   def self.initialize_from_xml(xml_node)
     o = ((self.is_main_document and xml_node['idurl']) ? self.load_db(xml_node['idurl']) : nil)
@@ -120,9 +119,9 @@ class Root
     end
   end
 
-  # to convert v.strftime(Root.default_date_format)
-  def self.default_date_format() "%Y/%m/%d %H:%M:%S" end
-
+  # to convert v.strftime(Root.default_datetime_format)
+  def self.default_datetime_format() "%Y/%m/%d %H:%M:%S" end
+  def self.default_date_format() "%Y/%m/%d" end
 
   def self.compute_time
     start = Time.now
@@ -145,11 +144,11 @@ class Root
 
   def self.load_db(object_ids)
     if object_ids.is_a?(Array)
-      objects = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.all(:idurl => object_ids )
+      objects = object_ids.is_a?(BSON::ObjectID) ? self.find(object_ids) : self.all(:idurl => object_ids )
       objects.each(&:link_back)
       objects
     else
-      object = object_ids.is_a?(Mongo::ObjectID) ? self.find(object_ids) : self.first(:idurl => object_ids )
+      object = object_ids.is_a?(BSON::ObjectID) ? self.find(object_ids) : self.first(:idurl => object_ids )
       object.link_back if object
       object
     end

@@ -1,0 +1,12 @@
+
+
+
+<div class="pkz_box">
+    <%= model_selector(@current_knowledge, :usages) %>
+
+  <div id="list_usages" class="">
+    <%= render(:partial => "/knowledges/usages", :locals => { :usages => @usages } ) %>
+  </div>
+
+
+</div>

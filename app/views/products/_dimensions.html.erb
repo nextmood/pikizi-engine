@@ -3,7 +3,7 @@
     <% raise "no dimension" unless dimension.is_a?(Dimension) %>
     
       <div class="pkz_dimension_level_<%= dimension.level %>" style=" " >
-        <b><%= dimension.get_specification_html %></b>
+        <b><%= dimension.get_dimension_html %></b>
         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open", :id => product.id } ) if dimension.level <= 1 %>
       </div>
 
@@ -17,5 +17,5 @@
       <% end %>
       <div class="pkz_clearBoth"></div>
 
-    <%= render(:partial => "/products/dimensions", :locals => { :knowledge => knowledge, :dimensions => dimension.children , :product => product}) %>
+    <%= render(:partial => "/products/dimensions", :locals => { :dimensions => dimension.children , :product => product}) %>
 <% end %>

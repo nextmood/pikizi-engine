@@ -5,7 +5,7 @@
     <% for a_class, opinions in dimension.opinions.group_by(&:class) %>
         <div>
             <% for opinion in opinions %>
-                <%= opinion.to_html2 %>&nbsp;<%= opinion.review.category %><br/>
+                <%= opinion.to_html %>&nbsp;<%= opinion.review.category %><br/>
             <% end %>
         </div>
     <% end %>

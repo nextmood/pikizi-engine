@@ -1,31 +1,31 @@
 <div id="main">
   <div class="box952">
     <h1>Advisor: <strong><%= @quizze.label %></strong></h1>
-    <% next_question = @current_user.get_next_question(@knowledge, @quizze) %>
+    <% next_question = @current_user.get_next_question(@current_knowledge, @quizze) %>
     <ul class="bugRt">
       <li class="backAd"><a href="<%= "/my_results" %>">results</a></li>
       <li class="answers"><%= @quizze_instance.nb_products_ranked_at_most %></li>
     </ul>
     <% form_tag "/record_my_answer", :id => "question_form" do -%>
-        <%= hidden_field_tag "knowledge_idurl", @knowledge.idurl %>
+        <%= hidden_field_tag "knowledge_idurl", @current_knowledge.idurl %>
         <%= hidden_field_tag "quizze_idurl", @quizze.idurl %>
         <%= hidden_field_tag "question_idurl", next_question.idurl %>
 
         <div id="quizzBox">
-          <h2><%= "#{@quizze_instance.nb_answers + 1}. #{next_question.label}"%> <%= link_to("more..." , "/questions/#{@knowledge.idurl}/#{next_question.idurl}", :style=>"font-size:40%;") if @current_user.role == "admin" %></h2>
+          <h2><%= "#{@quizze_instance.nb_answers + 1}. #{next_question.label}"%> <%= link_to("more..." , "/questions/#{@current_knowledge.idurl}/#{next_question.idurl}", :style=>"font-size:40%;") if @current_user.role == "admin" %></h2>
 
           <ul class="advisors">
-            <% last_choice = (choices = next_question.choices).last %>
+            <% last_choice = (choices = next_question.all_choices).last %>
             <% for choice in choices %>
                 <li <%= "class=\"last\"" if choice == last_choice%>>
-                    <%= image_tag("/domains/#{@knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}") if choice.url_image %>
+                    <%= image_tag("/domains/#{@current_knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}") if choice.url_image %>
                     <% if next_question.is_choice_exclusive %>
                         <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
                     <% else %>
                         <%= check_box_tag "choices_idurls_ok[]", choice.idurl %>
                     <% end %>
                     <%= choice.label %>
-                    <a href="<%= "/domains/#{@knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_description}" %>"><img src="/images/gene/iconSrch16.png" /></a>
+                    <a href="<%= "/domains/#{@current_knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_description}" %>"><img src="/images/gene/iconSrch16.png" /></a>
                 </li>
             <% end %>
 

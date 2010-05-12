@@ -33,7 +33,6 @@ class User < Root
    ].each { |options| User.first_create(options) }
   end
 
-  def self.is_main_document() true end
 
   def is_authorized() !is_unauthorized end
   def is_admin() role == "admin" end
@@ -246,8 +245,8 @@ class QuizzeInstance < Root
     node_quizze_instance << (node_affinities = XML::Node.new('affinities'))
     hash_pidurl_affinity.each { |product_idurl, affinity| affinity.generate_xml(node_affinities) }
 
-    node_quizze_instance['created_at'] = created_at.strftime(Root.default_date_format)
-    node_quizze_instance['closed_at'] = closed_at.strftime(Root.default_date_format) if closed_at
+    node_quizze_instance['created_at'] = created_at.strftime(Root.default_datetime_format)
+    node_quizze_instance['closed_at'] = closed_at.strftime(Root.default_datetime_format) if closed_at
 
     node_quizze_instance << (node_answered = XML::Node.new('answered'))
     puts "answers=#{answers.inspect}"
@@ -520,7 +519,7 @@ class Answer < Root
     node_answer['knowledge_idurl'] = knowledge_idurl
     node_answer['question_idurl'] = question_idurl
     node_answer['choice_idurls_ok'] = choice_idurls_ok.join(',')
-    node_answer['time_stamp'] = time_stamp.strftime(Root.default_date_format)
+    node_answer['time_stamp'] = time_stamp.strftime(Root.default_datetime_format)
     node_answer
   end
 

@@ -1,19 +1,19 @@
 <div class="pkz_box">
-  <%= model_selector(@knowledge, :questions) %>
+  <%= model_selector(@current_knowledge, :questions) %>
   <div>
     <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-         :locals => { :page_url => "/questions/#{@knowledge.idurl}", :knowledge => @knowledge, :products => @products, :products_selected => @products_selected }) %>
+         :locals => { :page_url => "/questions/#{@current_knowledge.idurl}", :products => @products, :products_selected => @products_selected }) %>
 
-      <% for question in @knowledge.questions_sorted_by_desc_discrimination(@pidurls_selected) %>
+      <% for question in @current_knowledge.questions_sorted_by_desc_discrimination(@pidurls_selected) %>
         <% discrimination = question.discrimination(nil, @pidurls_selected) %>
         <div class="pkz_item_list" style="background-color:<%= (discrimination[0] + discrimination[1]) > 0.0 ? 'lightgray' : 'pink' %>;">
           
-            <%= render(:partial => "questions/short", :locals => {:knowledge => @knowledge, :question => question }) %>
+            <%= render(:partial => "questions/short", :locals => {:question => question }) %>
             <div style="font-size:80%; margin-top:3px;">
-                weight=<%= link_to(image_tag("icons/arrow_down.gif", :border => 0),"/question_decr_weight/#{@knowledge.idurl}/#{question.idurl}") %><b><%= question.weight.round %></b><%= link_to(image_tag("icons/arrow_up.gif", :border => 0),"/question_incr_weight/#{@knowledge.idurl}/#{question.idurl}") %>
+                weight=<%= link_to(image_tag("icons/arrow_down.gif", :border => 0),"/question_decr_weight/#{@current_knowledge.idurl}/#{question.idurl}") %><b><%= question.weight.round %></b><%= link_to(image_tag("icons/arrow_up.gif", :border => 0),"/question_incr_weight/#{@current_knowledge.idurl}/#{question.idurl}") %>
                 ,&nbsp;
                 interest=<%= "%3d" % ((1 - question.proba_oo) * 100) %>%,&nbsp;
                 discrimination=

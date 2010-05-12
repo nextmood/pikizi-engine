@@ -14,11 +14,10 @@
   </div>
 
   <%= render(:partial => "/knowledges/products_selection",
-        :locals => { :page_url => "/show/#{@current_knowledge.idurl}", :knowledge => @current_knowledge, :products => @products, :products_selected => @products_selected }) %>
+        :locals => { :page_url => "/show/#{@current_knowledge.idurl}",  :products => @products, :products_selected => @products_selected }) %>
 
 
-    <%= render(:partial => "/knowledges/show",
-            :locals => {:selected_products => @products_selected, :knowledge => @current_knowledge }) %>
+  <%= render(:partial => "/knowledges/show", :locals => {:selected_products => @products_selected }) %>
 
 </div>
 

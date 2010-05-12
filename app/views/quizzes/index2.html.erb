@@ -3,11 +3,11 @@
 
        <h1>Let's find your next phone</h1>
        <ul class="advisors">
-         <% for quizze in @knowledge.quizzes %>
+         <% for quizze in @current_knowledge.quizzes %>
             <li>
-              <%= image_tag("/domains/#{@knowledge.idurl}/quizzes/#{quizze.idurl}/images/main_image.png") %>
+              <%= image_tag("/domains/#{@current_knowledge.idurl}/quizzes/#{quizze.idurl}/images/main_image.png") %>
               <%= quizze.label %>
-              <%= link_to("<p></p>", "/quizzes/#{@knowledge.idurl}/#{quizze.idurl}") %>
+              <%= link_to("<p></p>", "/quizzes/#{@current_knowledge.idurl}/#{quizze.idurl}") %>
             </li>
          <% end %>
          <div class="spcr"></div>

@@ -3,13 +3,14 @@ module KnowledgesHelper
   def admin_menu(knowledge)
     [
 
-      [ :matrix , link_to(pluralize(knowledge.nb_features, "feature"), "/show/#{knowledge.idurl}") ],
+      [ :matrix , link_to(pluralize(knowledge.nb_specifications, 'specification'), "/show/#{knowledge.idurl}") ],
+      [ :dimensions , link_to(pluralize(knowledge.nb_dimensions, "dimension"), "/dimensions_list")   ], 
+      [ :usages , link_to(pluralize(knowledge.nb_usages, "usage"), "/usages_list")   ],
       #[ :distance , link_to("Distance", "/distance/#{knowledge.idurl}") ],
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.idurl}") ],
       [ :quizzes , link_to(pluralize(knowledge.nb_quizzes, "quizze"), "/quizzes/#{knowledge.idurl}")   ] ,
-      [ :users , link_to("users", "/users")   ],
-      [ :usage , link_to(pluralize(Opinion.count, "opinions"), "/products_opinions/#{knowledge.idurl}")   ],
-      [ :interpretor , "interpretor", "/interpretor/show/#{knowledge.idurl}"   ]
+      [ :users , link_to(pluralize(User.count, "user"), "/users")   ],
+      [ :reviews , link_to(pluralize(Review.count, "review"), "/reviews")   ]
     ]
   end
 
@@ -29,10 +30,7 @@ module KnowledgesHelper
 
   def feature_selector(knowledge, feature_selected_idurl)
     select("option", "feature_idurl", knowledge.features_all.collect { |f| [f.label_full, f.idurl]}, { :selected => feature_selected_idurl },
-      :onchange => "window.location = '/distance/#{@knowledge.idurl}/' + document.getElementById('option_feature_idurl').value ")
+      :onchange => "window.location = '/distance/#{@current_knowledge.idurl}/' + document.getElementById('option_feature_idurl').value ")
   end
-
-
-
 
 end

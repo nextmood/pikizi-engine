@@ -16,35 +16,38 @@ class ApplicationController < ActionController::Base
 
   # get the current logged user, the active record object
   def get_logged_user()
-    if session[:logged_user_id]
-      begin
-        @current_knowledge ||= Knowledge.first
-        @current_user ||= User.load_db(session[:logged_user_id])        
-      rescue
-        logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
-        nil
+    begin
+      if session[:logged_user_id]
+        @current_user ||= User.find(session[:logged_user_id])
       end
+    rescue
+      #logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
+      nil
     end
   end
 
 
-  def self.release_version() "v 3.0 alpha 24 feb 2010"  end
+  def self.release_version() "v 3.0 alpha 24 avril 2010"  end
 
   # this is used by the controller
-  def get_product_selected(params)
-    @knowledge = Knowledge.load_db(params[:knowledge_idurl])
-    @products = @knowledge.products
-    @products_idurls = @products.collect(&:idurl)
-    @pidurls_selected = params[:select_product_idurls]
-    @pidurls_selected ||= session[:pidurls_selected]
-    @pidurls_selected ||= @products_idurls
-    session[:pidurls_selected] = @pidurls_selected
-    @products_selected = @products.select { |p| @pidurls_selected.include?(p.idurl) }
+  def get_products_selected
+    raise "expecting knowledge to be set" unless @current_knowledge
+    unless @products_selected
+      @products = @current_knowledge.get_products
+      if session[:product_ids_selected]
+        @products_selected = @products.select { |p| session[:product_ids_selected].include?(p.id) }
+      else
+        session[:product_ids_selected] = (@products_selected = @products.first(5)).collect(&:id)
+      end
+    end
+    [@products, @products_selected]
   end
+
 
   private
 
   def check_user_authorization
+    @current_knowledge ||= Knowledge.first
     if get_logged_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_user.is_authorized
@@ -56,7 +59,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_as_developper
-    @current_user = User.load_db(User.compute_idurl("info@nextmood.com"))
+    @current_user = User.find_by_rpx_email("info@nextmood.com")
     raise "error no user indatabase?" unless @current_user
     session[:logged_user_id] = @current_user.id
   end

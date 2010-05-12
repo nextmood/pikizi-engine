@@ -2,14 +2,12 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/knowledge_idurl
   def index
-    @knowledge = Knowledge.load_db(params[:knowledge_idurl])
   end
 
   # GET /quizzes/knowledge_idurl/quizze_idurl
   def show
     knowledge_idurl = params[:knowledge_idurl]
     quizze_idurl = params[:quizze_idurl]
-    @knowledge = Knowledge.load_db(knowledge_idurl)
     @quizze = Quizze.load_db(quizze_idurl)
   end
 
@@ -17,7 +15,6 @@ class QuizzesController < ApplicationController
   # GET /myquizze/knowledge_idurl/quizze_idurl
   # GET /myquizze/knowledge_idurl
   def myquizze
-    @knowledge = Knowledge.load_db(knowledge_idurl = params[:knowledge_idurl])
     @quizze = Quizze.load_db(params[:quizze_idurl] || knowledge_idurl)
     @current_user = get_logged_user
     @quizze_instance = @current_user.get_quizze_instance(@quizze)
@@ -29,9 +26,8 @@ class QuizzesController < ApplicationController
     @current_user = get_logged_user
     if @quizze_instance = @current_user.get_latest_quizze_instance
       @quizze = @quizze_instance.get_quizze
-      @knowledge = @quizze.get_knowledge
       @sorted_affinities = @quizze_instance.sorted_affinities
-      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@knowledge, @sorted_affinities)
+      @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@current_knowledge, @sorted_affinities)
     else
       redirect_to("/quizzes") # select a quizz first !
     end

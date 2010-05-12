@@ -1,5 +1,5 @@
 <div>
-    <div style="font-size:120%;"><%= link_to(question.label, "/questions/#{knowledge.idurl}/#{question.idurl}") %></div>
+    <div style="font-size:120%;"><%= link_to(question.label, "/questions/#{@current_knowledge.idurl}/#{question.idurl}") %></div>
     <% exclusive = question.is_choice_exclusive ? "<input type='radio'>" : "<input type='checkbox'>" %>
-    <%= question.choices.collect {|c| "#{exclusive}#{c.label} <small>#{Root.as_percentage(c.proba_ok)}</small>" }.join(',  ') %>
+    <%= question.all_choices.collect {|c| "#{exclusive}#{c.label} <small>#{Root.as_percentage(c.proba_ok)}</small>" }.join(',  ') %>
 </div>

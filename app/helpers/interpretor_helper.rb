@@ -1,13 +1,6 @@
 module InterpretorHelper
 
-  def radio_buttons(name, choices, choice_key_selected, options = {})
-    choices.collect do |choice|
-      choice_label, choice_key = choice.is_a?(Array) ? choice : [choice.humanize, choice]
-      radio_button_tag(name, choice_key, choice_key == choice_key_selected,
-         :onclick => remote_function(
-           :url => { :action => "choice_selected", :id => choice_key, :name => name })) << choice_label
-    end.join()
-  end
+
 
   def options_for_dimensions(knowledge, options={})
     l = options_for_dimensions_bis([], knowledge.dimension_root, 0, options[:max_level] || 10)
@@ -22,7 +15,7 @@ module InterpretorHelper
   end
 
   def options_for_specifications(knowledge, selected_specification_id=nil)
-    l = options_for_specifications_bis([], knowledge.specifications, 0)
+    l = options_for_specifications_bis([], knowledge.specification_roots, 0)
     options_for_select(l, selected_specification_id)
   end
 
@@ -34,18 +27,11 @@ module InterpretorHelper
     l
   end
 
-    #mode is either :comparator or :related
-  def dimension_feature(a_knowledge, mode)
-    l = (mode == :comparator ? [["",""]] : [])
-    a_knowledge.each_feature do |feature|
-      l << [feature.label_select_tag, feature.idurl] if feature.is_compatible_grammar(mode)
-    end
-    l
-  end
 
-  def check_box_value_oriented(opinion, style=nil)
+
+  def check_box_value_oriented(opinion_form, style=nil)
     style = "style=\"#{style}\"" if style
-    "<div #{style}>" << check_box_tag("value_oriented", nil, opinion.value_oriented, :onchange => remote_function(:url => { :action => "value_oriented_toggle", :id => opinion.id })) << "&nbsp;for $ value</div>"
+    "<div #{style}>" << opinion_form.check_box(:value_oriented) << "&nbsp;for $ value</div>"
   end
 
 end

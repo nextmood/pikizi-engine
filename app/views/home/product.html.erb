@@ -13,7 +13,7 @@
             <li class="img"><%= link_to(product_image(@product, 'main'), "/products/#{@product.idurl}") %></li>
 
             <li class="details  blank">
-              <%= render(:partial => "/home/product_details", :locals => {:knowledge => @knowledge, :product => @product}) %>
+              <%= render(:partial => "/home/product_details", :locals => {:product => @product}) %>
             </li>
             <li class="fit advisor">
 
@@ -32,12 +32,12 @@
 
           <li class="gallFd"><a href="#"><img src="/images/gene/galleryArwFd.png" /></a></li>
         </ul>
-        <%= render(:partial => "/home/product_price", :locals => {:knowledge => @knowledge, :product => @product}) %>
+        <%= render(:partial => "/home/product_price", :locals => { :product => @product}) %>
          </div>
          <!-- HERE IS WHERE THE ADVISOR RESULTS GO-->
          <div class="spcr"></div>
     </div>
 
 </div>
-<%= render(:partial => "/home/product_tabs", :locals => {:selected_key => "overview", :knowledge => @knowledge, :product => @product}) %>
+<%= render(:partial => "/home/product_tabs", :locals => {:selected_key => "overview", :product => @product}) %>
 

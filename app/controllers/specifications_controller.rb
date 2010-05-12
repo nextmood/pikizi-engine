@@ -6,7 +6,7 @@ class SpecificationsController < ApplicationController
     product = Product.find(params[:product_id])
     specification.destroy # recursive
     render :update do |page|
-      page.replace("list_specifications", :partial => "/specifications/list", :locals => { :knowledge => product.knowledge, :product => product } )
+      page.replace("list_specifications", :partial => "/specifications/list", :locals => { :product => product } )
     end
 
   end

@@ -1,7 +1,8 @@
-<% form_tag page_url, :id => "select_products", :style => "display:none; border: 1px dashed black; margin:5px;" do -%>
+<% form_tag "/users/update_selection", :id => "select_products", :style => "display:none; border: 1px dashed black; margin:5px;" do -%>
+    <%= text_field_tag "url_redirect", page_url %>
     <% for product in products %>
-        <%= check_box_tag("select_product_idurls[]", product.idurl, products_selected.include?(product))  %><%= product.label %>&nbsp;
+        <%= check_box_tag("product_ids_selected[]", product.id, products_selected.include?(product))  %><%= product.label %>&nbsp;
     <% end %>
     <%= submit_tag 'Save' %>
-    <%= render(:partial => "/knowledges/select_all", :locals => {:name => "select_product_idurls"}) %>
+    <%= render(:partial => "/knowledges/select_all", :locals => {:name => "product_ids_selected"}) %>
 <% end -%>

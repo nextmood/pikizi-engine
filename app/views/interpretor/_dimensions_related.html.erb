@@ -1,40 +1,46 @@
-<% dimension_root = knowledge.dimension_root %>
+<% dimension_root = @current_knowledge.dimension_root %>
 <% dimensions_l1 = dimension_root.children %>
 
 
-<table border=1 style="margin-bottom:20px;">
+
+<table style="margin-bottom:5px; margin-top:5px;">
   <% width_column = 100 / dimensions_l1.size %>
   <tr>
-    <th colspan="<%= dimensions_l1.size %>" align="left">
+    <td colspan="<%= dimensions_l1.size %>" align="left" style="border-bottom:1px dashed black;  border-top:1px solid black;">
+      <%= link_to("Related to dimension(s)", "/dimensions_list", :style => "color:orange;") %>
       <span style="margin-left:150px;">
-        <%= check_box_tag("dimensions",
+        <%= check_box_tag("dimensions[]",
                           dimension_root.id.to_s,
-                          opinion.dimension_ids.include?(dimension_root.id),
-                          :onchange => remote_function(:url => { :action => "dimension_toggle", :id => opinion.id, :dimension_id => dimension_root.id.to_s })) %>
+                          opinion.dimension_ids.include?(dimension_root.id) ) %>
         Overall rating
       </span>
-    </th>
+    </td>
   </tr>
   <tr>
         <% for dimension in dimensions_l1 %>
-            <th valign="top"  width="<%= width_column %>%"><%= dimension.label %></th>
+            <td valign="top"  width="<%= width_column %>%" style="border-bottom:1px dashed black;">
+              <%= check_box_tag("dimensions[]",
+                                  dimension.id.to_s,
+                                  opinion.dimension_ids.include?(dimension.id) ) %>
+                <span><%= dimension.label %></span>
+            </td>
         <% end %>
   </tr>
 
   <tr>
-      <% for dimension in knowledge.dimension_root.children %>
+      <% for dimension in @current_knowledge.dimension_root.children %>
           <td valign="top">
             <% for sub_dimension in dimension.children %>
-                <%= check_box_tag("dimensions",
+                <%= check_box_tag("dimensions[]",
                                   sub_dimension.id.to_s,
-                                  opinion.dimension_ids.include?(sub_dimension.id),
-                                  :onchange => remote_function(:url => { :action => "dimension_toggle", :id => opinion.id, :dimension_id => sub_dimension.id.to_s })) %>
+                                  opinion.dimension_ids.include?(sub_dimension.id) ) %>
                 <span title="idurl=<%= sub_dimension.idurl %>"><%= sub_dimension.label %></span>
                 <br/>
             <% end %>
           </td>
       <% end %>
   </tr>
+
 
 </table>
 

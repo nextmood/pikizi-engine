@@ -1,0 +1,41 @@
+<div id="paragraph_edited">
+    <!-- editing an existing opinion -->
+    <% if notification %>
+        <div id="notification" style="border:2px dashed orange; padding:5px;">
+          <%= notification %>
+          <%= link_to_function(image_tag("icons/status_icon_delete.png", :border => 0),
+                               "document.getElementById('notification').toggle();",
+                               :style =>"font-size:80%; margin-left:20px; color:orange;") %>
+        </div>
+    <% end %>
+
+    <% remote_form_for(opinion, :url => { :action => "update_opinion", :id => opinion.id }, :html => {:style => "background-color:lightgray; padding:5px 10px;"}) do |opinion_form| %>
+
+        <div style="width:100%;">
+          cut and paste the related sentence. <small>if none, the whole paragraph is assumed</small><br/>
+          <%= opinion_form.text_area :extract, :size => "115x2" %>
+        </div>
+
+        <%= render(:partial => "/interpretor/dimensions_related", :locals => { :opinion => opinion} ) %>
+
+        <%= render(:partial => "/interpretor/usages_related", :locals => {:opinion => opinion, :opinion_form => opinion_form} ) %>
+
+        <div id="div_opinion_selector" style="margin-top:5px; padding-top:5px; border-top:1px solid black;">
+          <% if ["Tip", "Comparator", "Ranking", "Rating", "Neutral"].include?(opinion.class.to_s) %>
+            <%= render(:partial => "opinion_selector_#{opinion.class.to_s.downcase}", :locals => {:opinion => opinion, :opinion_form => opinion_form }) %>
+          <% else %>
+            class???<%= opinion.class %>
+          <% end %>
+        </div>
+
+        <hr/>
+
+        <p style="text-align:center;">
+            <%= opinion_form.submit "Save", :style => "color:orange;" %>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to("Cancel", "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}", :style => "color:orange;") %>
+        </p>
+
+
+    <% end %>
+</div>

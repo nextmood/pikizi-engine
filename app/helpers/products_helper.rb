@@ -5,7 +5,7 @@ module ProductsHelper
     if image_ids
       image_tag("/medias/datas/#{image_ids[key]}", :border => 0)
     else
-      "?????"
+      "no_image ???"
     end
   end
 

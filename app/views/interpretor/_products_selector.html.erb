@@ -1,19 +1,19 @@
-<div id="ps_<%= name %>" style="background-color:lightgray; width:350px; padding:5px; border:1px solid black;">
+<div id="ps_<%= name %>" style="background-color:lightgray; width:350px; ">
 
-    <div id="<%= name %>_list" class="pkz_list">
+    <!-- existing products filter -->
+    <div id="<%= name %>_extra">
         <%= render(:partial => "products_selector_filters", :locals => { :opinion => opinion, :name => name }) %>
     </div>
     <div class="pkz_clearBoth"></div>
 
-    <div id="<%= name %>_extra" >
-          <span style="font-size:80%;">
+    <!--adding a new product filter -->
+    <div style="font-size:80%;">
             add product(s)
-            <%= link_to_remote("<b>by name</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_label" }) %>
+            <%= link_to_remote("<b>by name</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_label" }) %>
             or
-            <%= link_to_remote("<b>by specification</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_specification" }) %>
+            <%= link_to_remote("<b>by specification</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_specification" }) %>
             or
-            <%= link_to_remote("<b>by shortcut</b>", :url => { :action => "toggle_product_selector", :id => name, :key_selector => "by_shortcut" }) %>
-          </span>
+            <%= link_to_remote("<b>by shortcut</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_shortcut" }) %>
     </div>
 
 </div>

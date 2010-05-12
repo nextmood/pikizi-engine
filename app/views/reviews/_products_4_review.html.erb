@@ -2,7 +2,7 @@
   <% products = review.products %>
   <tr>
   <td valign="bottom">
-    <%= select_tag("add_product_id", options_for_select(dimension_product(knowledge, :minus => review.product_ids, :title => "add a product...")),
+    <%= select_tag("add_product_id", options_for_select(dimension_product(@current_knowledge, :minus => review.product_ids, :title => "add a product...")),
                       :onchange => remote_function(:url => { :action => "add_product_2_review", :id => review.id },
                                                    :with => "'product_id=' + document.getElementById('add_product_id').value")) %>
     <br/>    

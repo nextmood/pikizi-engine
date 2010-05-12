@@ -16,7 +16,7 @@
 
         <% for affinity in @sorted_affinities %>
             <% if affinity.ranking <= 3 %>
-                <% product = affinity.product(@knowledge) %>
+                <% product = affinity.product(@current_knowledge) %>
                 <ul class="<%= { 1 => "one", 2 => "two", 3 => "three" }[affinity.ranking] %>"
                     <h3><%= product.label %></h3>
                     <li class="img">
@@ -28,15 +28,15 @@
                 <table>
                     <tr>
                         <td>Model:</td>
-                        <td class="lft"><strong><%= affinity.product(@knowledge).label %></strong></td>
+                        <td class="lft"><strong><%= affinity.product(@current_knowledge).label %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("brand") %>
+                        <% feature = @current_knowledge.get_feature_by_idurl("brand") %>
                         <td><%= feature.label %></td>    
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>
                     <tr>
-                        <% feature = @knowledge.get_feature_by_idurl("carriers") %>
+                        <% feature = @current_knowledge.get_feature_by_idurl("carriers") %>
                         <td><%= feature.label %></td>
                         <td class="lft"><strong><%= feature.get_value_html(product) %></strong></td>
                     </tr>
@@ -44,7 +44,7 @@
                     <tr>
                         <td>Rating:</td>
                         <td class="lft">
-                          <% if feature_rating = @knowledge.get_feature_by_idurl("overall_rating").get_value(product) %>
+                          <% if feature_rating = @current_knowledge.get_feature_by_idurl("overall_rating").get_value(product) %>
                             <ul class='star-rating'>
                                 <li title="rating=<%= feature_rating %>" class='current-rating' style="<%= "width:#{(70 * feature_rating).round }px;" %>"></li>
                             </ul>
@@ -54,7 +54,7 @@
                     <tr>
                         <td>Best Price:</td>
 
-                        <td class="lft blue"><strong><%= @knowledge.get_price_min_html(product) %></strong></td>
+                        <td class="lft blue"><strong><%= @current_knowledge.get_price_min_html(product) %></strong></td>
                     </tr>
                 </table>
                 <ul class="icons">

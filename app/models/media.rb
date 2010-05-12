@@ -13,7 +13,7 @@ class Media
   # upload_date
   # read (to return the binary data)
   def self.datas(media_id)
-    media_id = Mongo::ObjectID.from_string(media_id) unless media_id.is_a?(Mongo::ObjectID)
+    media_id = BSON::ObjectID.from_string(media_id) unless media_id.is_a?(BSON::ObjectID)
     Media.grid.get(media_id)
   end
 

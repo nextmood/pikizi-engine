@@ -23,9 +23,10 @@ class Specification
   
   # nested structure
   key :parent_id # a Specification object
-  belongs_to :parent, :class_name => "Specification"
-  # return all children
-  def children() @children ||= Specification.all(:knowledge_id => knowledge_id, :parent_id => id) end
+  key :ranking_number, Integer, :default => 0  
+  attr_accessor :parent, :children, :level, :indexes
+  def has_children() children.size > 0 end
+  
   def destroy() children.each(&:destroy); super() end #recursive destroy
 
 
@@ -35,7 +36,6 @@ class Specification
 
   def is_root?() parent.nil? end
 
-  def has_sub_features() features.size > 0 end
 
   def label_full() is_root? ? label : "#{parent.label_full}/#{label}" end
 
@@ -104,7 +104,7 @@ class Specification
      </div>"
   end
 
-  def get_feature_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{specification_html_suffix}" end
+  def get_specification_html() "<span title=\"feature #{self.class} idurl=#{idurl} level=#{level}\" >#{label}</span>#{specification_html_suffix}" end
   def specification_html_suffix()
     "<span style=\"margin-left:5px;\" title=\"rating feature\" >*</span>" unless is_optional
   end
@@ -143,13 +143,6 @@ class Specification
 
   # this is related to display the specification
   def should_display?(product) !display_flag and (parent ? parent.should_display?(product) : true) end
-
-
-
-  # the depth level of a feature
-  def level() parent.nil? ? 1 : 1 + parent.level() end
-
-
 
   # ---------------------------------------------------------------------
 
@@ -620,7 +613,7 @@ class SpecificationDate < SpecificationContinous
     specification_date = super(xml_node)
     specification_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * SpecificationDate.year_in_seconds
     specification_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * SpecificationDate.year_in_seconds
-    specification_date.value_format = xml_node['format'] || Root.default_date_format
+    specification_date.value_format = xml_node['format'] || Root.default_datetime_format
     specification_date
   end
   def self.xml2date(date) Time.parse(date) end
@@ -633,7 +626,7 @@ class SpecificationDate < SpecificationContinous
     node_specification_date['format'] = value_format
     node_specification_date
   end
-  def self.date2xml(x) x.strftime(Root.default_date_format) end
+  def self.date2xml(x) x.strftime(Root.default_datetime_format) end
 
   # see http://ruby-doc.org/core-1.9/classes/Time.html#M000314
   def format_value(date) date.strftime(value_format) end

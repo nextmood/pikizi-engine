@@ -17,7 +17,7 @@
 
               <%= link_to_remote(tab[:label],
                       :url => {  :action => "switch_product_tab",
-                                 :knowledge_idurl => knowledge.idurl,
+                                 :knowledge_idurl => @current_knowledge.idurl,
                                  :product_idurl => product.idurl,
                                  :new_tab => tab[:key]  },
                       :html => html_options) %>
@@ -31,7 +31,7 @@
         <div class="spcr"></div>
             <!-- BEGIN content -->
             <div style="text-align:left; padding-left:15px; height:auto;">
-              <%= render(:partial => "/home/product_tab_#{selected_key}", :locals => {:product => product, :knowledge => knowledge }) %>
+              <%= render(:partial => "/home/product_tab_#{selected_key}", :locals => {:product => product }) %>
             </div>
             <!-- END content -->
         <div class="spcr"></div>

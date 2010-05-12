@@ -1,8 +1,8 @@
 <div style="border-top:1px dashed black; margin-top:8px;" >
-    on <%= review.written_at %> <%= origin_review(review) %>
+    <%= object_state(review) %>
+    on <%= review.written_at %> <%= review.origin %>
     for <%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :style => "color:#00c0ff;")}.join(', ') %>
     <div style="font-size:80%; margin-top:3px;">
-        <%= Root.stars_html(review.rating, review.max_rating) %>
         <%= link_to("#{pluralize(review.paragraphs.count, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
                     "/edit_review/#{review.id}", :style => "color:orange;") %>
         reputation of source=<%= review.source %>, user's reputation=<%= review.reputation %>

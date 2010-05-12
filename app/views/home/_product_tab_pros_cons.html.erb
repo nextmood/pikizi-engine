@@ -8,12 +8,12 @@
   <tr>
     <td valign="top">
         <% for pro in product.tips(:pro) %>
-            <div><%= pro.to_html(:origin => true) %></div>
+            <div><%= pro.to_html %></div>
         <% end %>
     </td>
     <td valign="top">
         <% for pro in product.tips(:con) %>
-            <div><%= pro.to_html(:origin => true) %></div>
+            <div><%= pro.to_html %></div>
         <% end %>
     </td>
   </tr>
