@@ -2690,3 +2690,901 @@ Rendered questions/_discrimination (0.1ms)
 Rendered knowledges/_select_all (0.5ms)
 Rendered knowledges/_products_selection (32.9ms)
 Completed in 620ms (View: 173 | 200 OK [http://localhost/questions/cell_phones/q22_media_memory]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 14:53:32) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "s"=>"iphone"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 749ms (View: 63 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:33) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 150ms (View: 7 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:33) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 147ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:33) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 132ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-05-13 14:53:39) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (64.5ms)
+Rendered home/_product_price (28.4ms)
+Rendered home/_product_tab_overview (121.8ms)
+Rendered home/_product_tabs (134.5ms)
+Completed in 362ms (View: 247 | 200 OK [http://localhost/product/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:40) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000854"}
+Sending data 
+Completed in 212ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000854]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:40) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000852"}
+Sending data 
+Completed in 126ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000852]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:40) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b00085a"}
+Sending data 
+Completed in 133ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b00085a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:53:40) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000863"}
+Sending data 
+Completed in 51ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000863]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-05-13 14:53:41) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_32gb", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (9.7ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (13.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (1.9ms)
+Rendered home/_product_tab_ratings_bis (17.9ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (0.7ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (12.7ms)
+Rendered home/_product_tab_ratings_bis (76.0ms)
+Rendered home/_product_tab_ratings (107.2ms)
+Rendered home/_product_tabs (116.5ms)
+Completed in 273ms (View: 126 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_32gb]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-05-13 14:53:43) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4b892a6d43a76d7c3f0001bc"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/products_controller.rb:244:in `dimension_explanation'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (106.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-05-13 14:55:00) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (196.5ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (5.5ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (104.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (12.9ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (9.0ms)
+Rendered products/_dimensions (138.3ms)
+Rendered products/_dimensions (152.1ms)
+Rendered offers/_list (34.8ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (4.8ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (21.5ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (44.1ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (11.3ms)
+Rendered specifications/_header (4.8ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (4.8ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (21.6ms)
+Rendered specifications/_header (89.8ms)
+Rendered specifications/_header (112.5ms)
+Rendered specifications/_header (4.8ms)
+Rendered specifications/_header (122.6ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (10.5ms)
+Rendered specifications/_header (138.4ms)
+Rendered specifications/_header (6.6ms)
+Rendered specifications/_header (12.0ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (16.4ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (6.5ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (22.9ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (6.2ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (17.1ms)
+Rendered specifications/_header (56.4ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (10.7ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (6.2ms)
+Rendered specifications/_header (17.3ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (16.2ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (15.5ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.9ms)
+Rendered specifications/_header (54.2ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (27.0ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (10.4ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (26.4ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (48.2ms)
+Rendered specifications/_header (307.2ms)
+Rendered specifications/_list (708.4ms)
+Completed in 1376ms (View: 1320 | 200 OK [http://localhost/products/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:02) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b000858"}
+Sending data 
+Completed in 239ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b000858]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:02) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000861"}
+Sending data 
+Completed in 151ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000861]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:02) [GET]
+  Parameters: {"id"=>"4ba78e1243a76d710b00086a"}
+Sending data 
+Completed in 60ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1243a76d710b00086a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:02) [GET]
+  Parameters: {"id"=>"4ba78e1443a76d710b000874"}
+Sending data 
+Completed in 157ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1443a76d710b000874]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1543a76d710b00087d"}
+Sending data 
+Completed in 61ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1543a76d710b00087d]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1643a76d710b000886"}
+Sending data 
+Completed in 56ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1643a76d710b000886]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1743a76d710b00088f"}
+Sending data 
+Completed in 165ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1743a76d710b00088f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1943a76d710b000899"}
+Sending data 
+Completed in 57ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1943a76d710b000899]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1a43a76d710b0008a2"}
+Sending data 
+Completed in 58ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1a43a76d710b0008a2]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:03) [GET]
+  Parameters: {"id"=>"4ba78e1c43a76d710b0008ab"}
+Sending data 
+Completed in 157ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1c43a76d710b0008ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:04) [GET]
+  Parameters: {"id"=>"4ba78e1d43a76d710b0008b4"}
+Sending data 
+Completed in 55ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1d43a76d710b0008b4]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:55:04) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 162ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing ProductsController#compute_aggregation (for 127.0.0.1 at 2010-05-13 14:55:07) [GET]
+  Parameters: {"id"=>"4b892a6d43a76d7c3f0001bc"}
+Redirected to http://localhost:3000/products/apple_iphone3gs_32gb
+Completed in 60523ms | 302 Found [http://localhost/products/compute_aggregation/4b892a6d43a76d7c3f0001bc]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-05-13 14:56:08) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering products/show
+Rendered products/_similar_products (577.2ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (5.8ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (9.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (12.5ms)
+Rendered products/_dimensions (0.0ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (0.1ms)
+Rendered products/_dimensions (8.9ms)
+Rendered products/_dimensions (43.4ms)
+Rendered products/_dimensions (45.6ms)
+Rendered offers/_list (23.2ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (6.6ms)
+Rendered specifications/_header (24.1ms)
+Rendered specifications/_header (6.4ms)
+Rendered specifications/_header (6.6ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (49.2ms)
+Rendered specifications/_header (6.3ms)
+Rendered specifications/_header (11.6ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (4.6ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (21.1ms)
+Rendered specifications/_header (93.3ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (4.7ms)
+Rendered specifications/_header (15.1ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (10.4ms)
+Rendered specifications/_header (30.4ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (10.7ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (16.5ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (6.7ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (5.9ms)
+Rendered specifications/_header (23.4ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (6.0ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (16.6ms)
+Rendered specifications/_header (56.4ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (10.5ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (6.4ms)
+Rendered specifications/_header (17.8ms)
+Rendered specifications/_header (251.2ms)
+Rendered specifications/_header (6.1ms)
+Rendered specifications/_header (262.7ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (17.6ms)
+Rendered specifications/_header (5.8ms)
+Rendered specifications/_header (5.7ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.5ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (58.6ms)
+Rendered specifications/_header (5.6ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (27.0ms)
+Rendered specifications/_header (5.4ms)
+Rendered specifications/_header (10.4ms)
+Rendered specifications/_header (5.0ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (5.3ms)
+Rendered specifications/_header (5.1ms)
+Rendered specifications/_header (26.0ms)
+Rendered specifications/_header (4.6ms)
+Rendered specifications/_header (4.6ms)
+Rendered specifications/_header (5.2ms)
+Rendered specifications/_header (46.2ms)
+Rendered specifications/_header (439.1ms)
+Rendered specifications/_list (970.8ms)
+Completed in 1962ms (View: 1897 | 200 OK [http://localhost/products/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:10) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 498ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:11) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b000858"}
+Sending data 
+Completed in 57ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b000858]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:11) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000861"}
+Sending data 
+Completed in 202ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000861]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:11) [GET]
+  Parameters: {"id"=>"4ba78e1243a76d710b00086a"}
+Sending data 
+Completed in 55ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1243a76d710b00086a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:11) [GET]
+  Parameters: {"id"=>"4ba78e1443a76d710b000874"}
+Sending data 
+Completed in 195ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1443a76d710b000874]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:11) [GET]
+  Parameters: {"id"=>"4ba78e1543a76d710b00087d"}
+Sending data 
+Completed in 53ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1543a76d710b00087d]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1643a76d710b000886"}
+Sending data 
+Completed in 192ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1643a76d710b000886]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1743a76d710b00088f"}
+Sending data 
+Completed in 53ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1743a76d710b00088f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1943a76d710b000899"}
+Sending data 
+Completed in 200ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1943a76d710b000899]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1a43a76d710b0008a2"}
+Sending data 
+Completed in 56ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1a43a76d710b0008a2]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1c43a76d710b0008ab"}
+Sending data 
+Completed in 195ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1c43a76d710b0008ab]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:12) [GET]
+  Parameters: {"id"=>"4ba78e1d43a76d710b0008b4"}
+Sending data 
+Completed in 58ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1d43a76d710b0008b4]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-05-13 14:56:16) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (67.2ms)
+Rendered home/_product_price (4.3ms)
+Rendered home/_product_tab_overview (12.9ms)
+Rendered home/_product_tabs (19.8ms)
+Completed in 307ms (View: 98 | 200 OK [http://localhost/product/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:16) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000854"}
+Sending data 
+Completed in 69ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000854]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:16) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000852"}
+Sending data 
+Completed in 210ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000852]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:17) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b00085a"}
+Sending data 
+Completed in 50ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b00085a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:56:17) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000863"}
+Sending data 
+Completed in 204ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000863]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-05-13 14:56:19) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_32gb", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (9.4ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (14.6ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.6ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (1.9ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (18.5ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (0.7ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.3ms)
+Rendered home/_product_tab_ratings_bis (12.4ms)
+Rendered home/_product_tab_ratings_bis (58.0ms)
+Rendered home/_product_tab_ratings (78.1ms)
+Rendered home/_product_tabs (84.7ms)
+Completed in 161ms (View: 94 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_32gb]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-05-13 14:56:20) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4b892a6d43a76d7c3f0001bc"}
+Rendered products/_dimension_explanation (442.0ms)
+Completed in 969ms (View: 448 | 200 OK [http://localhost/products/dimension_explanation/4b892a6d43a76d7c3f0001bc?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-05-13 14:56:23) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000015", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4b892a6d43a76d7c3f0001bc"}
+Rendered products/_dimension_explanation (263.4ms)
+Completed in 823ms (View: 266 | 200 OK [http://localhost/products/dimension_explanation/4b892a6d43a76d7c3f0001bc?dimension_id=4bb8714c43a76d3d03000015]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 14:58:23) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (226.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 14:58:59) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:00:47) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:04:12) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:05:23) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:06:31) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (comparison of Product with Product failed) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    app/models/knowledge.rb:352:in `sort!'
+    app/models/knowledge.rb:352:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:08:13) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+
+ActionView::TemplateError (undefined method `generate_matching_products' for #<ProductsByShortcut:0x106774578>) on line #40 of app/views/home/products_search.html.erb:
+37:     <div class="spcr"></div>
+38:     <% dimension_root = @current_knowledge.dimension_root %>
+39:       <% if @search_string.nil? %>
+40:          <% products_by_ranking_categories = @current_knowledge.ranking_categories(@threshold_confidence) %>
+41:          <% last_ranking_category = products_by_ranking_categories.last.first %>
+42:          <% for ranking_category, label, products in products_by_ranking_categories %>
+43:             <ul <%= "class=\"last\"" if ranking_category == last_ranking_category %>>
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/models/knowledge.rb:363:in `ranking_categories'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/keys.rb:80:in `inject'
+    app/models/knowledge.rb:361:in `each'
+    app/models/knowledge.rb:361:in `inject'
+    app/models/knowledge.rb:361:in `ranking_categories'
+    app/views/home/products_search.html.erb:40
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (161.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:12:15) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 16596ms (View: 15990 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:32) [GET]
+  Parameters: {"id"=>"4bb4015e43a76d2190000004"}
+Sending data 
+Completed in 202ms (View: 3 | 200 OK [http://localhost/medias/datas/4bb4015e43a76d2190000004]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:32) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 157ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78f0b43a76d710b001172"}
+Sending data 
+Completed in 59ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78f0b43a76d710b001172]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 61ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78d7543a76d710b0001f0"}
+Sending data 
+Completed in 159ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d7543a76d710b0001f0]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78e8943a76d710b000cc4"}
+Sending data 
+Completed in 61ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e8943a76d710b000cc4]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78e1f43a76d710b0008da"}
+Sending data 
+Completed in 66ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1f43a76d710b0008da]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:33) [GET]
+  Parameters: {"id"=>"4ba78ead43a76d710b000dbf"}
+Sending data 
+Completed in 179ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ead43a76d710b000dbf]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:34) [GET]
+  Parameters: {"id"=>"4ba78d7a43a76d710b000227"}
+Sending data 
+Completed in 172ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d7a43a76d710b000227]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:34) [GET]
+  Parameters: {"id"=>"4ba78eb443a76d710b000dff"}
+Sending data 
+Completed in 156ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eb443a76d710b000dff]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:34) [GET]
+  Parameters: {"id"=>"4ba78df443a76d710b000745"}
+Sending data 
+Completed in 54ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78df443a76d710b000745]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:12:34) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 162ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
