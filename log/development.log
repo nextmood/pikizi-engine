@@ -4242,3 +4242,186 @@ Rendering template within layouts/application
 Rendering knowledges/usages_list
 Rendered knowledges/_usages (252.7ms)
 Completed in 575ms (View: 527 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-13 15:26:48) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3343a76d1c5d000005"}
+Rendered knowledges/_usage_edit (167.3ms)
+Completed in 341ms (View: 170 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3343a76d1c5d000005]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:28:44) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (352.1ms)
+Completed in 565ms (View: 517 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-13 15:28:47) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3343a76d1c5d000005"}
+Rendered knowledges/_usage_edit (212.5ms)
+Completed in 381ms (View: 217 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3343a76d1c5d000005]
+
+
+Processing KnowledgesController#remove_usage_editor (for 127.0.0.1 at 2010-05-13 15:30:47) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3343a76d1c5d000005"}
+Completed in 167ms (View: 1 | 200 OK [http://localhost/knowledges/remove_usage_editor/4bbaff3343a76d1c5d000005]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-13 15:30:48) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3343a76d1c5d000005"}
+Rendered knowledges/_usage_edit (206.1ms)
+Completed in 260ms (View: 212 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3343a76d1c5d000005]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:31:38) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (380.7ms)
+Completed in 619ms (View: 571 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-13 15:31:41) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3243a76d1c5d000004"}
+Rendered knowledges/_usage_edit (202.0ms)
+Completed in 397ms (View: 207 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3243a76d1c5d000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 15:31:53) [GET]
+  Parameters: {"paragraph_id"=>"4ba58a8443a76d3158000019", "id"=>"4ba58a8043a76d3158000003", "opinion_id"=>"4ba58fa643a76d3213000005"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (18.3ms)
+Rendered reviews/_header (44.2ms)
+Rendered interpretor/_opinion (11.9ms)
+Rendered interpretor/_dimensions_related (47.0ms)
+Rendered interpretor/_usage_related (167.5ms)
+Rendered interpretor/_usages_related (182.4ms)
+Rendered interpretor/_products_selector_filter (17.3ms)
+Rendered interpretor/_products_selector_filters (24.6ms)
+Rendered interpretor/_products_selector (39.9ms)
+Rendered interpretor/_opinion_selector_tip (54.3ms)
+Rendered interpretor/_paragraph_editor_opinion (305.5ms)
+Completed in 891ms (View: 448 | 200 OK [http://localhost/edit_review/4ba58a8043a76d3158000003/4ba58a8443a76d3158000019/4ba58fa643a76d3213000005]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:31:54) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 88ms (View: 5 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing KnowledgesController#delete_usage (for 127.0.0.1 at 2010-05-13 15:32:12) [GET]
+  Parameters: {"id"=>"4bbaff3243a76d1c5d000004"}
+Redirected to http://localhost:3000/usages_list
+Completed in 89ms | 302 Found [http://localhost/knowledges/delete_usage/4bbaff3243a76d1c5d000004]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:32:12) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (392.4ms)
+Completed in 654ms (View: 603 | 200 OK [http://localhost/usages_list]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 15:32:22) [GET]
+  Parameters: {"paragraph_id"=>"4ba58a8443a76d3158000017", "id"=>"4ba58a8043a76d3158000003"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+
+ActionView::TemplateError (A copy of Product has been removed from the module tree but is still active!) on line #6 of app/views/reviews/_header.html.erb:
+3:     <tr>
+4:       <% for product in review.products %>
+5:         <td valign="top" width="80">
+6:                   <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
+7: 
+8:         </td>
+9:               <% end %>
+
+    app/models/product.rb:54:in `similar_products'
+    app/views/reviews/_header.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/_header.html.erb:4
+    app/views/interpretor/edit_review.html.erb:4
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (189.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 15:32:29) [GET]
+  Parameters: {"paragraph_id"=>"4ba58a8443a76d3158000017", "id"=>"4ba58a8043a76d3158000003"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (18.2ms)
+Rendered reviews/_header (185.2ms)
+Rendered interpretor/_opinion (129.7ms)
+Rendered interpretor/_opinion (6.5ms)
+Rendered interpretor/_opinion (6.9ms)
+Rendered interpretor/_opinion (6.5ms)
+Rendered interpretor/_opinion_selector_type (1.6ms)
+Completed in 1090ms (View: 428 | 200 OK [http://localhost/edit_review/4ba58a8043a76d3158000003/4ba58a8443a76d3158000017]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:32:30) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 139ms (View: 4 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 15:32:32) [GET]
+  Parameters: {"paragraph_id"=>"4ba58a8443a76d3158000019", "id"=>"4ba58a8043a76d3158000003"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (17.3ms)
+Rendered reviews/_header (38.1ms)
+Rendered interpretor/_opinion (79.1ms)
+Rendered interpretor/_opinion_selector_type (0.7ms)
+Completed in 440ms (View: 185 | 200 OK [http://localhost/edit_review/4ba58a8043a76d3158000003/4ba58a8443a76d3158000019]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:32:33) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 61ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 15:32:42) [GET]
+  Parameters: {"paragraph_id"=>"4ba58a8443a76d3158000019", "id"=>"4ba58a8043a76d3158000003", "opinion_id"=>"4ba58fa643a76d3213000005"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (17.6ms)
+Rendered reviews/_header (40.0ms)
+Rendered interpretor/_opinion (0.2ms)
+Rendered interpretor/_dimensions_related (29.8ms)
+Rendered interpretor/_usage_related (4.3ms)
+Rendered interpretor/_usages_related (18.6ms)
+Rendered interpretor/_products_selector_filter (10.9ms)
+Rendered interpretor/_products_selector_filters (105.1ms)
+Rendered interpretor/_products_selector (112.7ms)
+Rendered interpretor/_opinion_selector_tip (119.3ms)
+Rendered interpretor/_paragraph_editor_opinion (183.8ms)
+Completed in 578ms (View: 295 | 200 OK [http://localhost/edit_review/4ba58a8043a76d3158000003/4ba58a8443a76d3158000019/4ba58fa643a76d3213000005]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:32:43) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 70ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]

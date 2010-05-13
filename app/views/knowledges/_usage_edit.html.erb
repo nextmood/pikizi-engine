@@ -19,6 +19,9 @@
     <b>for <%= pluralize((products_for_usage = Opinion.related_products_for(opinions_for_usage)).size, "product") %> </b>
     <%= products_for_usage.collect { |p| link_to(p.label, "/product/#{p.idurl}") }.join(', ') %>
 
-
-
+    <div style="font-size:80%;">
+    <% for opinion in opinions_for_usage %>
+        <div><%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %><div>
+    <% end %>
+    </div>
 <% end -%>
