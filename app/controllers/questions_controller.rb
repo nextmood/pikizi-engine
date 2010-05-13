@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
   def show
     get_products_selected  # initialize @products and @products_selected
     @question = @current_knowledge.get_question_by_idurl(params[:question_idurl])
+    @question.link_back
     @products_distribution = @question.distribution_avg_weight
   end
 

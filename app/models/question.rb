@@ -111,7 +111,7 @@ class Question < Root
   # a set of products
   # the measure is a 3-upple made of [standard deviation, nb product, average weight]
   def discrimination(user,  product_idurls)
-    raise "error" unless product_idurls.is_a?(Array) and product_idurls.size > 0
+    raise "error product_idurls=#{product_idurls.inspect}" unless product_idurls.is_a?(Array) and product_idurls.size > 0
     weights = []; deviations = []
     product_idurls.each do |pidurl|
       weights << (distribution_avg_weight[pidurl] || 0.0)

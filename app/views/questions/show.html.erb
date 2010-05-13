@@ -77,14 +77,14 @@
       </div>
       <div style="border-bottom:1px solid black;">
         &nbsp;discrimination=
-
+        <% products_idurls = @products_selected.collect(&:idurl) %>
         <%= render(:partial => "/questions/discrimination",
-               :locals => {:discrimination => @question.discrimination(nil, @pidurls_selected)}) %>
+               :locals => {:discrimination => @question.discrimination(nil, products_idurls)}) %>
         <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
         <% unless @products_selected.size == @products.size %>
             global=
             <%= render(:partial => "/questions/discrimination",
-               :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
+               :locals => {:discrimination => @question.discrimination(nil, products_idurls)}) %>
         <% end %>
         <%= render(:partial => "/knowledges/products_selection",
                :locals => { :page_url => "/questions/#{@current_knowledge.idurl}/#{@question.idurl}", :products => @products, :products_selected => @products_selected }) %>

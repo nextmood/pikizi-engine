@@ -641,3 +641,2052 @@ Rendered knowledges/_show_bis (123.7ms)
 Rendered knowledges/_show_bis (435.1ms)
 Rendered knowledges/_show (1144.7ms)
 Completed in 1608ms (View: 1332 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-13 14:29:58) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (0.9ms)
+Rendered knowledges/_products_selection (38.0ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (9.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (10.1ms)
+Rendered knowledges/_show_bis (35.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_show_bis (62.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (63.0ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (8.0ms)
+Rendered knowledges/_show_bis (75.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (3.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_show_bis (26.1ms)
+Rendered knowledges/_show_bis (245.3ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (69.8ms)
+Rendered knowledges/_show_bis (86.3ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (11.7ms)
+Rendered knowledges/_show_bis (102.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.9ms)
+Rendered knowledges/_show_bis (12.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_show_bis (17.7ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.9ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (64.1ms)
+Rendered knowledges/_show_bis (70.0ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.3ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.7ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.0ms)
+Rendered knowledges/_show_bis (35.2ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (74.1ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.2ms)
+Rendered knowledges/_show_bis (90.8ms)
+Rendered knowledges/_show_bis (143.4ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.1ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_show_bis (10.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.1ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (62.5ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (71.3ms)
+Rendered knowledges/_show_bis (88.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.0ms)
+Rendered knowledges/_show_bis (24.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (20.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.0ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_show_bis (124.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_show_bis (31.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.5ms)
+Rendered knowledges/_show_bis (10.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (8.2ms)
+Rendered knowledges/_show_bis (97.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.7ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (120.1ms)
+Rendered knowledges/_show_bis (415.2ms)
+Rendered knowledges/_show (1096.5ms)
+Completed in 2112ms (View: 1337 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:30:06) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (107.4ms)
+
+ActionView::TemplateError (error nil) on line #10 of app/views/questions/index.html.erb:
+7:   <%= render(:partial => "/knowledges/products_selection",
+8:          :locals => { :page_url => "/questions/#{@current_knowledge.idurl}", :products => @products, :products_selected => @products_selected }) %>
+9: 
+10:       <% for question in @current_knowledge.questions_sorted_by_desc_discrimination(@pidurls_selected) %>
+11:         <% discrimination = question.discrimination(nil, @pidurls_selected) %>
+12:         <div class="pkz_item_list" style="background-color:<%= (discrimination[0] + discrimination[1]) > 0.0 ? 'lightgray' : 'pink' %>;">
+13:           
+
+    app/models/question.rb:114:in `discrimination'
+    app/models/knowledge.rb:72:in `questions_sorted_by_desc_discrimination'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `sort'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/models/knowledge.rb:72:in `questions_sorted_by_desc_discrimination'
+    app/views/questions/index.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (107.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:33:59) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.8ms)
+Rendered knowledges/_products_selection (35.6ms)
+Rendered questions/_short (13.2ms)
+Rendered questions/_discrimination (17.9ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1381ms (View: 725 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:34:07) [GET]
+  Parameters: {"question_idurl"=>"q18_physical_keyboard", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:34:14) [GET]
+  Parameters: {"question_idurl"=>"q12_apps", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:34:17) [GET]
+  Parameters: {"question_idurl"=>"q22_media_memory", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-13 14:34:22) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.2ms)
+Rendered knowledges/_dimensions (349.2ms)
+Rendered knowledges/_dimensions (364.7ms)
+Completed in 732ms (View: 589 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing QuizzesController#index (for 127.0.0.1 at 2010-05-13 14:34:24) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering quizzes/index
+Completed in 195ms (View: 156 | 200 OK [http://localhost/quizzes/cell_phones]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-13 14:34:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 1592ms (View: 1451 | 200 OK [http://localhost/users]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-13 14:34:30) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 1292ms (View: 1253 | 200 OK [http://localhost/reviews]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 14:34:35) [GET]
+  Parameters: {"id"=>"4bce5e9743a76d14ad000002"}
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/interpretor_controller.rb:13:in `edit_review'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 14:34:46) [GET]
+  Parameters: {"id"=>"4bce5e9743a76d14ad000002"}
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/interpretor_controller.rb:13:in `edit_review'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 14:34:51) [GET]
+  Parameters: {"id"=>"4bce5e9743a76d14ad000002"}
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/interpretor_controller.rb:13:in `edit_review'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (25.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 14:34:54) [GET]
+  Parameters: {"id"=>"4bbfd84f43a76d4432000002"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (29.6ms)
+Rendered reviews/_header (201.9ms)
+Rendered interpretor/_opinion_selector_type (8.8ms)
+Completed in 643ms (View: 303 | 200 OK [http://localhost/edit_review/4bbfd84f43a76d4432000002]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:34:55) [GET]
+  Parameters: {"id"=>"4ba78e4a43a76d710b000a69"}
+Sending data 
+Completed in 114ms (View: 10 | 200 OK [http://localhost/medias/datas/4ba78e4a43a76d710b000a69]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-13 14:34:59) [GET]
+  Parameters: {"id"=>"4bc0e7d743a76d658f000002"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (17.2ms)
+Rendered reviews/_header (36.0ms)
+Rendered interpretor/_opinion_selector_type (0.1ms)
+Completed in 342ms (View: 133 | 200 OK [http://localhost/edit_review/4bc0e7d743a76d658f000002]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 14:34:59) [GET]
+  Parameters: {"id"=>"4ba78f0443a76d710b00112a"}
+Sending data 
+Completed in 154ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78f0443a76d710b00112a]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-13 14:35:07) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 1892ms (View: 1765 | 200 OK [http://localhost/users]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 14:35:10) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (343.9ms)
+Completed in 579ms (View: 531 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-13 14:35:14) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3243a76d1c5d000001"}
+Rendered knowledges/_usage_edit (165.6ms)
+Completed in 313ms (View: 170 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3243a76d1c5d000001]
+
+
+Processing KnowledgesController#remove_usage_editor (for 127.0.0.1 at 2010-05-13 14:35:21) [POST]
+  Parameters: {"authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4bbaff3243a76d1c5d000001"}
+Completed in 40ms (View: 1 | 200 OK [http://localhost/knowledges/remove_usage_editor/4bbaff3243a76d1c5d000001]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 14:35:28) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (350.0ms)
+Completed in 579ms (View: 431 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 14:35:29) [GET]
+  Parameters: {"page"=>"3"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (345.2ms)
+Completed in 574ms (View: 425 | 200 OK [http://localhost/usages_list?page=3]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:35:33) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.9ms)
+Rendered knowledges/_products_selection (35.4ms)
+Rendered questions/_short (1.7ms)
+Rendered questions/_discrimination (0.6ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1019ms (View: 757 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-13 14:35:37) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (177.9ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (10.0ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.3ms)
+Rendered knowledges/_show_bis (36.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (64.1ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.6ms)
+Rendered knowledges/_show_bis (157.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (3.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.4ms)
+Rendered knowledges/_show_bis (27.8ms)
+Rendered knowledges/_show_bis (264.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_show_bis (23.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (11.1ms)
+Rendered knowledges/_show_bis (39.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_show_bis (11.7ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_show_bis (19.3ms)
+Rendered knowledges/_specification_show (0.3ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (154.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (5.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.4ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.1ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (9.2ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (10.1ms)
+Rendered knowledges/_show_bis (37.9ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (11.1ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (9.5ms)
+Rendered knowledges/_show_bis (28.9ms)
+Rendered knowledges/_show_bis (86.2ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (148.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (155.1ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_show_bis (10.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (9.7ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.3ms)
+Rendered knowledges/_show_bis (28.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.7ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.0ms)
+Rendered knowledges/_show_bis (25.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (20.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (151.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_show_bis (208.3ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (32.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_show_bis (10.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_show_bis (33.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.1ms)
+Rendered knowledges/_specification_show (0.3ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.1ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (143.3ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (150.0ms)
+Rendered knowledges/_show_bis (199.2ms)
+Rendered knowledges/_show_bis (519.4ms)
+Rendered knowledges/_show (1334.4ms)
+Completed in 1973ms (View: 1589 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:36:05) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (32.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.9ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1118ms (View: 692 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:36:08) [GET]
+  Parameters: {"question_idurl"=>"q18_physical_keyboard", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:41:47) [GET]
+  Parameters: {"question_idurl"=>"q18_physical_keyboard", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (36.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:41:58) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.8ms)
+Rendered knowledges/_products_selection (35.8ms)
+Rendered questions/_short (1.6ms)
+Rendered questions/_discrimination (0.6ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1415ms (View: 709 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:42:07) [GET]
+  Parameters: {"question_idurl"=>"q5_popular_phone", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `nb_presentation' for nil:NilClass) on line #22 of app/views/questions/show.html.erb:
+19:             weight=<%= @question.weight.round %>,&nbsp;
+20:             <span title="this question was skipped <%= "%d" % @question.nb_oo %> times by users">no-opinion=<%= "%d" % @question.nb_oo %> (<%= "%d" % (@question.proba_oo * 100) %>%)</span>,&nbsp;
+21:             presentation=<span title="this question was presented <%= @question.nb_presentation.round %> time among all users"><%= @question.nb_presentation.round %></span>,&nbsp;
+22:             <%= colored_confidence(@question) %>
+23: 
+24:           </div>
+25:           <div style="font-weight:bold; font-size:140%; margin-top:10px;" title="<%= @question.idurl %>"><%= @question.label %></div>
+
+    app/models/question.rb:233:in `nb_ko'
+    app/models/question.rb:239:in `confidence'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:152:in `confidence'
+    app/helpers/application_helper.rb:27:in `colored_confidence'
+    app/views/questions/show.html.erb:22
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:44:13) [GET]
+  Parameters: {"question_idurl"=>"q5_popular_phone", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+
+ActionView::TemplateError (undefined method `pidurl' for #<Product:0x10303a5f8>) on line #82 of app/views/questions/show.html.erb:
+79:         &nbsp;discrimination=
+80: 
+81:         <%= render(:partial => "/questions/discrimination",
+82:                :locals => {:discrimination => @question.discrimination(nil, @products_selected.collect(&:pidurl))}) %>
+83:         <%= link_to_function("filter products...#{@products_selected.size}/#{@products.size}", "document.getElementById('select_products').toggle();") %>
+84:         <% unless @products_selected.size == @products.size %>
+85:             global=
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+    app/views/questions/show.html.erb:82:in `collect'
+    app/views/questions/show.html.erb:82
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:44:32) [GET]
+  Parameters: {"question_idurl"=>"q5_popular_phone", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.6ms)
+
+ActionView::TemplateError (error nil) on line #87 of app/views/questions/show.html.erb:
+84:         <% unless @products_selected.size == @products.size %>
+85:             global=
+86:             <%= render(:partial => "/questions/discrimination",
+87:                :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
+88:         <% end %>
+89:         <%= render(:partial => "/knowledges/products_selection",
+90:                :locals => { :page_url => "/questions/#{@current_knowledge.idurl}/#{@question.idurl}", :products => @products, :products_selected => @products_selected }) %>
+
+    app/models/question.rb:114:in `discrimination'
+    app/views/questions/show.html.erb:87
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-05-13 14:45:05) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (0.8ms)
+Rendered knowledges/_products_selection (36.7ms)
+Rendered questions/_short (1.5ms)
+Rendered questions/_discrimination (0.5ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.0ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.3ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.2ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (0.8ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_short (1.4ms)
+Rendered questions/_discrimination (0.1ms)
+Completed in 1391ms (View: 714 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:45:09) [GET]
+  Parameters: {"question_idurl"=>"q22_media_memory", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.1ms)
+
+ActionView::TemplateError (error product_idurls=nil) on line #87 of app/views/questions/show.html.erb:
+84:         <% unless @products_selected.size == @products.size %>
+85:             global=
+86:             <%= render(:partial => "/questions/discrimination",
+87:                :locals => {:discrimination => @question.discrimination(nil, @products_idurls)}) %>
+88:         <% end %>
+89:         <%= render(:partial => "/knowledges/products_selection",
+90:                :locals => { :page_url => "/questions/#{@current_knowledge.idurl}/#{@question.idurl}", :products => @products, :products_selected => @products_selected }) %>
+
+    app/models/question.rb:114:in `discrimination'
+    app/views/questions/show.html.erb:87
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-05-13 14:46:37) [GET]
+  Parameters: {"question_idurl"=>"q22_media_memory", "knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/show
+Rendered questions/_discrimination (0.1ms)
+Rendered questions/_discrimination (0.1ms)
+Rendered knowledges/_select_all (0.5ms)
+Rendered knowledges/_products_selection (32.9ms)
+Completed in 620ms (View: 173 | 200 OK [http://localhost/questions/cell_phones/q22_media_memory]

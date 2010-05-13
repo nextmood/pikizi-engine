@@ -7,8 +7,9 @@
   <%= render(:partial => "/knowledges/products_selection",
          :locals => { :page_url => "/questions/#{@current_knowledge.idurl}", :products => @products, :products_selected => @products_selected }) %>
 
-      <% for question in @current_knowledge.questions_sorted_by_desc_discrimination(@pidurls_selected) %>
-        <% discrimination = question.discrimination(nil, @pidurls_selected) %>
+      <% pidurls_selected = @products_selected.collect(&:idurl) %>
+      <% for question in @current_knowledge.questions_sorted_by_desc_discrimination(pidurls_selected) %>
+        <% discrimination = question.discrimination(nil, pidurls_selected) %>
         <div class="pkz_item_list" style="background-color:<%= (discrimination[0] + discrimination[1]) > 0.0 ? 'lightgray' : 'pink' %>;">
           
             <%= render(:partial => "questions/short", :locals => {:question => question }) %>
