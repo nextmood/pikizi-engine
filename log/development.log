@@ -1,0 +1,62 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-13 08:03:19) [GET]
+
+Mongo::ConnectionFailure (failed to connect to any given host:port):
+  mongo (1.0) lib/./lib/mongo/connection.rb:435:in `connect_to_master'
+  mongo (1.0) lib/./lib/mongo/connection.rb:112:in `initialize'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:33:in `new'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:33:in `connection'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:58:in `database'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/persistence.rb:30:in `database'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/persistence.rb:48:in `collection'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:193:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:91:in `first'
+  app/controllers/application_controller.rb:50:in `check_user_authorization'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (92.4ms)
+Rendered rescues/_request_and_response (2.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-13 08:03:33) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 2981ms (View: 1518 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 08:03:52) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"hyA2wXf/dQnRLON0wiwgoLdBg/hmUtWrZ1yvjap2pwI=", "s"=>"iphone"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 4838ms (View: 234 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 08:03:57) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 955ms (View: 8 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 08:03:58) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 721ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 08:03:59) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 741ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]

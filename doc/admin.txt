@@ -10,6 +10,7 @@ exit
 mongorestore -d pikizi_mongodb_development /Users/fpatte/Desktop/dump/pikizi_mongodb_production
 
 
+# mongo db see http://gist.github.com/291349
 # stop mongo on dedibox
 /opt/mongodb/bin/mongo admin
 db.shutdownServer()

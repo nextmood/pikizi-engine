@@ -1,0 +1,6 @@
+<% form_remote_tag :url => "/interpretor/add_product_by_label" do -%>
+    name of product
+    <%= text_field_with_auto_complete "product_#{name}", "label", {}, {:method => :get} %>
+    <%= submit_tag "add" %>
+    &nbsp;<%= link_to_remote("or cancel", :url => { :action => "cancel_product_selector", :id => name }, :html => {:style => "font-size:80%;"}) %>
+<% end -%>

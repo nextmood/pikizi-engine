@@ -12,15 +12,51 @@
   <component name="GemRequirementsHolder" version="2">
     <requirement>
       <requirement>
+        <dependency name="activesupport" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="bson" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="factory_girl" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="config/environment.rb" />
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="jnunemaker-validatable" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="json_pure" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="mocha" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="config/environment.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mongo" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mongo_mapper" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source manual="true" />
     </requirement>
     <requirement>
       <requirement>
@@ -50,12 +86,14 @@
       <requirement>
         <dependency name="repeated_auto_complete" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/environment.rb" />
     </requirement>
     <requirement>
       <requirement>
         <dependency name="rpx_now" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/environment.rb" />
     </requirement>
     <requirement>
@@ -68,6 +106,7 @@
       <requirement>
         <dependency name="state_machine" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
+      <source manual="true" />
       <source from="config/environment.rb" />
     </requirement>
   </component>
@@ -88,15 +127,16 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] shoulda (v2.10.3, /Library/Ruby/Gems/1.8/gems/shoulda-2.10.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v2.3.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v2.3.5, /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] repeated_auto_complete (v0.1.3, /Library/Ruby/Gems/1.8/gems/repeated_auto_complete-0.1.3)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] state_machine (v0.9.1, /Library/Ruby/Gems/1.8/gems/state_machine-0.9.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl (v1.2.4, /Library/Ruby/Gems/1.8/gems/factory_girl-1.2.4)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] jnunemaker-validatable (v1.8.4, /Library/Ruby/Gems/1.8/gems/jnunemaker-validatable-1.8.4)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] mongo_mapper (v0.7.5, /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rpx_now (v0.6.20, /Library/Ruby/Gems/1.8/gems/rpx_now-0.6.20)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.3, /Library/Ruby/Gems/1.8/gems/json_pure-1.4.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rpx_now (v0.6.20, /Library/Ruby/Gems/1.8/gems/rpx_now-0.6.20)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bson (v1.0, /Library/Ruby/Gems/1.8/gems/bson-1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jnunemaker-validatable (v1.8.4, /Library/Ruby/Gems/1.8/gems/jnunemaker-validatable-1.8.4)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo (v1.0, /Library/Ruby/Gems/1.8/gems/mongo-1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mongo_mapper (v0.7.5, /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.0.0, /Library/Ruby/Gems/1.8/gems/rack-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] state_machine (v0.9.1, /Library/Ruby/Gems/1.8/gems/state_machine-0.9.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] repeated_auto_complete (v0.1.3, /Library/Ruby/Gems/1.8/gems/repeated_auto_complete-0.1.3)" level="application" />
   </component>
 </module>
 
