@@ -1,9 +1,0 @@
- <% for paragraph in paragraphs %>
-     <div style="background-color:white; border:<%= (paragraph.id == current_paragraph.id ? '2px solid orange' : '1px solid black') %>; margin-top:5px; margin-bottom:5px; padding:3px;">
-       <%= paragraph.content_without_html %>
-       <% nb_opinions_4_paragraph = paragraph.opinions.count %>
-       <%= link_to( pluralize(nb_opinions_4_paragraph, "opinion"),
-                   "/edit_review/#{paragraph.review_id}/#{paragraph.id}",
-                   :style => "font-size:80%; margin-left:10px; color:orange;") %>
-     </div>
- <% end %>

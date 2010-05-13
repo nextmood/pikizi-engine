@@ -1,5 +1,0 @@
-<% if specification.is_compatible_grammar(:comparator) %>
-    <%= specification.tags.collect { |t| "#{check_box_tag("specification_filter_datas[]", t.idurl )} #{t.label}" }.join(', ') %>
-<% else %>
-    unknown filter <%= "#{specification.is_compatible_grammar(:comparator).inspect}    #{specification.label} class=#{specification.class} #{specification.id} " %>
-<% end %>
