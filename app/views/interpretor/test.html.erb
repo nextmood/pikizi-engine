@@ -1,50 +1,52 @@
-<style type="text/css">
-    label { color:gray; }
-    field { color:darkgray; }
-    .list { border-bottom:1px solid black; padding-bottom:2px;}
-    .list div { margin-bottom:2px;""}
-    .clearBoth { clear:both; margin-top:2px;}
-    .autocomplete_select { display:none; }
-    .comparator_operator { font-size:120%; font-weight:bold; margin-top:5px;}
-</style>
 
-<h2>in review <%= @review.products.collect(&:label).join(', ') %> </h2>
- review_id=<%= @review.id %>,
-opinion_id=<%= @current_opinion.id %>
-<hr/>
-<div style="max-height:250px; overflow:auto;">
-  <% for current_index in 0..@paragraphs_size-1 %>
 
-    <% if current_index == @paragraph_index %>
-       <div style="margin-bottom:5px; padding:2px; background-color:lightgray;">
-      <a name="current_paragraph"><%=h @paragraphs[current_index].content %></a>
-    </div>
-    <% else %>
-      <div style="margin-bottom:5px; padding:2px;">
-      <%=h @paragraphs[current_index].content %>
-    </div>
+
+<!-- header -->
+<table style=" background-color:white; width:100%; border:1px solid black; margin-bottom:10px;">
+    <tr>
+        <td valign="top" width="<%= 95 * @products4review.size %>">        
+            <% for product in @products4review %>
+                  <div class="image"><%= link_to(product_image(product), "/product/#{product.idurl}") %></div>
+            <% end %>
+            <br class="pkz_clearBoth" />
+        </td>
+        <td valign="top">
+            <%= render(:partial => "/reviews/short", :locals => {:review => @review } ) %>
+        </td>
+    </tr>
+</table>
+
+
+
+<div style="max-height:250px; overflow:hidden;">
+    <% for current_index in 0..@paragraphs_size-1 %>
+        <% if current_index == @paragraph_index - 1 %>
+          <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
+              <a name="previous_paragraph"><%=h @paragraphs[current_index].content_without_html %></a>
+          </div>
+        <% elsif current_index == @paragraph_index %>
+            <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:lightgray;">
+                <a <%= "name=\"previous_paragraph\"" if current_index==0 %>name="current_paragraph"><%=h @paragraphs[current_index].content_without_html %></a>
+            </div>
+        <% else %>
+            <div style="border:1px solid black; margin-top:5px; padding:5px; background-color:white;">
+                <%=h @paragraphs[current_index].content_without_html %>
+            </div>
+        <% end %>
     <% end %>
-
-  <% end %>    
 </div>
-<hr/>
- <hr/>
-<% if (opinions = @review.opinions).size > 0 %>
-    <h2><%= pluralize(opinions.size, "opinions") %> so far</h2>
-    <% for opinion in opinions %>
-        <div><%= opinion.to_html %></div>
-    <% end %>
-<% end %>
+
+
 
 <h2>
-  in paragraph 
-  <%= link_to(image_tag("icons/backward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index - 1, :anchor => "current_paragraph") unless @is_first_paragraph %>
-  <%= link_to(image_tag("icons/foward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index + 1, :anchor => "current_paragraph") unless @is_last_paragraph %>
+  Create opinion in paragraph
+  <%= link_to(image_tag("icons/backward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index - 1, :anchor => "previous_paragraph") unless @is_first_paragraph %>
+  <%= link_to(image_tag("icons/foward.png", :border => 0), :action => "test", :id => @review.id, :paragraph_index => @paragraph_index + 1, :anchor => "previous_paragraph") unless @is_last_paragraph %>
   <%= @paragraph_index + 1 %>/<%= @paragraphs_size %>
   &nbsp;which dimensions are involved?
 </h2>
 
-<%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @knowledge, :opinion => @current_opinion} ) %>
+<%= render(:partial => "/interpretor/dimensions_related", :locals => {:knowledge => @current_knowledge, :opinion => @opinion} ) %>
 
 
 
@@ -54,6 +56,13 @@ opinion_id=<%= @current_opinion.id %>
 </h2>
 <h2>for usage <%= text_field_tag(:usage, "", :size => "100") %><%= submit_tag "create opinion", :style => "margin-left:20px;" %></h2>
 
-<div id="div_opinion_selector" style="height:300px;"><%= render(:partial => "opinion_selector_tip") %></div>
+<div id="div_opinion_selector" style="height:300px;"><%= render(:partial => "opinion_selector_tip", :locals => { :opinion => @opinion} ) %></div>
 
 
+<hr/>
+<% if (opinions = @review.opinions).size > 0 %>
+    <h2><%= pluralize(opinions.size, "opinions") %> so far</h2>
+    <% for opinion in opinions %>
+        <div><%= opinion.to_html %></div>
+    <% end %>
+<% end %>

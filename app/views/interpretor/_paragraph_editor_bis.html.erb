@@ -1,0 +1,12 @@
+<div id="div_paragraph_editor_bis">
+    <%= fckeditor_textarea("opinion", "content_fck", :toolbarSet => "Pikizi", :width => "100%", :height => "8em", :ajax => true ) %>
+    <!--
+    <div style="margin-bottom:5px;">
+      <%= link_to_function("cut paragraph",
+                        "alert(get_selection_range(document.getElementById('opinion_#{opinion.id}_content_fck_editor')));",
+                        :style => "color:orange;") %>
+
+    </div>
+    -->
+</div>
+
