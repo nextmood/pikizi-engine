@@ -105,6 +105,8 @@ class KnowledgesController < ApplicationController
   def delete_usage
     usage_id = BSON::ObjectID.from_string(params[:id])
     usage = Usage.find(usage_id)
+    # clean up all opinions first
+    usage.opinions.each { |opinion| opinion.usage_ids.delete(usage.id); opinion.save }
     usage.destroy
     redirect_to "/usages_list"
   end

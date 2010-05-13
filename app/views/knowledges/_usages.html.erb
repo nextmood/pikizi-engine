@@ -5,7 +5,7 @@
             <%= link_to(image_tag("icons/backward.png", :border => 0), "/usages_list?page=#{usages.prev.number}") if usages.prev? %>
              page <%= usages.number %>
             <%= link_to(image_tag("icons/foward.png", :border => 0), "/usages_list?page=#{usages.next.number}") if usages.next? %>
-            <%= submit_tag "filter", :style => "margin-left:30px;" %>
+            <!-- <%= submit_tag "filter", :style => "margin-left:30px;" %> -->
         <% end -%>
         <hr/>
     </td></tr>
