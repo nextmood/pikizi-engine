@@ -4425,3 +4425,192 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:32:43) [GET]
   Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
 Sending data 
 Completed in 70ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:33:26) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (330.1ms)
+Completed in 641ms (View: 591 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:34:40) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (339.4ms)
+Completed in 640ms (View: 504 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:34:44) [GET]
+  Parameters: {"page"=>"1"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (338.9ms)
+Completed in 646ms (View: 506 | 200 OK [http://localhost/usages_list?page=1]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-13 15:34:47) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (358.3ms)
+Completed in 575ms (View: 528 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-13 15:38:21) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 172ms (View: 29 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-13 15:38:25) [GET]
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 20556ms (View: 19831 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:46) [GET]
+  Parameters: {"id"=>"4bb4015e43a76d2190000004"}
+Sending data 
+Completed in 231ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb4015e43a76d2190000004]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:46) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 191ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:46) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 56ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:47) [GET]
+  Parameters: {"id"=>"4ba78f0b43a76d710b001172"}
+Sending data 
+Completed in 66ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78f0b43a76d710b001172]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:47) [GET]
+  Parameters: {"id"=>"4ba78eeb43a76d710b00101f"}
+Sending data 
+Completed in 209ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eeb43a76d710b00101f]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:47) [GET]
+  Parameters: {"id"=>"4ba78e8943a76d710b000cc4"}
+Sending data 
+Completed in 58ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e8943a76d710b000cc4]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:47) [GET]
+  Parameters: {"id"=>"4ba78d7543a76d710b0001f0"}
+Sending data 
+Completed in 53ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d7543a76d710b0001f0]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:47) [GET]
+  Parameters: {"id"=>"4ba78e1f43a76d710b0008da"}
+Sending data 
+Completed in 196ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1f43a76d710b0008da]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:48) [GET]
+  Parameters: {"id"=>"4ba78ead43a76d710b000dbf"}
+Sending data 
+Completed in 209ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78ead43a76d710b000dbf]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:48) [GET]
+  Parameters: {"id"=>"4ba78d7a43a76d710b000227"}
+Sending data 
+Completed in 58ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d7a43a76d710b000227]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:48) [GET]
+  Parameters: {"id"=>"4ba78eb443a76d710b000dff"}
+Sending data 
+Completed in 52ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78eb443a76d710b000dff]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:48) [GET]
+  Parameters: {"id"=>"4ba78df443a76d710b000745"}
+Sending data 
+Completed in 204ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78df443a76d710b000745]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-05-13 15:38:51) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (65.4ms)
+Rendered home/_product_price (8.7ms)
+Rendered home/_product_tab_overview (14.4ms)
+Rendered home/_product_tabs (193.3ms)
+Completed in 490ms (View: 287 | 200 OK [http://localhost/product/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:52) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000854"}
+Sending data 
+Completed in 251ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000854]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:52) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000852"}
+Sending data 
+Completed in 53ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000852]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:53) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b00085a"}
+Sending data 
+Completed in 49ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b00085a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-13 15:38:53) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000863"}
+Sending data 
+Completed in 225ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000863]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-05-13 15:38:54) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_32gb", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (9.3ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.4ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (14.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (18.5ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (0.7ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.5ms)
+Rendered home/_product_tab_ratings_bis (13.0ms)
+Rendered home/_product_tab_ratings_bis (59.7ms)
+Rendered home/_product_tab_ratings (83.7ms)
+Rendered home/_product_tabs (113.3ms)
+Completed in 498ms (View: 281 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_32gb]
+
+
+Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-05-13 15:38:56) [POST]
+  Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4b892a6d43a76d7c3f0001bc"}
+Rendered products/_dimension_explanation (447.0ms)
+Completed in 1312ms (View: 456 | 200 OK [http://localhost/products/dimension_explanation/4b892a6d43a76d7c3f0001bc?dimension_id=4bb8714c43a76d3d03000001]

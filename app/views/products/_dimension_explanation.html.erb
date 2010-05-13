@@ -66,7 +66,7 @@
     </tr>
   
 
-    <% if dimension.children.count > 0 %>
+    <% if dimension.children.size > 0 %>
         <tr>
           <th  <%= style_line %>>aggregation of sub-dimension(s)</th>
           <td  <%= style_line %>><%= (Dimension.line_2_weight[:sub_dimensions] *100).round %>%</td>
