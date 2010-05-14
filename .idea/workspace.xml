@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="" />
-    <ignored path="pikizi-engine.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="pikizi-engine.iws" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,55 +27,10 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="knowledge.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="326" column="146" selection-start="11844" selection-end="11844" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="knowledges_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="18" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usages_list.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/usages_list.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_usages.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usages.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="78" selection-start="530" selection-end="530" vertical-scroll-proportion="-4.4210525">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_usage_edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="10" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-15.789474">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="112" column="26" selection-start="4097" selection-end="4097" vertical-scroll-proportion="-17.423077">
               <folding />
             </state>
           </provider>
@@ -84,34 +39,25 @@
       <file leaf-file-name="usage.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/usage.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
+            <state line="37" column="65" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_dimension_explanation.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/products/_dimension_explanation.html.erb">
+      <file leaf-file-name="_usages.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usages.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="33" selection-start="3525" selection-end="3525" vertical-scroll-proportion="1.0238394">
+            <state line="26" column="120" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.38235295">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/question.rb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="32" selection-start="3823" selection-end="3823" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="questions_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/questions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="23" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
+            <state line="14" column="46" selection-start="430" selection-end="643" vertical-scroll-proportion="-8.842105">
               <folding />
             </state>
           </provider>
@@ -130,22 +76,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/reviews/_short.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/review.rb" />
-        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
-        <option value="$PROJECT_DIR$/app/models/dimension.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/config/initializers/database.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/_usages.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/_dimension_explanation.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/root.rb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
+        <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/usages_list.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/usage.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/_usages.html.erb" />
       </list>
     </option>
   </component>
@@ -288,8 +234,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -440,6 +385,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="reviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="knowledges" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -496,16 +463,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Rails.Development">
     <configuration default="false" name="pikizi:reviews_load_amazon" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -853,7 +821,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="303" y="36" width="1781" height="1404" extended-state="0" />
+    <frame x="301" y="37" width="1781" height="1404" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -906,100 +874,112 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/questions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="73" selection-start="699" selection-end="699" vertical-scroll-proportion="0.16479401" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="12" selection-start="10229" selection-end="10230" vertical-scroll-proportion="0.54011977" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="1" selection-start="878" selection-end="878" vertical-scroll-proportion="0.08988764" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/products_filter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="34" selection-start="482" selection-end="510" vertical-scroll-proportion="0.15808383" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/question.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="32" selection-start="3823" selection-end="3823" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/questions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="23" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="146" selection-start="11844" selection-end="11844" vertical-scroll-proportion="0.0">
+        <state line="29" column="2" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="18" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0">
+        <state line="353" column="0" selection-start="13018" selection-end="13018" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="42" selection-start="5275" selection-end="5311" vertical-scroll-proportion="-11.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="44" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.7556886">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/my_quiz.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="55" selection-start="378" selection-end="2257" vertical-scroll-proportion="0.6356589">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/knowledges/usages_list.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usages.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="78" selection-start="530" selection-end="530" vertical-scroll-proportion="-4.4210525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="55" selection-start="6609" selection-end="6615" vertical-scroll-proportion="2.5316455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="10" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-15.789474">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="4" column="54" selection-start="79" selection-end="79" vertical-scroll-proportion="-2.5263157">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/usage.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
+        <state line="37" column="65" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="73" selection-start="246" selection-end="291" vertical-scroll-proportion="0.10294118">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="14" selection-start="218" selection-end="218" vertical-scroll-proportion="-3.1578948">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_list.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="10" selection-start="128" selection-end="128" vertical-scroll-proportion="-3.1578948">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/_dimension_explanation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="33" selection-start="3525" selection-end="3525" vertical-scroll-proportion="1.0238394">
+        <state line="29" column="18" selection-start="1341" selection-end="1341" vertical-scroll-proportion="-13.473684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="430" selection-end="643" vertical-scroll-proportion="-8.842105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="93" selection-start="185" selection-end="185" vertical-scroll-proportion="0.014705882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="26" selection-start="4097" selection-end="4097" vertical-scroll-proportion="-17.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_usages.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="120" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.38235295">
           <folding />
         </state>
       </provider>

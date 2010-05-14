@@ -4614,3 +4614,1977 @@ Processing ProductsController#dimension_explanation (for 127.0.0.1 at 2010-05-13
   Parameters: {"dimension_id"=>"4bb8714c43a76d3d03000001", "authenticity_token"=>"gW5q4PXBWZ+moxasiieHXafdn0+sRaKyceXaWm8+pMQ=", "id"=>"4b892a6d43a76d7c3f0001bc"}
 Rendered products/_dimension_explanation (447.0ms)
 Completed in 1312ms (View: 456 | 200 OK [http://localhost/products/dimension_explanation/4b892a6d43a76d7c3f0001bc?dimension_id=4bb8714c43a76d3d03000001]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-14 11:09:21) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1283ms (View: 875 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#products_search (for 127.0.0.1 at 2010-05-14 11:09:31) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "s"=>"iphone"}
+Rendering template within layouts/application
+Rendering home/products_search
+Completed in 673ms (View: 95 | 200 OK [http://localhost/products_search]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:32) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000aba"}
+Sending data 
+Completed in 137ms (View: 11 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000aba]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:32) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000850"}
+Sending data 
+Completed in 60ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000850]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:32) [GET]
+  Parameters: {"id"=>"4ba78d4c43a76d710b000075"}
+Sending data 
+Completed in 74ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78d4c43a76d710b000075]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-05-14 11:09:34) [GET]
+  Parameters: {"product_idurl"=>"apple_iphone3gs_32gb"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (92.4ms)
+Rendered home/_product_price (34.7ms)
+Rendered home/_product_tab_overview (199.4ms)
+Rendered home/_product_tabs (790.1ms)
+Completed in 1084ms (View: 1025 | 200 OK [http://localhost/product/apple_iphone3gs_32gb]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:35) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000854"}
+Sending data 
+Completed in 168ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000854]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:36) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000852"}
+Sending data 
+Completed in 142ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000852]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:36) [GET]
+  Parameters: {"id"=>"4ba78e1043a76d710b00085a"}
+Sending data 
+Completed in 140ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1043a76d710b00085a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:09:36) [GET]
+  Parameters: {"id"=>"4ba78e1143a76d710b000863"}
+Sending data 
+Completed in 61ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e1143a76d710b000863]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-05-14 11:09:38) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"apple_iphone3gs_32gb", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "knowledge_idurl"=>"cell_phones"}
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (9.6ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (13.3ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.2ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (17.8ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (0.7ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.1ms)
+Rendered home/_product_tab_ratings_bis (2.0ms)
+Rendered home/_product_tab_ratings_bis (12.0ms)
+Rendered home/_product_tab_ratings_bis (65.3ms)
+Rendered home/_product_tab_ratings (103.6ms)
+Rendered home/_product_tabs (113.0ms)
+Completed in 259ms (View: 122 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=apple_iphone3gs_32gb]
+
+
+Processing HomeController#ranking_by_dimension (for 127.0.0.1 at 2010-05-14 11:09:42) [GET]
+  Parameters: {"dimension_idurl"=>"overall_rating"}
+
+ArgumentError (comparison of Array with Array failed):
+  app/controllers/home_controller.rb:111:in `sort!'
+  app/controllers/home_controller.rb:111:in `ranking_by_dimension'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#ranking_by_dimension (for 127.0.0.1 at 2010-05-14 11:11:06) [GET]
+  Parameters: {"dimension_idurl"=>"overall_rating"}
+
+ArgumentError (comparison of Array with Array failed):
+  app/controllers/home_controller.rb:111:in `sort!'
+  app/controllers/home_controller.rb:111:in `ranking_by_dimension'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#ranking_by_dimension (for 127.0.0.1 at 2010-05-14 11:21:03) [GET]
+  Parameters: {"dimension_idurl"=>"overall_rating"}
+Rendering template within layouts/application
+Rendering home/ranking_by_dimension
+Completed in 954ms (View: 209 | 200 OK [http://localhost/ranking/overall_rating]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:21:04) [GET]
+  Parameters: {"id"=>"4bb4015f43a76d2190000008"}
+Sending data 
+Completed in 241ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb4015f43a76d2190000008]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:21:05) [GET]
+  Parameters: {"id"=>"4ba78e5143a76d710b000abe"}
+Sending data 
+Completed in 230ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e5143a76d710b000abe]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-14 11:21:05) [GET]
+  Parameters: {"id"=>"4ba78e0f43a76d710b000854"}
+Sending data 
+Completed in 149ms (View: 1 | 200 OK [http://localhost/medias/datas/4ba78e0f43a76d710b000854]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2010-05-14 11:21:30) [GET]
+Redirected to http://localhost:3000/show/cell_phones
+Completed in 143ms | 302 Found [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-14 11:21:30) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (16.9ms)
+Rendered knowledges/_products_selection (61.9ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (9.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (116.0ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.2ms)
+Rendered knowledges/_show_bis (144.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (8.7ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (172.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_show_bis (12.4ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (3.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.8ms)
+Rendered knowledges/_show_bis (26.7ms)
+Rendered knowledges/_show_bis (228.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (9.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (133.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.8ms)
+Rendered knowledges/_show_bis (13.0ms)
+Rendered knowledges/_show_bis (151.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (11.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (18.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (11.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.3ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.7ms)
+Rendered knowledges/_show_bis (149.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.9ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.0ms)
+Rendered knowledges/_show_bis (26.9ms)
+Rendered knowledges/_show_bis (194.9ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.3ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (119.2ms)
+Rendered knowledges/_show_bis (123.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (9.8ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (9.9ms)
+Rendered knowledges/_show_bis (28.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.5ms)
+Rendered knowledges/_show_bis (24.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (21.7ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.7ms)
+Rendered knowledges/_specification_show (0.3ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (117.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_show_bis (177.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_show_bis (33.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_show_bis (10.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (8.0ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (118.7ms)
+Rendered knowledges/_show_bis (146.6ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.1ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_show_bis (170.3ms)
+Rendered knowledges/_show_bis (573.9ms)
+Rendered knowledges/_show (1289.6ms)
+Completed in 2165ms (View: 1601 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:21:37) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (806.5ms)
+Completed in 1160ms (View: 981 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:24:19) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (248.5ms)
+Completed in 554ms (View: 508 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:25:38) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (252.0ms)
+Completed in 568ms (View: 522 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:27:06) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (256.1ms)
+Completed in 475ms (View: 427 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:37:42) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (275.6ms)
+Completed in 613ms (View: 565 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:38:40) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (263.8ms)
+Completed in 653ms (View: 606 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:40:10) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (266.1ms)
+Completed in 649ms (View: 602 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:40:28) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (267.4ms)
+Completed in 653ms (View: 606 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:43:29) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (268.4ms)
+Completed in 667ms (View: 618 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:43:56) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (268.1ms)
+Completed in 675ms (View: 628 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:44:19) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (265.9ms)
+Completed in 679ms (View: 634 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:46:07) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (269.7ms)
+Completed in 687ms (View: 640 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:47:51) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (266.3ms)
+Completed in 691ms (View: 644 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:48:22) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1084.5ms)
+Completed in 1353ms (View: 1306 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:54:42) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1251.0ms)
+Completed in 1365ms (View: 1315 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 11:56:30) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1087.7ms)
+Completed in 1382ms (View: 1155 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:31) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1092.9ms)
+Completed in 1381ms (View: 1333 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:36) [GET]
+  Parameters: {"page"=>"1"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1290.1ms)
+Completed in 1404ms (View: 1353 | 200 OK [http://localhost/usages_list?page=1]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:40) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1100.8ms)
+Completed in 1398ms (View: 1168 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:44) [GET]
+  Parameters: {"page"=>"3"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1157.4ms)
+Completed in 1270ms (View: 1221 | 200 OK [http://localhost/usages_list?page=3]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:48) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1109.3ms)
+Completed in 1410ms (View: 1363 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:06:50) [GET]
+  Parameters: {"page"=>"1"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1111.2ms)
+Completed in 1435ms (View: 1175 | 200 OK [http://localhost/usages_list?page=1]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:07:35) [GET]
+  Parameters: {"page"=>"1"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1320.8ms)
+Completed in 1433ms (View: 1386 | 200 OK [http://localhost/usages_list?page=1]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:07:43) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1119.6ms)
+Completed in 1445ms (View: 1184 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:13:43) [POST]
+  Parameters: {"search_string"=>"essa", "commit"=>"go", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"3", "action_on_selected"=>"delete"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1050.3ms)
+Completed in 1420ms (View: 1369 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:14:28) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1274.7ms)
+Completed in 1861ms (View: 1518 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:14:41) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1125.6ms)
+Completed in 1317ms (View: 1268 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:14:53) [POST]
+  Parameters: {"commit"=>"go", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"2", "search_label"=>"essai"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1085.1ms)
+Completed in 1374ms (View: 1240 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:15:05) [POST]
+  Parameters: {"commit"=>"go", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"2", "search_label"=>"essai", "action_on_selected"=>"delete"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1087.1ms)
+Completed in 1293ms (View: 1246 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:16:10) [GET]
+
+NameError (undefined local variable or method `usage_ids' for #<KnowledgesController:0x1074077e0>):
+  app/controllers/knowledges_controller.rb:98:in `usages_list'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (24.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:19:58) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1108.8ms)
+Completed in 1415ms (View: 1278 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:20:07) [POST]
+  Parameters: {"commit"=>"go", "usage_selected_ids_action"=>"delete", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"essa"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1128.7ms)
+Completed in 1344ms (View: 1297 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:20:15) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1128.5ms)
+Completed in 1346ms (View: 1299 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:20:18) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1146.7ms)
+Completed in 1373ms (View: 1326 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:28:16) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1126.6ms)
+Completed in 1358ms (View: 1310 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:29:03) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1137.8ms)
+Completed in 1370ms (View: 1323 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:31:11) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1146.3ms)
+Completed in 1388ms (View: 1339 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:31:34) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1200.6ms)
+Completed in 1488ms (View: 1439 | 200 OK [http://localhost/usages_list]
+
+
+Processing ApplicationController#usages_list (for 127.0.0.1 at 2010-05-14 12:35:10) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"size"}
+
+SyntaxError (/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:101: syntax error, unexpected ')', expecting kEND
+    redirect_to "/usages_list?page=#{params[:page]}")  
+                                                     ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:173: syntax error, unexpected $end, expecting kEND):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (21.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#usages_list (for 127.0.0.1 at 2010-05-14 12:36:49) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"size"}
+
+SyntaxError (/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:101: syntax error, unexpected ')', expecting kEND
+    redirect_to "/usages_list?page=#{params[:page]}")  
+                                                     ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:173: syntax error, unexpected $end, expecting kEND):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (23.0ms)
+Rendered rescues/_request_and_response (152.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#usages_list (for 127.0.0.1 at 2010-05-14 12:37:05) [GET]
+
+SyntaxError (/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:101: syntax error, unexpected ')', expecting kEND
+    redirect_to "/usages_list?page=#{params[:page]}")  
+                                                     ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:173: syntax error, unexpected $end, expecting kEND):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (76.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#usages_list (for 127.0.0.1 at 2010-05-14 12:37:11) [GET]
+
+SyntaxError (/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:101: syntax error, unexpected ')', expecting kEND
+    redirect_to "/usages_list?page=#{params[:page]}")  
+                                                     ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/controllers/knowledges_controller.rb:173: syntax error, unexpected $end, expecting kEND):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (22.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:37:47) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1300.4ms)
+Completed in 1881ms (View: 1538 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:37:53) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"essai"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1050.2ms)
+Completed in 1294ms (View: 1187 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:38:09) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"des"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1155.5ms)
+Completed in 1364ms (View: 1233 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:39:59) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1331.9ms)
+Completed in 1917ms (View: 1574 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:40:05) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"essa"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1133.6ms)
+Completed in 1324ms (View: 1275 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:48:53) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+
+ActionView::TemplateError (uninitialized constant KnowledgesController::Regex) on line #26 of app/views/knowledges/_usages.html.erb:
+23:                 <th align="left" width="80">date</th>
+24:                 <th align="left" width="100">nb opinions</th>
+25:             </tr>
+26:             <% for usage in usages %>
+27:                 <tr>
+28:                     <td width="10"><%= check_box_tag("usage_selected_ids[]", usage.id) %></td>
+29:                     <td><%= usage.label %></td>
+
+    app/controllers/knowledges_controller.rb:89:in `get_paginator_usages'
+    paginator (1.1.1) lib/paginator.rb:60:in `call'
+    paginator (1.1.1) lib/paginator.rb:60:in `page'
+    paginator (1.1.1) lib/paginator.rb:83:in `call'
+    paginator (1.1.1) lib/paginator.rb:83:in `items'
+    paginator (1.1.1) lib/paginator.rb:130:in `each'
+    app/views/knowledges/_usages.html.erb:26
+    app/views/knowledges/_usages.html.erb:17
+    app/views/knowledges/usages_list.html.erb:8
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (46.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:49:29) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (336.8ms)
+Completed in 988ms (View: 636 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:49:44) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>""}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1056.7ms)
+Completed in 1382ms (View: 1270 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:50:55) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "page"=>"1", "search_label"=>""}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1109.5ms)
+Completed in 1397ms (View: 1264 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:51:00) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"essai"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (3.6ms)
+Completed in 205ms (View: 159 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:51:03) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (148.3ms)
+Completed in 354ms (View: 307 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 12:53:35) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (156.3ms)
+Completed in 374ms (View: 325 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_merge (for 127.0.0.1 at 2010-05-14 12:53:47) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bbaff3543a76d1c5d00003f", "4bbaffc743a76d1c5d000cb6"]}
+
+ActionController::UnknownAction (No action responded to usages_merge. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, merge_usages, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#usages_merge (for 127.0.0.1 at 2010-05-14 12:54:41) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bbaff3543a76d1c5d00003f", "4bbaffc743a76d1c5d000cb6"]}
+
+ActionController::UnknownAction (No action responded to usages_merge. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, merge_usages, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#usages_merge (for 127.0.0.1 at 2010-05-14 12:55:00) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bbaff3543a76d1c5d00003f", "4bbaffc743a76d1c5d000cb6"]}
+
+ActionController::UnknownAction (No action responded to usages_merge. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, merge_usages, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:07:29) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (167.6ms)
+Completed in 404ms (View: 352 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#merge_usages (for 127.0.0.1 at 2010-05-14 13:07:39) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bcdb02e43a76d14b9000cc1", "4bbaff3543a76d1c5d00003f"]}
+
+NameError (undefined local variable or method `usages_tails' for #<KnowledgesController:0x106eec210>):
+  app/controllers/knowledges_controller.rb:105:in `merge_usages'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (119.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#merge_usages (for 127.0.0.1 at 2010-05-14 13:08:01) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bcdb02e43a76d14b9000cc1", "4bbaff3543a76d1c5d00003f"]}
+
+NoMethodError (undefined method `each' for #<Usage:0x106799378>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/controllers/knowledges_controller.rb:105:in `merge_usages'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (129.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#merge_usages (for 127.0.0.1 at 2010-05-14 13:09:57) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bcdb02e43a76d14b9000cc1", "4bbaff3543a76d1c5d00003f"]}
+
+NameError (undefined local variable or method `usage' for #<Usage:0x102f96b60>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
+  app/models/usage.rb:37:in `destroy'
+  app/models/usage.rb:37:in `each'
+  app/models/usage.rb:37:in `destroy'
+  app/controllers/knowledges_controller.rb:113:in `merge_usages'
+  app/controllers/knowledges_controller.rb:106:in `each'
+  app/controllers/knowledges_controller.rb:106:in `merge_usages'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (90.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:10:29) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (334.2ms)
+Completed in 992ms (View: 633 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#merge_usages (for 127.0.0.1 at 2010-05-14 13:10:34) [POST]
+  Parameters: {"commit"=>"merge selected...", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "usage_selected_ids"=>["4bcdb02e43a76d14b9000cc1", "4bbaff3543a76d1c5d00003f"]}
+Redirected to http://localhost:3000/usages_list
+Completed in 532ms | 302 Found [http://localhost/knowledges/merge_usages]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:10:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (1078.9ms)
+Completed in 1355ms (View: 1238 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:10:43) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (136.6ms)
+Completed in 333ms (View: 288 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:12:30) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"hard"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (122.7ms)
+Completed in 325ms (View: 279 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:21:17) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"hard"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (379.0ms)
+Completed in 1038ms (View: 679 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 13:21:54) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff5c43a76d1c5d000417"}
+Rendered knowledges/_usage_edit (245.3ms)
+Completed in 358ms (View: 250 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff5c43a76d1c5d000417]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:27:15) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"hard"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (75.2ms)
+Completed in 436ms (View: 301 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:27:41) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"hard"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (141.1ms)
+Completed in 419ms (View: 296 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#delete_usage (for 127.0.0.1 at 2010-05-14 13:27:51) [GET]
+  Parameters: {"id"=>"4bbaffc543a76d1c5d000c7a"}
+Redirected to http://localhost:3000/usages_list
+Completed in 171ms | 302 Found [http://localhost/knowledges/delete_usage/4bbaffc543a76d1c5d000c7a]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:27:52) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4117.9ms)
+Completed in 4429ms (View: 4298 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:31:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4329.2ms)
+Completed in 4564ms (View: 4515 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 13:33:31) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4608.6ms)
+Completed in 4866ms (View: 4818 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 14:24:19) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bcdb02e43a76d14b9000cc5"}
+Rendered knowledges/_usage_edit (1190.9ms)
+Completed in 1440ms (View: 1199 | 200 OK [http://localhost/knowledges/edit_usage_open/4bcdb02e43a76d14b9000cc5]
+
+
+Processing KnowledgesController#remove_usage_editor (for 127.0.0.1 at 2010-05-14 14:25:14) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bcdb02e43a76d14b9000cc5"}
+Completed in 45ms (View: 2 | 200 OK [http://localhost/knowledges/remove_usage_editor/4bcdb02e43a76d14b9000cc5]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:34:42) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4948.9ms)
+Completed in 5647ms (View: 5416 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:34:57) [GET]
+  Parameters: {"search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (377.1ms)
+Completed in 905ms (View: 655 | 200 OK [http://localhost/usages_list?search_label=perf]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:40:43) [GET]
+  Parameters: {"search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (593.3ms)
+Completed in 948ms (View: 680 | 200 OK [http://localhost/usages_list?search_label=perf]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:41:08) [GET]
+  Parameters: {"search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (594.1ms)
+Completed in 936ms (View: 678 | 200 OK [http://localhost/usages_list?search_label=perf]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:41:38) [GET]
+  Parameters: {"search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (388.7ms)
+Completed in 947ms (View: 681 | 200 OK [http://localhost/usages_list?search_label=perf]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:45:17) [GET]
+  Parameters: {"search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (392.0ms)
+Completed in 747ms (View: 478 | 200 OK [http://localhost/usages_list?search_label=perf]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:45:22) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (401.3ms)
+Completed in 770ms (View: 715 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:47:32) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (412.3ms)
+Completed in 789ms (View: 736 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:52:48) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (5028.6ms)
+Completed in 5654ms (View: 5605 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:52:57) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (5420.8ms)
+Completed in 5830ms (View: 5778 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:54:12) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (3831.7ms)
+Completed in 4516ms (View: 4174 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 14:54:32) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_filter", "search_label"=>"essai"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (3.3ms)
+Completed in 307ms (View: 171 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:01:10) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4063.3ms)
+Completed in 4286ms (View: 4237 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:01:20) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"", "search_label"=>"per"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (624.7ms)
+Completed in 990ms (View: 830 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:01:28) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"", "search_label"=>"perfor"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (289.8ms)
+Completed in 653ms (View: 486 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:01:48) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perfor", "usage_selected_ids"=>["4bbaff6743a76d1c5d00050f", "4bbaffc743a76d1c5d000ca2"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (140.7ms)
+Completed in 556ms (View: 331 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:01:58) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff6743a76d1c5d00050f"}
+Rendered knowledges/_usage_edit (353.9ms)
+Completed in 409ms (View: 359 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff6743a76d1c5d00050f]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:02:08) [PUT]
+  Parameters: {"usage"=>{"label"=>"overall performance"}, "commit"=>"update", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"", "search_label"=>"perfor"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (293.1ms)
+Completed in 691ms (View: 508 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:02:18) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"", "search_label"=>"perfor"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (335.9ms)
+Completed in 764ms (View: 715 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:02:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_delete", "search_label"=>"perfor", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed"]}
+
+NoMethodError (undefined method `destroy' for "4bbaff3a43a76d1c5d0000ed":String):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/keys.rb:80:in `to_proc'
+  app/controllers/knowledges_controller.rb:115:in `each'
+  app/controllers/knowledges_controller.rb:115:in `usages_list'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:03:45) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (3911.9ms)
+Completed in 4603ms (View: 4251 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:03:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_delete", "search_label"=>"", "usage_selected_ids"=>["4bbaff9643a76d1c5d00093a"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4011.1ms)
+Completed in 4731ms (View: 4168 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:04:06) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_delete", "search_label"=>"", "usage_selected_ids"=>["4bbaff3743a76d1c5d000075"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4110.0ms)
+Completed in 4886ms (View: 4282 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:04:20) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_delete", "search_label"=>"", "usage_selected_ids"=>["4bbaff5543a76d1c5d000353"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4295.3ms)
+Completed in 4957ms (View: 4494 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:04:39) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (2532.1ms)
+Completed in 2970ms (View: 2764 | 200 OK [http://localhost/usages_list?page=2]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:04:47) [POST]
+  Parameters: {"commit"=>"filter 0 usages", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"", "search_label"=>"perf"}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (316.5ms)
+Completed in 602ms (View: 554 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:07:37) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (171.1ms)
+Completed in 1074ms (View: 308 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:07:56) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (172.0ms)
+Completed in 288ms (View: 177 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:14:46) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+
+ActionView::TemplateError (undefined local variable or method `opinions_for_usage' for #<ActionView::Base:0x103477008>) on line #13 of app/views/knowledges/_usage_edit.html.erb:
+10:     </div>
+11: 
+12:     <div>
+13:         <b>in <%= pluralize((reviews_for_usage = Opinion.related_reviews_for(opinions_for_usage)).size, "review") %></b>
+14:         <%= reviews_for_usage.collect(&:origin).join(', ') %>
+15:     </div>
+16: 
+
+    app/views/knowledges/_usage_edit.html.erb:13
+    app/views/knowledges/_usage_edit.html.erb:1
+    app/controllers/knowledges_controller.rb:130:in `edit_usage_open'
+    app/controllers/knowledges_controller.rb:129:in `edit_usage_open'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:16:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (209.9ms)
+Completed in 402ms (View: 271 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:16:15) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (188.8ms)
+Completed in 323ms (View: 194 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:21:11) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (217.4ms)
+Completed in 414ms (View: 279 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:21:17) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (286.9ms)
+Completed in 342ms (View: 292 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:23:20) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (195.6ms)
+Completed in 341ms (View: 201 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:23:57) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (238.7ms)
+Completed in 453ms (View: 303 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:23:59) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (307.0ms)
+Completed in 361ms (View: 313 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:24:14) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (311.5ms)
+Completed in 366ms (View: 317 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:24:16) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3a43a76d1c5d0000ed"}
+Rendered knowledges/_usage_edit (318.3ms)
+Completed in 370ms (View: 321 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3a43a76d1c5d0000ed]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:24:30) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (369.5ms)
+Completed in 1060ms (View: 669 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:24:32) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (234.6ms)
+Completed in 288ms (View: 239 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:26:41) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (261.5ms)
+Completed in 316ms (View: 267 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:26:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (259.5ms)
+Completed in 313ms (View: 264 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:27:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (264.4ms)
+Completed in 398ms (View: 269 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:27:15) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3543a76d1c5d00003f"}
+Rendered knowledges/_usage_edit (1171.4ms)
+Completed in 1323ms (View: 1275 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3543a76d1c5d00003f]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:27:44) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3543a76d1c5d00003f"}
+Rendered knowledges/_usage_edit (1105.3ms)
+Completed in 1259ms (View: 1212 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3543a76d1c5d00003f]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:27:48) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff3543a76d1c5d00003f"}
+Rendered knowledges/_usage_edit (1130.1ms)
+Completed in 1183ms (View: 1135 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff3543a76d1c5d00003f]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:27:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (245.7ms)
+Completed in 486ms (View: 434 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:27:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (320.8ms)
+Completed in 371ms (View: 323 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:29:31) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (255.4ms)
+Completed in 618ms (View: 451 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:29:34) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (233.5ms)
+Completed in 405ms (View: 239 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:29:51) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (265.2ms)
+Completed in 434ms (View: 270 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:30:09) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (284.9ms)
+Completed in 566ms (View: 515 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 15:30:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Rendered knowledges/_usage_edit (406.2ms)
+Completed in 461ms (View: 412 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#remove_usage_editor (for 127.0.0.1 at 2010-05-14 15:30:28) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaffc743a76d1c5d000cb6"}
+Completed in 194ms (View: 1 | 200 OK [http://localhost/knowledges/remove_usage_editor/4bbaffc743a76d1c5d000cb6]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:31:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (288.9ms)
+Completed in 570ms (View: 521 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:32:11) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "submit_mode"=>"submit_merge", "search_label"=>"perf", "usage_selected_ids"=>["4bbaff3a43a76d1c5d0000ed", "4bbaff5c43a76d1c5d000417", "4bbaff6743a76d1c5d00050f"]}
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (292.6ms)
+Completed in 581ms (View: 531 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:32:31) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4346.2ms)
+Completed in 4654ms (View: 4604 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 15:32:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (4512.4ms)
+Completed in 4848ms (View: 4600 | 200 OK [http://localhost/usages_list]

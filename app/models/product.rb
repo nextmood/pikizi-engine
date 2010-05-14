@@ -159,7 +159,7 @@ class Product < Root
 
 
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
-
+  def get_dimension_value(dimension_idurl) (x = get_value(dimension_idurl) and x.nan?) ? 0.0 : x end
   def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
 
   # return the amazon_id for request

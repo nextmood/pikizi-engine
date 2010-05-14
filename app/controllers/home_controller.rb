@@ -107,7 +107,7 @@ class HomeController < ApplicationController
   def ranking_by_dimension
     @dimension = Dimension.first(:idurl => params[:dimension_idurl])
 
-    sorted_products_rating = @current_knowledge.products.inject([]) { |l, product| (x = product.get_value(@dimension.idurl)) ? l << [product, x] : l }
+    sorted_products_rating = @current_knowledge.products.inject([]) { |l, product| (x = product.get_dimension_value(@dimension.idurl)) ? l << [product, x] : l }
     sorted_products_rating.sort! { |p1, p2| p2.last <=> p1.last }
 
     previous_rating = nil; current_ranking = 0

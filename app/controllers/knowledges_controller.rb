@@ -81,16 +81,45 @@ class KnowledgesController < ApplicationController
   # BEGIN Usage editor
   # --------------------------------------------------------------
 
-  def self.get_paginator_usages(page=1)
-    pager = Paginator.new(Usage.count, 40) do |offset, per_page|
-      Usage.all(:offset => offset, :limit => per_page, :order => 'nb_opinions desc')
+  def self.get_paginator_usages(page=1, search_label=nil)
+    pager = Paginator.new(Usage.count, 150) do |offset, per_page|
+      options = {:offset => offset, :limit => per_page, :order => 'nb_opinions desc'}
+      # see http://wiki.github.com/jnunemaker/mongomapper/using-mongomapper-and-where for the where clause ... really powerful
+      # options.merge("$where" => "function() { return this.label.match(/#{search_label}/i); }") if search_label
+      options.merge!(:label => Regexp.new(search_label, true)) if search_label
+      Usage.all(options)
     end
     pager.page(page)
   end
 
   def usages_list
-    @usages = KnowledgesController.get_paginator_usages(params[:page])
+    @search_label =  params[:search_label]
+    case params[:submit_mode]
+
+      when "submit_merge" 
+        if (usage_selected_ids = (params[:usage_selected_ids] || [])).size >= 2
+          usages_tail = Usage.find(usage_selected_ids)
+          usage_first = usages_tail.shift
+          usages_tail.each do |usage|
+            usage_first.label = "#{usage_first.label} + #{usage.label}"
+            usage.opinions.each do |opinion|
+              unless opinion.usage_ids.include?(usage_first.id)
+                opinion.usage_ids << usage_first.id
+                opinion.save
+              end
+            end
+            usage.destroy
+          end
+          usage_first.save
+        end
+
+      when "submit_delete"
+        (params[:usage_selected_ids] || []).each { |usage_id| Usage.find(usage_id).destroy }
+
+    end
+    @usages = KnowledgesController.get_paginator_usages(params[:page], @search_label)
   end
+
 
   # this is a rjs
   def edit_usage_open
@@ -104,10 +133,7 @@ class KnowledgesController < ApplicationController
 
   def delete_usage
     usage_id = BSON::ObjectID.from_string(params[:id])
-    usage = Usage.find(usage_id)
-    # clean up all opinions first
-    usage.opinions.each { |opinion| opinion.usage_ids.delete(usage.id); opinion.save }
-    usage.destroy
+    usage = Usage.find(usage_id).destroy
     redirect_to "/usages_list"
   end
 

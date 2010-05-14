@@ -350,11 +350,7 @@ class Knowledge < Root
     all_products = products.select { |p| dimension.confidence(p) > ranking_threshold }
 
     all_products.sort! do |p1, p2|
-      p1_rating = p1.get_value(dimension.idurl)
-      p1_rating = 0.0 if p1_rating.nan?
-      p2_rating = p2.get_value(dimension.idurl)
-      p2_rating = 0.0 if p2_rating.nan?
-      p2_rating <=> p1_rating
+      p2.get_dimension_value(dimension.idurl) <=> p1.get_dimension_value(dimension.idurl)
     end
 
     ProductsByShortcut.shortcuts.inject([]) do |l, (shortcut, shortcut_label)|
