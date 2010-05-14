@@ -1,5 +1,5 @@
 on server (main account) , results goes in dump directory
-/opt/mongodb/bin/mongodump -d pikizi_mongodb_production 
+mongodump -d pikizi_mongodb_production 
 tar cvf dump.tar dump/
 rm -r dump
 
@@ -12,8 +12,8 @@ mongorestore -d pikizi_mongodb_development /Users/fpatte/Desktop/dump/pikizi_mon
 
 # mongo db see http://gist.github.com/291349
 # stop mongo on dedibox
-/opt/mongodb/bin/mongo admin
+mongo admin
 db.shutdownServer()
 
 # start
-/opt/mongodb/bin/mongod --fork --logpath /var/rails/pk_engine/shared/log --logappend
+mongod --fork --logpath /var/rails/pk_engine/shared/log --logappend

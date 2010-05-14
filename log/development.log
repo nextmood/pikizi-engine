@@ -6588,3 +6588,2618 @@ Rendering template within layouts/application
 Rendering knowledges/usages_list
 Rendered knowledges/_usages (4512.4ms)
 Completed in 4848ms (View: 4600 | 200 OK [http://localhost/usages_list]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-14 15:41:28) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 3310ms (View: 3236 | 200 OK [http://localhost/users]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2010-05-14 15:51:50) [GET]
+Redirected to http://localhost:3000/show/cell_phones
+Completed in 282ms | 302 Found [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-14 15:51:51) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (0.9ms)
+Rendered knowledges/_products_selection (37.7ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (9.4ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (11.1ms)
+Rendered knowledges/_show_bis (36.0ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.4ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (86.3ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (93.0ms)
+Rendered knowledges/_show_bis (150.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_show_bis (11.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (3.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_show_bis (27.2ms)
+Rendered knowledges/_show_bis (205.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_show_bis (23.8ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_show_bis (12.0ms)
+Rendered knowledges/_show_bis (124.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (11.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_show_bis (18.7ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.2ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.4ms)
+Rendered knowledges/_show_bis (36.6ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (9.9ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.1ms)
+Rendered knowledges/_show_bis (26.9ms)
+Rendered knowledges/_show_bis (166.4ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (86.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (92.9ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (11.3ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.3ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.6ms)
+Rendered knowledges/_show_bis (26.7ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.3ms)
+Rendered knowledges/_show_bis (24.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_show_bis (108.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.6ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.9ms)
+Rendered knowledges/_show_bis (151.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (93.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_show_bis (119.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_show_bis (10.9ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (34.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_show_bis (93.5ms)
+Rendered knowledges/_show_bis (145.6ms)
+Rendered knowledges/_show_bis (494.8ms)
+Rendered knowledges/_show (1293.9ms)
+Completed in 2219ms (View: 1508 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:51:54) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.5ms)
+Rendered knowledges/_dimensions (337.0ms)
+Rendered knowledges/_dimensions (339.7ms)
+Completed in 681ms (View: 538 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:52:26) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (36.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.1ms)
+Rendered knowledges/_dimensions (229.3ms)
+Rendered knowledges/_dimensions (230.7ms)
+Completed in 442ms (View: 382 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:52:36) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (27.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (112.6ms)
+Rendered knowledges/_dimensions (238.2ms)
+Rendered knowledges/_dimensions (327.8ms)
+Completed in 453ms (View: 393 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:52:57) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.6ms)
+Rendered knowledges/_dimensions (239.6ms)
+Rendered knowledges/_dimensions (241.2ms)
+Completed in 468ms (View: 307 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:54:31) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (120.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.9ms)
+Rendered knowledges/_dimensions (245.6ms)
+Rendered knowledges/_dimensions (247.0ms)
+Completed in 475ms (View: 415 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:55:20) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.5ms)
+Rendered knowledges/_dimensions (245.1ms)
+Rendered knowledges/_dimensions (246.4ms)
+Completed in 479ms (View: 311 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:56:45) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (26.0ms)
+Rendered knowledges/_dimensions (255.1ms)
+Rendered knowledges/_dimensions (256.5ms)
+Completed in 382ms (View: 321 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:57:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (16.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.8ms)
+Rendered knowledges/_dimensions (257.7ms)
+Rendered knowledges/_dimensions (259.1ms)
+Completed in 498ms (View: 437 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:57:50) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (15.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.2ms)
+Rendered knowledges/_dimensions (260.2ms)
+Rendered knowledges/_dimensions (261.6ms)
+Completed in 511ms (View: 329 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:57:56) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (16.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (304.7ms)
+Rendered knowledges/_dimensions (306.0ms)
+Completed in 565ms (View: 379 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 15:58:51) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (26.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (285.9ms)
+Rendered knowledges/_dimensions (287.6ms)
+Completed in 564ms (View: 354 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:01:08) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (287.2ms)
+Rendered knowledges/_dimensions (288.5ms)
+Completed in 412ms (View: 353 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:01:40) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (26.2ms)
+Rendered knowledges/_dimensions (295.3ms)
+Rendered knowledges/_dimensions (296.7ms)
+Completed in 425ms (View: 364 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:02:41) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (14.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (146.8ms)
+Rendered knowledges/_dimensions (148.2ms)
+Completed in 430ms (View: 369 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:05:14) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (24.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (179.1ms)
+Rendered knowledges/_dimensions (300.5ms)
+Rendered knowledges/_dimensions (302.0ms)
+Completed in 587ms (View: 527 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:05:42) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (36.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (150.4ms)
+Rendered knowledges/_dimensions (151.9ms)
+Completed in 603ms (View: 543 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:05:57) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.1ms)
+Rendered knowledges/_dimensions (149.5ms)
+Rendered knowledges/_dimensions (151.0ms)
+Completed in 611ms (View: 550 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:06:18) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (35.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.2ms)
+Rendered knowledges/_dimensions (148.9ms)
+Rendered knowledges/_dimensions (150.4ms)
+Completed in 619ms (View: 558 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:08:56) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (26.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (36.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.7ms)
+Rendered knowledges/_dimensions (151.5ms)
+Rendered knowledges/_dimensions (152.8ms)
+Completed in 628ms (View: 569 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:09:41) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (14.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (145.3ms)
+Rendered knowledges/_dimensions (146.7ms)
+Completed in 627ms (View: 563 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:10:09) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (15.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (26.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.5ms)
+Rendered knowledges/_dimensions (149.2ms)
+Rendered knowledges/_dimensions (150.7ms)
+Completed in 640ms (View: 578 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:10:41) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (14.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (34.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (25.0ms)
+Rendered knowledges/_dimensions (148.7ms)
+Rendered knowledges/_dimensions (150.2ms)
+Completed in 645ms (View: 584 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:20:52) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.inject) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id).size, "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    app/models/usage.rb:45:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:21:58) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.inject) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id).size, "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    app/models/usage.rb:45:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (96.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:23:25) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id).size, "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    app/models/usage.rb:46:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (96.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:48:04) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id).size, "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    app/models/usage.rb:46:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:51:55) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (270.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.3ms)
+Rendered knowledges/_dimensions (955.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1262.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (731.6ms)
+Rendered knowledges/_dimensions (3258.7ms)
+Rendered knowledges/_dimensions (4675.7ms)
+Completed in 5412ms (View: 5116 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:52:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (270.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (886.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1369.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (696.4ms)
+Rendered knowledges/_dimensions (3261.8ms)
+Rendered knowledges/_dimensions (4646.5ms)
+Completed in 4922ms (View: 4793 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:55:14) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/models/usage.rb:44: syntax error, unexpected '-', expecting ')'
+  def self.get_list_for_dimension(dimension_id, just_count-false)
+                                                           ^
+/Users/fpatte/nextmood_disk/societe/projects/research/pikizi-engine/app/models/usage.rb:57: syntax error, unexpected kEND, expecting $end) on line #5 of app/views/knowledges/dimensions_list.html.erb:
+2: 
+3: <div class="pkz_box">
+4: 
+5:   <%= model_selector(@current_knowledge, :dimensions) %>
+6: 
+7: 
+8:   <div style="margin-bottom:10px;" >
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/base.rb:31:in `klass'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/base.rb:84:in `proxy_class'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations.rb:81:in `get_proxy'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations.rb:36:in `usages'
+    app/models/knowledge.rb:50:in `nb_usages'
+    app/helpers/knowledges_helper.rb:8:in `admin_menu'
+    app/helpers/knowledges_helper.rb:24:in `model_selector'
+    app/views/knowledges/dimensions_list.html.erb:5
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:55:38) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (Options must be a hash) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id, true), "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:11:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:239:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:239:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:104:in `count'
+    app/models/usage.rb:48:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:56:17) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (252.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (864.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+
+ActionView::TemplateError (illegal ObjectID format) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id, true), "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    bson (1.0) lib/./lib/bson/types/objectid.rb:110:in `from_string'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support.rb:135:in `to_mongo'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `map!'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `each_pair'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:18:in `criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:239:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:104:in `count'
+    app/models/usage.rb:48:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (144.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:56:39) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (268.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (975.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+
+ActionView::TemplateError (illegal ObjectID format) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id, true), "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    bson (1.0) lib/./lib/bson/types/objectid.rb:110:in `from_string'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support.rb:135:in `to_mongo'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `map!'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `each_pair'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:18:in `criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:239:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:104:in `count'
+    app/models/usage.rb:48:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (59.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:56:56) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (280.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (900.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1330.8ms)
+Rendered knowledges/_dimensions (0.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (791.0ms)
+Rendered knowledges/_dimensions (3340.6ms)
+Rendered knowledges/_dimensions (4739.8ms)
+Completed in 5036ms (View: 4976 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:57:37) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (155.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1027.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+
+ActionView::TemplateError (illegal ObjectID format) on line #10 of app/views/knowledges/_dimensions.html.erb:
+7:         <%= link_to_remote(image_tag('icons/add.png', :border => 0, :title => "add a new child feature"), :url => {:action => "create_dimension_open" } ) if dimension.level <= 1 %>
+8:       </div>
+9: 
+10:       <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id, false).size, "usage"),
+11:                              :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+12:                              :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+13: 
+
+    bson (1.0) lib/./lib/bson/types/objectid.rb:110:in `from_string'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support.rb:135:in `to_mongo'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `map!'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:73:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `each_pair'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:65:in `to_criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:18:in `criteria'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/query.rb:31:in `to_a'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:243:in `to_query'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:200:in `find_many'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:100:in `all'
+    app/models/usage.rb:48:in `get_list_for_dimension'
+    app/views/knowledges/_dimensions.html.erb:10
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/_dimensions.html.erb:24
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:27
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (57.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 16:59:05) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (289.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (966.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1392.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (726.5ms)
+Rendered knowledges/_dimensions (3413.4ms)
+Rendered knowledges/_dimensions (4842.3ms)
+Completed in 5181ms (View: 5010 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:00:39) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (286.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (957.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1400.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (730.1ms)
+Rendered knowledges/_dimensions (3413.3ms)
+Rendered knowledges/_dimensions (4820.1ms)
+Completed in 5056ms (View: 4994 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:04:36) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (292.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (982.8ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1331.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (768.0ms)
+Rendered knowledges/_dimensions (3414.9ms)
+Rendered knowledges/_dimensions (4863.7ms)
+Completed in 5200ms (View: 5038 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:04:50) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (296.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (991.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1457.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (760.7ms)
+Rendered knowledges/_dimensions (3545.1ms)
+Rendered knowledges/_dimensions (5043.3ms)
+Completed in 5288ms (View: 5127 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:06:11) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (271.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (961.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1264.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (749.9ms)
+Rendered knowledges/_dimensions (3287.5ms)
+Rendered knowledges/_dimensions (4744.3ms)
+Completed in 5462ms (View: 5175 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:07:12) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (276.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (899.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1394.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (695.1ms)
+Rendered knowledges/_dimensions (3305.3ms)
+Rendered knowledges/_dimensions (4696.4ms)
+Completed in 4977ms (View: 4849 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:07:48) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (289.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1034.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1324.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (786.8ms)
+Rendered knowledges/_dimensions (3478.0ms)
+Rendered knowledges/_dimensions (4835.2ms)
+Completed in 5135ms (View: 5000 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:08:27) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d0300000b"}
+Rendered knowledges/_dimension_edit (21.2ms)
+Completed in 168ms (View: 26 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d0300000b]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:12:22) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (296.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (947.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1355.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (721.8ms)
+Rendered knowledges/_dimensions (3456.5ms)
+Rendered knowledges/_dimensions (4923.9ms)
+Completed in 5225ms (View: 5084 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:13:07) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d0300000b"}
+Rendered knowledges/_dimension_edit (6.3ms)
+Completed in 68ms (View: 9 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d0300000b]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:14:07) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (293.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (953.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1394.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (729.0ms)
+Rendered knowledges/_dimensions (3408.3ms)
+Rendered knowledges/_dimensions (4786.5ms)
+Completed in 5014ms (View: 4955 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:18:39) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (300.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (997.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1367.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (680.7ms)
+Rendered knowledges/_dimensions (3499.2ms)
+Rendered knowledges/_dimensions (4947.3ms)
+Completed in 5308ms (View: 5247 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:19:01) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (156.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (985.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1437.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (661.1ms)
+Rendered knowledges/_dimensions (3422.1ms)
+Rendered knowledges/_dimensions (4756.4ms)
+Completed in 5195ms (View: 5041 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:19:15) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (6.1ms)
+Completed in 169ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 17:19:21) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Completed in 41ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:19:22) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (6.0ms)
+Completed in 69ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 17:19:26) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Completed in 45ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:19:27) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (6.2ms)
+Completed in 180ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 17:19:30) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Completed in 41ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:19:32) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (6.3ms)
+Completed in 71ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 17:19:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Completed in 45ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:19:48) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000014"}
+
+ActionController::UnknownAction (No action responded to edit_dimension_usage_open. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:24:27) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (7.0ms)
+Completed in 74ms (View: 13 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:24:30) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (0.4ms)
+Completed in 65ms (View: 5 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:24:32) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (6.2ms)
+Completed in 70ms (View: 9 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:24:33) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (0.2ms)
+Completed in 180ms (View: 2 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:24:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (5.9ms)
+Completed in 67ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:24:39) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (0.1ms)
+Completed in 62ms (View: 2 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:24:40) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (5.9ms)
+Completed in 204ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:26:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000014"}
+Rendered knowledges/_dimension_edit (7.0ms)
+Completed in 205ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000014]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:26:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000014"}
+Rendered knowledges/_dimension_usages (0.5ms)
+Completed in 66ms (View: 5 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000014]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:28:30) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000014"}
+
+ActionView::TemplateError (undefined method `get_list_for_dimension' for #<ActionView::Base:0x10dde8ab0>) on line #2 of app/views/knowledges/_dimension_usages.html.erb:
+1: <div style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+2:     <% for usage in get_list_for_dimension(dimension.id, false) %>
+3:         <div><%= usage.label %></div>
+4:     <% end %>
+5: </div>
+
+    app/views/knowledges/_dimension_usages.html.erb:2
+    app/controllers/knowledges_controller.rb:55:in `edit_dimension_usage_open'
+    app/controllers/knowledges_controller.rb:54:in `edit_dimension_usage_open'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:28:41) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (270.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (938.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1247.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (727.9ms)
+Rendered knowledges/_dimensions (3222.9ms)
+Rendered knowledges/_dimensions (4654.1ms)
+Completed in 5384ms (View: 5088 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:28:48) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+
+ActionView::TemplateError (undefined method `get_list_for_dimension' for #<ActionView::Base:0x1066c0320>) on line #2 of app/views/knowledges/_dimension_usages.html.erb:
+1: <div style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+2:     <% for usage in get_list_for_dimension(dimension.id, false) %>
+3:         <div><%= usage.label %></div>
+4:     <% end %>
+5: </div>
+
+    app/views/knowledges/_dimension_usages.html.erb:2
+    app/controllers/knowledges_controller.rb:55:in `edit_dimension_usage_open'
+    app/controllers/knowledges_controller.rb:54:in `edit_dimension_usage_open'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:29:01) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (278.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (902.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1415.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (703.9ms)
+Rendered knowledges/_dimensions (3342.4ms)
+Rendered knowledges/_dimensions (4814.2ms)
+Completed in 5107ms (View: 4965 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:29:09) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (226.8ms)
+Completed in 290ms (View: 231 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:29:42) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (294.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1026.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1264.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (716.8ms)
+Rendered knowledges/_dimensions (3342.1ms)
+Rendered knowledges/_dimensions (4674.0ms)
+Completed in 4889ms (View: 4831 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:29:49) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (161.2ms)
+Completed in 308ms (View: 166 | 200 OK [http://localhost/knowledges/edit_dimension_usage_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#usages_list (for 127.0.0.1 at 2010-05-14 17:30:14) [GET]
+Rendering template within layouts/application
+Rendering knowledges/usages_list
+Rendered knowledges/_usages (3765.0ms)
+Completed in 3991ms (View: 3945 | 200 OK [http://localhost/usages_list]
+
+
+Processing KnowledgesController#edit_usage_open (for 127.0.0.1 at 2010-05-14 17:30:25) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bbaff5d43a76d1c5d000425"}
+Rendered knowledges/_usage_edit (640.6ms)
+Completed in 702ms (View: 647 | 200 OK [http://localhost/knowledges/edit_usage_open/4bbaff5d43a76d1c5d000425]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:30:35) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (319.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1104.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1468.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (712.3ms)
+Rendered knowledges/_dimensions (3643.9ms)
+Rendered knowledges/_dimensions (5131.5ms)
+Completed in 5396ms (View: 5332 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:31:00) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (7.7ms)
+Completed in 75ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 17:31:33) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall", "min_rating"=>"0", "is_aggregate"=>"0", "max_rating"=>"10", "parent_id"=>"4bb8714c43a76d3d03000001", "ranking_number"=>"0"}}
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (156.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1173.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1556.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (739.4ms)
+Rendered knowledges/_dimensions (3853.1ms)
+Rendered knowledges/_dimensions (5227.5ms)
+Completed in 5449ms (View: 5234 | 200 OK [http://localhost/knowledges/update_dimension/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_usage_open (for 127.0.0.1 at 2010-05-14 17:33:02) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.*) on line #1 of app/views/knowledges/_dimension_usages.html.erb:
+1: <ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+2:     <% for usage in Usage.get_list_for_dimension(dimension.id, false) %>
+3:         <li><%= usage.label %></li>
+4:     <% end %>
+
+    app/views/knowledges/_dimension_usages.html.erb:1
+    app/controllers/knowledges_controller.rb:55:in `edit_dimension_usage_open'
+    app/controllers/knowledges_controller.rb:54:in `edit_dimension_usage_open'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (185.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:33:29) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (no dimension) on line #3 of app/views/knowledges/_dimensions.html.erb:
+1:     <% for dimension in dimensions %>
+2: 
+3:         <% raise "no dimension" unless dimension.is_a?(Dimension) %>
+4: 
+5:         <tr>
+6:             <td>
+
+    app/views/knowledges/_dimensions.html.erb:3
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:28
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)

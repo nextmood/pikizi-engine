@@ -46,6 +46,17 @@ class KnowledgesController < ApplicationController
     end
   end
 
+  # this is a rjs
+  def edit_dimension_usage_open
+    dimension_id = BSON::ObjectID.from_string(params[:id])
+    dimension = @current_knowledge.get_dimension_by_id(dimension_id)
+    raise "***** error #{dimension_id.inspect} == #{dimension.inspect}" unless dimension
+    render :update do |page|
+      page.replace_html("div_dimension_extra_#{dimension.id}", :partial => "/knowledges/dimension_usages", :locals => {  :dimension => dimension })
+    end
+
+  end
+    
   def delete_dimension
     dimension_id = BSON::ObjectID.from_string(params[:id])
     dimension = @current_knowledge.get_dimension_by_id(dimension_id)

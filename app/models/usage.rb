@@ -40,6 +40,14 @@ class Usage
     @related_dimensions
   end
 
+  # return all usages, having at least one opinion matching this dimension
+  def self.get_list_for_dimension(dimension_id, just_count=false)
+    opinions_with_at_least_dimension_id = Opinion.all(:dimension_ids => dimension_id)
+    puts "opinions_with_at_least_dimension_id=#{opinions_with_at_least_dimension_id.size}"
+    set_usage_ids = opinions_with_at_least_dimension_id.inject(Set.new) { |s, opinion| s.add(opinion.usage_ids); s }
+    Usage.find(set_usage_ids.to_a)
+  end
+
   def destroy
     # delete all reference to this usage in the opinions
     opinions.each { |opinion| opinion.usage_ids.delete(self.id); opinion.save }

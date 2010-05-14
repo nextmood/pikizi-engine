@@ -1,0 +1,5 @@
+<ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+    <% for usage in Usage.get_list_for_dimension(dimension.id, false) %>
+        <li><%= usage.label %></li>
+    <% end %>
+</ol>
