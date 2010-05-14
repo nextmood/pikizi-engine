@@ -1,0 +1,5 @@
+<ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+    <% for opinion in dimension.opinions %>
+        <li><%= opinion.to_html %></li>
+    <% end %>
+</ol>

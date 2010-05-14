@@ -11,11 +11,16 @@
             </td>
             <td>
                 <%= link_to_remote(pluralize(Usage.get_list_for_dimension(dimension.id, false).size, "usage"),
-                                 :url => {:action => "edit_dimension_usage_open", :id => dimension.id  } ,
+                                 :url => {:action => "edit_dimension_usages_open", :id => dimension.id  } ,
                                  :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
             </td>
             <td>
                   <%= link_to_remote(pluralize(Opinion.count(:dimension_ids => dimension.id), "opinion"),
+                                     :url => {:action => "edit_dimension_opinions_open", :id => dimension.id  } ,
+                                     :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
+            </td>
+            <td>
+                  <%= link_to_remote("edit...",
                                      :url => {:action => "edit_dimension_open", :id => dimension.id  } ,
                                      :html => { :style => "font-size:80%; margin-left:10px;" } ) %>
             </td>

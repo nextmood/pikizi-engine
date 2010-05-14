@@ -9203,3 +9203,127 @@ ActionView::TemplateError (no dimension) on line #3 of app/views/knowledges/_dim
 Rendered rescues/_trace (41.5ms)
 Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:52:14) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+
+ActionView::TemplateError (no dimension) on line #3 of app/views/knowledges/_dimensions.html.erb:
+1:     <% for dimension in dimensions %>
+2: 
+3:         <% raise "no dimension" unless dimension.is_a?(Dimension) %>
+4: 
+5:         <tr>
+6:             <td>
+
+    app/views/knowledges/_dimensions.html.erb:3
+    app/views/knowledges/_dimensions.html.erb:1:in `each'
+    app/views/knowledges/_dimensions.html.erb:1
+    app/views/knowledges/dimensions_list.html.erb:28
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:53:11) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (275.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (892.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1312.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (748.8ms)
+Rendered knowledges/_dimensions (3271.7ms)
+Rendered knowledges/_dimensions (4846.5ms)
+Completed in 5118ms (View: 5056 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:53:25) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+
+ActionController::UnknownAction (No action responded to edit_dimension_usages_open. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_dimension_opinions_open, edit_dimension_usage_sopen, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 17:53:31) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (390.5ms)
+Completed in 536ms (View: 474 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:53:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (8.2ms)
+Completed in 78ms (View: 13 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:53:39) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+
+ActionController::UnknownAction (No action responded to edit_dimension_usages_open. Actions: aggregations, delete_dimension, delete_usage, dimensions_list, distance, edit_dimension_open, edit_dimension_opinions_open, edit_dimension_usage_sopen, edit_usage_open, get_logged_user, get_products_selected, index, list_opinions, remove_dimension_editor, remove_usage_editor, show, test_gbase, update_dimension, update_usage, and usages_list):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:54:02) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (156.2ms)
+Completed in 304ms (View: 161 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
