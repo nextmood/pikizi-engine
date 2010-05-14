@@ -26,6 +26,6 @@
             </td>
             <div class="pkz_clearBoth"></div>
         </tr>
-        <tr><td colspan="3" id="div_dimension_extra_<%= dimension.id %>"></td></tr>
+        <tr><td  id="div_dimension_extra_<%= dimension.id %>" colspan="4" ></td></tr>
         <%= render(:partial => "/knowledges/dimensions", :locals => { :dimensions => dimension.children }) %>
     <% end %>

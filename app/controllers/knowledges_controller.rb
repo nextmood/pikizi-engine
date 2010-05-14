@@ -78,13 +78,14 @@ class KnowledgesController < ApplicationController
   # this isa remote form
   def update_dimension
     dimension_id = BSON::ObjectID.from_string(params[:id])
-    product = Product.find(params[:product_id])
     dimension = @current_knowledge.get_dimension_by_id(dimension_id)
-    params[:dimension][:parent_id] = BSON::ObjectID.from_string(params[:dimension][:parent_id])
+    if parent_id = params[:dimension][:parent_id]
+      params[:dimension][:parent_id] = BSON::ObjectID.from_string(parent_id)
+    end
     dimension.update_attributes(params[:dimension])
     render :update do |page|
       page.replace_html("list_dimensions", :partial => "dimensions",
-         :locals => {  :dimensions => [@current_knowledge.dimension_root], :product => product })
+         :locals => {  :dimensions => [@current_knowledge.dimension_root] })
     end
   end
 

@@ -1,25 +1,26 @@
+<%= link_to_remote("close...",
+                :url => {:action => "remove_dimension_editor", :id => dimension.id },
+                :html => { :style => "margin-left:#{dimension.level * 15}px;" }) %>
 
     <% remote_form_for(dimension, :url => {:action => "update_dimension", :id => dimension.id },
                  :html => {:style =>"background-color:pink; padding:5px; margin-left:#{dimension.level * 15 }px;" }) do |f| -%>
-          <p>
+          <div>
             label <%= f.text_field :label %>
             <% if dimension.parent_id %>
                 &nbsp;ranking number <%= f.text_field :ranking_number, :size => 2 %>
                 &nbsp;is an aggregate <%= f.check_box :is_aggregate %>
             <% end %>
-          </p>
-          <p>
+          </div>
+          <div>
             min_rating <%= f.text_field :min_rating, :size => 2 %>
             max_rating <%= f.text_field :max_rating, :size => 2 %>
-          </p>
+          </div>
           <% if dimension.parent_id %>
-            <p>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(@current_knowledge, :selected => dimension.parent_id, :max_level => 1)) %></p>
+            <div>parent <%= select_tag("dimension[parent_id]", options_for_dimensions(@current_knowledge, :selected => dimension.parent_id, :max_level => 1)) %></div>
           <% end %>
           <hr/>
           <%= submit_tag "update #{dimension.idurl}" %>
-          <%= link_to_remote("cancel",
-                :url => {:action => "remove_dimension_editor", :id => dimension.id },
-                :html => { :style => "font-size:80%; margin-left:10px;" }) %>
+
           <% if dimension.parent_id %>
             <%= link_to("destroy", {:action => "delete_dimension", :id => dimension.id}, :style => "font-size:80%; margin-left:50px;") %>
           <% end %>

@@ -26,53 +26,7 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_dimensions.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="75" selection-start="722" selection-end="722" vertical-scroll-proportion="-8.210526">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="knowledges_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="28" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.5735294">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_dimension_usages.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="0" selection-end="222" vertical-scroll-proportion="-2.5263157">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_dimension_edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="19" selection-start="903" selection-end="903" vertical-scroll-proportion="-10.105263">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_dimension_opinions.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="31" selection-start="169" selection-end="169" vertical-scroll-proportion="-1.2631578">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -93,14 +47,14 @@
         <option value="$PROJECT_DIR$/app/views/knowledges/_usage_edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/_usages.html.erb" />
         <option value="$PROJECT_DIR$/app/views/quizzes/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/usage.rb" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb" />
         <option value="$PROJECT_DIR$/doc/admin.txt" />
-        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/usage.rb" />
       </list>
     </option>
   </component>
@@ -946,30 +900,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="903" selection-end="903" vertical-scroll-proportion="-10.105263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/admin.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="0" selection-end="222" vertical-scroll-proportion="-2.5263157">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/usage.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="627" selection-end="635" vertical-scroll-proportion="0.3382353">
           <folding />
         </state>
       </provider>
@@ -981,30 +914,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/usage.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="169" selection-end="169" vertical-scroll-proportion="-1.2631578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.5420326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="75" selection-start="722" selection-end="722" vertical-scroll-proportion="-8.210526">
+        <state line="45" column="0" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.68441063">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="28" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.5735294">
+        <state line="92" column="33" selection-start="3396" selection-end="3396" vertical-scroll-proportion="0.50196594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="71" selection-start="257" selection-end="273" vertical-scroll-proportion="0.062337663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="111" selection-start="296" selection-end="313" vertical-scroll-proportion="0.0608365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="75" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.43410853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="36" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.39543727">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.121673">
           <folding />
         </state>
       </provider>

@@ -10,7 +10,7 @@
       <h2>Dimensions of rating</h2>
 
       <% form_tag "/products/compute_aggregation" do -%>
-        <div style="border-bottom:1px dashed black; padding-bottom:5px; margin-bottom:5px;">last computed @ <%= @current_knowledge.last_aggregation_timestamp %></div>
+        <div style="border-top:1px dashed black; padding-bottom:5px; padding-top:5px; margin-bottom:5px;">last computed @ <%= @current_knowledge.last_aggregation_timestamp %></div>
         <div style="">
             consider opinions
             <span style="font-size:80%;">
@@ -23,8 +23,8 @@
         </div>
       <% end -%>
 
-      <div id="list_dimensions" style="margin-top:10px; border-top:1px solid black; padding:5px;">
-        <table>
+      <div style="margin-top:10px; border-top:1px solid black; padding:5px;">
+        <table id="list_dimensions" >
             <%= render(:partial => "/knowledges/dimensions", :locals => {  :dimensions => [@dimension_root]}) %>
         </table>
       </div>

@@ -9327,3 +9327,1106 @@ Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 201
   Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
 Rendered knowledges/_dimension_usages (156.2ms)
 Completed in 304ms (View: 161 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 17:56:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (472.7ms)
+Completed in 622ms (View: 475 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:56:38) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (6.4ms)
+Completed in 156ms (View: 9 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 17:56:42) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (389.6ms)
+Completed in 542ms (View: 392 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:56:45) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (168.4ms)
+Completed in 230ms (View: 170 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 17:56:47) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (480.0ms)
+Completed in 544ms (View: 483 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 17:56:49) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (5.9ms)
+Completed in 164ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:57:01) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (163.9ms)
+Completed in 320ms (View: 166 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 17:59:41) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (319.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (910.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1372.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (674.6ms)
+Rendered knowledges/_dimensions (3437.1ms)
+Rendered knowledges/_dimensions (4894.1ms)
+Completed in 5249ms (View: 5188 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 17:59:48) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (178.5ms)
+Completed in 343ms (View: 183 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:00:10) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (158.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1151.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1498.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (872.1ms)
+Rendered knowledges/_dimensions (3725.5ms)
+Rendered knowledges/_dimensions (5312.9ms)
+Completed in 5568ms (View: 5506 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:00:20) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (6.9ms)
+Completed in 207ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:01:03) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (334.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1009.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1539.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (727.9ms)
+Rendered knowledges/_dimensions (3657.1ms)
+Rendered knowledges/_dimensions (5310.9ms)
+Completed in 5719ms (View: 5532 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:01:11) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb876de43a76d3f29000006"}
+Rendered knowledges/_dimension_opinions (23.5ms)
+Completed in 217ms (View: 28 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb876de43a76d3f29000006]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:01:13) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (205.1ms)
+Completed in 401ms (View: 210 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:01:19) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (358.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1074.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1683.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (805.8ms)
+Rendered knowledges/_dimensions (3965.8ms)
+Rendered knowledges/_dimensions (5587.3ms)
+Completed in 5872ms (View: 5812 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:01:30) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (223.3ms)
+Completed in 285ms (View: 225 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:01:33) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (7.1ms)
+Completed in 213ms (View: 13 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:01:35) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Completed in 182ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:01:41) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (611.2ms)
+Completed in 677ms (View: 614 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:01:45) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (237.1ms)
+Completed in 299ms (View: 239 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:04:20) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (80.7ms)
+Completed in 291ms (View: 86 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:04:23) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (366.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1095.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1681.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (800.0ms)
+Rendered knowledges/_dimensions (3986.5ms)
+Rendered knowledges/_dimensions (5656.9ms)
+Completed in 5959ms (View: 5897 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:04:37) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (269.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (948.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1338.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (692.3ms)
+Rendered knowledges/_dimensions (3292.1ms)
+Rendered knowledges/_dimensions (4713.1ms)
+Completed in 5679ms (View: 5136 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:04:47) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (145.5ms)
+Completed in 281ms (View: 150 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:04:50) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (381.5ms)
+Completed in 519ms (View: 387 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:04:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (88.7ms)
+Completed in 154ms (View: 93 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:04:59) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (460.5ms)
+Completed in 525ms (View: 463 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:05:01) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (153.9ms)
+Completed in 305ms (View: 156 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:05:50) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (468.3ms)
+Completed in 612ms (View: 474 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:05:56) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (158.5ms)
+Completed in 311ms (View: 164 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:06:00) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (6.5ms)
+Completed in 155ms (View: 9 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:07:43) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (310.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1080.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1400.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (752.9ms)
+Rendered knowledges/_dimensions (3592.7ms)
+Rendered knowledges/_dimensions (5035.5ms)
+Completed in 5355ms (View: 5204 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:07:51) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_usages (1559.7ms)
+Completed in 1625ms (View: 1564 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:07:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_opinions (9091.7ms)
+Completed in 9430ms (View: 9236 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:08:14) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Completed in 44ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:08:17) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (179.0ms)
+Completed in 244ms (View: 181 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:08:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_opinions (526.8ms)
+Completed in 691ms (View: 530 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:08:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_usages (178.9ms)
+Completed in 348ms (View: 181 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:08:57) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000013"}
+Rendered knowledges/_dimension_edit (120.3ms)
+Completed in 188ms (View: 125 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000013]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:09:39) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (274.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (943.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1345.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (676.9ms)
+Rendered knowledges/_dimensions (3284.0ms)
+Rendered knowledges/_dimensions (4825.7ms)
+Completed in 5559ms (View: 5263 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:09:47) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d0300000f"}
+Rendered knowledges/_dimension_usages (140.4ms)
+Completed in 278ms (View: 145 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d0300000f]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:09:52) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d0300000f"}
+Rendered knowledges/_dimension_opinions (318.4ms)
+Completed in 454ms (View: 324 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d0300000f]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:09:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d0300000f"}
+Completed in 44ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d0300000f]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:10:50) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (298.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (966.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1341.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (726.5ms)
+Rendered knowledges/_dimensions (3376.8ms)
+Rendered knowledges/_dimensions (4865.4ms)
+Completed in 5172ms (View: 5027 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:11:40) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (286.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (954.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1309.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (869.6ms)
+Rendered knowledges/_dimensions (3561.3ms)
+Rendered knowledges/_dimensions (4920.7ms)
+Completed in 5218ms (View: 5080 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:11:50) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000011"}
+Rendered knowledges/_dimension_usages (148.4ms)
+Completed in 303ms (View: 150 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000011]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:11:54) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000011"}
+Rendered knowledges/_dimension_opinions (318.8ms)
+Completed in 466ms (View: 321 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000011]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:12:17) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (310.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1021.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1450.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (758.0ms)
+Rendered knowledges/_dimensions (3583.7ms)
+Rendered knowledges/_dimensions (5024.0ms)
+Completed in 5361ms (View: 5200 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:12:25) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (173.6ms)
+Completed in 240ms (View: 175 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:13:43) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_usages (1375.2ms)
+Completed in 1535ms (View: 1380 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:13:47) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (177.3ms)
+Completed in 241ms (View: 179 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:13:52) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Completed in 143ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:14:22) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb876de43a76d3f29000006"}
+Rendered knowledges/_dimension_edit (7.9ms)
+Completed in 73ms (View: 13 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb876de43a76d3f29000006]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:14:39) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb876de43a76d3f29000006"}
+Rendered knowledges/_dimension_edit (7.1ms)
+Completed in 71ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb876de43a76d3f29000006]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:15:14) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb876de43a76d3f29000006"}
+Rendered knowledges/_dimension_edit (7.2ms)
+Completed in 74ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb876de43a76d3f29000006]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:15:36) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb876de43a76d3f29000006"}
+Rendered knowledges/_dimension_edit (7.2ms)
+Completed in 219ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb876de43a76d3f29000006]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:15:49) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (342.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1043.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1561.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (745.2ms)
+Rendered knowledges/_dimensions (3736.4ms)
+Rendered knowledges/_dimensions (5392.9ms)
+Completed in 5788ms (View: 5621 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:16:05) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (78.7ms)
+Completed in 274ms (View: 81 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:16:10) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (7.0ms)
+Completed in 72ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:16:16) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (437.5ms)
+Completed in 642ms (View: 443 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:16:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (434.7ms)
+Completed in 499ms (View: 438 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:16:55) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (215.9ms)
+Completed in 281ms (View: 220 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:17:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (81.3ms)
+Completed in 286ms (View: 87 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:17:40) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (453.7ms)
+Completed in 669ms (View: 608 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:17:42) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (229.7ms)
+Completed in 292ms (View: 232 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:17:44) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_opinions (465.1ms)
+Completed in 674ms (View: 468 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:17:45) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_edit (7.1ms)
+Completed in 234ms (View: 12 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:17:50) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Completed in 41ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:17:53) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (238.7ms)
+Completed in 311ms (View: 241 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:17:56) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Completed in 41ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:18:38) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (374.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1144.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1722.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (817.7ms)
+Rendered knowledges/_dimensions (4101.3ms)
+Rendered knowledges/_dimensions (5769.7ms)
+Completed in 6072ms (View: 6010 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:19:18) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (376.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1110.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1715.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (822.0ms)
+Rendered knowledges/_dimensions (4067.2ms)
+Rendered knowledges/_dimensions (5744.4ms)
+Completed in 6047ms (View: 5986 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-05-14 18:19:34) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Rendered knowledges/_dimension_usages (247.5ms)
+Completed in 310ms (View: 249 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-05-14 18:19:38) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8768943a76d3f29000002"}
+Rendered knowledges/_dimension_opinions (24.6ms)
+Completed in 252ms (View: 26 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8768943a76d3f29000002]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:19:42) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8768943a76d3f29000002"}
+Completed in 211ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8768943a76d3f29000002]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:19:43) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000015"}
+Completed in 42ms (View: 1 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:20:12) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000014"}
+Rendered knowledges/_dimension_edit (6.1ms)
+Completed in 247ms (View: 8 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000014]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:21:26) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (4.8ms)
+Completed in 244ms (View: 7 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 18:21:32) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall2", "min_rating"=>"0", "max_rating"=>"10"}}
+
+BSON::InvalidObjectID (illegal ObjectID format):
+  bson (1.0) lib/./lib/bson/types/objectid.rb:110:in `from_string'
+  app/controllers/knowledges_controller.rb:83:in `update_dimension'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (206.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 18:22:53) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall2", "min_rating"=>"0", "max_rating"=>"10"}}
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (264.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (874.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1334.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (668.9ms)
+Rendered knowledges/_dimensions (3186.0ms)
+Rendered knowledges/_dimensions (4533.6ms)
+Completed in 5276ms (View: 4547 | 200 OK [http://localhost/knowledges/update_dimension/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:23:05) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (6.5ms)
+Completed in 71ms (View: 11 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:23:12) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (292.0ms)
+Rendered knowledges/_dimensions (0.5ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1021.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1340.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (785.9ms)
+Rendered knowledges/_dimensions (3484.4ms)
+Rendered knowledges/_dimensions (4871.1ms)
+Completed in 5112ms (View: 5048 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:23:20) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (4.4ms)
+Completed in 69ms (View: 7 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#remove_dimension_editor (for 127.0.0.1 at 2010-05-14 18:23:23) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Completed in 61ms (View: 2 | 200 OK [http://localhost/knowledges/remove_dimension_editor/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:23:25) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (4.3ms)
+Completed in 70ms (View: 6 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 18:23:31) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall", "min_rating"=>"0", "max_rating"=>"10"}}
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (285.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1019.3ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1336.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (755.5ms)
+Rendered knowledges/_dimensions (3439.8ms)
+Rendered knowledges/_dimensions (4797.9ms)
+Completed in 4980ms (View: 4805 | 200 OK [http://localhost/knowledges/update_dimension/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:24:23) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (275.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (952.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1349.2ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (686.9ms)
+Rendered knowledges/_dimensions (3307.8ms)
+Rendered knowledges/_dimensions (4745.6ms)
+Completed in 5466ms (View: 5171 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-05-14 18:25:14) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (279.8ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (985.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1320.9ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (710.0ms)
+Rendered knowledges/_dimensions (3339.2ms)
+Rendered knowledges/_dimensions (4660.3ms)
+Completed in 4956ms (View: 4821 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:25:22) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (6.3ms)
+Completed in 147ms (View: 11 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 18:25:26) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall3", "min_rating"=>"0", "max_rating"=>"10"}}
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (289.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (930.6ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1341.4ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (776.7ms)
+Rendered knowledges/_dimensions (3381.2ms)
+Rendered knowledges/_dimensions (4731.9ms)
+Completed in 4904ms (View: 4740 | 200 OK [http://localhost/knowledges/update_dimension/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#edit_dimension_open (for 127.0.0.1 at 2010-05-14 18:26:06) [POST]
+  Parameters: {"authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001"}
+Rendered knowledges/_dimension_edit (4.5ms)
+Completed in 148ms (View: 6 | 200 OK [http://localhost/knowledges/edit_dimension_open/4bb8714c43a76d3d03000001]
+
+
+Processing KnowledgesController#update_dimension (for 127.0.0.1 at 2010-05-14 18:26:11) [PUT]
+  Parameters: {"commit"=>"update overall_rating", "authenticity_token"=>"r6L+bVoiHxCT+YsS/tmnkV2VyEFiZV3aGrTXd4AD+T0=", "id"=>"4bb8714c43a76d3d03000001", "dimension"=>{"label"=>"Overall", "min_rating"=>"0", "max_rating"=>"10"}}
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (279.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (922.7ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (1339.0ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (0.1ms)
+Rendered knowledges/_dimensions (718.9ms)
+Rendered knowledges/_dimensions (3302.8ms)
+Rendered knowledges/_dimensions (4670.5ms)
+Completed in 4839ms (View: 4678 | 200 OK [http://localhost/knowledges/update_dimension/4bb8714c43a76d3d03000001]

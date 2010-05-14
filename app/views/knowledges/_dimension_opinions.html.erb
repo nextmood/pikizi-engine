@@ -1,4 +1,7 @@
-<ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px;">
+<%= link_to_remote("close...",
+                :url => {:action => "remove_dimension_editor", :id => dimension.id },
+                :html => { :style => "margin-left:#{dimension.level * 15}px;" }) %>
+<ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px; ; margin-top:2px;">
     <% for opinion in dimension.opinions %>
         <li><%= opinion.to_html %></li>
     <% end %>
