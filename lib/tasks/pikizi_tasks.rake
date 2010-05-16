@@ -184,16 +184,16 @@ namespace :pikizi do
     all_products = knowledge.get_products
     puts "9) update opinions state final..."
 
-    Opinion.all.each { |o| o.correct!; o.check_status(all_products) }
+    Opinion.all.each { |o| o.correct!; o.update_status(all_products) }
     Opinion.all.each { |o| begin o.accept!; rescue ; end }
 
     puts "10) update paragraphs state final..."
 
-    Paragraph.all.each { |p| p.check_status }
+    Paragraph.all.each { |p| p.update_status }
 
     puts "11) update reviews state final..."    
 
-    Review.all.each { |r| r.check_status }
+    Review.all.each { |r| r.update_status }
 
     true
   end

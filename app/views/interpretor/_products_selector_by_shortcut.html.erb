@@ -1,0 +1,8 @@
+<% form_remote_tag :url => "/interpretor/add_product_by_shortcut" do -%>
+    <%= hidden_field_tag :name, name %>
+    <%= radio_button_tag("#{name}_shortcut", "all_products", true) %>all products<br/>
+    <%= radio_button_tag("#{name}_shortcut", "all_smartphones") %>all smartphones<br/>
+    <%= radio_button_tag("#{name}_shortcut", "all_android") %>all android powered phones<br/>
+    <%= submit_tag "add" %>
+    &nbsp;<%= link_to_remote("or cancel", :url => { :action => "cancel_product_selector", :id => name }, :html => {:style => "font-size:80%;"}) %>
+<% end -%>

@@ -23,6 +23,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def recompute_all_states
+    Review.all.each do |review| review.update_status(true) end
+    redirect_to("/reviews")
+  end
+
   # trigger an event for all opinions in this review
   # recompute the review/paragraphs state
   def trigger_event
@@ -38,7 +43,7 @@ class ReviewsController < ApplicationController
       end
       nb_opinions += 1
     end
-    review.paragraphs.each { |p| p.check_status } ; review.check_status
+    review.update_status(true)
     flash[:notice] = "#{nb_opinions_moved} opinion(s) moved for #{nb_opinions} opinions total"
     redirect_to "/reviews/edit/#{review.id}"
   end

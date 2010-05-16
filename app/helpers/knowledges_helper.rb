@@ -10,7 +10,8 @@ module KnowledgesHelper
       [ :questions , link_to(pluralize(knowledge.nb_questions, "question"), "/questions/#{knowledge.idurl}") ],
       [ :quizzes , link_to(pluralize(knowledge.nb_quizzes, "quizze"), "/quizzes/#{knowledge.idurl}")   ] ,
       [ :users , link_to(pluralize(User.count, "user"), "/users")   ],
-      [ :reviews , link_to(pluralize(Review.count, "review"), "/reviews")   ]
+      [ :reviews , link_to(pluralize(Review.count, "review"), "/reviews")   ],
+      [ :opinions , link_to(pluralize(Opinion.count, "opinion"), "/opinions")   ]
     ]
   end
 

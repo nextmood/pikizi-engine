@@ -92,8 +92,8 @@ class Review < Root
 
   end
 
-  # to upate the status of a paragraph
-  def check_status
+  # to upate the status of a review
+  def update_status(update_also_paragraphs=false)
     if opinions.any?(&:error?)
       has_opinions_in_error!
     elsif opinions.any?(&:to_review?)
@@ -103,6 +103,7 @@ class Review < Root
     else
       is_empty!
     end
+    paragraphs.each(&:update_status) if update_also_paragraphs 
   end
 
   def self.list_states() Review.state_machines[:state].states.collect { |s| s.name.to_s } end

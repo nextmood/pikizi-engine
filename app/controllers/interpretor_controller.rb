@@ -93,7 +93,7 @@ class InterpretorController < ApplicationController
     end
 
     opinion.save
-    opinion.check_status(@current_knowledge.get_products)
+    opinion.update_status(@current_knowledge.get_products)
     session[:opinion_id_in_creation] = opinion.id
 
     redirect_to "/edit_review/#{in_review.id}/#{in_paragraph.id}/#{opinion.id}"
@@ -112,7 +112,7 @@ class InterpretorController < ApplicationController
     notification = nil
     @opinion.process_attributes(@current_knowledge, params)
     @opinion.save
-    @opinion.check_status(@current_knowledge.get_products)
+    @opinion.update_status(@current_knowledge.get_products)
     @opinion.reload
     notification = "<span style='color:#{@opinion.error? ? 'red' : 'green'};'><b>Saved ...</b> #{@opinion.to_html}</span>"
     render :update do |page|

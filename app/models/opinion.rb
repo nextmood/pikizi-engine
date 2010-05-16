@@ -119,13 +119,14 @@ class Opinion < Root
   state_machine :initial => :draft do
 
     state :draft do
-      def state_color() "orange" end
+      def state_color() "blue" end
       def state_label() "Draft" end
     end
 
     state :to_review do
-      def state_color() "blue" end
+      def state_color() "orange" end
       def state_label() "To be review" end
+      def explanations() state_label end
     end
 
     state :reviewed_ok do
@@ -144,7 +145,7 @@ class Opinion < Root
     end
 
     event :submit do
-      transition :draft => :to_review
+      transition all => :to_review
     end
 
     event :accept do
@@ -165,13 +166,16 @@ class Opinion < Root
 
   end
 
+  key :errors_explanations, String
+  
   # to update the status of an opinion
-  def check_status(all_products)
+  def update_status(all_products)
     compute_product_ids(all_products)
     if (l = check_errors).size > 0
       update_attributes(:errors_explanations => l.join(', '))
       error!
     else
+      update_attributes(:errors_explanations => nil)
       # change the state to to_review
       submit!
     end
@@ -253,7 +257,10 @@ class Opinion < Root
   def process_attributes(knowledge, params)
     process_attributes_products_selector(knowledge, "referent", params)
     self.dimension_ids = (params[:dimensions] || []).collect { |dimension_id| BSON::ObjectID.from_string(dimension_id) }
-    self.usage_ids = (params[:usages] || []).inject([]) do |l, values|
+    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params[:usages].inspect}"
+
+    self.usage_ids = (params[:usages] || {}).inject([]) do |l, (k, values)|
+      puts ">>>>>>>>>>values=>>>>>>>>> #{values.inspect}"
       usage_label = values[:label].strip
       if usage_label and usage_label.size > 0
         unless existing_usage = Usage.first(:label => usage_label)

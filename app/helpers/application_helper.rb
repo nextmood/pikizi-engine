@@ -46,6 +46,9 @@ module ApplicationHelper
     end
   end
 
-  def object_state(o) image_tag("icons/circle_#{o.state_color}.png", :border => 0, :title => "status=#{o.state}") end
+  def object_state(o)
+    image_tag("icons/circle_#{o.state_color}.png", :border => 0,
+              :title => (o.is_a?(Opinion) and o.error?) ? o.errors_explanations : "in state : #{o.state.inspect}") 
+  end
   
 end

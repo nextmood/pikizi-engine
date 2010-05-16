@@ -63,7 +63,7 @@ class Paragraph
   end
 
   # to upate the status of a paragraph
-  def check_status
+  def update_status
     if opinions.any?(&:error?)
       has_opinions_in_error!
     elsif opinions.any?(&:to_review?)

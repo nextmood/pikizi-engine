@@ -1,0 +1,45 @@
+<div class="pkz_box">
+    <%= model_selector(@current_knowledge, :opinions) %>
+
+    <table style="width:100%;">
+        <tr><td colspan="4">
+            <% form_tag "/opinions/index" do -%>
+                opinions&nbsp;
+                <%= link_to(image_tag("icons/backward.png", :border => 0), "/opinions?page=#{@opinions.prev.number}") if @opinions.prev? %>
+                <%= (@opinions.number - 1) * @nb_opinions_per_page + 1 %> - <%= @opinions.number * @nb_opinions_per_page - 1 %> / <%= @nb_opinions %>
+                <%= link_to(image_tag("icons/foward.png", :border => 0), "/opinions?page=#{@opinions.next.number}") if @opinions.next? %>
+                <span style="margin-left:30px;  font-weight:bold;">in categories</span>
+                    <% for category, weight in Review.categories %>
+                <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+                <% end %>
+                <span style="margin-left:5px; font-weight:bold;">in state</span>
+                <% for state_name in Opinion.list_states %>
+                    <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %><%= state_name %>
+                <% end %>
+                <%= submit_tag "filter", :style => "margin-left:30px;" %>
+            <% end -%>
+            <hr/>
+            <%= link_to("recompute status of all opinions...", "/opinions/recompute_all_states") %>
+            <hr/>
+        </td></tr>
+
+        <tr>
+            <th width="150">status</th>
+            <th>products</th>
+            <th width="100">review</th>
+        </tr>
+        <% for opinion in @opinions %>
+            <tr>
+                <td valign="top">
+                    <%= object_state(opinion) %>
+                    <small><%= opinion.written_at %> by <%= opinion.category %></small>
+                </td>
+                <td><%= link_to(opinion.to_html,
+                          "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :style => "color:orange;") %></td>
+                <td valign="top"><small><%= opinion.review.source %></small></td>
+            </tr>
+        <% end %>
+    </table>
+
+
+</div>
