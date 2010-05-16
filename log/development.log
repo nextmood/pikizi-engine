@@ -15215,3 +15215,9 @@ Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 16:10:56) [GET]
 Rendering template within layouts/application
 Rendering reviews/index
 Completed in 4898ms (View: 4212 | 200 OK [http://localhost/reviews]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:14:01) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2793ms (View: 2317 | 200 OK [http://localhost/opinions]

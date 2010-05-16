@@ -194,7 +194,7 @@ class Opinion < Root
   def check_errors
     l = products_filters_for_should_exist("referent", [])
     l << "you should have one dimension/rating at least" if dimension_ids.size == 0
-    l << "you should have less than 4 dimension/rating" if dimension_ids.size > 4
+    l << "you should have less than 6 dimension/rating" if dimension_ids.size > 6
     l
   end
 
