@@ -4,29 +4,38 @@
     <table style="width:100%;">
         <tr><td colspan="4">
             <% form_tag "/opinions/index" do -%>
-                opinions&nbsp;
-                <%= link_to(image_tag("icons/backward.png", :border => 0), "/opinions?page=#{@opinions.prev.number}") if @opinions.prev? %>
-                <%= (@opinions.number - 1) * @nb_opinions_per_page + 1 %> - <%= @opinions.number * @nb_opinions_per_page - 1 %> / <%= @nb_opinions %>
-                <%= link_to(image_tag("icons/foward.png", :border => 0), "/opinions?page=#{@opinions.next.number}") if @opinions.next? %>
-                <span style="margin-left:30px;  font-weight:bold;">in categories</span>
+
+                <div style="margin-top:5px;">
+                    <span style="margin-left:0px; font-weight:bold;">in categories</span>
                     <% for category, weight in Review.categories %>
-                <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
-                <% end %>
-                <span style="margin-left:5px; font-weight:bold;">in state</span>
-                <% for state_name in Opinion.list_states %>
-                    <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %><%= state_name %>
-                <% end %>
-                <%= submit_tag "filter", :style => "margin-left:30px;" %>
+                        <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+                    <% end %>
+                </div>
+
+                <div style="margin-top:5px;">
+                    <span style="margin-left:0px; font-weight:bold;">in state</span>
+                    <% for state_name, state_datas in Opinion.list_states %>
+                        <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
+                        <span style="background-color:<%= state_datas[:color] %>; padding:2px;"><%= state_datas[:label] %></span>
+                    <% end %>
+                </div>
+
+                <div style="margin-top:5px;">
+                    opinions&nbsp;
+                    <%= link_to(image_tag("icons/backward.png", :border => 0), "/opinions?page=#{@opinions.prev.number}") if @opinions.prev? %>
+                    <%= (@opinions.number - 1) * @nb_opinions_per_page + 1 %> - <%= @opinions.number * @nb_opinions_per_page - 1 %>
+                    <%= link_to(image_tag("icons/foward.png", :border => 0), "/opinions?page=#{@opinions.next.number}") if @opinions.next? %>
+                    <%= submit_tag "filter among #{@nb_opinions} opinions", :style => "margin-left:30px;" %>
+                </div>
+
             <% end -%>
-            <hr/>
-            <%= link_to("recompute status of all opinions...", "/opinions/recompute_all_states") %>
-            <hr/>
+             <hr/>
         </td></tr>
 
         <tr>
-            <th width="150">status</th>
-            <th>products</th>
-            <th width="100">review</th>
+            <th width="150" align="left">status</th>
+            <th align="left">opinions</th>
+            <th width="100" align="left">source</th>
         </tr>
         <% for opinion in @opinions %>
             <tr>

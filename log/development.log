@@ -14237,3 +14237,981 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-05-16 12:50:41) [GET]
   Parameters: {"id"=>"4bce5cbf43a76d14aa000004"}
 Sending data 
 Completed in 467ms (View: 4 | 200 OK [http://localhost/medias/datas/4bce5cbf43a76d14aa000004]
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-05-16 14:51:24) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 72ms (View: 67 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-16 14:53:21) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 885ms (View: 722 | 200 OK [http://localhost/home]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2010-05-16 14:53:26) [GET]
+Redirected to http://localhost:3000/show/cell_phones
+Completed in 349ms | 302 Found [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-16 14:53:27) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (10.4ms)
+Rendered knowledges/_products_selection (146.4ms)
+Rendered knowledges/_specification_show (5.0ms)
+Rendered knowledges/_specification_value_show (11.9ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (2.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (3.0ms)
+Rendered knowledges/_specification_value_show (3.2ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_show_bis (31.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (25.7ms)
+Rendered knowledges/_specification_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (4.3ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (218.0ms)
+Rendered knowledges/_show_bis (249.5ms)
+Rendered knowledges/_show_bis (336.9ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (22.0ms)
+Rendered knowledges/_specification_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (22.0ms)
+Rendered knowledges/_specification_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (20.9ms)
+Rendered knowledges/_show_bis (416.5ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (24.6ms)
+Rendered knowledges/_show_bis (38.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (11.0ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (20.7ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (25.5ms)
+Rendered knowledges/_specification_show (4.2ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_show_bis (240.5ms)
+Rendered knowledges/_show_bis (301.6ms)
+Rendered knowledges/_show_bis (843.0ms)
+Rendered knowledges/_specification_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (29.0ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (24.6ms)
+Rendered knowledges/_show_bis (78.7ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (3.2ms)
+Rendered knowledges/_show_bis (24.2ms)
+Rendered knowledges/_show_bis (36.6ms)
+Rendered knowledges/_show_bis (129.1ms)
+Rendered knowledges/_specification_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (23.6ms)
+Rendered knowledges/_show_bis (37.2ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (19.7ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (3.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (22.6ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (4.2ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (23.1ms)
+Rendered knowledges/_show_bis (58.2ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (4.0ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (25.3ms)
+Rendered knowledges/_specification_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (22.5ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (20.5ms)
+Rendered knowledges/_specification_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (22.7ms)
+Rendered knowledges/_specification_show (1.4ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_show_bis (20.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (4.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (30.8ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (24.3ms)
+Rendered knowledges/_specification_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_show_bis (28.6ms)
+Rendered knowledges/_show_bis (107.3ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (20.1ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (219.2ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (237.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (3.6ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (4.4ms)
+Rendered knowledges/_show_bis (33.9ms)
+Rendered knowledges/_specification_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (4.0ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (29.7ms)
+Rendered knowledges/_show_bis (89.9ms)
+Rendered knowledges/_show_bis (469.2ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (21.9ms)
+Rendered knowledges/_specification_show (2.7ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (22.2ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (23.8ms)
+Rendered knowledges/_show_bis (37.1ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (29.7ms)
+Rendered knowledges/_specification_show (4.6ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (6.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (241.6ms)
+Rendered knowledges/_show_bis (296.1ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (5.2ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (30.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (3.8ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (26.7ms)
+Rendered knowledges/_show_bis (79.3ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (18.3ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (24.1ms)
+Rendered knowledges/_show_bis (67.2ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (19.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (17.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (22.2ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (3.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (230.7ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (18.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_show_bis (22.6ms)
+Rendered knowledges/_show_bis (414.1ms)
+Rendered knowledges/_specification_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_show_bis (21.7ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (3.6ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (23.9ms)
+Rendered knowledges/_specification_show (1.3ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (3.2ms)
+Rendered knowledges/_show_bis (24.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (3.9ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_show_bis (23.6ms)
+Rendered knowledges/_show_bis (107.8ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (19.7ms)
+Rendered knowledges/_show_bis (31.8ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (3.0ms)
+Rendered knowledges/_show_bis (229.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (3.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (23.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (23.6ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (23.8ms)
+Rendered knowledges/_show_bis (316.9ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (19.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (17.3ms)
+Rendered knowledges/_specification_show (1.7ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (21.3ms)
+Rendered knowledges/_show_bis (388.9ms)
+Rendered knowledges/_show_bis (1370.6ms)
+Rendered knowledges/_show (3469.2ms)
+Completed in 5471ms (View: 4384 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:53:36) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3011ms (View: 2542 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:54:02) [POST]
+  Parameters: {"commit"=>"filter", "authenticity_token"=>"Qfc3DxgYoZAecXMryXWRB7iJ5LYH5FXtiSWk9ppZsbo=", "state_names"=>["error"], "source_categories"=>["amazon", "user", "expert"]}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2989ms (View: 2780 | 200 OK [http://localhost/opinions/index]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:54:29) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3208ms (View: 2721 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#recompute_all_states (for 127.0.0.1 at 2010-05-16 14:55:41) [GET]
+
+ActionController::UnknownAction (No action responded to recompute_all_states. Actions: get_logged_user, get_products_selected, and index):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:57:36) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3397ms (View: 2954 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:58:24) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3410ms (View: 2578 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 14:59:29) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4060ms (View: 3227 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:00:43) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4418ms (View: 3279 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:00:57) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4576ms (View: 3024 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:01:30) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3341ms (View: 2976 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:03:04) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4374ms (View: 2953 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:03:39) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3764ms (View: 3391 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:03:55) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4766ms (View: 3976 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:06:20) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4330ms (View: 3102 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:06:42) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 5503ms (View: 3885 | 200 OK [http://localhost/opinions?page=2]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:06:53) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 5419ms (View: 5032 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:10:49) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 4768ms (View: 4415 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:11:11) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 5691ms (View: 5102 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:13:28) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+
+ActionView::TemplateError (undefined local variable or method `style' for #<ActionView::Base:0x10b5b5d90>) on line #28 of app/views/reviews/index.html.erb:
+25:                     <%= (@reviews.number - 1) * @nb_reviews_per_page + 1 %> - <%= @reviews.number * @nb_reviews_per_page - 1 %>
+26:                     <%= link_to(image_tag("icons/foward.png", :border => 0), "/reviews?page=#{@reviews.next.number}") if @reviews.next? %>
+27:                     <%= submit_tag "filter among #{@nb_reviews} reviews", :style => "margin-left:30px;" %>
+28:                     <%= link_to("recompute status of all reviews...", "/reviews/recompute_all_states", style => "color:orange; margin-left:10px; font-size:80%;") %>
+29:                 </div>
+30: 
+31:             <% end -%>
+
+    app/views/reviews/index.html.erb:28
+    app/views/reviews/index.html.erb:6
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (123.3ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:13:41) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 4529ms (View: 4321 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:14:31) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 5073ms (View: 4651 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:38:33) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #18 of app/views/reviews/index.html.erb:
+15:                 <div style="margin-top:5px;">
+16:                     <span style="margin-left:0px;  font-weight:bold;">in state</span>
+17:                     <% for state_name, state_label in Review.list_states %>
+18:                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %><%= Review.state_label(state_name) %>
+19:                     <% end %>
+20:                 </div>
+21: 
+
+    app/views/reviews/index.html.erb:18:in `state_label'
+    app/views/reviews/index.html.erb:18
+    app/views/reviews/index.html.erb:17:in `each'
+    app/views/reviews/index.html.erb:17
+    app/views/reviews/index.html.erb:6
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (257.5ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:39:12) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 2691ms (View: 1733 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:39:44) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 1628ms (View: 702 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:40:06) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 1330ms (View: 628 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:41:26) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 1119ms (View: 684 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:41:44) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 1398ms (View: 535 | 200 OK [http://localhost/reviews]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:41:56) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 1477ms (View: 1074 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:42:55) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2030ms (View: 988 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:43:30) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2465ms (View: 850 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:43:53) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2193ms (View: 1137 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:45:40) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 1205ms (View: 370 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:46:06) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2581ms (View: 836 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:46:25) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 1047ms (View: 501 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:46:43) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 687ms (View: 248 | 200 OK [http://localhost/opinions]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 15:46:47) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 767ms (View: 433 | 200 OK [http://localhost/reviews]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:46:54) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 791ms (View: 425 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:48:03) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 5216ms (View: 4232 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 15:58:46) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3446ms (View: 2677 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:01:32) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4533ms (View: 2901 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:05:32) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4140ms (View: 2519 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:07:57) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3060ms (View: 2409 | 200 OK [http://localhost/opinions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-16 16:08:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/icons/circle_purple.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:09:15) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3864ms (View: 3064 | 200 OK [http://localhost/opinions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-16 16:09:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/icons/circle_purple.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 16:10:04) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3942ms (View: 2787 | 200 OK [http://localhost/opinions]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-16 16:10:56) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 4898ms (View: 4212 | 200 OK [http://localhost/reviews]

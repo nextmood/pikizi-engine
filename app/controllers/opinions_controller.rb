@@ -8,7 +8,7 @@ class OpinionsController < ApplicationController
     @source_categories = params[:source_categories]
     @source_categories ||= Review.categories.collect { |category_name, weight| category_name }
     @state_names = params[:state_names]
-    @state_names ||= Opinion.list_states
+    @state_names ||= Opinion.list_states.collect(&:first)
 
     select_options = { :category => @source_categories, :state => @state_names }
     @nb_opinions = Opinion.count(select_options)

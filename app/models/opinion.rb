@@ -120,28 +120,22 @@ class Opinion < Root
 
     state :draft do
       def state_color() "blue" end
-      def state_label() "Draft" end
     end
 
     state :to_review do
       def state_color() "orange" end
-      def state_label() "To be review" end
-      def explanations() state_label end
     end
 
     state :reviewed_ok do
       def state_color() "green" end
-      def state_label() "Reviewed ok" end
     end
 
     state :reviewed_ko do
       def state_color() "red" end
-      def state_label() "Reviewed ko" end
     end
 
     state :error do
       def state_color() "red" end
-      def state_label() "Something wrong" end
     end
 
     event :submit do
@@ -181,7 +175,16 @@ class Opinion < Root
     end
   end
 
-  def self.list_states() Opinion.state_machines[:state].states.collect { |s| s.name.to_s } end
+  def self.list_states() Opinion.state_machines[:state].states.collect { |s| [s.name.to_s, Opinion.state_datas[s.name.to_s]] } end
+  # label of state for UI
+  def self.state_datas() { "draft" => {:label => "draft", :color => "blue" },
+                           "to_review" => {:label => "is waiting to be reviewed", :color => "orange" },
+                           "reviewed_ok" => {:label => "is valid (reviewed as OK)", :color => "green" },
+                           "reviewed_ko" => {:label => "is un-valid (reviewed as KO)", :color => "purple" },
+                           "error" => {:label => "is in error", :color => "red" } } end
+
+  def state_label() Opinion.state_datas[state.to_s][:label] end
+  def state_color() Opinion.state_datas[state.to_s][:color] end
 
   # -----------------------------------------------------------------
   # html...

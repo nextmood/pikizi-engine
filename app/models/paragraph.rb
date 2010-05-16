@@ -24,25 +24,13 @@ class Paragraph
   
   state_machine :initial => :empty do
 
-    state :empty do
-      def state_color() "blue" end
-      def state_label() "No opinions" end
-    end
+    state :empty
 
-    state :to_review do
-      def state_color() "orange" end
-      def state_label() "opinion(s) are waiting to be reviewed" end
-    end
+    state :to_review
 
-    state :opinionated do
-      def state_color() "green" end
-      def state_label() "has at least one opinion valid" end
-    end
+    state :opinionated
 
-    state :error do
-      def state_color() "red" end
-      def state_label() "at least one opinion is unvalid" end
-    end
+    state :error 
 
     event :is_empty do
       transition all => :empty
@@ -75,7 +63,15 @@ class Paragraph
     end
   end
 
-  def self.list_states() Paragraph.state_machines[:state].states.collect { |s| s.name.to_s } end
+  def self.list_states() Paragraph.state_machines[:state].states.collect { |s| [s.name.to_s, Paragraph.state_datas[s.name.to_s]] } end
+
+  # label of state for UI
+  def self.state_datas() { "empty" => { :label => "has no opinions", :color => "blue" },
+                           "to_review" => { :label => "has at least one opinion waiting to be reviewed", :color => "orange" },
+                           "opinionated" => { :label => "has at least one opinion valid", :color => "green" },
+                           "error" => { :label => "has at least one opinion in error", :color => "red" } } end
+  def state_label() Paragraph.state_datas[state.to_s][:label] end
+  def state_color() Paragraph.state_datas[state.to_s][:color] end
 
   # -----------------------------------------------------------------
 
