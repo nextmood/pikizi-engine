@@ -1,0 +1,195 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-16 21:20:32) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 4267ms (View: 2639 | 200 OK [http://localhost/home]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 21:20:40) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 4141ms (View: 2812 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-16 21:20:52) [POST]
+  Parameters: {"commit"=>"filter among 3324 opinions", "authenticity_token"=>"Qfc3DxgYoZAecXMryXWRB7iJ5LYH5FXtiSWk9ppZsbo=", "state_names"=>["error"], "source_categories"=>["amazon", "user", "expert"]}
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 3109ms (View: 2667 | 200 OK [http://localhost/opinions/index]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-16 21:21:13) [GET]
+  Parameters: {"paragraph_id"=>"4bdcbee843a76d09fb00000b", "id"=>"4bdcbe8243a76d09fb000002", "opinion_id"=>"4bdcc31e43a76d09fb000029"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (88.3ms)
+Rendered reviews/_header (198.1ms)
+Rendered interpretor/_opinion (12.2ms)
+Rendered interpretor/_dimensions_related (120.9ms)
+Rendered interpretor/_usage_related (12.9ms)
+Rendered interpretor/_usages_related (62.2ms)
+Rendered interpretor/_products_selector_filter (29.4ms)
+Rendered interpretor/_products_selector_filters (59.2ms)
+Rendered interpretor/_products_selector (327.8ms)
+Rendered interpretor/_opinion_selector_tip (351.1ms)
+Rendered interpretor/_paragraph_editor_opinion (606.9ms)
+Completed in 2275ms (View: 1036 | 200 OK [http://localhost/edit_review/4bdcbe8243a76d09fb000002/4bdcbee843a76d09fb00000b/4bdcc31e43a76d09fb000029]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-16 21:21:16) [GET]
+  Parameters: {"id"=>"4bce5cbf43a76d14aa000004"}
+Sending data 
+Completed in 543ms (View: 8 | 200 OK [http://localhost/medias/datas/4bce5cbf43a76d14aa000004]
+
+
+Processing InterpretorController#update_opinion (for 127.0.0.1 at 2010-05-16 21:21:33) [PUT]
+  Parameters: {"commit"=>"Save", "dimensions"=>["4bb8714c43a76d3d0300000d", "4bb8714c43a76d3d03000008", "4bb8714c43a76d3d03000007"], "products_filter_referent"=>{"4bdcc31e43a76d09fb00002a"=>{"label"=>"HTC Droid Incredible", "_type"=>"ProductByLabel", "and_similar"=>"1"}}, "authenticity_token"=>"Qfc3DxgYoZAecXMryXWRB7iJ5LYH5FXtiSWk9ppZsbo=", "id"=>"4bdcc31e43a76d09fb000029", "tip"=>{"extract"=>"", "intensity_symbol"=>"high", "value_oriented"=>"0"}, "usages"=>[{"label"=>""}]}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/models/opinion.rb:267:in `process_attributes'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/keys.rb:80:in `inject'
+  app/models/opinion.rb:265:in `each'
+  app/models/opinion.rb:265:in `inject'
+  app/models/opinion.rb:265:in `process_attributes'
+  app/models/opinion.rb:509:in `process_attributes'
+  app/controllers/interpretor_controller.rb:113:in `update_opinion'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (87.8ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#update_opinion (for 127.0.0.1 at 2010-05-16 21:22:56) [PUT]
+  Parameters: {"commit"=>"Save", "dimensions"=>["4bb8714c43a76d3d0300000d", "4bb8714c43a76d3d03000008", "4bb8714c43a76d3d03000007"], "products_filter_referent"=>{"4bdcc31e43a76d09fb00002a"=>{"label"=>"HTC Droid Incredible", "_type"=>"ProductByLabel", "and_similar"=>"1"}}, "authenticity_token"=>"Qfc3DxgYoZAecXMryXWRB7iJ5LYH5FXtiSWk9ppZsbo=", "id"=>"4bdcc31e43a76d09fb000029", "tip"=>{"extract"=>"", "intensity_symbol"=>"high", "value_oriented"=>"0"}, "usages"=>[{"label"=>""}]}
+Rendered interpretor/_dimensions_related (78.8ms)
+Rendered interpretor/_usage_related (11.3ms)
+Rendered interpretor/_usages_related (29.5ms)
+Rendered interpretor/_products_selector_filter (31.9ms)
+Rendered interpretor/_products_selector_filters (49.5ms)
+Rendered interpretor/_products_selector (74.2ms)
+Rendered interpretor/_opinion_selector_tip (91.5ms)
+Rendered interpretor/_paragraph_editor_opinion (422.2ms)
+Completed in 4280ms (View: 493 | 200 OK [http://localhost/interpretor/update_opinion/4bdcc31e43a76d09fb000029]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-16 21:23:27) [GET]
+  Parameters: {"paragraph_id"=>"4bdcbee843a76d09fb00000d", "id"=>"4bdcbe8243a76d09fb000002", "opinion_id"=>"4bdcc4d643a76d0a60000009"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (63.8ms)
+Rendered reviews/_header (145.3ms)
+Rendered interpretor/_opinion (2.4ms)
+Rendered interpretor/_dimensions_related (120.1ms)
+Rendered interpretor/_usage_related (8.7ms)
+Rendered interpretor/_usages_related (37.0ms)
+Rendered interpretor/_products_selector_filter (23.6ms)
+Rendered interpretor/_products_selector_filters (33.9ms)
+Rendered interpretor/_products_selector (42.3ms)
+Rendered interpretor/_opinion_selector_tip (48.2ms)
+Rendered interpretor/_paragraph_editor_opinion (221.8ms)
+Completed in 1400ms (View: 751 | 200 OK [http://localhost/edit_review/4bdcbe8243a76d09fb000002/4bdcbee843a76d09fb00000d/4bdcc4d643a76d0a60000009]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-16 21:23:30) [GET]
+  Parameters: {"id"=>"4bce5cbf43a76d14aa000004"}
+Sending data 
+Completed in 212ms (View: 21 | 200 OK [http://localhost/medias/datas/4bce5cbf43a76d14aa000004]
+
+
+Processing InterpretorController#update_opinion (for 127.0.0.1 at 2010-05-16 21:23:39) [PUT]
+  Parameters: {"commit"=>"Save", "dimensions"=>["4bb8714c43a76d3d03000001"], "products_filter_referent"=>{"4bdcc4d643a76d0a6000000a"=>{"label"=>"HTC Droid Incredible", "_type"=>"ProductByLabel", "and_similar"=>"1"}}, "authenticity_token"=>"Qfc3DxgYoZAecXMryXWRB7iJ5LYH5FXtiSWk9ppZsbo=", "id"=>"4bdcc4d643a76d0a60000009", "tip"=>{"extract"=>"", "intensity_symbol"=>"very_high", "value_oriented"=>"0"}, "usages"=>[{"label"=>""}]}
+Rendered interpretor/_dimensions_related (76.2ms)
+Rendered interpretor/_usage_related (7.2ms)
+Rendered interpretor/_usages_related (13.2ms)
+Rendered interpretor/_products_selector_filter (19.7ms)
+Rendered interpretor/_products_selector_filters (21.6ms)
+Rendered interpretor/_products_selector (33.6ms)
+Rendered interpretor/_opinion_selector_tip (40.0ms)
+Rendered interpretor/_paragraph_editor_opinion (145.7ms)
+Completed in 1836ms (View: 359 | 200 OK [http://localhost/interpretor/update_opinion/4bdcc4d643a76d0a60000009]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-16 21:23:56) [GET]
+  Parameters: {"paragraph_id"=>"4bdcbee843a76d09fb000021", "id"=>"4bdcbe8243a76d09fb000002", "opinion_id"=>"4bdcce1543a76d0a60000031"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+
+ActionView::TemplateError (A copy of Product has been removed from the module tree but is still active!) on line #6 of app/views/reviews/_header.html.erb:
+3:     <tr>
+4:       <% for product in review.products %>
+5:         <td valign="top" width="80">
+6:                   <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
+7: 
+8:         </td>
+9:               <% end %>
+
+    app/models/product.rb:54:in `similar_products'
+    app/views/reviews/_header.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/_header.html.erb:4
+    app/views/interpretor/edit_review.html.erb:4
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (146.4ms)
+Rendered rescues/_request_and_response (3.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-16 21:24:14) [GET]
+  Parameters: {"paragraph_id"=>"4bdcbee843a76d09fb000021", "id"=>"4bdcbe8243a76d09fb000002", "opinion_id"=>"4bdcce1543a76d0a60000031"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (63.7ms)
+Rendered reviews/_header (745.5ms)
+Rendered interpretor/_opinion (281.4ms)
+Rendered interpretor/_opinion (0.7ms)
+Rendered interpretor/_dimensions_related (246.8ms)
+Rendered interpretor/_usage_related (15.5ms)
+Rendered interpretor/_usages_related (35.3ms)
+Rendered interpretor/_products_selector_filter (245.4ms)
+Rendered interpretor/_products_selector_filter (248.7ms)
+Rendered interpretor/_products_selector_filters (527.6ms)
+Rendered interpretor/_products_selector (548.5ms)
+Rendered interpretor/_products_selector_filter (19.4ms)
+Rendered interpretor/_products_selector_filters (21.0ms)
+Rendered interpretor/_products_selector (29.4ms)
+Rendered interpretor/_opinion_selector_ranking (646.3ms)
+Rendered interpretor/_paragraph_editor_opinion (984.2ms)
+Completed in 4450ms (View: 2176 | 200 OK [http://localhost/edit_review/4bdcbe8243a76d09fb000002/4bdcbee843a76d09fb000021/4bdcce1543a76d0a60000031]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-16 21:24:20) [GET]
+  Parameters: {"id"=>"4bce5cbf43a76d14aa000004"}
+Sending data 
+Completed in 235ms (View: 8 | 200 OK [http://localhost/medias/datas/4bce5cbf43a76d14aa000004]

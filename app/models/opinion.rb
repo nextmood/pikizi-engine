@@ -264,7 +264,7 @@ class Opinion < Root
 
     self.usage_ids = (params[:usages] || {}).inject([]) do |l, (k, values)|
       puts ">>>>>>>>>>values=>>>>>>>>> #{values.inspect}"
-      usage_label = values[:label].strip
+      usage_label = values ? values[:label].strip : nil
       if usage_label and usage_label.size > 0
         unless existing_usage = Usage.first(:label => usage_label)
           # creating a new usage...

@@ -63,6 +63,10 @@ class Knowledge < Root
   def get_quizze_by_idurl(idurl) list_manager(:quizzes, :by_idurl => idurl) end
   def nb_quizzes() get_quizzes.size end
 
+  # --------- quizzes attached to this knowledge  ---------------
+  many :opinions, :polymorphic => true
+  def update_opinions_status() opinions.all.each { |opinion| opinion.update_status(get_products) }  end
+
   # ---------------------------------------------------------------------------------------
 
 
