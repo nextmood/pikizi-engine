@@ -12,6 +12,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/interpretor/_opinion_selector_type.html.erb" afterPath="$PROJECT_DIR$/app/views/interpretor/_opinion_selector_type.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/icons/circle_blue.png" afterPath="$PROJECT_DIR$/public/images/icons/circle_blue.png" />
@@ -21,9 +22,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/helpers/opinions_helper_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/functional/opinions_controller_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paragraph.rb" afterPath="$PROJECT_DIR$/app/models/paragraph.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" afterPath="" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="pikizi-engine.iws" />
@@ -46,7 +46,35 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="opinion.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="156" column="18" selection-start="5207" selection-end="5218" vertical-scroll-proportion="-7.8461537">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paragraph.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="85" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="85" selection-start="2382" selection-end="2382" vertical-scroll-proportion="0.55263156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -60,7 +88,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/views/reviews/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/development_ori.rb" />
         <option value="$PROJECT_DIR$/config/initializers/database.rb" />
@@ -71,10 +98,11 @@
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/edit_review.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_opinion_selector_type.html.erb" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
+        <option value="$PROJECT_DIR$/app/models/review.rb" />
       </list>
     </option>
   </component>
@@ -882,11 +910,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doc/google.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/api.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -939,13 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="0.30560273">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/interpretor_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="122" column="0" selection-start="4934" selection-end="4934" vertical-scroll-proportion="0.3010949">
@@ -983,7 +999,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="117" selection-start="5608" selection-end="5608" vertical-scroll-proportion="1.6998314">
+        <state line="156" column="18" selection-start="5207" selection-end="5218" vertical-scroll-proportion="-7.8461537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="85" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="85" selection-start="2382" selection-end="2382" vertical-scroll-proportion="0.55263156">
           <folding />
         </state>
       </provider>

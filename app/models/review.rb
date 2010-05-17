@@ -96,9 +96,9 @@ class Review < Root
   def self.list_states() Review.state_machines[:state].states.collect { |s| [s.name.to_s, Review.state_datas[s.name.to_s]] } end
 
   # label of state for UI
-  def self.state_datas() { "empty" => { :label => "has no opinions", :color => "blue" },
+  def self.state_datas() { "empty" => { :label => "has no opinions", :color => "lightblue" },
                            "to_review" => { :label => "has at least one paragraph waiting to be reviewed", :color => "orange" },
-                           "opinionated" => { :label => "has at least one paragraph with a valid opinions", :color => "green" },
+                           "opinionated" => { :label => "has at least one paragraph with a valid opinions", :color => "lightgreen" },
                            "error" => { :label => "has at least one paragraph in error", :color => "red" } } end
   def state_label() Review.state_datas[state.to_s][:label] end
   def state_color() Review.state_datas[state.to_s][:color] end
