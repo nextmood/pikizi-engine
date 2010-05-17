@@ -8,12 +8,14 @@
         <%= render(:partial => "products_4_review", :locals => {:review => @review }) %>
         <hr/>
         current state: <%= object_state(@review) %><%= @review.state_label.inspect %>
+      <!--
         <span style="margin-left:150px;">
           mark all <%= @review.opinions.count %> opinions in this review as
           &nbsp;<%= link_to("draft", "/reviews/trigger_event/#{@review.id}/?event_name=correct", :style => "color:orange;") %>
           &nbsp;>>&nbsp;<%= link_to("publish", "/reviews/trigger_event/#{@review.id}/?event_name=submit", :style => "color:orange;") %>
           &nbsp;>>&nbsp;<%= link_to("ok", "/reviews/trigger_event/#{@review.id}/?event_name=accept", :style => "color:orange;") %>          
         </span>
+        -->
     </div>
 
     <div style="border:1px solid black; padding:5px;  margin-top:10px;  background-color:white;">
