@@ -260,10 +260,14 @@ class Opinion < Root
   def process_attributes(knowledge, params)
     process_attributes_products_selector(knowledge, "referent", params)
     self.dimension_ids = (params[:dimensions] || []).collect { |dimension_id| BSON::ObjectID.from_string(dimension_id) }
-    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params[:usages].inspect}"
 
-    self.usage_ids = (params[:usages] || {}).inject([]) do |l, (k, values)|
-      puts ">>>>>>>>>>values=>>>>>>>>> #{values.inspect}"
+    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params[:usages].inspect}"
+    params_usages = (params[:usages] || [])
+    params_usages = params_usages.collect { |k, v| v } if params_usages.is_a?(Hash)
+    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params_usages.inspect}"
+
+    self.usage_ids = params_usages.inject([]) do |l, values|
+      #puts ">>>>>>>>>>values=>>>>>>>>> #{values.inspect}"
       usage_label = values ? values[:label].strip : nil
       if usage_label and usage_label.size > 0
         unless existing_usage = Usage.first(:label => usage_label)
@@ -285,17 +289,29 @@ class Opinion < Root
     
   # ---- internal use (should be private)
   def process_attributes_products_selector(knowledge, products_selector_name, params)
-    raise "no products_selector_name #{products_selector_name.inspect}" unless params["products_filter_#{products_selector_name}"]
+    params_pf = get_zozo(params, "products_filter_#{products_selector_name}")
+    raise "no products_selector_name #{products_selector_name.inspect}" unless params_pf.size > 0
+
     # remove previous products filters
     products_filters_for(products_selector_name).each(&:destroy)
     # create new products filters
-    params["products_filter_#{products_selector_name}"].each do |k, values|
+    # puts ">>>>>>>>>>>>>>> params_pf=" <<  params_pf.inspect
+    params_pf = params_pf.collect { |k, h| h } if params_pf.is_a?(Hash)
+    params_pf.each do |values|
       products_filter = Kernel.const_get(values["_type"]).new
       products_filter.process_attributes(knowledge, products_selector_name, self, values)
       products_filter.save
       self.products_filters << products_filter
-      pp(products_filter, $>, 40)
+      # pp(products_filter, $>, 40)
     end
+    true
+  end
+
+  def get_zozo(params, prefix)
+    puts ">>>>>>>>>>>>>>> params=" <<  params.inspect
+    l = params.inject([]) { |l, (param_name, param_value)| param_name.has_prefix(prefix) ? l << param_value : l }
+    puts ">>>> after filter=#{l.inspect}"
+    l
   end
 
   def get_attribute(params, attr_symbol) params[self.class.to_s.downcase.to_sym][attr_symbol] end

@@ -30,6 +30,7 @@ class ProductByLabel < ProductsFilter
   end
 
   def process_attributes(knowledge, products_selector_dom_name, opinion, params)
+    puts ">>>>> #{params.inspect}"
     super(knowledge, products_selector_dom_name, opinion, params)
     product_label = params["label"].strip
     unless existing_product = Product.first(:label => product_label)

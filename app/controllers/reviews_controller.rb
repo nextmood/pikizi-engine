@@ -24,7 +24,8 @@ class ReviewsController < ApplicationController
   end
 
   def recompute_all_states
-    Review.all.each do |review| review.update_status(true) end
+    Paragraph.all.each(&:update_status)
+    Review.all.each(&:update_status)
     redirect_to("/reviews")
   end
 
@@ -43,7 +44,8 @@ class ReviewsController < ApplicationController
       end
       nb_opinions += 1
     end
-    review.update_status(true)
+    review.paragraphs.collect(&:update_status)
+    review.update_status
     flash[:notice] = "#{nb_opinions_moved} opinion(s) moved for #{nb_opinions} opinions total"
     redirect_to "/reviews/edit/#{review.id}"
   end

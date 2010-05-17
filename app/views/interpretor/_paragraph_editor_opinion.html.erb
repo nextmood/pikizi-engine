@@ -1,6 +1,6 @@
 <div id="paragraph_edited">
     <!-- editing an existing opinion -->
-    <% if notification %>
+    <% if notification ||= (opinion.error? ? "<span style='background-color:red;'>ERROR: #{opinion.errors_explanations}</span>" : nil) %>
         <div id="notification" style="border:2px dashed orange; padding:5px;">
           <%= notification %>
           <%= link_to_function(image_tag("icons/status_icon_delete.png", :border => 0),

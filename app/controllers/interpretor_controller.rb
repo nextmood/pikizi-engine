@@ -113,7 +113,8 @@ class InterpretorController < ApplicationController
     @opinion.process_attributes(@current_knowledge, params)
     @opinion.save
     @opinion.update_status(@current_knowledge.get_products)
-    @opinion.reload
+    @opinion.paragraph.update_status
+    @opinion.review.update_status
     notification = "<span style='color:#{@opinion.error? ? 'red' : 'green'};'><b>Saved ...</b> #{@opinion.to_html}</span>"
     render :update do |page|
       page.replace("paragraph_edited", :partial => "paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => notification  })

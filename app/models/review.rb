@@ -66,41 +66,40 @@ class Review < Root
       transition all => :empty
     end
 
-    event :has_opinions_reviewed_ok do
+    event :has_paragraphs_opinionated do
       transition all => :opinionated
     end
 
-    event :has_opinions_to_review do
+    event :has_paragraphs_to_review do
       transition all => :to_review
     end
 
-    event :has_opinions_in_error do
+    event :has_paragraphs_in_error do
       transition all => :error
     end
 
   end
 
-  # to upate the status of a review
-  def update_status(update_also_paragraphs=false)
-    if opinions.any?(&:error?)
-      has_opinions_in_error!
-    elsif opinions.any?(&:to_review?)
-      has_opinions_to_review!
-    elsif opinions.any?(&:reviewed_ok?)
-      has_opinions_reviewed_ok!
+  # to upate the status of a review (based on paragraphs status)
+  def update_status
+    if paragraphs.any?(&:error?)
+      has_paragraphs_in_error!
+    elsif paragraphs.any?(&:to_review?)
+      has_paragraphs_to_review!
+    elsif paragraphs.any?(&:opinionated?)
+      has_paragraphs_opinionated!
     else
       is_empty!
     end
-    paragraphs.each(&:update_status) if update_also_paragraphs 
   end
 
   def self.list_states() Review.state_machines[:state].states.collect { |s| [s.name.to_s, Review.state_datas[s.name.to_s]] } end
 
   # label of state for UI
   def self.state_datas() { "empty" => { :label => "has no opinions", :color => "blue" },
-                           "to_review" => { :label => "has at least one opinion waiting to be reviewed", :color => "orange" },
-                           "opinionated" => { :label => "has at least one opinion valid", :color => "green" },
-                           "error" => { :label => "has at least one opinion in error", :color => "red" } } end
+                           "to_review" => { :label => "has at least one paragraph waiting to be reviewed", :color => "orange" },
+                           "opinionated" => { :label => "has at least one paragraph with a valid opinions", :color => "green" },
+                           "error" => { :label => "has at least one paragraph in error", :color => "red" } } end
   def state_label() Review.state_datas[state.to_s][:label] end
   def state_color() Review.state_datas[state.to_s][:color] end
   

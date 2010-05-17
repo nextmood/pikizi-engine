@@ -1,6 +1,6 @@
-<span id="<%= dom_id = "usage_#{usage.id || Time.now.to_i }}" %>">
+<span id="<%= dom_id = "usage_#{usage.id}" %>">
     <% fields_for "usages[]", usage do |usage_fields| -%>
-        <%= usage_fields.text_field_with_auto_complete :label, {}, {:method => :get } %>
+        <%= usage_fields.text_field_with_auto_complete :label, {:name => "usages[#{usage.id}][label]"}, {:method => :get } %>
     <% end -%>
 
     <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
