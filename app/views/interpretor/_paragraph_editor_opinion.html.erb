@@ -9,7 +9,23 @@
         </div>
     <% end %>
 
-    <% remote_form_for(opinion, :url => { :action => "update_opinion", :id => opinion.id }, :html => {:style => "background-color:lightgray; padding:5px 10px;"}) do |opinion_form| %>
+    <% if opinion.to_review? %>
+        <div id="censor_step" style="border:2px solid red; background-color:orange; padding:5px; margin-bottom:10px;">
+            <% form_tag "/interpretor/censor_action/#{opinion.id}", :id => "form_censor_#{opinion.id}" do -%>
+                waiting for acceptance: ...
+                <%= text_field_tag "censor_comment_#{opinion.id}", nil, :size => 50 %>
+                <%= text_field_tag "censor_code_#{opinion.id}", nil %>
+                <%= link_to_function("accept...", "submit_censor('#{opinion.id}', 'ok');") %>
+                &nbsp;
+                <%= link_to_function("reject...", "submit_censor('#{opinion.id}', 'ko');") %>
+            <% end -%>
+        </div>
+    <% end %>
+
+
+    <% remote_form_for(opinion, :url => { :action => "update_opinion", :id => opinion.id }, :html => {:style => "background-color:lightgray; padding:5px 10px;", :id => "main_opinion_form_#{opinion.id}"}) do |opinion_form| %>
+
+        <b><%= object_state(opinion) %><%= opinion.to_html %></b><hr/>
 
         <div style="width:100%;">
           cut and paste the related sentence. <small>if none, the whole paragraph is assumed</small><br/>
@@ -39,3 +55,28 @@
 
     <% end %>
 </div>
+
+<script>
+
+    function enableDisableForm(form_dom_id, flag) {
+        //flag = true if disabled, false if enabled
+        var f = document.getElementById(form_dom_id);
+        var len=f.elements.length;
+        for(x=0;x<len;x++) {
+            f.elements[x].disabled=flag;
+        }
+    }
+
+    function submit_censor(opinion_id, censor_code) {
+        var f = document.getElementById('form_censor_' + opinion_id);
+        document.getElementById('censor_code_' + opinion_id).value = censor_code;
+        f.submit();
+    }
+
+
+    <% if opinion.to_review? %>
+        enableDisableForm("main_opinion_form_<%= opinion.id %>", true);
+    <% end %>
+
+
+</script>

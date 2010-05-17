@@ -118,25 +118,15 @@ class Opinion < Root
 
   state_machine :initial => :draft do
 
-    state :draft do
-      def state_color() "blue" end
-    end
+    state :draft
 
-    state :to_review do
-      def state_color() "orange" end
-    end
+    state :to_review
 
-    state :reviewed_ok do
-      def state_color() "green" end
-    end
+    state :reviewed_ok
 
-    state :reviewed_ko do
-      def state_color() "red" end
-    end
+    state :reviewed_ko
 
-    state :error do
-      def state_color() "red" end
-    end
+    state :error 
 
     event :submit do
       transition all => :to_review
@@ -160,8 +150,13 @@ class Opinion < Root
 
   end
 
+  # extra fields link to the status
   key :errors_explanations, String
-  
+  key :censor_code, String
+  key :censor_comment, String
+  key :censor_date, Date
+  key :censor_author_id, BSON::ObjectID
+
   # to update the status of an opinion
   def update_status(all_products)
     compute_product_ids(all_products)
@@ -177,9 +172,9 @@ class Opinion < Root
 
   def self.list_states() Opinion.state_machines[:state].states.collect { |s| [s.name.to_s, Opinion.state_datas[s.name.to_s]] } end
   # label of state for UI
-  def self.state_datas() { "draft" => {:label => "draft", :color => "blue" },
+  def self.state_datas() { "draft" => {:label => "draft", :color => "lightblue" },
                            "to_review" => {:label => "is waiting to be reviewed", :color => "orange" },
-                           "reviewed_ok" => {:label => "is valid (reviewed as OK)", :color => "green" },
+                           "reviewed_ok" => {:label => "is valid (reviewed as OK)", :color => "lightgreen" },
                            "reviewed_ko" => {:label => "is un-valid (reviewed as KO)", :color => "purple" },
                            "error" => {:label => "is in error", :color => "red" } } end
 

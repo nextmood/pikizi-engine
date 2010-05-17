@@ -13,7 +13,6 @@ class Paragraph
   belongs_to :review
 
   key :ranking_number, Integer, :default => 0
-  key :is_neutral, Boolean, :default => true
 
   many :opinions, :order => "created_at ASC", :polymorphic => true
 

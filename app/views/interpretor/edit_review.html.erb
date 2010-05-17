@@ -36,16 +36,7 @@
                 <%= link_to(image_tag("icons/backward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_previous_id}") if @paragraph_previous_id %>
                 <%= link_to(image_tag("icons/foward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_next_id}", :style => "margin-right:30px;") if @paragraph_next_id %>
 
-                <% if @existing_opinions.size == 0 %>
-                    <!-- neutral paragraph -->
-                    <span style="margin-right:50px;">
-                        neutral paragraph<%= check_box_tag("neutral", nil, paragraph.is_neutral,
-                                             :onchange => remote_function(:url => { :action => "neutral_paragraph_toggle", :id => paragraph.id},
-                                                                          :with => "'?is_neutral='+ this.checked" ) ) %>
-                    </span>
-                <% end %>
-
-              <%= render(:partial => "opinion_selector_type", :locals => { :paragraph => paragraph }) %>
+                <%= render(:partial => "opinion_selector_type", :locals => { :paragraph => paragraph }) %>
 
 
 

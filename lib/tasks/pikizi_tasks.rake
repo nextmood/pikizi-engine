@@ -166,7 +166,7 @@ namespace :pikizi do
 
     puts "7) update paragraphs state to empty..."
 
-    Paragraph.all.each { |p| check_update(p, p.update_attributes(:state => "empty", :is_neutral => (p.opinions.count == 0))) }
+    Paragraph.all.each { |p| check_update(p, p.update_attributes(:state => "empty")) }
 
 
 

@@ -1,16 +1,12 @@
 <span id="paragraph_<%= paragraph.id %>_opinion_selector_type">
-    <% unless paragraph.is_neutral %>
-        <!-- creating a new opinion -->
-        <%= select_tag("create_opinion",
-                  options_for_select([["create a new opinion...", "nil"],
-                                      ["create a Tip", "Tip"],
-                                      ["create a Comparaison", "Comparator"],
-                                      ["create a Ranking", "Ranking"],
-                                      ["create a Rating", "Rating"],
-                                      ["create a Fact", "Neutral"]]),
-                  :onchange => "window.location='/interpretor/add_opinion_to_paragraph/#{paragraph.id}?opinion_class=' + this.value ;",
-                  :style => "color:orange;") %>
-    <% else %>
-        neutral
-    <% end%>
+    <!-- creating a new opinion -->
+    <%= select_tag("create_opinion",
+              options_for_select([["create a new opinion...", "nil"],
+                                  ["create a Tip", "Tip"],
+                                  ["create a Comparaison", "Comparator"],
+                                  ["create a Ranking", "Ranking"],
+                                  ["create a Rating", "Rating"],
+                                  ["create a Fact", "Neutral"]]),
+              :onchange => "window.location='/interpretor/add_opinion_to_paragraph/#{paragraph.id}?opinion_class=' + this.value ;",
+              :style => "color:orange;") %>
 </span>

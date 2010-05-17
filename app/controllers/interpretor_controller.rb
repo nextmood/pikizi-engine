@@ -122,15 +122,6 @@ class InterpretorController < ApplicationController
   end
 
 
-  def neutral_paragraph_toggle
-    paragraph = Paragraph.find(params[:id])
-    paragraph.update_attributes(:is_neutral => (params[:is_neutral] == "true"))
-
-    render :update do |page|
-      page.replace("paragraph_#{paragraph.id}_opinion_selector_type", :partial => "opinion_selector_type", :locals => {:paragraph => paragraph })
-    end
-  end
-
 
   # adding a new product filters
   def add_products_filter
@@ -205,7 +196,23 @@ class InterpretorController < ApplicationController
       page.replace("existing_opinion_#{@opinion.id}", :partial => "opinion", :locals => {:opinion => @opinion, :existing_opinion => @opinion })      
     end
   end
-  
+
+  # acceptance of an opinion
+  # moving from to_review to ... to_review_ok or to_review_ko
+  def censor_action
+    opinion = Opinion.find(params[:id])
+    raise "error wrong state=#{opinion.state}" unless opinion.to_review?
+    censor_comment = params["censor_comment_#{opinion.id}"]
+    case censor_code = params["censor_code_#{opinion.id}"]
+      when "ok" then opinion.accept!
+      when "ko" then opinion.reject!
+      else
+        raise "unknown censor code #{censor_code}"
+    end
+    opinion.update_attributes(:censor_code => censor_code, :censor_comment => censor_comment, :censor_date => Date.today, :censor_author_id => @current_user.id)
+    redirect_to "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}"    
+  end
+
   # AUTOCOMPLETION...
 
   # new_usage

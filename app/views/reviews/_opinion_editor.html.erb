@@ -1,0 +1,51 @@
+
+    <% remote_form_for(opinion, :url => "/reviews/update_opinion/#{opinion.id}") do |f| -%>
+
+        <div style="border-top:1px dashed black; padding-top:2px; margin-top:5px; ">
+          related to product(s):<%= opinion.products.collect(&:label).join(', ') %>
+        </div>
+
+        <div style="margin-top:5px; padding-top:2px; border-top:1px dashed black; ">
+            <% if opinion.is_a?(Opinion::Tip) %>
+                <%= f.collection_select(:intensity_symbol, Opinion::Tip.intensities_symbols, :last, :first) %>
+                for usage (XXX)<%= f.text_field(:usage, :size => 40) %>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
+
+            <% elsif opinion.is_a?(Opinion::Comparator) %>
+                <%= select_tag("comparator_operator", options_for_select([["better than","better"], ["same as","same"], ["worse than","worse"]], opinion.operator_type)) %>
+                predicate<%= f.text_field(:predicate, :size => 80 ) %>
+                <p>usage (XXX)<%= f.text_field(:usage, :size => 40) %></p>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
+
+            <% elsif opinion.is_a?(Opinion::Rating) %>
+                rating <%= f.text_field(:rating, :size => 2) %> min=<%= f.text_field(:min_rating, :size => 2) %> max=<%= f.text_field(:max_rating, :size => 2) %>
+                <p>usage (XXX)<%= f.text_field(:usage, :size => 40) %></p>
+                <p>extract<%= f.text_field(:extract, :size => 80) %></p>
+
+            <% elsif opinion.is_a?(Opinion::FeatureRelated) %>
+              related to feature <%= f.collection_select(:feature_related_idurl, dimension_feature(knowledge, :related), :last, :first) %>
+
+            <% else %>
+                type d'opinion inconnu <%= opinion.class %>
+            <% end %>
+
+            <% unless opinion.is_a?(Opinion::FeatureRelated) %>
+              <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;" >
+                 dimension of rating&nbsp;
+                <%= f.collection_select(:feature_rating_idurl, dimension_rating(knowledge, review.id, paragraph), :last, :first) %>
+                value oriented<%= f.check_box :value_oriented %>
+              </div>
+            <% end %>
+
+        </div>
+        <div style="border-top:1px dashed black; margin-top:5px; padding-top:2px;">
+            <%= submit_tag 'update opinion' %>
+            &nbsp;or&nbsp;
+
+            <%= link_to_remote("cancel", :url => { :controllers => "reviews", :action => "edit_opinion_cancel", :id => opinion.id }) %>
+        </div>
+
+    <% end -%>
+
+
+    

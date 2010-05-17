@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
 
   # list all opinions for current knowledge
   def index
-    @nb_opinions_per_page = 40
+    @nb_opinions_per_page = 100
     @source_categories = params[:source_categories]
     @source_categories ||= Review.categories.collect { |category_name, weight| category_name }
     @state_names = params[:state_names]
