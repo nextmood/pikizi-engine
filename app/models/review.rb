@@ -103,13 +103,6 @@ class Review < Root
   def state_label() Review.state_datas[state.to_s][:label] end
   def state_color() Review.state_datas[state.to_s][:color] end
 
-  def self.recompute_all_states
-    puts t0 = Time.now
-    Paragraph.all.each(&:update_status)
-    puts "#{(t1 = Time.now) - t0} secondes for paragraphs"
-    Review.all.each(&:update_status)
-    puts "#{(t2 = Time.now) - t1} secondes for Reviews"
-  end
 
   
   # -----------------------------------------------------------------

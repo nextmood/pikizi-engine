@@ -63,10 +63,6 @@ class Knowledge < Root
   def get_quizze_by_idurl(idurl) list_manager(:quizzes, :by_idurl => idurl) end
   def nb_quizzes() get_quizzes.size end
 
-  # --------- quizzes attached to this knowledge  ---------------
-  many :opinions, :polymorphic => true
-  def update_opinions_status() opinions.all.each { |opinion| opinion.update_status(get_products) }  end
-
   # ---------------------------------------------------------------------------------------
 
 
@@ -97,7 +93,21 @@ class Knowledge < Root
     end
   end
 
-
+  # recompute all states of reviews and paragraph of this knowledge
+  # option -> recompute opinions.status
+  def recompute_all_states(also_opinions=false)
+    reviews.each_with_index do |review, i|
+      t0 = Time.now
+      nb_opinions = 0
+      review.paragraphs.each do |paragraph|
+        paragraph.opinions.each { |opinion| nb_opinions += 1; opinion.update_status(get_products) } if also_opinions
+        paragraph.update_status
+      end
+      review.update_status
+      puts "review #{i} processed in #{'%2.5f' % (Time.now - t0)} s for #{nb_opinions} opinions"
+    end
+    true
+  end
 
   # read and create a domain (knowledge + questions, products and quizzes in the database)
   # this could be called by a rast task

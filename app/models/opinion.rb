@@ -278,14 +278,25 @@ class Opinion < Root
   end
 
   def self.fix_empty_referent
-    Opinion.all.each do |opinion|
-      if opinion.products_filters_for("referent").size == 0
-        opinion.review.products.each do |product_for_review|
-          opinion.products_filters << ProductByLabel.create(:opinion_id => opinion.id, :products_selector_dom_name => "referent", :product_id => product_for_review.id ).update_labels(product_for_review)
-          puts "opinion #{opinion.id} has no referent default adding #{product_for_review.label}"
+    knowledge = Knowledge.first(:idurl => "cell_phones")
+    knowledge.recompute_all_states(true)
+    puts "updated opinions....."
+    knowledge.reviews.each do |review|
+      review.paragraphs.each do |paragraph|
+        paragraph.opinions.each do |opinion|
+          if opinion.products_filters_for("referent").size == 0
+            review.products.each do |product_for_review|
+              opinion.products_filters << ProductByLabel.create(:opinion_id => opinion.id, :products_selector_dom_name => "referent", :product_id => product_for_review.id, :and_similar => false).update_labels(product_for_review)
+              puts "opinion #{opinion.id} has no referent default adding #{product_for_review.label}"
+            end
+            opinion.save
+            opinion.update_status(knowledge.get_products)
+            opinion.accept! if opinion.to_review?
+          end
         end
-        opinion.save
+        paragraph.update_status
       end
+      review.update_status
     end
     true
   end
