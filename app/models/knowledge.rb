@@ -95,12 +95,18 @@ class Knowledge < Root
 
   # recompute all states of reviews and paragraph of this knowledge
   # option -> recompute opinions.status
-  def recompute_all_states(also_opinions=false)
+  def recompute_all_states(options={})
     reviews.each_with_index do |review, i|
       t0 = Time.now
       nb_opinions = 0
       review.paragraphs.each do |paragraph|
-        paragraph.opinions.each { |opinion| nb_opinions += 1; opinion.update_status(get_products) } if also_opinions
+        if options[:also_opinions]
+          paragraph.opinions.each do |opinion|
+            nb_opinions += 1
+            opinion.update_status(get_products)
+            opinion.accept! if opinion.to_review? and options[:force_to_review_ok]
+          end
+        end
         paragraph.update_status
       end
       review.update_status

@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   end
 
   def recompute_all_states
-    @current_knowledge..recompute_all_states
+    @current_knowledge.recompute_all_states
     redirect_to("/reviews")
   end
 

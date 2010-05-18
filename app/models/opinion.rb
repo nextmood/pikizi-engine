@@ -279,7 +279,8 @@ class Opinion < Root
 
   def self.fix_empty_referent
     knowledge = Knowledge.first(:idurl => "cell_phones")
-    knowledge.recompute_all_states(true)
+    automatic_user = User.first(:rpx_username => "cpatte")
+    knowledge.recompute_all_states(:also_opinions => true, :force_to_review_ok => true)
     puts "updated opinions....."
     knowledge.reviews.each do |review|
       review.paragraphs.each do |paragraph|
@@ -291,7 +292,10 @@ class Opinion < Root
             end
             opinion.save
             opinion.update_status(knowledge.get_products)
-            opinion.accept! if opinion.to_review?
+            if opinion.to_review?
+              opinion.accept!
+              opinion.update_attributes(:censor_code => "ok", :censor_comment => "automatic...", :censor_date => Date.today, :censor_author_id => automatic_user.id) if opinion.to_review_ok?
+            end
           end
         end
         paragraph.update_status
