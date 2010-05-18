@@ -277,6 +277,18 @@ class Opinion < Root
     self.extract = get_attribute(params, :extract)
   end
 
+  def self.fix_empty_referent
+    Opinion.all.each do |opinion|
+      if opinion.products_filters_for("referent").size == 0
+        opinion.review.products.each do |product_for_review|
+          opinion.products_filters << ProductByLabel.create(:opinion_id => opinion.id, :products_selector_dom_name => "referent", :product_id => product_for_review.id ).update_labels(product_for_review)
+          puts "opinion #{opinion.id} has no referent default adding #{product_for_review.label}"
+        end
+        opinion.save
+      end
+    end
+    true
+  end
 
   # -----------------------------------------------------------------
   # private
