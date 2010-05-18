@@ -3,8 +3,8 @@
 
     <% unless opinion and existing_opinion.id == opinion.id %>
         <%= object_state(existing_opinion) %>
-        <%= link_to(existing_opinion.to_html, "/edit_review/#{existing_opinion.review_id}/#{existing_opinion.paragraph_id}/#{existing_opinion.id}", :style => "margin-left:10px;") %>
-        <%= link_to(image_tag("icons/status_icon_delete.png", :border => 0), "/interpretor/remove_opinion_from_paragraph/#{existing_opinion.id}") %>
+        <%= link_to(existing_opinion.to_html, "/edit_review/#{existing_opinion.review_id}/#{existing_opinion.paragraph_id}/#{existing_opinion.id}", :style => "margin-left:10px; color:orange;") %>
+        <%= link_to(image_tag("icons/status_icon_delete.png", :border => 0), "/interpretor/remove_opinion_from_paragraph/#{existing_opinion.id}", :style => "color:orange;") %>
         <span style="font-size:80%; margin-left:20px;"><%= existing_opinion.created_at%></span>
     <% end %>
 
