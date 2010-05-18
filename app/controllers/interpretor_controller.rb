@@ -101,9 +101,12 @@ class InterpretorController < ApplicationController
 
   def remove_opinion_from_paragraph
     opinion = Opinion.find(params[:id])
-    url = "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}"
+    paragraph_id = opinion.paragraph_id
+    review_id = opinion.review_id
     opinion.destroy
-    redirect_to url
+    Paragraph.find(paragraph_id).update_status
+    Review.find(review_id).update_status    
+    redirect_to "/edit_review/#{review_id}/#{paragraph_id}"
   end
 
   # this is the main form submit RJS

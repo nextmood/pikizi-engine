@@ -13,11 +13,11 @@
         <div id="censor_step" style="border:2px solid red; background-color:orange; padding:5px; margin-bottom:10px;">
             <% form_tag "/interpretor/censor_action/#{opinion.id}", :id => "form_censor_#{opinion.id}" do -%>
                 waiting for acceptance: ...
-                <%= text_field_tag "censor_comment_#{opinion.id}", nil, :size => 50 %>
-                <%= text_field_tag "censor_code_#{opinion.id}", nil %>
-                <%= link_to_function("accept...", "submit_censor('#{opinion.id}', 'ok');") %>
+                <%= text_field_tag "censor_comment_#{opinion.id}", "enter a comment...", :size => 50 %>
+                <%= hidden_field_tag "censor_code_#{opinion.id}", nil %>
+                <%= submit_tag "accept..", :style => "color:green; font-weight:bold;", :onclick => "submit_censor('#{opinion.id}', 'ok');" %>
                 &nbsp;
-                <%= link_to_function("reject...", "submit_censor('#{opinion.id}', 'ko');") %>
+                <%= submit_tag "reject..", :style => "color:red; font-weight:bold;", :onclick => "submit_censor('#{opinion.id}', 'ko');" %>
             <% end -%>
         </div>
     <% end %>
@@ -68,9 +68,7 @@
     }
 
     function submit_censor(opinion_id, censor_code) {
-        var f = document.getElementById('form_censor_' + opinion_id);
         document.getElementById('censor_code_' + opinion_id).value = censor_code;
-        f.submit();
     }
 
 
