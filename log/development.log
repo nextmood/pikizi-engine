@@ -857,3 +857,47 @@ Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:25:36) [GET]
   Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
 Sending data 
 Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-05-18 11:04:10) [GET]
+  Parameters: {"id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering reviews/edit
+Rendered reviews/_products_4_review (575.3ms)
+Rendered reviews/_form (23.6ms)
+Completed in 918ms (View: 778 | 200 OK [http://localhost/reviews/edit/4b892b6f43a76d7c5d00004b]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 11:04:11) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 51ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-18 11:04:22) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 3212ms (View: 3007 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-18 11:09:47) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 3117ms (View: 2864 | 200 OK [http://localhost/reviews]
+
+
+Processing ReviewsController#recompute_all_states (for 127.0.0.1 at 2010-05-18 11:09:54) [GET]
+
+
+Processing ReviewsController#recompute_all_states (for 127.0.0.1 at 2010-05-18 11:13:34) [GET]
+
+
+Processing ReviewsController#recompute_all_states (for 127.0.0.1 at 2010-05-18 11:14:13) [GET]
+Redirected to http://localhost:3000/reviews
+Completed in 224584ms | 302 Found [http://localhost/reviews/recompute_all_states]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-05-18 11:17:58) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 3047ms (View: 2977 | 200 OK [http://localhost/reviews]

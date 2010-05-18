@@ -24,8 +24,11 @@ class ReviewsController < ApplicationController
   end
 
   def recompute_all_states
+    puts t0 = Time.now
     Paragraph.all.each(&:update_status)
+    puts "#{(t1 = Time.now) - t0} secondes for paragraphs"
     Review.all.each(&:update_status)
+    puts "#{(t2 = Time.now) - t1} secondes for Reviews"
     redirect_to("/reviews")
   end
 

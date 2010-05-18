@@ -27,10 +27,10 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="opinion.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="opinion.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="0" selection-start="5108" selection-end="5264" vertical-scroll-proportion="0.0">
+            <state line="287" column="0" selection-start="10802" selection-end="10802" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -45,10 +45,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interpretor_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="interpretor_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/interpretor_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="95" selection-start="8693" selection-end="8693" vertical-scroll-proportion="1.1744885">
+            <state line="211" column="95" selection-start="8693" selection-end="8693" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="53" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paragraph.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="18" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-21.807692">
               <folding />
             </state>
           </provider>
@@ -67,22 +85,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_usages.html.erb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/knowledges_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb" />
         <option value="$PROJECT_DIR$/app/models/usage.rb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/interpretor_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/models/products_filter.rb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_usage_related.html.erb" />
         <option value="$PROJECT_DIR$/app/views/interpretor/_products_selector_filter.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
+        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
       </list>
     </option>
   </component>
@@ -901,19 +919,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimension_opinions.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.121673" />
-      </provider>
-    </entry>
     <entry file="file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="24" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.33700982" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
@@ -955,11 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/products_filter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="98" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0" />
@@ -972,13 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="5108" selection-end="5264" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="126" selection-start="2205" selection-end="2216" vertical-scroll-proportion="0.0">
@@ -986,9 +982,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="120" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.6404066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/interpretor_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="95" selection-start="8693" selection-end="8693" vertical-scroll-proportion="1.1744885">
+        <state line="211" column="95" selection-start="8693" selection-end="8693" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="53" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/paragraph.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="18" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-21.807692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="287" column="0" selection-start="10802" selection-end="10802" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

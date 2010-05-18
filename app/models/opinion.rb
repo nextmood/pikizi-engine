@@ -285,21 +285,21 @@ class Opinion < Root
   # ---- internal use (should be private)
   def process_attributes_products_selector(knowledge, products_selector_name, params)
     params_pf = get_zozo(params, "products_filter_#{products_selector_name}")
-    raise "no products_selector_name #{products_selector_name.inspect}" unless params_pf.size > 0
-
-    # remove previous products filters
-    products_filters_for(products_selector_name).each(&:destroy)
-    # create new products filters
-    # puts ">>>>>>>>>>>>>>> params_pf=" <<  params_pf.inspect
-    params_pf = params_pf.collect { |k, h| h } if params_pf.is_a?(Hash)
-    params_pf.each do |values|
-      products_filter = Kernel.const_get(values["_type"]).new
-      products_filter.process_attributes(knowledge, products_selector_name, self, values)
-      products_filter.save
-      self.products_filters << products_filter
-      # pp(products_filter, $>, 40)
+    if params_pf.size > 0
+      # remove previous products filters
+      products_filters_for(products_selector_name).each(&:destroy)
+      # create new products filters
+      # puts ">>>>>>>>>>>>>>> params_pf=" <<  params_pf.inspect
+      params_pf = params_pf.collect { |k, h| h } if params_pf.is_a?(Hash)
+      params_pf.each do |values|
+        products_filter = Kernel.const_get(values["_type"]).new
+        products_filter.process_attributes(knowledge, products_selector_name, self, values)
+        products_filter.save
+        self.products_filters << products_filter
+        # pp(products_filter, $>, 40)
+      end
+      true
     end
-    true
   end
 
   def get_zozo(params, prefix)
