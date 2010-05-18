@@ -1,0 +1,859 @@
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-05-18 09:00:18) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1295ms (View: 830 | 200 OK [http://localhost/home]
+
+
+Processing KnowledgesController#index (for 127.0.0.1 at 2010-05-18 09:00:23) [GET]
+Redirected to http://localhost:3000/show/cell_phones
+Completed in 106ms | 302 Found [http://localhost/knowledges]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-05-18 09:00:23) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (15.8ms)
+Rendered knowledges/_products_selection (60.7ms)
+Rendered knowledges/_specification_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.3ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (110.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (10.1ms)
+Rendered knowledges/_show_bis (136.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_show_bis (8.4ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (164.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.1ms)
+Rendered knowledges/_show_bis (78.3ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (3.6ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.6ms)
+Rendered knowledges/_show_bis (27.7ms)
+Rendered knowledges/_show_bis (376.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.6ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (23.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (7.2ms)
+Rendered knowledges/_show_bis (11.6ms)
+Rendered knowledges/_show_bis (39.7ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (94.5ms)
+Rendered knowledges/_show_bis (98.7ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.1ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (19.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.0ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.5ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.0ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (89.4ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_show_bis (99.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (8.6ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.4ms)
+Rendered knowledges/_show_bis (125.2ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.5ms)
+Rendered knowledges/_specification_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (9.2ms)
+Rendered knowledges/_show_bis (26.5ms)
+Rendered knowledges/_show_bis (169.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.3ms)
+Rendered knowledges/_specification_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (94.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (7.6ms)
+Rendered knowledges/_show_bis (11.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (10.2ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (9.6ms)
+Rendered knowledges/_show_bis (27.6ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_show_bis (8.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (8.7ms)
+Rendered knowledges/_show_bis (24.2ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (88.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (6.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_show_bis (109.2ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_show_bis (5.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.4ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_show_bis (151.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.9ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (95.5ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.9ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.5ms)
+Rendered knowledges/_show_bis (122.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.6ms)
+Rendered knowledges/_show_bis (10.8ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.7ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.9ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.3ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.1ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (1.2ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_specification_value_show (0.8ms)
+Rendered knowledges/_show_bis (7.8ms)
+Rendered knowledges/_show_bis (34.2ms)
+Rendered knowledges/_specification_show (0.1ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (92.5ms)
+Rendered knowledges/_specification_show (0.2ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.5ms)
+Rendered knowledges/_specification_value_show (0.4ms)
+Rendered knowledges/_show_bis (5.7ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_specification_value_show (0.6ms)
+Rendered knowledges/_show_bis (6.7ms)
+Rendered knowledges/_show_bis (143.8ms)
+Rendered knowledges/_show_bis (498.2ms)
+Rendered knowledges/_show (1401.5ms)
+Completed in 2650ms (View: 2025 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-18 09:00:28) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Completed in 2460ms (View: 2359 | 200 OK [http://localhost/opinions]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:01:23) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000068", "id"=>"4b892b6f43a76d7c5d00004b", "opinion_id"=>"4bd51f9643a76d107a000014"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (25.8ms)
+Rendered reviews/_header (56.3ms)
+Rendered interpretor/_opinion (11.5ms)
+Rendered interpretor/_opinion (159.8ms)
+Rendered interpretor/_dimensions_related (28.5ms)
+Rendered interpretor/_usage_related (15.3ms)
+Rendered interpretor/_usages_related (28.1ms)
+Rendered interpretor/_products_selector_filter (121.0ms)
+Rendered interpretor/_products_selector_filters (126.1ms)
+Rendered interpretor/_products_selector (133.8ms)
+Rendered interpretor/_opinion_selector_tip (153.8ms)
+Rendered interpretor/_paragraph_editor_opinion (231.9ms)
+Completed in 983ms (View: 622 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000068/4bd51f9643a76d107a000014]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:01:24) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 321ms (View: 3 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#update_opinion (for 127.0.0.1 at 2010-05-18 09:01:34) [PUT]
+  Parameters: {"commit"=>"Save", "dimensions"=>["4bb8714c43a76d3d03000001"], "products_filter_referent_4bd51f9643a76d107a000015"=>{"label"=>"Palm Pre Plus", "and_similar"=>"1", "_type"=>"ProductByLabel"}, "authenticity_token"=>"FqXkKmucDvtdUFQeiDOImpH5HjksdbfO4CIH/PIsJk8=", "id"=>"4bd51f9643a76d107a000014", "tip"=>{"extract"=>"", "intensity_symbol"=>"very_high", "value_oriented"=>"0"}, "usages"=>{"4bf23b43e2c6d600b3000001"=>{"label"=>""}}}
+Rendered interpretor/_dimensions_related (21.8ms)
+Rendered interpretor/_usage_related (2.3ms)
+Rendered interpretor/_usages_related (3.7ms)
+Rendered interpretor/_products_selector_filter (121.7ms)
+Rendered interpretor/_products_selector_filters (122.2ms)
+Rendered interpretor/_products_selector (125.2ms)
+Rendered interpretor/_opinion_selector_tip (127.2ms)
+Rendered interpretor/_paragraph_editor_opinion (161.7ms)
+Completed in 1276ms (View: 167 | 200 OK [http://localhost/interpretor/update_opinion/4bd51f9643a76d107a000014]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:04:38) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000065", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+
+ActionView::TemplateError (A copy of Product has been removed from the module tree but is still active!) on line #6 of app/views/reviews/_header.html.erb:
+3:     <tr>
+4:       <% for product in review.products %>
+5:         <td valign="top" width="80">
+6:                   <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
+7: 
+8:         </td>
+9:               <% end %>
+
+    app/models/product.rb:54:in `similar_products'
+    app/views/reviews/_header.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/_header.html.erb:4
+    app/views/interpretor/edit_review.html.erb:4
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:04:44) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000065", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.7ms)
+Rendered reviews/_header (175.6ms)
+Rendered interpretor/_opinion (71.3ms)
+Rendered interpretor/_opinion (9.3ms)
+Rendered interpretor/_opinion_selector_type (1.3ms)
+Completed in 1040ms (View: 390 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000065]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:04:46) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 106ms (View: 3 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:04:48) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000065", "id"=>"4b892b6f43a76d7c5d00004b", "opinion_id"=>"4bd51e8443a76d107a00000c"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.2ms)
+Rendered reviews/_header (89.3ms)
+Rendered interpretor/_opinion (22.4ms)
+Rendered interpretor/_opinion (0.2ms)
+Rendered interpretor/_dimensions_related (22.3ms)
+Rendered interpretor/_usage_related (4.2ms)
+Rendered interpretor/_usages_related (9.5ms)
+Rendered interpretor/_products_selector_filter (77.2ms)
+Rendered interpretor/_products_selector_filter (64.1ms)
+Rendered interpretor/_products_selector_filters (146.4ms)
+Rendered interpretor/_products_selector (153.8ms)
+Rendered interpretor/_opinion_selector_tip (159.9ms)
+Rendered interpretor/_paragraph_editor_opinion (216.4ms)
+Completed in 577ms (View: 385 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000065/4bd51e8443a76d107a00000c]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:04:49) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 59ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:04:56) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (13.9ms)
+Rendered reviews/_header (34.2ms)
+Rendered interpretor/_opinion (24.0ms)
+Rendered interpretor/_opinion (8.9ms)
+Rendered interpretor/_opinion (8.3ms)
+Rendered interpretor/_opinion_selector_type (0.7ms)
+Completed in 413ms (View: 133 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:04:57) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 55ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#remove_opinion_from_paragraph (for 127.0.0.1 at 2010-05-18 09:05:00) [GET]
+  Parameters: {"id"=>"4b892b6f43a76d7c5d0000a6"}
+Redirected to http://localhost:3000/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064
+Completed in 165ms | 302 Found [http://localhost/interpretor/remove_opinion_from_paragraph/4b892b6f43a76d7c5d0000a6]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:05:00) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.6ms)
+Rendered reviews/_header (35.4ms)
+Rendered interpretor/_opinion (23.2ms)
+Rendered interpretor/_opinion (8.5ms)
+Rendered interpretor/_opinion_selector_type (0.7ms)
+Completed in 440ms (View: 124 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:05:01) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 171ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:22:24) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.7ms)
+Rendered reviews/_header (35.1ms)
+
+ActionView::TemplateError (undefined local variable or method `censor_author_id' for #<ActionView::Base:0x106d6bf30>) on line #5 of app/views/interpretor/_opinion.html.erb:
+2: 
+3: 
+4:     <% unless opinion and existing_opinion.id == opinion.id %>
+5:         <%= object_state(existing_opinion) %>
+6:         <%= link_to(existing_opinion.to_html, "/edit_review/#{existing_opinion.review_id}/#{existing_opinion.paragraph_id}/#{existing_opinion.id}", :style => "margin-left:10px;") %>
+7:         <%= link_to(image_tag("icons/status_icon_delete.png", :border => 0), "/interpretor/remove_opinion_from_paragraph/#{existing_opinion.id}") %>
+8:         <span style="font-size:80%; margin-left:20px;"><%= existing_opinion.created_at%></span>
+
+    app/helpers/application_helper.rb:55:in `object_state'
+    app/views/interpretor/_opinion.html.erb:5
+    app/views/interpretor/edit_review.html.erb:26
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/interpretor/edit_review.html.erb:25
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/interpretor/edit_review.html.erb:10
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (44.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:23:01) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.4ms)
+Rendered reviews/_header (34.2ms)
+Rendered interpretor/_opinion (116.4ms)
+Rendered interpretor/_opinion (10.2ms)
+Rendered interpretor/_opinion_selector_type (0.8ms)
+Completed in 537ms (View: 218 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:23:02) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 72ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:24:53) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (15.2ms)
+Rendered reviews/_header (180.5ms)
+Rendered interpretor/_opinion (74.4ms)
+Rendered interpretor/_opinion (9.2ms)
+Rendered interpretor/_opinion_selector_type (1.4ms)
+Completed in 1053ms (View: 400 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:24:55) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 81ms (View: 8 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-05-18 09:25:36) [GET]
+  Parameters: {"paragraph_id"=>"4b892b6f43a76d7c5d000064", "id"=>"4b892b6f43a76d7c5d00004b"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (14.0ms)
+Rendered reviews/_header (90.0ms)
+Rendered interpretor/_opinion (23.5ms)
+Rendered interpretor/_opinion (8.9ms)
+Rendered interpretor/_opinion_selector_type (0.7ms)
+Completed in 372ms (View: 180 | 200 OK [http://localhost/edit_review/4b892b6f43a76d7c5d00004b/4b892b6f43a76d7c5d000064]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-05-18 09:25:36) [GET]
+  Parameters: {"id"=>"4bb3fbb943a76d2051000004"}
+Sending data 
+Completed in 75ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb3fbb943a76d2051000004]

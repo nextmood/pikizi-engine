@@ -47,8 +47,17 @@ module ApplicationHelper
   end
 
   def object_state(o)
-    image_tag("icons/circle_#{o.state_color}.png", :border => 0,
-              :title => (o.is_a?(Opinion) and o.error?) ? o.errors_explanations : "in state : #{o.state_label.inspect}") 
+    title = "in state : #{o.state_label.inspect}"
+    if o.is_a?(Opinion)
+      if o.error?
+        title = o.errors_explanations
+      elsif o.reviewed_ok? or o.reviewed_ko?
+        reviewed_extra = "by #{o.censor_author_id ? User.find(o.censor_author_id).rpx_username : 'system' } on #{o.censor_date}"
+        reviewed_extra << " : #{o.censor_comment.inspect}"  if o.censor_comment
+        title << " #{reviewed_extra}"
+      end
+    end
+    image_tag("icons/circle_#{o.state_color}.png", :border => 0, :title => title)
   end
   
 end
