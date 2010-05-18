@@ -220,9 +220,9 @@ class Review < Root
     l << "from #{source}" if source
     s = l.join(' ')
     if opinion = options[:opinion]
-      s = "<a href='/edit_review/#{id}/#{opinion.paragraph_id}/#{opinion.id}' style='color:#00c0ff;' >#{s}</a>"
+      s = "<a href='/edit_review/#{id}/#{opinion.paragraph_id}/#{opinion.id}' style='color:orange;' >#{s}</a>"
     else
-      s = "<a href='#{source_url}' style='color:#00c0ff;' >#{s}</a>" if source_url
+      s = "<a href='#{source_url}' style='color:orange;' >#{s}</a>" if source_url
     end
     s = "<span style=\"#{options[:style]}\">#{s}</span>" if options[:style]
     s

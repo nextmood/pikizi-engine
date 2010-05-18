@@ -34,23 +34,23 @@
         </td></tr>
 
         <tr>
-            <th>status</th>
+            <th width="200">status</th>
             <th>written</th>
             <th>products</th>
             <th>origin</th>
         </tr>
         <% for review in @reviews %>
             <tr>
-                <td>
+                <td style="border-bottom:1px dashed black;">
                     <%= object_state(review) %>
-                    <span style="font-size:80%; margin-top:3px;">
+                    <span style="margin-top:3px;">
                         <%= link_to("#{pluralize(review.paragraphs.count, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
                                     "/edit_review/#{review.id}", :style => "color:orange;") %>
                     </span>
                 </td>
-                <td><%= review.written_at %></td>
-                <td><%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :style => "color:#00c0ff;")}.join(', ') %></td>
-                <td><%= review.origin %></td>
+                <td style="border-bottom:1px dashed black;"><%= review.written_at %></td>
+                <td style="border-bottom:1px dashed black;"><%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :style => "color:orange;")}.join(', ') %></td>
+                <td style="border-bottom:1px dashed black;"><%= review.origin %></td>
             </tr>
         <% end %>
     </table>

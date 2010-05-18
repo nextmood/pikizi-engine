@@ -39,13 +39,13 @@
         </tr>
         <% for opinion in @opinions %>
             <tr>
-                <td valign="top">
+                <td valign="top"  style="border-bottom:1px dashed black;">
                     <%= object_state(opinion) %>
                     <small><%= opinion.written_at %> by <%= opinion.category %></small>
                 </td>
-                <td><%= link_to(opinion.to_html,
+                <td style="border-bottom:1px dashed black;"><%= link_to(opinion.to_html,
                           "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :style => "color:orange;") %></td>
-                <td valign="top"><small><%= opinion.review.source %></small></td>
+                <td valign="top" style="border-bottom:1px dashed black;"><small><%= opinion.review.source %></small></td>
             </tr>
         <% end %>
     </table>
