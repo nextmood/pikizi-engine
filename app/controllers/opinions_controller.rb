@@ -36,7 +36,7 @@ class OpinionsController < ApplicationController
                        :limit => @max_nb_opinions,
                        :written_at => { '$gt' => @date_oldest.to_time },
                        :order => "written_at DESC"  }
-    select_options["product_ids"] = @related_product.label if @related_product
+    select_options["product_ids"] = @related_product.id if @related_product
     #select_options["$where"] = where_clauses.join(" || ") if where_clauses.size > 0
 
     puts "selection options=#{select_options.inspect}"
@@ -45,6 +45,9 @@ class OpinionsController < ApplicationController
 
   def import
     @reviews_imported = Review.all(:filename_xml => nil, :limit => 100)
+    # @product = Product.find(params[:product_id])
+    @product = Product.first
+    @review = Review.new(:user => @current_user, :product => @product, :written_on => Date.today)
   end
 
   def auto_complete_for_search_related_product

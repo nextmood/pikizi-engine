@@ -7,7 +7,7 @@
 
                 <div style="margin-top:5px;">
                     
-                    <span class="pkz_bold">review </span>title<%= text_field_tag "review_label", @review_label, :size => 20 %>
+                    <span class="pkz_bold">review </span>filename<%= text_field_tag "review_label", @review_label, :size => 20 %>
                     <% for category, weight in Review.categories %>
                         <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>&nbsp;
                     <% end %>
@@ -19,8 +19,10 @@
                     <span class="pkz_bold">in state</span>
                     <% for state_name, state_datas in Opinion.list_states %>
                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
-                        <span style="background-color:<%= state_datas[:color] %>; padding:2px;"><%= state_datas[:label] %></span>
+                        <span style="background-color:<%= state_datas[:color] %>; padding:2px;" class="pkz_small"><%= state_datas[:label] %></span>
                     <% end %>
+                    <%= link_to("recompute status of all reviews/paragraphs...", "/reviews/recompute_all_states", :class => "pkz_link pkz_next pkz_small") %>
+
                 </div>
 
                 <div style="margin-top:5px;">
@@ -48,9 +50,12 @@
                     </span>
                     <%= submit_tag "filter  #{@opinions.size} opinions", :class => "pkz_next" %>
                     <%= link_to("reset", "/opinions/index", :class => "pkz_link pkz_small") %>
+
+                  
                     <%= link_to "import a new file...", "/opinions/import", :class => "pkz_link pkz_small pkz_next" %>
                 </div>
 
+              get_products
 
             <% end -%>
              <hr/>

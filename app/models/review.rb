@@ -116,7 +116,7 @@ class Review < Root
   def get_reputation() source == Review::FromAmazon.default_category ? reputation + 1.0 : 1.0 end
 
   # all categories of reviews and their weights
-  def self.categories() {"expert" => 10.0, "amazon" => 1.0, "user" => 2.0 } end
+  def self.categories() {"expert" => 10.0, "amazon" => 1.0, "user" => 2.0, "automatic" => 5.0 } end
   def self.categories_as_percentage
     unless defined?(@@categories_as_percentage)
       sum_weight = self.categories.inject(0.0) { |s, (c, w)| s += w }

@@ -1,19 +1,25 @@
+<div class="pkz_paragraph">
+    <p>
+      Product per default in this review
+      <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@product ? @product.label : nil) }, {:method => :get } %>
+    </p>
 
-<p>
-  written on <%= select_date review.written_at, :prefix => :written_at %> 
-  by <%= f.text_field :author, :size => 50 %>
-</p>
+    <p>
+      written on <%= select_date review.written_at, :prefix => :written_at %>
+      by <%= f.text_field :author, :size => 50 %>
+    </p>
 
-<p>
-  source<%= f.text_field :source, :size => 60 %>
-  reputation=<%= f.text_field :reputation, :size => 2 %>
-  <%= f.select(:category, Review.categories_select, :style => "margin-left:50px;")  %>
-</p>
+    <p>
+      source<%= f.text_field :source, :size => 60 %>
+      reputation=<%= f.text_field :reputation, :size => 2 %>
+      <%= f.select(:category, Review.categories_select, :style => "margin-left:50px;")  %>
+    </p>
 
-<p>source url <small>http://...</small><br/><%= f.text_field :source_url, :style => "width:700px;" %> </p>
-<p>rating=<%= f.text_field :rating, :size => 2 %> (min<%= f.text_field :min_rating, :size => 2 %>  max<%= f.text_field :max_rating, :size => 2 %>)</p>
+    <p>source url <small>http://...</small><br/><%= f.text_field :source_url, :style => "width:700px;" %> </p>
+
+    <p>summary<br/><%= f.text_area :summary, :style => "width:700px; ; height:35px;" %><br/></p>
+    <p>import xml file with opinions<%= f.file_field :filename_xml %></p>
+    <p>content <small>copy html below</small><br/><%= f.text_area :content, :style => "width:700px; height:200px;" %></p>
 
 
-<p>summary<br/><%= f.text_area :summary, :style => "width:700px; ; height:35px;" %><br/></p>
-<p>content <small>copy html below</small><br/><%= f.text_area :content, :style => "width:700px; height:200px;" %></p>
-
+</div>

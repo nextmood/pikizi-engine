@@ -6,14 +6,14 @@
             <% form_tag "/reviews/index" do -%>
 
                 <div style="margin-top:5px;">
-                    <span style="margin-left:0px;  font-weight:bold;">in categories</span>
+                    <span class="pkz_bold;">in categories</span>
                     <% for category, weight in Review.categories %>
                         <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
                     <% end %>
                 </div>
 
                 <div style="margin-top:5px;">
-                    <span style="margin-left:0px;  font-weight:bold;">in state</span>
+                    <span class="pkz_bold;">in state</span>
                     <% for state_name, state_datas in Review.list_states %>
                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
                         <span style="background-color:<%= state_datas[:color] %>; padding:2px;"><%= state_datas[:label] %></span>
@@ -26,8 +26,7 @@
                     <%= (@reviews.number - 1) * @nb_reviews_per_page + 1 %> - <%= @reviews.number * @nb_reviews_per_page - 1 %>
                     <%= link_to(image_tag("icons/foward.png", :border => 0), "/reviews?page=#{@reviews.next.number}") if @reviews.next? %>
 
-                    <%= submit_tag "filter among #{@nb_reviews} reviews", :style => "margin-left:30px;" %>
-                    <%= link_to("recompute status of all reviews/paragraphs...", "/reviews/recompute_all_states", :style => "color:orange; margin-left:50px; font-size:80%;") %>
+                    <%= submit_tag "filter among #{@nb_reviews} reviews", :class => "pkz_next" %>
                 </div>
 
             <% end -%>
@@ -36,22 +35,20 @@
 
         <tr>
             <th width="200">status</th>
-            <th>written</th>
+            <th width="100">written</th>
             <th>products</th>
             <th>origin</th>
         </tr>
         <% for review in @reviews %>
-            <tr>
-                <td style="border-bottom:1px dashed black;">
+            <tr class="pkz_bottom_dashed">
+                <td>
                     <%= object_state(review) %>
-                    <span style="margin-top:3px;">
                         <%= link_to("#{pluralize(review.paragraphs.count, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
-                                    "/edit_review/#{review.id}", :style => "color:orange;") %>
-                    </span>
+                                    "/edit_review/#{review.id}", :class => "pkz_link") %>
                 </td>
-                <td style="border-bottom:1px dashed black;"><%= review.written_at %></td>
-                <td style="border-bottom:1px dashed black;"><%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :style => "color:orange;")}.join(', ') %></td>
-                <td style="border-bottom:1px dashed black;"><%= review.origin %></td>
+                <td ><%= review.written_at %></td>
+                <td ><%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :class => "pkz_link")}.join(', ') %></td>
+                <td ><%= review.origin %></td>
             </tr>
         <% end %>
     </table>
