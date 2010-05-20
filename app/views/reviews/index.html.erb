@@ -25,6 +25,7 @@
                     <%= link_to(image_tag("icons/backward.png", :border => 0), "/reviews?page=#{@reviews.prev.number}") if @reviews.prev? %>
                     <%= (@reviews.number - 1) * @nb_reviews_per_page + 1 %> - <%= @reviews.number * @nb_reviews_per_page - 1 %>
                     <%= link_to(image_tag("icons/foward.png", :border => 0), "/reviews?page=#{@reviews.next.number}") if @reviews.next? %>
+
                     <%= submit_tag "filter among #{@nb_reviews} reviews", :style => "margin-left:30px;" %>
                     <%= link_to("recompute status of all reviews/paragraphs...", "/reviews/recompute_all_states", :style => "color:orange; margin-left:50px; font-size:80%;") %>
                 </div>

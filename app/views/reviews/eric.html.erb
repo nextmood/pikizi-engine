@@ -1,29 +1,62 @@
 <!-- interface eric -->
-<% nb_reviews, nb_opinions = 0, 0 %>
-<% for review in @reviews %>
-    <% if (paragraphs = review.paragraphs).size > 0 and review.category != "amazon" and review.opinions.size >= 0 %>
-        <h2><%= review.source %>
-            <%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}") }.join(', ') %>
-            <small>
-                <%= review.written_at %>&nbsp;&nbsp;
-                <%= review.category %>&nbsp;&nbsp;
-                <%= review.state %>/#<%= review.id %>
-            </small>
-        </h2>
-        <% nb_reviews += 1 %>
-        <% for paragraph in review.paragraphs %>
-            <div style="border-top:1px solid black; margin-bottom:10px;">
-                <%=h paragraph.content_without_html %>
-                <% for opinion in paragraph.opinions %>
-                    <div style="border-top:1px dashed black; margin-top:3px;">
-                      <%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
-                      &nbsp;by&nbsp;<%= opinion.user_id ? opinion.user.rpx_username : "????" %>
-                      <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
-                    </div>
-                    <% nb_opinions += 1 %>
-                <% end %>
-            </div>
+
+<div class="pkz_box">
+
+    <%= model_selector(@current_knowledge, :reviews) %>
+
+    <% form_tag "/eric" do -%>
+
+        <div style="margin-top:5px;">
+            select reviews in
+            <span style="margin-left:0px;  font-weight:bold;">in categories</span>
+            <% for category, weight in Review.categories %>
+                <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+            <% end %>
+            &nbsp;
+            and not older than <%= select_date(Date.today - 90, :prefix => "date_oldest") %>
+        </div>
+
+        <div style="margin-top:5px;">
+            output: <%= radio_button_tag "output_mode", "xml" %>xml&nbsp;<%= radio_button_tag "output_mode", "html" %>html
+            <span style="margin-left:20px; font-size:80%">
+                limit to <%= text_field_tag "max_nb_reviews", @max_nb_reviews, :size => 2 %>reviews
+                <%= submit_tag "filter (#{@reviews.size}) reviews", :style => "margin-left:30px;" %>
+            </span>
+
+        </div>
+
+    <% end -%>
+
+    <hr/>
+    <% nb_reviews, nb_opinions = 0, 0 %>
+    <h2><%= nb_reviews %> reviews, <%= nb_opinions %> opinions</h2>
+
+    <% for review in @reviews %>
+        <% if (paragraphs = review.paragraphs).size > 0 and review.category != "amazon" and review.opinions.size >= 0 %>
+            <h2><%= review.source %>
+                <%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}") }.join(', ') %>
+                <small>
+                    <%= review.written_at %>&nbsp;&nbsp;
+                    <%= review.category %>&nbsp;&nbsp;
+                    <%= review.state %>/#<%= review.id %>
+                </small>
+            </h2>
+            <% nb_reviews += 1 %>
+            <% for paragraph in review.paragraphs %>
+                <div style="border-top:1px solid black; margin-bottom:10px;">
+                    <%=h paragraph.content_without_html %>
+                    <% for opinion in paragraph.opinions %>
+                        <div style="border-top:1px dashed black; margin-top:3px;">
+                          <%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}") %>
+                          &nbsp;by&nbsp;<%= opinion.user_id ? opinion.user.rpx_username : "????" %>
+                          <%= "<div style=\"font-size:80%;\" >#{opinion.extract}</div>" if opinion.extract and opinion.extract != "" %>
+                        </div>
+                        <% nb_opinions += 1 %>
+                    <% end %>
+                </div>
+            <% end %>
         <% end %>
     <% end %>
-<% end %>
-<h2><%= nb_reviews %> reviews, <%= nb_opinions %> opinions</h2>
+
+
+</div>

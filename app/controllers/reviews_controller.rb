@@ -7,7 +7,12 @@ class ReviewsController < ApplicationController
 
   # api for eric
   def eric
-    @reviews = @current_knowledge.reviews
+    @max_nb_reviews = (params[:max_nb_reviews] || 10)    
+    @reviews = @current_knowledge.reviews.all({ :limit => @max_nb_reviews })
+
+    @source_categories = params[:source_categories]
+    @source_categories ||= Review.categories.collect { |category_name, weight| category_name }
+
     # @reviews = @reviews[0..10]
     respond_to do |format|
       format.html # eric.html.erb

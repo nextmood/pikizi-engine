@@ -34,7 +34,7 @@
             <li><a href="/home">home</a></li>
             <li><a href="/my_quiz">advisor</a></li>
             <li><a href="/products_search">products</a></li>
-            <li><a href="/knowledges">admin</a></li>
+            <li><a href="/opinions">admin</a></li>
             <li class="last">
               <% if logged_user = controller.get_logged_user and !logged_user.is_unauthorized %>
                 welcome <%= logged_user.rpx_username %><%= link_to "logout", "/logout" %>

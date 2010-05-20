@@ -1,0 +1,9 @@
+<div class="pkz_box">
+    <%= model_selector(@current_knowledge, :opinions) %>
+
+    <h2>List of imported reviews</h2>
+    <% for review_imported in @reviews_imported %>
+        <div style="padding:2px;">filenamexml=<%= review_imported.filename_xml %></div>
+    <% end %>
+
+</div>

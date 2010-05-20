@@ -4,19 +4,40 @@ class OpinionsController < ApplicationController
 
   # list all opinions for current knowledge
   def index
-    @nb_opinions_per_page = 100
+    @review_label = params[:review_label]
+    @opinion_sub_classes = params[:opinion_sub_classes]
+
+    @max_nb_opinions = params[:max_nb_opinions] || 100
+    @date_oldest = if date_oldest = params[:date_oldest]
+      Date.new(Integer(date_oldest["year"]), Integer(date_oldest["month"]), Integer(date_oldest["day"]))
+    else
+      Date.today - 90
+    end
+    
+    @output_mode = params[:output_mode] || "standard"
     @source_categories = params[:source_categories]
     @source_categories ||= Review.categories.collect { |category_name, weight| category_name }
     @state_names = params[:state_names]
     @state_names ||= Opinion.list_states.collect(&:first)
 
-    select_options = { :category => @source_categories, :state => @state_names }
-    @nb_opinions = Opinion.count(select_options)
-    @pager = Paginator.new(@nb_opinions, @nb_opinions_per_page) do |offset, per_page|
-      Opinion.all({:offset => offset, :limit => per_page, :order => 'written_at desc'}.merge(select_options))
-    end
-    @opinions = @pager.page(params[:page])
+
+    @opinion_sub_classes  = params[:opinion_sub_classes]
+    @opinion_sub_classes ||= Opinion.subclasses_and_labels.collect(&:first)
+
+    where_clauses = []
+    where_clauses << "this.review.filename_xml.match(/#{@review_label}/i)" if @review_label
+
+    puts ">>>>>>>>>>> #{@opinion_sub_classes.inspect}"
+    select_options = { "_type" => @opinion_sub_classes, :category => @source_categories, :state => @state_names, :limit => @max_nb_opinions, :written_at => { '$gt' => @date_oldest.to_time }, :order => "written_at DESC"  }
+    #select_options["$where"] = where_clauses.join(" || ") if where_clauses.size > 0
+
+    puts "selection options=#{select_options.inspect}"
+    @opinions = Opinion.all(select_options)
   end
 
+  def import
+    @reviews_imported = Review.all(:filename_xml => nil, :limit => 100)
+  end
 
+  
 end

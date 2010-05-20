@@ -8,8 +8,17 @@ require "products_filter"
 # ==============================================================================
 
 class Opinion < Root
-  
+
   include MongoMapper::Document
+
+  # define list of subclasses for IHM
+  def self.subclasses_and_labels() {
+          "Rating" => "Rating",
+          "Ranking" => "Ranking",
+          "Tip" => "Tip",
+          "Comparator" => "Comparator",
+          "Neutral" => "Neutral"
+          } end
 
   key :label, String # summary of the opinion
   key :_type, String # class management
@@ -175,7 +184,7 @@ class Opinion < Root
   def self.state_datas() { "draft" => {:label => "draft", :color => "lightblue" },
                            "to_review" => {:label => "is waiting to be reviewed", :color => "orange" },
                            "reviewed_ok" => {:label => "is valid (reviewed as OK)", :color => "lightgreen" },
-                           "reviewed_ko" => {:label => "is un-valid (reviewed as KO)", :color => "purple" },
+                           "reviewed_ko" => {:label => "is un-valid (reviewed as KO)", :color => "orchid" },
                            "error" => {:label => "is in error", :color => "red" } } end
 
   def state_label() Opinion.state_datas[state.to_s][:label] end
@@ -277,10 +286,11 @@ class Opinion < Root
     self.extract = get_attribute(params, :extract)
   end
 
+  # this a temporary debuuging / data upgrade stuff...
   def self.fix_empty_referent
     knowledge = Knowledge.first(:idurl => "cell_phones")
     automatic_user = User.first(:rpx_username => "cpatte")
-    #knowledge.recompute_all_states(:also_opinions => true, :force_to_review_ok => true)
+    knowledge.recompute_all_states(:also_opinions => true, :force_to_review_ok => true)
     puts "updated opinions....."
     knowledge.reviews.each do |review|
       review.paragraphs.each do |paragraph|

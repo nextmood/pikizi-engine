@@ -6,14 +6,17 @@
             <% form_tag "/opinions/index" do -%>
 
                 <div style="margin-top:5px;">
-                    <span style="margin-left:0px; font-weight:bold;">in categories</span>
+                    
+                    <span class="pkz_bold">review </span>title<%= text_field_tag "review_label", @review_label, :size => 20 %>
                     <% for category, weight in Review.categories %>
-                        <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+                        <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>&nbsp;
                     <% end %>
+                    <span class="pkz_next pkz_bold">not older than </span><%= select_date(@date_oldest, :prefix => "date_oldest") %>
+
                 </div>
 
                 <div style="margin-top:5px;">
-                    <span style="margin-left:0px; font-weight:bold;">in state</span>
+                    <span class="pkz_bold">in state</span>
                     <% for state_name, state_datas in Opinion.list_states %>
                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
                         <span style="background-color:<%= state_datas[:color] %>; padding:2px;"><%= state_datas[:label] %></span>
@@ -21,12 +24,30 @@
                 </div>
 
                 <div style="margin-top:5px;">
-                    opinions&nbsp;
-                    <%= link_to(image_tag("icons/backward.png", :border => 0), "/opinions?page=#{@opinions.prev.number}") if @opinions.prev? %>
-                    <%= (@opinions.number - 1) * @nb_opinions_per_page + 1 %> - <%= @opinions.number * @nb_opinions_per_page - 1 %>
-                    <%= link_to(image_tag("icons/foward.png", :border => 0), "/opinions?page=#{@opinions.next.number}") if @opinions.next? %>
-                    <%= submit_tag "filter among #{@nb_opinions} opinions", :style => "margin-left:30px;" %>
+                    <span class="pkz_bold">only opinions of type</span>
+                    <% for subclass, subclass_label in Opinion.subclasses_and_labels %>
+                        <%= check_box_tag("opinion_sub_classes[]", subclass, @opinion_sub_classes.include?(subclass)) %><%= subclass_label %>&nbsp;
+                    <% end %>
+
+                    <span class="pkz_bold pkz_next">involving </span><i>(a combo for product)</i>
+                  
                 </div>
+
+                <hr/>
+                <div style="margin-top:5px;">
+                    <span class="pkz_bold">output: </span>
+                    <%= radio_button_tag "output_mode", "standard", @output_mode == "standard" %>html
+                    &nbsp;<%= radio_button_tag "output_mode", "by_review", @output_mode == "by_review"  %>group by review
+                    &nbsp;<%= radio_button_tag "output_mode", "xml", @output_mode == "xml"  %>xml
+
+                    <span class="pkz_small pkz_next">
+                        limit to <%= text_field_tag "max_nb_opinions", @max_nb_opinions, :size => 2 %>opinions
+                    </span>
+                    <%= submit_tag "filter  #{@opinions.size} opinions", :class => "pkz_next" %>
+                    <%= link_to("reset", "/opinions/index", :class => "pkz_link pkz_small") %>
+                    <%= link_to "import a new file...", "/opinions/import", :class => "pkz_link pkz_small pkz_next" %>
+                </div>
+
 
             <% end -%>
              <hr/>
@@ -35,17 +56,17 @@
         <tr>
             <th width="150" align="left">status</th>
             <th align="left">opinions</th>
-            <th width="100" align="left">source</th>
+            <th width="130" align="left">source</th>
         </tr>
         <% for opinion in @opinions %>
-            <tr>
-                <td valign="top"  style="border-bottom:1px dashed black;">
+            <tr class="pkz_bottom_dashed">
+                <td class="pkz_small">
                     <%= object_state(opinion) %>
-                    <small><%= opinion.written_at %> by <%= opinion.category %></small>
+                    <%= opinion.written_at %> by <%= opinion.category %>
                 </td>
-                <td style="border-bottom:1px dashed black;"><%= link_to(opinion.to_html,
-                          "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :style => "color:orange;") %></td>
-                <td valign="top" style="border-bottom:1px dashed black;"><small><%= opinion.review.source %></small></td>
+                <td ><%= link_to(opinion.to_html,
+                          "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %></td>
+                <td class="pkz_small pkz_next"><%= opinion.review.source  %></td>
             </tr>
         <% end %>
     </table>
