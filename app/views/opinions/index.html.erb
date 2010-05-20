@@ -28,9 +28,12 @@
                     <% for subclass, subclass_label in Opinion.subclasses_and_labels %>
                         <%= check_box_tag("opinion_sub_classes[]", subclass, @opinion_sub_classes.include?(subclass)) %><%= subclass_label %>&nbsp;
                     <% end %>
-
-                    <span class="pkz_bold pkz_next">involving </span><i>(a combo for product)</i>
                   
+                </div>
+
+                <div style="margin-top:5px;">
+                    <span class="pkz_bold">involving product</span>
+                    <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@related_product ? @related_product.label : nil) }, {:method => :get } %>
                 </div>
 
                 <hr/>

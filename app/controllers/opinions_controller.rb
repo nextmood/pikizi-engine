@@ -6,7 +6,9 @@ class OpinionsController < ApplicationController
   def index
     @review_label = params[:review_label]
     @opinion_sub_classes = params[:opinion_sub_classes]
-
+    if related_product_label = params[:search] and related_product_label = params[:search][:related_product]
+      @related_product = Product.first(:label => related_product_label)
+    end
     @max_nb_opinions = params[:max_nb_opinions] || 100
     @date_oldest = if date_oldest = params[:date_oldest]
       Date.new(Integer(date_oldest["year"]), Integer(date_oldest["month"]), Integer(date_oldest["day"]))
@@ -28,7 +30,13 @@ class OpinionsController < ApplicationController
     where_clauses << "this.review.filename_xml.match(/#{@review_label}/i)" if @review_label
 
     puts ">>>>>>>>>>> #{@opinion_sub_classes.inspect}"
-    select_options = { "_type" => @opinion_sub_classes, :category => @source_categories, :state => @state_names, :limit => @max_nb_opinions, :written_at => { '$gt' => @date_oldest.to_time }, :order => "written_at DESC"  }
+    select_options = { "_type" => @opinion_sub_classes,
+                       :category => @source_categories,
+                       :state => @state_names,
+                       :limit => @max_nb_opinions,
+                       :written_at => { '$gt' => @date_oldest.to_time },
+                       :order => "written_at DESC"  }
+    select_options["product_ids"] = @related_product.label if @related_product
     #select_options["$where"] = where_clauses.join(" || ") if where_clauses.size > 0
 
     puts "selection options=#{select_options.inspect}"
@@ -39,5 +47,9 @@ class OpinionsController < ApplicationController
     @reviews_imported = Review.all(:filename_xml => nil, :limit => 100)
   end
 
-  
+  def auto_complete_for_search_related_product
+    input = params[:search][:related_product]
+    render(:inline => "<ul>" << Product.similar_to(input).collect { |l| "<li>#{l}</li>"}.join  << "</ul>")
+  end
+
 end
