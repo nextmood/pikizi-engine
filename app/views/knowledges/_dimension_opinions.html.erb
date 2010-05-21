@@ -1,8 +1,19 @@
-<%= link_to_remote("close...",
+
+<table style = "padding:5px; margin-left:<%= dimension.level * 15 %>px; margin-top:2px;  margin-bottom:10px; border:4px dashed orange;">
+    <tr class="pkz_bottom_solid">
+        <td >
+          <%= link_to_remote("close...",
                 :url => {:action => "remove_dimension_editor", :id => dimension.id },
-                :html => { :style => "margin-left:#{dimension.level * 15}px;" }) %>
-<ol style = "background-color:pink; padding:5px; margin-left:<%= dimension.level * 15 %>px; ; margin-top:2px;">
+                :html => { :class => "pkz_link", :style => "margin-left:#{dimension.level * 15}px;" }) %>
+        </td>
+    </tr>
+
     <% for opinion in dimension.opinions %>
-        <li><%= opinion.to_html %></li>
+        <tr class="pkz_bottom_dashed">
+          <td>
+            <%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %>  
+          </td>
+        </tr>
     <% end %>
-</ol>
+
+</table>

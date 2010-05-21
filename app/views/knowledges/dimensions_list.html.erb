@@ -7,20 +7,22 @@
 
   <div style="margin-bottom:10px;" >
 
-      <h2>Dimensions of rating</h2>
+      <h2>
+        Dimensions of rating
+        <span class="pkz_small pkz_next">
+            last computed @ <%= @current_knowledge.last_aggregation_timestamp %>
+        </span>
+        <%= link_to_function "recompute", "document.getElementById('form_recompute').toggle();", :class => "pkz_small pkz_next pkz_link" %>
+      </h2>
 
-      <% form_tag "/products/compute_aggregation" do -%>
-        <div style="border-top:1px dashed black; padding-bottom:5px; padding-top:5px; margin-bottom:5px;">last computed @ <%= @current_knowledge.last_aggregation_timestamp %></div>
-        <div style="">
-            consider opinions
-            <span style="font-size:80%;">
-                <%= check_box_tag "use_relative", :relative, true %> relative,
-                <%= check_box_tag "use_absolute", :absolute, true %> absolute
-            </span>
-            <span style=" margin-left:10px;">obsolescence=<%= text_field_tag "obsolescence", "6", :size => 2 %>months</span>
-            <span style=" margin-left:10px;">missing factor<small>(0..1)</small>=<%= text_field_tag "missing_factor", "0.18", :size => 3 %></span>
-            <%= submit_tag "recompute ratings/rankings", :style => "margin-left:10px;" %>
-        </div>
+      <% form_tag "/products/compute_aggregation", :id => "form_recompute", :style => "display:none;" do -%>
+            <span class="pkz_bold">consider opinions</span>
+                <%= check_box_tag "use_relative", :relative, true %> comparator & ranking,
+                <%= check_box_tag "use_absolute", :absolute, true %> rating & tip
+            <br/>
+            <span class="pkz_bold">obsolescence=</span><%= text_field_tag "obsolescence", "6", :size => 2 %>months
+            <span class="pkz_bold pkz_next">missing factor<small>(0..1)</small>=</span><%= text_field_tag "missing_factor", "0.18", :size => 3 %>
+            <%= submit_tag "recompute ratings/rankings", :class => "pkz_next pkz_link" %>
       <% end -%>
 
       <div style="margin-top:10px; border-top:1px solid black; padding:5px;">

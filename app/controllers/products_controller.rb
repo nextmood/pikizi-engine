@@ -269,11 +269,5 @@ class ProductsController < ApplicationController
     redirect_to("/products/#{product.idurl}")
   end
   
-  # -------------------------------------------------------------------------------------------
-  # Usages
-  # -------------------------------------------------------------------------------------------
 
-  def usages
-
-  end
 end

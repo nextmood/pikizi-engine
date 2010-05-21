@@ -7,7 +7,7 @@
 
                 <div style="margin-top:5px;">
                     
-                    <span class="pkz_bold">review </span>filename<%= text_field_tag "review_label", @review_label, :size => 20 %>
+                    <span class="pkz_bold">In categories </span>
                     <% for category, weight in Review.categories %>
                         <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>&nbsp;
                     <% end %>
@@ -21,21 +21,20 @@
                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
                         <span style="background-color:<%= state_datas[:color] %>; padding:2px;" class="pkz_small"><%= state_datas[:label] %></span>
                     <% end %>
-                    <%= link_to("recompute status of all reviews/paragraphs...", "/reviews/recompute_all_states", :class => "pkz_link pkz_next pkz_small") %>
-
+                    <%= link_to_function("more filter options...", "document.getElementById('extra_options').toggle();", :class => "pkz_link pkz_small pkz_next") %>
                 </div>
 
-                <div style="margin-top:5px;">
+                <div id="extra_options" style="margin-top:5px; display:none;">
+                    <hr/>
+                    <span class="pkz_bold">involving product</span>
+                    <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@related_product ? @related_product.label : nil) }, {:method => :get } %>
+                    <br/>
                     <span class="pkz_bold">only opinions of type</span>
                     <% for subclass, subclass_label in Opinion.subclasses_and_labels %>
                         <%= check_box_tag("opinion_sub_classes[]", subclass, @opinion_sub_classes.include?(subclass)) %><%= subclass_label %>&nbsp;
                     <% end %>
-                  
-                </div>
-
-                <div style="margin-top:5px;">
-                    <span class="pkz_bold">involving product</span>
-                    <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@related_product ? @related_product.label : nil) }, {:method => :get } %>
+                    <br/>
+                    <span class="pkz_bold">in collection </span>name<%= text_field_tag "review_label", @review_label, :size => 20 %>
                 </div>
 
                 <hr/>
@@ -48,35 +47,57 @@
                     <span class="pkz_small pkz_next">
                         limit to <%= text_field_tag "max_nb_opinions", @max_nb_opinions, :size => 2 %>opinions
                     </span>
-                    <%= submit_tag "filter  #{@opinions.size} opinions", :class => "pkz_next" %>
+                    <%= submit_tag "filter  #{@nb_opinions} opinions", :class => "pkz_next" %>
                     <%= link_to("reset", "/opinions/index", :class => "pkz_link pkz_small") %>
 
                   
                     <%= link_to "import a new file...", "/opinions/import", :class => "pkz_link pkz_small pkz_next" %>
+                    <%= link_to("recompute status...", "/reviews/recompute_all_states", :class => "pkz_link pkz_next pkz_small") %>
+
                 </div>
 
-              get_products
 
             <% end -%>
              <hr/>
         </td></tr>
 
         <tr>
-            <th width="150" align="left">status</th>
+            <th align="left">status</th>
             <th align="left">opinions</th>
             <th width="130" align="left">source</th>
         </tr>
-        <% for opinion in @opinions %>
-            <tr class="pkz_bottom_dashed">
-                <td class="pkz_small">
-                    <%= object_state(opinion) %>
-                    <%= opinion.written_at %> by <%= opinion.category %>
-                </td>
-                <td ><%= link_to(opinion.to_html,
-                          "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %></td>
-                <td class="pkz_small pkz_next"><%= opinion.review.source  %></td>
-            </tr>
+
+        <% if @opinions.is_a?(Hash) %>
+            <% for review_id, hash_paragraph_id_2_opinions in @opinions %>
+                <% review = Review.find(review_id) %>
+                <tr class="pkz_bottom_dashed">
+                    <td colspan="4" style="background-color:lightblue">
+                        <%= object_state review %>
+                        <span class="pkz_bold">Review</span>
+                        &nbsp;about <%= review.products.collect { |p| link_to(p.label, "/product/#{p.idurl}", :class => "pkz_link")}.join(', ') %>
+                        &nbsp;written on <%= review.written_at %>
+                        &nbsp;<%= review.origin %>
+                        <%= link_to("#{pluralize(review.paragraphs.count, 'paragraph')}, #{pluralize(Opinion.count(:review_id => review.id), 'opinion')}",
+                                    "/edit_review/#{review.id}", :class => "pkz_link pkz_next pkz_small") %>                        
+                    </td>
+                </tr>
+                <% for paragraph_id, opinions in hash_paragraph_id_2_opinions %>
+                    <% paragraph = Paragraph.find(paragraph_id) %>
+                    <tr class="pkz_bottom_dashed">
+                        <td colspan="4" >
+                            <div class="pkz_next" style="background-color:lightblue;" >
+                                <%= object_state paragraph %>
+                                <%= paragraph.content_without_html %>  
+                            </div>
+                        </td>
+                    </tr>
+                    <%= render(:partial => "/opinions/list", :locals => { :opinions => opinions, :width_middle => 600 , :margin_left => "60px" }) if opinions %>
+                <% end %>
+            <% end %>
+        <% else %>
+            <%= render(:partial => "/opinions/list", :locals => { :opinions => @opinions, :width_middle => 600, :margin_left => "0px" }) %>
         <% end %>
+
     </table>
 
 

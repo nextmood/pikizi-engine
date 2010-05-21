@@ -1,0 +1,14 @@
+<% for opinion in opinions %>
+    <tr class="pkz_bottom_dashed">
+        <td>
+            <span class="pkz_small" style="margin-left:<%= margin_left %>;">
+                <%= object_state(opinion) %>
+                <%= opinion.written_at %> by <%= opinion.category %>
+            </span>
+        </td>
+        <td width="<%= width_middle %>">
+            <%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %>
+        </td>
+        <td class="pkz_small pkz_next"><%= opinion.review.source  %></td>
+    </tr>
+<% end %>

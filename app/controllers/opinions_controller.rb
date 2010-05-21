@@ -29,7 +29,6 @@ class OpinionsController < ApplicationController
     where_clauses = []
     where_clauses << "this.review.filename_xml.match(/#{@review_label}/i)" if @review_label
 
-    puts ">>>>>>>>>>> #{@opinion_sub_classes.inspect}"
     select_options = { "_type" => @opinion_sub_classes,
                        :category => @source_categories,
                        :state => @state_names,
@@ -37,10 +36,16 @@ class OpinionsController < ApplicationController
                        :written_at => { '$gt' => @date_oldest.to_time },
                        :order => "written_at DESC"  }
     select_options["product_ids"] = @related_product.id if @related_product
-    #select_options["$where"] = where_clauses.join(" || ") if where_clauses.size > 0
 
-    puts "selection options=#{select_options.inspect}"
+    # puts "selection options=#{select_options.inspect}"
     @opinions = Opinion.all(select_options)
+    @nb_opinions = @opinions.size
+    if ["by_review", "xml"].include?(@output_mode)
+      @opinions = @opinions.group_by(&:review_id).inject({}) do |h, (review_id, opinions)|
+        h[review_id] = opinions.group_by(&:paragraph_id); h
+      end
+    end
+    @opinions
   end
 
   def import

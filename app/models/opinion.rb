@@ -27,7 +27,9 @@ class Opinion < Root
   # key :usage, String (alson named XXX)
   key :usage_ids, Array, :default => []
   many :usages, :in => :usage_ids
-  def new_usage() nil end
+  def nb_usages() usage_ids.size end
+  def add_usage(usage, should_save=true) self.usages << usage; (update_attributes(:usage_ids => usage_ids) if should_save) end
+  def remove_usage(usage_id, should_save=true) self.usage_ids.delete(usage_id); self.usages.delete_if { |o| o.id == usage_id }; (update_attributes(:usage_ids => usage_ids) if should_save) end
 
   # the natural language sentence(s) on which is created this opinion
   # if none -> the whole paragraph -> if none the whole review
@@ -265,10 +267,8 @@ class Opinion < Root
     process_attributes_products_selector(knowledge, "referent", params)
     self.dimension_ids = (params[:dimensions] || []).collect { |dimension_id| BSON::ObjectID.from_string(dimension_id) }
 
-    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params[:usages].inspect}"
     params_usages = (params[:usages] || [])
     params_usages = params_usages.collect { |k, v| v } if params_usages.is_a?(Hash)
-    puts ">>>>>>>>>>params[:usages]=>>>>>>>>> #{params_usages.inspect}"
 
     self.usage_ids = params_usages.inject([]) do |l, values|
       #puts ">>>>>>>>>>values=>>>>>>>>> #{values.inspect}"
