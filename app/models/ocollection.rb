@@ -9,7 +9,13 @@ class Ocollection
 
   key :opinion_ids, Array # an array of opinions id
   many :opinions, :in => :opinion_ids
-  
+
+  # create a collection from a file
+  def self.import(user, label, filename_xml)
+    puts "import #{label} by #{user.rpx_username}"
+    puts filename_xml.read
+  end
+
   # nb opinions in this collection
   def nb_opinions() opinion_ids.size end
 

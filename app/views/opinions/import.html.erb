@@ -2,20 +2,27 @@
     <%= model_selector(@current_knowledge, :opinions) %>
 
 
-    <% form_for :review, @review, :url => "/opinions/import_review/#{@product.id}", :class => "pkz_paragraph" do |f| %>
-        <p><%= flash[:notice] %> </p>
-        <p>import xml file with opinions<%= f.file_field :filename_xml %></p>
+    <% form_tag "/opinions/import_process", :multipart => true, :class => "pkz_paragraph" do -%>
+        <% if flash[:notice] and flash[:notice] != "" %>
+            <p style="background-color:pink; padding:3px; border:1px solid black; margin:3px;"><%= flash[:notice] %></p>
+        <% end %>
+      
+        <p>import a collection of opinions from file<%= file_field_tag :filename_xml %></p>
+        <p>
+          name it<%= text_field_tag :label %>
+          <span class="pkz_small">if none, filename imported is used</span>
+        </p>
         <p>
           Product per default
           <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@product ? @product.label : nil) }, {:method => :get } %>
         </p>
-        <p><%= submit_tag "Import opinions..." %></p>
+        <p><%= submit_tag "Import collection of opinions..." %></p>
     <% end %>
 
     <hr/>
-    <h2>last reviews imported</h2>
-    <% for review_imported in @reviews_imported %>
-        <div style="padding:2px;">filenamexml=<%= review_imported.filename_xml %></div>
+    <h2>last collections imported</h2>
+    <% for ocollection in @ocollections %>
+        <div style="padding:2px;">filenamexml=<%= ocollection.label %></div>
     <% end %>
 
 </div>

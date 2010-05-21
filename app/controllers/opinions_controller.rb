@@ -49,10 +49,34 @@ class OpinionsController < ApplicationController
   end
 
   def import
-    @reviews_imported = Review.all(:filename_xml => nil, :limit => 100)
+    @ocollections = Ocollection.all(:limit => 100)
     # @product = Product.find(params[:product_id])
     @product = Product.first
-    @review = Review.new(:user => @current_user, :product => @product, :written_on => Date.today)
+  end
+
+
+  def import_process
+
+    if filename_xml = (params[:filename_xml] == "" ? nil : params[:filename_xml])
+      if filename_xml.content_type == "text/xml"
+        begin
+          flash[:notice] = ""
+          flash[:notice] << "filename_xml.length=#{filename_xml.length}<br/>"
+          label_ocollection = params[:label]
+          label_ocollection = filename_xml.original_filename unless label_ocollection and label_ocollection != ""
+          label_related_product = params[:search][:related_product]
+          flash[:notice] << "label_ocollection=#{label_ocollection.inspect}<br/>label_related_product=#{label_related_product.inspect}"
+          Ocollection.import(@current_user, label_ocollection, filename_xml)
+        rescue
+          flash[:notice] = "ERROR while importing"
+        end
+      else
+        flash[:notice] = "file should have a content/type= \"text/xml\", WRONG: #{filename_xml.content_type.inspect}"
+      end
+    else
+      flash[:notice] = "I need a file to import !"
+    end
+    redirect_to "/opinions/import"
   end
 
   def auto_complete_for_search_related_product
