@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<opinions author="fpatte" label="xml output Sat May 22 18:29:44 +0200 2010">
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb00000a" by="phclouin" dimensions="design_construction_rating" product_selector_1="htc_droid_incredible" operator="worse" product_selector_2="nexus_one">
+    <usages>look and feel</usages>
+  </Comparator>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000010" by="phclouin" dimensions="screen_rating" product_selector_1="htc_droid_incredible" operator="worse" product_selector_2="nexus_one"/>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000012" by="phclouin" dimensions="user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>Android skin</usages>
+    <extract>Android 2.1 is Google’s latest release, and while you have probably heard our thoughts on the operating system in general, you should know that the HTC Droid Incredible isn’t a bare bones Google configuration.</extract>
+  </Comparator>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000013" by="phclouin" dimensions="user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="motorola_droid"/>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000016" by="phclouin" dimensions="connectivity_internet_rating" product_selector_1="htc_droid_incredible" operator="worse" product_selector_2="motorola_droid">
+    <usages>signal</usages>
+  </Comparator>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000018" by="phclouin" dimensions="messaging_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>Microsoft Exchange</usages>
+  </Comparator>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb00001a" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="nexus_one or htc_droid_eris or motorola_droid or htc_hero"/>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb00001f" by="phclouin" dimensions="media_rating, music_rating, video_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]"/>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000057" by="phclouin" dimensions="controls_navigation_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="nexus_one">
+    <usages>touch buttons</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000057" by="phclouin" dimensions="design_construction_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="htc_droid_eris or motorola_droid">
+    <usages>look and feel</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000059" by="phclouin" dimensions="screen_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="nexus_one">
+    <usages>touchscreen</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000059" by="phclouin" dimensions="screen_rating" product_selector_1="htc_droid_incredible" operator="same" product_selector_2="nexus_one">
+    <usages>brightness</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb00005f" by="phclouin" dimensions="call_rating" product_selector_1="htc_droid_incredible" operator="worse" product_selector_2="motorola_droid">
+    <usages>call quality</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000062" by="phclouin" dimensions="functionality_performance_rating, user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="nexus_one">
+    <usages>operating system</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000062" by="phclouin" dimensions="functionality_performance_rating, user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="operating_system =or [apple, android_15, android_16, android_2, android_21, android, palm_webos]">
+    <usages>operating system</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000067" by="phclouin" dimensions="battery_life_rating" product_selector_1="htc_droid_incredible" operator="worse" product_selector_2="nexus_one"/>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000069" by="phclouin" dimensions="overall_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="motorola_droid"/>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000005" by="phclouin" dimensions="overall_rating, design_construction_rating, camera_rating, functionality_performance_rating, user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="motorola_droid">
+    <extract>With the Motorola DROID seemingly feeling like old news (Google even basically castrated it themselves with a promise of an unbranded, Verizon-compatible Nexus One), the HTC Droid Incredible picks up where Motorola left off in almost every area.</extract>
+  </Comparator>
+  <Comparator review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000021" by="phclouin" dimensions="" product_selector_1="htc_droid_incredible" operator="same" product_selector_2=""/>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000063" by="phclouin" dimensions="functionality_performance_rating, user_interface_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="htc_hero">
+    <usages>operating system</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000063" by="phclouin" dimensions="user_interface_rating" product_selector_1="htc_droid_incredible" operator="same" product_selector_2="apple_iphone3gs_32gb">
+    <usages>copy and paste</usages>
+  </Comparator>
+  <Comparator review_id="4bdcd16b43a76d09fb000053" paragraph_id="4bdcd17643a76d09fb000069" by="phclouin" dimensions="overall_rating" product_selector_1="htc_droid_incredible" operator="better" product_selector_2="htc_droid_eris or motorola_droid or nexus_one or htc_mytouch3G or motorola_cliq"/>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6443a76d24a200000a" by="phclouin" dimensions="camera_rating" product_selector_1="sony_ericsson_xperia_x10" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21]">
+    <usages>camera resolution</usages>
+    <extract>At 8.1 megapixels, the X10 represents just about the highest-res cam you can find on an Android phone today. Yes, granted, it’s a well-worn truism that megapixel count has little to do with actual picture quality, but Sony Ericsson has historically taken a lot of pride in producing cameraphones that really hold their own, and we’re happy to report that the X10 is no exception. </extract>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d000024" by="phclouin" dimensions="overall_rating" product_selector_1="nokia_nuron" operator="worse" product_selector_2="operating_system =or [apple, android_15, android_16, android_2, android_21, android, palm_webos]">
+    <extract>he way we’d describe it is this: current dumbphone users, S60 5th Edition users, and most S60 3rd Edition users will feel right at home with the Nuron’s user experience, but everyone else — particularly anyone who’s used a Pre, iPhone, or Android device — will be a bit stymied by some of the platform’s stranger principles.</extract>
+  </Comparator>
+  <Comparator review_id="4bb408c543a76d21eb000036" paragraph_id="4bb408ea43a76d21eb00005f" by="phclouin" dimensions="messaging_rating" product_selector_1="sony_ericsson_xperia_x10" operator="worse" product_selector_2="motorola_cliq">
+    <usages>social feed</usages>
+  </Comparator>
+  <Comparator review_id="4bb408c543a76d21eb000036" paragraph_id="4bb408ea43a76d21eb000067" by="phclouin" dimensions="messaging_rating" product_selector_1="sony_ericsson_xperia_x10" operator="same" product_selector_2="nexus_one">
+    <usages>email set up</usages>
+    <extract>But like with the Nexus One we weren’t able use the easy set-up method to add Yahoo and Comcast.net accounts. </extract>
+  </Comparator>
+  <Comparator review_id="4bb408c543a76d21eb000036" paragraph_id="4bb408ea43a76d21eb000068" by="phclouin" dimensions="messaging_rating" product_selector_1="sony_ericsson_xperia_x10" operator="worse" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>MS Outlook</usages>
+    <extract>We also weren’t able to add our CNET Outlook Web Access account (OWA) using the X10’s standard e-mail app. We’ve never had such a problem on other Android phones, so this one really left us confused.</extract>
+  </Comparator>
+  <Comparator review_id="4bb408c543a76d21eb000036" paragraph_id="4bb408ea43a76d21eb000072" by="phclouin" dimensions="music_rating" product_selector_1="sony_ericsson_xperia_x10" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>music player</usages>
+    <extract>The music player is improved over other Android phones.</extract>
+  </Comparator>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6543a76d24a200000e" by="phclouin" dimensions="music_rating" product_selector_1="sony_ericsson_xperia_x10" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>music player</usages>
+    <extract>Anyway, back to the second part of Sony Ericsson’s one-two punch: Mediascape. Anyone who’s used any stock Android device — 1.0, 1.5, 2.0, doesn’t matter — can tell you that the in-built music app is in desperate need of tender loving care, and these guys have given it just that. Basically, Mediascape is your one-stop shop for browsing music, videos, and photos on the device; there’s also support for the company’s PlayNow store, though we weren’t able to test it (it still hasn’t launched in the US, though it’s available in a number of European markets). </extract>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d000021" by="phclouin" dimensions="controls_navigation_rating" product_selector_1="nokia_nuron" operator="same" product_selector_2="nokia_5800">
+    <usages>styling</usages>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d000027" by="phclouin" dimensions="overall_rating" product_selector_1="nokia_nuron" operator="worse" product_selector_2="nokia_5230"/>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d000021" by="phclouin" dimensions="design_construction_rating" product_selector_1="nokia_nuron" operator="same" product_selector_2="nokia_5800">
+    <usages>styling</usages>
+    <extract>As you might be able to gather from its family tree, the Nuron is a dead ringer for the 5230 and for the 5800 before it — it’s the same physical layout (and made from the same materials) all the way around, and the white / silver color scheme that T-Mobile has chosen for its version might be our favorite of the lot.</extract>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d000026" by="phclouin" dimensions="gps_rating" product_selector_1="nokia_nuron" operator="worse" product_selector_2="operating_system =or [apple, android_15, android_16, android_2, android_21, android]">
+    <extract>Anyone with an Android device or an iPhone of any generation knows that they can hop into their mapping app and get a rough location fix almost immediately, but even with AGPS fully enabled on the Nuron, we waited for several minutes by a window with downtown Washington, DC showing on the display (we’re in Chicago) before giving up.</extract>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d00002a" by="phclouin" dimensions="overall_rating" product_selector_1="nokia_nuron" operator="same" product_selector_2="t_mobile_dash3g">
+    <usages>recommendation</usages>
+  </Comparator>
+  <Comparator review_id="4bb41aba43a76d249d00001e" paragraph_id="4bb41ac843a76d249d00002a" by="phclouin" dimensions="overall_rating" product_selector_1="nokia_nuron" operator="worse" product_selector_2="t-mobile_g1">
+    <usages>recommendation</usages>
+  </Comparator>
+  <Comparator review_id="4bb408c543a76d21eb000036" paragraph_id="4bb408ea43a76d21eb000054" by="phclouin" dimensions="keyboard_input_rating" product_selector_1="sony_ericsson_xperia_x10" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21]">
+    <usages>virtual keyboard</usages>
+  </Comparator>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6443a76d24a2000007" by="phclouin" dimensions="design_construction_rating" product_selector_1="sony_ericsson_xperia_x10" operator="worse" product_selector_2="nexus_one">
+    <usages>build quality</usages>
+    <extract>What’s more, holding the X10 back-to-back with the Nexus One — perhaps its nearest competitor on the market today — quickly makes you appreciate the HTC phone’s superior materials; it simply feels more solidly-constructed, and that’s something that can make a big difference when you’re buying a $500-plus handset.</extract>
+  </Comparator>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6543a76d24a200000b" by="phclouin" dimensions="camera_rating" product_selector_1="sony_ericsson_xperia_x10" operator="better" product_selector_2="motorola_droid">
+    <usages>photo quality</usages>
+    <extract>. As usual, you’re not going to expect to replace your DSLR with this (or even your higher-end point-and-shoot), and you’re not going to want to print out an 8-by-10 and frame it, but we’d feel much better about having this in our pocket for on-the-go shooting than, say, a Droid.</extract>
+  </Comparator>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6543a76d24a200000d" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="sony_ericsson_xperia_x10" operator="same" product_selector_2="nexus_one"/>
+  <Comparator review_id="4bb41b5143a76d24a2000002" paragraph_id="4bb41b6543a76d24a2000013" by="phclouin" dimensions="overall_rating" product_selector_1="sony_ericsson_xperia_x10" operator="worse" product_selector_2="nexus_one">
+    <extract>But ultimately, would we actually take this over a Nexus? Give us a few bug fixes, Sony Ericsson — and a hard date for an Eclair upgrade — and you might just have a deal on your hands. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000e2" by="phclouin" dimensions="screen_rating" product_selector_1="htc_hero" operator="better" product_selector_2="operating_system =or [android_15, android_16, blackberry, blackberry_5, palm_webos, symbian, windows_mobile_61, windows_mobile]">
+    <usages>touchscreen</usages>
+    <extract>The touch input is second to only Apple’s capacitive touch screens and as far as the display itself goes, it’s wonderfully bright, vivid, clear, and crisp.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000ef" by="phclouin" dimensions="battery_life_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3gs_32gb"/>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000062" by="phclouin" dimensions="design_construction_rating" product_selector_1="blackberry_tour_9630_verizon" operator="same" product_selector_2="blackberry_curve_8900_att">
+    <usages>styling</usages>
+    <extract>It definitely follows RIM’s styling cues from the Curve 8900 and obviously the Storm as well. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000069" by="phclouin" dimensions="call_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="all_products">
+    <usages>speakerphone</usages>
+    <extract>As far as the hardware portion goes, this is probably the best phone we’ve ever used. Yeah, seriously. The speakerphone is absolutely off the ringer.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000071" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_tour_9630_verizon" operator="worse" product_selector_2="blackberry_bold_9700_att">
+    <usages>display</usages>
+    <extract>We would have loved for the screen to be a tiny bit bigger because as it is, the Bold is still reigning champion of BlackBerry screens, if only for size alone.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000072" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_tour_9630_verizon" operator="same" product_selector_2="blackberry_bold_9700_att">
+    <usages>screen resolution</usages>
+    <extract>In terms of resolution, you’re looking at the same res at the 8900 and Storm, 480×360.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000075" by="phclouin" dimensions="keyboard_input_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="blackberry_curve_8900_att">
+    <usages>physical keyboard</usages>
+    <extract> The keys are a smaller version of the Bold’s with a bit more click like the 8900.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f69000079" by="phclouin" dimensions="design_construction_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="blackberry_curve_8900_att">
+    <usages>size</usages>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f6900007f" by="phclouin" dimensions="connectivity_internet_rating" product_selector_1="blackberry_tour_9630_verizon" operator="same" product_selector_2="blackberry_curve_8900_att">
+    <usages>reception</usages>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f6900008b" by="phclouin" dimensions="overall_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="carriers =or [att]"/>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f6900009b" by="phclouin" dimensions="overall_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="carriers =or [verizon]">
+    <extract>asically, to you know, not beat around the bush. Verizon + 9630 = the best BlackBerry experience on the planet. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30a2543a76d5f69000059" paragraph_id="4ba30a2a43a76d5f6900009b" by="phclouin" dimensions="overall_rating" product_selector_1="blackberry_tour_9630_verizon" operator="better" product_selector_2="carriers =or [verizon]">
+    <extract> We said the Storm was the best phone on Verizon (hey, everything is relative, ok?) and this obviously takes it a step further. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000dd" by="phclouin" dimensions="keyboard_input_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>virtual keyboard</usages>
+    <extract>One of the reason the iPhone keyboard works so incredibly well is because their correction system is second to none. HTC’s is decent, but it’s still not in the same class as Apple’s integration.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000e2" by="phclouin" dimensions="screen_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>touchscreen</usages>
+    <extract>The touch input is second to only Apple’s capacitive touch screens and as far as the display itself goes, it’s wonderfully bright, vivid, clear, and crisp.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000e6" by="phclouin" dimensions="music_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>music player</usages>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000e9" by="phclouin" dimensions="user_interface_rating" product_selector_1="htc_hero" operator="better" product_selector_2="palm_pre">
+    <extract> Well, HTC Sense is basically a Palm Pre killer and it’s just a freakin’ skin! Literally.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000f9" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3g">
+    <usages>speed</usages>
+    <extract> This doesn’t speak too highly of Android as an OS to us because Apple’s iPhone 3G was about 50% faster with a 400MHz CPU compared to the Hero’s 528MHz processor. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000f9" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="palm_pre">
+    <usages>speed</usages>
+    <extract>The Palm Pre, a little faster than the iPhone 3G, is pretty speedy and doesn’t bog down like the Hero does.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000f9" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="palm_pre" operator="better" product_selector_2="apple_iphone3g">
+    <usages>speed</usages>
+    <extract> The Palm Pre, a little faster than the iPhone 3G</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000f9" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>speed</usages>
+    <extract>And the iPhone 3GS? For. Get. It. Once you’ve tasted Big Momma’s fried chicken, you’re not going to eat at Popeye’s (don’t think about that line too much because you won’t get anywhere) and that’s really the issue here with the performance aspect of the Hero. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000fc" by="phclouin" dimensions="overall_rating" product_selector_1="htc_hero" operator="better" product_selector_2="palm_pre">
+    <extract>Would I take it over the Palm Pre? One hundred percent yes. </extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000fc" by="phclouin" dimensions="overall_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="htc_mytouch3G">
+    <extract>Though what I’ve found, sadly, is I get more enjoyment out of using my HTC Magic or the T-Mobile myTouch 3G than I do with the Hero.</extract>
+  </Comparator>
+  <Comparator review_id="4ba30b6543a76d5f690000cd" paragraph_id="4ba30b6b43a76d5f690000fc" by="phclouin" dimensions="overall_rating" product_selector_1="htc_hero" operator="worse" product_selector_2="htc_magic">
+    <extract>Though what I’ve found, sadly, is I get more enjoyment out of using my HTC Magic or the T-Mobile myTouch 3G than I do with the Hero.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d6646000007" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>touchscreen</usages>
+    <extract>It’s buggy, though; the drag handles jump around and sometimes leave graphic “ghosts” of themselves in spots. Double-tapping also zooms, which isn’t as natural as the iPhone’s two-finger zoom or the Imagio’s touch zoom slider, but it works in a pinch. </extract>
+  </Comparator>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d6646000004" by="phclouin" dimensions="design_construction_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="htc_imagio"/>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d664600000a" by="phclouin" dimensions="connectivity_internet_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>web browsing</usages>
+    <extract>Safari on iPhone, Android, and Opera Mobile all offer better mobile browsing experiences.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d664600000a" by="phclouin" dimensions="connectivity_internet_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21]">
+    <usages>web browsing</usages>
+    <extract>Safari on iPhone, Android, and Opera Mobile all offer better mobile browsing experiences.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d664600000f" by="phclouin" dimensions="overall_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="htc_imagio"/>
+  <Comparator review_id="4b9bdb9c43a76d6646000001" paragraph_id="4b9bdba243a76d6646000010" by="phclouin" dimensions="overall_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="blackberry_tour_9630_verizon"/>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fb43a76d658e00000b" by="phclouin" dimensions="keyboard_input_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="blackberry_tour_9630_verizon"/>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fb43a76d658e000015" by="phclouin" dimensions="connectivity_internet_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="operating_system =or [apple, android_15, android_16, android_2, android_21, android, palm_webos]">
+    <usages>web browsing</usages>
+    <extract>It still is not up there with the iPhone and Pre, or even Android just yet.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fc43a76d658e000021" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="apple_iphone3gs_32gb">
+    <usages>touchscreen</usages>
+    <extract>At the end of the day we’ll still take the non-clickable screens of the Palm Pre, Apple iPhone and HTC Hero, but if tactile feedback is your thing the BlackBerry Storm2 is a solid choice.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fc43a76d658e000021" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="apple_iphone3g">
+    <usages>touchscreen</usages>
+    <extract>At the end of the day we’ll still take the non-clickable screens of the Palm Pre, Apple iPhone and HTC Hero, but if tactile feedback is your thing the BlackBerry Storm2 is a solid choice.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fc43a76d658e000021" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="palm_pre">
+    <usages>touchscreen</usages>
+    <extract>At the end of the day we’ll still take the non-clickable screens of the Palm Pre, Apple iPhone and HTC Hero, but if tactile feedback is your thing the BlackBerry Storm2 is a solid choice.</extract>
+  </Comparator>
+  <Comparator review_id="4b9bd6ee43a76d658e000002" paragraph_id="4b9bd6fc43a76d658e000021" by="phclouin" dimensions="screen_rating" product_selector_1="blackberry_storm2_9550" operator="worse" product_selector_2="htc_hero">
+    <usages>touchscreen</usages>
+    <extract>At the end of the day we’ll still take the non-clickable screens of the Palm Pre, Apple iPhone and HTC Hero, but if tactile feedback is your thing the BlackBerry Storm2 is a solid choice.</extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000010" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>user experience</usages>
+    <extract>You get the picture—the Legend is building on the Hero’s quality in incremental upgrades, but every change, however minor, radicalizes the experience of using the Legend.</extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000011" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="better" product_selector_2="operating_system =or [android_16, android_2]"/>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002a" by="phclouin" dimensions="battery_life_rating" product_selector_1="htc_legend" operator="better" product_selector_2="t-mobile_g1"/>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002c" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="same" product_selector_2="nexus_one">
+    <usages>recommendation</usages>
+    <extract>True, other phones may be better specced, but with that premium build it’s like comparing a Sony Vaio (not a bad laptop, sure) to a MacBook. Sometimes there’s just no contest. While the extra horsepower and added touches of the Nexus One and Desire are nice, I found the Legend more than satisfactory.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000035" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="worse" product_selector_2="nexus_one">
+    <usages>processor</usages>
+    <extract>Where the Hero used a 528MHz chipset, the Legend gets Qualcomm’s 600MHz MSM7227; a speed increase, yes, but short of the 1GHz Snapdragon on the Google Nexus One and HTC’s own Desire. </extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000035" by="phclouin" dimensions="screen_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>display</usages>
+    <extract>The Legend has a 3.2-inch HVGA display, like the Hero, but this time around it’s an AMOLED panel rather than LCD.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000036" by="phclouin" dimensions="design_construction_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>build quality</usages>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000039" by="phclouin" dimensions="controls_navigation_rating" product_selector_1="htc_legend" operator="better" product_selector_2="navigation =or [trackball]">
+    <usages>trackpad</usages>
+    <extract>Gone, too, is the Hero’s trackball, replaced by an optical joystick. It takes a little getting used to – stroking it from side to side to navigate homescreens or tabs – but once you’re familiar it actually feels more accurate than the trackball ever did.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b700003b" by="phclouin" dimensions="messaging_rating" product_selector_1="htc_legend" operator="better" product_selector_2="operating_system =or [android_21]">
+    <usages>Microsoft Exchange</usages>
+    <extract> Unlike the partial Exchange support in Android 2.1, the Legend can sync not only Mail and Contacts but Calendar entries as well.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b700003b" by="phclouin" dimensions="messaging_rating" product_selector_1="htc_legend" operator="better" product_selector_2="nexus_one">
+    <usages>Microsoft Exchange</usages>
+    <extract>Where Nexus One owners looking to use Exchange have often had to resort to third-party apps from the Android Market, that’s unlikely to be the case with the HTC Legend.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b700003d" by="phclouin" dimensions="messaging_rating" product_selector_1="htc_legend" operator="worse" product_selector_2="brand =or [motorola]">
+    <usages>social network support</usages>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000040" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="same" product_selector_2="htc_desire">
+    <extract>While the Legend’s display may not be as expansive as that of the Desire, the combination of reflowing, intuitive zooming and overall speed go a long way to overcoming that limitation.</extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000041" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>overall performance</usages>
+    <extract>Our concerns at the relatively minor bump in chipset were founded on repeated complaints about the Hero suffering lag; that’s something HTC have obviously worked hard to code out of the Legend. </extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000048" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="worse" product_selector_2="htc_desire">
+    <extract>It no longer occupies the top-spot in HTC’s Android range – the imminent Desire will take that position – but it’s arguably more attractive and pocket-friendly than its sibling. </extract>
+  </Comparator>
+  <Comparator review_id="4bb9024e43a76d53b700002b" paragraph_id="4bb9027943a76d53b7000048" by="phclouin" dimensions="design_construction_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_desire">
+    <usages>look and feel</usages>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000010" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>speed</usages>
+    <extract>The internal upgrades are minor, when you consider it next to the HTC Hero, but like the Empire Strikes Back, sometimes sequels are far better than the original. While we found the Hero “tragically flawed” in its slugginess, the Legend’s slightly more powerful 600MHz processor behaved—well, like a legend</extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000010" by="phclouin" dimensions="screen_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <usages>display</usages>
+    <extract>The 3.2-inch screen has the same amount of pixels as the Hero, but swaps the HVGA for a more superior AMOLED. </extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000010" by="phclouin" dimensions="camera_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <extract>The 5.0-megapixel camera is still the same quality, but has the much-welcomed addition of a flash. </extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000013" by="phclouin" dimensions="design_construction_rating" product_selector_1="htc_legend" operator="better" product_selector_2="all_products">
+    <usages>build quality</usages>
+    <extract>Plain and simple—the Legend is the most well-built phone I’ve ever had in my hand.</extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000019" by="phclouin" dimensions="camera_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero">
+    <extract>HTC’s used the same 5.0-megapixel camera as we saw on the Hero, but the addition of a flash is a new and exciting step for them—strange as that sounds. </extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d5319000022" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="better" product_selector_2="brand =or [lg_electronics, motorola, sony_ericsson]">
+    <usages>Android skin</usages>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002d" by="phclouin" dimensions="functionality_performance_rating" product_selector_1="htc_legend" operator="better" product_selector_2="htc_hero"/>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002d" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="better" product_selector_2="all_products">
+    <usages>recommnedation</usages>
+    <extract> I’m going to award it possibly the highest accolade a reviewer can gift a device: I’m going to upgrade to one.</extract>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002e" by="phclouin" dimensions="overall_rating" product_selector_1="nexus_one" operator="better" product_selector_2="operating_system =or [android_15, android_16, android_2, android_21, android]">
+    <usages>best Android phone</usages>
+  </Comparator>
+  <Comparator review_id="4bb8f48943a76d531900000a" paragraph_id="4bb8f49543a76d531900002e" by="phclouin" dimensions="overall_rating" product_selector_1="htc_legend" operator="better" product_selector_2="all_products">
+    <usages>user experience</usages>
+    <extract>But it’s one of the best all-rounders, when you consider the hardware—and the feeling you’re left with once it leaves your hand. I feel bereft without it.</extract>
+  </Comparator>
+</opinions>

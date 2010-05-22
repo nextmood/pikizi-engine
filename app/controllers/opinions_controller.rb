@@ -40,12 +40,22 @@ class OpinionsController < ApplicationController
     # puts "selection options=#{select_options.inspect}"
     @opinions = Opinion.all(select_options)
     @nb_opinions = @opinions.size
-    if ["by_review", "xml"].include?(@output_mode)
+    if ["by_review"].include?(@output_mode)
       @opinions = @opinions.group_by(&:review_id).inject({}) do |h, (review_id, opinions)|
         h[review_id] = opinions.group_by(&:paragraph_id); h
       end
     end
-    @opinions
+
+    if @output_mode == "xml"
+      oc = Ocollection.new_with_opinions(@current_user.rpx_username, "xml output #{Time.now}", @opinions)
+      puts oc.class
+      puts oc.to_xml.inspect
+      render(:xml => oc )
+    else
+      # index.html.erb
+    end
+
+
   end
 
   def import
@@ -67,8 +77,8 @@ class OpinionsController < ApplicationController
           label_related_product = params[:search][:related_product]
           flash[:notice] << "label_ocollection=#{label_ocollection.inspect}<br/>label_related_product=#{label_related_product.inspect}"
           Ocollection.import(@current_user, label_ocollection, filename_xml)
-        rescue
-          flash[:notice] = "ERROR while importing"
+        rescue  Exception => e
+          flash[:notice] = "ERROR while importing #{e.message}"
         end
       else
         flash[:notice] = "file should have a content/type= \"text/xml\", WRONG: #{filename_xml.content_type.inspect}"

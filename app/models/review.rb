@@ -176,8 +176,8 @@ class Review < Root
 
   def self.to_xml
     doc = XML::Document.new
-    doc.root = node_root = XML::Node.new("reviews")
-    Review.all.each do |review|
+    doc.root = node_root = XML::Node.new("opinions")
+    Review.all(:limit => 10).each do |review|
       node_root << review.to_xml_bis if review.paragraphs.count > 0
     end
     doc.to_s(:indent => true)
@@ -194,7 +194,7 @@ class Review < Root
     node_review['id'] = id.to_s
     node_review['product_idurls'] = products.collect(&:idurl).join(", ")
     node_review['category'] = category
-    node_review['status'] = status
+    node_review['state'] = state
     node_review['written_at'] = written_at.strftime(Root.default_datetime_format)
 
 
