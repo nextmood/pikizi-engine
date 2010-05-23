@@ -12,7 +12,8 @@
     <% if opinion.to_review? %>
         <div id="censor_step" style="border:2px solid red; background-color:orange; padding:5px; margin-bottom:10px;">
             <% form_tag "/interpretor/censor_action/#{opinion.id}", :id => "form_censor_#{opinion.id}" do -%>
-                waiting for acceptance: ...
+                waiting for acceptance:
+                <span class="pkz_small"><%= opinion.original_import.inspect if opinion.original_import %></span>
                 <%= text_field_tag "censor_comment_#{opinion.id}", "enter a comment...", :size => 50 %>
                 <%= hidden_field_tag "censor_code_#{opinion.id}", nil %>
                 <%= submit_tag "accept..", :style => "color:green; font-weight:bold;", :onclick => "submit_censor('#{opinion.id}', 'ok');" %>

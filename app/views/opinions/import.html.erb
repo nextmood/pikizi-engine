@@ -6,23 +6,27 @@
         <% if flash[:notice] and flash[:notice] != "" %>
             <p style="background-color:pink; padding:3px; border:1px solid black; margin:3px;"><%= flash[:notice] %></p>
         <% end %>
-      
-        <p>import a collection of opinions from file<%= file_field_tag :filename_xml %></p>
         <p>
-          name it<%= text_field_tag :label %>
-          <span class="pkz_small">if none, filename imported is used</span>
+          import a collection of opinions from file<%= file_field_tag :filename_xml %>
+          <%= submit_tag "Import collection of opinions..." %>
         </p>
-        <p>
-          Product per default
-          <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@product ? @product.label : nil) }, {:method => :get } %>
-        </p>
-        <p><%= submit_tag "Import collection of opinions..." %></p>
     <% end %>
 
     <hr/>
     <h2>last collections imported</h2>
     <% for ocollection in @ocollections %>
-        <div style="padding:2px;">filenamexml=<%= ocollection.label %></div>
+        <div style="padding:2px;">
+          <span class="pkz_small"><%= ocollection.created_at %></span>
+          <span class="pkz_next pkz_bold"><%= ocollection.label %></span>
+          <span class="pkz_next pkz_small pkz_link">
+            <%= link_to_function("#{ocollection.nb_opinions} opinions", "document.getElementById('list_opinions_#{ocollection.id}').toggle();") %>
+          </span>
+          <div id="list_opinions_<%= ocollection.id %>" style="display:none;">
+            <% for opinion in ocollection.opinions %>
+                <div><%= object_state(opinion) %><%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %></div>
+            <% end %>
+          </div>
+        </div>
     <% end %>
 
 </div>

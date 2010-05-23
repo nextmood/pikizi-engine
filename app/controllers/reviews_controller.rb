@@ -54,21 +54,46 @@ class ReviewsController < ApplicationController
     redirect_to "/reviews/edit/#{review.id}"
   end
 
+
   # list all reviews for current knowledge
   def index
-    @nb_reviews_per_page = 100
+    if related_product_label = params[:search] and related_product_label = params[:search][:related_product]
+      @related_product = Product.first(:label => related_product_label)
+    end
+    @max_nb_reviews = params[:max_nb_reviews] || 100
+    @date_oldest = if date_oldest = params[:date_oldest]
+      Date.new(Integer(date_oldest["year"]), Integer(date_oldest["month"]), Integer(date_oldest["day"]))
+    else
+      Date.today - 1000
+    end
+
+    @output_mode = params[:output_mode] || "standard"
     @source_categories = params[:source_categories]
     @source_categories ||= Review.categories.collect { |category_name, weight| category_name }
     @state_names = params[:state_names]
     @state_names ||= Review.list_states.collect(&:first)
 
-    select_options = { :category => @source_categories, :state => @state_names }
-    @nb_reviews = Review.count(select_options)
-    @pager = Paginator.new(@nb_reviews, @nb_reviews_per_page) do |offset, per_page|
-      Review.all({:offset => offset, :limit => per_page, :order => 'written_at desc'}.merge(select_options))
+
+    select_options = { :category => @source_categories,
+                       :state => @state_names,
+                       :limit => @max_nb_reviews,
+                       :written_at => { '$gt' => @date_oldest.to_time },
+                       :order => "written_at DESC"  }
+    select_options["product_ids"] = @related_product.id if @related_product
+
+    # puts "selection options=#{select_options.inspect}"
+    @reviews = Review.all(select_options)
+    @nb_reviews = @reviews.size
+
+    if @output_mode == "xml"
+      render(:xml => Rcollection.new(@current_user.rpx_username, "xml output #{Time.now}", @reviews) )
+    else
+      # index.html.erb
     end
-    @reviews = @pager.page(params[:page])
+
+
   end
+
 
   # get /reviews/new/:knowledge_id/:product_id
   def new

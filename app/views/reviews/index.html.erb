@@ -6,28 +6,42 @@
             <% form_tag "/reviews/index" do -%>
 
                 <div style="margin-top:5px;">
-                    <span class="pkz_bold;">in categories</span>
+                    <span class="pkz_bold">In categories </span>
                     <% for category, weight in Review.categories %>
-                        <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>
+                        <%= check_box_tag("source_categories[]", category, @source_categories.include?(category)) %><%= category %>&nbsp;
                     <% end %>
+                    <span class="pkz_next pkz_bold">not older than </span><%= select_date(@date_oldest, :prefix => "date_oldest") %>                                         
                 </div>
 
                 <div style="margin-top:5px;">
-                    <span class="pkz_bold;">in state</span>
+                    <span class="pkz_bold">in state</span>
                     <% for state_name, state_datas in Review.list_states %>
                         <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
-                        <span style="background-color:<%= state_datas[:color] %>; padding:2px;"><%= state_datas[:label] %></span>
+                        <span style="background-color:<%= state_datas[:color] %>; padding:2px;" class="pkz_small"><%= state_datas[:label] %></span>
                     <% end %>
+
                 </div>
 
                 <div style="margin-top:5px;">
-                    reviews&nbsp;
-                    <%= link_to(image_tag("icons/backward.png", :border => 0), "/reviews?page=#{@reviews.prev.number}") if @reviews.prev? %>
-                    <%= (@reviews.number - 1) * @nb_reviews_per_page + 1 %> - <%= @reviews.number * @nb_reviews_per_page - 1 %>
-                    <%= link_to(image_tag("icons/foward.png", :border => 0), "/reviews?page=#{@reviews.next.number}") if @reviews.next? %>
-
-                    <%= submit_tag "filter among #{@nb_reviews} reviews", :class => "pkz_next" %>
+                    <span class="pkz_bold">involving product</span>
+                    <%= text_field_with_auto_complete "search", :related_product, { :size => 50, :value => (@related_product ? @related_product.label : nil) }, {:method => :get } %>
                 </div>
+
+                <div style="margin-top:5px;">
+                    <hr/>
+                    <span class="pkz_bold">output: </span>
+                    <%= radio_button_tag "output_mode", "standard", @output_mode == "standard" %>html
+                    &nbsp;<%= radio_button_tag "output_mode", "xml", @output_mode == "xml"  %>xml
+
+                    <span class="pkz_small pkz_next">
+                        limit to <%= text_field_tag "max_nb_reviews", @max_nb_reviews, :size => 2 %>reviews
+                    </span>
+                    <%= submit_tag "filter  #{@nb_reviews} reviews", :class => "pkz_next" %>
+                    <%= link_to("reset", "/reviews/index", :class => "pkz_link pkz_small") %>
+
+                </div>
+
+
 
             <% end -%>
             <hr/>

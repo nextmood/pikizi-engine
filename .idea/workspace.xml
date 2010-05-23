@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/opinions/import.html.erb" afterPath="$PROJECT_DIR$/app/views/opinions/import.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb" afterPath="$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/index.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/test_import_opinions.xml" afterPath="$PROJECT_DIR$/doc/test_import_opinions.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ocollection.rb" afterPath="$PROJECT_DIR$/app/models/ocollection.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <ignored path="pikizi-engine.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="pikizi-engine.iws" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +52,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/helpers/knowledges_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/paragraph.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/opinions/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/knowledge.rb" />
         <option value="$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/opinions/import.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/reviews/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
-        <option value="$PROJECT_DIR$/app/models/ocollection.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/doc/test_import_opinions.xml" />
+        <option value="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/ocollection.rb" />
+        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
+        <option value="$PROJECT_DIR$/app/views/opinions/import.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
       </list>
     </option>
@@ -204,6 +210,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -260,7 +269,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opinions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,44 +344,19 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pikizi-engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pikizi-engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Desktop" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Rails.Development">
     <configuration default="false" name="pikizi:recompute_counters" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -670,7 +694,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27051926" sideWeight="0.7076023" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28216374" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28216374" sideWeight="0.99655175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -713,56 +737,50 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/dimensions_list.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="132" selection-end="132" vertical-scroll-proportion="0.032608695" />
+        <state line="29" column="3" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.028436018" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/knowledges/_dimensions.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/opinions/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="73" selection-start="587" selection-end="609" vertical-scroll-proportion="-7.5789475">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="908" selection-end="921" vertical-scroll-proportion="0.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="12" selection-start="2341" selection-end="2791" vertical-scroll-proportion="0.601108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/opinions/import.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="41" selection-start="122" selection-end="122" vertical-scroll-proportion="-2.5263157">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="66" selection-end="68" vertical-scroll-proportion="-1.8461539">
-          <folding />
-        </state>
+        <state line="26" column="0" selection-start="1375" selection-end="2275" vertical-scroll-proportion="0.028436018" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="27" selection-start="5866" selection-end="5866" vertical-scroll-proportion="0.0">
+        <state line="377" column="41" selection-start="13575" selection-end="13575" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="55" selection-start="3094" selection-end="3139" vertical-scroll-proportion="0.4651163">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/question.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="27" selection-start="9178" selection-end="9201" vertical-scroll-proportion="0.29891303">
+        <state line="62" column="28" selection-start="1916" selection-end="1929" vertical-scroll-proportion="0.031007752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/interpretor_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="215" column="89" selection-start="8911" selection-end="8984" vertical-scroll-proportion="0.33152175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="27" selection-start="10228" selection-end="10243" vertical-scroll-proportion="0.19195047">
           <folding />
         </state>
       </provider>
@@ -774,51 +792,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/test_import_opinions.xml">
+    <entry file="file://$PROJECT_DIR$/app/views/interpretor/_paragraph_editor_opinion.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="0" selection-start="39547" selection-end="39547" vertical-scroll-proportion="8.729857">
+        <state line="15" column="112" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.30272952">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/opinions/import.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="79" selection-start="9528" selection-end="9528" vertical-scroll-proportion="0.4580499">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="7" selection-start="0" selection-end="14" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ocollection.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="36" selection-start="778" selection-end="778" vertical-scroll-proportion="0.2494331">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/root.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="0" selection-start="4485" selection-end="4485" vertical-scroll-proportion="0.2494331">
+        <state line="25" column="151" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.7444169">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/opinions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="19" selection-start="1794" selection-end="1794" vertical-scroll-proportion="-0.22675736">
+        <state line="72" column="31" selection-start="2597" selection-end="2675" vertical-scroll-proportion="0.26530612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/ocollection.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="402" selection-end="549" vertical-scroll-proportion="0.108843535">
+        <state line="50" column="35" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.34698796">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/knowledge.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="16" selection-start="6725" selection-end="6725" vertical-scroll-proportion="0.276644">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="64" selection-start="3762" selection-end="3813" vertical-scroll-proportion="0.65986395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/test_import_opinions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="85" selection-start="268" selection-end="294" vertical-scroll-proportion="0.108843535">
           <folding />
         </state>
       </provider>

@@ -190,10 +190,11 @@ class Review < Root
   end
 
   def to_xml_bis
-    node_review = XML::Node.new(self.class.to_s)
+    node_review = XML::Node.new("Review")
     node_review['id'] = id.to_s
     node_review['product_idurls'] = products.collect(&:idurl).join(", ")
     node_review['category'] = category
+    node_review['class_name'] = self.class.to_s
     node_review['state'] = state
     node_review['written_at'] = written_at.strftime(Root.default_datetime_format)
 
@@ -207,9 +208,11 @@ class Review < Root
     node_review << node_paragraphs = XML::Node.new("paragraphs")
     paragraphs.each do |paragraph|
       node_paragraphs << node_paragraph = XML::Node.new("Paragraph")
+      node_paragraph['id'] = paragraph.id.to_s
+      node_paragraph['state'] = paragraph.state
       node_paragraph << paragraph.content_without_html
       paragraph.opinions.each do |opinion|
-        node_paragraph << opinion.to_xml_bis
+        node_paragraph << opinion.to_xml_bis(:no_id_review_paragraph => true)
       end
     end
 
@@ -370,3 +373,23 @@ class FileXml < Review
 
 end
 
+# collection of review (for to_xml)
+class Rcollection
+  attr_accessor :reviews, :label, :author
+
+  def initialize(author, label, reviews)
+    self.reviews = reviews
+    self.label = label
+    self.author = author
+  end
+  
+  def to_xml
+    doc = XML::Document.new
+    doc.root =  (node_reviews = XML::Node.new("reviews"))
+    node_reviews['label'] = label
+    node_reviews['author'] = author    
+    reviews.each { |review| node_reviews << review.to_xml_bis }
+    doc.to_s
+  end
+  
+end

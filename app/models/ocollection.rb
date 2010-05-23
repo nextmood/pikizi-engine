@@ -1,4 +1,5 @@
 require 'xml'
+require 'opinion'
 
 # this is a list of opinions (use in import)
 
@@ -7,11 +8,11 @@ class Ocollection
   include MongoMapper::Document
 
   key :label, String
-
+  key :author, String
+  timestamps!
+  
   key :opinion_ids, Array # an array of opinions id
   many :opinions, :in => :opinion_ids
-
-  key :author, String
 
   attr_accessor :cache_opinions
   
@@ -35,11 +36,24 @@ class Ocollection
   end
 
   # create a collection from a file
-  def self.import(user, label, filename_xml)
-    puts "import #{label} by #{user.rpx_username}"
+  def self.import(knowledge, author, filename_xml)
     doc = XML::Document.string(filename_xml.read)
-    xml_node = doc.root
-    raise "first tag of xml should be \"opinions\",  got #{(xml_node ? xml_node.name : nil).inspect}" unless xml_node.name == "opinions"
+    node_opinions = doc.root
+    raise "first tag of xml should be \"opinions\",  got #{(node_opinions ? node_opinions.name : nil).inspect}" unless node_opinions.name == "opinions"
+    default_products_extract = node_opinions["default_product_selector_1"]
+    default_products = Product.get_products_from_text(knowledge, default_products_extract)
+    ocollection = Ocollection.new(:label => node_opinions["label"] || filename_xml.original_filename, :author => node_opinions["author"] || author)
+    node_opinions.children.each do |node_opinion|
+      if ["Comparator", "Tip", "Ranking", "Rating"].include?(node_opinion.name)
+        puts "node_opinion.name=#{node_opinion.name}"
+        class_opinion = Kernel.const_get(node_opinion.name)
+        new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion, default_products)
+        ocollection.add(new_opinion)
+      else
+        puts "WRONGopinion name=#{node_opinion.name}"
+      end
+    end
+    ocollection
   end
 
   # nb opinions in this collection

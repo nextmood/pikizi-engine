@@ -109,6 +109,12 @@ class Product < Root
     end
   end
 
+  # returns a list (never empty) of products likely to
+  # match a the products_extra string
+  def self.get_products_from_text(knowledge, products_extract)
+    [knowledge.get_products.first ] 
+  end
+
 
   def fillup_image_ids
     knowledge_idurl = knowledge.idurl

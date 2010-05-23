@@ -247,11 +247,14 @@ class Opinion < Root
 
   def self.generate_xml() end
 
-  def to_xml_bis
+  def to_xml_bis(options={})
     node_opinion = XML::Node.new(self.class.to_s)
-    node_opinion['review_id'] = review_id.to_s
-    node_opinion['paragraph_id'] = paragraph_id.to_s
+    unless options[:no_id_review_paragraph]
+      node_opinion['review_id'] = review_id.to_s
+      node_opinion['paragraph_id'] = paragraph_id.to_s
+    end
     node_opinion['by'] = (user_id ? user.rpx_username : "??? no_user")
+    node_opinion['state'] = state
     node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
     node_opinion['product_selector_1'] = products_filters_for_name_to_xml("referent")
     usages.collect { |usage| node_opinion << node_usage = XML::Node.new("usages"); node_usage << usage.label } if usages.size > 0
@@ -259,6 +262,34 @@ class Opinion < Root
     #node_opinion['review_id'] = review_id.to_s
     #node_opinion['paragraph_id'] = paragraph_id.to_s
     node_opinion
+  end
+
+  key :original_import, Hash
+  def self.import_from_xml(knowledge, node_opinion, default_product_referents)
+    opinion = self.new
+    opinion.review_id = BSON::ObjectID.from_string(node_opinion['review_id'])
+    opinion.paragraph_id = BSON::ObjectID.from_string(node_opinion['paragraph_id'])
+    opinion.original_import = { :op_score => node_opinion['op_score'],
+                                :score => node_opinion['score'] }
+    opinion.save
+    node_extract = node_opinion.find_first("extract")
+    opinion.extract = node_extract.content if node_extract
+    opinion.import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_1', 'referent', default_product_referents)
+    opinion.import_from_xml(knowledge, node_opinion)
+    opinion.save
+    raise "umposible to submit" unless opinion.save and opinion.submit!
+    opinion
+  end
+
+  def import_products_filters_from_xml(knowledge, node_opinion, xml_name, name, default_products=[])
+    lp = []
+    if products_extract = node_opinion[xml_name]
+      lp = Product.get_products_from_text(knowledge, products_extract)
+    end
+    lp = default_products if lp.size == 0
+    lp.each do |p|
+      self.products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => name, :product_id => p.id, :and_similar => false).update_labels(p)
+    end
   end
 
   # -----------------------------------------------------------------
@@ -342,10 +373,7 @@ class Opinion < Root
   end
 
   def get_zozo(params, prefix)
-    puts ">>>>>>>>>>>>>>> params=" <<  params.inspect
-    l = params.inject([]) { |l, (param_name, param_value)| param_name.has_prefix(prefix) ? l << param_value : l }
-    puts ">>>> after filter=#{l.inspect}"
-    l
+    params.inject([]) { |l, (param_name, param_value)| param_name.has_prefix(prefix) ? l << param_value : l }
   end
 
   def get_attribute(params, attr_symbol) params[self.class.to_s.downcase.to_sym][attr_symbol] end
@@ -376,6 +404,7 @@ class Opinion < Root
     true
   end
 
+
 end
 
 # ==============================================================================
@@ -386,8 +415,8 @@ class Neutral < Opinion
 
   def to_html() to_html_prefix << " <b>is neutral</b> " << to_html_suffix end
 
-  def to_xml_bis
-    node_opinion = super
+  def to_xml_bis(options={})
+    node_opinion = super(options)
     node_opinion
   end
 
@@ -442,8 +471,8 @@ class Rating < Opinion
   # return a return between 0.0 and 1.0
   def rating_01() Root.rule3(rating, min_rating, max_rating) end
 
-  def to_xml_bis
-    node_opinion = super
+  def to_xml_bis(options={})
+    node_opinion = super(options)
     node_opinion['rating'] = rating.to_s
     node_opinion['min'] = min_rating.to_s
     node_opinion['max'] = max_rating.to_s
@@ -486,8 +515,8 @@ class Comparator < Opinion
 
   def self.hash_operator_type_2_label() {"better" => "better than", "worse" => "worse than", "same" => "same as"} end
 
-  def to_xml_bis
-    node_opinion = super
+  def to_xml_bis(options={})
+    node_opinion = super(options)
     node_opinion['operator'] = operator_type
     node_opinion['product_selector_2'] = products_filters_for_name_to_xml("compare_to")
     node_opinion
@@ -509,6 +538,12 @@ class Comparator < Opinion
     self.operator_type = get_attribute(params, :operator_type)
   end
 
+  def import_from_xml(knowledge, node_opinion)
+    self.operator_type = node_opinion["operator"]
+    self.original_import[:operator => operator_type]
+    import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_2', 'compare_to')
+  end
+
 end
 
 # ==============================================================================
@@ -521,8 +556,8 @@ class Tip < Opinion
 
   def to_html() to_html_prefix << " <b>is tipped #{intensity_as_label}</b> " << to_html_suffix end
 
-  def to_xml_bis
-    node_opinion = super
+  def to_xml_bis(options={})
+    node_opinion = super(options)
     node_opinion['value'] = intensity_symbol
     node_opinion
   end
