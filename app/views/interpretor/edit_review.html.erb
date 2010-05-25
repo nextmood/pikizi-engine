@@ -29,7 +29,7 @@
             <% end %>
             <hr/>
             <% if @opinion %>
-                <%= render(:partial => "paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => nil } ) %>
+                <%= render(:partial => "/interpretor/paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => nil } ) %>
 
 
             <% else %>
@@ -37,7 +37,7 @@
                 <%= link_to(image_tag("icons/backward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_previous_id}") if @paragraph_previous_id %>
                 <%= link_to(image_tag("icons/foward.png", :border => 0), "/edit_review/#{@review.id}/#{@paragraph_next_id}", :style => "margin-right:30px;") if @paragraph_next_id %>
 
-                <%= render(:partial => "opinion_selector_type", :locals => { :paragraph => paragraph }) %>
+                <%= render(:partial => "/interpretor/opinion_selector_type", :locals => { :paragraph => paragraph }) %>
 
 
 

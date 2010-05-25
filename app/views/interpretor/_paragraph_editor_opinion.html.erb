@@ -39,7 +39,7 @@
 
         <div id="div_opinion_selector" style="margin-top:5px; padding-top:5px; border-top:1px solid black;">
           <% if ["Tip", "Comparator", "Ranking", "Rating", "Neutral"].include?(opinion.class.to_s) %>
-            <%= render(:partial => "opinion_selector_#{opinion.class.to_s.downcase}", :locals => {:opinion => opinion, :opinion_form => opinion_form }) %>
+            <%= render(:partial => "/interpretor/opinion_selector_#{opinion.class.to_s.downcase}", :locals => {:opinion => opinion, :opinion_form => opinion_form }) %>
           <% else %>
             class???<%= opinion.class %>
           <% end %>

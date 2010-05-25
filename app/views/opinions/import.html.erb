@@ -16,17 +16,14 @@
     <h2>last collections imported</h2>
     <% for ocollection in @ocollections %>
         <div style="padding:2px;">
-          <span class="pkz_small"><%= ocollection.created_at %></span>
-          <span class="pkz_next pkz_bold"><%= ocollection.label %></span>
-          <span class="pkz_next pkz_small pkz_link">
-            <%= link_to_function("#{ocollection.nb_opinions} opinions", "document.getElementById('list_opinions_#{ocollection.id}').toggle();") %>
-          </span>
-          <div id="list_opinions_<%= ocollection.id %>" style="display:none;">
-            <% for opinion in ocollection.opinions %>
-                <div><%= object_state(opinion) %><%= link_to(opinion.to_html, "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}", :class => "pkz_link") %></div>
-            <% end %>
-          </div>
+            <span class="pkz_small"><%= ocollection.created_at %></span>
+            <span class="pkz_next pkz_bold"><%= ocollection.label %></span>
+            <%= link_to("#{ocollection.nb_opinions} opinions", "/opinions/collection/#{ocollection.id}", :class => "pkz_link pkz_next pkz_small" ) %>
         </div>
     <% end %>
 
+
 </div>
+
+
+

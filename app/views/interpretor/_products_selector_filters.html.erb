@@ -2,7 +2,7 @@
 <% if opinion.products_filters_for(name).size > 0 %>
     <% is_first_product_filter = true %>
     <% opinion.products_filters_for(name).each do |products_filter| -%>
-        <%= render(:partial => "products_selector_filter",
+        <%= render(:partial => "/interpretor/products_selector_filter",
                    :locals => { :is_first_product_filter => is_first_product_filter,
                                 :products_filter => products_filter,
                                 :name => name }) %>

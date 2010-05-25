@@ -19,15 +19,31 @@ class ProductsFilter
 
 end
 
+class ProductsFilterAnonymous < ProductsFilter
+
+  key :extract, String
+  def label() extract end
+  def update_labels
+    self.display_as = "UNKNOWN #{extract}"
+    self.short_label = "?????"
+    self
+  end
+  def update_labels_debug() update_labels end
+  def concern?(a_product, among_products) false end
+
+  def self.code_constructor(extract) "ProductsFilterAnonymous.new(:extract => \"#{extract}\").update_labels()"  end
+
+end
+
 class ProductByLabel < ProductsFilter
   key :product_id, BSON::ObjectID
   belongs_to :product
 
   key :and_similar, Boolean, :default => true
 
-  def self.pkz_create()
 
-  end
+  def self.code_constructor(product, and_similar) "p=Product.find('#{product.id}'); ProductByLabel.new(:product_id => p.id, :and_similar => #{and_similar}).update_labels(p)"  end
+
 
   def process_attributes(knowledge, products_selector_dom_name, opinion, params)
     puts ">>>>> #{params.inspect}"
@@ -92,7 +108,7 @@ class ProductsBySpec < ProductsFilter
     self.short_label = (s ? "#{s.idurl} =#{mode_selection_tag} [#{tail}]" : "???")
     self
   end
-  def update_labels_debug() update_labels(specification).specification_idurl = specification.idurl end
+  def update_labels_debug() update_labels(specification).specification_idurl = specification.idurl; self end
 
   def concern?(product, among_products)
     values = product.get_value(specification_idurl)
@@ -125,9 +141,11 @@ class ProductsByShortcut < ProductsFilter
   def update_labels
     self.display_as = ProductsByShortcut.shortcuts.detect {|s| s.first == shortcut_selector }.last
     self.short_label = shortcut_selector
+    self
   end
   def update_labels_debug() update_labels() end
 
+  def self.code_constructor(shortcut_idurl) "ProductsByShortcut.new(:shortcut_selector => '#{shortcut_idurl}').update_labels()" end
 
   def concern?(product, among_products)
     case shortcut_selector

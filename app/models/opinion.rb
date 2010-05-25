@@ -265,30 +265,33 @@ class Opinion < Root
   end
 
   key :original_import, Hash
-  def self.import_from_xml(knowledge, node_opinion, default_product_referents)
+  def self.import_from_xml(knowledge, node_opinion)
     opinion = self.new
-    opinion.review_id = BSON::ObjectID.from_string(node_opinion['review_id'])
-    opinion.paragraph_id = BSON::ObjectID.from_string(node_opinion['paragraph_id'])
-    opinion.original_import = { :op_score => node_opinion['op_score'],
-                                :score => node_opinion['score'] }
+    paragraph = Paragraph.find(node_opinion['paragraph_id'])
+    opinion.review_id = paragraph.review_id
+    opinion.paragraph_id = paragraph.id
+    opinion.original_import = { :op_score => node_opinion['op_score'] ? Float(node_opinion['op_score']) : nil,
+                                :op_conf => node_opinion['op_conf'] ? Float(node_opinion['op_conf']) : nil,
+                                :score => node_opinion['score'] ? Float(node_opinion['score']) : nil }
+    opinion.author_name = node_opinion['by']
     opinion.save
     node_extract = node_opinion.find_first("extract")
     opinion.extract = node_extract.content if node_extract
-    opinion.import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_1', 'referent', default_product_referents)
+    opinion.import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_1', 'referent')
     opinion.import_from_xml(knowledge, node_opinion)
     opinion.save
-    raise "umposible to submit" unless opinion.save and opinion.submit!
+    raise "impossible to submit" unless opinion.save and opinion.submit!
     opinion
   end
-
-  def import_products_filters_from_xml(knowledge, node_opinion, xml_name, name, default_products=[])
-    lp = []
-    if products_extract = node_opinion[xml_name]
-      lp = Product.get_products_from_text(knowledge, products_extract)
-    end
-    lp = default_products if lp.size == 0
-    lp.each do |p|
-      self.products_filters << ProductByLabel.create(:opinion_id => id, :products_selector_dom_name => name, :product_id => p.id, :and_similar => false).update_labels(p)
+    
+  def import_products_filters_from_xml(knowledge, node_opinion, xml_name, name)
+    if products_extract = node_opinion[xml_name] and products_extract != ""
+      product_filter = Glossary.resolve_as_products_filter(products_extract)
+      product_filter.opinion_id = id
+      product_filter.products_selector_dom_name = name
+      raise "oups" unless product_filter.save
+      self.products_filters << product_filter
+      product_filter
     end
   end
 

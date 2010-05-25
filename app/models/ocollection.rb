@@ -15,7 +15,13 @@ class Ocollection
   many :opinions, :in => :opinion_ids
 
   attr_accessor :cache_opinions
-  
+
+  # options destroy attached opinions
+  def destroy(also_opinions=false)
+    opinions.each(&:destroy) if also_opinions
+    super()  
+  end
+
   # create a new Ocollection (not saved) with a list of opinions
   #for use with render to_xml
   def self.new_with_opinions(author, label, opinions)
@@ -40,17 +46,15 @@ class Ocollection
     doc = XML::Document.string(filename_xml.read)
     node_opinions = doc.root
     raise "first tag of xml should be \"opinions\",  got #{(node_opinions ? node_opinions.name : nil).inspect}" unless node_opinions.name == "opinions"
-    default_products_extract = node_opinions["default_product_selector_1"]
-    default_products = Product.get_products_from_text(knowledge, default_products_extract)
+
     ocollection = Ocollection.new(:label => node_opinions["label"] || filename_xml.original_filename, :author => node_opinions["author"] || author)
     node_opinions.children.each do |node_opinion|
       if ["Comparator", "Tip", "Ranking", "Rating"].include?(node_opinion.name)
-        puts "node_opinion.name=#{node_opinion.name}"
         class_opinion = Kernel.const_get(node_opinion.name)
-        new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion, default_products)
+        new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion)
         ocollection.add(new_opinion)
       else
-        puts "WRONGopinion name=#{node_opinion.name}"
+        puts "WRONG opinion name=#{node_opinion.name}" unless node_opinion.name == "text"
       end
     end
     ocollection

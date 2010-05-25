@@ -51,8 +51,9 @@ class Review < Root
   # state machine
   
 
-  state_machine :initial => :empty do
+  state_machine :initial => :draft do
 
+    state :draft
 
     state :empty
 
@@ -96,7 +97,8 @@ class Review < Root
   def self.list_states() Review.state_machines[:state].states.collect { |s| [s.name.to_s, Review.state_datas[s.name.to_s]] } end
 
   # label of state for UI
-  def self.state_datas() { "empty" => { :label => "has no opinions", :color => "lightblue" },
+  def self.state_datas() { "draft" => { :label => "draft", :color => "orchid" },
+                           "empty" => { :label => "has no opinions", :color => "lightblue" },
                            "to_review" => { :label => "has at least one paragraph waiting to be reviewed", :color => "orange" },
                            "opinionated" => { :label => "has at least one paragraph with a valid opinions", :color => "lightgreen" },
                            "error" => { :label => "has at least one paragraph in error", :color => "red" } } end

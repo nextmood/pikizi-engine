@@ -1,0 +1,58 @@
+
+
+<div class="pkz_box">
+    <%= model_selector(@current_knowledge, :opinions) %>
+
+    <h2>
+      <span class="pkz_small">Collection of <%= @ocollection.nb_opinions %> opinions:</span>
+      &nbsp;<%= @ocollection.label %>
+      <%= link_to("back to list...", "/opinions/import", :class => "pkz_link pkz_small pkz_next") %>
+    </h2>
+
+    <table>
+      <tr class="pkz_bottom_solid">
+        <td></td>
+        <td></td>
+        <td>op_score</td>
+        <td>
+          op_conf
+          <span class="pkz_small">
+            (
+            <%= link_to("+", {:action => "collection", :id => @ocollection.id, :mode_ranking => "op_conf_asc"}, :class => "pkz_link") %>
+            /
+            <%= link_to("-", {:action => "collection", :id => @ocollection.id, :mode_ranking => "op_conf_desc"}, :class => "pkz_link") %>
+            )
+          </span>
+
+        </td>
+        <td>score</td>
+        <td>validation...</td>
+      </tr>
+      <% for opinion in @ocollection.opinions %>
+          <tr>
+            <td><%= object_state(opinion) %></td>
+            <td><%= link_to_remote(opinion.to_html, :url => { :controller => "opinions", :action => "edit_opinion_from_collection", :id => opinion.id }, :html => {:class => "pkz_link"}) %></td>
+            <td><%= opinion.original_import["op_score"] %></td>
+            <td><%= opinion.original_import["op_conf"] %></td>
+            <td><%= opinion.original_import["score"] %></td>
+            <td>
+                <%= opinion.censor_date %>
+                <!--
+                <%= opinion.errors_explanations %>
+                <%= opinion.censor_code %>
+                <%= opinion.censor_comment %>
+
+                <%= opinion.censor_author_id %>
+                -->
+            </td>
+          </tr>
+          <tr class="pkz_bottom_dashed">
+            <td colspan="6" id="opinion_editor_<%= opinion.id %>" ></td>
+          </tr>
+      <% end %>
+    </table>
+
+</div>
+
+
+

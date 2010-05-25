@@ -85,6 +85,32 @@ class OpinionsController < ApplicationController
     redirect_to "/opinions/import"
   end
 
+  # ====================================================================================================
+  # Collection management
+
+  def collection
+    mode_ranking = params[:mode_ranking]
+    @ocollection = Ocollection.find(params[:id])
+    @ocollection.opinions.sort! do |o1, o2|
+      case params[:mode_ranking]
+        when "op_conf_asc" then o2.original_import["op_conf"] <=> o1.original_import["op_conf"]
+        else
+          o1.original_import["op_conf"] <=> o2.original_import["op_conf"]
+      end
+    end
+  end
+
+  # this is a rjs
+  def edit_opinion_from_collection
+    opinion = Opinion.find(params[:id])
+    render :update do |page|
+      page.replace_html("opinion_editor_#{opinion.id}", :partial => "/interpretor/paragraph_editor_opinion",
+                  :locals => { :opinion => opinion, :notification => nil })
+    end
+  end
+
+  # ====================================================================================================
+  
   def auto_complete_for_search_related_product
     input = params[:search][:related_product]
     render(:inline => "<ul>" << Product.similar_to(input).collect { |l| "<li>#{l}</li>"}.join  << "</ul>")

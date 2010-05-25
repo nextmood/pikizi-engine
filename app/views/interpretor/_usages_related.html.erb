@@ -4,10 +4,10 @@
     <span id="list_usages_form">
         <% if opinion.usages.count > 0 %>
             <% for existing_usage in opinion.usages %>
-                <%= render(:partial => "usage_related", :locals => { :usage => existing_usage }) %>
+                <%= render(:partial => "/interpretor/usage_related", :locals => { :usage => existing_usage }) %>
             <% end %>
         <% else %>
-            <%= render(:partial => "usage_related", :locals => { :usage => Usage.new }) %>
+            <%= render(:partial => "/interpretor/usage_related", :locals => { :usage => Usage.new }) %>
         <% end %>
     </span>
     <%= link_to_remote("add an other", :url => { :action => "add_usage" }, :html => { :style => "color:blue; font-size:80%; margin-left:30px;"} ) %>

@@ -14,13 +14,13 @@
       <div id="opinion_ranking_first" style="margin-top:10px;">
         <% if opinion.order_number >= 2 %>
             <div style="font-weight:bold;">Please specify the product ranked first</div>
-            <%= render(:partial => "products_selector", :locals => { :name => "ranking_first", :opinion => opinion }) %>
+            <%= render(:partial => "/interpretor/products_selector", :locals => { :name => "ranking_first", :opinion => opinion }) %>
         <% end %>
       </div>
       <div id="opinion_ranking_second" style="margin-top:10px;"></div>
         <% if opinion.order_number >= 3 %>
             <div style="font-weight:bold;">Please specify the product ranked second</div>
-            <%= render(:partial => "products_selector", :locals => { :name => "ranking_second", :opinion => opinion }) %>
+            <%= render(:partial => "/interpretor/products_selector", :locals => { :name => "ranking_second", :opinion => opinion }) %>
         <% end %>
       </div>
     </td>

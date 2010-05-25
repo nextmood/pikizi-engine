@@ -99,7 +99,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/usages_list', :controller => 'knowledges', :action => 'usages_list'
 
   
-  # map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
+   map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
 
   map.root :controller => "landing"  # default
 
