@@ -82,11 +82,11 @@ class Glossary
 
   def self.first_run
     Product.all.each { |product|
-      Glossary.learn([product.label, product.idurl], ProductByLabel.code_constructor(product, false))
-      Glossary.learn(["#{product.label} similar", "#{product.idurl} similar"], ProductByLabel.code_constructor(product, true))
+      Glossary.learn_multiple([product.label, product.idurl], ProductByLabel.code_constructor(product, false))
+      Glossary.learn_multiple(["#{product.label} similar", "#{product.idurl} similar"], ProductByLabel.code_constructor(product, true))
     }
     ProductsByShortcut.shortcuts.each do |shortcut_idurl, shortcut_label|
-     Glossary.learn([shortcut_idurl, shortcut_label], ProductsByShortcut.code_constructor(shortcut_idurl))
+     Glossary.learn_multiple([shortcut_idurl, shortcut_label], ProductsByShortcut.code_constructor(shortcut_idurl))
     end
     true
   end
