@@ -3,13 +3,6 @@
     <hr/>
     <% form_tag "/glossary/index" do -%>
         <div style="margin-top:5px;">
-            <span class="pkz_bold">in state</span>
-            <% for state_name, state_datas in Glossary.list_states %>
-                <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
-                <span style="background-color:<%= state_datas[:color] %>; padding:2px;" class="pkz_small"><%= state_datas[:label] %></span>
-            <% end %>
-        </div>
-        <div style="margin-top:5px;">
             <span class="pkz_bold">resolve: </span>
             <%= text_field_tag :resolve_string, @resolve_string, :size => 50 %>
             <span class="pkz_small pkz_next">
@@ -22,21 +15,19 @@
     <% end -%>
 
     <table style="width:100%;">
-
-
-        <% for hash_glossary in @array_hash_glossaries %>
+        <% for glossary in @glossaries %>
             <tr class="pkz_bottom_dashed" >
                 <td >
-                  <span title="constructor=<%= hash_glossary[:constructor] %>"><%= hash_glossary[:label] %></span>
-                  <%= link_to("resolve", "", :class => "pkz_next") if hash_glossary[:glossaries].first.unmatched? %>
+                  <% if glossary.is_unmatched %>
+                      <%= link_to("resolve", "", :class => "pkz_next", :style => "background-color:orchid;")  %>
+                  <% else %>
+                      <span title="constructor=<%= glossary.constructor %>"><b><%= glossary.label %></b></span>
+
+                  <% end %>
                 </td>
-                <td ><%= hash_glossary[:glossaries].size %></td>
-                <td ><%= hash_glossary[:glossaries].collect { |glossary| glossary.extract.inspect }.join(', ') %></td>
+                <td ><%= glossary.extracts.collect(&:inspect).join(', ') %></td>
             </tr>
-
         <% end %>
-
     </table>
-
 
 </div>

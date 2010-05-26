@@ -10,3 +10,491 @@ Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 16:52:24) [GET]
 Rendering template within layouts/application
 Rendering glossary/index
 Completed in 436ms (View: 247 | 200 OK [http://localhost/glossary]
+
+
+Processing OpinionsController#import (for 127.0.0.1 at 2010-05-25 17:00:20) [GET]
+Rendering template within layouts/application
+Rendering opinions/import
+Completed in 876ms (View: 157 | 200 OK [http://localhost/opinions/import]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-05-25 17:00:32) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100525-1329-uwhf17-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"gAtVKludvTk3+aopS9gwvpipVXQkYkO6aX8uANQeojA="}
+
+NoMethodError (undefined method `opinion_id=' for nil:NilClass):
+  app/models/opinion.rb:291:in `import_products_filters_from_xml'
+  app/models/opinion.rb:280:in `import_from_xml'
+  app/models/ocollection.rb:54:in `send'
+  app/models/ocollection.rb:54:in `import'
+  app/models/ocollection.rb:51:in `each'
+  app/models/ocollection.rb:51:in `import'
+  app/controllers/opinions_controller.rb:75:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-05-25 17:01:57) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100525-1329-1ybnvq7-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"gAtVKludvTk3+aopS9gwvpipVXQkYkO6aX8uANQeojA="}
+
+NoMethodError (undefined method `opinion_id=' for nil:NilClass):
+  app/models/opinion.rb:291:in `import_products_filters_from_xml'
+  app/models/opinion.rb:280:in `import_from_xml'
+  app/models/ocollection.rb:54:in `send'
+  app/models/ocollection.rb:54:in `import'
+  app/models/ocollection.rb:51:in `each'
+  app/models/ocollection.rb:51:in `import'
+  app/controllers/opinions_controller.rb:75:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (28.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 17:06:08) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 495ms (View: 192 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:33:04) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 5928ms (View: 4187 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:33:53) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 678ms (View: 386 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:38:01) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 893ms (View: 453 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:42:17) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1123ms (View: 485 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:44:44) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2802ms (View: 838 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:45:30) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2389ms (View: 1161 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:45:56) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3185ms (View: 935 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:46:19) [POST]
+  Parameters: {"commit"=>"filter  336 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"BVkPsKV/EP8NEXEYK0VSykAXqT6GGvD7Pp4HWm3Qcuc=", "resolve_string"=>"toto"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1253ms (View: 595 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:46:29) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2013ms (View: 952 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:48:36) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2167ms (View: 968 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:48:50) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2602ms (View: 713 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:50:34) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3146ms (View: 1246 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 18:51:36) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2357ms (View: 1125 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:26:52) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 6128ms (View: 3608 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:33:03) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1281ms (View: 534 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:34:41) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1384ms (View: 554 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:35:10) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1517ms (View: 754 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:35:19) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1891ms (View: 773 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:35:54) [POST]
+  Parameters: {"commit"=>"filter  337 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"titi"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 962ms (View: 526 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-25 20:35:59) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1478ms (View: 791 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 08:23:30) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 932ms (View: 518 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 09:45:56) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1927ms (View: 960 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 09:49:33) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3272ms (View: 1023 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 09:51:04) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2697ms (View: 1007 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 09:54:19) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2981ms (View: 1623 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 09:57:28) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3744ms (View: 2490 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:03:54) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3544ms (View: 2151 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:07:10) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2855ms (View: 1948 | 200 OK [http://localhost/glossary/index]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-26 10:07:48) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Rendered opinions/_list (4700.4ms)
+Completed in 6202ms (View: 5057 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#import (for 127.0.0.1 at 2010-05-26 10:08:01) [GET]
+Rendering template within layouts/application
+Rendering opinions/import
+Completed in 1490ms (View: 392 | 200 OK [http://localhost/opinions/import]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-05-26 10:08:21) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100526-1184-1ce0fle-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os="}
+
+Mongo::OperationFailure (error on invocation of $where function:
+JS Error: TypeError: this.extracts.match is not a function nofile_b:0):
+  mongo (1.0) lib/./lib/mongo/cursor.rb:77:in `next_document'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:201:in `to_a'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:201:in `find_many'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:100:in `all'
+  app/models/glossary.rb:26:in `resolve'
+  app/models/glossary.rb:39:in `resolve_as_products_filter'
+  app/models/opinion.rb:289:in `import_products_filters_from_xml'
+  app/models/opinion.rb:280:in `import_from_xml'
+  app/models/ocollection.rb:54:in `send'
+  app/models/ocollection.rb:54:in `import'
+  app/models/ocollection.rb:51:in `each'
+  app/models/ocollection.rb:51:in `import'
+  app/controllers/opinions_controller.rb:75:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (157.0ms)
+Rendered rescues/_request_and_response (4.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-26 10:21:31) [GET]
+
+Mongo::ConnectionFailure (Operation failed with the following exception: Connection reset by peer - recvfrom(2)):
+  mongo (1.0) lib/./lib/mongo/connection.rb:699:in `receive_message_on_socket'
+  mongo (1.0) lib/./lib/mongo/connection.rb:604:in `receive_header'
+  mongo (1.0) lib/./lib/mongo/connection.rb:597:in `receive'
+  mongo (1.0) lib/./lib/mongo/connection.rb:394:in `receive_message'
+  mongo (1.0) lib/./lib/mongo/connection.rb:392:in `synchronize'
+  mongo (1.0) lib/./lib/mongo/connection.rb:392:in `receive_message'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:339:in `send_initial_query'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:316:in `refill_via_get_more'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:311:in `num_remaining'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:63:in `next_document'
+  mongo (1.0) lib/./lib/mongo/collection.rb:194:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:193:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:91:in `first'
+  app/controllers/application_controller.rb:50:in `check_user_authorization'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (310.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-05-26 10:22:00) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Rendered opinions/_list (4065.3ms)
+Completed in 8953ms (View: 5123 | 200 OK [http://localhost/opinions]
+
+
+Processing OpinionsController#import (for 127.0.0.1 at 2010-05-26 10:24:42) [GET]
+Rendering template within layouts/application
+Rendering opinions/import
+Completed in 1002ms (View: 582 | 200 OK [http://localhost/opinions/import]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-05-26 10:24:49) [GET]
+  Parameters: {"id"=>"4bf94397db5995045d000001"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.<=>):
+  app/controllers/opinions_controller.rb:98:in `collection'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `sort!'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/controllers/opinions_controller.rb:94:in `collection'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (81.8ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-05-26 10:25:11) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100526-1298-soj217-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os="}
+
+Mongo::OperationFailure (error on invocation of $where function:
+JS Error: TypeError: this.extracts.match is not a function nofile_b:0):
+  mongo (1.0) lib/./lib/mongo/cursor.rb:77:in `next_document'
+  mongo (1.0) lib/./lib/mongo/cursor.rb:201:in `to_a'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:201:in `find_many'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:100:in `all'
+  app/models/glossary.rb:26:in `resolve'
+  app/models/glossary.rb:39:in `resolve_as_products_filter'
+  app/models/opinion.rb:289:in `import_products_filters_from_xml'
+  app/models/opinion.rb:280:in `import_from_xml'
+  app/models/ocollection.rb:54:in `send'
+  app/models/ocollection.rb:54:in `import'
+  app/models/ocollection.rb:51:in `each'
+  app/models/ocollection.rb:51:in `import'
+  app/controllers/opinions_controller.rb:75:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (90.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:55:10) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 3599ms (View: 2626 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:55:42) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1258ms (View: 644 | 200 OK [http://localhost/glossary]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:56:01) [POST]
+  Parameters: {"commit"=>"filter  168 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"toto"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 951ms (View: 726 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:56:08) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1152ms (View: 710 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:56:18) [POST]
+  Parameters: {"commit"=>"filter  169 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"nokia"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 877ms (View: 534 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:56:39) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1026ms (View: 751 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 10:58:59) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1549ms (View: 823 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:35:29) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2914ms (View: 1913 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:35:41) [POST]
+  Parameters: {"commit"=>"filter  170 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"nokia"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1005ms (View: 618 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:36:54) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 2971ms (View: 2035 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:37:02) [POST]
+  Parameters: {"commit"=>"filter  168 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"nokia"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1261ms (View: 686 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:37:10) [POST]
+  Parameters: {"commit"=>"filter  30 glossaries", "max_nb_glossaries"=>"500", "authenticity_token"=>"4UpMgj6YNLRCw+3S/V62vauXzv29544Q/q7OMoEc+Os=", "resolve_string"=>"toto"}
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 1043ms (View: 523 | 200 OK [http://localhost/glossary/index]
+
+
+Processing GlossaryController#index (for 127.0.0.1 at 2010-05-26 11:37:15) [GET]
+Rendering template within layouts/application
+Rendering glossary/index
+Completed in 993ms (View: 720 | 200 OK [http://localhost/glossary/index]

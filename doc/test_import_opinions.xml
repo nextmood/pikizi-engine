@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- default product product_selector_1="htc_droid_incredible" -->
+<!-- review_id & paragraph_id are mandatory -->
+<!-- opinions imported will be in state :to_review -->
+<opinions author="ecrestan" label="eric import 2009/12/34" default_product_selector_1="htc_droid_incredible" >
+  <Comparator op_score="0.759" score="0.168" review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb00000a" product_selector_1="motorola_droid" operator="worse" product_selector_2="nexus_one" >
+    <extract>
+       The Bold 9700 has a keyboard similar to that of the Bold 9000 ,  with sculpted keys and thin metal dividers akin to guitar frets
+    </extract>
+  </Comparator>
+  <Comparator  op_score="0.759" score="0.168" review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000010" operator="same" product_selector_2="nexus_one" >
+    <extract>
+       The Bold 9700 has a keyboard similar to that of the Bold 9000 ,  with sculpted keys and thin metal dividers akin to guitar frets
+    </extract>
+  </Comparator>
+  <Comparator  op_score="0.759" score="0.168" review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000013" operator="better" product_selector_2="motorola_droid" >
+    <extract>
+       The Bold 9700 has a keyboard similar to that of the Bold 9000 ,  with sculpted keys and thin metal dividers akin to guitar frets
+    </extract>
+  </Comparator>
+  <Comparator  op_score="0.759" score="0.168" review_id="4bdcbe8243a76d09fb000002" paragraph_id="4bdcbee843a76d09fb000016" operator="worse" product_selector_2="motorola_droid" />
+</opinions>
+
+
