@@ -23,11 +23,13 @@ class Glossary
 
     request_options = { :limit => (options[:limit] || 50), :order => "created_at DESC" }
 
-    request_options["$where"] = "function() { for (var i = 0; i < this.extracts.length; i++){
-                                                if (this.extracts[i].match(/#{resolve_string}/i)) return true
+    request_options["$where"] = "function() { var x = false;
+                                              for (var i = 0; i < this.extracts.length; i++){
+                                                if (this.extracts[i].match(/#{resolve_string}/i)) x=true;
                                               } 
-                                              return false;
+                                              return x;
                                             }" if resolve_string
+    puts "request_options=#{request_options.inspect}"
     all_glossaries = Glossary.all(request_options)
 
     if resolve_string and options[:automatic_adding] and all_glossaries.size == 0
@@ -65,7 +67,44 @@ class Glossary
   end
 
 
+  # return a list of matched glossary for this given unmatched
+  def get_proposals
+    raise "error should be un-matched" unless is_unmatched
+    lookup_string = extracts.first
+    lookup_strings = lookup_string.split(' ')
+    lookup_strings.each(&:strip!)
+    lookup_strings.each(&:downcase!)
+    lookup_strings.uniq!
+    similar_words_distance = lookup_strings.inject([]) do |l, word|
+      l.concat(word.similar_levenshtein(Glossary.similar_words))
+    end
+    similar_words_distance.sort! { |x1, x2| x1.last <=> x2.last }
+    puts "similar_words_distance=#{similar_words_distance.first(1000).inspect}"
 
+    lookup_words = similar_words_distance.collect(&:first).first(10)
+    puts "similar_words_distance=#{lookup_words.inspect}"
+
+    if lookup_words.size > 0
+      Glossary.resolve(:resolve_string => lookup_words.join(' '))
+    else
+      []
+    end
+  end
+
+  # return a list of similar words
+  def self.similar_words
+    @@similar_words ||= Glossary.all.inject([]) do |l, glossary|
+      unless glossary.is_unmatched
+        glossary.extracts.each do |extract|
+          words = extract.split(' ')
+          words.each(&:strip!)
+          words.each(&:downcase!)
+          words.each { |word| l << word unless l.include?(word) }
+        end
+      end
+      l
+    end
+  end
 
   def self.first_run
     Product.all.each { |product|

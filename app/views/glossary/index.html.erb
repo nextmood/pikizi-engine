@@ -1,7 +1,17 @@
+<script>
+  function submit_mode(submit_mode) {
+    document.getElementById('mode_field').value = submit_mode;
+    document.getElementById('form_glossaries').submit();
+  }
+</script>
+
 <div class="pkz_box">
     <%= model_selector(@current_knowledge, :glossary) %>
     <hr/>
-    <% form_tag "/glossary/index" do -%>
+    <% form_tag "/glossary/index", :id => "form_glossaries" do -%>
+
+        <%= hidden_field_tag :mode_field, "search", :id => "mode_field" %>
+
         <div style="margin-top:5px;">
             <span class="pkz_bold">resolve: </span>
             <%= text_field_tag :resolve_string, @resolve_string, :size => 50 %>
@@ -12,22 +22,25 @@
             <%= link_to("reset", "/glossary/index", :class => "pkz_link pkz_small") %>
             <hr/>
         </div>
+
+        <div>
+          with selected
+          <%= link_to_function "merge", "submit_mode('merge')", :class => "pkz_link pkz_next" %>
+          <%= link_to_function "delete", "submit_mode('delete')", :class => "pkz_link pkz_next" %>
+        </div>
+
+        <hr/>
+        <table style="width:100%;">
+            <% for glossary in @glossaries %>
+                <tr class="pkz_bottom_dashed" >
+                    <td><%= check_box_tag("glossaries_selected[]", glossary.id) %></td>
+                    <td >
+                        <%= render(:partial => "glossary", :locals => { :glossary => glossary }) %>
+                    </td>
+                    <td ><%= glossary.extracts.collect(&:inspect).join(', ') %></td>
+                </tr>
+            <% end %>
+        </table>
     <% end -%>
-
-    <table style="width:100%;">
-        <% for glossary in @glossaries %>
-            <tr class="pkz_bottom_dashed" >
-                <td >
-                  <% if glossary.is_unmatched %>
-                      <%= link_to("resolve", "", :class => "pkz_next", :style => "background-color:orchid;")  %>
-                  <% else %>
-                      <span title="constructor=<%= glossary.constructor %>"><b><%= glossary.label %></b></span>
-
-                  <% end %>
-                </td>
-                <td ><%= glossary.extracts.collect(&:inspect).join(', ') %></td>
-            </tr>
-        <% end %>
-    </table>
 
 </div>

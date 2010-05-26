@@ -287,7 +287,6 @@ class Opinion < Root
   def import_products_filters_from_xml(knowledge, node_opinion, xml_name, name)
     if products_extract = node_opinion[xml_name] and products_extract != ""
       product_filter = Glossary.resolve_as_products_filter(products_extract)
-      puts "product filetr class=#{product_filter.class}"
       product_filter.opinion_id = id
       product_filter.products_selector_dom_name = name
       raise "oups" unless product_filter.save

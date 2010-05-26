@@ -1,0 +1,12 @@
+<!-- editor for a synonym -->
+<div style="background-color:pink;">
+  proposals
+  <ol>
+  <% for glossary_proposal in glossary.get_proposals %>
+    <li><%= glossary_proposal.label %></li>
+  <% end %>
+  </ol>
+</div>
+  <%= link_to_remote("close",
+          :url => {  :action => "close_editor", :id => glossary.id  },
+          :html => { :class => "pkz_next pkz_link pkz_small" }) %>

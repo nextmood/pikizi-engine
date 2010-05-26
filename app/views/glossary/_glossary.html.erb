@@ -1,0 +1,10 @@
+   <% if glossary.is_unmatched %>
+              <div id="unmatched_<%= glossary.id %>">
+                  <%= link_to_remote("resolve",
+                          :url => {  :action => "match_unsolved", :id => glossary.id  },
+                          :html => { :class => "pkz_next", :style => "background-color:orchid;" }) %>
+              </div>
+          <% else %>
+              <span title="constructor=<%= glossary.constructor %>"><b><%= glossary.label %></b></span>
+
+          <% end %>
