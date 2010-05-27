@@ -58,7 +58,7 @@ class OpinionsController < ApplicationController
 
   end
 
-  def import
+  def collections
     @ocollections = Ocollection.all(:limit => 100)
     # @product = Product.find(params[:product_id])
     @product = Product.first
@@ -82,7 +82,7 @@ class OpinionsController < ApplicationController
     else
       flash[:notice] = "I need a file to import !"
     end
-    redirect_to "/opinions/import"
+    redirect_to "/opinions/collections"
   end
 
   # ====================================================================================================
@@ -141,7 +141,7 @@ class OpinionsController < ApplicationController
   def collection_destroy
     # destroy also opinions
     Ocollection.find(params[:id]).destroy(true)
-    redirect_to "/opinions/import"
+    redirect_to "/opinions/collections"
   end
 
 
