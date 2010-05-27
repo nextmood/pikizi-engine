@@ -29,7 +29,9 @@
             <% end %>
             <hr/>
             <% if @opinion %>
-                <%= render(:partial => "/interpretor/paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => nil } ) %>
+                <%= render(:partial => "/interpretor/paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => nil,
+                                :url_cancel => "/edit_review/#{@opinion.review_id}/#{@opinion.paragraph_id}",
+                                :url_submit => "/interpretor/update_opinion/#{@opinion.id}" } ) %>
 
 
             <% else %>

@@ -17,23 +17,27 @@
             <%= text_field_tag :resolve_string, @resolve_string, :size => 50 %>
             <span class="pkz_small pkz_next">
                 limit to <%= text_field_tag :max_nb_glossaries, @max_nb_glossaries, :size => 2 %>glossaries
+                <%= check_box_tag :automatic_adding, nil, @automatic_adding %>automatic adding
             </span>
+
             <%= submit_tag "filter  #{@nb_glossaries} glossaries", :class => "pkz_next" %>
             <%= link_to("reset", "/glossary/index", :class => "pkz_link pkz_small") %>
             <hr/>
         </div>
 
+      <!--
         <div>
           with selected
           <%= link_to_function "merge", "submit_mode('merge')", :class => "pkz_link pkz_next" %>
           <%= link_to_function "delete", "submit_mode('delete')", :class => "pkz_link pkz_next" %>
         </div>
-
+          -->
+      
         <hr/>
         <table style="width:100%;">
             <% for glossary in @glossaries %>
                 <tr class="pkz_bottom_dashed" >
-                    <td><%= check_box_tag("glossaries_selected[]", glossary.id) %></td>
+                    <!-- <td><%= check_box_tag("glossaries_selected[]", glossary.id) %></td> -->
                     <td >
                         <%= render(:partial => "glossary", :locals => { :glossary => glossary }) %>
                     </td>

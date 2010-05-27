@@ -7,6 +7,9 @@
       <span class="pkz_small">Collection of <%= @ocollection.nb_opinions %> opinions:</span>
       &nbsp;<%= @ocollection.label %>
       <%= link_to("back to list...", "/opinions/import", :class => "pkz_link pkz_small pkz_next") %>
+      <%= link_to("glossary...", "/glossary", :class => "pkz_link pkz_small pkz_next") %>
+      <%= link_to("check errors...", "/opinions/collection_state/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
+      <%= link_to("destroy", "/opinions/collection_destroy/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
     </h2>
 
     <table>
@@ -14,7 +17,7 @@
         <td></td>
         <td></td>
         <td>op_score</td>
-        <td>
+        <td width="100">
           op_conf
           <span class="pkz_small">
             (
@@ -26,7 +29,7 @@
 
         </td>
         <td>score</td>
-        <td>validation...</td>
+        <td width="200"></td>
       </tr>
       <% for opinion in @ocollection.opinions %>
           <tr>
@@ -35,15 +38,8 @@
             <td><%= opinion.original_import["op_score"] %></td>
             <td><%= opinion.original_import["op_conf"] %></td>
             <td><%= opinion.original_import["score"] %></td>
-            <td>
-                <%= opinion.censor_date %>
-                <!--
-                <%= opinion.errors_explanations %>
-                <%= opinion.censor_code %>
-                <%= opinion.censor_comment %>
-
-                <%= opinion.censor_author_id %>
-                -->
+            <td align="right">
+                <%= "<span title='#{opinion.censor_comment}' class='pkz_small'><b>#{opinion.censor_code}</b> by #{User.find(opinion.censor_author_id).rpx_username} on #{opinion.censor_date}</span>" if opinion.censor_date %>
             </td>
           </tr>
           <tr class="pkz_bottom_dashed">

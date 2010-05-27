@@ -120,7 +120,10 @@ class InterpretorController < ApplicationController
     @opinion.review.update_status
     notification = "<span style='color:#{@opinion.error? ? 'red' : 'green'};'><b>Saved ...</b> #{@opinion.to_html}</span>"
     render :update do |page|
-      page.replace("paragraph_edited", :partial => "paragraph_editor_opinion", :locals => { :opinion => @opinion, :notification => notification  })
+      page.replace("paragraph_edited", :partial => "/interpretor/paragraph_editor_opinion",
+                   :locals => { :opinion => @opinion, :notification => notification,
+                                :url_cancel => "/edit_review/#{@opinion.review_id}/#{@opinion.paragraph_id}",
+                                :url_submit => "/interpretor/update_opinion/#{@opinion.id}"  })
     end
   end
 
@@ -213,7 +216,7 @@ class InterpretorController < ApplicationController
         raise "unknown censor code #{censor_code}"
     end
     opinion.update_attributes(:censor_code => censor_code, :censor_comment => censor_comment, :censor_date => Date.today, :censor_author_id => @current_user.id)
-    redirect_to "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}/#{opinion.id}"    
+    redirect_to params[:url_return]    
   end
 
   # AUTOCOMPLETION...

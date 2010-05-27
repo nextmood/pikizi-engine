@@ -9,11 +9,11 @@
     <!--adding a new product filter -->
     <div style="font-size:80%;">
             add product(s)
-            <%= link_to_remote("<b>by name</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_label" }) %>
+            <%= link_to_remote("<b>by name</b>", :url => { :controller => "interpretor", :action => "add_products_filter", :id => name, :key_selector => "by_label" }) %>
             or
-            <%= link_to_remote("<b>by specification</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_specification" }) %>
+            <%= link_to_remote("<b>by specification</b>", :url => { :controller => "interpretor", :action => "add_products_filter", :id => name, :key_selector => "by_specification" }) %>
             or
-            <%= link_to_remote("<b>by shortcut</b>", :url => { :action => "add_products_filter", :id => name, :key_selector => "by_shortcut" }) %>
+            <%= link_to_remote("<b>by shortcut</b>", :url => { :controller => "interpretor", :action => "add_products_filter", :id => name, :key_selector => "by_shortcut" }) %>
     </div>
 
 </div>

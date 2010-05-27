@@ -48,10 +48,11 @@ class Ocollection
     raise "first tag of xml should be \"opinions\",  got #{(node_opinions ? node_opinions.name : nil).inspect}" unless node_opinions.name == "opinions"
 
     ocollection = Ocollection.new(:label => node_opinions["label"] || filename_xml.original_filename, :author => node_opinions["author"] || author)
+    hash_id_review = {}; hash_id_paragraph = {}; default_dimension_rating = knowledge.dimension_root.id
     node_opinions.children.each do |node_opinion|
       if ["Comparator", "Tip", "Ranking", "Rating"].include?(node_opinion.name)
         class_opinion = Kernel.const_get(node_opinion.name)
-        new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion)
+        new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion, hash_id_review, hash_id_paragraph, default_dimension_rating)
         ocollection.add(new_opinion)
       else
         puts "WRONG opinion name=#{node_opinion.name}" unless node_opinion.name == "text"

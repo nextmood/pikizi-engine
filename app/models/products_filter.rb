@@ -33,6 +33,15 @@ class ProductsFilterAnonymous < ProductsFilter
 
   def self.code_constructor(extract) "ProductsFilterAnonymous.new(:extract => \"#{extract}\").update_labels()"  end
 
+  # mutate this anoymous to a real ProductFilter
+  def mutate(new_constructor)
+    new_object = eval(new_constructor)
+    new_object.id = id
+    update_labels_debug
+    new_object.save
+    new_object
+  end
+
 end
 
 class ProductByLabel < ProductsFilter

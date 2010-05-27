@@ -103,11 +103,47 @@ class OpinionsController < ApplicationController
   # this is a rjs
   def edit_opinion_from_collection
     opinion = Opinion.find(params[:id])
+    collection_id = Ocollection.first(:opinion_ids => opinion.id).id
     render :update do |page|
       page.replace_html("opinion_editor_#{opinion.id}", :partial => "/interpretor/paragraph_editor_opinion",
-                  :locals => { :opinion => opinion, :notification => nil })
+                  :locals => { :opinion => opinion, :notification => nil,
+                               :url_cancel => "/opinions/collection/#{collection_id}",
+                               :url_submit => "/opinions/update_opinion_from_collection/#{opinion.id}" })
     end
   end
+
+  # this is the main form submit RJS
+  def update_opinion_from_collection
+    @opinion = Opinion.find(params[:id])
+    notification = nil
+    @opinion.process_attributes(@current_knowledge, params)
+    @opinion.save
+    @opinion.update_status(@current_knowledge.get_products)
+    @opinion.paragraph.update_status
+    @opinion.review.update_status
+    notification = "<span style='color:#{@opinion.error? ? 'red' : 'green'};'><b>Saved ...</b> #{@opinion.to_html}</span>"
+    collection_id = Ocollection.first(:opinion_ids => @opinion.id).id
+    render :update do |page|
+      page.replace("paragraph_edited", :partial => "/interpretor/paragraph_editor_opinion",
+                   :locals => { :opinion => @opinion, :notification => notification,
+                                :url_cancel => "/opinions/collection/#{collection_id}",
+                                :url_submit => "/opinions/update_opinion_from_collection/#{@opinion.id}"  })
+    end
+  end
+
+  def collection_state
+    @ocollection = Ocollection.find(params[:id])
+    all_products = @current_knowledge.get_products
+    @ocollection.opinions.each { |opinion| opinion.update_status(all_products) } 
+    redirect_to "/opinions/collection/#{@ocollection.id}"
+  end
+
+  def collection_destroy
+    # destroy also opinions
+    Ocollection.find(params[:id]).destroy(true)
+    redirect_to "/opinions/import"
+  end
+
 
   # ====================================================================================================
   

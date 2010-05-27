@@ -7,9 +7,10 @@ class GlossaryController < ApplicationController
         when "delete"
       end
     end
-    @max_nb_glossaries = (params[:max_nb_glossaries] || 500)
+    @max_nb_glossaries = Integer((params[:max_nb_glossaries] || 500))
+    @automatic_adding = params[:automatic_adding]
     @resolve_string = params[:resolve_string]
-    @glossaries = Glossary.resolve(:resolve_string => @resolve_string, :limit => @max_nb_glossaries, :automatic_adding => true)
+    @glossaries = Glossary.resolve(:resolve_string => @resolve_string, :limit => @max_nb_glossaries, :automatic_adding => @automatic_adding)
     @nb_glossaries = @glossaries.size
   end
 
@@ -17,8 +18,11 @@ class GlossaryController < ApplicationController
       
   end
 
-  def merge
-
+  def merge_in_proposal
+    glossary_matched = Glossary.find(params[:id])
+    glossary_unmatched = Glossary.find(params[:glossary_unmatched_id])
+    glossary_matched.merge(glossary_unmatched)
+    redirect_to "/glossary"
   end
 
   #this is a rjs
@@ -35,4 +39,7 @@ class GlossaryController < ApplicationController
       page.replace_html("unmatched_#{glossary.id}", :partial => "/glossary/glossary", :locals => { :glossary => glossary })
     end
   end
+
+
+
 end

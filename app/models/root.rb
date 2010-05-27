@@ -264,11 +264,9 @@ class String
     dm[other.length][self.length]
   end
 
-  def similar_levenshtein(words, ins=2, del=2, sub=1, thresh=10)
-    words.inject([]) do |l, word|
-      d = levenshtein(word, ins, del, sub)
-      l << [word, d] if  d < thresh
-      l
+  def similar_leveinstein(dictionnary, threshold=10, ins=2, del=2, sub=1)
+    dictionnary.inject([]) do |l, word_in_dictionnary|
+       ((d = levenshtein(word_in_dictionnary, ins, del, sub)) < threshold) ? l << [word_in_dictionnary, d] : l
     end
   end
 

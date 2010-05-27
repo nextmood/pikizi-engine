@@ -1,3 +1,4 @@
+
 <div id="paragraph_edited">
     <!-- editing an existing opinion -->
     <% if notification ||= (opinion.error? ? "<span style='background-color:red;'>ERROR: #{opinion.errors_explanations}</span>" : nil) %>
@@ -12,6 +13,7 @@
     <% if opinion.to_review? %>
         <div id="censor_step" style="border:2px solid red; background-color:orange; padding:5px; margin-bottom:10px;">
             <% form_tag "/interpretor/censor_action/#{opinion.id}", :id => "form_censor_#{opinion.id}" do -%>
+                <%= hidden_field_tag :url_return, url_cancel %>
                 waiting for acceptance:
                 <span class="pkz_small"><%= opinion.original_import.inspect if opinion.original_import %></span>
                 <%= text_field_tag "censor_comment_#{opinion.id}", "enter a comment...", :size => 50 %>
@@ -24,7 +26,7 @@
     <% end %>
 
 
-    <% remote_form_for(opinion, :url => { :action => "update_opinion", :id => opinion.id }, :html => {:style => "background-color:lightgray; padding:5px 10px;", :id => "main_opinion_form_#{opinion.id}"}) do |opinion_form| %>
+    <% remote_form_for(opinion, :url => url_submit, :html => {:style => "background-color:lightgray; padding:5px 10px;", :id => "main_opinion_form_#{opinion.id}"}) do |opinion_form| %>
 
         <b><%= object_state(opinion) %><%= opinion.to_html %></b><hr/>
 
@@ -50,8 +52,9 @@
         <p style="text-align:center;">
             <%= opinion_form.submit "Save", :style => "color:orange;" %>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <%= link_to("Cancel/Close", "/edit_review/#{opinion.review_id}/#{opinion.paragraph_id}", :style => "color:orange;") %>
+            <%= link_to("Cancel/Close", url_cancel, :style => "color:orange;") %>
         </p>
+
 
 
     <% end %>
@@ -59,23 +62,10 @@
 
 <script>
 
-    function enableDisableForm(form_dom_id, flag) {
-        //flag = true if disabled, false if enabled
-        var f = document.getElementById(form_dom_id);
-        var len=f.elements.length;
-        for(x=0;x<len;x++) {
-            f.elements[x].disabled=flag;
-        }
-    }
-
-    function submit_censor(opinion_id, censor_code) {
-        document.getElementById('censor_code_' + opinion_id).value = censor_code;
-    }
 
 
     <% if opinion.to_review? %>
         enableDisableForm("main_opinion_form_<%= opinion.id %>", true);
     <% end %>
-
 
 </script>

@@ -205,3 +205,16 @@ function ensure_edit_paragraph_visible() {
 }
 
 
+function enableDisableForm(form_dom_id, flag) {
+    //flag = true if disabled, false if enabled
+    var f = document.getElementById(form_dom_id);
+    var len=f.elements.length;
+    for(x=0;x<len;x++) {
+        f.elements[x].disabled=flag;
+    }
+}
+
+function submit_censor(opinion_id, censor_code) {
+    document.getElementById('censor_code_' + opinion_id).value = censor_code;
+}
+

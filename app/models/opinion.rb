@@ -201,6 +201,7 @@ class Opinion < Root
     l = products_filters_for_should_exist("referent", [])
     l << "you should have one dimension/rating at least" if dimension_ids.size == 0
     l << "you should have less than 6 dimension/rating" if dimension_ids.size > 6
+    l << "there is at least one synonym not solved" if products_filters.any? { |pf| pf.is_a?(ProductsFilterAnonymous) }
     l
   end
 
@@ -265,10 +266,14 @@ class Opinion < Root
   end
 
   key :original_import, Hash
-  def self.import_from_xml(knowledge, node_opinion)
+  def self.import_from_xml(knowledge, node_opinion, hash_id_review, hash_id_paragraph, default_dimension_rating)
     opinion = self.new
-    paragraph = Paragraph.find(node_opinion['paragraph_id'])
-    opinion.review_id = paragraph.review_id
+    paragraph_id = node_opinion['paragraph_id']
+    paragraph = (hash_id_paragraph[paragraph_id] ||= Paragraph.find(paragraph_id))
+    review = (hash_id_review[paragraph.review_id] ||= Review.find(paragraph.review_id))
+    opinion.review_id = review.id
+    opinion.written_at = review.written_at
+    opinion.dimension_ids = [default_dimension_rating]
     opinion.paragraph_id = paragraph.id
     opinion.original_import = { :op_score => node_opinion['op_score'] ? Float(node_opinion['op_score']) : nil,
                                 :op_conf => node_opinion['op_conf'] ? Float(node_opinion['op_conf']) : nil,
