@@ -1,9 +1,13 @@
     <td colspan="6">
         <% if showup %>
-            <% form_remote_tag :url => "/opinions/validate_eric/#{opinion.id}" do -%>
-                <div style="border:1px dashed black; padding:5px;"><%= opinion.extract.strip.inspect %></div>
-                <div style="margin-top:2px;">
-                    is it a comparaison?
+            <% form_remote_tag :url => "/opinions/validate_eric/#{opinion.id}", :html => {:style => "background-color:lightgray; margin-bottom:15px;"} do -%>
+                <div style="border:1px dashed black; padding:5px;">
+                  <i class="pkz_small">referring to <%= opinion.review.products.collect(&:label).join(', ') %></i>
+                  <br/>
+                  <%= opinion.extract.strip.inspect %>
+                </div>
+                <div style="margin-top:2px; font-weight:bold;">
+                    <span class="pkz_next">is it a comparaison?</span>
                     <%= radio_button_tag "censor_code", "ok", nil, :onclick => "document.getElementById('sign_#{opinion.id}').show();" %>yes
                     <%= radio_button_tag "censor_code", "ko", nil, :onclick => "document.getElementById('sign_#{opinion.id}').hide();" %>no
                     <span id="sign_<%= opinion.id %>" class="pkz_next">

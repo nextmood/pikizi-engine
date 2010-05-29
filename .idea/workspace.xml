@@ -6,19 +6,15 @@
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/products_filter.rb" afterPath="$PROJECT_DIR$/app/models/products_filter.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/opinions/collections.html.erb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/opinions/_collection_opinion.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/opinions/import.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/glossary/_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/glossary/_editor.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/interpretor/_products_selector_filter.html.erb" afterPath="$PROJECT_DIR$/app/views/interpretor/_products_selector_filter.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/opinions/collection.html.erb" afterPath="$PROJECT_DIR$/app/views/opinions/collection.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb" afterPath="$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/glossary_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/glossary_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/glossary/_editor.html.erb" afterPath="$PROJECT_DIR$/app/views/glossary/_editor.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/glossary.rb" afterPath="$PROJECT_DIR$/app/models/glossary.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb" />
     </list>
     <ignored path="pikizi-engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="collection.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/opinions/collection.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="29" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.509589">
+            <state line="63" column="29" selection-start="2765" selection-end="2765" vertical-scroll-proportion="-9.789474">
               <folding />
             </state>
           </provider>
@@ -69,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_collection_opinion_validate.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_collection_opinion_validate.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="-0.6315789">
+            <state line="2" column="145" selection-start="190" selection-end="190" vertical-scroll-proportion="0.06575342">
               <folding />
             </state>
           </provider>
@@ -102,11 +98,11 @@
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/views/opinions/_validate_eric.html.erb" />
         <option value="$PROJECT_DIR$/app/views/opinions/_collection_opinion_editor.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb" />
         <option value="$PROJECT_DIR$/app/views/opinions/_collection_opinion.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/opinions/collection.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb" />
       </list>
     </option>
   </component>
@@ -850,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="-0.6315789">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/opinions/_collection_opinion.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="140" selection-start="648" selection-end="648" vertical-scroll-proportion="-7.5789475">
@@ -873,7 +862,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/opinions/collection.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="29" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.509589">
+        <state line="63" column="29" selection-start="2765" selection-end="2765" vertical-scroll-proportion="-9.789474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/opinions/_collection_opinion_validate.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="145" selection-start="190" selection-end="190" vertical-scroll-proportion="0.06575342">
           <folding />
         </state>
       </provider>
