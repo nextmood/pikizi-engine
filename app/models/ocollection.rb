@@ -41,6 +41,10 @@ class Ocollection
     doc.to_s
   end
 
+  def update_status(all_products)
+    opinions.each { |opinion| opinion.update_status(all_products) }
+  end
+  
   # create a collection from a file
   def self.import(knowledge, author, filename_xml)
     doc = XML::Document.string(filename_xml.read)
@@ -53,6 +57,7 @@ class Ocollection
       if ["Comparator", "Tip", "Ranking", "Rating"].include?(node_opinion.name)
         class_opinion = Kernel.const_get(node_opinion.name)
         new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion, hash_id_review, hash_id_paragraph, default_dimension_rating)
+        new_opinion.update_status
         ocollection.add(new_opinion)
       else
         puts "WRONG opinion name=#{node_opinion.name}" unless node_opinion.name == "text"

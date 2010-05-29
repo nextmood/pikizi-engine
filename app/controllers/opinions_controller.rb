@@ -144,12 +144,10 @@ class OpinionsController < ApplicationController
   end
   
 
-
+  # recompute status of opinion in collection
   def collection_state
-    @ocollection = Ocollection.find(params[:id])
-    all_products = @current_knowledge.get_products
-    @ocollection.opinions.each { |opinion| opinion.update_status(all_products) } 
-    redirect_to "/opinions/collection/#{@ocollection.id}"
+    Ocollection.find(params[:id]).update_status(@current_knowledge.get_products)
+    redirect_to "/opinions/collection/#{params[:id]}"
   end
 
   def collection_destroy
