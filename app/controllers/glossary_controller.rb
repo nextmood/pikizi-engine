@@ -8,9 +8,7 @@ class GlossaryController < ApplicationController
       end
     end
     @max_nb_glossaries = Integer((params[:max_nb_glossaries] || 500))
-    @automatic_adding = params[:automatic_adding]
-    @resolve_string = params[:resolve_string]
-    @glossaries = Glossary.resolve(:resolve_string => @resolve_string, :limit => @max_nb_glossaries, :automatic_adding => @automatic_adding)
+    @glossaries = Glossary.all(:limit => @max_nb_glossaries)
     @nb_glossaries = @glossaries.size
   end
 

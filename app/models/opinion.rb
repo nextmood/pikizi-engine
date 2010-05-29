@@ -23,6 +23,7 @@ class Opinion < Root
   key :label, String # summary of the opinion
   key :_type, String # class management
   key :written_at, Date
+  key :op_conf, Float # a measure of confidence, :default => 1.0
   
   # key :usage, String (alson named XXX)
   key :usage_ids, Array, :default => []
@@ -199,9 +200,9 @@ class Opinion < Root
   # check and return a list of errors messages for this object
   def check_errors
     l = products_filters_for_should_exist("referent", [])
-    l << "you should have one dimension/rating at least" if dimension_ids.size == 0
+    #l << "you should have one dimension/rating at least" if dimension_ids.size == 0
     l << "you should have less than 6 dimension/rating" if dimension_ids.size > 6
-    l << "there is at least one synonym not solved" if products_filters.any? { |pf| pf.is_a?(ProductsFilterAnonymous) }
+    #l << "there is at least one synonym not solved" if products_filters.any? { |pf| pf.is_a?(ProductsFilterAnonymous) }
     l
   end
 
@@ -267,31 +268,34 @@ class Opinion < Root
 
   key :original_import, Hash
   def self.import_from_xml(knowledge, node_opinion, hash_id_review, hash_id_paragraph, default_dimension_rating)
-    opinion = self.new
-    paragraph_id = node_opinion['paragraph_id']
-    paragraph = (hash_id_paragraph[paragraph_id] ||= Paragraph.find(paragraph_id))
-    review = (hash_id_review[paragraph.review_id] ||= Review.find(paragraph.review_id))
-    opinion.review_id = review.id
-    opinion.written_at = review.written_at
-    opinion.dimension_ids = [default_dimension_rating]
-    opinion.paragraph_id = paragraph.id
-    opinion.original_import = { :op_score => node_opinion['op_score'] ? Float(node_opinion['op_score']) : nil,
-                                :op_conf => node_opinion['op_conf'] ? Float(node_opinion['op_conf']) : nil,
-                                :score => node_opinion['score'] ? Float(node_opinion['score']) : nil }
-    opinion.author_name = node_opinion['by']
-    opinion.save
-    node_extract = node_opinion.find_first("extract")
-    opinion.extract = node_extract.content if node_extract
-    opinion.import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_1', 'referent')
-    opinion.import_from_xml(knowledge, node_opinion)
-    opinion.save
-    raise "impossible to submit" unless opinion.save and opinion.submit!
-    opinion
+      opinion = self.new
+      paragraph_id = node_opinion['paragraph_id']
+      paragraph = (hash_id_paragraph[paragraph_id] ||= Paragraph.find(paragraph_id))
+      review = (hash_id_review[paragraph.review_id] ||= Review.find(paragraph.review_id))
+      opinion.review_id = review.id
+      opinion.written_at = review.written_at
+      #opinion.dimension_ids = [default_dimension_rating]
+      opinion.paragraph_id = paragraph.id
+      opinion.op_conf = Float(node_opinion['op_conf'])
+      opinion.original_import = { :op_score => node_opinion['op_score'] ? Float(node_opinion['op_score']) : nil,
+                                  :score => node_opinion['score'] ? Float(node_opinion['score']) : nil,
+                                  :product_selector_1 => node_opinion["product_selector_1"] }
+      opinion.author_name = node_opinion['by']
+      node_extract = node_opinion.find_first("extract")
+      opinion.extract = node_extract.content if node_extract
+      opinion.save      
+      opinion.import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_1', 'referent')
+      opinion.import_from_xml(knowledge, node_opinion)
+      opinion.submit!
+      raise "impossible to submit/save" unless opinion.save
+      opinion
+    
   end
     
   def import_products_filters_from_xml(knowledge, node_opinion, xml_name, name)
     if products_extract = node_opinion[xml_name] and products_extract != ""
       product_filter = Glossary.resolve_as_products_filter(products_extract)
+      raise "no product filter for #{products_extract}" unless product_filter
       product_filter.opinion_id = id
       product_filter.products_selector_dom_name = name
       raise "oups" unless product_filter.save
@@ -548,9 +552,11 @@ class Comparator < Opinion
 
   def import_from_xml(knowledge, node_opinion)
     self.operator_type = node_opinion["operator"]
-    self.original_import[:operator => operator_type]
-    import_products_filters_from_xml(knowledge, node_opinion, 'product_selector_2', 'compare_to')
+    self.original_import[:operator] = operator_type
+    self.original_import[:product_selector_2] = node_opinion["product_selector_2"]
+    import_products_filters_from_xml(knowledge, node_opinion, "product_selector_2", "compare_to")
   end
+
 
 end
 
@@ -566,7 +572,7 @@ class Tip < Opinion
 
   def to_xml_bis(options={})
     node_opinion = super(options)
-    node_opinion['value'] = intensity_symbol
+    node_opinion["value"] = intensity_symbol
     node_opinion
   end
 

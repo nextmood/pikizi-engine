@@ -38,6 +38,10 @@
             <% elsif products_filter.is_a?(ProductsByShortcut) %>
                   <%= products_filter_fields.collection_select(:shortcut_selector, ProductsByShortcut.shortcuts, :first, :last) %>
                   <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
+
+          <!----------------------------- ProductsByShortcut ----------------------------->
+          <% elsif products_filter.is_a?(ProductsFilterAnonymous) %>
+                <%= products_filter.display_as.inspect %>
           
             <!----------------------------- common to all types ----------------------------->
             <% else %>

@@ -1,0 +1,20 @@
+    <td colspan="6">
+        <% if showup %>
+            <% form_remote_tag :url => "/opinions/validate_eric/#{opinion.id}" do -%>
+                <div style="border:1px dashed black; padding:5px;"><%= opinion.extract.strip.inspect %></div>
+                <div style="margin-top:2px;">
+                    is it a comparaison?
+                    <%= radio_button_tag "censor_code", "ok", nil, :onclick => "document.getElementById('sign_#{opinion.id}').show();" %>yes
+                    <%= radio_button_tag "censor_code", "ko", nil, :onclick => "document.getElementById('sign_#{opinion.id}').hide();" %>no
+                    <span id="sign_<%= opinion.id %>" class="pkz_next">
+                      comparator is:
+                      <%= radio_button_tag "operator_type", "better", opinion.operator_type == "better" %>better
+                      <%= radio_button_tag "operator_type", "same", opinion.operator_type == "same" %>same
+                      <%= radio_button_tag "operator_type", "worse", opinion.operator_type == "worse" %>worse
+                    </span>
+                    <%= submit_tag "validate", :class => "pkz_next"   %>
+                </div>
+            <% end -%>
+            <script>document.getElementById('sign_<%= opinion.id %>').hide();</script>
+        <% end %>
+    </td>

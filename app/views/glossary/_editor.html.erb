@@ -1,13 +1,5 @@
 <!-- editor for a synonym -->
 <div style="background-color:lightgray; padding:4px;">
-  click on a possible match or
-  <%= link_to_remote("close", :url => {  :action => "close_editor", :id => glossary.id  }, :html => {:class => "pkz_link"}) %>
-  <ol>
-  <% for glossary_proposal in glossary.get_proposals %>
-    <li><%= link_to(glossary_proposal.label,
-                    {:url => {:controller => "glossary", :action => "merge_in_proposal", :id => glossary_proposal.id, :glossary_unmatched_id => glossary.id}},
-                    :class => "pkz_link") %></li>
-  <% end %>
-  </ol>  
+rien...<%= link_to_remote("close", :url => {  :action => "close_editor", :id => glossary.id  }, :html => {:class => "pkz_link"}) %>
 </div>
 

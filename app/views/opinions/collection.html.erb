@@ -7,43 +7,65 @@
       <span class="pkz_small">Collection of <%= @ocollection.nb_opinions %> opinions:</span>
       &nbsp;<%= @ocollection.label %>
       <%= link_to("back to list...", "/opinions/collections", :class => "pkz_link pkz_small pkz_next") %>
-      <%= link_to("glossary...", "/glossary", :class => "pkz_link pkz_small pkz_next") %>
-      <%= link_to("check errors...", "/opinions/collection_state/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
-      <%= link_to("destroy", "/opinions/collection_destroy/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
+                  <%= link_to("glossary...", "/glossary", :class => "pkz_link pkz_small pkz_next") %>
+                  <%= link_to("check errors...", "/opinions/collection_state/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
+                  <%= link_to("destroy", "/opinions/collection_destroy/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
     </h2>
 
     <table>
+      <tr>
+        <td colspan="6">
+            <% form_tag "/opinions/collection/#{@ocollection.id}" do -%>
+
+                <div style="margin-top:5px;">
+                    <span class="pkz_bold">in state</span>
+                    <% for state_name, state_datas in Opinion.list_states %>
+                        <% unless state_name == "draft" %>
+                            <%= check_box_tag("state_names[]", state_name, @state_names.include?(state_name)) %>
+                            <span style="background-color:<%= state_datas[:color] %>; padding:2px;" class="pkz_small"><%= state_datas[:label] %></span>
+                        <% end %>
+                    <% end %>
+
+                </div>
+
+                <hr/>
+                <div style="margin-top:5px;">
+                    <span class="pkz_bold">output: </span>
+                    <%= radio_button_tag :output_mode, "standard", @output_mode == "standard" %>html
+                    &nbsp;<%= radio_button_tag :output_mode, "xml", @output_mode == "xml"  %>xml
+
+                    <span class="pkz_small pkz_next">
+                        limit to <%= text_field_tag :max_nb_opinions, @max_nb_opinions, :size => 2 %>opinions
+                        op_conf
+                        <%= radio_button_tag :mode_ranking, "op_conf_asc", @mode_ranking == "op_conf_asc" %>asc
+                        <%= radio_button_tag :mode_ranking, "op_conf_desc", @mode_ranking == "op_conf_desc" %>desc
+                    </span>
+                    <%= submit_tag "filter  #{@nb_opinions} opinions", :class => "pkz_next" %>
+                    <%= link_to("reset", "/opinions/index", :class => "pkz_link pkz_small") %>
+
+
+                </div>
+
+
+            <% end -%>
+        </td>
+      </tr>
       <tr class="pkz_bottom_solid">
         <td></td>
         <td></td>
         <td>op_score</td>
         <td width="100">
           op_conf
-          <span class="pkz_small">
-            (
-            <%= link_to("+", {:action => "collection", :id => @ocollection.id, :mode_ranking => "op_conf_asc"}, :class => "pkz_link") %>
-            /
-            <%= link_to("-", {:action => "collection", :id => @ocollection.id, :mode_ranking => "op_conf_desc"}, :class => "pkz_link") %>
-            )
-          </span>
-
         </td>
         <td>score</td>
         <td width="200"></td>
       </tr>
-      <% for opinion in @ocollection.opinions %>
-          <tr>
-            <td><%= object_state(opinion) %></td>
-            <td><%= link_to_remote(opinion.to_html, :url => { :controller => "opinions", :action => "edit_opinion_from_collection", :id => opinion.id }, :html => {:class => "pkz_link"}) %></td>
-            <td><%= opinion.original_import["op_score"] %></td>
-            <td><%= opinion.original_import["op_conf"] %></td>
-            <td><%= opinion.original_import["score"] %></td>
-            <td align="right">
-                <%= "<span title='#{opinion.censor_comment}' class='pkz_small'><b>#{opinion.censor_code}</b> by #{User.find(opinion.censor_author_id).rpx_username} on #{opinion.censor_date}</span>" if opinion.censor_date %>
-            </td>
+      <% for opinion in @opinions %>
+          <tr id="opinion_<%= opinion.id %>">
+            <%= render(:partial => "/opinions/collection_opinion", :locals => {:opinion => opinion}) %>
           </tr>
-          <tr class="pkz_bottom_dashed">
-            <td colspan="6" id="opinion_editor_<%= opinion.id %>" ></td>
+          <tr id="opinion_editor_<%= opinion.id %>" class="pkz_bottom_dashed">
+            <%= render(:partial => "/opinions/collection_opinion_validate", :locals => {:opinion => opinion, :showup => false}) %>
           </tr>
       <% end %>
     </table>

@@ -24,7 +24,7 @@ class ProductsFilterAnonymous < ProductsFilter
   key :extract, String
   def label() extract end
   def update_labels
-    self.display_as = "UNKNOWN #{extract}"
+    self.display_as = ProductsFilterAnonymous.build_label(extract)
     self.short_label = "?????"
     self
   end
@@ -41,6 +41,8 @@ class ProductsFilterAnonymous < ProductsFilter
     new_object.save
     new_object
   end
+
+  def self.build_label(resolve_string) "<span color='red'>#{resolve_string}</span>" end
 
 end
 

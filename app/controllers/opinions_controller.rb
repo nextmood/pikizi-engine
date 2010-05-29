@@ -22,7 +22,6 @@ class OpinionsController < ApplicationController
     @state_names = params[:state_names]
     @state_names ||= Opinion.list_states.collect(&:first)
 
-
     @opinion_sub_classes  = params[:opinion_sub_classes]
     @opinion_sub_classes ||= Opinion.subclasses_and_labels.collect(&:first)
 
@@ -54,15 +53,8 @@ class OpinionsController < ApplicationController
     else
       # index.html.erb
     end
-
-
   end
 
-  def collections
-    @ocollections = Ocollection.all(:limit => 100)
-    # @product = Product.find(params[:product_id])
-    @product = Product.first
-  end
 
 
   def import_process
@@ -71,8 +63,8 @@ class OpinionsController < ApplicationController
         #begin
           flash[:notice] = ""
           flash[:notice] << "filename_xml.length=#{filename_xml.length}<br/>"
-          label_ocollection = filename_xml.original_filename unless label_ocollection and label_ocollection != ""
-          Ocollection.import(@current_knowledge, @current_user.rpx_username, filename_xml)
+          ocollection = Ocollection.import(@current_knowledge, @current_user.rpx_username, filename_xml)
+          flash[:notice] = "done import #{ocollection.nb_opinions}"
         #rescue  Exception => e
           #flash[:notice] = "ERROR while importing #{e.message}"
         #end
@@ -88,48 +80,70 @@ class OpinionsController < ApplicationController
   # ====================================================================================================
   # Collection management
 
+
+  def collections
+    @ocollections = Ocollection.all(:limit => 100)
+    # @product = Product.find(params[:product_id])
+    @product = Product.first
+  end
+
+
   def collection
-    mode_ranking = params[:mode_ranking]
     @ocollection = Ocollection.find(params[:id])
-    @ocollection.opinions.sort! do |o1, o2|
-      case params[:mode_ranking]
-        when "op_conf_asc" then o2.original_import["op_conf"] <=> o1.original_import["op_conf"]
-        else
-          o1.original_import["op_conf"] <=> o2.original_import["op_conf"]
-      end
+
+    @max_nb_opinions = params[:max_nb_opinions] || 100
+    @output_mode = params[:output_mode] || "standard"
+    @state_names = params[:state_names]
+    @state_names ||= Opinion.list_states.collect(&:first)
+    @state_names.delete("draft")
+
+    @mode_ranking = params[:mode_ranking] || "op_conf_asc"
+    select_options = { :state => @state_names,
+                       :limit => @max_nb_opinions,
+                       :order => "op_conf #{@mode_ranking == 'op_conf_asc' ? 'ASC' : 'DESC' }"  }
+
+    # puts "selection options=#{select_options.inspect}"
+    @opinions = @ocollection.opinions.all(select_options)
+
+    @nb_opinions = @opinions.size
+
+    if @output_mode == "xml"
+      render(:xml => @ocollection )
+    else
+      # collection.html.erb
     end
   end
 
   # this is a rjs
   def edit_opinion_from_collection
     opinion = Opinion.find(params[:id])
-    collection_id = Ocollection.first(:opinion_ids => opinion.id).id
+    ocollection = Ocollection.first(:opinion_ids => opinion.id)
     render :update do |page|
-      page.replace_html("opinion_editor_#{opinion.id}", :partial => "/interpretor/paragraph_editor_opinion",
-                  :locals => { :opinion => opinion, :notification => nil,
-                               :url_cancel => "/opinions/collection/#{collection_id}",
-                               :url_submit => "/opinions/update_opinion_from_collection/#{opinion.id}" })
+      page.replace_html("opinion_editor_#{opinion.id}", :partial => "/opinions/collection_opinion_validate",
+                  :locals => { :opinion => opinion, :showup => true })
     end
   end
 
-  # this is the main form submit RJS
-  def update_opinion_from_collection
-    @opinion = Opinion.find(params[:id])
-    notification = nil
-    @opinion.process_attributes(@current_knowledge, params)
-    @opinion.save
-    @opinion.update_status(@current_knowledge.get_products)
-    @opinion.paragraph.update_status
-    @opinion.review.update_status
-    notification = "<span style='color:#{@opinion.error? ? 'red' : 'green'};'><b>Saved ...</b> #{@opinion.to_html}</span>"
-    collection_id = Ocollection.first(:opinion_ids => @opinion.id).id
+  # this is a rjs
+  def validate_eric
+    opinion = Opinion.find(params[:id])
+    comment = nil
+    if censor_code = (params[:censor_code] == "ok")
+      opinion.accept!
+      if (operator_type = params[:operator_type]) != opinion.operator_type
+        comment = "WRONG operator: should be #{operator_type.inspect} instead of #{opinion.operator_type.inspect}"
+      end
+    else
+      opinion.reject!
+    end
+    opinion.update_attributes(:censor_code => censor_code, :censor_comment => comment, :censor_date => Date.today, :censor_author_id => @current_user.id)
     render :update do |page|
-      page.replace("paragraph_edited", :partial => "/interpretor/paragraph_editor_opinion",
-                   :locals => { :opinion => @opinion, :notification => notification,
-                                :url_cancel => "/opinions/collection/#{collection_id}",
-                                :url_submit => "/opinions/update_opinion_from_collection/#{@opinion.id}"  })
+      page.replace_html("opinion_#{opinion.id}", :partial => "/opinions/collection_opinion", :locals => {:opinion => opinion})
+      page.replace_html("opinion_editor_#{opinion.id}", :partial => "/opinions/collection_opinion_validate", :locals => {:opinion => opinion, :showup => false})
     end
   end
+  
+
 
   def collection_state
     @ocollection = Ocollection.find(params[:id])
