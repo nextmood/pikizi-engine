@@ -71,7 +71,14 @@
     <% form_tag "/products/update_drivers/#{@product.id}"  do -%>
         <label>amazon_id</label>
         <%= text_field_tag :amazon_id, @product.get_driver(:amazon, :id), :size => 30, :class => "field" %>
-        <%= submit_tag "Update amazon id", :style => "margin-top:5px;" %>
+        <% if @product.get_driver(:amazon, :id) %>
+            currently <%= pluralize(nb_reviews_amazon = @product.reviews_count(:source => "amazon"), "review") %>,
+            <% if nb_reviews_amazon > 0 %>
+                last update:<%= @product.review_last.written_at %>
+            <% end %>
+            <%= check_box_tag("import_new_reviews", nil, nil, :class => "pkz_next") %>import new reviews
+        <% end %>
+        <%= submit_tag "Ok", :style => "margin-top:5px;", :class => "pkz_next" %>
     <% end %>
 
 

@@ -33,7 +33,7 @@ class Product < Root
 
   #many :reviews
   def reviews() Review.all(:product_ids => self.id, :order => "written_at DESC") end
-  def reviews_count() Review.count(:product_ids => self.id) end
+  def reviews_count(options={}) options[:product_ids] = self.id; Review.count(options) end
   def review_last(options={})
     options[:product_ids] = self.id
     options[:order] = "written_at DESC"
