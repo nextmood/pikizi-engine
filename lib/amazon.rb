@@ -125,24 +125,28 @@ class ApiAmazon
   end
 
   # Retrieve all reviews for a given ASIN
-  def self.get_amazon_reviews(asin, page_index, max_page)
+  def self.get_amazon_reviews(asin, written_after, page_index = 1)
     res = Amazon::Ecs.item_lookup(asin, :review_page => page_index, :response_group => 'Reviews')
-    item = res.first_item
-    total_nb_pages = item.get('customerreviews/totalreviewpages').to_i
     amazon_reviews = []
-    if reviews = item/'review'
+    if (item = res.first_item) and reviews = item/'review'
+      total_nb_pages = item.get('customerreviews/totalreviewpages').to_i
       reviews.each do |review|
-        amazon_reviews << {
-          :rating => ApiAmazon.parse_amazon_element(review,'rating', :html),
-          :helpfulvotes =>  ApiAmazon.parse_amazon_element(review,'helpfulvotes', :html),
-          :customerid => ApiAmazon.parse_amazon_element(review,'customerid', :html),
-          :totalvotes => ApiAmazon.parse_amazon_element(review,'totalvotes', :html),
-          :date => ApiAmazon.parse_amazon_element(review,'date', :html),
-          :summary => ApiAmazon.parse_amazon_element(review,'summary', :html),
-          :content => ApiAmazon.parse_amazon_element(review,'content', :text)
-        }
+        written_at = DateTime.parse(ApiAmazon.parse_amazon_element(review,'date', :html))
+        if written_at > written_after
+          amazon_reviews << { :rating => ApiAmazon.parse_amazon_element(review,'rating', :html),
+                              :helpfulvotes =>  ApiAmazon.parse_amazon_element(review,'helpfulvotes', :html),
+                              :customerid => ApiAmazon.parse_amazon_element(review,'customerid', :html),
+                              :totalvotes => ApiAmazon.parse_amazon_element(review,'totalvotes', :html),
+                              :date => written_at,
+                              :summary => ApiAmazon.parse_amazon_element(review,'summary', :html),
+                              :content => ApiAmazon.parse_amazon_element(review,'content', :text) }
+        end
       end
-      amazon_reviews.concat(ApiAmazon.get_amazon_reviews(asin, page_index+1, max_page)) if page_index < total_nb_pages and page_index < (max_page || NB_MAX_PAGES_REVIEW)
+      if (amazon_reviews.size == 0) or (page_index == total_nb_pages)
+        amazon_reviews
+      else
+        amazon_reviews.concat(ApiAmazon.get_amazon_reviews(asin, written_after, page_index+1))
+      end
     end
     amazon_reviews
   end

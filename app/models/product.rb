@@ -3,8 +3,6 @@ require 'mongo_mapper'
 require 'amazon'
 require 'review'
 
-
-
 class Product < Root
 
   include MongoMapper::Document
@@ -25,13 +23,22 @@ class Product < Root
   key :image_ids, Array # an array of Media ids
   key :description_id, Media # a media id
 
+
+
+
+
   key :url, String
   
   key :description_urls, Array # an array of description url?
 
   #many :reviews
-  def reviews() Review.all(:product_ids => self.id) end
+  def reviews() Review.all(:product_ids => self.id, :order => "written_at DESC") end
   def reviews_count() Review.count(:product_ids => self.id) end
+  def review_last(options={})
+    options[:product_ids] = self.id
+    options[:order] = "written_at DESC"
+    Review.first(options) 
+  end
 
   # offers holds, price and merchants for this product
   def offers() Offer.all(:product_ids => self.id) end
@@ -45,9 +52,6 @@ class Product < Root
       except_review_categories ? !except_review_categories.include?(o.review.category) : true  
     end
   end
-  
-  # values of this product for all features in the knowledge/model
-  key :hash_feature_idurl_value, Hash
 
   # ordered list from the most similar to the less similar
   key :similar_product_ids, Array, :default => []
@@ -170,21 +174,53 @@ class Product < Root
     end
   end
 
-  AMAZON_SOURCE = "Amazon"
-  def create_amazon_reviews(knowledge)
-    Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
-
-    begin
-      nb_reviews_imported = 0
-      ApiAmazon.get_amazon_reviews(get_amazon_id, 1, 10).each do |amazon_review|
-        Review::FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
-        nb_reviews_imported += 1
+  key :drivers_data, Hash, :default => {} # a list of data matchig this product to an external site (exemplae :amazon => {:id => "B002WB2P4O", :last_import_date => "Mon May 31 11:19:05 +0200 2010" } )
+  def self.upload_driver()
+    Product.all.each do |p|
+      if amazon_id = p.get_amazon_id
+        (p.drivers_data[:amazon] ||= {})[:id] = amazon_id
+        p.update_attributes(:drivers_data => p.drivers_data)
       end
-      puts "#{'* ' if nb_reviews_imported == 0} #{idurl}=#{nb_reviews_imported} reviews imported"
-    rescue Exception => e
-      puts "*** #{idurl} (reviews=#{nb_reviews_imported}) #{e.message}"
     end
   end
+
+  def get_driver(source,key) (drivers_data[source] || {})[key] end
+  
+  def self.update_from_driver(knowledge, source = "amazon")
+    Product.all.inject([0,0]) do |(nb_products, nb_product_updated), product|
+      if review_last = product.review_last(:source => source)
+        puts "last import for #{product.label} = #{review_last.written_at}"
+        nb_product_updated += 1
+        case source
+          when "amazon" then product.create_amazon_reviews(knowledge, review_last.written_at)
+        end
+
+      end
+      [nb_products + 1, nb_product_updated]
+    end
+  end
+
+  def create_amazon_reviews(knowledge, written_after=nil)
+    #Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
+    begin
+      nb_reviews_imported = 0
+      if amazon_id = get_driver(:amazon, :id)
+        written_after ||= ((x = review_last) ? x.written_at : Date.today - 3000) 
+        ApiAmazon.get_amazon_reviews(amazon_id, written_after).each do |amazon_review|
+          #Review::FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
+          nb_reviews_imported += 1
+        end
+        puts "#{written_after};#{idurl};#{nb_reviews_imported}; reviews imported;http://www.amazon.com/dp/#{drivers_data[:amazon][:id]}"
+      else
+        #puts ";#{idurl};0; amazon_id missing"
+      end
+    rescue Exception => e
+      puts "*** #{idurl} (reviews #{nb_reviews_imported}) #{e.message}"
+      e.backtrace.each { |m| puts "     #{m}"}
+    end
+    true
+  end
+
 
   def gallery_image_urls
     path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"

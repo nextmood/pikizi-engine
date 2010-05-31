@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
     end
   end
 
-    # -------------------------------------------------------------------------------------------
+  # -------------------------------------------------------------------------------------------
   # handling the product header
   # -------------------------------------------------------------------------------------------
 
@@ -70,6 +70,17 @@ class ProductsController < ApplicationController
       product.description_id = Media::MediaText.create(media_file)
     end
     product.save
+    redirect_to  "/products/#{product.idurl}"
+  end
+
+  # -------------------------------------------------------------------------------------------
+  # handling the product amazon driver
+  # -------------------------------------------------------------------------------------------
+
+  def update_drivers
+    product = Product.find(params[:id])
+    product.drivers_data[:amazon][:id] = params[:amazon_id]
+    product.update_attributes(:drivers_data => product.drivers_data)
     redirect_to  "/products/#{product.idurl}"
   end
 

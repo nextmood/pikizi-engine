@@ -252,10 +252,10 @@ class FromAmazon < Review
                                   :product_idurl => product.idurl,
                                   :product_id => product.id,
                                   :author => "amazon_customer_#{amazon_review[:customerid]}",
-                                  :source => Review::FromAmazon.default_category,
+                                  :source => "amazon",
                                   :source_url => amazon_url,
-                                  :category => "amazon",
-                                  :written_at => DateTime.parse(amazon_review[:date]),
+                                  :category => Review::FromAmazon.default_category,
+                                  :written_at => amazon_review[:date],
                                   :summary => amazon_review[:summary],
                                   :content => amazon_review[:content],
                                   :reputation => Float(amazon_review[:totalvotes])  )

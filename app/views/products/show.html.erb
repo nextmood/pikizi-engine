@@ -67,6 +67,12 @@
     <% end %>
 
 
+<hr/>
+    <% form_tag "/products/update_drivers/#{@product.id}"  do -%>
+        <label>amazon_id</label>
+        <%= text_field_tag :amazon_id, @product.get_driver(:amazon, :id), :size => 30, :class => "field" %>
+        <%= submit_tag "Update amazon id", :style => "margin-top:5px;" %>
+    <% end %>
 
 
 <hr/><h2>images</h2>
