@@ -252,6 +252,7 @@ class Opinion < Root
 
   def to_xml_bis(options={})
     node_opinion = XML::Node.new(self.class.to_s)
+    node_opinion['id'] = id.to_s
     unless options[:no_id_review_paragraph]
       node_opinion['review_id'] = review_id.to_s
       node_opinion['paragraph_id'] = paragraph_id.to_s
