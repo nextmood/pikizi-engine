@@ -38,9 +38,15 @@
 
                     <span class="pkz_small pkz_next">
                         limit to <%= text_field_tag :max_nb_opinions, @max_nb_opinions, :size => 2 %>opinions
-                        op_conf
-                        <%= radio_button_tag :mode_ranking, "op_conf_asc", @mode_ranking == "op_conf_asc" %>asc
-                        <%= radio_button_tag :mode_ranking, "op_conf_desc", @mode_ranking == "op_conf_desc" %>desc
+                    </span>
+                    <span class="pkz_small pkz_next">
+                        sort by
+                        <%= radio_button_tag :mode_ranking, "op_conf_asc", @mode_ranking == "op_conf_asc" %>conf asc
+                        <%= radio_button_tag :mode_ranking, "op_conf_desc", @mode_ranking == "op_conf_desc" %>conf desc
+                        <!--
+                        <%= radio_button_tag :mode_ranking, "op_score_desc", @mode_ranking == "op_score_desc" %>score desc
+                        <%= radio_button_tag :mode_ranking, "op_score_desc", @mode_ranking == "op_score_desc" %>score desc
+                        -->
                     </span>
                     <%= submit_tag "filter  #{@nb_opinions} opinions", :class => "pkz_next" %>
                     <%= link_to("reset", "/opinions/index", :class => "pkz_link pkz_small") %>

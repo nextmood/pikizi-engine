@@ -30,13 +30,6 @@ class Ocollection
     ocollection
   end
 
-  #to remove after...
-  def self.init_censor_original_datas
-    Ocollection.first.opinions.each do |opinion|
-      opinion.update_attributes(:censor_comment => nil)  # the original
-    end
-    true
-  end
 
   def to_xml
     doc = XML::Document.new
