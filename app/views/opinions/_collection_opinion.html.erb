@@ -6,5 +6,11 @@
     <td><%= opinion.op_conf %></td>
     <td><%= opinion.original_import["score"] %></td>
     <td align="right">
-        <%= "<span class='pkz_small'>#{User.find(opinion.censor_author_id).rpx_username} on #{opinion.censor_date}: #{opinion.censor_comment}</span>" if opinion.censor_date %>
+        <% if opinion.censor_date %>
+          <span class='pkz_small'>
+            <%= "<span class='pkz_small'>#{User.find(opinion.censor_author_id).rpx_username} on #{opinion.censor_date}: #{opinion.censor_comment}" %>
+            <%= "<br/>comparator was originally <b>#{opinion.censor_original_datas['comparator']}</b>" if opinion.operator_type != opinion.censor_original_datas['comparator'] %>
+          </span>
+        <% end %>
+
     </td>
