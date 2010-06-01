@@ -35,6 +35,10 @@ class Ocollection
     Ocollection.first.opinions.each do |opinion|
       operator_type = if x = opinion.censor_comment and x = x.split('"') and x.size > 1
         puts "inversion for #{opinion.censor_comment}"
+        should_be = x[1]
+        instead_of= x[3]
+        raise "error" unless x[3] == opinion.operator_type
+        opinion.update_attributes(:operator_type => x[1])
         x[3]
       else
         opinion.operator_type
