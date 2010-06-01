@@ -1,13 +1,13 @@
     <td><%= object_state(opinion) %></td>
     <td>
-        <%= link_to_remote(opinion.to_html, :url => { :controller => "opinions", :action => "edit_opinion_from_collection", :id => opinion.id }, :html => {:class => "pkz_link"}) %>
+        <%= link_to_remote(opinion.to_html, :url => { :controller => "opinions", :action => "edit_opinion_from_collection", :id => opinion.id }, :html => {:class => "pkz_link", :title => opinion.censor_original_datas.inspect.gsub('"', '') }) %>
     </td>
     <td><%= opinion.original_import["op_score"] %></td>
     <td><%= opinion.op_conf %></td>
     <td><%= opinion.original_import["score"] %></td>
     <td align="right">
         <% if opinion.censor_date %>
-          <span class='pkz_small' title="<%= opinion.censor_original_datas.inspect.gsub('"', '') %>">
+          <span class='pkz_small'>
             <%= "<span class='pkz_small'>#{User.find(opinion.censor_author_id).rpx_username} on #{opinion.censor_date}: #{opinion.censor_comment}" %>
             <%= "<br/>comparator was originally <b>#{opinion.censor_original_datas['comparator']}</b>" if opinion.operator_type != opinion.censor_original_datas['comparator'] %>
           </span>
