@@ -106,7 +106,7 @@ class OpinionsController < ApplicationController
     @opinions = @ocollection.opinions.all(select_options)
 
     @nb_opinions = @opinions.size
-
+    @ocollection.cache_opinions = @opinions
     if @output_mode == "xml"
       render(:xml => @ocollection )
     else

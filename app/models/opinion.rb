@@ -260,7 +260,9 @@ class Opinion < Root
     node_opinion['by'] = (user_id ? user.rpx_username : "??? no_user")
     node_opinion['state'] = state
     node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
-    node_opinion['product_selector_1'] = products_filters_for_name_to_xml("referent")
+    node_opinion << (node_products_selector = XML::Node.new("selector"))
+    node_products_selector["name"] = "referent"
+    node_products_selector["idurl"] = products_filters_for_name_to_xml("referent")
     usages.collect { |usage| node_opinion << node_usage = XML::Node.new("usages"); node_usage << usage.label } if usages.size > 0
     (node_opinion << node_extract = XML::Node.new("extract"); node_extract << extract) if extract and extract != ""
     #node_opinion['review_id'] = review_id.to_s

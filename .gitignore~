@@ -1,5 +1,4 @@
 *.log  # Will exclude all .log files
-log/*.log
 db/migrate/development.sqlite3
 db/xml/users/*
 *.DS_Store
