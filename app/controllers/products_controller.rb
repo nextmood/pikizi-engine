@@ -79,7 +79,8 @@ class ProductsController < ApplicationController
 
   def update_drivers
     product = Product.find(params[:id])
-    product.drivers_data[:amazon][:id] = params[:amazon_id]
+    amazon_ids = (params[:amazon_ids] || "").split(",").collect { |x| x.strip!; x.size > 0 ? x : nil }.compact
+    (product.drivers_data["amazon"] ||= {})["ids"] = amazon_ids
     product.update_attributes(:drivers_data => product.drivers_data)
     redirect_to  "/products/#{product.idurl}"
   end

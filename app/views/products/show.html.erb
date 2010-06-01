@@ -69,9 +69,9 @@
 
 <hr/>
     <% form_tag "/products/update_drivers/#{@product.id}"  do -%>
-        <label>amazon_id</label>
-        <%= text_field_tag :amazon_id, @product.get_driver(:amazon, :id), :size => 30, :class => "field" %>
-        <% if @product.get_driver(:amazon, :id) %>
+        <label>amazon ids</label>
+        <%= text_field_tag :amazon_ids, @product.get_driver("amazon", "ids").join(", "), :size => 50, :class => "field" %>
+        <% if @product.get_driver("amazon", "ids").size > 0 %>
             currently <%= pluralize(nb_reviews_amazon = @product.reviews_count(:source => "amazon"), "review") %>,
             <% if nb_reviews_amazon > 0 %>
                 last update:<%= @product.review_last.written_at %>

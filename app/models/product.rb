@@ -166,24 +166,47 @@ class Product < Root
   def get_dimension_value(dimension_idurl) (x = get_value(dimension_idurl) and x.nan?) ? 0.0 : x end
   def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
 
-  # return the amazon_id for request
-  def get_amazon_id
-    if amazon_url = get_value("amazon_url")
-      amazon_url = amazon_url.remove_prefix("http://www.amazon.com/gp/product/")
-      amazon_url[0, 10] if amazon_url
-    end
-  end
+  key :drivers_data, Hash, :default => {} # a list of data matchig this product to an external site (exemplae "amazon" => {"id" => "B002WB2P4O", "last_import_date" => "Mon May 31 11:19:05 +0200 2010" } )
 
-  key :drivers_data, Hash, :default => {} # a list of data matchig this product to an external site (exemplae :amazon => {:id => "B002WB2P4O", :last_import_date => "Mon May 31 11:19:05 +0200 2010" } )
-  def self.upload_driver()
-    Product.all.each do |p|
-      if amazon_id = p.get_amazon_id
-        (p.drivers_data[:amazon] ||= {})[:id] = amazon_id
-        p.update_attributes(:drivers_data => p.drivers_data)
-      end
-    end
-  end
 
+
+def self.update_amazon_ids
+  h = { "casio_gzone_brigade" => ["B0039ITKME"],
+        "htc_desire" => ["B00383MWY8"],
+        "htc_droid_incredible" => ["B003HC8NUW"],
+        "htc_hd2" => ["B003BNZD3C", "B0030MHQXO"],
+        "htc_hero" => ["B0031MA0UO"],
+        "htc_legend" => ["B0035ER8OO"],
+        "htc_ozone_w_talks" => ["B002GJU6J8"],
+        "motorola_barrage" => ["B002WTC1NG"],
+        "motorola_cliq_xt" => ["B003AVNNU0"],
+        "motorola_devour" => ["B0038QOLMQ"],
+        "nexus_one" => ["B00332YPHQ"],
+        "nokia_5130_xpressmusic" => ["B002ED84H2"],
+        "nokia_5230" => ["B003BNZD5K"],
+        "nokia_5800" => ["B001SEAOC6", "B002R0DWYW"],
+        "nokia_n85" => ["B001IBIM00", "B001WAKFBQ"],
+        "nokia_n97" => ["B00295RBNI", "B00295RBNS"],
+        "nokia_n97mini" => ["B002WB2P4O"],
+        "nokia_nuron" => ["B003BNZD5K"],
+        "palm_pixi_plus" => ["B00359FEFE"],
+        "palm_pre_plus" => ["B00359FEF4"],
+        "peek_classic" => ["B001FC0BWE"],
+        "peek_pronto" => ["B001VN2KBM"],
+        "sony_ericsson_aino" => ["B002T89TS0"],
+        "twitterpeek" => ["B002R5AG50"] }
+  h.each {|k,v| puts "error #{k}" unless Product.first(:idurl => k)}
+  Product.all.each do |p|
+    amazon_ids = []
+    if amazon_id = p.get_driver("amazon", "id")
+      amazon_ids << amazon_id 
+    end
+    (h[p.idurl] || []).each { |aid| amazon_ids << aid unless amazon_ids.include?(aid) }
+    p.update_attributes(:drivers_data => { "amazon" => {"ids" => amazon_ids } })
+    puts "#{p.idurl} => #{p.drivers_data["amazon"]["ids"].join(', ')}"
+  end
+end
+  
   def get_driver(source,key) (drivers_data[source] || {})[key] end
   
   def self.update_from_driver(knowledge, source = "amazon")
@@ -204,13 +227,13 @@ class Product < Root
     #Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
     begin
       nb_reviews_imported = 0
-      if amazon_id = get_driver(:amazon, :id)
+      if amazon_id = get_driver("amazon", "id")
         written_after ||= ((x = review_last) ? x.written_at : Date.today - 3000) 
         ApiAmazon.get_amazon_reviews(amazon_id, written_after).each do |amazon_review|
           #Review::FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
           nb_reviews_imported += 1
         end
-        puts "#{written_after};#{idurl};#{nb_reviews_imported}; reviews imported;http://www.amazon.com/dp/#{drivers_data[:amazon][:id]}"
+        puts "#{written_after};#{idurl};#{nb_reviews_imported}; reviews imported;http://www.amazon.com/dp/#{gte_driver("amazon", "id")}"
       else
         #puts ";#{idurl};0; amazon_id missing"
       end

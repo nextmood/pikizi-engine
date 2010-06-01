@@ -26,7 +26,53 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="products_query.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/products_query.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="150" column="36" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="205" column="66" selection-start="7308" selection-end="7308" vertical-scroll-proportion="-20.961538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="41" selection-start="2867" selection-end="2881" vertical-scroll-proportion="-31.842106">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="63" selection-start="3327" selection-end="3327" vertical-scroll-proportion="0.36495388">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="amazon_ids.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/amazon_ids.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.46153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -39,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/glossary/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/opinions/import.html.erb" />
         <option value="$PROJECT_DIR$/app/views/opinions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
@@ -51,9 +96,10 @@
         <option value="$PROJECT_DIR$/app/models/products_query.rb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/lib/amazon.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
+        <option value="$PROJECT_DIR$/doc/amazon_ids.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
       </list>
     </option>
@@ -197,6 +243,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -259,6 +306,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,7 +481,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -831,114 +891,90 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/glossary/_editor.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.07926024">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/glossary.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="18" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.44329897">
-          <folding />
-        </state>
+        <state line="74" column="18" selection-start="2492" selection-end="2492" vertical-scroll-proportion="0.44329897" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/opinions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="73" selection-start="3762" selection-end="3762" vertical-scroll-proportion="0.0154639175">
-          <folding />
-        </state>
+        <state line="100" column="73" selection-start="3762" selection-end="3762" vertical-scroll-proportion="0.0154639175" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/opinions/collections.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.41215324">
-          <folding />
-        </state>
+        <state line="26" column="17" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.41215324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ocollection.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="6" selection-start="2332" selection-end="2341" vertical-scroll-proportion="0.67525774">
-          <folding />
-        </state>
+        <state line="69" column="6" selection-start="2332" selection-end="2341" vertical-scroll-proportion="0.67525774" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/opinions/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="22" selection-start="153" selection-end="3434" vertical-scroll-proportion="0.19154558">
-          <folding />
-        </state>
+        <state line="59" column="22" selection-start="153" selection-end="3434" vertical-scroll-proportion="0.19154558" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/knowledges_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="46" selection-start="1204" selection-end="1231" vertical-scroll-proportion="0.33244327">
-          <folding />
-        </state>
+        <state line="40" column="46" selection-start="1204" selection-end="1231" vertical-scroll-proportion="0.33244327" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="12" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/development.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="68" column="12" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/opinions/collection.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="68" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.42465752">
-          <folding />
-        </state>
+        <state line="47" column="68" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.42465752" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="61" selection-start="3406" selection-end="3406" vertical-scroll-proportion="0.63972604">
+        <state line="257" column="69" selection-start="8941" selection-end="8941" vertical-scroll-proportion="0.5113485" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/amazon.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="97" selection-start="5021" selection-end="5021" vertical-scroll-proportion="0.3164219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/products_query.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="36" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/amazon_ids.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.46153846">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="85" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.186722">
+        <state line="205" column="66" selection-start="7308" selection-end="7308" vertical-scroll-proportion="-20.961538">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="69" selection-start="8941" selection-end="8941" vertical-scroll-proportion="0.5113485">
+        <state line="70" column="41" selection-start="2867" selection-end="2881" vertical-scroll-proportion="-31.842106">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/products_query.rb">
+    <entry file="file://$PROJECT_DIR$/log/development.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="84" selection-start="7451" selection-end="7452" vertical-scroll-proportion="0.9239281">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="48" selection-start="3555" selection-end="3555" vertical-scroll-proportion="0.7316422">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/amazon.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="97" selection-start="5021" selection-end="5021" vertical-scroll-proportion="0.3164219">
+        <state line="82" column="63" selection-start="3327" selection-end="3327" vertical-scroll-proportion="0.36495388">
           <folding />
         </state>
       </provider>
