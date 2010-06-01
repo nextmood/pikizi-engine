@@ -25,7 +25,7 @@ class ProductsFilterAnonymous < ProductsFilter
   def label() extract end
   def update_labels
     self.display_as = ProductsFilterAnonymous.build_label(extract)
-    self.short_label = display_as
+    self.short_label = extract
     self
   end
   def update_labels_debug() update_labels end

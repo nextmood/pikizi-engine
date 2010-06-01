@@ -169,7 +169,6 @@ class Opinion < Root
   key :censor_date, Date
   key :censor_author_id, BSON::ObjectID
   key :censor_neutral, Boolean
-  key :censor_original_datas, Hash
   
   # to update the status of an opinion
   def update_status(all_products)
@@ -260,9 +259,18 @@ class Opinion < Root
     node_opinion['by'] = (user_id ? user.rpx_username : "??? no_user")
     node_opinion['state'] = state
     node_opinion['dimensions'] = dimensions.collect(&:idurl).join(', ')
+
     node_opinion << (node_products_selector = XML::Node.new("selector"))
     node_products_selector["name"] = "referent"
     node_products_selector["idurl"] = products_filters_for_name_to_xml("referent")
+
+    if reviewed_ok? or reviewed_ko?
+      node_opinion << (node_original_import = XML::Node.new("original_import"))
+      original_import.each { |k,v| node_original_import << (node_kv = XML::Node.new("value")); node_kv["key"] = k; node_kv << v }
+      node_products_selector["name"] = "referent"
+      node_products_selector["idurl"] = products_filters_for_name_to_xml("referent")
+    end
+
     usages.collect { |usage| node_opinion << node_usage = XML::Node.new("usages"); node_usage << usage.label } if usages.size > 0
     (node_opinion << node_extract = XML::Node.new("extract"); node_extract << extract) if extract and extract != ""
     #node_opinion['review_id'] = review_id.to_s
@@ -534,7 +542,9 @@ class Comparator < Opinion
   def to_xml_bis(options={})
     node_opinion = super(options)
     node_opinion['operator'] = operator_type
-    node_opinion['product_selector_2'] = products_filters_for_name_to_xml("compare_to")
+    node_opinion << (node_products_selector = XML::Node.new("selector"))
+    node_products_selector["name"] = "compare_to"
+    node_products_selector["idurl"] = products_filters_for_name_to_xml("compare_to")
     node_opinion
   end
 
