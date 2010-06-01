@@ -127,16 +127,19 @@ class OpinionsController < ApplicationController
   # this is a rjs
   def validate_eric
     opinion = Opinion.find(params[:id])
-    comment = nil
+    comments = []
+    if (comment = params[:extra_comment]) and comment.size > 0 and comment != "comment..."
+      comments << comment
+    end
     if censor_code = (params[:censor_code] == "ok")
       opinion.accept!
       if (operator_type = params[:operator_type]) != opinion.operator_type
-        comment = "WRONG operator: should be #{operator_type.inspect} instead of #{opinion.operator_type.inspect}"
+        comments << "WRONG operator: should be #{operator_type.inspect} instead of #{opinion.operator_type.inspect}"
       end
     else
       opinion.reject!
     end
-    opinion.update_attributes(:censor_code => censor_code, :censor_comment => comment, :censor_date => Date.today, :censor_author_id => @current_user.id)
+    opinion.update_attributes(:censor_code => censor_code, :censor_comment => comments.join(", "), :censor_date => Date.today, :censor_author_id => @current_user.id)
     render :update do |page|
       page.replace_html("opinion_#{opinion.id}", :partial => "/opinions/collection_opinion", :locals => {:opinion => opinion})
       page.replace_html("opinion_editor_#{opinion.id}", :partial => "/opinions/collection_opinion_validate", :locals => {:opinion => opinion, :showup => false})

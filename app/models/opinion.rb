@@ -162,13 +162,15 @@ class Opinion < Root
 
   end
 
-  # extra fields link to the status
+  # extra fields link to the status and eric validation
   key :errors_explanations, String
   key :censor_code, String
   key :censor_comment, String
   key :censor_date, Date
   key :censor_author_id, BSON::ObjectID
-
+  key :censor_neutral, Boolean
+  key :censor_original_datas, Hash
+  
   # to update the status of an opinion
   def update_status(all_products)
     compute_product_ids(all_products)

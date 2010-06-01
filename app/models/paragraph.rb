@@ -78,7 +78,9 @@ class Paragraph
     @content_without_html ||= HTMLEntities.new.decode(content).strip.remove_tags_html.remove_double_space
   end
 
-
+  def content_highlight(s)
+    content.gsub(s, "<span color='red'>#{s}</span>")  
+  end
 
 end
 

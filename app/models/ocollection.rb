@@ -30,6 +30,28 @@ class Ocollection
     ocollection
   end
 
+  #to remove after...
+  def self.init_censor_original_datas
+    Ocollection.first.opinions.each do |opinion|
+      operator_type = if x = opinion.censor_comment and x = x.split('"') and x.size > 1
+        puts "inversion for #{opinion.censor_comment}"
+        x[3]
+      else
+        opinion.operator_type
+      end
+      pf1 = opinion.products_filters_for("referent").first
+      pf2 = opinion.products_filters_for("compare_to").first
+      raise "error #{pf1.class} #{pf2.class}" if !pf1.is_a?(ProductsFilterAnonymous) or (pf2 and !pf2.is_a?(ProductsFilterAnonymous))
+      pf1 = pf1.display_as.remove_tags_html if pf1
+      pf2 = pf2.display_as.remove_tags_html if pf2
+      puts "#{pf1.inspect} #{pf2.inspect}"
+      opinion.update_attributes(:censor_original_datas => {
+              :products_queries => [pf1, pf2].compact, # list of sentences identifying products
+              :comparator => operator_type })  # the original
+    end
+    true
+  end
+
   def to_xml
     doc = XML::Document.new
     doc.root =  (node_opinions = XML::Node.new("opinions"))
