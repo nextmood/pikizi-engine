@@ -2451,3 +2451,23 @@ Completed in 1009ms (View: 790 | 200 OK [http://localhost/opinions/collection/4c
 Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-01 16:03:06) [POST]
   Parameters: {"commit"=>"filter  100 opinions", "output_mode"=>"xml", "authenticity_token"=>"QYqml9Tyegy4Ok/fwWRWj0Gn4dE4Nivl8gDXwy+AunE=", "state_names"=>["to_review", "reviewed_ok", "reviewed_ko", "error"], "id"=>"4c012be943a76d1997000001", "max_nb_opinions"=>"100", "mode_ranking"=>"op_conf_asc"}
 Completed in 1574ms (View: 983 | 200 OK [http://localhost/opinions/collection/4c012be943a76d1997000001]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-01 16:19:46) [POST]
+  Parameters: {"commit"=>"filter  100 opinions", "output_mode"=>"xml", "authenticity_token"=>"QYqml9Tyegy4Ok/fwWRWj0Gn4dE4Nivl8gDXwy+AunE=", "state_names"=>["to_review", "reviewed_ok", "reviewed_ko", "error"], "id"=>"4c012be943a76d1997000001", "max_nb_opinions"=>"100", "mode_ranking"=>"op_conf_asc"}
+Completed in 1061ms (View: 824 | 200 OK [http://localhost/opinions/collection/4c012be943a76d1997000001]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-01 16:20:02) [POST]
+  Parameters: {"commit"=>"filter  100 opinions", "output_mode"=>"xml", "authenticity_token"=>"QYqml9Tyegy4Ok/fwWRWj0Gn4dE4Nivl8gDXwy+AunE=", "state_names"=>["to_review", "reviewed_ok", "reviewed_ko", "error"], "id"=>"4c012be943a76d1997000001", "max_nb_opinions"=>"100", "mode_ranking"=>"op_conf_asc"}
+Completed in 2689ms (View: 2099 | 200 OK [http://localhost/opinions/collection/4c012be943a76d1997000001]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-01 16:22:02) [POST]
+  Parameters: {"commit"=>"filter  100 opinions", "output_mode"=>"xml", "authenticity_token"=>"QYqml9Tyegy4Ok/fwWRWj0Gn4dE4Nivl8gDXwy+AunE=", "state_names"=>["to_review", "reviewed_ok", "reviewed_ko", "error"], "id"=>"4c012be943a76d1997000001", "max_nb_opinions"=>"100", "mode_ranking"=>"op_conf_asc"}
+Completed in 2017ms (View: 1788 | 200 OK [http://localhost/opinions/collection/4c012be943a76d1997000001]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-01 16:22:13) [POST]
+  Parameters: {"commit"=>"filter  100 opinions", "output_mode"=>"xml", "authenticity_token"=>"QYqml9Tyegy4Ok/fwWRWj0Gn4dE4Nivl8gDXwy+AunE=", "state_names"=>["to_review", "reviewed_ok", "reviewed_ko", "error"], "id"=>"4c012be943a76d1997000001", "max_nb_opinions"=>"100", "mode_ranking"=>"op_conf_asc"}
+Completed in 2641ms (View: 2055 | 200 OK [http://localhost/opinions/collection/4c012be943a76d1997000001]

@@ -267,8 +267,14 @@ class Opinion < Root
     if reviewed_ok? or reviewed_ko?
       node_opinion << (node_original_import = XML::Node.new("original_import"))
       original_import.each { |k,v| node_original_import << (node_kv = XML::Node.new("value")); node_kv["key"] = k; node_kv << v }
-      node_products_selector["name"] = "referent"
-      node_products_selector["idurl"] = products_filters_for_name_to_xml("referent")
+    end
+
+    if censor_date
+      node_opinion << (node_censor = XML::Node.new("reviewed"))
+      node_censor["date"] = censor_date.to_s
+      node_censor["by"] = User.find(censor_author_id).rpx_username
+      node_censor["is_neutral"] = "true" if censor_neutral
+      node_censor << censor_comment
     end
 
     usages.collect { |usage| node_opinion << node_usage = XML::Node.new("usages"); node_usage << usage.label } if usages.size > 0
