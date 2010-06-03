@@ -27,19 +27,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="drivers.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="drivers.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/reviews/drivers.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="24" selection-start="1425" selection-end="1425" vertical-scroll-proportion="-27.157894">
+            <state line="20" column="192" selection-start="595" selection-end="704" vertical-scroll-proportion="0.31331593">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/product.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="5" selection-start="6498" selection-end="6498" vertical-scroll-proportion="0.25955203">
+            <state line="192" column="192" selection-start="7093" selection-end="7093" vertical-scroll-proportion="-11.269231">
               <folding />
             </state>
           </provider>
@@ -122,12 +122,12 @@
         <option value="$PROJECT_DIR$/app/helpers/products_query_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/products_query.rb" />
         <option value="$PROJECT_DIR$/app/views/products_query/_edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/pikizi_tasks.rake" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" />
       </list>
     </option>
   </component>
@@ -1032,13 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/drivers.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="24" selection-start="1425" selection-end="1425" vertical-scroll-proportion="-27.157894">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="132" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
@@ -1083,7 +1076,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="5" selection-start="6498" selection-end="6498" vertical-scroll-proportion="0.25955203">
+        <state line="192" column="192" selection-start="7093" selection-end="7093" vertical-scroll-proportion="-11.269231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/drivers.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="192" selection-start="595" selection-end="704" vertical-scroll-proportion="0.31331593">
           <folding />
         </state>
       </provider>
