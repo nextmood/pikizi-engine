@@ -1,0 +1,44 @@
+<h1>Status of amazon review per products</h1>
+
+<% sources = ["amazon"] %>
+
+<% if flash[:notice] %>
+    <div style="background-color:lightgreen; margin-bottom:10px; padding:5px;"><%= flash[:notice] %></div>
+<% end %>
+
+<table border=1 width="100%">
+  <tr>
+      <th rowspan="2">product</th>
+      <% for source in sources %>
+        <th colspan="3">
+          <%= source %>
+          <%= link_to(" refresh", {:controller => "reviews", :action => "drivers_update", :source => source}, :class => "pkz_link pkz_small") %>
+        </th>
+      <% end %>
+  </tr>
+  <tr>
+      <% for source in sources %>
+        <th width="50">nb=<%= Review.count(:source => source, :knowledge_id => @current_knowledge.id)%></th>
+        <th width="100">last</th>
+        <th >ids</th>
+      <% end %>
+  </tr>
+  <% for product in @products %>
+    <tr>
+        <td><%= product.label %></td>
+        <% for source in sources %>
+            <% r = product.review_last(:source => source) %>
+            <td align="right"><%= Review.count(:source => source, :product_ids => product.id) %></td>
+            <td align="right"><%= r ? r.written_at : 'n/a' %></td>
+            <td align="right">
+              <% if (amazon_ids = product.drivers_data[source][:ids]).size > 0 %>
+                <%= amazon_ids.join(', ') %>
+              <% else %>
+                n/a
+              <% end %>
+            </td>
+        <% end %>
+    </tr>
+  <% end %>
+
+</table>

@@ -168,80 +168,40 @@ class Product < Root
 
   key :drivers_data, Hash, :default => {} # a list of data matchig this product to an external site (exemplae "amazon" => {"id" => "B002WB2P4O", "last_import_date" => "Mon May 31 11:19:05 +0200 2010" } )
 
-
-
-def self.update_amazon_ids
-  h = { "casio_gzone_brigade" => ["B0039ITKME"],
-        "htc_desire" => ["B00383MWY8"],
-        "htc_droid_incredible" => ["B003HC8NUW"],
-        "htc_hd2" => ["B003BNZD3C", "B0030MHQXO"],
-        "htc_hero" => ["B0031MA0UO"],
-        "htc_legend" => ["B0035ER8OO"],
-        "htc_ozone_w_talks" => ["B002GJU6J8"],
-        "motorola_barrage" => ["B002WTC1NG"],
-        "motorola_cliq_xt" => ["B003AVNNU0"],
-        "motorola_devour" => ["B0038QOLMQ"],
-        "nexus_one" => ["B00332YPHQ"],
-        "nokia_5130_xpressmusic" => ["B002ED84H2"],
-        "nokia_5230" => ["B003BNZD5K"],
-        "nokia_5800" => ["B001SEAOC6", "B002R0DWYW"],
-        "nokia_n85" => ["B001IBIM00", "B001WAKFBQ"],
-        "nokia_n97" => ["B00295RBNI", "B00295RBNS"],
-        "nokia_n97mini" => ["B002WB2P4O"],
-        "nokia_nuron" => ["B003BNZD5K"],
-        "palm_pixi_plus" => ["B00359FEFE"],
-        "palm_pre_plus" => ["B00359FEF4"],
-        "peek_classic" => ["B001FC0BWE"],
-        "peek_pronto" => ["B001VN2KBM"],
-        "sony_ericsson_aino" => ["B002T89TS0"],
-        "twitterpeek" => ["B002R5AG50"] }
-  h.each {|k,v| puts "error #{k}" unless Product.first(:idurl => k)}
-  Product.all.each do |p|
-    amazon_ids = []
-    if amazon_id = p.get_driver("amazon", "id")
-      amazon_ids << amazon_id 
-    end
-    (h[p.idurl] || []).each { |aid| amazon_ids << aid unless amazon_ids.include?(aid) }
-    p.update_attributes(:drivers_data => { "amazon" => {"ids" => amazon_ids } })
-    puts "#{p.idurl} => #{p.drivers_data["amazon"]["ids"].join(', ')}"
-  end
-end
-  
   def get_driver(source,key) (drivers_data[source] || {})[key] end
   
   def self.update_from_driver(knowledge, source = "amazon")
-    Product.all.inject([0,0]) do |(nb_products, nb_product_updated), product|
-      if review_last = product.review_last(:source => source)
-        puts "last import for #{product.label} = #{review_last.written_at}"
-        nb_product_updated += 1
-        case source
-          when "amazon" then product.create_amazon_reviews(knowledge, review_last.written_at)
-        end
-
+    knowledge.get_products.inject([0,0,0]) do |(nb_products, nb_product_updated, nb_reviews_imported), product|
+      review_last = product.review_last(:source => source)
+      case source
+        when "amazon" then nb_reviews_imported_for_source = product.create_amazon_reviews(knowledge, review_last ? review_last.written_at : nil )
       end
-      [nb_products + 1, nb_product_updated]
+      (nb_reviews_imported += nb_reviews_imported_for_source; nb_product_updated += 1) if nb_reviews_imported_for_source > 0
+      [nb_products + 1, nb_product_updated, nb_reviews_imported]
     end
   end
 
   def create_amazon_reviews(knowledge, written_after=nil)
     #Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
-    begin
-      nb_reviews_imported = 0
-      if amazon_id = get_driver("amazon", "id")
-        written_after ||= ((x = review_last) ? x.written_at : Date.today - 3000) 
-        ApiAmazon.get_amazon_reviews(amazon_id, written_after).each do |amazon_review|
-          #Review::FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
-          nb_reviews_imported += 1
+    nb_reviews_imported = 0
+    #begin
+      if (amazon_ids = get_driver("amazon", "ids")) and amazon_ids.size > 0
+        written_after ||= ((x = review_last) ? x.written_at : Date.today - 3000)
+        for amazon_id in amazon_ids
+          ApiAmazon.get_amazon_reviews(amazon_id, written_after).each do |amazon_review|
+            FromAmazon.create_with_opinions(knowledge, self, get_value("amazon_url"), amazon_review)
+            nb_reviews_imported += 1
+          end
+          puts "#{written_after};#{idurl};#{nb_reviews_imported}; reviews imported;http://www.amazon.com/dp/#{amazon_id}"
         end
-        puts "#{written_after};#{idurl};#{nb_reviews_imported}; reviews imported;http://www.amazon.com/dp/#{gte_driver("amazon", "id")}"
       else
         #puts ";#{idurl};0; amazon_id missing"
       end
-    rescue Exception => e
-      puts "*** #{idurl} (reviews #{nb_reviews_imported}) #{e.message}"
-      e.backtrace.each { |m| puts "     #{m}"}
-    end
-    true
+    #rescue Exception => e
+    #  puts "*** #{idurl} (reviews #{nb_reviews_imported}) #{e.message}"
+    #  e.backtrace.each { |m| puts "     #{m}"}
+    #end
+    nb_reviews_imported
   end
 
 

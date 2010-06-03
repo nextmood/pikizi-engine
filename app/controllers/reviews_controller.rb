@@ -28,6 +28,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # GET /reviews/drivers
+  def drivers
+    @products = @current_knowledge.get_products    
+  end
+
+  # GET /reviews/drivers_update
+  def drivers_update
+    nb_products, nb_product_updated, nb_reviews_imported = Product.update_from_driver(@current_knowledge, params[:source])
+    flash[:notice] = "nb_products=#{nb_products}, nb_product_updated=#{nb_product_updated} nb_reviews_imported=#{nb_reviews_imported}"
+    redirect_to "/reviews/drivers"
+  end
+
   def recompute_all_states
     @current_knowledge.recompute_all_states
     redirect_to("/reviews")

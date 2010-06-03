@@ -55,6 +55,8 @@ class Review < Root
 
     state :draft
 
+    state :to_analyze
+    
     state :empty
 
     state :to_review
@@ -98,6 +100,7 @@ class Review < Root
 
   # label of state for UI
   def self.state_datas() { "draft" => { :label => "draft", :color => "orchid" },
+                           "to_analyze" => { :label => "to analyze", :color => "orchid" },
                            "empty" => { :label => "has no opinions", :color => "lightblue" },
                            "to_review" => { :label => "has at least one paragraph waiting to be reviewed", :color => "orange" },
                            "opinionated" => { :label => "has at least one paragraph with a valid opinions", :color => "lightgreen" },
@@ -242,19 +245,21 @@ class FromAmazon < Review
 
   def self.default_category() "amazon" end
 
+  # for launch by rake/cron...
   def self.create_with_opinions_4_all_products(knowledge)
     knowledge.products.each { |product| product.create_amazon_reviews(knowledge) }
   end
 
   def self.create_with_opinions(knowledge, product, amazon_url, amazon_review)
-    r = Review::FromAmazon.create(:knowledge_idurl => knowledge.idurl,
-                                  :knowledge => knowledge,
-                                  :product_idurl => product.idurl,
-                                  :product_id => product.id,
+    r = self.create(:state => "to_analyze",
+                                  :knowledge_idurl => knowledge.idurl,
+                                  :knowledge_id => knowledge.id,
+                                  :product_ids => [product.id],
+                                  :product_ids => [product.id],
+                                  :product_idurls => [product.idurl],
                                   :author => "amazon_customer_#{amazon_review[:customerid]}",
                                   :source => "amazon",
-                                  :source_url => amazon_url,
-                                  :category => Review::FromAmazon.default_category,
+                                  :category => default_category,
                                   :written_at => amazon_review[:date],
                                   :summary => amazon_review[:summary],
                                   :content => amazon_review[:content],
@@ -263,10 +268,7 @@ class FromAmazon < Review
   end
 
   def generate_opinions(rating)
-    self.opinions << Opinion::Rating.create(:feature_rating_idurl => "overall_rating",
-                           :min_rating => 1.0,
-                           :max_rating => 5.0,
-                           :rating => rating)
+    # todo what to do with the amazon rating? 
     split_in_paragraphs("p_br")
   end
 

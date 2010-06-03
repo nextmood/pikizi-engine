@@ -23,10 +23,9 @@ namespace :pikizi do
     k = Knowledge.initialize_from_xml(ENV.include?("name") ? ENV['name'] : "cell_phones")
 
     # create all reviews from xml located in domain/reviews directory
-    Review::FileXml.create_with_opinions(k)
+    #Review::FileXml.create_with_opinions(k)
 
     # create all reviews from amazon web site for all products
-    Review::FromAmazon.create_with_opinions_4_all_products(k)
 
     compute_ratings(k)
 
