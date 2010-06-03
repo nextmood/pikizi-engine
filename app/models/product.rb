@@ -184,7 +184,7 @@ class Product < Root
   def create_amazon_reviews(knowledge, written_after=nil)
     #Review.delete_with_opinions(:product_idurl => idurl, :source => Review::FromAmazon.default_category) # also destroy the attached opinions
     nb_reviews_imported = 0
-    #begin
+    begin
       if (amazon_ids = get_driver("amazon", "ids")) and amazon_ids.size > 0
         written_after ||= ((x = review_last) ? x.written_at : Date.today - 3000)
         for amazon_id in amazon_ids
@@ -197,10 +197,10 @@ class Product < Root
       else
         #puts ";#{idurl};0; amazon_id missing"
       end
-    #rescue Exception => e
-    #  puts "*** #{idurl} (reviews #{nb_reviews_imported}) #{e.message}"
-    #  e.backtrace.each { |m| puts "     #{m}"}
-    #end
+    rescue Exception => e
+      puts "*** #{idurl} (reviews #{nb_reviews_imported}) #{e.message}"
+      e.backtrace.each { |m| puts "     #{m}"}
+    end
     nb_reviews_imported
   end
 
