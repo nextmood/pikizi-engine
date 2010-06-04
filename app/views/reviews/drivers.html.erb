@@ -31,7 +31,7 @@
             <td align="right"><%= Review.count(:source => source, :product_ids => product.id) %></td>
             <td align="right"><%= r ? link_to(r.written_at, "/edit_review/#{r.id}", :class => "pkz_link") : 'n/a' %></td>
             <td align="right">
-              <% if (amazon_ids = product.drivers_data[source][:ids]).size > 0 %>
+              <% if (amazon_ids = (product.get_driver(source, "ids") || [])).size > 0 %>
                 <%= amazon_ids.join(', ') %>
               <% else %>
                 n/a

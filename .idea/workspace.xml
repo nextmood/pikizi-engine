@@ -7,14 +7,14 @@
     <list default="true" readonly="true" id="20abd9ca-9788-44a3-9ef0-974fc0a196de" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/functional/products_query_controller_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore~" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" afterPath="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/products_query/_edit.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/pkz_mongo_init.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/show.html.erb" afterPath="$PROJECT_DIR$/app/views/products/show.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/products_query_controller.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/media.rb" afterPath="$PROJECT_DIR$/app/models/media.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/media.rb" afterPath="$PROJECT_DIR$/app/models/media.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/products_query_helper.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
@@ -72,10 +72,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="media.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/media.rb">
+      <file leaf-file-name="drivers.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reviews/drivers.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="92" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.33333334">
+            <state line="33" column="75" selection-start="1251" selection-end="1292" vertical-scroll-proportion="-8.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="204" selection-end="299" vertical-scroll-proportion="0.26865673">
               <folding />
             </state>
           </provider>
@@ -94,7 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/product_set.rb" />
         <option value="$PROJECT_DIR$/test/unit/knowledge_test.rb" />
         <option value="$PROJECT_DIR$/test/unit/products_query_test.rb" />
         <option value="$PROJECT_DIR$/app/views/products_query/_atom_edit.html.erb" />
@@ -110,6 +118,7 @@
         <option value="$PROJECT_DIR$/app/controllers/opinions_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/media.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/reviews/drivers.html.erb" />
       </list>
     </option>
   </component>
@@ -805,11 +814,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_query_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="25" selection-start="373" selection-end="389" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products_query/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="133" selection-start="159" selection-end="174" vertical-scroll-proportion="0.0" />
@@ -818,11 +822,6 @@
     <entry file="file://$PROJECT_DIR$/app/helpers/products_query_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="12" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="204" selection-end="299" vertical-scroll-proportion="0.3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/products_query.rb">
@@ -892,7 +891,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/media.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="92" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.33333334">
+        <state line="61" column="92" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/drivers.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="75" selection-start="1251" selection-end="1292" vertical-scroll-proportion="-8.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/admin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="204" selection-end="299" vertical-scroll-proportion="0.26865673">
           <folding />
         </state>
       </provider>
