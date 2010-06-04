@@ -60,14 +60,14 @@ class OpinionsController < ApplicationController
   def import_process
     if filename_xml = (params[:filename_xml] == "" ? nil : params[:filename_xml])
       if filename_xml.content_type == "text/xml"
-        #begin
+        begin
           flash[:notice] = ""
           flash[:notice] << "filename_xml.length=#{filename_xml.length}<br/>"
           ocollection = Ocollection.import(@current_knowledge, @current_user.rpx_username, filename_xml)
           flash[:notice] = "done import #{ocollection.nb_opinions}"
-        #rescue  Exception => e
-          #flash[:notice] = "ERROR while importing #{e.message}"
-        #end
+        rescue  Exception => e
+          flash[:notice] = "ERROR while importing #{e.message}"
+        end
       else
         flash[:notice] = "file should have a content/type= \"text/xml\", WRONG: #{filename_xml.content_type.inspect}"
       end
@@ -127,18 +127,6 @@ class OpinionsController < ApplicationController
   # this is a rjs
   def validate_eric
     opinion = Opinion.find(params[:id])
-    comments = []
-    if (comment = params[:extra_comment]) and comment.size > 0 and comment != "comment..."
-      comments << comment
-    end
-    if censor_code = (params[:censor_code] == "ok")
-      opinion.accept!
-      if (operator_type = params[:operator_type]) != opinion.operator_type
-        comments << "WRONG operator: should be #{operator_type.inspect} instead of #{opinion.operator_type.inspect}"
-      end
-    else
-      opinion.reject!
-    end
     opinion.update_attributes(:censor_code => censor_code, :censor_comment => comments.join(", "), :censor_date => Date.today, :censor_author_id => @current_user.id)
     render :update do |page|
       page.replace_html("opinion_#{opinion.id}", :partial => "/opinions/collection_opinion", :locals => {:opinion => opinion})

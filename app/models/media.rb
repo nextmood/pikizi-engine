@@ -58,7 +58,8 @@ class MediaImage < Media
     img = img.resize(400, 400)
     hash_version_media_ids = {}
     versions.each do |suffix, (w,h)|
-      hash_version_media_ids[suffix] = Media.grid.put(img.resize(w,h).to_blob, "#{filename}_#{suffix}", :content_type => content_type)
+      # todo there is a bug here...
+      hash_version_media_ids[suffix] = Media.grid.put(img.resize(w,h).to_blob, :filename => "#{filename}_#{suffix}", :content_type => content_type)
     end
     hash_version_media_ids
   end

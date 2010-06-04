@@ -290,6 +290,7 @@ class Opinion < Root
       opinion = self.new
       paragraph_id = node_opinion['paragraph_id']
       paragraph = (hash_id_paragraph[paragraph_id] ||= Paragraph.find(paragraph_id))
+      raise "paragraph #{paragraph_id} doesn't exist !"
       review = (hash_id_review[paragraph.review_id] ||= Review.find(paragraph.review_id))
       opinion.review_id = review.id
       opinion.written_at = review.written_at

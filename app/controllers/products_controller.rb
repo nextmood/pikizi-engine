@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   def create_byidurl
     @messages_creating_product_by_idurl = nil
     @product = nil
-    if new_idurl = params[:new_idurl] and new_idurl.size > 7
+    if new_idurl = params[:new_idurl] and new_idurl.size > 4
 
       if Product.first(:idurl => new_idurl)
         @messages_creating_product_by_idurl = "<span style=\"color:red;\">#{new_idurl} already exists</span>"
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
         @messages_creating_product_by_idurl = "<span style=\"color:green;\">product with idurl=#{new_idurl.inspect} created, please edit below</span>"
       end
     else
-      @messages_creating_product_by_idurl = "<span style=\"color:red;\">idurl=#{new_idurl.inspect} is wrong</span>"
+      @messages_creating_product_by_idurl = "<span style=\"color:red;\">idurl=#{new_idurl.inspect} is wrong (min size 5) </span>"
     end
     @product ||= Product.find(params[:product_id])
     render(:action => "show")

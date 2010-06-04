@@ -23,10 +23,6 @@ class Product < Root
   key :image_ids, Array # an array of Media ids
   key :description_id, Media # a media id
 
-
-
-
-
   key :url, String
   
   key :description_urls, Array # an array of description url?
@@ -160,7 +156,7 @@ class Product < Root
 
   #def reviews() Review.all( :product_idurl => idurl, :order => "created_at DESC") end
 
-
+  key :hash_feature_idurl_value, Hash, :default => {}
 
   def get_value(feature_idurl) hash_feature_idurl_value[feature_idurl] end
   def get_dimension_value(dimension_idurl) (x = get_value(dimension_idurl) and x.nan?) ? 0.0 : x end
