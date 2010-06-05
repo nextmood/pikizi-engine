@@ -1,5 +1,6 @@
     <td colspan="6">
         <% if showup %>
+          <%= opinion.original_import.inspect %>
             <% form_remote_tag :url => "/opinions/validate_eric/#{opinion.id}", :html => {:style => "background-color:lightgray; margin-bottom:15px;", :id => "form_validate_eric_#{opinion.id}"} do -%>
                 <div style="border:1px dashed black; padding:5px;">
                   <i class="pkz_small">referring to <%= opinion.review.products.collect(&:label).join(', ') %></i>

@@ -386,3 +386,2099 @@ Completed in 1520ms (View: 774 | 200 OK [http://localhost/reviews/index]
 Processing ReviewsController#index (for 127.0.0.1 at 2010-06-04 11:57:41) [POST]
   Parameters: {"commit"=>"filter  10 reviews", "max_nb_reviews"=>"10", "output_mode"=>"xml", "authenticity_token"=>"TmSYRu2KQzi2hmVTDNDBiLgHxHdLvz64SBXtji7nP+k=", "state_names"=>["to_analyze"], "date_oldest"=>{"month"=>"9", "day"=>"8", "year"=>"2007"}, "source_categories"=>["automatic", "amazon", "user", "expert"], "search"=>{"related_product"=>""}}
 Completed in 1681ms (View: 1459 | 200 OK [http://localhost/reviews/index]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-06-05 09:18:16) [GET]
+
+Mongo::ConnectionFailure (failed to connect to any given host:port):
+  mongo (1.0) lib/./lib/mongo/connection.rb:435:in `connect_to_master'
+  mongo (1.0) lib/./lib/mongo/connection.rb:112:in `initialize'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:33:in `new'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:33:in `connection'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper.rb:58:in `database'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/persistence.rb:30:in `database'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/persistence.rb:48:in `collection'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:193:in `find_one'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/document.rb:91:in `first'
+  app/controllers/application_controller.rb:50:in `check_user_authorization'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-06-05 09:18:34) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 1961ms (View: 1724 | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-05 09:18:46) [GET]
+
+ActionController::RoutingError (No route matches "/collections/opinions" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 09:19:04) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 1579ms (View: 697 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:19:18) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-182-1nly89-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+Redirected to http://localhost:3000/opinions/collections
+Completed in 480ms | 302 Found [http://localhost/opinions/import_process]
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 09:19:18) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 335ms (View: 85 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:29:30) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-182-u0t03r-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+
+RuntimeError (paragraph 4c0787d443a76d6eb400013f doesn't exist !):
+  app/models/opinion.rb:293:in `import_from_xml'
+  app/models/ocollection.rb:60:in `send'
+  app/models/ocollection.rb:60:in `import'
+  app/models/ocollection.rb:57:in `each'
+  app/models/ocollection.rb:57:in `import'
+  app/controllers/opinions_controller.rb:66:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 09:30:22) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 1359ms (View: 298 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:30:31) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-306-149ujba-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/ocollection.rb:61:in `update_status'
+  app/models/ocollection.rb:61:in `import'
+  app/models/ocollection.rb:57:in `each'
+  app/models/ocollection.rb:57:in `import'
+  app/controllers/opinions_controller.rb:66:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:32:06) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-348-sgicq9-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+
+RuntimeError (product=4c082e8d43a76d7630000001 nil and opinion=4c09fd77db5995015c000002 written_at=Thu, 03 Jun 2010):
+  app/models/opinion.rb:83:in `compute_product_ids'
+  app/models/opinion.rb:77:in `select'
+  app/models/opinion.rb:77:in `compute_product_ids'
+  app/models/opinion.rb:175:in `update_status'
+  app/models/ocollection.rb:61:in `import'
+  app/models/ocollection.rb:57:in `each'
+  app/models/ocollection.rb:57:in `import'
+  app/controllers/opinions_controller.rb:66:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:33:57) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-366-1tuk5d6-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+
+RuntimeError (product=dell_streak release_date=nil and opinion=4c09fde5db5995016e000002 written_at=Thu, 03 Jun 2010):
+  app/models/opinion.rb:83:in `compute_product_ids'
+  app/models/opinion.rb:77:in `select'
+  app/models/opinion.rb:77:in `compute_product_ids'
+  app/models/opinion.rb:175:in `update_status'
+  app/models/ocollection.rb:61:in `import'
+  app/models/ocollection.rb:57:in `each'
+  app/models/ocollection.rb:57:in `import'
+  app/controllers/opinions_controller.rb:66:in `import_process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (55.4ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 09:34:43) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-383-euphvr-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+Redirected to http://localhost:3000/opinions/collections
+Completed in 46948ms | 302 Found [http://localhost/opinions/import_process]
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 09:35:30) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 536ms (View: 282 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:38:01) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (49.4ms)
+Rendered opinions/_collection_opinion_validate (3.5ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (115.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 3716ms (View: 2839 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:38:07) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (312.5ms)
+Completed in 397ms (View: 316 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:38:20) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"ok", "is_neutral"=>"false", "_"=>"", "operator_type"=>"better"}
+
+NameError (undefined local variable or method `censor_code' for #<OpinionsController:0x102c38f18>):
+  app/controllers/opinions_controller.rb:130:in `validate_eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (165.3ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:39:00) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (17.5ms)
+Rendered opinions/_collection_opinion_validate (2.4ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (113.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 3640ms (View: 2811 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:39:07) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe20db5995017f00019f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (226.0ms)
+Completed in 400ms (View: 230 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe20db5995017f00019f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:39:11) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ko", "id"=>"4c09fe20db5995017f00019f", "extra_comment"=>"comment...", "is_neutral"=>"false", "_"=>"", "operator_type"=>"worse"}
+
+NameError (undefined local variable or method `censor_code' for #<OpinionsController:0x102b33b18>):
+  app/controllers/opinions_controller.rb:131:in `validate_eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:43:34) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (17.2ms)
+Rendered opinions/_collection_opinion_validate (2.4ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.5ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (16.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (111.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 3449ms (View: 2633 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:43:39) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (227.9ms)
+Completed in 397ms (View: 231 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:43:47) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ko", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"comment...", "is_neutral"=>"false", "_"=>"", "operator_type"=>"worse"}
+Rendered opinions/_collection_opinion (27.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 261ms (View: 30 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:44:03) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (135.6ms)
+Completed in 218ms (View: 139 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:44:19) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "is_neutral"=>"false", "_"=>"", "operator_type"=>"better"}
+Rendered opinions/_collection_opinion (26.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 211ms (View: 29 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:49:33) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (16.1ms)
+Completed in 216ms (View: 19 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:51:49) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ko", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "is_neutral"=>"false", "_"=>"", "operator_type"=>"worse"}
+Rendered opinions/_collection_opinion (29.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 246ms (View: 33 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:51:54) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (16.1ms)
+Completed in 241ms (View: 19 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:52:04) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "is_neutral"=>"false", "_"=>"", "operator_type"=>"better"}
+
+StateMachine::InvalidTransition (Cannot transition state via :accept from :reviewed_ko):
+  /Library/Ruby/Gems/1.8/gems/state_machine-0.9.1/lib/state_machine/event.rb:248:in `add_actions'
+  /Library/Ruby/Gems/1.8/gems/state_machine-0.9.1/lib/state_machine/machine.rb:531:in `call'
+  /Library/Ruby/Gems/1.8/gems/state_machine-0.9.1/lib/state_machine/machine.rb:531:in `accept!'
+  app/controllers/opinions_controller.rb:132:in `validate_eric'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:53:23) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (26.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.6ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (17.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (21.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (37.1ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (19.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (20.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (28.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (20.0ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (18.8ms)
+Rendered opinions/_collection_opinion_validate (0.3ms)
+Rendered opinions/_collection_opinion (15.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (170.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (171.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 2945ms (View: 2460 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:53:28) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (149.3ms)
+Completed in 229ms (View: 153 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:53:36) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "is_neutral"=>"false", "_"=>"", "operator_type"=>"worse"}
+Rendered opinions/_collection_opinion (27.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 97ms (View: 31 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:53:39) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe38db5995017f00047f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (18.8ms)
+Completed in 238ms (View: 161 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe38db5995017f00047f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:54:04) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe38db5995017f00047f", "extra_comment"=>"comment...", "_"=>"", "operator_type"=>"worse"}
+Rendered opinions/_collection_opinion (29.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 101ms (View: 32 | 200 OK [http://localhost/opinions/validate_eric/4c09fe38db5995017f00047f]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:55:21) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (18.4ms)
+Rendered opinions/_collection_opinion_validate (2.5ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (17.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.3ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (15.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (19.2ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (15.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (21.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (53.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.8ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.7ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (183.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.3ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 2739ms (View: 2388 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:55:29) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (16.4ms)
+Completed in 265ms (View: 21 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:55:56) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "is_neutral"=>"false", "_"=>"", "operator_type"=>"same"}
+Rendered opinions/_collection_opinion (29.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 261ms (View: 33 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:55:59) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (17.1ms)
+Completed in 261ms (View: 21 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:56:59) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (21.9ms)
+Rendered opinions/_collection_opinion_validate (2.5ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (104.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.4ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (339.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (117.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 3570ms (View: 2733 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#edit_opinion_from_collection (for 127.0.0.1 at 2010-06-05 09:57:07) [POST]
+  Parameters: {"authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "id"=>"4c09fe26db5995017f00026f", "_"=>""}
+Rendered opinions/_collection_opinion_validate (230.4ms)
+Completed in 407ms (View: 235 | 200 OK [http://localhost/opinions/edit_opinion_from_collection/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#validate_eric (for 127.0.0.1 at 2010-06-05 09:57:14) [POST]
+  Parameters: {"commit"=>"validate", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ=", "censor_code"=>"ok", "id"=>"4c09fe26db5995017f00026f", "extra_comment"=>"pour voir", "_"=>"", "operator_type"=>"same"}
+Rendered opinions/_collection_opinion (29.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 273ms (View: 33 | 200 OK [http://localhost/opinions/validate_eric/4c09fe26db5995017f00026f]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:57:33) [GET]
+
+NoMethodError (undefined method `opinions' for nil:NilClass):
+  app/controllers/opinions_controller.rb:106:in `collection'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 09:57:37) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 495ms (View: 265 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 09:57:41) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (22.7ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (31.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (18.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (143.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.2ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (155.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (157.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 2860ms (View: 2528 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 10:00:14) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 1550ms (View: 388 | 200 OK [http://localhost/opinions/collections]
+
+
+Processing OpinionsController#collection (for 127.0.0.1 at 2010-06-05 10:00:18) [GET]
+  Parameters: {"id"=>"4c09fe13db5995017f000001"}
+Rendering template within layouts/application
+Rendering opinions/collection
+Rendered opinions/_collection_opinion (20.7ms)
+Rendered opinions/_collection_opinion_validate (2.5ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.1ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (15.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (19.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (131.8ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.4ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (13.8ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (17.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.7ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (14.6ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (16.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (21.2ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (29.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (23.8ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (22.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (18.2ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (17.0ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (20.9ms)
+Rendered opinions/_collection_opinion_validate (0.2ms)
+Rendered opinions/_collection_opinion (18.1ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.9ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.3ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Rendered opinions/_collection_opinion (15.5ms)
+Rendered opinions/_collection_opinion_validate (0.1ms)
+Completed in 2477ms (View: 2182 | 200 OK [http://localhost/opinions/collection/4c09fe13db5995017f000001]
+
+
+Processing OpinionsController#import_process (for 127.0.0.1 at 2010-06-05 10:00:30) [POST]
+  Parameters: {"filename_xml"=>#<File:/var/folders/pU/pUV8tY9PHt8qvY4Zfo41Ak+++TI/-Tmp-/RackMultipart20100605-608-icbin7-0>, "commit"=>"Import collection of opinions...", "authenticity_token"=>"KCBsfXK8+Clm2raiD85EBWxQUePfeH5YS8neT9e/AIQ="}
+Redirected to http://localhost:3000/opinions/collections
+Completed in 52383ms | 302 Found [http://localhost/opinions/import_process]
+
+
+Processing OpinionsController#collections (for 127.0.0.1 at 2010-06-05 10:01:23) [GET]
+Rendering template within layouts/application
+Rendering opinions/collections
+Completed in 377ms (View: 90 | 200 OK [http://localhost/opinions/collections]

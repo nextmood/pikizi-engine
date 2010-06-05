@@ -58,7 +58,7 @@ class Ocollection
       if ["Comparator", "Tip", "Ranking", "Rating"].include?(node_opinion.name)
         class_opinion = Kernel.const_get(node_opinion.name)
         new_opinion = class_opinion.send("import_from_xml", knowledge, node_opinion, hash_id_review, hash_id_paragraph, default_dimension_rating)
-        new_opinion.update_status
+        new_opinion.update_status(knowledge.get_products)
         ocollection.add(new_opinion)
       else
         puts "WRONG opinion name=#{node_opinion.name}" unless node_opinion.name == "text"

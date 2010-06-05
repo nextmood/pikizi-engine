@@ -76,11 +76,12 @@ class Opinion < Root
   def compute_product_ids(all_products)
     among_products = all_products.select do |p|
       d1 = p.release_date
+      d1 ||= Date.today - 3000
       d2 = self.written_at
       begin
         d1 <= d2
       rescue
-        raise "product=#{p.id} #{d1.inspect} and opinion=#{self.id} written_at=#{d2.inspect}"
+        raise "product=#{p.idurl} release_date=#{d1.inspect} and opinion=#{self.id} written_at=#{d2.inspect}"
       end
     end
     # compute and set hash_products_filter_name_2_matching_product_ids first
@@ -168,7 +169,7 @@ class Opinion < Root
   key :censor_comment, String
   key :censor_date, Date
   key :censor_author_id, BSON::ObjectID
-  key :censor_neutral, Boolean
+  key :censor_neutral, Boolean, :default => false
   
   # to update the status of an opinion
   def update_status(all_products)
@@ -290,7 +291,7 @@ class Opinion < Root
       opinion = self.new
       paragraph_id = node_opinion['paragraph_id']
       paragraph = (hash_id_paragraph[paragraph_id] ||= Paragraph.find(paragraph_id))
-      raise "paragraph #{paragraph_id} doesn't exist !"
+      raise "paragraph #{paragraph_id} doesn't exist !" unless paragraph
       review = (hash_id_review[paragraph.review_id] ||= Review.find(paragraph.review_id))
       opinion.review_id = review.id
       opinion.written_at = review.written_at

@@ -127,7 +127,9 @@ class OpinionsController < ApplicationController
   # this is a rjs
   def validate_eric
     opinion = Opinion.find(params[:id])
-    opinion.update_attributes(:censor_code => censor_code, :censor_comment => comments.join(", "), :censor_date => Date.today, :censor_author_id => @current_user.id)
+    censor_code = params[:censor_code]
+    new_state = (censor_code == "ok") ? "reviewed_ok" : "reviewed_ko"
+    opinion.update_attributes(:state => new_state, :censor_code => censor_code, :censor_comment => params[:extra_comment], :censor_neutral => params[:is_neutral], :censor_date => Date.today, :censor_author_id => @current_user.id, :operator_type =>params[:operator_type])
     render :update do |page|
       page.replace_html("opinion_#{opinion.id}", :partial => "/opinions/collection_opinion", :locals => {:opinion => opinion})
       page.replace_html("opinion_editor_#{opinion.id}", :partial => "/opinions/collection_opinion_validate", :locals => {:opinion => opinion, :showup => false})
