@@ -72,19 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nltk_sources.xml.builder" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/reviews/nltk_sources.xml.builder">
+      <file leaf-file-name="show_product.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/sources/show_product.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="210" selection-end="210" vertical-scroll-proportion="-5.0526314">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="source.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/source.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="71" selection-start="3173" selection-end="3173" vertical-scroll-proportion="0.4220297">
+            <state line="35" column="103" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.5153374">
               <folding />
             </state>
           </provider>
@@ -105,8 +96,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/source/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/sources/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/sources/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/sources/show_product.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/sources_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/sources/search.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/sources_controller.rb" />
@@ -119,6 +108,8 @@
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/reviews/nltk_sources.xml.builder" />
         <option value="$PROJECT_DIR$/app/models/source.rb" />
+        <option value="$PROJECT_DIR$/app/views/sources/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/sources/show_product.html.erb" />
       </list>
     </option>
   </component>
@@ -297,6 +288,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pikizi-engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -834,29 +839,14 @@
         <state line="9" column="23" selection-start="167" selection-end="167" vertical-scroll-proportion="0.1294964" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sources/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="45" selection-start="389" selection-end="389" vertical-scroll-proportion="0.1619632" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sources/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="333" selection-end="333" vertical-scroll-proportion="0.19141105" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sources/show_product.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sources/search.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="77" selection-start="400" selection-end="400" vertical-scroll-proportion="0.13251534" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/amazon.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="68" selection-start="3171" selection-end="3234" vertical-scroll-proportion="0.01438849" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
@@ -885,13 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="257" selection-end="267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="27" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
@@ -899,16 +882,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reviews/nltk_sources.xml.builder">
+    <entry file="file://$PROJECT_DIR$/lib/amazon.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="210" selection-end="210" vertical-scroll-proportion="-5.0526314">
+        <state line="94" column="0" selection-start="3397" selection-end="4024" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sources/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="653" selection-end="653" vertical-scroll-proportion="0.2797546">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/source.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="71" selection-start="3173" selection-end="3173" vertical-scroll-proportion="0.4220297">
+        <state line="181" column="0" selection-start="5234" selection-end="5324" vertical-scroll-proportion="0.8069307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reviews/nltk_sources.xml.builder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="210" selection-end="210" vertical-scroll-proportion="0.117791414">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="17" selection-start="257" selection-end="267" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sources/show_product.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="103" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.5153374">
           <folding />
         </state>
       </provider>

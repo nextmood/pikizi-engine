@@ -1,7 +1,7 @@
 <h1><%= @source %></h1>
 <table border="1">
   <tr>
-    <th><%= link_to("#{@source.nb_products} products", "/sources/search/#{@source.id}", :class => "pkz_link") %></th>
+    <th><%= pluralize(@source.nb_products, "product") %> <%= link_to("add product", "/sources/search/#{@source.id}", :class => "pkz_link pkz_next pkz_small") %></th>
     <th>release on</th>
     <th><%= @source.nb_reviews %> reviews</th>
     <th>last review</th>
