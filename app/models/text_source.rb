@@ -20,20 +20,6 @@ class TextSource      # (this is the review)
 
   end
 
-  def cleanup_plain_text(text)
-
-    def remove_extra_whitespace text
-      text = text.gsub(/\s{2,}|\t|\n/,' ')
-      text
-    end
-
-    text.gsub!('>', '> ')
-    if text.index('<')
-      text = HTML::FullSanitizer.new.sanitize(text)
-    end
-    remove_extra_whitespace(text)
-  end
-
 
 end
 
@@ -60,7 +46,7 @@ end
 
 class TextSentence < TextTag
   key :index_paragraph, Integer # in which paragraph is this sentence
-  def paragraph() _parent.paragraphs[index_paragraph]
+  def paragraph() _parent.paragraphs[index_paragraph] end
   def tokens() text_tags.select { |tt| tt.is_a?(TextToken) } end
 end
 

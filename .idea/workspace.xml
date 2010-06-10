@@ -27,10 +27,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="reviews_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="100" selection-start="794" selection-end="794" vertical-scroll-proportion="0.3816794">
+            <state line="25" column="100" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text_source.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/text_source.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="57" selection-start="941" selection-end="941" vertical-scroll-proportion="0.610687">
               <folding />
             </state>
           </provider>
@@ -76,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/amazon.rb" />
         <option value="$PROJECT_DIR$/config/initializers/database.rb" />
         <option value="$PROJECT_DIR$/app/controllers/source_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/source/index.html.erb" />
@@ -92,6 +100,7 @@
         <option value="$PROJECT_DIR$/app/models/opinion.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/models/text_source.rb" />
       </list>
     </option>
   </component>
@@ -794,7 +803,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="100" selection-start="794" selection-end="794" vertical-scroll-proportion="0.3816794">
+        <state line="25" column="100" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/text_source.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="57" selection-start="941" selection-end="941" vertical-scroll-proportion="0.610687">
           <folding />
         </state>
       </provider>
