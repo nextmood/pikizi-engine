@@ -1,0 +1,14 @@
+<% form_tag "/sources/search/#{@source.id}" do -%>
+    <%= text_field_tag :query_string, @query_string, :size => 50 %>
+    <%= submit_tag "search", :class => "pkz_next" %>
+<% end -%>
+
+<% if @results_as_source_products %>
+    <table border="1">
+        <% for source_product in @results_as_source_products %>
+          <tr>
+            <td><%= link_2_product(source_product, :sid => source_product.sid) %></td>
+          </tr>
+        <% end %>
+    </table>
+<% end %>

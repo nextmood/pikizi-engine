@@ -274,7 +274,8 @@ class Opinion < Root
     if censor_date
       node_opinion << (node_censor = XML::Node.new("reviewed"))
       node_censor["date"] = censor_date.to_s
-      node_censor["by"] = User.find(censor_author_id).rpx_username
+      puts "censor_id=#{censor_author_id.inspect}"
+      node_censor["by"] = censor_author_id ? User.find(censor_author_id).rpx_username : "????"
       node_censor["is_neutral"] = "true" if censor_neutral
       node_censor << censor_comment
     end

@@ -1,0 +1,16 @@
+<h1>TextMining Sources</h1>
+
+<table>
+  <tr>
+    <th>Source</th>
+    <th>nb products</th>
+    <th>nb reviews</th>
+  </tr>
+    <% for source in @sources %>
+      <tr>
+        <td><%= link_to(source, source_path(source), :class => "pkz_link") %></td>
+        <td><%= source.nb_products %></td>
+        <td><%= source.nb_reviews %></td>
+      </tr>
+    <% end %>
+</table>

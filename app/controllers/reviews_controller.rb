@@ -20,6 +20,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # return a xml file of revies
+  def nltk_sources
+    @reviews = Review.all(:limit => 3, :category => "amazon", :state => "to_analyze")
+    render(:xml => @reviews )
+  end
+
   # GET /reviews/:review_id
   def show
     @review = Review.find(params[:id])

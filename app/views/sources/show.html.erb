@@ -1,0 +1,19 @@
+<h1><%= @source %></h1>
+<table border="1">
+  <tr>
+    <th><%= link_to("#{@source.nb_products} products", "/sources/search/#{@source.id}", :class => "pkz_link") %></th>
+    <th>release on</th>
+    <th><%= @source.nb_reviews %> reviews</th>
+    <th>last review</th>
+    
+  </tr>
+    <% for source_product in @source.source_products %>
+      <tr>
+        <td><%= link_2_product(source_product) %></td>
+        <td><%= pkz_date(source_product.written_at) %></td>
+        <td><%= source_product.nb_reviews %></td>
+        <td><%= pkz_date(source_product.written_at) %></td>
+      </tr>
+    <% end %>
+</table>
+

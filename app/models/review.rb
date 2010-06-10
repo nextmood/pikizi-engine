@@ -10,7 +10,7 @@ class Review < Root
   key :source, String # amazon, user, expert, etc...
   key :source_url, String # external url for the review
 
-  key :written_at, Date
+  key :written_at, Date, :index => true
 
   key :summary, String # summary of the review
   key :content, String # full content

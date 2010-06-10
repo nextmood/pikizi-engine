@@ -72,7 +72,6 @@ class ApiAmazon
   Amazon::Ecs.options = {:aWS_access_key_id => "1PR0S6RKJ4MHVNWDMK82", :aWS_secret_key => "ddcdZLkvJ9YQpySTwJiVEbrZI7w2zPZxz1Uz/2fs" }
   Amazon::Ecs.debug = true
   AMAZON_STORE = "All"
-  NB_MAX_PAGES_REVIEW = 100
 
   def self.get_amazon_products(query_string)
     res = Amazon::Ecs.item_search(query_string, :type => "Keywords", :search_index => AMAZON_STORE, :response_group => 'Small')
@@ -131,8 +130,9 @@ class ApiAmazon
     if (item = res.first_item) and reviews = item/'review'
       total_nb_pages = item.get('customerreviews/totalreviewpages').to_i
       reviews.each do |review|
-        written_at = DateTime.parse(ApiAmazon.parse_amazon_element(review,'date', :html))
-        if written_at > written_after
+        written_at = Time.parse(ApiAmazon.parse_amazon_element(review,'date', :html))
+        raise "no date .... amazon" unless written_at
+        if written_after.nil? or written_at > written_after
           amazon_reviews << { :rating => ApiAmazon.parse_amazon_element(review,'rating', :html),
                               :helpfulvotes =>  ApiAmazon.parse_amazon_element(review,'helpfulvotes', :html),
                               :customerid => ApiAmazon.parse_amazon_element(review,'customerid', :html),
