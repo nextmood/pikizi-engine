@@ -21,10 +21,15 @@ class ReviewsController < ApplicationController
   end
 
   # return a xml file of revies
+  # /reviews/nltk_sources.xml
   def nltk_sources
     @reviews = Review.all(:limit => 3, :category => "amazon", :state => "to_analyze")
-    render(:xml => Rcollection.new(@current_user.rpx_username, "xml output #{Time.now}", @reviews) )
+    respond_to do |format|
+      format.html # nltk_sources.html.erb
+      format.xml # nltk_sources.xml.builder
+    end
   end
+
 
   # GET /reviews/:review_id
   def show

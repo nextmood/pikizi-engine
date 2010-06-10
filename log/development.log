@@ -4,3 +4,334 @@ Processing LandingController#index (for 127.0.0.1 at 2010-06-10 15:48:52) [GET]
 Rendering template within layouts/landing
 Rendering landing/index
 Completed in 61ms (View: 60 | 200 OK [http://localhost/]
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 15:57:18) [GET]
+Completed in 251ms (View: 187 | 200 OK [http://localhost/reviews/nltk_sources]
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 15:57:27) [GET]
+Completed in 264ms (View: 203 | 200 OK [http://localhost/reviews/nltk_sources]
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 15:58:13) [GET]
+
+ActionView::MissingTemplate (Missing template reviews/nltk_sources.erb in view path app/views:vendor/plugins/mongo_admin/app/views:vendor/plugins/easy-fckeditor/app/views):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 15:58:19) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/nltk_sources.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 15:59:27) [GET]
+
+ActionView::MissingTemplate (Missing template reviews/nltk_sources.erb in view path app/views:vendor/plugins/mongo_admin/app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/reviews_controller.rb:27:in `nltk_sources'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 15:59:38) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/nltk_sources.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 16:00:37) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/nltk_sources.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 16:00:45) [GET]
+Rendering template within layouts/application
+Rendering reviews/nltk_sources
+Completed in 424ms (View: 121 | 200 OK [http://localhost/reviews/nltk_sources]
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:03:12) [GET]
+Rendering reviews/nltk_sources
+Completed in 259ms (View: 7 | 200 OK [http://localhost/nltk_sources]
+
+
+Processing ReviewsController#nltk_sources (for 127.0.0.1 at 2010-06-10 16:04:37) [GET]
+
+ActionView::MissingTemplate (Missing template reviews/nltk_sources.erb in view path app/views:vendor/plugins/mongo_admin/app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/reviews_controller.rb:27:in `nltk_sources'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 16:08:02) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/nltk_sources.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:09:09) [GET]
+Rendering reviews/nltk_sources
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/reviews_controller.rb:31:in `nltk_sources'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:09:30) [GET]
+Rendering reviews/nltk_sources
+Completed in 297ms (View: 9 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 16:09:41) [GET]
+
+ActionController::RoutingError (No route matches "/reviews/nltk_sources.xml" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:09:47) [GET]
+Rendering reviews/nltk_sources
+Completed in 120ms (View: 2 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:10:36) [GET]
+Rendering reviews/nltk_sources
+Completed in 123ms (View: 5 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:12:50) [GET]
+Rendering reviews/nltk_sources
+Completed in 122ms (View: 59 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:14:23) [GET]
+Rendering reviews/nltk_sources
+Completed in 128ms (View: 2 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:16:41) [GET]
+Rendering reviews/nltk_sources
+
+ActionView::TemplateError (undefined local variable or method `written_at' for #<ActionView::Base:0x102d484f8>) on line #5 of app/views/reviews/nltk_sources.xml.builder:
+2: 
+3: xml.reviews do
+4:   @reviews.each do |review|
+5:     xml.review("id" => review.id.to_s, "by" => review.author, "written_at" => written_at.to_s) do
+6:       xml.body review.content
+7:     end
+8:   end
+
+    app/views/reviews/nltk_sources.xml.builder:5:in `_run_builder_app47views47reviews47nltk_sources46xml46builder'
+    app/views/reviews/nltk_sources.xml.builder:4:in `each'
+    app/views/reviews/nltk_sources.xml.builder:4:in `_run_builder_app47views47reviews47nltk_sources46xml46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/reviews/nltk_sources.xml.builder:3:in `_run_builder_app47views47reviews47nltk_sources46xml46builder'
+    app/controllers/reviews_controller.rb:27:in `nltk_sources'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (100.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#nltk_sources to xml (for 127.0.0.1 at 2010-06-10 16:16:53) [GET]
+Rendering reviews/nltk_sources
+Completed in 157ms (View: 5 | 200 OK [http://localhost/nltk_sources.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 16:17:44) [GET]
+
+ActionController::RoutingError (No route matches "/source" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing SourcesController#index (for 127.0.0.1 at 2010-06-10 16:17:49) [GET]
+Rendering template within layouts/application
+Rendering sources/index
+Completed in 501ms (View: 458 | 200 OK [http://localhost/sources]
+
+
+Processing SourcesController#show (for 127.0.0.1 at 2010-06-10 16:17:53) [GET]
+  Parameters: {"id"=>"4c0e3c9ae2c6d6034c000001"}
+Rendering template within layouts/application
+Rendering sources/show
+Completed in 963ms (View: 843 | 200 OK [http://localhost/sources/4c0e3c9ae2c6d6034c000001]
+
+
+Processing SourcesController#show_product (for 127.0.0.1 at 2010-06-10 16:18:05) [GET]
+  Parameters: {"id"=>"4c0e3ccce2c6d6034c000037"}
+Rendering template within layouts/application
+Rendering sources/show_product
+Completed in 152ms (View: 24 | 200 OK [http://localhost/sources/show_product/4c0e3ccce2c6d6034c000037]
+
+
+Processing SourcesController#show (for 127.0.0.1 at 2010-06-10 16:18:36) [GET]
+  Parameters: {"id"=>"4c0e3c9ae2c6d6034c000001"}
+Rendering template within layouts/application
+Rendering sources/show
+Completed in 709ms (View: 584 | 200 OK [http://localhost/sources/4c0e3c9ae2c6d6034c000001]
+
+
+Processing SourcesController#search (for 127.0.0.1 at 2010-06-10 16:18:39) [GET]
+  Parameters: {"id"=>"4c0e3c9ae2c6d6034c000001"}
+Rendering template within layouts/application
+Rendering sources/search
+Completed in 67ms (View: 25 | 200 OK [http://localhost/sources/search/4c0e3c9ae2c6d6034c000001]
+
+
+Processing SourcesController#show_product (for 127.0.0.1 at 2010-06-10 16:18:45) [GET]
+  Parameters: {"id"=>"4c0e3cb8e2c6d6034c000022"}
+Rendering template within layouts/application
+Rendering sources/show_product
+Completed in 65ms (View: 22 | 200 OK [http://localhost/sources/show_product/4c0e3cb8e2c6d6034c000022]
+
+
+Processing SourcesController#show_product (for 127.0.0.1 at 2010-06-10 16:19:12) [GET]
+  Parameters: {"id"=>"4c0e3cb8e2c6d6034c000022"}
+Rendering template within layouts/application
+Rendering sources/show_product
+Completed in 155ms (View: 22 | 200 OK [http://localhost/sources/show_product/4c0e3cb8e2c6d6034c000022]

@@ -41,6 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/question_incr_weight/:knowledge_idurl/:question_idurl", :controller => 'questions', :action => 'update_weight', :delta => 1
   map.connect "/question_decr_weight/:knowledge_idurl/:question_idurl", :controller => 'questions', :action => 'update_weight', :delta => -1
 
+  map.connect "/nltk_sources.:format", :controller => "reviews", :action => "nltk_sources"
   map.resources :sources
 
   # The priority is based upon order of creation: first created -> highest priority.

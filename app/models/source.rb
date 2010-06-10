@@ -110,7 +110,7 @@ class SourceAmazon < Source
 
   def add_product(amazon_id)
     begin
-      source_product_amazon =  get_source_product_from_online(amazon_id, true)
+      source_product_amazon =  get_source_product_from_online(amazon_id)
       source_product_amazon.save
       super(source_product_amazon)
     rescue
