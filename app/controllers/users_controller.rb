@@ -92,7 +92,7 @@ class UsersController < ApplicationController
         redirect_to "/thanks/#{logged_user.id}/#{is_new_user}"
       end
     rescue Exception => e
-      logger.warning "error while loggin #{e.message}"
+      logger.error "error while logging #{e.message}"
       redirect_to '/'  
     end
 
