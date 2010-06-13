@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   # get the current logged user, the active record object
   def get_logged_user()
     begin
+      puts "session[:logged_user_id]=#{session[:logged_user_id].inspect}"
       if session[:logged_user_id]
         @current_user ||= User.find(session[:logged_user_id])
       end
@@ -54,7 +55,8 @@ class ApplicationController < ActionController::Base
     elsif ENV['RAILS_ENV'] == "development"
         log_as_developper
     else
-        redirect_to '/login'
+      puts "there is no current user"
+      redirect_to '/login'
     end
   end
 
