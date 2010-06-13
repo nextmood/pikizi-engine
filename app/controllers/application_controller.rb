@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
     elsif ENV['RAILS_ENV'] == "development"
         log_as_developper
     else
-      puts "there is no current user"
+      logger.warning "there is no current user"      
       redirect_to '/login'
     end
   end

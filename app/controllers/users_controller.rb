@@ -91,7 +91,8 @@ class UsersController < ApplicationController
       else
         redirect_to "/thanks/#{logged_user.id}/#{is_new_user}"
       end
-    rescue
+    rescue Exception => e
+      logger.warning "error while loggin #{e.message}"
       redirect_to '/'  
     end
 
@@ -108,7 +109,7 @@ class UsersController < ApplicationController
   # update selection of products for current_user
   def update_selection
     session[:product_ids_selected] = params[:product_ids_selected].collect { |pid_select| BSON::ObjectID.from_string(pid_select) }
-    puts "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
+    logger.info "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
     redirect_to(params[:url_redirect])
   end
   
