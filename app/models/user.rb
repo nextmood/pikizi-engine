@@ -56,7 +56,6 @@ class User < Root
       user.quizze_instances << QuizInstance.initialize.from_xml(node_quizze_instance)
     end
     user.save
-    user.link_back
     user
   end
 
@@ -88,7 +87,7 @@ class User < Root
     User.create( options )
   end
   # load a user object from an idurl  or a mongo db_id
-  def link_back() quizze_instances.each { |quizze_instance| quizze_instance.link_back(self) } end
+  def link_back() self end
 
   def generate_xml(top_node)
     node_user = super(top_node)
