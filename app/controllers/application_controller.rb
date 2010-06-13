@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find(session[:logged_user_id])
       end
     rescue
-      #logger.error "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
+      logger.warn "Oups I'can't find user with id=#{session[:logged_user_id].inspect}"
       nil
     end
   end
