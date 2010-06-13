@@ -94,7 +94,7 @@ class UsersController < ApplicationController
     #rescue Exception => e
     #  logger.error "error while logging #{e.message}"
     #  redirect_to '/'  
-    end
+    #end
 
   end
 
