@@ -196,7 +196,7 @@ class KnowledgesController < ApplicationController
   # GET /aggregations/:knowledge_idurl/model/:product_idurl/[:feature_idurl]
   def aggregations
     @feature = @current_knowledge.get_feature_by_idurl(params[:feature_idurl] || params[:knowledge_idurl])
-    @product = Product.load_db(params[:product_idurl])
+    @product = @current_knowledge.get_product_by_idurl(params[:product_idurl])
     @aggregations = @current_knowledge.get_aggregations(@product)
   end
 

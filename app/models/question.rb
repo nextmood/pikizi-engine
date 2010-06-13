@@ -42,27 +42,9 @@ class Question < Root
   key :distribution_deviation, Hash
 
   many :choices, :polymorphic => true
-  def all_choices() @all_choices ||= (choices.collect { |c| c.question = self; c }) end
   
   timestamps!
 
-
-  # load a question object from an idurl  or a mongo db_id
-  def link_back() choices.each { |choice| choice.link_back(self) } end
-
-
-  # read and create question objects from xml
-  def self.initialize_from_xml(knowledge, xml_node)
-      question = super(xml_node)
-      question.knowledge_idurl = knowledge.idurl
-      question.is_choice_exclusive = (xml_node['is_exclusive'] == 'true' ? true : false)
-      question.extra = xml_node['extra']
-      question.dimension = xml_node['dimension'] || "unknown"
-      question.weight = Float(xml_node['weight'] || 1.0)
-      question.precondition = xml_node['precondition']
-      question.read_xml_list(xml_node, "Choice")
-      question.save
-  end
 
   def is_filter() extra == "filter" end
   def is_polling() extra == "polling" end
@@ -223,11 +205,7 @@ class Choice < Root
   key :pidurl2weight, Pidurl2Weight
 
 
-  attr_accessor :question
-
-  def link_back(question)
-    self.question = question
-  end
+  def question() self._parent_document end
 
 
   def nb_ko() @nb_ko ||= (question.nb_presentation - question.nb_oo - nb_ok) end
@@ -237,13 +215,6 @@ class Choice < Root
   NB_ANSWERS_4_MAX_CONFIDENCE = 5.0
   # confidence on proba
   def confidence() [NB_ANSWERS_4_MAX_CONFIDENCE, nb_ok + nb_ko].min / NB_ANSWERS_4_MAX_CONFIDENCE end
-
-  def self.initialize_from_xml(xml_node)
-    choice = super(xml_node)
-    choice.intensity = Evaluator.intensity2float(xml_node['intensity'] || "very_high")
-    choice.recommendation = xml_node['recommendation']
-    choice
-  end
 
   def generate_xml(top_node)
     node_choice = super(top_node)

@@ -33,7 +33,7 @@ class Offer
     end
 
     Offer.delete_all
-    knowledge = Knowledge.first.link_back
+    knowledge = Knowledge.first
     
     features_idurls = ["unsubsidized_price",
                        "special_carrier_promotion",

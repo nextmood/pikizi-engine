@@ -29,7 +29,7 @@
           </div>
 
           <div style="margin-bottom:10px;">
-              <% for choice in next_question.all_choices %>
+              <% for choice in next_question.choices %>
                   <% if next_question.is_choice_exclusive %>
                     <%= radio_button_tag "choices_idurls_ok[]", choice.idurl %>
                   <% else %>

@@ -1,44 +1,6 @@
 namespace :pikizi do
 
-  desc "reset the Database"
-  task :reset_db => :environment do
 
-    Question.delete_all
-    Quizze.delete_all
-    Product.delete_all
-    Opinion.delete_all
-    Review.delete_all
-    Paragraph.delete_all
-    Knowledge.delete_all
-
-    User.delete_all
-    User.create_default_users
-
-#    User.all.each do |user|
-#      user.quizze_instances = []
-#      user.reviews = []
-#      user.save
-#    end
-
-    k = Knowledge.initialize_from_xml(ENV.include?("name") ? ENV['name'] : "cell_phones")
-
-    # create all reviews from xml located in domain/reviews directory
-    #Review::FileXml.create_with_opinions(k)
-
-    # create all reviews from amazon web site for all products
-
-    compute_ratings(k)
-
-    "database reset"
-  end
-
-  desc "Load a domain"
-  task :domain_load_xml => :environment do
-    unless ENV.include?("name")
-      raise "usage: rake pikizi::load_domain name= a directory name in public/domains"
-    end
-    Knowledge.initialize_from_xml(ENV['name'])
-  end
 
   desc "Check consistency of a domain"
   task :domain_quality_check => :environment do
@@ -98,7 +60,7 @@ namespace :pikizi do
     questions.each do |question|
       hash_q_counter_presentation[question.idurl] = {:presentation => 0, :oo => 0}
       hash_q_c_counter_ok[question.idurl] = {}
-      question.all_choices.each do |choice|
+      question.choices.each do |choice|
         hash_q_c_counter_ok[question.idurl][choice.idurl] = 0
       end
     end
@@ -206,7 +168,7 @@ namespace :pikizi do
 
   def get_knowledge
     knowledge_idurl = ENV.include?("name") ? ENV['name'] : "cell_phones"
-    Knowledge.load_db(knowledge_idurl)
+    Knowledge.first(:idurl => knowledge_idurl)
   end
 
 
@@ -217,7 +179,7 @@ namespace :pikizi do
       # recompute weights, compute distribution and save the question
       question.generate_choices_pidurl2weight(knowledge)
       # quality check
-      question.all_choices.each { |choice| choice.pidurl2weight.check_01 }
+      question.choices.each { |choice| choice.pidurl2weight.check_01 }
     end
 
     # pre compute number of questions, reviews, quizzes, products etc... and save the knowledge

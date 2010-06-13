@@ -29,7 +29,7 @@ class TextInterval
   key :from_char, Integer
   key :to_char, Integer
 
-  def to_s() _parent.content_normalized[from_char, to_char] end
+  def to_s() _parent_document.content_normalized[from_char, to_char] end
 
 end
 
@@ -46,7 +46,7 @@ end
 
 class TextSentence < TextTag
   key :index_paragraph, Integer # in which paragraph is this sentence
-  def paragraph() _parent.paragraphs[index_paragraph] end
+  def paragraph() _parent_document.paragraphs[index_paragraph] end
   def tokens() text_tags.select { |tt| tt.is_a?(TextToken) } end
 end
 

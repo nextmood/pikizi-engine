@@ -1,0 +1,1133 @@
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-06-13 17:20:59) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 124ms (View: 119 | 200 OK [http://localhost/]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-06-13 17:21:05) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 2655ms (View: 1537 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#start_quizze (for 127.0.0.1 at 2010-06-13 17:21:11) [GET]
+  Parameters: {"quizze_id"=>"4b892a7043a76d7c3f000276"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 1679ms | 302 Found [http://localhost/start_quiz/4b892a7043a76d7c3f000276]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:21:13) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+
+ActionView::TemplateError (undefined method `question=' for #<Choice:0x102b77188>) on line #18 of app/views/home/my_quiz.html.erb:
+15:           <h2><%= "#{@quizze_instance.nb_answers + 1}. #{next_question.label}"%> <%= link_to("more..." , "/questions/#{@current_knowledge.idurl}/#{next_question.idurl}", :style=>"font-size:40%;") if @current_user.role == "admin" %></h2>
+16: 
+17:           <ul class="advisors">
+18:             <% last_choice = (choices = next_question.all_choices).last %>
+19:             <% for choice in choices %>
+20:                 <li <%= "class=\"last\"" if choice == last_choice%>>
+21:                     <%= image_tag("/domains/#{@current_knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}") if choice.url_image %>
+
+    app/models/question.rb:45:in `all_choices'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `collect'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    app/models/question.rb:45:in `all_choices'
+    app/views/home/my_quiz.html.erb:18
+    app/views/home/my_quiz.html.erb:9
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (149.6ms)
+Rendered rescues/_request_and_response (4.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:24:04) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 4358ms (View: 4007 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-06-13 17:24:12) [POST]
+  Parameters: {"quizze_idurl"=>"all_cell_phone_advisor", "authenticity_token"=>"+wBufsvq7JytUX5S3bQsVNFOBw/1KbLXnIM7uy97Eck=", "choices_idurls_ok"=>["maybe"], "question_idurl"=>"q18_physical_keyboard", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 1820ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:24:14) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 2406ms (View: 2002 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#record_my_answer (for 127.0.0.1 at 2010-06-13 17:24:21) [POST]
+  Parameters: {"quizze_idurl"=>"all_cell_phone_advisor", "authenticity_token"=>"+wBufsvq7JytUX5S3bQsVNFOBw/1KbLXnIM7uy97Eck=", "choices_idurls_ok"=>["motorola", "nokia"], "question_idurl"=>"q6_favorite_brand", "knowledge_idurl"=>"cell_phones"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 1657ms | 302 Found [http://localhost/record_my_answer]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:24:23) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 2322ms (View: 1920 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#my_results (for 127.0.0.1 at 2010-06-13 17:24:30) [GET]
+Rendering template within layouts/application
+Rendering home/my_results
+Rendered home/_my_product_fit (425.2ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.6ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.5ms)
+Rendered home/_my_product_fit (0.4ms)
+Completed in 3297ms (View: 2464 | 200 OK [http://localhost/my_results]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:34) [GET]
+  Parameters: {"id"=>"4ba78e7e43a76d710b000c65"}
+Sending data 
+Completed in 562ms (View: 35 | 200 OK [http://localhost/medias/datas/4ba78e7e43a76d710b000c65]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:35) [GET]
+  Parameters: {"id"=>"4ba78f1643a76d710b0011e0"}
+Sending data 
+Completed in 171ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78f1643a76d710b0011e0]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:35) [GET]
+  Parameters: {"id"=>"4ba78f0443a76d710b00112e"}
+Sending data 
+Completed in 595ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78f0443a76d710b00112e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:36) [GET]
+  Parameters: {"id"=>"4ba78dae43a76d710b000453"}
+Sending data 
+Completed in 411ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78dae43a76d710b000453]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:37) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b0003a0"}
+Sending data 
+Completed in 172ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b0003a0]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:37) [GET]
+  Parameters: {"id"=>"4ba78ed943a76d710b000f77"}
+Sending data 
+Completed in 400ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78ed943a76d710b000f77]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:38) [GET]
+  Parameters: {"id"=>"4ba78ea243a76d710b000d77"}
+Sending data 
+Completed in 511ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78ea243a76d710b000d77]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:38) [GET]
+  Parameters: {"id"=>"4ba78ee343a76d710b000fd1"}
+Sending data 
+Completed in 436ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78ee343a76d710b000fd1]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:39) [GET]
+  Parameters: {"id"=>"4ba78d8243a76d710b000276"}
+Sending data 
+Completed in 402ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78d8243a76d710b000276]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:39) [GET]
+  Parameters: {"id"=>"4ba78dd843a76d710b00060a"}
+Sending data 
+Completed in 600ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78dd843a76d710b00060a]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:40) [GET]
+  Parameters: {"id"=>"4ba78d8843a76d710b0002b5"}
+Sending data 
+Completed in 438ms (View: 3 | 200 OK [http://localhost/medias/datas/4ba78d8843a76d710b0002b5]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:24:40) [GET]
+  Parameters: {"id"=>"4ba78d9643a76d710b000354"}
+Sending data 
+Completed in 172ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9643a76d710b000354]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:24:41) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 2250ms (View: 2090 | 200 OK [http://localhost/my_quiz]
+
+
+Processing HomeController#quizzes (for 127.0.0.1 at 2010-06-13 17:24:45) [GET]
+Rendering template within layouts/application
+Rendering home/quizzes
+Completed in 210ms (View: 58 | 200 OK [http://localhost/home]
+
+
+Processing HomeController#start_quizze (for 127.0.0.1 at 2010-06-13 17:24:48) [GET]
+  Parameters: {"quizze_id"=>"4b892a7043a76d7c3f000277"}
+Redirected to http://localhost:3000/my_quiz
+Completed in 1804ms | 302 Found [http://localhost/start_quiz/4b892a7043a76d7c3f000277]
+
+
+Processing HomeController#my_quiz (for 127.0.0.1 at 2010-06-13 17:24:50) [GET]
+Rendering template within layouts/application
+Rendering home/my_quiz
+Completed in 2546ms (View: 2357 | 200 OK [http://localhost/my_quiz]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-06-13 17:24:53) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Rendered opinions/_list (6896.5ms)
+Completed in 9866ms (View: 8137 | 200 OK [http://localhost/opinions]
+
+
+Processing KnowledgesController#dimensions_list (for 127.0.0.1 at 2010-06-13 17:25:54) [GET]
+Rendering template within layouts/application
+Rendering knowledges/dimensions_list
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (544.3ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (3308.6ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (4124.1ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (0.2ms)
+Rendered knowledges/_dimensions (2351.1ms)
+Rendered knowledges/_dimensions (10487.0ms)
+Rendered knowledges/_dimensions (15229.4ms)
+Completed in 16071ms (View: 15869 | 200 OK [http://localhost/dimensions_list]
+
+
+Processing KnowledgesController#edit_dimension_usages_open (for 127.0.0.1 at 2010-06-13 17:26:18) [POST]
+  Parameters: {"authenticity_token"=>"+wBufsvq7JytUX5S3bQsVNFOBw/1KbLXnIM7uy97Eck=", "id"=>"4bb8714c43a76d3d03000015", "_"=>""}
+Rendered knowledges/_dimension_usages (1622.4ms)
+Completed in 1835ms (View: 1640 | 200 OK [http://localhost/knowledges/edit_dimension_usages_open/4bb8714c43a76d3d03000015]
+
+
+Processing KnowledgesController#edit_dimension_opinions_open (for 127.0.0.1 at 2010-06-13 17:26:27) [POST]
+  Parameters: {"authenticity_token"=>"+wBufsvq7JytUX5S3bQsVNFOBw/1KbLXnIM7uy97Eck=", "id"=>"4bb8714c43a76d3d03000015", "_"=>""}
+Rendered knowledges/_dimension_opinions (2897.9ms)
+Completed in 3121ms (View: 2918 | 200 OK [http://localhost/knowledges/edit_dimension_opinions_open/4bb8714c43a76d3d03000015]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-06-13 17:26:39) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering questions/index
+Rendered knowledges/_select_all (18.8ms)
+Rendered knowledges/_products_selection (146.8ms)
+Rendered questions/_short (4.3ms)
+Rendered questions/_discrimination (46.7ms)
+Rendered questions/_short (4.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.6ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (3.9ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (6.4ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (4.2ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (5.3ms)
+Rendered questions/_discrimination (0.4ms)
+Rendered questions/_short (3.3ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.8ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (4.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (4.0ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (4.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (4.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (4.1ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.7ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (2.6ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.0ms)
+Rendered questions/_discrimination (0.3ms)
+Rendered questions/_short (3.6ms)
+Rendered questions/_discrimination (0.4ms)
+Rendered questions/_short (3.2ms)
+Rendered questions/_discrimination (0.2ms)
+Rendered questions/_short (3.6ms)
+Rendered questions/_discrimination (0.2ms)
+Completed in 4423ms (View: 2331 | 200 OK [http://localhost/questions/cell_phones]
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-06-13 17:26:47) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (1.4ms)
+Rendered knowledges/_products_selection (109.6ms)
+Rendered knowledges/_specification_show (5.6ms)
+Rendered knowledges/_specification_value_show (14.7ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_show (2.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.4ms)
+
+ActionView::TemplateError (undefined method `nan?' for true:TrueClass) on line #6 of app/views/knowledges/_show_bis.html.erb:
+3:        <%= render(:partial => "/knowledges/specification_show", :locals => { :specification => specification }) %>
+4:    </td>
+5:    <% for product in products %>
+6:         <td style="background-color:<%= specification.color_from_status(product) %>;" >
+7:               <%= render(:partial => "/knowledges/specification_value_show",
+8:                          :locals => { :specification => specification, :product => product }) %>
+9: 
+
+    app/models/product.rb:164:in `get_value'
+    app/models/specification.rb:152:in `get_value'
+    app/models/specification.rb:130:in `is_relevant'
+    app/models/specification.rb:118:in `color_from_status'
+    app/views/knowledges/_show_bis.html.erb:6
+    app/views/knowledges/_show_bis.html.erb:5:in `each'
+    app/views/knowledges/_show_bis.html.erb:5
+    app/views/knowledges/_show_bis.html.erb:19
+    app/views/knowledges/_show_bis.html.erb:14:in `each'
+    app/views/knowledges/_show_bis.html.erb:14
+    app/views/knowledges/_show_bis.html.erb:19
+    app/views/knowledges/_show_bis.html.erb:14:in `each'
+    app/views/knowledges/_show_bis.html.erb:14
+    app/views/knowledges/_show.html.erb:13
+    app/views/knowledges/_show.html.erb:8:in `each'
+    app/views/knowledges/_show.html.erb:8
+    app/views/knowledges/show.html.erb:20
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (195.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KnowledgesController#show (for 127.0.0.1 at 2010-06-13 17:28:59) [GET]
+  Parameters: {"knowledge_idurl"=>"cell_phones"}
+Rendering template within layouts/application
+Rendering knowledges/show
+Rendered knowledges/_select_all (66.1ms)
+Rendered knowledges/_products_selection (316.1ms)
+Rendered knowledges/_specification_show (5.9ms)
+Rendered knowledges/_specification_value_show (3.7ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (3.6ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (4.8ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_show (0.6ms)
+Rendered knowledges/_specification_value_show (3.7ms)
+Rendered knowledges/_specification_value_show (6.0ms)
+Rendered knowledges/_specification_value_show (3.2ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (7.2ms)
+Rendered knowledges/_show_bis (47.0ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (5.3ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (31.3ms)
+Rendered knowledges/_specification_show (3.4ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (7.6ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_show_bis (42.1ms)
+Rendered knowledges/_show_bis (153.2ms)
+Rendered knowledges/_specification_show (3.0ms)
+Rendered knowledges/_specification_value_show (7.5ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (4.1ms)
+Rendered knowledges/_specification_value_show (6.3ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_show_bis (40.8ms)
+Rendered knowledges/_specification_show (3.2ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (3.0ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_show_bis (27.7ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (23.2ms)
+Rendered knowledges/_show_bis (516.3ms)
+Rendered knowledges/_specification_show (2.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (4.0ms)
+Rendered knowledges/_specification_value_show (203.2ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (226.2ms)
+Rendered knowledges/_show_bis (240.1ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_show_bis (12.1ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_show_bis (21.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (22.3ms)
+Rendered knowledges/_specification_show (4.2ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (3.7ms)
+Rendered knowledges/_show_bis (26.8ms)
+Rendered knowledges/_show_bis (83.8ms)
+Rendered knowledges/_show_bis (925.9ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (2.7ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (30.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (21.5ms)
+Rendered knowledges/_show_bis (77.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (225.9ms)
+Rendered knowledges/_show_bis (238.8ms)
+Rendered knowledges/_show_bis (329.6ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (22.9ms)
+Rendered knowledges/_show_bis (35.2ms)
+Rendered knowledges/_specification_show (1.1ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (17.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (20.9ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (23.6ms)
+Rendered knowledges/_show_bis (57.7ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (20.0ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (18.9ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_show_bis (17.7ms)
+Rendered knowledges/_specification_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (19.7ms)
+Rendered knowledges/_specification_show (1.2ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_show_bis (17.0ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (201.6ms)
+Rendered knowledges/_specification_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (5.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (32.8ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_show_bis (24.6ms)
+Rendered knowledges/_specification_show (3.2ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (29.0ms)
+Rendered knowledges/_show_bis (112.6ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (19.7ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (20.5ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (4.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_show_bis (30.7ms)
+Rendered knowledges/_specification_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (226.5ms)
+Rendered knowledges/_show_bis (281.5ms)
+Rendered knowledges/_show_bis (647.7ms)
+Rendered knowledges/_specification_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (18.6ms)
+Rendered knowledges/_specification_show (2.7ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_show_bis (20.0ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_show_bis (21.9ms)
+Rendered knowledges/_show_bis (33.5ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (27.6ms)
+Rendered knowledges/_specification_show (3.5ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_show_bis (28.2ms)
+Rendered knowledges/_show_bis (78.3ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (215.2ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (25.0ms)
+Rendered knowledges/_show_bis (261.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_show_bis (17.2ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (20.9ms)
+Rendered knowledges/_show_bis (62.2ms)
+Rendered knowledges/_specification_show (1.0ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_show_bis (17.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_show_bis (15.7ms)
+Rendered knowledges/_specification_show (0.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (21.9ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_show_bis (16.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_show_bis (17.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (3.6ms)
+Rendered knowledges/_show_bis (22.9ms)
+Rendered knowledges/_show_bis (188.7ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_show_bis (20.3ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (21.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_specification_value_show (3.4ms)
+Rendered knowledges/_show_bis (21.6ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (22.3ms)
+Rendered knowledges/_show_bis (290.4ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.7ms)
+Rendered knowledges/_specification_value_show (6.8ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (1.5ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (1.8ms)
+Rendered knowledges/_specification_value_show (2.0ms)
+Rendered knowledges/_show_bis (21.6ms)
+Rendered knowledges/_show_bis (39.6ms)
+Rendered knowledges/_specification_show (2.0ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (2.1ms)
+Rendered knowledges/_specification_show (1.9ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.4ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_value_show (1.3ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.8ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_show_bis (22.0ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.5ms)
+Rendered knowledges/_specification_value_show (2.7ms)
+Rendered knowledges/_specification_value_show (2.3ms)
+Rendered knowledges/_show_bis (21.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_specification_value_show (2.4ms)
+Rendered knowledges/_show_bis (282.8ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (3.1ms)
+Rendered knowledges/_specification_value_show (3.0ms)
+Rendered knowledges/_specification_value_show (3.9ms)
+Rendered knowledges/_specification_value_show (2.9ms)
+Rendered knowledges/_show_bis (28.6ms)
+Rendered knowledges/_show_bis (369.5ms)
+Rendered knowledges/_specification_show (0.4ms)
+Rendered knowledges/_specification_value_show (5.0ms)
+Rendered knowledges/_specification_value_show (1.5ms)
+Rendered knowledges/_specification_value_show (3.6ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_show_bis (26.8ms)
+Rendered knowledges/_specification_show (0.5ms)
+Rendered knowledges/_specification_value_show (5.7ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_specification_value_show (1.6ms)
+Rendered knowledges/_show_bis (26.3ms)
+Rendered knowledges/_specification_show (2.2ms)
+Rendered knowledges/_specification_value_show (3.3ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.2ms)
+Rendered knowledges/_specification_value_show (2.6ms)
+Rendered knowledges/_show_bis (32.8ms)
+Rendered knowledges/_show_bis (470.6ms)
+Rendered knowledges/_show_bis (1379.2ms)
+Rendered knowledges/_show (3864.8ms)
+Completed in 13102ms (View: 6558 | 200 OK [http://localhost/show/cell_phones]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-13 17:29:19) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 5050ms (View: 4658 | 200 OK [http://localhost/users]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-06-13 17:29:26) [GET]
+Rendering template within layouts/application
+Rendering reviews/index
+Completed in 9172ms (View: 8393 | 200 OK [http://localhost/reviews]
+
+
+Processing OpinionsController#index (for 127.0.0.1 at 2010-06-13 17:29:38) [GET]
+Rendering template within layouts/application
+Rendering opinions/index
+Rendered opinions/_list (6028.7ms)
+Completed in 7343ms (View: 6352 | 200 OK [http://localhost/opinions]
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-06-13 17:29:48) [GET]
+  Parameters: {"paragraph_id"=>"4bc1265843a76d6f9d000003", "id"=>"4bc1264343a76d6f9d000002", "opinion_id"=>"4bc1277b43a76d6f9d000009"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+
+ActionView::TemplateError (A copy of Product has been removed from the module tree but is still active!) on line #6 of app/views/reviews/_header.html.erb:
+3:     <tr>
+4:       <% for product in review.products %>
+5:         <td valign="top" width="80">
+6:                   <%= link_to(product_image(product), "/product/#{product.idurl}", :title => "similar to=#{product.similar_products.collect(&:label).join(', ')}") %>
+7: 
+8:         </td>
+9:               <% end %>
+
+    app/models/product.rb:54:in `similar_products'
+    app/views/reviews/_header.html.erb:6
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/reviews/_header.html.erb:4
+    app/views/interpretor/edit_review.html.erb:4
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (372.3ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InterpretorController#edit_review (for 127.0.0.1 at 2010-06-13 17:30:07) [GET]
+  Parameters: {"paragraph_id"=>"4bc1265843a76d6f9d000003", "id"=>"4bc1264343a76d6f9d000002", "opinion_id"=>"4bc1277b43a76d6f9d000009"}
+Rendering template within layouts/application
+Rendering interpretor/edit_review
+Rendered reviews/_short (107.8ms)
+Rendered reviews/_header (429.7ms)
+Rendered interpretor/_opinion (342.9ms)
+Rendered interpretor/_opinion (39.7ms)
+Rendered interpretor/_opinion (52.7ms)
+Rendered interpretor/_opinion (35.9ms)
+Rendered interpretor/_opinion (38.7ms)
+Rendered interpretor/_opinion (0.4ms)
+Rendered interpretor/_opinion (37.7ms)
+Rendered interpretor/_dimensions_related (79.9ms)
+Rendered interpretor/_usage_related (12.0ms)
+Rendered interpretor/_usages_related (51.2ms)
+Rendered interpretor/_products_selector_filter (46.5ms)
+Rendered interpretor/_products_selector_filters (64.1ms)
+Rendered interpretor/_products_selector (84.5ms)
+Rendered interpretor/_opinion_selector_rating (98.4ms)
+Rendered interpretor/_paragraph_editor_opinion (443.0ms)
+Completed in 3262ms (View: 1500 | 200 OK [http://localhost/edit_review/4bc1264343a76d6f9d000002/4bc1265843a76d6f9d000003/4bc1277b43a76d6f9d000009]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:30:11) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039c"}
+Sending data 
+Completed in 419ms (View: 30 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039c]
+
+
+Processing HomeController#product (for 127.0.0.1 at 2010-06-13 17:30:14) [GET]
+  Parameters: {"product_idurl"=>"motorola_droid"}
+Rendering template within layouts/application
+Rendering home/product
+Rendered home/_product_details (395.5ms)
+Rendered home/_product_price (88.5ms)
+Rendered home/_product_tab_overview (27.4ms)
+Rendered home/_product_tabs (125.6ms)
+Completed in 2163ms (View: 723 | 200 OK [http://localhost/product/motorola_droid]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:30:17) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b0003a0"}
+Sending data 
+Completed in 523ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b0003a0]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:30:18) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b00039e"}
+Sending data 
+Completed in 380ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b00039e]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:30:18) [GET]
+  Parameters: {"id"=>"4ba78d9c43a76d710b0003a6"}
+Sending data 
+Completed in 378ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9c43a76d710b0003a6]
+
+
+Processing MediasController#datas (for 127.0.0.1 at 2010-06-13 17:30:19) [GET]
+  Parameters: {"id"=>"4ba78d9e43a76d710b0003b0"}
+Sending data 
+Completed in 395ms (View: 2 | 200 OK [http://localhost/medias/datas/4ba78d9e43a76d710b0003b0]
+
+
+Processing HomeController#switch_product_tab (for 127.0.0.1 at 2010-06-13 17:30:19) [POST]
+  Parameters: {"new_tab"=>"ratings", "product_idurl"=>"motorola_droid", "authenticity_token"=>"+wBufsvq7JytUX5S3bQsVNFOBw/1KbLXnIM7uy97Eck=", "knowledge_idurl"=>"cell_phones", "_"=>""}
+Rendered home/_product_tab_ratings_bis (6.1ms)
+Rendered home/_product_tab_ratings_bis (1.8ms)
+Rendered home/_product_tab_ratings_bis (5.9ms)
+Rendered home/_product_tab_ratings_bis (23.0ms)
+Rendered home/_product_tab_ratings_bis (6.1ms)
+Rendered home/_product_tab_ratings_bis (5.9ms)
+Rendered home/_product_tab_ratings_bis (5.8ms)
+Rendered home/_product_tab_ratings_bis (5.9ms)
+Rendered home/_product_tab_ratings_bis (5.7ms)
+Rendered home/_product_tab_ratings_bis (37.9ms)
+Rendered home/_product_tab_ratings_bis (5.9ms)
+Rendered home/_product_tab_ratings_bis (6.3ms)
+Rendered home/_product_tab_ratings_bis (7.1ms)
+Rendered home/_product_tab_ratings_bis (6.0ms)
+Rendered home/_product_tab_ratings_bis (8.3ms)
+Rendered home/_product_tab_ratings_bis (6.2ms)
+Rendered home/_product_tab_ratings_bis (6.2ms)
+Rendered home/_product_tab_ratings_bis (56.7ms)
+Rendered home/_product_tab_ratings_bis (1.8ms)
+Rendered home/_product_tab_ratings_bis (1.9ms)
+Rendered home/_product_tab_ratings_bis (6.2ms)
+Rendered home/_product_tab_ratings_bis (6.1ms)
+Rendered home/_product_tab_ratings_bis (6.2ms)
+Rendered home/_product_tab_ratings_bis (27.2ms)
+Rendered home/_product_tab_ratings_bis (165.4ms)
+Rendered home/_product_tab_ratings (502.2ms)
+Rendered home/_product_tabs (586.2ms)
+Completed in 2327ms (View: 613 | 200 OK [http://localhost/home/switch_product_tab?knowledge_idurl=cell_phones&new_tab=ratings&product_idurl=motorola_droid]

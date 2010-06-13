@@ -3,7 +3,7 @@ require 'mongo_mapper'
 # describe a Dimension
 # this is a hierarchy mechanism
 # see http://railstips.org/blog/archives/2010/02/21/mongomapper-07-identity-map/
-class Dimension
+class Dimension < Feature
 
   include MongoMapper::Document
   #plugin MongoMapper::Plugins::IdentityMap

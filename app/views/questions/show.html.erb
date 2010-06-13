@@ -45,7 +45,7 @@
             <%= link_to_function "toggle xml", "document.getElementById('xml_content').toggle();" %>
           </div>
           <table border=1 width=100%><tr>
-          <% for choice in @question.all_choices %>
+          <% for choice in @question.choices %>
             <td style="background-color:lightblue;" valign="top" >
                 <div style="width:100%; text-align:center; font-weight:bold; border-bottom:1px solid black;" title="<%= choice.idurl %>">
                     <%= @question.is_choice_exclusive ? "<input type='radio'>" : "<input type='checkbox'>" %>

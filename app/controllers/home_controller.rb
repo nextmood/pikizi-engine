@@ -40,19 +40,17 @@ class HomeController < ApplicationController
 
   # POST /record_my_answer
   def record_my_answer
-     knowledge = Knowledge.load_db(knowledge_idurl = params[:knowledge_idurl])
-     quizze = Quizze.load_db(quizze_idurl = params[:quizze_idurl])
-     question = Question.load_db(question_idurl = params[:question_idurl])
+     quizze = Quizze.first(:idurl => (quizze_idurl = params[:quizze_idurl]))
+     question = Question.first(:idurl => (question_idurl = params[:question_idurl]))
      user = get_logged_user
-     user.record_answer(knowledge, quizze, question, params[:choices_idurls_ok])
+     user.record_answer(@current_knowledge, quizze, question, params[:choices_idurls_ok])
      user.save
      redirect_to("/my_quiz")
   end
 
   def my_product()
     if @quizze_instance = get_logged_user.get_latest_quizze_instance
-      product_idurl = params[:product_idurl]
-      @product = Product.load_db(product_idurl)
+      @product = @current_knowledge.get_product_by_idurl(params[:product_idurl])
       @quizze = @quizze_instance.get_quizze
       @sorted_affinities = @quizze_instance.sorted_affinities
       @explanations, @hash_dimension2answers, @hash_question_idurl2min_max_weight = @quizze_instance.get_explanations(@current_knowledge, @sorted_affinities)
@@ -64,8 +62,7 @@ class HomeController < ApplicationController
 
   # GET /product/:product_idurl
   def product
-    product_idurl = params[:product_idurl]
-    @product = Product.load_db(product_idurl)
+    @product = @current_knowledge.get_product_by_idurl(params[:product_idurl])
   end
 
   # GET /products_search
@@ -95,8 +92,7 @@ class HomeController < ApplicationController
 
   # this is rjs
   def switch_product_tab
-    knowledge =  Knowledge.load_db(params[:knowledge_idurl])
-    product = Product.load_db(params[:product_idurl])
+    product = @current_knowledge.get_product_by_idurl(params[:product_idurl])
     selected_key = params[:new_tab]
     render :update do |page|
       page.replace("product_tabs", :partial => "/home/product_tabs", 

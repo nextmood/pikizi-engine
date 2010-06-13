@@ -67,7 +67,7 @@ class Knowledge < Root
 
 
   key :question_idurls, Array
-  #def questions() @questions ||= Question.load_db(question_idurls)  end
+  #def questions() @questions ||= Question.all(:idurl => question_idurls)  end
   def questions_sorted_by_desc_discrimination(pidurls, user=nil)
     questions.sort { |q1, q2| q2.discrimination(user, pidurls) <=> q1.discrimination(user, pidurls) }
   end
@@ -75,7 +75,7 @@ class Knowledge < Root
 
 
   key :quizze_idurls, Array
-  def quizzes() @quizzes ||= Quizze.load_db(quizze_idurls) end
+  def quizzes() @quizzes ||= Quizze.all(:idurl => quizze_idurls) end
 
 
   
@@ -115,57 +115,6 @@ class Knowledge < Root
     true
   end
 
-  # read and create a domain (knowledge + questions, products and quizzes in the database)
-  # this could be called by a rast task
-  # return the newly created knowledge
-  def self.initialize_from_xml(knowledge_idurl)
-    #begin
-      domain_directory = "public/domains/#{knowledge_idurl}"
-      xml_node = open_xml_bis("#{domain_directory}/knowledge/knowledge.xml", knowledge_idurl)
-
-      knowledge = super(xml_node)
-      knowledge.read_xml_list(xml_node, "Feature", :container_tag => 'sub_features')
-      knowledge.link_back
-      knowledge.save
-
-      knowledge.product_idurls = read_children_xml(knowledge, domain_directory, "Product")
-      knowledge.question_idurls = read_children_xml(knowledge, domain_directory, "Question")
-      knowledge.quizze_idurls = read_children_xml(knowledge, domain_directory, "Quizze")
-      knowledge.link_back
-      knowledge.save
-
-      knowledge
-    #rescue Exception => e
-    #  puts "Error #{e.message}"
-    #   puts "Error #{e.backtrace.inspect}"
-    #  nil
-    #end
-  end
-
-  # return a list of sub idurl
-  def self.read_children_xml(knowledge, domain_directory, tag)
-    tag_class = Kernel.const_get(tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
-    get_entries("#{domain_directory}/#{tag_downcase_plural}").inject([]) do |l, sub_idurl|
-      sub_node = open_xml(domain_directory, sub_idurl, tag)
-      tag_class.initialize_from_xml(knowledge, sub_node)
-      l << sub_idurl
-    end
-  end
-
-  def self.open_xml(domain_directory, idurl, tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
-    open_xml_bis("#{domain_directory}/#{tag_downcase_plural}/#{idurl}/#{tag_downcase}.xml", idurl)
-  end
-
-  def self.open_xml_bis(filename, idurl)
-    raise "I can't find: #{filename}" unless File.exist?(filename)
-    xml_node = XML::Document.file(filename).root
-    xml_node['idurl'] = idurl
-    xml_node
-  end
 
   def get_price_min_html(product) get_price_min_max_html(product, :min) end
   def get_price_min_max_html(product, mode = :minmax)
@@ -182,22 +131,7 @@ class Knowledge < Root
   end
 
 
-  # return a list of sub idurl
-  def self.write_children_xml(knowledge, object_idurls, domain_directory, tag)
-    tag_class = Kernel.const_get(tag)
-    tag_downcase = tag.downcase
-    tag_downcase_plural = "#{tag_downcase}s"
 
-    object_idurls.each do |object_idurl|
-      sub_doc = XML::Document.new
-      new_object = tag_class.load_db(object_idurl)
-      new_object.generate_xml(knowledge, sub_doc)
-      domain_tag_directory = "#{domain_directory}/#{tag_downcase_plural}/#{object_idurl}"
-      system("mkdir #{domain_tag_directory}") unless File.exist?(domain_tag_directory)
-      sub_doc.save("#{domain_tag_directory}/#{tag_downcase}.xml")
-    end
-
-  end
 
   # this entry will update the whole xml directories/files
   def generate_xml

@@ -160,7 +160,7 @@ class Product < Root
 
   def get_value(feature_idurl)
     x = hash_feature_idurl_value[feature_idurl]
-    unless x.nil? or x.is_a?(Array)
+    unless x.nil? or !(x.is_a?(Float) or x.is_a?(Integer))
       x = x.nan? ? nil : x
     end
     x
@@ -210,33 +210,6 @@ class Product < Root
   def gallery_image_urls
     path = "/domains/#{knowledge_idurl}/products/#{idurl}/gallery"
     Root.get_entries("public/#{path}").collect { |entry| "#{path}/#{entry}"}.first(3)
-  end
-
-  def self.initialize_from_xml(knowledge, xml_node)
-    product = super(xml_node)
-    product.hash_feature_idurl_value = {}
-    product.knowledge_idurl = knowledge.idurl
-    xml_node.find("Value").each do |node_value|
-      feature_idurl = node_value['idurl']
-      if feature = knowledge.get_feature_by_idurl(feature_idurl)
-        node_value_content = node_value.content.strip
-        begin
-          value = feature.xml2value(node_value_content)
-        rescue
-          value = nil
-          if node_value_content == ""
-            #puts "EMPTY value product=#{product.idurl} feature=#{feature.idurl}"  unless feature.is_optional
-          else
-            puts "ERROR value product=#{product.idurl} feature=#{feature.idurl} xml_value=#{node_value_content.inspect}"
-          end
-        end
-        product.set_value(feature_idurl, value)
-      else
-        puts "**** feature #{feature_idurl} in product #{product.idurl} doesn't exist in knowledge"
-      end
-    end
-    product.save
-    product
   end
 
 

@@ -4,7 +4,7 @@ require 'text'
 # describe a Specification of the product
 # this is a hierarchy mechanism
 # see http://railstips.org/blog/archives/2010/02/21/mongomapper-07-identity-map/
-class Specification
+class Specification < Feature
 
   include MongoMapper::Document
   #plugin MongoMapper::Plugins::IdentityMap
@@ -49,14 +49,6 @@ class Specification
 
   def self.most_common() @@most_common ||= Specification.first(:idurl => "brand"); end
   
-
-  def self.initialize_from_xml(xml_node)
-    feature = super(xml_node)
-    feature.is_optional = xml_node['is_optional']
-    feature.display_flag = xml_node['no-spec'] ? true : false
-    feature.read_xml_list(xml_node, "Specification", :container_tag => 'sub_features')
-    feature
-  end
 
   def generate_xml(top_node)
     node_feature = super(top_node)
@@ -226,13 +218,6 @@ class SpecificationTags < Specification
 
   many :tags
 
-  def self.initialize_from_xml(xml_node)
-    specification_tags = super(xml_node)
-    specification_tags.is_exclusive = (xml_node['is_exclusive'] == "true" ? true : false)
-    specification_tags.read_xml_list(xml_node, "Tag", :container_tag => 'tags')
-    specification_tags
-  end
-
   def generate_xml(top_node)
     node_specification_tag = super(top_node)
     node_specification_tag['is_exclusive'] = is_exclusive.to_s
@@ -350,14 +335,6 @@ class SpecificationRating < Specification
   key :max_rating, Integer, :default => 5
   key :user_category, String, :default => 'user'
 
-  def self.initialize_from_xml(xml_node)
-    specification_rating = super(xml_node)
-    specification_rating.min_rating = Integer(xml_node['min_rating'])
-    specification_rating.max_rating = Integer(xml_node['max_rating'])
-    specification_rating.user_category = xml_node['user_category']
-    specification_rating
-  end
-
   def generate_xml(top_node)
     node_specification_rating = super(top_node)
     node_specification_rating['min_rating'] = min_rating.to_s
@@ -439,15 +416,6 @@ class SpecificationInterval < Specification
   def specification_min() interval.first end
   def specification_max() interval.last end
 
-  def self.initialize_from_xml(xml_node)
-    specification_interval = super(xml_node)
-    specification_interval.class_name = xml_node['class_name']
-    specification_interval.read_xml_list(xml_node, "Specification", :container_tag => 'ranges', :set_method_name => 'interval')
-    specification_interval.interval.size
-    raise "****** error #{xml_node.inspect}" unless specification_interval.interval.size == 2
-    specification_interval
-  end
-
   def generate_xml(top_node)
     node_specification_interval = super(top_node)
     node_specification_interval['class_name'] = class_name
@@ -518,7 +486,6 @@ class SpecificationContinous < Specification
   key :value_max, Object
   key :value_format, String
 
-  # self.initialize_from_xml(xml_node) and generate_xml are defined in sub classes
 
   # ---------------------------------------------------------------------
   # to display the matrix
@@ -567,15 +534,6 @@ end
 
 class SpecificationNumeric < SpecificationContinous
 
-  def self.initialize_from_xml(xml_node)
-    specification_numeric = super(xml_node)
-    specification_numeric.value_min = Float(xml_node['value_min'] || 0.0)
-    specification_numeric.value_max = Float(xml_node['value_max'] || 1000.0)
-    specification_numeric.value_format = xml_node.attributes['format'] || "%.2f"
-    specification_numeric
-  end
-
-  # self.initialize_from_xml(xml_node) is defined in sub classes
   def generate_xml(top_node)
     node_specification_numeric = super(top_node)
     node_specification_numeric['value_min'] = value_min.to_s
@@ -609,16 +567,9 @@ end
 class SpecificationDate < SpecificationContinous
 
   def self.year_in_seconds() 31536000  end # 60 * 60 * 24 * 365
-  def self.initialize_from_xml(xml_node)
-    specification_date = super(xml_node)
-    specification_date.value_min = (date_min = xml_node['value_min']) ?  xml2date(date_min) : Time.now - 10 * SpecificationDate.year_in_seconds
-    specification_date.value_max = (date_max = xml_node['value_max']) ?  xml2date(date_max) : Time.now + 10 * SpecificationDate.year_in_seconds
-    specification_date.value_format = xml_node['format'] || Root.default_datetime_format
-    specification_date
-  end
+
   def self.xml2date(date) Time.parse(date) end
 
-  # self.initialize_from_xml(xml_node) is defined in sub classes
   def generate_xml(top_node)
     node_specification_date = super(top_node)
     node_specification_date['value_min'] = SpecificationDate.date2xml(value_min)
@@ -648,10 +599,6 @@ end
 
 # value is a boolean
 class SpecificationCondition < Specification
-
-  def self.initialize_from_xml(xml_node)
-    specification_condition = super(xml_node)
-  end
 
   def generate_xml(top_node)
     node_specification_condition = super(top_node)
@@ -697,13 +644,6 @@ end
 class SpecificationComputed < Specification
 
   key :formula, String
-
-  def self.initialize_from_xml(xml_node)
-    specification_computed = super(xml_node)
-    specification_computed.formula_string = xml_node['formula']
-    raise "error, no formula" unless specification_computed.formula_string
-    specification_computed
-  end
 
   def generate_xml(top_node)
     node_specification_computed = super(top_node)

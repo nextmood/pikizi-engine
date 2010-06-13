@@ -13,6 +13,17 @@ Knowledge.blueprint do
   label
 end
 
+Specification do
+  idurl
+  label
+end
+
+Rating do
+  idurl
+  label
+end
+
+
 ProductsQueryAtom.blueprint do
   name
   knowledge_id

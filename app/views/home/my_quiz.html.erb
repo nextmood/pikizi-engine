@@ -15,7 +15,7 @@
           <h2><%= "#{@quizze_instance.nb_answers + 1}. #{next_question.label}"%> <%= link_to("more..." , "/questions/#{@current_knowledge.idurl}/#{next_question.idurl}", :style=>"font-size:40%;") if @current_user.role == "admin" %></h2>
 
           <ul class="advisors">
-            <% last_choice = (choices = next_question.all_choices).last %>
+            <% last_choice = (choices = next_question.choices).last %>
             <% for choice in choices %>
                 <li <%= "class=\"last\"" if choice == last_choice%>>
                     <%= image_tag("/domains/#{@current_knowledge.idurl}/questions/#{next_question.idurl}/#{choice.url_image}") if choice.url_image %>

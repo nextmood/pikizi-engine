@@ -20,8 +20,8 @@ class Quizze < Root
 
   timestamps!
 
-  def questions() @questions ||= Question.load_db(question_idurls) end
-  def products() @products ||= Product.load_db(product_idurls) end
+  def questions() @questions ||= Question.all(:idurl => question_idurls) end
+  def products() @products ||= Product.all(:idurl => product_idurls) end
 
   # return all questions within a given dimension
   def questions_4_dimension(dimension) questions.select { |question| question.dimension == dimension } end
@@ -34,22 +34,6 @@ class Quizze < Root
       l
     end
   end
-
-  def self.initialize_from_xml(knowledge, xml_node)
-    quizze = super(xml_node)
-    quizze.knowledge_idurl = knowledge.idurl
-    quizze.main_image_url = xml_node["main_image"]
-    quizze.description_url = xml_node["description"]
-    quizze.product_idurls = read_xml_list_idurl(xml_node, "product_idurls")
-    quizze.product_idurls = knowledge.product_idurls if quizze.product_idurls.size == 0
-
-    quizze.question_idurls = read_xml_list_idurl(xml_node, "question_idurls")
-    quizze.question_idurls = knowledge.question_idurls if quizze.question_idurls.size == 0
-
-    quizze.save
-    quizze
-  end
-
 
 
   def generate_xml(top_node)
