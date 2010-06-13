@@ -12,42 +12,6 @@
   <component name="GemRequirementsHolder" version="2">
     <requirement>
       <requirement>
-        <dependency name="activesupport" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="jnunemaker-validatable" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="machinist" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="machinist_mongomapper" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="mongo" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="mongo_mapper" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source manual="true" />
-    </requirement>
-    <requirement>
-      <requirement>
         <dependency name="mongo_mapper" version="0.7.5" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="config/environment.rb" />
@@ -100,11 +64,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] jnunemaker-validatable (v1.8.4, /Library/Ruby/Gems/1.8/gems/jnunemaker-validatable-1.8.4)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo (v1.0, /Library/Ruby/Gems/1.8/gems/mongo-1.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mongo_mapper (v0.7.5, /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.5)" level="application" />
-    <orderEntry type="library" name="[gem] jnunemaker-validatable (v1.8.1, null)" level="application" />
-    <orderEntry type="library" name="[gem] machinist (v1.0.6, null)" level="application" />
-    <orderEntry type="library" name="[gem] machinist_mongomapper (v1.0.0, null)" level="application" />
-    <orderEntry type="library" name="[gem] mongo (v0.18.2, null)" level="application" />
-    <orderEntry type="library" name="[gem] mongo_mapper (v0.6.10, null)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] machinist (v1.0.6, /Library/Ruby/Gems/1.8/gems/machinist-1.0.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bson_ext (v1.0, /Library/Ruby/Gems/1.8/gems/bson_ext-1.0)" level="application" />
   </component>
 </module>
 
