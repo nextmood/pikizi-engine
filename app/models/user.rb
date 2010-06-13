@@ -42,22 +42,6 @@ class User < Root
   def nb_quizze_instances() quizze_instances.size end
   def nb_reviews() reviews.size end
 
-  def self.initialize_from_xml(xml_node)
-    user = super(xml_node)
-    user.rpx_identifier = xml_node['rpx_identifier']
-    user.rpx_name = xml_node['rpx_name']
-    user.rpx_username = xml_node['rpx_username']
-    user.rpx_email = xml_node['rpx_email']
-    user.idurl = User.compute_idurl(user.rpx_email, user.rpx_identifier)
-    user.role = xml_node['role']
-    user.category = xml_node['category']
-    user.reputation = Float(xml_node['reputation'])
-    xml_node.find("quizze_instances/QuizzeInstance").each do |node_quizze_instance|
-      user.quizze_instances << QuizInstance.initialize.from_xml(node_quizze_instance)
-    end
-    user.save
-    user
-  end
 
   def self.compute_idurl(rpx_email, rpx_identifier=nil)
     rpx_email = nil if rpx_email == ""
@@ -86,8 +70,6 @@ class User < Root
     options[:rpx_name] ||= options[:rpx_username]
     User.create( options )
   end
-  # load a user object from an idurl  or a mongo db_id
-  def link_back() self end
 
   def generate_xml(top_node)
     node_user = super(top_node)
@@ -206,39 +188,22 @@ class QuizzeInstance < Root
 
   attr_accessor :user, :hash_answered_question_answers, :hash_pidurl_affinity
 
-  def user() _parent end
+  def user() _root_document end
   def hash_answered_question_answers
     @hash_answered_question_answers ||= answers.inject({}) do |h, answer|
-      answer.link_back(self)
       (h[answer.question_idurl] ||= []) << answer
       h
     end
   end
   def hash_pidurl_affinity
     @hash_pidurl_affinity ||= affinities.inject({}) do |h, affinity|
-      affinity.link_back(self)
       h[affinity.product_idurl] = affinity
       h
     end
   end
 
-  def get_quizze() @quizze ||= Quizze.load_db(quizze_idurl) end
-  
-  def self.initialize_from_xml(xml_node)
-    quizze_instance = super(xml_node)
-    quizze_instance.quizze_idurl = xml_node['quizze_idurl']
-    xml_node.find("affinities/Affinity").each do |node_affinity|
-      quizze_instance.affinities << Affinity.initialize.from_xml(node_affinity)
-    end
+  def get_quizze() @quizze ||= Quizze.first(:idurl => quizze_idurl) end
 
-    quizze_instance.created_at = Time.parse(xml_node["created_at"])
-    quizze_instance.closed_at = (xml_node["closed_at"] ? Time.parse(xml_node["closed_at"])  : nil)
-
-    xml_node.find("answered/Answer").each do |node_answer|
-      quizze_instance.answers << Answer.initialize_from_xml(node_answer)
-    end
-    quizze_instance
-  end
 
   def generate_xml(top_node)
     node_quizze_instance = super(top_node)
@@ -440,9 +405,7 @@ class Affinity < Root
   key :is_filtered_out, Boolean, :default => false
   key :feedback, Integer, :default => 0
 
-  attr_accessor :quiz_instance
-
-  def link_back(quiz_instance) self.quiz_instance = quiz_instance end
+  def quiz_instance() self._parent_document end
 
   def add(weight, question_weight)
     self.nb_weight += question_weight
@@ -450,17 +413,6 @@ class Affinity < Root
   end
 
   def product(knowledge) knowledge.get_product_by_idurl(product_idurl) end
-
-  def self.initialize_from_xml(xml_node)
-    affinity = super(xml_node)
-    affinity.product_idurl = xml_node['product_idurl']
-    affinity.nb_weight = Float(xml_node['nb_weight'])
-    affinity.sum_weight = Float(xml_node['sum_weight'])
-    affinity.ranking = Integer(xml_node['ranking'] || 0)
-    affinity.is_filtered_out = (xml_node['is_filtered_out'] == "true")
-    affinity.feedback = Integer(xml_node['feedback'] || 0)
-    affinity
-  end
 
   def self.create_product_idurl(product_idurl)
     new_affinity = Affinity.new
@@ -502,18 +454,7 @@ class Answer < Root
   key :choice_idurls_ok, Array
   key :time_stamp, Time
 
-  attr_accessor :quiz_instance
-
-  def link_back(quiz_instance) self.quiz_instance = quiz_instance end
-
-  def self.initialize_from_xml(xml_node)
-    answer = super(xml_node)
-    answer.knowledge_idurl = xml_node["knowledge_idurl"]
-    answer.question_idurl = xml_node["question_idurl"]
-    answer.choice_idurls_ok = xml_node["choice_idurls_ok"].split(',')
-    answer.time_stamp = Time.parse(xml_node["time_stamp"])
-    answer
-  end
+  def quiz_instance() self._document_parent end
 
   def generate_xml(top_node)
     node_answer = super(top_node)

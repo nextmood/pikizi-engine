@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
   # POST /answer
   def record_answer
-     knowledge = Knowledge.load_db(knowledge_idurl = params[:knowledge_idurl])
-     quizze = Quizze.load_db(quizze_idurl = params[:quizze_idurl])
-     question = Question.load_db(question_idurl = params[:question_idurl])
+     knowledge = Knowledge.first(:idurl => (knowledge_idurl = params[:knowledge_idurl]))
+     quizze = Quizze.first(:idurl => (quizze_idurl = params[:quizze_idurl]))
+     question = Question.first(:idurl => (question_idurl = params[:question_idurl]))
      user = get_logged_user
      user.record_answer(knowledge, quizze, question, params[:choices_idurls_ok])
      user.save
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def end_quizze
-    quizze = Quizze.load_db(params[:quizze_idurl])
+    quizze = Quizze.first(:idurl => params[:quizze_idurl])
     user = get_logged_user
     quizze_instance = QuizzeInstance.get_latest_for_quizze(quizze, user)
     raise "no quizze for feedack" unless quizze_instance
@@ -37,13 +37,13 @@ class UsersController < ApplicationController
   end
 
   def show_by_idurl
-    @user = User.load_db(params[:user_idurl])
+    @user = User.first(:idurl => params[:user_idurl])
     render(:action => 'show')
   end
 
   def toggle_role
     user_idurl = params[:user_idurl]
-    user =  User.load_db(user_idurl)
+    user =  User.first(:idurl => user_idurl)
     raise " no user  #{user_idurl}" unless user
     case user.role
       when "unauthorised" then user.role = "tester"
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
       rpx_identifier = rpx_data[:identifier]
       user_idurl = User.compute_idurl(rpx_email, rpx_identifier)
 
-      logged_user = User.load_db(user_idurl)
+      logged_user = User.first(:idurl => user_idurl)
 
       # new user creation
       is_new_user = false
@@ -91,11 +91,10 @@ class UsersController < ApplicationController
       else
         redirect_to "/thanks/#{logged_user.id}/#{is_new_user}"
       end
-    rescue Exception => e
-      logger.error "error while logging #{e.message}"
-      logger.error ">>>>>>>>>>>>trace  #{e.backtrace.inspect}"
-      redirect_to '/'
+    rescue
+      redirect_to '/'  
     end
+
   end
 
   def logout
@@ -109,7 +108,7 @@ class UsersController < ApplicationController
   # update selection of products for current_user
   def update_selection
     session[:product_ids_selected] = params[:product_ids_selected].collect { |pid_select| BSON::ObjectID.from_string(pid_select) }
-    logger.info "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
+    puts "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
     redirect_to(params[:url_redirect])
   end
   
