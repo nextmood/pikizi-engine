@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   # get the current logged user, the active record object
   def get_logged_user()
     begin
-      puts "session[:logged_user_id]=#{session[:logged_user_id].inspect}"
+      logger.warning "session[:logged_user_id]=#{session[:logged_user_id].inspect}"
       if session[:logged_user_id]
         @current_user ||= User.find(session[:logged_user_id])
       end
