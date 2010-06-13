@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     @quizzes = @current_knowledge.quizzes
   end
 
-  # GET /start_quiz/:quizze_id
+  # GET /start_quizze/:quizze_id
   # create a new quiz for the current user
   def start_quizze
     quizze = Quizze.find(params[:quizze_id])

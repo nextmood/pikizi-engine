@@ -192,6 +192,7 @@ end
 # handles the dialog with the user
 # this is the interactive stuff
 # this is the origin of any kind of record method
+# parent is the user
 class QuizzeInstance < Root
 
   include MongoMapper::EmbeddedDocument
@@ -206,14 +207,16 @@ class QuizzeInstance < Root
 
   attr_accessor :user, :hash_answered_question_answers, :hash_pidurl_affinity
 
-  def link_back(user)
-    self.user = user
-    self.hash_answered_question_answers  = answers.inject({}) do |h, answer|
+  def user() _parent end
+  def hash_answered_question_answers
+    @hash_answered_question_answers ||= answers.inject({}) do |h, answer|
       answer.link_back(self)
       (h[answer.question_idurl] ||= []) << answer
       h
     end
-    self.hash_pidurl_affinity  = affinities.inject({}) do |h, affinity|
+  end
+  def hash_pidurl_affinity
+    @hash_pidurl_affinity ||= affinities.inject({}) do |h, affinity|
       affinity.link_back(self)
       h[affinity.product_idurl] = affinity
       h
@@ -285,7 +288,6 @@ class QuizzeInstance < Root
       :question_ids => quizze.questions.collect(&:id))
     user.quizze_instances << quizze_instance
     user.save
-    quizze_instance.link_back(user)
     quizze_instance
   end
 

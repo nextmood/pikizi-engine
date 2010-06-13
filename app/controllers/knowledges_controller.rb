@@ -22,7 +22,7 @@ class KnowledgesController < ApplicationController
 
   def distance
     @products, @products_selected = get_products_selected
-    @feature = params[:feature_idurl] ? @current_knowledge.get_feature_by_idurl(params[:feature_idurl]) : @current_knowledge.features.first
+    @feature = params[:feature_idurl] ? @current_knowledge.get_specification_by_idurl(params[:feature_idurl]) : @current_knowledge.features.first
     # compute graph
     @feature.distance_graph(@products_selected)
     

@@ -23,14 +23,15 @@ Rails::Initializer.run do |config|
   # see http://github.com/grosser/rpx_now
   config.gem "rpx_now"
   
-  config.gem 'mocha'
-  config.gem 'factory_girl'
-  config.gem 'shoulda'
-  config.gem 'redgreen'
+#  config.gem 'mocha'
+#  config.gem 'factory_girl'
+#  config.gem 'shoulda'
+#  config.gem 'redgreen'
 
   config.gem 'mongo_mapper', :version => '>= 0.7.5'
   config.gem "repeated_auto_complete"
   config.gem "state_machine"
+#  config.gem 'machinist_mongo'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

@@ -1,12 +1,18 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+require File.expand_path(File.dirname(__FILE__) + "/blueprints")
+
 require 'test_help'
-require 'shoulda'
-require 'mocha'
-require 'factory_girl'
+
+#require 'shoulda'
+#require 'mocha'
+
+
 
 class ActiveSupport::TestCase
 
+  setup { Sham.reset }
+  
   # Drop all collections after each test case.
   def teardown
     MongoMapper.database.collections.each do |coll|
