@@ -2,7 +2,7 @@
 class Synonym
   include MongoMapper::Document
 
-  key :knowledge_id, BSON::ObjectId, :index => true
+  key :knowledge_id, BSON::ObjectID, :index => true
   belongs_to :knowledge
 
   key :object_classname, String

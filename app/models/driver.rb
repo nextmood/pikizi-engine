@@ -11,7 +11,7 @@ class Driver
 
   key :_type, String # class management
 
-  key :knowledge_id
+  key :knowledge_id, BSON::ObjectID
   belongs_to :knowledge
 
   key :config, Hash, :default => {} # dedicated to store information about how to access this driver/knowledge
