@@ -35,7 +35,7 @@ class Knowledge < Root
   def nb_specifications() specifications.count end
   
   # --------- products attached to this knowledge  ---------------
-  many :products
+  many :products, :order => "label asc"
   def get_products() list_manager(:products, :all => true) end
   def get_product_by_id(id) list_manager(:products, :by_id => id) end
   def get_product_by_idurl(idurl) list_manager(:products, :by_idurl => idurl) end

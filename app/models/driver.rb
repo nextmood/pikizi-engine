@@ -62,7 +62,7 @@ class Driver
 
   def add_product(product_id, sid)
     driver_product = get_details(sid)
-    driver_product.product_id = product_id
+    driver_product.pkz_product_ids << product_id
     driver_product.save
     self.driver_products << driver_product
     Rails.logger.info "product #{driver_product} added to #{self}"
@@ -119,8 +119,9 @@ class DriverProduct
   key :driver_id, BSON::ObjectID, :index => true
   belongs_to :driver
 
-  key :product_id
-  belongs_to :product # the real product driver
+  key :pkz_product_ids, Array, :default => [] # the list of related products (usually one)
+  def pkz_products() Product.find(pkz_product_ids) end
+  def pkz_products_as_html() pkz_products.collect(&:label).join(", ") end
   
   key :sid, String
   key :label, String
@@ -133,7 +134,7 @@ class DriverProduct
 
   many :driver_reviews, :polymorphic => true, :order => "written_at DESC"
 
-  # Download all reviews for this product since the last update
+  # Download all reviews for this driver_product since the last update
   # return the list of driver_reviews downloaded and created in DB
   def download_reviews(written_after=nil)
     written_after = (written_after ? date_last_review : Time.now - (60 * 60 * 24 * 365 * 5))

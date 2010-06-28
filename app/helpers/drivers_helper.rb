@@ -6,7 +6,7 @@ module DriversHelper
   end
 
   def link_2_product(driver_product)
-    s = if driver_product.product_id
+    s = if !driver_product.new?
       link_to("<b>#{driver_product.label}</b>", {:controller => "drivers", :action => "show_product", :id => driver_product.id }, :class => "pkz_link")
     else
       link_to(driver_product.label, {:controller => "drivers", :action => "show_product", :id => driver_product.driver_id, :sid => driver_product.sid}, :class => "pkz_link")

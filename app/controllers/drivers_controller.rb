@@ -5,7 +5,6 @@ class DriversController < ApplicationController
   def index
     @drivers = @current_knowledge.drivers
     @products = @current_knowledge.products
-
   end
 
   #
@@ -67,10 +66,28 @@ class DriversController < ApplicationController
     end
   end
 
+  # add (or remove) a driiver product from the monitoring list
+  def add_driver_product
+    driver = Driver.find(params[:driver_id])
+    driver_product_sid = params[:driver_product_sid]
+
+    if existing_driver_product = driver.driver_products.find(:sid => driver_product_sid)
+      # remove this driver product and all it's reviews
+    else
+      # create the driver product
+    end
+  end
+
+    # remove a driver product from the monitoring list
+  def remove_driver_product
+    DriverProduct.find(params[:driver_product_id]).destroy
+  end
+
   # thi sis a rjs
   def download_reviews
+    puts params.inspect
     @driver_product = DriverProduct.find(params[:id])
-    @driver_reviews = @driver_product.download_reviews()
+    @driver_reviews = [] # @driver_product.download_reviews()
     render :update do |page|
       page.replace("new_reviews", "la liste des reviews")
     end

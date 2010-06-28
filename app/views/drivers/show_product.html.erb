@@ -1,17 +1,28 @@
 <h1><%= link_to(@driver_product.label, @driver_product.url_show) %></h1>
 <hr/>
-    <% if @driver_product.product_id %>
-        map the product <%=  @driver_product.product.label %> in Pikizi Databse %>
-    <% else %>
-        add this <span title="<%= @driver_product.id %>"><%= @driver.source%> entry</span> to Pikizi product <b><%= @current_products_query.to_html %></b>
+
+<% if !@driver_product.new? %>
+    <!-- remove this existing driver product from the monitoring list -->
+    <% form_tag "/drivers/remove_driver_product" do -%>
+        <%= hidden_field_tag :driver_product_id, @driver_product.id %>
+        remove <span title="driver_product_id=<%= @driver_product.id %>"><%= @driver.source%> entry <%= @driver_product.sid %></span> from Pikizi product(s) <b><%= @driver_product.pkz_products_as_html %></b>
+        <%= submit_tag("Remove (also #{@driver_product.nb_reviews} reviews)", :class => "pkz_next") %>
+    <% end -%>
+<% else %>
+    <!-- add this new driver product to the monitoring list -->
+    <% form_tag "/drivers/add_driver_product" do -%>
+        <%= hidden_field_tag :driver_id, @driver.id %>
+        <%= hidden_field_tag :driver_product_sid, @driver_product.sid %>
+        add this <span title="driver_product_id=<%= @driver_product.id %>"><%= @driver.source%> entry</span> to Pikizi product <b><%= @current_products_query.to_html %></b>
         <%= link_to("change product(s) selection", "/myself", :class => "pkz_small pkz_link") %>
         <%= submit_tag("Process to recording and downloading reviews", :class => "pkz_next") %>
+    <% end -%>
+<% end %>
 
-    <% end %>
 <hr/>
 <table cellpadding=3>
     <tr>
-      <td rowspan="7" valign="top"><%= link_to(image_tag(@driver_product.url_image, :width => 200), @driver_product.url_show) %></td>
+      <td rowspan="7" valign="top" style="background-color:white;"><%= link_to(image_tag(@driver_product.url_image, :width => 200), @driver_product.url_show) %></td>
       <td>sid</td>
       <td style="font-weight:bold;">
         <%= @driver_product.source %> / <%= @driver_product.sid %>
@@ -26,7 +37,7 @@
 
     <tr><td colspan="2"></td></tr>
 </table>
-
+<hr/>
 <% if @driver_product.nb_reviews > 0 %>
 
     <h2><%= pluralize(@driver_product.nb_reviews, "review") %></h2>
@@ -56,6 +67,4 @@
 
 <% else %>
     no reviews recorded yet
-    <%= link_to_remote("test reviews download...", :url => "/drivers/download_reviews/#{@driver_product.id}") %>
-    <div id="new_reviews"></div>
 <% end%>

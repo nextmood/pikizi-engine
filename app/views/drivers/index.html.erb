@@ -29,7 +29,7 @@
   </tr>
     <% for product in @products %>
       <tr>
-        <td valign="top"><%= product.idurl %></td>
+        <td valign="top"><%= product.label %></td>
         <td>
             <% for driver_product in product.driver_products %>
                 <div title="last updated @ <%= driver_product.date_last_review %>">
