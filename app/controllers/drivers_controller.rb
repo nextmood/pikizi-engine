@@ -56,6 +56,7 @@ class DriversController < ApplicationController
   # GET /drivers/show_product/:id           :id is a DriverProduct.id (look up in db)
   # GET /drivers/show_product/:id?sid=:sid  :id is a Driver.id, :sid is a local product id for online lookup
   def show_product
+    puts "show product params=#{params.inspect}"
     if params[:sid]
       # we want to see it rel time from driver
       @driver = Driver.find(params[:id])
@@ -63,24 +64,26 @@ class DriversController < ApplicationController
     else
       # get from DB only
       @driver_product = DriverProduct.find(params[:id])
+      @driver = @driver_product.driver
     end
   end
 
-  # add (or remove) a driiver product from the monitoring list
+  # add (or remove) a driver product from the monitoring list
   def add_driver_product
     driver = Driver.find(params[:driver_id])
     driver_product_sid = params[:driver_product_sid]
-
-    if existing_driver_product = driver.driver_products.find(:sid => driver_product_sid)
-      # remove this driver product and all it's reviews
-    else
-      # create the driver product
-    end
+    raise "error already existing #{driver_product_sid}" if driver.driver_products.find(:sid => driver_product_sid)
+    driver_product = driver.get_details(driver_product_sid)
+    driver_product.driver_id = driver.id
+    driver_product.pkz_product_ids = @current_products_query.execute_query.collect(&:id)
+    driver_product.save
+    redirect_to "/drivers/show_product/#{driver_product.id}"
   end
 
     # remove a driver product from the monitoring list
   def remove_driver_product
     DriverProduct.find(params[:driver_product_id]).destroy
+    redirect_to "/search_in_drivers"
   end
 
   # thi sis a rjs

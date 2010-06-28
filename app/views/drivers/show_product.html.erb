@@ -1,4 +1,4 @@
-<h1><%= link_to(@driver_product.label, @driver_product.url_show) %></h1>
+<h1 style="<%= 'font-style:italic;' if @driver_product.new? %>"><%= link_to(@driver_product.label, @driver_product.url_show) %></h1>
 <hr/>
 
 <% if !@driver_product.new? %>
