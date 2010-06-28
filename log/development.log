@@ -1,901 +1,617 @@
-
-
-Processing DriversController#index (for 127.0.0.1 at 2010-06-28 15:30:56) [GET]
-Rendering template within layouts/application
-Rendering drivers/index
-Completed in 13038ms (View: 11357 | 200 OK [http://localhost/drivers]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 15:34:41) [GET]
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 569ms (View: 67 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 15:34:54) [POST]
-  Parameters: {"query_string"=>"nokia 5530", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
+product Samsung Convoy U640 Phone (Verizon Wireless) added to DriverAmazon
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5530
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T13:34:54Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205530&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T13%3A34%3A54Z&Signature=DSvOTunepK3j%2Bus1pEq1trMtVgDfsvZqdRS%2BvQT%2B/g4%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 3496ms (View: 66 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 15:35:10) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T13:35:11Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T13%3A35%3A11Z&Signature=cSjD9hnDVWY9cUPQHiWt88QvKKmvBqVNMe8ZEHMqKEg%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 1238ms (View: 63 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:35:16) [GET]
-  Parameters: {"sid"=>"nokia 5230", "id"=>"4c289a9399bb8d02af000004"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1536ms (View: 75 | 200 OK [http://localhost/drivers/show_product/4c289a9399bb8d02af000004?sid=nokia+5230]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:35:31) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1166ms (View: 262 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:35:42) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 962ms (View: 45 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:35:51) [GET]
-  Parameters: {"sid"=>"B003HNQTQG", "id"=>"4c289a9299bb8d02af000001"}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B003HNQTQG
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T13:35:51Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003HNQTQG&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T13%3A35%3A51Z&Signature=0ASDhuJBH/bltmS0TNFMPi4wTNb62szHAqg8DayXd7w%3D
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 682ms (View: 45 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000001?sid=B003HNQTQG]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:35:57) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 972ms (View: 44 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:36:20) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 882ms (View: 45 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#index (for 127.0.0.1 at 2010-06-28 15:55:45) [GET]
-Rendering template within layouts/application
-Rendering drivers/index
-Completed in 11197ms (View: 10464 | 200 OK [http://localhost/drivers]
-
-
-Processing DriversController#index (for 127.0.0.1 at 2010-06-28 15:56:56) [GET]
-Rendering template within layouts/application
-Rendering drivers/index
-Completed in 12206ms (View: 11596 | 200 OK [http://localhost/drivers]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 15:57:54) [GET]
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 546ms (View: 231 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 15:58:02) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T13:58:03Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T13%3A58%3A03Z&Signature=c%2BLNrHWgq7GfLHY0Da47AkxJiFag1PuQc0cStM8bKCs%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 1631ms (View: 60 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 15:58:15) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 948ms (View: 54 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#download_reviews (for 127.0.0.1 at 2010-06-28 15:58:22) [POST]
-  Parameters: {"authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "id"=>"4c28aa7899bb8d041600001f", "_"=>""}
-
-NoMethodError (undefined method `download_reviews' for nil:NilClass):
-  app/controllers/drivers_controller.rb:72:in `download_reviews'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (40.5ms)
-Rendered rescues/_request_and_response (1.8ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#download_reviews (for 127.0.0.1 at 2010-06-28 15:59:13) [POST]
-  Parameters: {"authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "id"=>"4c28aa7899bb8d041600001f", "_"=>""}
-
-NoMethodError (undefined method `download_reviews' for nil:NilClass):
-  app/controllers/drivers_controller.rb:73:in `download_reviews'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendered rescues/_trace (40.8ms)
-Rendered rescues/_request_and_response (1.8ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:05:02) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1377ms (View: 277 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:10:20) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 910ms (View: 54 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:12:40) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1162ms (View: 53 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:12:49) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 800ms (View: 47 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#add (for 127.0.0.1 at 2010-06-28 16:13:20) [POST]
-  Parameters: {"commit"=>"Process to recording and downloading reviews", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "id"=>"4c28ade299bb8d0474000004"}
-
-ActionController::UnknownAction (No action responded to add. Actions: current_products_query_name, download_reviews, get_logged_user, get_products_selected, index, search, show, show_product, and test_instapaper):
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:13:37) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 798ms (View: 47 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000003?sid=9789361]
-
-
-Processing DriversController#add (for 127.0.0.1 at 2010-06-28 16:13:43) [POST]
-  Parameters: {"commit"=>"Process to recording and downloading reviews", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "id"=>"4c28ae1299bb8d0474000005"}
-
-ActionController::UnknownAction (No action responded to add. Actions: current_products_query_name, download_reviews, get_logged_user, get_products_selected, index, search, show, show_product, and test_instapaper):
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:41:40) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-
-ActionView::TemplateError (undefined method `exist?' for #<DriverProductBestbuy:0x463b344>) on line #6 of app/views/drivers/show_product.html.erb:
-3:     <% if @driver_product.product_id %>
-4:         map the product <%=  @driver_product.product.label %> in Pikizi Databse %>
-5:     <% else %>
-6:         <% if @driver_product.exist? %>
-7:             <!-- remove this existing driver product from the monitoring list -->
-8:             <% form_tag "/drivers/remove_driver_product" do -%>
-9:                 <%= text_field_tag :driver_id, @driver.id %>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/views/drivers/show_product.html.erb:6
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (54.8ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:43:00) [GET]
-  Parameters: {"sid"=>"9789361", "id"=>"4c289a9299bb8d02af000003"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-
-ActionView::TemplateError (undefined method `products' for #<DriverProductBestbuy:0x496aa9c>) on line #11 of app/views/drivers/show_product.html.erb:
-8:             <% form_tag "/drivers/remove_driver_product" do -%>
-9:                 <%= text_field_tag :driver_id, @driver.id %>
-10:                 <%= text_field_tag :driver_product_sid, @driver_product.sid %>
-11:                 remove <span title="driver_product_id=<%= @driver_product.id %>"><%= @driver.source%> entry <%= @driver_product.sid %></span> from Pikizi product(s) <b><%= @driver_product.products.inspect(&:label).join(', ') %></b>
-12:                 <%= submit_tag("Remove (also #{@driver_product.nb_reviews} reviews)", :class => "pkz_next") %>
-13:             <% end -%>
-14:         <% else %>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/views/drivers/show_product.html.erb:11
-    app/views/drivers/show_product.html.erb:8
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (56.9ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 16:47:44) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T14:47:46Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T14%3A47%3A46Z&Signature=4zSFHejLxRmR5yqXoWAH/pP%2BeZZ8wPIabHFih6KP03k%3D
-Rendering template within layouts/application
-Rendering drivers/search
-
-ActionView::TemplateError (undefined method `product_id' for #<DriverProductTwitter:0x233ddc4>) on line #37 of app/views/drivers/search.html.erb:
-34:             <tr style="background-color:white;">
-35:                 <td valign="top"><%= driver_product.source %></td>
-36:                 <td valign="top">
-37:                     <%= link_2_product(driver_product) %>
-38:                 </td>
-39:                 <td valign="top"><%= pkz_date(driver_product.written_at) %></td>
-40:             </tr>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/helpers/drivers_helper.rb:9:in `link_2_product'
-    app/views/drivers/search.html.erb:37
-    app/views/drivers/search.html.erb:33:in `each'
-    app/views/drivers/search.html.erb:33
-    app/views/drivers/search.html.erb:27
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (57.9ms)
-Rendered rescues/_request_and_response (1.9ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 16:49:09) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T14:49:11Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T14%3A49%3A11Z&Signature=swjsiRvY1B6X1w/FlqEh8I33Oth%2Bi/MhFzj6GyRAfxU%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 2705ms (View: 517 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:49:16) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-
-ActionView::TemplateError (undefined method `product_id' for #<DriverProductCnet:0x20ffd78>) on line #3 of app/views/drivers/show_product.html.erb:
-1: <h1><%= link_to(@driver_product.label, @driver_product.url_show) %></h1>
-2: <hr/>
-3:     <% if @driver_product.product_id %>
-4:         map the product <%=  @driver_product.product.label %> in Pikizi Databse %>
-5:     <% else %>
-6:         <% if !@driver_product.new? %>
-
-    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/dirty.rb:25:in `method_missing'
-    app/views/drivers/show_product.html.erb:3
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    -e:1:in `load'
-    -e:1
-
-Rendered rescues/_trace (164.3ms)
-Rendered rescues/_request_and_response (1.7ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 16:55:06) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T14:55:08Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T14%3A55%3A08Z&Signature=GtkT7VpBP0BoRgdP1bbodLHuPSpv1HjrbzpJGGCZKj8%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 2679ms (View: 297 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:55:12) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 900ms (View: 57 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:56:09) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1601ms (View: 115 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:57:03) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1445ms (View: 201 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:57:12) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1787ms (View: 68 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:57:32) [GET]
-  Parameters: {"sid"=>"34117424", "id"=>"4c289a9299bb8d02af000002"}
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1479ms (View: 56 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000002?sid=34117424]
-
-
-Processing DriversController#search (for 127.0.0.1 at 2010-06-28 16:57:57) [POST]
-  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon"]}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding Keywords=nokia 5230
-Adding Operation=ItemSearch
-Adding ResponseGroup=Small
-Adding SearchIndex=All
-Adding Timestamp=2010-06-28T14:57:57Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T14%3A57%3A57Z&Signature=yk8864JXfm17KfjWcexvr1TEtjG7ZKs/CcBhIqCZoDQ%3D
-Rendering template within layouts/application
-Rendering drivers/search
-Completed in 1107ms (View: 45 | 200 OK [http://localhost/search_in_drivers]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 16:58:07) [GET]
-  Parameters: {"sid"=>"B003AMB8WY", "id"=>"4c289a9299bb8d02af000001"}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B003AMB8WY
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T14:58:07Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003AMB8WY&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T14%3A58%3A07Z&Signature=kil5HGeqapa1jR1gZ6bfqiWaWwc88zQ9iCtkvdaFPZQ%3D
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 706ms (View: 47 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000001?sid=B003AMB8WY]
-
-
-Processing DriversController#add_driver_product (for 127.0.0.1 at 2010-06-28 16:58:31) [POST]
-  Parameters: {"driver_id"=>"4c289a9299bb8d02af000001", "commit"=>"Process to recording and downloading reviews", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "driver_product_sid"=>"B003AMB8WY"}
-
-ActionController::UnknownAction (No action responded to add_driver_product. Actions: add_remove_driver_product, current_products_query_name, download_reviews, get_logged_user, get_products_selected, index, search, show, show_product, and test_instapaper):
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  -e:1:in `load'
-  -e:1
-
-Rendering rescues/layout (not_found)
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 17:01:47) [GET]
-  Parameters: {"sid"=>"B003AMB8WY", "id"=>"4c289a9299bb8d02af000001"}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B003AMB8WY
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:01:48Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003AMB8WY&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A01%3A48Z&Signature=FCnXmjL%2Bz1y7TCbyqpTNhEce3MxQXGtUy9jlia7HF1I%3D
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 2307ms (View: 309 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000001?sid=B003AMB8WY]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 17:02:10) [GET]
-  Parameters: {"sid"=>"B003AMB8WY", "id"=>"4c289a9299bb8d02af000001"}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B003AMB8WY
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:02:10Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003AMB8WY&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A02%3A10Z&Signature=Qf74nfs5nIaVpYeJJ8xEscxX5PTC19czfVBvLRdPvpY%3D
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 850ms (View: 155 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000001?sid=B003AMB8WY]
-
-
-Processing UsersController#myself (for 127.0.0.1 at 2010-06-28 17:02:25) [GET]
-Rendering template within layouts/application
-Rendering users/myself
-Rendered products_query/_edit (19.4ms)
-Rendered products/_thumbnail (1786.6ms)
-Completed in 2448ms (View: 1858 | 200 OK [http://localhost/myself]
-
-
-Processing MediasController#datas (for 127.0.0.1 at 2010-06-28 17:02:28) [GET]
-  Parameters: {"id"=>"4ba78d7a43a76d710b000227"}
-Sending data 
-Completed in 434ms (View: 29 | 200 OK [http://localhost/medias/datas/4ba78d7a43a76d710b000227]
-
-
-Processing ProductsQueryController#auto_complete_for_product_label (for 127.0.0.1 at 2010-06-28 17:02:40) [GET]
-  Parameters: {"products_query_from_product_label"=>{"product_label"=>"noki"}}
-Completed in 5663ms (View: 4 | 200 OK [http://localhost/products_query/auto_complete_for_product_label?products_query_from_product_label%5Bproduct_label%5D=noki]
-
-
-Processing ProductsQueryController#auto_complete_for_product_label (for 127.0.0.1 at 2010-06-28 17:02:48) [GET]
-  Parameters: {"products_query_from_product_label"=>{"product_label"=>"n"}}
-Completed in 5687ms (View: 3 | 200 OK [http://localhost/products_query/auto_complete_for_product_label?products_query_from_product_label%5Bproduct_label%5D=n]
-
-
-Processing ProductsQueryController#auto_complete_for_product_label (for 127.0.0.1 at 2010-06-28 17:02:53) [GET]
-  Parameters: {"products_query_from_product_label"=>{"product_label"=>"no"}}
-Completed in 5761ms (View: 3 | 200 OK [http://localhost/products_query/auto_complete_for_product_label?products_query_from_product_label%5Bproduct_label%5D=no]
-
-
-Processing ProductsQueryController#process_current_products_query (for 127.0.0.1 at 2010-06-28 17:03:01) [POST]
-  Parameters: {"commit"=>"update...", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "current_products_query"=>{"atom0"=>{"products_query_atom_type"=>"ProductsQueryFromProductLabel", "rank_index"=>"0", "extension"=>"none", "product_label"=>"Nokia 5230", "knowledge_id"=>"4b892a6b43a76d7c3f00000a"}}}
-Redirected to http://localhost:3000/myself
-Completed in 366ms | 302 Found [http://localhost/products_query/process_current_products_query]
-
-
-Processing UsersController#myself (for 127.0.0.1 at 2010-06-28 17:03:02) [GET]
-Rendering template within layouts/application
-Rendering users/myself
-Rendered products_query/_edit (15.2ms)
-Rendered products/_thumbnail (1015.4ms)
-Completed in 1366ms (View: 1040 | 200 OK [http://localhost/myself]
-
-
-Processing MediasController#datas (for 127.0.0.1 at 2010-06-28 17:03:03) [GET]
-  Parameters: {"id"=>"4bb9711d43a76d643c000004"}
-Sending data 
-Completed in 503ms (View: 1 | 200 OK [http://localhost/medias/datas/4bb9711d43a76d643c000004]
-
-
-Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 17:03:20) [GET]
-  Parameters: {"sid"=>"B003AMB8WY", "id"=>"4c289a9299bb8d02af000001"}
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B003AMB8WY
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:03:21Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003AMB8WY&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A03%3A21Z&Signature=6ShnoBvkh8bLgiV9IQN8so83zVInnXXWFChMzGHGZEs%3D
-Rendering template within layouts/application
-Rendering drivers/show_product
-Completed in 1292ms (View: 44 | 200 OK [http://localhost/drivers/show_product/4c289a9299bb8d02af000001?sid=B003AMB8WY]
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:04:58Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A04%3A58Z&Signature=kepCWboGLUEaW80YKfj0jPENdDu4ji9U10O5YhCgwrM%3D
-product BlackBerry Bold 9700 Phone (AT&amp;T) added to DriverAmazon
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002WTC1TK
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:04:59Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A04%3A59Z&Signature=B13%2BAvlNeRCkFCkRqDjKh0R6ZC5OaJOaZ0u6f6hfqww%3D
+Adding Timestamp=2010-06-28T15:20:17Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1TK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A17Z&Signature=/thgkDmHVpZ0SooR8UcpxnA2YylWuDpXM%2B6XM1GJKAk%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002WTC1TK
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=2
-Adding Timestamp=2010-06-28T15:04:59Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A04%3A59Z&Signature=RbZBtZ0XWko0aAaWpHnup7rHQK9YWUyhbAtmG6aLeFw%3D
+Adding Timestamp=2010-06-28T15:20:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1TK&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A18Z&Signature=avQ2Bdf8CBbnQ7UJX7FCgScQr7C9R4FEvxxJXfOtLBU%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:18Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A18Z&Signature=zSHHsnHG5iw63e%2Bx%2BW8yU61C%2BNsVycZb8F0b5hIprak%3D
+product BlackBerry Storm2 9550 Phone (Verizon Wireless) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A20Z&Signature=hhmVBIx68dsF7wByrvhjbVk3OgW39MY2%2BViWZ4zx0WQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:20Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A20Z&Signature=1XaUlp1o98ihhfDx3iDFyGoabkBoaE5SRhYp86j/E98%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX72TI
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=3
-Adding Timestamp=2010-06-28T15:05:00Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A05%3A00Z&Signature=QsI1cLOI/6FjhfIw4Rfxe8Snknct51P6qhFfr4Qm1PM%3D
+Adding Timestamp=2010-06-28T15:20:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A21Z&Signature=XwwM%2BwBklLsN0uPJ25cchCeCuegDvExOvuJyg1GeXoY%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002TX72TI
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=4
-Adding Timestamp=2010-06-28T15:05:01Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A05%3A01Z&Signature=U2IwH8gPChaiFG27cl/Sl6QWNsaLS6krL7iNXaklCEw%3D
+Adding Timestamp=2010-06-28T15:20:21Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A21Z&Signature=o8TWbRc4atbuq0UN4lfu7nin2dU33oorVlBmvBHS8XM%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002TX72TI
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=5
-Adding Timestamp=2010-06-28T15:05:01Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A05%3A01Z&Signature=J1/UYI0DORObVzRLdHbbmEYLv7RzgHYlIYwyyChHyTU%3D
+Adding Timestamp=2010-06-28T15:20:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A20%3A22Z&Signature=BSU0IfC/bQs9sWvuumw52aK93GnAlojFcm1L8O8YMwI%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002XDQHWW
+Adding ItemId=B002TX72TI
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=6
-Adding Timestamp=2010-06-28T15:05:02Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002XDQHWW&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A05%3A02Z&Signature=A4atgYfwB4qVj7JcfhM4/lH29XbSFMyaV2nkiE3L1cM%3D
+Adding Timestamp=2010-06-28T15:20:22Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX72TI&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A20%3A22Z&Signature=BStAloRWNW7OOubxOtSyj%2Bj36AZ2/7V/8ZBq%2B4%2BAx3M%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002TX7AH2
+Adding ItemId=B003N9B3CY
 Adding Operation=ItemLookup
 Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:05:02Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX7AH2&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A05%3A02Z&Signature=PeK2/Rqki8N6M0craA4EexjcSNTm4vQA12yWewskpps%3D
-product Nokia Mural 6750 Phone (AT&amp;T) added to DriverAmazon
+Adding Timestamp=2010-06-28T15:20:23Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A23Z&Signature=MWXcP93oGXEITu2u0Kz1nzklOZUamPzcw1NlaDzu98E%3D
+product HTC EVO 4G Android Phone (Sprint) added to DriverAmazon
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002TX7AH2
+Adding ItemId=B003N9B3CY
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:05:03Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX7AH2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A05%3A03Z&Signature=AHnInkQKilyEPdmaldO17aYM8pIR8/5ntnr/lm88zrA%3D
+Adding Timestamp=2010-06-28T15:20:24Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A24Z&Signature=Wejat9LB3YYYTMw/3tdVmh0oJr/yIMgm0BGj7wrDu1g%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002TX7AH2
+Adding ItemId=B003N9B3CY
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=2
-Adding Timestamp=2010-06-28T15:05:04Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX7AH2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A05%3A04Z&Signature=P3/2TbOpSwkCjHqWyywPHDxIrPoUBt/w6Q2l/BHKUiI%3D
+Adding Timestamp=2010-06-28T15:20:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A25Z&Signature=cQXuWg1Q52RCuqQ5rCDAxodIO51h7DdeBTyLoIg6i%2BI%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002WTC1NG
+Adding ItemId=B003N9B3CY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:20:25Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A25Z&Signature=TEDRxkM4xnrL4xlRCZu9EOuvTXpPrYeVooisXfUr4hk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003N9B3CY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:20:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A26Z&Signature=XL81sF15ynAxJZVYS/JLrImtqk82adT548Q0MEjEhRs%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003N9B3CY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-06-28T15:20:26Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A20%3A26Z&Signature=nWNPhQ9rizDAjcWpgpYpyb7uSRZ0%2BQqrjDAzSvYmT9E%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003N9B3CY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-06-28T15:20:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A20%3A27Z&Signature=bCCwrvZvDK0xVwbuPnjv%2BTgofjr0mhB0uicYaHnbGoc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003N9B3CY
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-06-28T15:20:27Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003N9B3CY&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-06-28T15%3A20%3A27Z&Signature=r/BwHVVLcMtgLxiF6QS1NjCPSmXr1FGnHC3fbcqz2qQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003H4R6SA
 Adding Operation=ItemLookup
 Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:05:04Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1NG&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A05%3A04Z&Signature=UCB9fi0IFlr/jkGUIpvGiatFtzCMEfrcb4ooG/ik9II%3D
-product Motorola Barrage V860 Phone (Verizon Wireless) added to DriverAmazon
+Adding Timestamp=2010-06-28T15:20:28Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003H4R6SA&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A28Z&Signature=ioeQ8zgIF6vNxRJfNHIFuzj/NBkJCdc%2BjNlyMszbStw%3D
+product Microsoft KIN ONE Windows Phone (Verizon Wireless) added to DriverAmazon
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002WTC1NG
+Adding ItemId=B003H4R6SA
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:05:05Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002WTC1NG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A05%3A05Z&Signature=1ARnC8wiN1VjE9/x9R0ld%2BLXUu8rOwqBtPMNFUQrviw%3D
+Adding Timestamp=2010-06-28T15:20:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003H4R6SA&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A29Z&Signature=Cn3suiJbfx6goHaxYeQ7A9C4h0mgiD5KSmhQrEOBshI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003H4R6TE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:29Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003H4R6TE&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A29Z&Signature=4yGubouBl1S%2BFfNScx8PEEU1lC0aYd%2BotheUcCDWkLs%3D
+product Microsoft KIN TWO Windows Phone (Verizon Wireless) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B003H4R6TE
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:30Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B003H4R6TE&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A30Z&Signature=RYFIdmFZ38CxTxU73xNvJgIOw0dbFCHMQEw8ocSAUTI%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:30Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A30Z&Signature=i0vvWpjH8cr8Nu31kHdcd%2Be13HpesnitF0GlAHzxW34%3D
+product BlackBerry Bold 9700 Phone (T-Mobile) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A32Z&Signature=hsU7xOsI%2BafsvJAdyJNaDq7FOWfnrsAtDKdysVzXgg8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A32Z&Signature=6uEWc0v4tJXMQSEmugf9yzI0vhS1ribe%2BS306WTyzNA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:20:32Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A32Z&Signature=mw/cJGfy2am9Ewo6CZCgB79o6ccBqH3aidSrPvoDSpA%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWJZ42
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:20:33Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWJZ42&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A33Z&Signature=9H1w68wQPOvuG0DbGwTloWWb9JABlVn0h0jxcTRgOGE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JPJ118
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:34Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JPJ118&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A34Z&Signature=fLZohFegp51TGxXAzOwmBbsK/nriwyx7t6r5yK7kpv4%3D
+product BlackBerry Curve 8520 Phone, Black (T-Mobile) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002JPJ118
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:35Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002JPJ118&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A35Z&Signature=OQjpvXM8kUaFpV1b5HUHezxVkmkI2LocYkd88MYEywY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:36Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A36Z&Signature=nvmx/H8fhdGpih2mD4M1uyPFJ2AiQufxCYFhLwg4GFE%3D
+product BlackBerry Curve 8900 Phone, Titanium (T-Mobile) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:37Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A37Z&Signature=kxUWZh5x1O%2BNMVZlDP9YQEl0vZmFFkN%2B/TVrZp7/hEc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A38Z&Signature=uR3xTyq%2BIV4GpwTtlWRsQftZHe9RX0KS2VTY%2B92gidw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:20:38Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A38Z&Signature=VViDZie3Q8kzRQhx5QnS98OZyRPJ4keP3y4HZSfGpCc%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:20:39Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A39Z&Signature=rtkB9SJEvtda5t%2BpuLNTuHxDAfaz988DED5Uc4aRbZM%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-06-28T15:20:40Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A20%3A40Z&Signature=W30CeLFbJHoTrgMD9gfba%2BVs/DY%2BrA/IVULE53Ly70M%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=6
+Adding Timestamp=2010-06-28T15:20:40Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A20%3A40Z&Signature=U7XDklKYloItciK8G6QhmFT3umPClaDu2vVvyhRfpNY%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=7
+Adding Timestamp=2010-06-28T15:20:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-06-28T15%3A20%3A41Z&Signature=HaNnZ3TAFf12W9W8/wp22e9QfqeL4qy6uGIQFU0az5k%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=8
+Adding Timestamp=2010-06-28T15:20:41Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-06-28T15%3A20%3A41Z&Signature=9BnS9PPkAQTtHBp45YCpeWWXQsb7cwNlYc/r716bxUE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=9
+Adding Timestamp=2010-06-28T15:20:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-06-28T15%3A20%3A42Z&Signature=B9turBs4pGnVLsGrZUTyyGDDfpgmeB7QBr7U/tPvo3s%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=10
+Adding Timestamp=2010-06-28T15:20:42Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-06-28T15%3A20%3A42Z&Signature=RJ/PTwIPSQNrzlhwBtSdAKFMBuNyDSzK5BnQajf%2BnPU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B001PR21A4
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=11
+Adding Timestamp=2010-06-28T15:20:43Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B001PR21A4&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=11&Timestamp=2010-06-28T15%3A20%3A43Z&Signature=qQFjXTksMNKAU4rYQNrKNQBuD/nZQpOG7qJoDa1QTv8%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:44Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A44Z&Signature=vcxsdU5gBkMoHcygGgsqX86MSVC4fAd1VwC8Yw%2B97p4%3D
+product HTC Touch Pro2 Windows Phone, Mocha (T-Mobile) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:45Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A45Z&Signature=a4X0G2ArA5GEVX%2BiA3qv9QectxjvEcUIgMckvdXcgCU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002LITRMQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:46Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LITRMQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A46Z&Signature=eVwL11BxStkZSi2EZB7lksyV2U7g2pwTIS2vyeW1cDw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWK83E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWK83E&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A47Z&Signature=DmxoT9lSImZrNhoqOHKqys4Ccmk3r7lOu%2BHWJhovP34%3D
+product Samsung Behold II t939 Android Phone (T-Mobile) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWK83E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWK83E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A47Z&Signature=jtO9JIJHmSbAbSuHIcb0WPgWETnbX8FuDSRqJoM0AGw%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002VWK83E
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:47Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002VWK83E&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A47Z&Signature=ULpfkJlA2kWvUBE33hkRZk05IJf7Cb2ULOnina0J%2BTQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A48Z&Signature=4Tug7Oypu0rtcZl2eijOChEsGIdS3iEQd5l8Om%2BKQOE%3D
+product Sony Ericsson Satio (U1i) Quadband 3G HSDPA GPS Unlocked Phone W/8GB Memory Card added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:48Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A48Z&Signature=nmxrbvZojNEJiUwcwcHcjash%2BgXKAEWcck7Ttwu%2BfB4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002U0DUXM
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002U0DUXM&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A49Z&Signature=aLNk3H/C6HZ43uykIc9hhQzp%2BrkcfOgNu5QYdOof18g%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:49Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A49Z&Signature=sVS%2B%2BKhpidM9/gBlQ/4m19Sp0rCeiE35AP8W3z1FOOs%3D
+product Google Nexus One Unlocked Phone added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:50Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A50Z&Signature=W4LRvoATnggC2UKKaw4HNco3wsgqV1P%2Bk71U%2BVNZHko%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A51Z&Signature=vCz%2BBjCKsuOxSSjlpCG7JW9iLoojBsjb6QDah%2BjCbnE%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:20:51Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A51Z&Signature=Dpf372jZEQq3EwCLmIJYU6Sb7K8ai3YsdNQVI6oJzKU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:20:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A52Z&Signature=AEpOl4jrRq57P/RqZ3TsY/IraAn9TUHMWY6ykFNs4W4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B00332YPHQ
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=5
+Adding Timestamp=2010-06-28T15:20:52Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B00332YPHQ&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A20%3A52Z&Signature=/C28mpAhu8hSXlgHyxVYa08rdWB/qXrSQaA/ffZsf94%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:53Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A53Z&Signature=MokrN4tXT0VnDMV6tdGl1V0bElRFLYlj/xOXi16O5RE%3D
+product LG Chocolate Touch VX-8575 Phone (Verizon Wireless) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:54Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A54Z&Signature=vAEW2/4Ig7mvNtHYgCvni6Wnt8Y7bYGWUURtSk2R2nk%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:20:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A55Z&Signature=AlkBVER1Bcchh8q3/60PyWDxntHmz2Tb/V6XB/jP8MU%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:20:55Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A20%3A55Z&Signature=jlFOPccWvS68rrUm1IoaZ6ItiZvg20RqwIE6DWA4SOQ%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002UUTCLG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:20:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCLG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A20%3A56Z&Signature=8gcDmo2pJbsdeHeHdgwFgUuHq%2BgY8zVg4ZjivDimdr4%3D
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZRQEAG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:20:56Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZRQEAG&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A56Z&Signature=C2h8%2BEzn4SxHX5HkrSwZeSzycw8BPeQp0BtS/Qb24tY%3D
+product Samsung Instinct HD Phone (Sprint) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ZRQEAG
+Adding Operation=ItemLookup
+Adding ResponseGroup=Reviews
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:20:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ZRQEAG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A57Z&Signature=FXUrBHZ6nBsIyZ9dT5ZOBhsBS78W48/UG70U%2BzkroH4%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
 Adding ItemId=B002TX6ZD2
 Adding Operation=ItemLookup
 Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:05:05Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A05%3A05Z&Signature=lY758Mwc2wGPxCt491/hViuc6N/8vibE3rstevA0hw8%3D
+Adding Timestamp=2010-06-28T15:20:57Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A57Z&Signature=OnviN4nIIR7nm87IEZutQSFJP%2BskWZKnpR2SMJDbs6U%3D
 product HTC Imagio XV6975 Windows Phone (Verizon Wireless) added to DriverAmazon
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
 Adding ItemId=B002TX6ZD2
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:05:06Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A05%3A06Z&Signature=Layzdu9dsTGU7JeOuW/Eqdi5uLOptEELUMorAj41lXs%3D
+Adding Timestamp=2010-06-28T15:20:58Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A20%3A58Z&Signature=QmXyhYsvGlsMW7JJbEPnSGbUZuwPOUzj2sclR8wfauc%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
 Adding ItemId=B002TX6ZD2
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=2
-Adding Timestamp=2010-06-28T15:05:07Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A05%3A07Z&Signature=UMIitLV/ocZi49bhJJLgkw1mAkc/FNWHR%2BEpQzebikw%3D
+Adding Timestamp=2010-06-28T15:20:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6ZD2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A20%3A59Z&Signature=X0oT2VJSNL9DFZR74pQrl2pnA8muCH1FHJiigER1KAs%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002LSHVUG
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:05:07Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A05%3A07Z&Signature=M5SRt8%2B2gFTEzsEJSX4xPs1t%2BJi5VqhcuawxrkQxUgE%3D
-product Nokia N86 Unlocked Phone with 8 MP Camera, Auto Focus, Flash and Carl Zeiss Optics--U.S. Version with Warranty (Indigo) added to DriverAmazon
+Adding Timestamp=2010-06-28T15:20:59Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A20%3A59Z&Signature=mOdHyUpYWC8diEG/tg7jNHEFCVaKfJA0ieZHayRcGDo%3D
+product BlackBerry Tour 9630 Phone, Black (Verizon Wireless) added to DriverAmazon
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002LSHVUG
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:05:08Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A05%3A08Z&Signature=gRuTYWRYzZhT3a2k3Kgyr/Qnfo5pTKbDDIIlbryoUSQ%3D
+Adding Timestamp=2010-06-28T15:21:00Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A21%3A00Z&Signature=a2rC8/eI8nQwyEggBdfD/Qn8Woa6hbZwbGR/B5Ai9j8%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002LSHVUG
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=2
-Adding Timestamp=2010-06-28T15:05:09Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A05%3A09Z&Signature=s93i6ffEgpDjfnSbZW00YGU4qChr4kDxxxhAKdPdr8A%3D
+Adding Timestamp=2010-06-28T15:21:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A21%3A01Z&Signature=NKeOaSYuJKqwZ7lBnCbFcm7HXe4VW19SSIVhh1/FrVc%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002LSHVUG
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=3
-Adding Timestamp=2010-06-28T15:05:09Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A05%3A09Z&Signature=pdC0tbKiOe23PaMX72CDkqdKLyUm0VSerJKPuWiJXpc%3D
+Adding Timestamp=2010-06-28T15:21:01Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A21%3A01Z&Signature=U%2BOlK%2BqoSEF0M2kyP12TpoazGRoZ9%2BJvTkdoJyIjr4s%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002LSHVUG
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=4
-Adding Timestamp=2010-06-28T15:05:10Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002LSHVUG&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A05%3A10Z&Signature=cT7LRM5dQtHv/7Ljwtraua2XEcEoZkqrN0mDmNVwi6Y%3D
+Adding Timestamp=2010-06-28T15:21:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A21%3A02Z&Signature=Pu/fi8%2BNfLNo2apQfdmgFW%2BTxaD8OwIyNfbW2RlSGko%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Large
-Adding Timestamp=2010-06-28T15:05:10Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A05%3A10Z&Signature=UytMFByuydqRPsE/guWklPGqrTp4daA0a3qoxISaPsk%3D
-product Motorola DROID A855 Android Phone (Verizon Wireless) added to DriverAmazon
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=1
-Adding Timestamp=2010-06-28T15:05:11Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A05%3A11Z&Signature=JKVkU7PcVdsDOO2NDpN4rmEAr9jdJBnsxJ6F/G6YD0E%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=2
-Adding Timestamp=2010-06-28T15:05:12Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A05%3A12Z&Signature=fUGWfiYcLRNrzWbnioozc7L3cjel/kOL0SZ3uPfGdzk%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=3
-Adding Timestamp=2010-06-28T15:05:12Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A05%3A12Z&Signature=dgUAOYn4Xf5pg8hvReuHbatb3Qc%2BmzF1QMuuL8RoKRM%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=4
-Adding Timestamp=2010-06-28T15:05:13Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A05%3A13Z&Signature=0Wkb1U4c0Zx9WcwL12oKCPW2GEAgeXnreqDl1x1Frcw%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=5
-Adding Timestamp=2010-06-28T15:05:13Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A05%3A13Z&Signature=b4U/uOr6jk2i2QnD6e9ZPqgN6fQpR5a0NqheH5SbW8Y%3D
+Adding Timestamp=2010-06-28T15:21:02Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A21%3A02Z&Signature=ziqau%2B6UkqbAno%2BygSkdN0ilV/Vxc5O9J%2BrMlmGvZYs%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=6
-Adding Timestamp=2010-06-28T15:05:13Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A05%3A13Z&Signature=x/OMLs4t/Epe3DVOUuEURIPU0tKUz22UnprUdpTUANQ%3D
+Adding Timestamp=2010-06-28T15:21:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A21%3A03Z&Signature=25vbWvmAN0ppIkEuB3DwDoCaSnebjBzNypcYWa0SZl8%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=7
-Adding Timestamp=2010-06-28T15:05:14Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-06-28T15%3A05%3A14Z&Signature=RYoNxHgrV%2Ba67jJXNdh/pE2y6myU1K3a24J0/SJOivw%3D
+Adding Timestamp=2010-06-28T15:21:03Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-06-28T15%3A21%3A03Z&Signature=xHNHcVNG5Twi3sEUfGoBYcdR8slDgFUZamn2KxItXzc%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=8
-Adding Timestamp=2010-06-28T15:05:14Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-06-28T15%3A05%3A14Z&Signature=alfScUdGcHvyQQq2C1Ekba6xZMpbUfR8yzu4NRRk5GQ%3D
+Adding Timestamp=2010-06-28T15:21:04Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-06-28T15%3A21%3A04Z&Signature=yn7CSJ17GwLT/XOKmwm2Vy7WO/0YFOAa7KmiFallvVk%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=9
-Adding Timestamp=2010-06-28T15:05:15Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-06-28T15%3A05%3A15Z&Signature=HjlLyVD37pPhAZ1Byh5u0WISFWJvXXUr03nFIDy8goI%3D
+Adding Timestamp=2010-06-28T15:21:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-06-28T15%3A21%3A05Z&Signature=Ke1DOZwgFGnPGMV6aYvAsyk3OMZs2tllZ%2Bm858BVTTA%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002GJTS3I
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
 Adding ReviewPage=10
-Adding Timestamp=2010-06-28T15:05:15Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-06-28T15%3A05%3A15Z&Signature=D3YwD/yfV5veP70AFojjyjpk/tr1I9rYAAQWHsW9PG4%3D
+Adding Timestamp=2010-06-28T15:21:05Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002GJTS3I&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=10&Timestamp=2010-06-28T15%3A21%3A05Z&Signature=Fohw3kUAVS65NrcfusWv/VdlW6jiQFhAt5gmHqwaQuk%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002ED84H2
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:21:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ED84H2&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A21%3A07Z&Signature=VQ1JrGQnY1FWzfwWuLDtmZfhcwOlZIfqtOnOq9CpfaY%3D
+product Nokia 5130 Xpressmusic Red 2+ Megapixel Camera,1 Gb Microsd Card (Mu-22) Unlocked Int'l Version with No Us Warranty added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002ED84H2
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=11
-Adding Timestamp=2010-06-28T15:05:16Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=11&Timestamp=2010-06-28T15%3A05%3A16Z&Signature=QUYrBU2H0zeFBctBTwN5TLCDKCuQGNy%2BwEBsSR01er0%3D
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:21:07Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002ED84H2&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A21%3A07Z&Signature=gPe7VRiMde5MWF77PGBHYEQL8VnS2H%2BU5jJ%2B2qCGb2Q%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
+Adding Operation=ItemLookup
+Adding ResponseGroup=Large
+Adding Timestamp=2010-06-28T15:21:08Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Large&Timestamp=2010-06-28T15%3A21%3A08Z&Signature=g0ayjbjeoHeVoBMNtQmgi%2B%2B%2BJ51gtTQm2w6Mi3o3rSw%3D
+product Samsung Moment M900 Android Phone (Sprint) added to DriverAmazon
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=12
-Adding Timestamp=2010-06-28T15:05:16Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=12&Timestamp=2010-06-28T15%3A05%3A16Z&Signature=w/qJxcQATZc62HqlvkXKAqXlHMU2ma2AZ7r6j%2BRNfgY%3D
+Adding ReviewPage=1
+Adding Timestamp=2010-06-28T15:21:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=1&Timestamp=2010-06-28T15%3A21%3A09Z&Signature=GDTCAeP5d06JCO8yb57gsYpjHEV6kKVBhHPZMAUQyk0%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=13
-Adding Timestamp=2010-06-28T15:05:17Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=13&Timestamp=2010-06-28T15%3A05%3A17Z&Signature=3bMyXT3Jp3A9N2UauwY1a8BxHjMU5EO%2BaUTxv/CHC1o%3D
+Adding ReviewPage=2
+Adding Timestamp=2010-06-28T15:21:09Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=2&Timestamp=2010-06-28T15%3A21%3A09Z&Signature=9HiHoUBMyzm4rrSYMiw9Dg51OJu9PvdLS3hE8P9bJjQ%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=14
-Adding Timestamp=2010-06-28T15:05:17Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=14&Timestamp=2010-06-28T15%3A05%3A17Z&Signature=16kXnjyP%2BHeay%2BcTeFdUWgluh4%2BbbpG/70GvBG4YnDs%3D
+Adding ReviewPage=3
+Adding Timestamp=2010-06-28T15:21:10Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=3&Timestamp=2010-06-28T15%3A21%3A10Z&Signature=Gh39w%2BHJSKBURNkjVEfHnAWXNeYHyBbNZ511pBhpjQY%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=15
-Adding Timestamp=2010-06-28T15:05:17Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=15&Timestamp=2010-06-28T15%3A05%3A17Z&Signature=qg6uosVzogV78%2BSmmZyjj7iSXheSHQZjzRRATkyKKg4%3D
+Adding ReviewPage=4
+Adding Timestamp=2010-06-28T15:21:10Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=4&Timestamp=2010-06-28T15%3A21%3A10Z&Signature=dHrqgd0fNJUESCqwyYruaECH6mz9OA8J1hp%2B7tzt/Sc%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=16
-Adding Timestamp=2010-06-28T15:05:18Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=16&Timestamp=2010-06-28T15%3A05%3A18Z&Signature=qzt94FrRsyVAMKBjzEQ6p0nB8XUeDYcyIAlyzWr4Ih0%3D
+Adding ReviewPage=5
+Adding Timestamp=2010-06-28T15:21:10Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=5&Timestamp=2010-06-28T15%3A21%3A10Z&Signature=RrhRBa2L1Yvi0K5ag3JoUr/KMC/XCX17mkZxoaZLIZw%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=17
-Adding Timestamp=2010-06-28T15:05:19Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=17&Timestamp=2010-06-28T15%3A05%3A19Z&Signature=MvykbdFDW2w2uCHgkwnfzXlH/cPvoSZfVCnO2jMcqAU%3D
+Adding ReviewPage=6
+Adding Timestamp=2010-06-28T15:21:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=6&Timestamp=2010-06-28T15%3A21%3A11Z&Signature=Jgs9CnEhV0/W98v9E9bEOatBAduUgnL4N2H2fH2Hem8%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=18
-Adding Timestamp=2010-06-28T15:05:20Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=18&Timestamp=2010-06-28T15%3A05%3A20Z&Signature=CyfEtkhSCiRXQbuD8dbXerqxPhPXXrs5%2B2nK6hzpzrU%3D
+Adding ReviewPage=7
+Adding Timestamp=2010-06-28T15:21:11Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=7&Timestamp=2010-06-28T15%3A21%3A11Z&Signature=1ulzpsf6VOpS4EneVCuDzelxcBngQdYxZyF/Z6VMOrI%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=19
-Adding Timestamp=2010-06-28T15:05:20Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=19&Timestamp=2010-06-28T15%3A05%3A20Z&Signature=0MWn3E%2BD0one5jmQsvpY1rpYEv9Mhcac2zQz3h%2Broxg%3D
+Adding ReviewPage=8
+Adding Timestamp=2010-06-28T15:21:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=8&Timestamp=2010-06-28T15%3A21%3A12Z&Signature=1VXg/Evf0/16HOZbaTRECiOul/KyPOx8krkAAxMCaFc%3D
 Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
+Adding ItemId=B002TX6XH0
 Adding Operation=ItemLookup
 Adding ResponseGroup=Reviews
-Adding ReviewPage=20
-Adding Timestamp=2010-06-28T15:05:21Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=20&Timestamp=2010-06-28T15%3A05%3A21Z&Signature=%2BwbxhBkL9JkivrSKsrnpSb6kCljqJUrj/tu5zcKZ0ZY%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=21
-Adding Timestamp=2010-06-28T15:05:22Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=21&Timestamp=2010-06-28T15%3A05%3A22Z&Signature=YPyGo2wxIB0jOWnZP%2Bf8hCWYsQzkcBLM/Ke3ErQtU08%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=22
-Adding Timestamp=2010-06-28T15:05:22Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=22&Timestamp=2010-06-28T15%3A05%3A22Z&Signature=QsuzBdC2C8IjDMR%2BxmNIk%2BOCBmGAamxHiHj1od9cnWo%3D
-Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
-Adding ItemId=B002UUTCKC
-Adding Operation=ItemLookup
-Adding ResponseGroup=Reviews
-Adding ReviewPage=23
-Adding Timestamp=2010-06-28T15:05:23Z
-Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002UUTCKC&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=23&Timestamp=2010-06-28T15%3A05%3A23Z&Signature=VGMiMyXGY3UcaAXFfF9RLbVNorXFz4caUPqrnw7bmts%3D
+Adding ReviewPage=9
+Adding Timestamp=2010-06-28T15:21:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&ItemId=B002TX6XH0&Operation=ItemLookup&ResponseGroup=Reviews&ReviewPage=9&Timestamp=2010-06-28T15%3A21%3A12Z&Signature=t2AkK1L%2BP1E8E2Z3tXLiv7L7vtWotxFMWR71C/SUTDk%3D

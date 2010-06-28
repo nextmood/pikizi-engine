@@ -62,7 +62,7 @@ class Driver
 
   def add_product(product_id, sid)
     driver_product = get_details(sid)
-    driver_product.pkz_product_ids << product_id
+    driver_product.pkz_product_ids = [product_id]
     driver_product.save
     self.driver_products << driver_product
     Rails.logger.info "product #{driver_product} added to #{self}"

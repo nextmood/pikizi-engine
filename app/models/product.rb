@@ -2,6 +2,7 @@ require 'xml'
 require 'mongo_mapper'
 require 'amazon'
 require 'review'
+require "driver"
 
 class Product < Root
 
@@ -27,7 +28,7 @@ class Product < Root
   
   key :description_urls, Array # an array of description url?
 
-  many :driver_products # list of data sources
+  def driver_products() DriverProduct.all(:pkz_product_ids => id) end # list of data sources
   
   #many :reviews
   def reviews() Review.all(:product_ids => self.id, :order => "written_at DESC") end
@@ -55,7 +56,7 @@ class Product < Root
   key :similar_product_ids, Array, :default => []
   def similar_products() Product.find(similar_product_ids) end
   
-  # cache/explnantion
+  # cache/explanantion
   key :explanation_rating, Hash, :default => {}
   key :search_data, String # compilation of brand, price, catageory for search speed (this is a cache)
 
