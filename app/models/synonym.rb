@@ -6,7 +6,7 @@ class Synonym
   belongs_to :knowledge
 
   key :object_classname, String
-  key :object_id, BSON::ObjectId
+  key :object_id, BSON::ObjectID
 
   key :matches, Array # an array of string mapping  this object :size >= 1
 
