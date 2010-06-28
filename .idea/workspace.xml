@@ -26,6 +26,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/products_query/process_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_helper.rb" afterPath="$PROJECT_DIR$/test/test_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/drivers/show_product.html.erb" afterPath="$PROJECT_DIR$/app/views/drivers/show_product.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products_query/index.html.erb" afterPath="$PROJECT_DIR$/app/views/products_query/index.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/sources/show.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/products_query_test.rb" afterPath="" />
@@ -55,7 +56,7 @@
       <file leaf-file-name="driver.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/driver.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="49" selection-start="2351" selection-end="2363" vertical-scroll-proportion="-10.153846">
+            <state line="64" column="49" selection-start="2351" selection-end="2363" vertical-scroll-proportion="52.5">
               <folding />
             </state>
           </provider>
@@ -73,7 +74,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/drivers/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="173" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.73170733">
+            <state line="44" column="0" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.87456447">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_product.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/drivers/show_product.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="71" selection-start="2931" selection-end="2958" vertical-scroll-proportion="-18.842106">
               <folding />
             </state>
           </provider>
@@ -123,8 +133,8 @@
         <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/models/driver.rb" />
         <option value="$PROJECT_DIR$/app/controllers/drivers_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/drivers/show_product.html.erb" />
         <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/views/drivers/show_product.html.erb" />
         <option value="$PROJECT_DIR$/app/views/drivers/index.html.erb" />
       </list>
     </option>
@@ -1132,13 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/driver.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="49" selection-start="2351" selection-end="2363" vertical-scroll-proportion="-10.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="29" selection-start="1996" selection-end="2019" vertical-scroll-proportion="0.36842105">
@@ -1160,9 +1163,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/drivers/show_product.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/driver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="62" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+        <state line="64" column="49" selection-start="2351" selection-end="2363" vertical-scroll-proportion="52.5">
           <folding />
         </state>
       </provider>
@@ -1174,9 +1177,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/drivers/show_product.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="71" selection-start="2931" selection-end="2958" vertical-scroll-proportion="-18.842106">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/drivers/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="173" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.73170733">
+        <state line="44" column="0" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.87456447">
           <folding />
         </state>
       </provider>

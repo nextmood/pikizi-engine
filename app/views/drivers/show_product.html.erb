@@ -44,6 +44,7 @@
 
     <% for driver_review in  @driver_product.driver_reviews %>
         <div style="border-bottom:1px solid black; margin-bottom:10px; padding:3px;">
+
             <!-- header -->
             <div>
               <%= driver_review.written_at %> by amazon's user <%= driver_review.hash_data[:customerid] %> =>  <%= driver_review.hash_data[:rating] %>/5 stars
@@ -54,13 +55,13 @@
 
             <!-- summary -->
             <div style="font-style:italic; margin-top:2px;">
-              <%= driver_review.hash_data[:summary] %>
-              <%= link_to_function("more (#{driver_review.hash_data[:content].size} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+              <%= driver_review.summary %>
+              <%= link_to_function("more (#{(x = driver_review.content) ? x.size : 0} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
             </div>
 
             <!-- content -->
             <div id="content_<%= driver_review.id %>" class="pkz_next" style="display:none; margin-top:3px;">
-                <%= driver_review.hash_data[:content] %>
+                <%= driver_review.content %>
             </div>
         </div>
     <% end %>

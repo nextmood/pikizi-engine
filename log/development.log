@@ -49,3 +49,549 @@ Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:07:20) [GET]
 Rendering template within layouts/application
 Rendering drivers/index
 Completed in 11992ms (View: 11497 | 200 OK [http://localhost/drivers]
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:08:35) [GET]
+  Parameters: {"id"=>"4c28be1899bb8d09f900044f"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #58 of app/views/drivers/show_product.html.erb:
+55:             <!-- summary -->
+56:             <div style="font-style:italic; margin-top:2px;">
+57:               <%= driver_review.hash_data[:summary] %>
+58:               <%= link_to_function("more (#{driver_review.hash_data[:content].size} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+59:             </div>
+60: 
+61:             <!-- content -->
+
+    app/views/drivers/show_product.html.erb:58
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/show_product.html.erb:45
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:08:54) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #58 of app/views/drivers/show_product.html.erb:
+55:             <!-- summary -->
+56:             <div style="font-style:italic; margin-top:2px;">
+57:               <%= driver_review.hash_data[:summary] %>
+58:               <%= link_to_function("more (#{driver_review.hash_data[:content].size} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+59:             </div>
+60: 
+61:             <!-- content -->
+
+    app/views/drivers/show_product.html.erb:58
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/show_product.html.erb:45
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (232.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:09:43) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+Completed in 1617ms (View: 998 | 200 OK [http://localhost/drivers/show_product/4c28bdc599bb8d09f900021a]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:09:45) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-front-350.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:09:46) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-duo-400.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:09:46) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-angle.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:09:46) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-back.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:09:46) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-size.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:32:04) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+Completed in 1042ms (View: 577 | 200 OK [http://localhost/drivers/show_product/4c28bdc599bb8d09f900021a]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-back.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-duo-400.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-angle.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-front-350.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-size.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:34:01) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #59 of app/views/drivers/show_product.html.erb:
+56:             <!-- summary -->
+57:             <div style="font-style:italic; margin-top:2px;">
+58:               <%= driver_review.summary %>
+59:               <%= link_to_function("more (#{x = driver_review.content ? x.size : 0} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+60:             </div>
+61: 
+62:             <!-- content -->
+
+    app/views/drivers/show_product.html.erb:59
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/show_product.html.erb:45
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (310.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:34:41) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #59 of app/views/drivers/show_product.html.erb:
+56:             <!-- summary -->
+57:             <div style="font-style:italic; margin-top:2px;">
+58:               <%= driver_review.summary %>
+59:               <%= link_to_function("more (#{x = driver_review.content ? x.size : 0} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+60:             </div>
+61: 
+62:             <!-- content -->
+
+    app/views/drivers/show_product.html.erb:59
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/show_product.html.erb:45
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.4ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:35:24) [GET]
+  Parameters: {"id"=>"4c28bdc599bb8d09f900021a"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+Completed in 1373ms (View: 676 | 200 OK [http://localhost/drivers/show_product/4c28bdc599bb8d09f900021a]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:35:26) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-duo-400.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:35:26) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-angle.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:35:26) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-front-350.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:35:26) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-back.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 18:35:27) [GET]
+
+ActionController::RoutingError (No route matches "/%22http://images.amazon.com/images/G/01/wireless/detail-page/bberry-8900-tmob-size.jpg/%22" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing DriversController#search (for 127.0.0.1 at 2010-06-28 18:35:56) [GET]
+Rendering template within layouts/application
+Rendering drivers/search
+Completed in 1203ms (View: 49 | 200 OK [http://localhost/search_in_drivers]
+
+
+Processing DriversController#search (for 127.0.0.1 at 2010-06-28 18:36:06) [POST]
+  Parameters: {"query_string"=>"nokia 5230", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding Keywords=nokia 5230
+Adding Operation=ItemSearch
+Adding ResponseGroup=Small
+Adding SearchIndex=All
+Adding Timestamp=2010-06-28T16:36:06Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=nokia%205230&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T16%3A36%3A06Z&Signature=qbANnoC%2BVdOO8Ha/7HWDzZLyFChSegG7tjjw6j9%2BTZU%3D
+Rendering template within layouts/application
+Rendering drivers/search
+Completed in 1755ms (View: 60 | 200 OK [http://localhost/search_in_drivers]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:36:26) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 10477ms (View: 10189 | 200 OK [http://localhost/drivers]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:39:41) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #33 of app/views/drivers/index.html.erb:
+30:     <% for product in @products %>
+31:       <tr>
+32:         <td valign="top"><%= product.label %></td>
+33:         <% for driver_id, driver_products in product.driver_products.group_by(driver_id) %>
+34:             <td>
+35:                 <% for driver_product in driver_products %>
+36:                     <div title="last updated @ <%= driver_product.date_last_review %>">
+
+    app/views/drivers/index.html.erb:33:in `group_by'
+    app/views/drivers/index.html.erb:33
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/index.html.erb:30
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (56.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:40:45) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 11374ms (View: 10535 | 200 OK [http://localhost/drivers]
