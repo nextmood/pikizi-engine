@@ -595,3 +595,111 @@ Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:40:45) [GET]
 Rendering template within layouts/application
 Rendering drivers/index
 Completed in 11374ms (View: 10535 | 200 OK [http://localhost/drivers]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:48:19) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #36 of app/views/drivers/index.html.erb:
+33:         <% hash_driver_id_products = product.driver_products.group_by(&:driver_id) %>
+34:         <% for driver in @drivers  %>
+35:             <td>
+36:                 <% for driver_product in hash_driver_id_products[driver.id] %>
+37:                     <div title="last updated @ <%= driver_product.date_last_review %>">
+38:                       <%= pluralize(driver_product.nb_reviews, "review") %> for <%= link_to(driver_product.sid, "/drivers/show_product/#{driver_product.id}", :class => "pkz_link") %></div>
+39:                 <% end %>
+
+    app/views/drivers/index.html.erb:36
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/index.html.erb:34
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/index.html.erb:30
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (61.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-06-28 19:01:35) [GET]
+Rendering template within layouts/landing
+Rendering landing/index
+Completed in 139ms (View: 137 | 200 OK [http://localhost/]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 19:01:42) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #36 of app/views/drivers/index.html.erb:
+33:         <% hash_driver_id_products = product.driver_products.group_by(&:driver_id) %>
+34:         <% for driver in @drivers  %>
+35:             <td>
+36:                 <% for driver_product in hash_driver_id_products[driver.id] %>
+37:                     <div title="last updated @ <%= driver_product.date_last_review %>">
+38:                       <%= pluralize(driver_product.nb_reviews, "review") %> for <%= link_to(driver_product.sid, "/drivers/show_product/#{driver_product.id}", :class => "pkz_link") %></div>
+39:                 <% end %>
+
+    app/views/drivers/index.html.erb:36
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/index.html.erb:34
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `call'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `send'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/plugins/associations/proxy.rb:91:in `method_missing'
+    /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.6/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+    app/views/drivers/index.html.erb:30
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (62.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 19:02:58) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 11328ms (View: 10633 | 200 OK [http://localhost/drivers]

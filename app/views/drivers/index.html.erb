@@ -33,7 +33,7 @@
         <% hash_driver_id_products = product.driver_products.group_by(&:driver_id) %>
         <% for driver in @drivers  %>
             <td>
-                <% for driver_product in hash_driver_id_products[driver.id] %>
+                <% for driver_product in (hash_driver_id_products[driver.id] || []) %>
                     <div title="last updated @ <%= driver_product.date_last_review %>">
                       <%= pluralize(driver_product.nb_reviews, "review") %> for <%= link_to(driver_product.sid, "/drivers/show_product/#{driver_product.id}", :class => "pkz_link") %></div>
                 <% end %>
