@@ -1,25 +1,27 @@
-<h1>Testing ProductsQueryAtom...</h1>
+<% form_tag "/products_query/process_form" do -%>
+
+Testing ProductsQueryAtom...<%= submit_tag "save..." %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_1  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_1, :header => true }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_11  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_11, :header => true  }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_2  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_2, :header => true  }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_22  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_22, :header => true }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_3  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_3, :header => true  }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_4  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_4, :header => true  }) %>
 
 <hr/>
-<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_5  }) %>
+<%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @products_query_5, :header => true  }) %>
 
 
-<hr/>
+<% end -%>

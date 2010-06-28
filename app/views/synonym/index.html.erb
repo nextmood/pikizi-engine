@@ -1,0 +1,19 @@
+<h1>List of Synonyms for <%= @current_kowledge.label %></h1>
+
+<table border=1>
+  <tr>
+    <th>label</th>
+    <th>classname</th>
+    <th>id</th>
+    <th>synonymns</th>
+  </tr>
+  <% for synonym in @synonyms %>
+    <tr>
+      <td><%= synonym.label %></td>
+      <td><%= synonym.object_classename %></td>
+      <td><%= synonym.object_id %></td>
+      <td><%= synonym.matches.collect(&:inspect).join(", ") %></td>
+    </tr>
+  <% end %>
+</table>
+

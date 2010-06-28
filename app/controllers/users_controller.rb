@@ -111,5 +111,13 @@ class UsersController < ApplicationController
     puts "helo >>>>>>>>>>>>>> #{params[:product_ids_selected].inspect}"
     redirect_to(params[:url_redirect])
   end
-  
+
+  # private profile of the current user
+  def myself
+    get_logged_user
+    t0 = Time.now
+    @current_products = @current_products_query.execute_query
+    @time_query = Time.now - t0
+  end
+
 end

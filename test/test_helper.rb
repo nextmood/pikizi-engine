@@ -11,7 +11,7 @@ require 'test_help'
 
 class ActiveSupport::TestCase
 
-  setup { Sham.reset }
+#  setup { Sham.reset }
   
   # Drop all collections after each test case.
   def teardown

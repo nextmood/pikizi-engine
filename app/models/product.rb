@@ -27,6 +27,8 @@ class Product < Root
   
   key :description_urls, Array # an array of description url?
 
+  many :driver_products # list of data sources
+  
   #many :reviews
   def reviews() Review.all(:product_ids => self.id, :order => "written_at DESC") end
   def reviews_count(options={}) options[:product_ids] = self.id; Review.count(options) end
@@ -169,6 +171,7 @@ class Product < Root
   def set_value(feature_idurl, value) hash_feature_idurl_value[feature_idurl] = value end
 
   key :drivers_data, Hash, :default => {} # a list of data matchig this product to an external site (exemplae "amazon" => {"id" => "B002WB2P4O", "last_import_date" => "Mon May 31 11:19:05 +0200 2010" } )
+
 
   def get_driver(source,key) (drivers_data[source] || {})[key] end
   

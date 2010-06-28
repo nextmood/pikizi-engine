@@ -1,0 +1,9 @@
+
+
+<hr/>
+<%= @query %>
+<hr/>
+<%= pluralize(@query_results.size, "product") %> matching<%= ":" if @query_results.size > 0 %>
+<% if @query_results.size > 0 %>
+    <%= @query_results.collect { |p| "<b>#{p.idurl}</b>"}.join(", ") %>
+<% end %>

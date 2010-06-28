@@ -1,0 +1,13 @@
+
+<table border=1>
+  <% for k,v in @hash_queries_params %>
+    <tr>
+      <td><%= k %></td>
+      <td>
+       <%= v.inspect %>
+        <hr/>
+        <b><%= @hash_queries[k].to_html %></b>
+      </td>
+    </tr>
+  <% end %>
+</table>

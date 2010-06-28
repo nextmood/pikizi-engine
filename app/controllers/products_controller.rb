@@ -170,6 +170,22 @@ class ProductsController < ApplicationController
     end
   end
 
+  # update the value f a specification fir a given product
+  def update_specification_value
+    product = Product.find(params[:id])
+    puts params.inspect
+    redirect_to  "/products/#{product.idurl}"
+  end
+
+  # updat ethe specification itself
+  def update_specification
+    product = Product.find(params[:id])
+    puts params.inspect    
+    redirect_to  "/products/#{product.idurl}"
+  end
+
+
+
   def cancel_specification
     product = Product.find(params[:id])
     specification = Specification.find(params[:specification_id])

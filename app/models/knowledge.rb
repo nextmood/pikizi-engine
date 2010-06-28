@@ -44,6 +44,11 @@ class Knowledge < Root
   # --------- reviews attached to this knowledge  ---------------
   many :reviews
 
+  # --------- drivers (source of data) attached to this knowledge  ---------------
+  many :drivers
+
+  # --------- synonyms (for textmining) attached to this knowledge  ---------------
+  many :synonyms
 
   # --------- usages attached to this knowledge  (xxx) ---------------
   many :usages

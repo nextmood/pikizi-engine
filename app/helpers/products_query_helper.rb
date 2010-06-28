@@ -1,63 +1,66 @@
 module ProductsQueryHelper
+  
 
-  # is the ProductsQuery form
-  def products_query_atom_form(f, knowledge)
-    if f.object.is_a?(ProductsQueryFromProductLabel)
-      product_label = "<label>name of product</label><field>#{f.text_field(:product_label)}</field>"
-      extension = ["similar", "next", "previous", "none"].collect { |tag| "#{f.radio_button(:extension, tag)}#{tag}" }.join('&nbsp;')
-      "#{product_label} and products: (#{f.object.extension.inspect})  #{extension}"
-    elsif f.object.is_a?(ProductsQueryFromSpecification)
-      dom_id_tags = "tags_for_#{f.object.id}"
-      specification_selector =  f.collection_select(:specification_tag_idurl,
-                      options_for_query_specifications([], knowledge.specification_roots, 0),
-                      :last,
-                      :first,
-                      {:prompt => "choose a feature..."},
-                      :onchange => remote_function(:url => { :controller => "products_query",
-                                                             :action => "specification_selected",
-                                                             :dom_id => dom_id_tags  },
-                                                   :with => "'specification_selected_idurl=' + this.value"))
+  def products_query_atom_form(name, products_query_atom, knowledge)
+    prefix = link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0) << "&nbsp;", :url => {:controller => "products_query", :action => "remove_line", :id => products_query_atom.id })
+    #prefix << "#{products_query_atom.rank_index}) "
+
+    atom_form = fields_for(name, nil) do |products_query_fields|
+
+      products_query_fields.fields_for("atom#{products_query_atom.rank_index}", products_query_atom) do |products_query_atom_fields|
+        prefix << products_query_atom_fields.hidden_field(:products_query_atom_type)
+        prefix << products_query_atom_fields.hidden_field(:knowledge_id)
+        prefix << products_query_atom_fields.hidden_field(:rank_index)
+        prefix  << products_query_atom_fields.collection_select(:preceding_operator, [["and", "and"], ["or", "or"]], :last, :first) if products_query_atom.preceding_operator
+
+        # FromProductLabel ....
+        if products_query_atom.is_a?(ProductsQueryFromProductLabel)
+          product_label_text_field = products_query_atom_fields.text_field_with_auto_complete(:product_label, {:size => 25}, {:url => { :controller => "products_query", :action => "auto_complete_for_product_label" }, :method => :get })
+          product_label = "<label>name of product</label><field>#{product_label_text_field}</field>"
+          extension = ["similar", "next", "previous", "none"].collect { |tag| "#{products_query_atom_fields.radio_button(:extension, tag)}#{tag}" }.join('&nbsp;')
+          "#{product_label} and products: #{extension}"
+
+        # FromSpecification...
+        elsif products_query_atom.is_a?(ProductsQueryFromSpecification)
+          dom_id_tags = "tags_for_#{products_query_atom.id}"
+          specification_selector =  products_query_atom_fields.collection_select(:specification_idurl,
+                          options_for_query_specifications([], knowledge.specification_roots, 0),
+                          :last,
+                          :first,
+                          {:prompt => "choose a feature..."},
+                          :onchange => remote_function(:url => { :controller => "products_query",
+                                                                 :action => "specification_selected",
+                                                                 :dom_id_tags => dom_id_tags,
+                                                                 :name => name,
+                                                                 :rank_index => products_query_atom.rank_index  },
+                                                       :with => "'specification_selected_idurl=' + this.value"))
 
 
-      #list_tags =  specification.tags.collect { |t| "#{f.check_box("expressions", t.idurl)} #{t.label}" }.join(', ')
-      list_tags = tags_for_query_specifications(f.object.specification)
-      
-      selection_mode = [[:all, "all tags"], [:any, "any tags"]].collect do |k,v|
-        f.radio_button("mode_selection_tag", k) << v
-      end.join(", ")
+          list_tags = tags_for_query_specifications(name, products_query_atom.rank_index, products_query_atom.specification, products_query_atom.subset_tag_idurls)
 
-      "#{specification_selector}<div id=\"#{dom_id_tags}\">#{list_tags}<span style=\"font-size:80%; margin-left:10px;\">[#{selection_mode}]</span></div>"
+          selection_mode = [[:all, "all tags"], [:any, "any tags"]].collect do |k,v|
+            products_query_atom_fields.radio_button("mode_selection_tag", k) << v
+          end.join(", ")
 
+          "#{specification_selector}<span id=\"#{dom_id_tags}\">#{list_tags}<span style=\"font-size:80%; margin-left:10px;\">[#{selection_mode}]</span></span>"
 
-    elsif f.object.is_a?(ProductsQueryFromShortcut)
-      "ProductsQueryFromShortcut"
-    else
-      "?????"
+        # FromShortcut..
+        elsif products_query_atom.is_a?(ProductsQueryFromShortcut)
+          "ProductsQueryFromShortcut"
+        else
+          raise "unknown products_query_atom class = #{products_query_atom.class}"
+        end
+      end
     end
+
+    "<div style=\"margin-left:5px; margin-bottom:3px;\" id=\"atom_form_#{products_query_atom.id}\" >
+        #{prefix}#{atom_form}
+    </div>"
   end
 
-=begin
-
- <%= products_filter_fields.collection_select(:specification_id, options_for_specifications_bis([], @current_knowledge.specification_roots, 0), :last, :first, {:prompt => "choose a feature..."},
-                                 :onchange => remote_function(:url => { :action => "specification_selected", :id => dom_id, :name => name, :is_first_product_filter => is_first_product_filter },
-                                                              :with => "'specification_selected_id=' + this.value") ) %>
-                <%= link_to_remote(image_tag("icons/status_icon_delete.png", :border => 0), :url => { :action => "remove_from_form", :id => dom_id } ) %>
-                <!-- list of tags -->
-                <div>
-                    <%= products_filter.specification.tags.collect { |t| "#{products_filter_fields.check_box("expressions",
-                                                                                                             {:name => "products_filter_#{name}_#{products_filter.id}[expressions][]"},
-                                                                                                             t.idurl, nil)} #{t.label}" }.join(', ') %>
-                    <span style="font-size:80%; margin-left:10px;">
-                        [<%= products_filter_fields.radio_button("mode_selection_tag", :all) %>all tags
-                        <%= products_filter_fields.radio_button("mode_selection_tag", :any) %>any tags ]
-                    </span>
-                </div>
-
-=end
-
-  def tags_for_query_specifications(specification=nil)
+  def tags_for_query_specifications(name, rank_index, specification, subset_tag_idurls=[])
     if specification
-      specification.tags.collect { |t| "#{check_box_tag("expressions", t.idurl)} #{t.label}" }.join(', ')
+      specification.tags.collect { |t| "#{check_box_tag("#{name}[atom#{rank_index}]subset_tag_idurls[]", t.idurl, subset_tag_idurls.include?(t.idurl))} #{t.label}" }.join(', ')
     end
   end
 
@@ -70,11 +73,5 @@ module ProductsQueryHelper
   end
 
 
-
-  def products_atom_title(products_atom)
-    query = products_atom.products_matching_query
-    query_results = products_atom.process_products_matching_query
-    "<span title=\"#{query || 'no query...'}\">#{products_atom.to_html} => </span><span title=\"#{query_results.collect(&:idurl).sort.join(', ')}\">#{pluralize(query_results.size, "product")} <small>#{query || 'no query...'}</small></span>"
-  end
   
 end

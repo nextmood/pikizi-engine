@@ -168,15 +168,24 @@ class Review < Root
                   end
     if pattern
       content.split(pattern).each_with_index do |paragraph_content, counter|
-        paragraph_content = HTMLEntities.new.decode(paragraph_content).strip.remove_tags_html.remove_double_space.strip
+        paragraph_content = cleanup_paragraphs(paragraph_content)
         if paragraph_content != ""
           self.paragraphs.create(:ranking_number => counter, :content => paragraph_content, :review_id => self.id)
         end
       end
     else
       # 1 paragraph == whole content
-      self.paragraphs.create(:ranking_number => 0, :content => HTMLEntities.new.decode(content).strip.remove_tags_html.remove_double_space.strip)
+      self.paragraphs.create(:ranking_number => 0, :content => cleanup_paragraphs(content))
     end    
+  end
+
+  def cleanup_paragraphs(paragraph_content)
+    paragraph_content = HTMLEntities.new.decode(paragraph_content)
+    paragraph_content.strip!
+    paragraph_content = paragraph_content.remove_tags_html
+        paragraph_content.remove_doublons!(" ")
+        paragraph_content.strip!
+    paragraph_content
   end
 
   def self.to_xml

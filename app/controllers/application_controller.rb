@@ -2,6 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 require 'digest/md5'
+require "products_query"
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
   # get the current logged user, the active record object
   def get_logged_user()
     begin
-      logger.warn "session[:logged_user_id]=#{session[:logged_user_id].inspect}"
+      #logger.warn "session[:logged_user_id]=#{session[:logged_user_id].inspect}"
       if session[:logged_user_id]
         @current_user ||= User.find(session[:logged_user_id])
       end
@@ -44,11 +45,19 @@ class ApplicationController < ActionController::Base
     [@products, @products_selected]
   end
 
+  def current_products_query_name() "current_products_query" end
+  
 
   private
 
   def check_user_authorization
     @current_knowledge ||= Knowledge.first
+    unless @current_products_query = (ProductsQuery.find(session[:current_products_query_id]) if session[:current_products_query_id])
+      default_products_query_atom = ProductsQueryFromProductLabel.new(:product_label => @current_knowledge.products.first.label)
+      @current_products_query = ProductsQuery.birth(current_products_query_name, @current_knowledge.id, default_products_query_atom)
+      @current_products_query.save
+      session[:current_products_query_id] = @current_products_query.id
+    end
     if get_logged_user
       # there is an existing logged user
       redirect_to '/access_restricted' unless get_logged_user.is_authorized
@@ -59,6 +68,7 @@ class ApplicationController < ActionController::Base
       redirect_to '/login'
     end
   end
+
 
   def log_as_developper
     @current_user = User.find_by_rpx_email("info@nextmood.com")

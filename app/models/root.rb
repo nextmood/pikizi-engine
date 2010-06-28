@@ -142,10 +142,7 @@ class String
   # remove all html tags from a string and carriage return also
   def remove_tags_html() self.gsub(%r{</?[^>]+?>}, '').gsub("\r\n", ' ') end
 
-  # remove all double spaces
-  def remove_double_space
-    self.gsub("  ", " ")
-  end
+
 
   # the Levenshtein Distance (see http://www.informit.com/articles/article.aspx?p=683059&seqNum=36)
   # "ACUGAUGUGA".levenshtein("AUGGAA")    # 9

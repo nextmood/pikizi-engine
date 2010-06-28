@@ -1,33 +1,39 @@
 <div style="background-color:lightgray; margin:5px; border:1px black solid;">
-<% fields_for("#{products_query.name}", products_query) do |products_query_fields| %>
 
-    <!-- header -->
-    <div style="background-color:gray; margin:5px; border:1px black solid;">
-      ProductsQuery <%= products_query.name.inspect %>
-      => <%= products_query.to_html%>
-      <%= link_to_function("more...", "document.getElementById('query_#{products_query.id}').toggle();", :class => "pkz_link pkz_small pkz_next") %>
-      <div id="<%= "query_#{products_query.id}" %>" style="display:none; margin-top:3px;">
-        <%= products_query.products_matching_query %>
-      </div>
-    </div>
-
-    <% for i in 0..products_query.products_query_atoms.size - 1 %>
-
-        <% products_query_atom = products_query.products_query_atoms[i] %>
-        <% products_query_logical = ( i == 0 ? nil : products_query.logical_operators[i-1]) %>
-
-        <% if products_query_logical %>
-            <div style="font-weight:bold; margin-top:5px; margin-bottom:5px; text-align:center; border:1px dashed black;"><%= products_query_logical %></div>
+        <% if header %>
+            <!-- header -->
+            <div style="background-color:gray; margin:5px; border:1px black solid;">
+              <%= products_query.to_html%>
+              <% products_matching = products_query.execute_query %>
+              <span title="<%= products_matching.collect(&:idurl).join(', ') %>" class="pkz_next pkz_small" style="color:white;"><%= products_query.name %> => <%= pluralize(products_matching.size, "product") %> matching</span>
+            </div>
         <% end %>
-        
+  
+        <div id="dom_atoms_<%= products_query.name %>">
+            <% last_atom_index = products_query.products_query_atoms.size - 1 %>
+            <% for i in 0..last_atom_index %>
+              <%= products_query_atom_form(products_query.name, products_query.products_query_atoms[i], @current_knowledge) %>
+            <% end %>
+        </div>
 
-        <% products_query_fields.fields_for(:products_query_atom, products_query_atom, :index => products_query_atom.rank_index) do |products_query_atom_fields| %>
-          <%= products_query_atom_form(products_query_atom_fields, knowledge) %>
-        <% end %>
+        <div style="text-align:right; position: relative; width: 100%; height:17px;">
 
+          <div style="position: absolute; right:5px;"
+             onmouseover="document.getElementById('add_line_<%= products_query.id %>').show();"
+             onmouseout="document.getElementById('add_line_<%= products_query.id %>').hide();"
+          >
+              <span class='pkz_small pkz_link'>add a new line...</span>
+              <span id="add_line_<%= products_query.id %>" style="display:none;">
+                add product(s) defined by
+                <%= [["label", "ProductsQueryFromProductLabel"], ["specification", "ProductsQueryFromSpecification"], ["shortcut", "ProductsQueryFromShortcut"]].collect do |label, classname|
+                  link_to_remote(label,
+                          :url => { :controller => "products_query", :action => "add_line", :name => products_query.name, :products_query_atom_type => classname}, 
+                          :class => "pkz_link")
+                end.join(' or ') %>
+              </span>
+          </div>
+          
+        </div>
 
-
-    <% end %>
-
-<% end %>
 </div>
+

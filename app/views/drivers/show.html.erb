@@ -1,0 +1,19 @@
+<h1><%= @driver %></h1>
+<table border="1">
+  <tr>
+    <th><%= pluralize(@driver.nb_products, "product") %> <%= link_to("add product", "/drivers/search/#{@driver.id}", :class => "pkz_link pkz_next pkz_small") %></th>
+    <th>release on</th>
+    <th><%= @driver.nb_reviews %> reviews</th>
+    <th>last review</th>
+    
+  </tr>
+    <% for driver_product in @driver.driver_products %>
+      <tr>
+        <td valign="top" ><%= link_2_product(driver_product) %></td>
+        <td valign="top" ><%= pkz_date(driver_product.written_at) %></td>
+        <td valign="top" ><%= driver_product.nb_reviews %></td>
+        <td valign="top" ><%= pkz_date(driver_product.written_at) %></td>
+      </tr>
+    <% end %>
+</table>
+

@@ -124,6 +124,7 @@ class OpinionsController < ApplicationController
     end
   end
 
+
   # this is a rjs
   def validate_eric
     opinion = Opinion.find(params[:id])
@@ -135,7 +136,6 @@ class OpinionsController < ApplicationController
       page.replace_html("opinion_editor_#{opinion.id}", :partial => "/opinions/collection_opinion_validate", :locals => {:opinion => opinion, :showup => false})
     end
   end
-  
 
   # recompute status of opinion in collection
   def collection_state

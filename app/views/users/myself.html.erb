@@ -1,0 +1,21 @@
+<h1>Your current product selection...</h1>
+
+Welcome <%= @current_user.rpx_name %>
+<div style="margin-left:20px;">
+
+  <% form_tag "/products_query/process_current_products_query" do -%>
+
+      <div style="border-bottom:1px solid gray; border-top:1px solid gray; margin-top:20px;">
+        Your default knowledge base is <b><%= @current_knowledge.label %></b>, your current product selection is:
+        <%= render(:partial => "/products_query/edit", :locals => { :knowledge => @current_knowledge, :products_query => @current_products_query, :header => false  }) %>
+        your query matches <%= pluralize(@current_products.size, "product") %> <span class="pkz_small"> in <%= "%2.1f" % @time_query %>s</span>
+        <%= submit_tag "update..." %>
+      </div>
+      <div>
+      <% for product in @current_products %>
+        <%= render(:partial => "/products/thumbnail", :locals => {:product =>product}) %>  
+      <% end %>
+      </div>
+  <% end -%>
+  
+</div>

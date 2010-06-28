@@ -34,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/access_restricted' , :controller => 'users', :action => 'access_restricted'
   map.connect '/login' , :controller => 'users', :action => 'login'
   map.connect '/logout' , :controller => 'users', :action => 'logout'
+  map.connect '/myself' , :controller => 'users', :action => 'myself'
 
   map.connect "/rpx_token_sessions_url", :controller => 'users', :action => 'rpx_token_sessions_url'
 
@@ -42,7 +43,11 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/question_decr_weight/:knowledge_idurl/:question_idurl", :controller => 'questions', :action => 'update_weight', :delta => -1
 
   map.connect "/nltk_sources.:format", :controller => "reviews", :action => "nltk_sources"
-  map.resources :sources
+
+  map.resources :drivers
+  map.connect "/search_in_drivers", :controller => 'drivers', :action => 'search'
+
+  map.connect "/execute_query", :controller => 'products_query', :action => 'execute_query'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -100,8 +105,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/dimensions_list', :controller => 'knowledges', :action => 'dimensions_list'
   map.connect '/usages_list', :controller => 'knowledges', :action => 'usages_list'
 
-  
-   map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
+  map.connect "/test_instapaper", :controller => 'drivers', :action => "test_instapaper"
+  map.connect "/eric.:format", :controller => 'reviews', :action => 'eric'
 
   map.root :controller => "landing"  # default
 

@@ -1,0 +1,16 @@
+<div style="float: left; border:1px solid black; width:150px; height:150px; padding:3px; text-align:center; margin:5px; background-color:white;">
+    <div><%= product_image(product) %></div>
+    <div><%= link_to(product.label, "/product/#{product.idurl}", :class => "pkz_link") %></div>
+    <% if rating_01 = @current_knowledge.dimension_root.get_value(product) %>
+        <% max_width = 120 %>
+        <div style="border:1px solid black; width:<%= max_width %>px; margin:auto;" class="pkz_small">
+            <div title="rating=<%= rating_01 %> confidence=<%= @current_knowledge.dimension_root.confidence(product) %>" style="<%= "width:#{(max_width * rating_01).round}px;" %> background-color:gray; ">
+                <%= "%2.1f" % (rating_01 * 10) %> / 10
+            </div>
+        </div>
+    <% end %>
+    <div class="pkz_small"><%= @current_knowledge.get_price_min_max_html(product) %></div>
+</div>
+
+
+

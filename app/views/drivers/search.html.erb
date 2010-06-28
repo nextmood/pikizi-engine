@@ -1,0 +1,46 @@
+<h1>Searching for product</h1>
+
+
+
+<% form_tag "/search_in_drivers" do -%>
+
+    <div>
+        <%= text_field_tag :query_string, @query_string, :size => 70 %>
+        <%= submit_tag("search", :class => "pkz_next") %>
+        <div>in 
+          <% for driver in @drivers %>
+            <%= check_box_tag("drivers_selected[]", driver.source, @drivers_selected.include?(driver), :style => "margin-left:10px;") %>
+            <%= driver.source %>
+          <% end %>
+        </div>
+        <% if @results_hash_time %>
+            <div class="pkz_small">
+              found in <%= '%2.1f' % @time_total %>s
+              (<%= @results_hash_time.collect {|k,v| "#{k}=#{'%2.1f' % v}s"}.join(", ") %>)
+            </div>
+        <% end %>
+    </div>
+
+    
+<% end -%>
+<hr/>
+<% form_tag "/drivers/attach_selected" do -%>
+    <table>
+    <% if @results_as_driver_products and @results_as_driver_products.size > 0 %>
+
+        <tr><th>source</th><th align="left">label</th><th>date</th></tr>
+
+        <% for driver_product in @results_as_driver_products %>
+            <tr style="background-color:white;">
+                <td valign="top"><%= driver_product.source %></td>
+                <td valign="top">
+                    <%= link_2_product(driver_product) %>
+                </td>
+                <td valign="top"><%= pkz_date(driver_product.written_at) %></td>
+            </tr>
+        <% end %>
+    <% else %>
+      no results
+    <% end %>
+    </table>
+<% end -%>

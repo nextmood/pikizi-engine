@@ -75,7 +75,7 @@ class Paragraph
   # -----------------------------------------------------------------
 
   def content_without_html
-    @content_without_html ||= HTMLEntities.new.decode(content).strip.remove_tags_html.remove_double_space
+    @content_without_html ||= HTMLEntities.new.decode(content).strip.remove_tags_html.remove_doublons(" ")
   end
 
   def content_highlight(s)

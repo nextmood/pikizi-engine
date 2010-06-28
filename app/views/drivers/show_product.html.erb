@@ -1,0 +1,61 @@
+<h1><%= link_to(@driver_product.label, @driver_product.url_show) %></h1>
+<hr/>
+    <% if @driver_product.product_id %>
+        map the product <%=  @driver_product.product.label %> in Pikizi Databse %>
+    <% else %>
+        add this <span title="<%= @driver_product.id %>"><%= @driver.source%> entry</span> to Pikizi product <b><%= @current_products_query.to_html %></b>
+        <%= link_to("change product(s) selection", "/myself", :class => "pkz_small pkz_link") %>
+        <%= submit_tag("Process to recording and downloading reviews", :class => "pkz_next") %>
+
+    <% end %>
+<hr/>
+<table cellpadding=3>
+    <tr>
+      <td rowspan="7" valign="top"><%= link_to(image_tag(@driver_product.url_image, :width => 200), @driver_product.url_show) %></td>
+      <td>sid</td>
+      <td style="font-weight:bold;">
+        <%= @driver_product.source %> / <%= @driver_product.sid %>
+        <%= link_to("back to search...", "/search_in_drivers", :class => "pkz_link pkz_next") %>
+      </td>
+    </tr>
+    <tr><td>written_at</td><td><%= @driver_product.written_at %></td></tr>
+    <tr style="font-style:italic;">
+      <td valign="top">hash_data</td>
+      <td ><%=@driver_product.extra_data_html %></td>
+    </tr>
+
+    <tr><td colspan="2"></td></tr>
+</table>
+
+<% if @driver_product.nb_reviews > 0 %>
+
+    <h2><%= pluralize(@driver_product.nb_reviews, "review") %></h2>
+
+    <% for driver_review in  @driver_product.driver_reviews %>
+        <div style="border-bottom:1px solid black; margin-bottom:10px; padding:3px;">
+            <!-- header -->
+            <div>
+              <%= driver_review.written_at %> by amazon's user <%= driver_review.hash_data[:customerid] %> =>  <%= driver_review.hash_data[:rating] %>/5 stars
+              <span class="pkz_small pkz_next">
+                users'votes on this review=<%= driver_review.hash_data[:totalvotes] %> (<%= driver_review.hash_data[:helpfulvotes] %> helpful )
+              </span>
+            </div>
+
+            <!-- summary -->
+            <div style="font-style:italic; margin-top:2px;">
+              <%= driver_review.hash_data[:summary] %>
+              <%= link_to_function("more (#{driver_review.hash_data[:content].size} chars)", "document.getElementById('content_#{driver_review.id}').toggle();") %>
+            </div>
+
+            <!-- content -->
+            <div id="content_<%= driver_review.id %>" class="pkz_next" style="display:none; margin-top:3px;">
+                <%= driver_review.hash_data[:content] %>
+            </div>
+        </div>
+    <% end %>
+
+<% else %>
+    no reviews recorded yet
+    <%= link_to_remote("test reviews download...", :url => "/drivers/download_reviews/#{@driver_product.id}") %>
+    <div id="new_reviews"></div>
+<% end%>

@@ -1,0 +1,41 @@
+<h1>Drivers for <%= @current_knowledge.label %></h1>
+
+
+
+<table border=1 cellpadding=3>
+  <tr><td colspan="<%= @drivers.size + 1 %>" align="right">
+    <%= link_to("download reviews...","", :class => "pkz_link") %>
+    &nbsp;
+    <% timestamp_last_update =  @drivers.inject(nil) { |r,d| x = d.timestamp_last_update; (r.nil? or (x and x  > r)) ? x : r } %>
+    last @ <%= timestamp_last_update %>
+  </td></tr>
+  <tr>
+    <th>
+      <%= pluralize(@products.size, "product") %>
+      <hr/>
+      <%= link_to("search/add...", "/search_in_drivers", :class => "pkz_link") %>
+    </th>
+    <% for driver in @drivers %>
+        <th>
+          <div><%= driver.source %></div>
+          <hr/>
+          <div style="font-weight:normal;">
+            <%= pluralize(driver.nb_reviews, "review") %>
+          </div>
+        </th>
+
+    <% end %>
+      </tr>
+  </tr>
+    <% for product in @products %>
+      <tr>
+        <td valign="top"><%= product.idurl %></td>
+        <td>
+            <% for driver_product in product.driver_products %>
+                <div title="last updated @ <%= driver_product.date_last_review %>">
+                  <%= pluralize(driver_product.nb_reviews, "review") %> for <%= driver_product.sid %></div>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+</table>
