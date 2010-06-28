@@ -1,0 +1,44 @@
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:03:08) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 11123ms (View: 10815 | 200 OK [http://localhost/drivers]
+
+
+Processing DriversController#search (for 127.0.0.1 at 2010-06-28 18:05:01) [GET]
+Rendering template within layouts/application
+Rendering drivers/search
+Completed in 633ms (View: 43 | 200 OK [http://localhost/search_in_drivers]
+
+
+Processing DriversController#search (for 127.0.0.1 at 2010-06-28 18:05:11) [POST]
+  Parameters: {"query_string"=>"blackberry", "commit"=>"search", "authenticity_token"=>"MSLdB+Heboxb81liv7pVNRQiHTJOo+MjaGJMWgrPflY=", "drivers_selected"=>["Amazon", "Cnet", "Bestbuy", "Twitter"]}
+Adding AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82
+Adding Keywords=blackberry
+Adding Operation=ItemSearch
+Adding ResponseGroup=Small
+Adding SearchIndex=All
+Adding Timestamp=2010-06-28T16:05:12Z
+Request URL: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=1PR0S6RKJ4MHVNWDMK82&Keywords=blackberry&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Timestamp=2010-06-28T16%3A05%3A12Z&Signature=R06WNPwGWCJf0CQmIkA%2BJjWQ6u6tBbAmWXDvcnqJ6fs%3D
+Rendering template within layouts/application
+Rendering drivers/search
+Completed in 2866ms (View: 66 | 200 OK [http://localhost/search_in_drivers]
+
+
+Processing DriversController#show_product (for 127.0.0.1 at 2010-06-28 18:05:17) [GET]
+  Parameters: {"sid"=>"9979832", "id"=>"4c28bd6999bb8d09f9000003"}
+Rendering template within layouts/application
+Rendering drivers/show_product
+Completed in 883ms (View: 50 | 200 OK [http://localhost/drivers/show_product/4c28bd6999bb8d09f9000003?sid=9979832]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:06:01) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 11939ms (View: 11143 | 200 OK [http://localhost/drivers]
+
+
+Processing DriversController#index (for 127.0.0.1 at 2010-06-28 18:06:55) [GET]
+Rendering template within layouts/application
+Rendering drivers/index
