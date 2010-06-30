@@ -250,9 +250,10 @@ class SpecificationTags < Specification
   # this is included in a form
   def get_value_edit_html(product)
     type_button = is_exclusive ? 'radio' : 'checkbox'
+    name_in_form = "specification_#{idurl}[]"
     tag_idurls_ok = get_value(product) || []
     tags.inject("") do |s, tag|
-      s << "<input type='#{type_button}' name='specification_#{tag.idurl}' title='idurl=#{tag.idurl}' value='#{tag.idurl}' #{ tag_idurls_ok.include?(tag.idurl) ? 'checked' : nil} />#{tag.label}"
+      s << "<input type='#{type_button}' name='#{name_in_form}' title='idurl=#{tag.idurl}' value='#{tag.idurl}' #{ tag_idurls_ok.include?(tag.idurl) ? 'checked' : nil} />#{tag.label}"
     end
   end
 

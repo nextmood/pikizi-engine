@@ -4,10 +4,13 @@
   <tr>
     <th rowspan="3">brand</th>
     <th rowspan="3">product</th>
-    <th rowspan="3">reviews</th>
+    <th rowspan="1" colspan="<%= @review_categories.size %>">reviews</th>
     <th colspan="6">opinions</th>
   </tr>
   <tr>
+    <% for review_category in @review_categories %>
+        <th rowspan="2"><%= review_category %></th>
+    <% end %>
     <th colspan="2">Absolute</th>
     <th colspan="2">Relative</th>
     <th colspan="2"></th>
@@ -31,12 +34,18 @@
         <% end %>
       </td>
 
-      <td>
-        <%= product.reviews_count %>
-      </td>
-      <% opinions = (@hash_product_opinions[product.id] || []); hash_opinions = opinions.group_by(&:class) %>
+      <% for review_category in @review_categories %>
+        <td><%= ((@hash_product_reviews[product.id] ||= {})[review_category] || []).size %></td>
+      <% end %>
+
+      <% opinions = (@hash_product_opinions[product.id] ||= []); hash_opinions = opinions.group_by(&:class) %>
       <% for opinion_class in @opinions_classes %>
-        <td><%= (hash_opinions[opinion_class] || []).size  %></td>
+        <td>
+          <%= (hash_opinions[opinion_class] ||= []).size  %>
+          <% if (nb_opinions_not_overall = hash_opinions[opinion_class].inject(0) { |c, o| (o.dimension_ids.any? { |did| @overall_dimension_id != did }) ? c + 1 : c }) > 0 %>
+            <span class="pkz_small" style="color:blue;"><%=  nb_opinions_not_overall %></span>
+          <% end %>
+        </td>
       <% end %>
       <td>
         <b><%= opinions.size %></b>

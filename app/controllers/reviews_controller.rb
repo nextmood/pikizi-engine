@@ -228,14 +228,22 @@ class ReviewsController < ApplicationController
       x == 0 ? pb1.first.label <=> pb2.first.label : x
     end
     @products = product_brands.collect(&:first)
-    @hash_product_opinions = Opinion.all.inject({}) do |h, opinion|
+    @hash_product_opinions = Opinion.all().inject({}) do |h, opinion|
       opinion.product_ids.each do |opinion_product_id|
         (h[opinion_product_id] ||= []) << opinion
       end
       h
     end
 
+    @hash_product_reviews = Review.all(:knowledge_id => @current_knowledge.id).inject({}) do |h, r|
+      r.product_ids.each { |pid| ((h[pid] ||= {})[r.category] ||= []) << r }
+      h
+    end
+    
     @opinions_classes = [Rating, Tip, Ranking, Comparator, Neutral]
+    @review_categories = ["amazon", "expert"]
+
+    @overall_dimension_id = @current_knowledge.dimension_root.id
   end
 
 
