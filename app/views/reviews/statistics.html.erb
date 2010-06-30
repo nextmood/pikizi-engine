@@ -1,0 +1,47 @@
+<h1>Statistic for knowledge base <%= @current_knowledge.label %></h1>
+
+<table border="1">
+  <tr>
+    <th rowspan="3">brand</th>
+    <th rowspan="3">product</th>
+    <th rowspan="3">reviews</th>
+    <th colspan="6">opinions</th>
+  </tr>
+  <tr>
+    <th colspan="2">Absolute</th>
+    <th colspan="2">Relative</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <tr>
+    <% for opinion_class in @opinions_classes %>
+        <th><%= opinion_class %></th>
+    <% end %>
+    <th>total</th>    
+  </tr>
+  <% for product in @products %>
+    <tr>
+      <td><%= product.get_value("brand") %></td>
+      <td>
+        <%= product.label %>
+        <% if product.similar_product_ids.size > 0 %>
+          <span class="pkz_small">
+            &nbsp;same as <%= product.similar_products.collect(&:label).join(', ') %>  
+          </span>
+        <% end %>
+      </td>
+
+      <td>
+        <%= product.reviews_count %>
+      </td>
+      <% opinions = (@hash_product_opinions[product.id] || []); hash_opinions = opinions.group_by(&:class) %>
+      <% for opinion_class in @opinions_classes %>
+        <td><%= (hash_opinions[opinion_class] || []).size  %></td>
+      <% end %>
+      <td>
+        <b><%= opinions.size %></b>
+      </td>
+
+    </tr>
+  <% end %>
+</table>

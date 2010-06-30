@@ -182,7 +182,6 @@ class ReviewsController < ApplicationController
     @review.product_ids = [product.id]
     @review.knowledge_id = @current_knowledge.id
     @review.knowledge_idurl = @current_knowledge.idurl
-    puts "***************** #{@review.product_ids.inspect}"
 
     if @review.save
       flash[:notice] = "Review sucessufuly created"
@@ -214,6 +213,31 @@ class ReviewsController < ApplicationController
     review.split_in_paragraphs(params[:mode])
     redirect_to  "/edit_review/#{review.id}"
   end
+
+  # return a set of statistic for this knowledge base
+  def statistics
+    # sort the product by brand then label
+    product_brands = @current_knowledge.products.collect do |p|
+      b = p.get_value("brand")
+      b = b.first if b
+      b ||= ""
+      [p, b] 
+    end
+    product_brands.sort! do |pb1, pb2|
+      x = (pb1.last <=> pb2.last)
+      x == 0 ? pb1.first.label <=> pb2.first.label : x
+    end
+    @products = product_brands.collect(&:first)
+    @hash_product_opinions = Opinion.all.inject({}) do |h, opinion|
+      opinion.product_ids.each do |opinion_product_id|
+        (h[opinion_product_id] ||= []) << opinion
+      end
+      h
+    end
+
+    @opinions_classes = [Rating, Tip, Ranking, Comparator, Neutral]
+  end
+
 
 end
 
