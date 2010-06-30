@@ -1,6 +1,12 @@
 <div class="pkz_specification_level_<%= specification.level %>">
       <b><%= specification.get_specification_html %></b>
-      <%= specification.get_value_html(product) %>
+
+      <%= link_to_remote(specification.get_value_html(product) || "...",
+                  :url => {  :controller => "products",
+                             :action => "edit_specification_value",
+                             :id => product.id,
+                             :specification_id => specification.id  },
+                  :html => {  }) %>
 
       <span style="font-size:80%; margin-left:30px;">
         <!--
@@ -15,13 +21,6 @@
                            :confirm => "remove the specification and all it's children?") %>
         -->
         edit
-          <%= link_to_remote("value",
-                  :url => {  :controller => "products",
-                             :action => "edit_specification_value",
-                             :id => product.id,
-                             :specification_id => specification.id  },
-                  :html => {  }) %>
-          /
           <%= link_to_remote("spec",
                   :url => {  :controller => "products",
                              :action => "edit_specification",

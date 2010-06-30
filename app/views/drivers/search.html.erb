@@ -1,9 +1,6 @@
 <h1>Searching for product</h1>
 
-
-
 <% form_tag "/search_in_drivers" do -%>
-
     <div>
         <%= text_field_tag :query_string, @query_string, :size => 70 %>
         <%= submit_tag("search", :class => "pkz_next") %>
@@ -20,9 +17,8 @@
             </div>
         <% end %>
     </div>
-
-    
 <% end -%>
+
 <hr/>
 <% form_tag "/drivers/attach_selected" do -%>
     <table>

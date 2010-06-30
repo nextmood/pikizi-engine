@@ -38,11 +38,14 @@ module ProductsQueryHelper
 
           list_tags = tags_for_query_specifications(name, products_query_atom.rank_index, products_query_atom.specification, products_query_atom.subset_tag_idurls)
 
-          selection_mode = [[:all, "all tags"], [:any, "any tags"]].collect do |k,v|
-            products_query_atom_fields.radio_button("mode_selection_tag", k) << v
-          end.join(", ")
+          selection_mode = unless products_query_atom.specification.is_exclusive
+            x = [[:all, "all tags"], [:any, "any tags"]].collect do |k,v|
+              products_query_atom_fields.radio_button("mode_selection_tag", k) << v
+            end.join(", ")
+            "<span style=\"font-size:80%; margin-left:10px;\">[#{x}]</span>"
+          end
 
-          "#{specification_selector}<span id=\"#{dom_id_tags}\">#{list_tags}<span style=\"font-size:80%; margin-left:10px;\">[#{selection_mode}]</span></span>"
+          "#{specification_selector}<span id=\"#{dom_id_tags}\">#{list_tags}#{selection_mode}</span>"
 
         # FromShortcut..
         elsif products_query_atom.is_a?(ProductsQueryFromShortcut)

@@ -65,7 +65,13 @@ class ProductsQuery
   def self.execute_query(query)
     query = query.gsub(" or "," || ")
     query.gsub!(" and "," && ")
-    Product.all("$where" => "function() { return #{query}; }", :order => "idurl asc")
+    begin
+      Product.all("$where" => "function() { return #{query}; }", :order => "idurl asc")
+    rescue Exception => e
+      puts "warning error while query=#{query.inspect} #{e.message}"
+      e.backtrace.each { |m| puts "     #{m}"}
+      []
+    end
   end
 
   # build the query sum of atom query
@@ -112,6 +118,7 @@ class ProductsQuery
       end
     end
     # following line upload javascript functions to databse
+    #`/Applications/mongodb-osx-i386-1.2.3/bin/mongo pikizi_mongodb_development #{file_name}`
     `/Applications/mongodb-osx-x86_64-1.2.2/bin/mongo pikizi_mongodb_development #{file_name}`
     true
   end
@@ -147,7 +154,7 @@ class ProductsQueryAtom
     knowledge_id = BSON::ObjectID.from_string(knowledge_id) if knowledge_id.is_a?(String)
     new_products_query_atom.knowledge_id = knowledge_id
     new_products_query_atom.rank_index = Integer(params[:rank_index] || Time.now.to_i)
-    new_products_query_atom.preceding_operator = params[:preceding_operator]
+    new_products_query_atom.preceding_operator = (new_products_query_atom.rank_index > 0 ? params[:preceding_operator] : nil)
     new_products_query_atom.process_attributes(params)
     new_products_query_atom
   end

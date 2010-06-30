@@ -1,5 +1,5 @@
 <% form_tag "/products/update_specification_value/#{product.id}", :style => "border:1px solid black; padding:2px; background-color:pink;"  do -%>
-    <%= hidden_field_tag "feature_idurl", specification.idurl %>
+    <%= hidden_field_tag "specification_id", specification.id %>
     <%= specification.get_value_edit_html(product) %>
     <hr/>
     <%= submit_tag "validate" %>

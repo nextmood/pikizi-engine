@@ -11,5 +11,9 @@ class SpecificationsController < ApplicationController
 
   end
 
+  # return the list of specifications/value for the current products_query / knowledge
+  def index
+    @products = @current_products_query.execute_query
+  end
 
 end

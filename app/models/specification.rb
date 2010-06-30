@@ -250,11 +250,19 @@ class SpecificationTags < Specification
   # this is included in a form
   def get_value_edit_html(product)
     type_button = is_exclusive ? 'radio' : 'checkbox'
-    name_in_form = "specification_#{idurl}[]"
+    name_in_form = "tag_idurls"
     tag_idurls_ok = get_value(product) || []
     tags.inject("") do |s, tag|
       s << "<input type='#{type_button}' name='#{name_in_form}' title='idurl=#{tag.idurl}' value='#{tag.idurl}' #{ tag_idurls_ok.include?(tag.idurl) ? 'checked' : nil} />#{tag.label}"
     end
+  end
+
+  # when you submit the form... editing the value of the specification for a given product
+  def process_attributes_value_edit(product, params)
+    tag_idurls = params[:tag_idurls] || []
+    tag_idurls = [tag_idurls] unless tag_idurls.is_a?(Array)
+    puts ">>>>>>>>>>> #{tag_idurls.inspect}"
+    product.set_value(idurl, tag_idurls)
   end
 
   def get_specification_html() "<span title=\"#{tags.collect(&:label).join(', ')}, level=#{level}\">#{label}</span>#{specification_html_suffix}" end

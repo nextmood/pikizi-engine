@@ -1,0 +1,29 @@
+<tr>
+  <td valign="top">
+    <div class="pkz_specification_level_<%= specification.level %>">
+          <%= link_to_remote(specification.get_specification_html,
+                  :url => {  :controller => "products",
+                             :action => "edit_specification",
+                             :specification_id => specification.id  },
+                  :html => { :class => "pkz_link" }) %>
+
+    </div>
+  </td>
+  <% for product in products %>
+    <td align="center">
+      <div id="div_specification_<%= specification.id %>_<%= product.id %>">
+          <%= link_to_remote(specification.get_value_html(product) || "...",
+                      :url => {  :controller => "products",
+                                 :action => "edit_specification_value",
+                                 :id => product.id,
+                                 :specification_id => specification.id  },
+                      :html => { :class => "pkz_link" }) %>
+      </div>
+    </td>
+  <% end %>
+</tr>
+
+<% for sub_specification in specification.children %>
+    <%= render(:partial => "/specifications/table", :locals => {:specification => sub_specification, :products => products}) %>
+<% end %>
+

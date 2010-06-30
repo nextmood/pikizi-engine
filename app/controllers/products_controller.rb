@@ -147,6 +147,9 @@ class ProductsController < ApplicationController
   # Specification
   # -------------------------------------------------------------------------------------------
 
+  def specifications_values
+    @product = Product.find(params[:id])
+  end
 
   # this is a rjs
   # return the form to edit a feature
@@ -165,7 +168,7 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     specification = Specification.find(params[:specification_id])
     render :update do |page|
-      page.replace_html("div_specification_#{specification.id}", :partial => "/specifications/edit_value",
+      page.replace_html("div_specification_#{specification.id}_#{product.id}", :partial => "/specifications/edit_value",
                   :locals => { :product => product, :specification => specification })
     end
   end
@@ -173,8 +176,17 @@ class ProductsController < ApplicationController
   # update the value f a specification fir a given product
   def update_specification_value
     product = Product.find(params[:id])
+    specification = Specification.find(params[:specification_id])
     puts params.inspect
-    redirect_to  "/products/#{product.idurl}"
+
+    puts "1) #{product.get_value(specification.idurl)} --> #{product.idurl}"
+
+    specification.process_attributes_value_edit(product, params)
+   
+    puts "2) #{product.get_value(specification.idurl)} --> #{product.idurl}"
+    product.save
+    
+    redirect_to  "/products/specifications_values/#{product.id}"
   end
 
   # updat ethe specification itself
