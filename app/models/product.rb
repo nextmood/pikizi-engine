@@ -282,7 +282,36 @@ class Product < Root
     end
   end
 
-
+  def self.temp_fix_brands
+    k = Knowledge.first 
+    Product.all.each do |p|
+      b = p.get_value("brand")
+      b = b.first if b.is_a?(Array)
+      unless b
+        puts "product #{p.idurl} has no brand"
+        if p.idurl.downcase.include?("nokia")
+          p.set_value("brand", ["nokia"])
+        elsif p.idurl.downcase.include?("htc")
+          p.set_value("brand", ["htc"])
+        elsif p.idurl.downcase.include?("palm")
+          p.set_value("brand", ["palm"])
+        elsif p.idurl.downcase.include?("sony")
+          p.set_value("brand", ["sony_ericsson"])
+        elsif p.idurl.downcase.include?("samsung")
+          p.set_value("brand", ["samsung"])
+        elsif p.idurl.downcase.include?("casio")
+          p.set_value("brand", ["casio"])
+        elsif p.idurl.downcase.include?("motorola")
+          p.set_value("brand", ["motorola"])
+        elsif p.idurl.downcase.include?("blackberry")
+          p.set_value("brand", ["blackberry"])
+        elsif p.idurl.downcase.include?("iphone")
+          p.set_value("brand", ["apple"])
+        end
+        p.save
+      end
+    end
+  end
 
 end
 
