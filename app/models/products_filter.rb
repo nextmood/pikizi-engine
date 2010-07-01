@@ -57,7 +57,6 @@ class ProductByLabel < ProductsFilter
 
 
   def process_attributes(knowledge, products_selector_dom_name, opinion, params)
-    puts ">>>>> #{params.inspect}"
     super(knowledge, products_selector_dom_name, opinion, params)
     product_label = params["label"].strip
     unless existing_product = Product.first(:label => product_label)
@@ -73,7 +72,7 @@ class ProductByLabel < ProductsFilter
   
   def update_labels(p)
     self.display_as = (p ? "#{p.label}#{' and similar(s)' if and_similar}" : "???")
-    self.short_label = (p ? p.idurl : "???")
+    self.short_label = (p ? "#{p.idurl}#{ '_and_similars' if and_similar}" : "???")
     self
   end
   def update_labels_debug() update_labels(product) end

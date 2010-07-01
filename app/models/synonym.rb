@@ -23,5 +23,16 @@ class Synonym
     Synonym.all(:knowledge_id => knowledge_id, :matches => search_string)
   end
 
+  def self.create_seeding(knowledge_id)
+    Synonym.delete_all
+    Product.all.each do |product|
+      # create a products_query
+      products_query = ProductsQueryFromProductLabel.birth("synonym", product)
+      products_query.save
+      Synonym.create(:knowledge_id => knowledge_id, :object_classname => products_query.class.to_s, :object_id => products_query.id, :matches => [product.idurl, product.label])
+    end
+    true
+  end
+  
 end
 

@@ -189,6 +189,12 @@ class ProductsQueryFromProductLabel < ProductsQueryAtom
   belongs_to :product
   key :product_label, String
 
+
+  def self.birth(name, product)
+     ProductsQuery.birth(name, product.knowledge_id,
+        ProductsQueryFromProductLabel.new(:product_label => product.label, :product_id => product.id))                               
+  end
+
   def to_html
     product_label_html = product_id ? product_label : "<span style=\"color:red;\">#{product_label}</span>"
     suffix = has_extension ? " and #{extension} items" : ""

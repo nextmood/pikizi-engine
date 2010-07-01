@@ -1,16 +1,11 @@
 
 <h2>Specifications for <%= @current_knowledge.label %> and <b><%= @current_products_query.to_html %></b></h2>
 
-
+<%= link_to("change product(s) selection", "/myself", :class => "pkz_small pkz_link") %>
 
 <table id="list_specifications" border="1">
     <tr>
-      <th width="400" rowspan="2">specification</th>
-      <td colspan="<%= @products.size %>" align="right"><%= link_to("change product(s) selection", "/myself", :class => "pkz_small pkz_link") %></td>
-    </tr>
-  
-    <tr>
-      <% for product in @products %><th><%= product.label %></th><% end %>
+      <th width="400"></th><% for product in @products %><th><%= product.label %></th><% end %>
     </tr>
     <% for specification in @current_knowledge.specification_roots %>
         <%= render(:partial => "/specifications/table", :locals => {:specification => specification, :products => @products}) %>

@@ -75,6 +75,7 @@ class String
       gsub!(pattern, new_s) if new_s
       strip!
     end
+    self
   end
 
   def remove_doublons_bis!(p)

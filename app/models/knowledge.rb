@@ -48,7 +48,7 @@ class Knowledge < Root
   many :drivers
 
   # --------- synonyms (for textmining) attached to this knowledge  ---------------
-  many :synonyms
+  many :synonyms, :order => "matches ASC"
 
   # --------- usages attached to this knowledge  (xxx) ---------------
   many :usages

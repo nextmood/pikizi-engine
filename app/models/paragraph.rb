@@ -1,4 +1,5 @@
 require 'htmlentities'
+require "text_source"
 
 # a sub-division of the content of a review
 class Paragraph
@@ -75,7 +76,7 @@ class Paragraph
   # -----------------------------------------------------------------
 
   def content_without_html
-    @content_without_html ||= HTMLEntities.new.decode(content).strip.remove_tags_html.remove_doublons(" ")
+    @content_without_html ||= HTMLEntities.new.decode(content).strip.remove_tags_html.remove_doublons!(" ")
   end
 
   def content_highlight(s)

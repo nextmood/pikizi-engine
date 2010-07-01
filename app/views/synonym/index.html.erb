@@ -1,17 +1,13 @@
-<h1>List of Synonyms for <%= @current_kowledge.label %></h1>
+<h1>List of Synonyms for <%= @current_knowledge.label %></h1>
 
 <table border=1>
   <tr>
-    <th>label</th>
-    <th>classname</th>
-    <th>id</th>
-    <th>synonymns</th>
+    <th>key</th>
+    <th>synonyms</th>
   </tr>
   <% for synonym in @synonyms %>
     <tr>
-      <td><%= synonym.label %></td>
-      <td><%= synonym.object_classename %></td>
-      <td><%= synonym.object_id %></td>
+      <td title="<%= synonym.object_classname %>#<%= synonym.object_id %>" ><%= synonym.label %></td>
       <td><%= synonym.matches.collect(&:inspect).join(", ") %></td>
     </tr>
   <% end %>

@@ -7,10 +7,11 @@
       <span class="pkz_small">Collection of <%= @ocollection.nb_opinions %> opinions:</span>
       &nbsp;<%= @ocollection.label %>
       <%= link_to("back to list...", "/opinions/collections", :class => "pkz_link pkz_small pkz_next") %>
+      <%= link_to("destroy", "/opinions/collection_destroy/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next", :confirm => "sure?") %>
       <!--
                   <%= link_to("glossary...", "/glossary", :class => "pkz_link pkz_small pkz_next") %>
                   <%= link_to("check errors...", "/opinions/collection_state/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
-                  <%= link_to("destroy", "/opinions/collection_destroy/#{@ocollection.id}", :class => "pkz_link pkz_small pkz_next") %>
+
                   -->
     </h2>
 
